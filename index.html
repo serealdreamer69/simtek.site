@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simtek Performance - Équipe de SimRacing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff1a75;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.45) 0%, rgba(26, 26, 62, 0.45) 100%), url('hero-bg.png') center/cover;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: none;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide-1 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide-2 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide-3 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide-4 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide:first-child {
+            opacity: 1;
+        }
+
+        @keyframes slideshow {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            25% { opacity: 1; }
+            35% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .slide-1 { animation: slideshow 16s infinite; }
+        .slide-2 { animation: slideshow 16s 4s infinite; }
+        .slide-3 { animation: slideshow 16s 8s infinite; }
+        .slide-4 { animation: slideshow 16s 12s infinite; }
+
+        .hero-logo-container {
+            margin-bottom: 40px;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-logo {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(255, 26, 117, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Section */
+        section {
+            padding: 80px 60px;
+        }
+
+        section h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 50px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        /* Partnership Section */
+        .partnership {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%);
+            border-top: 2px solid rgba(255, 26, 117, 0.2);
+            border-bottom: 2px solid rgba(255, 26, 117, 0.2);
+        }
+
+        .partnership-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .partnership-content h2 {
+            font-size: 48px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .partner-highlight {
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .partnership-content > p {
+            font-size: 16px;
+            color: #b0b0d0;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .partnership-details {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .partnership-point {
+            background: rgba(255, 26, 117, 0.1);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .partnership-point:hover {
+            background: rgba(255, 26, 117, 0.15);
+            border-color: rgba(255, 26, 117, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 26, 117, 0.15);
+        }
+
+        .partnership-point h3 {
+            font-size: 18px;
+            color: #ff1a75;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .partnership-point p {
+            color: #b0b0d0;
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .partnership-cta {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .partnership-cta p {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .partner-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            text-decoration: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .partner-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255, 26, 117, 0.05);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #ff1a75;
+            box-shadow: 0 15px 40px rgba(255, 26, 117, 0.2);
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ff1a75;
+        }
+
+        .card p {
+            color: #b0b0d0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .race-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .race-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .race-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-left: 2px solid #ff1a75;
+            padding-left: 12px;
+        }
+
+        .race-label {
+            font-size: 11px;
+            color: #00d4ff;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .race-value {
+            font-size: 13px;
+            color: #b0b0d0;
+            font-weight: 600;
+        }
+
+        /* Pilots Grid */
+        .pilots-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pilot-card {
+            background: rgba(255, 26, 117, 0.05);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pilot-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff1a75;
+            box-shadow: 0 15px 40px rgba(255, 26, 117, 0.2);
+        }
+
+        .pilot-image {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
+        }
+
+        .pilot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            transition: transform 0.3s ease;
+        }
+
+        .pilot-card:hover .pilot-image img {
+            transform: scale(1.05);
+        }
+
+        .pilot-info {
+            padding: 20px;
+        }
+
+        .pilot-info h3 {
+            font-size: 18px;
+            color: #ff1a75;
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .pilot-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .stat {
+            background: rgba(255, 26, 117, 0.1);
+            border: 1px solid rgba(255, 26, 117, 0.3);
+            border-radius: 10px;
+            padding: 12px 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pilot-card:hover .stat {
+            background: rgba(255, 26, 117, 0.2);
+            border-color: rgba(255, 26, 117, 0.5);
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 24px;
+            font-weight: 900;
+            color: #00d4ff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 11px;
+            color: #b0b0d0;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Join Section */
+        .join-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .join-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        .join-text {
+            width: 100%;
+            text-align: center;
+        }
+
+        .join-text h3 {
+            font-size: 32px;
+            color: #ff1a75;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .join-text > p {
+            color: #b0b0d0;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .conditions-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 0 auto 40px;
+            max-width: 1000px;
+        }
+
+        .condition-item {
+            display: flex;
+            gap: 15px;
+            background: rgba(255, 26, 117, 0.08);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .condition-item:hover {
+            background: rgba(255, 26, 117, 0.15);
+            border-color: rgba(255, 26, 117, 0.4);
+            transform: translateX(5px);
+        }
+
+        .condition-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .condition-item h4 {
+            color: #00d4ff;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .condition-item p {
+            color: #b0b0d0;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .discord-box-centered {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            border-radius: 15px;
+            padding: 30px 40px;
+            text-align: center;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .discord-box-centered h3 {
+            color: #ff1a75;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 900;
+        }
+
+        .discord-box-centered > p {
+            color: #b0b0d0;
+            font-size: 13px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .discord-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .discord-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        .discord-icon {
+            font-size: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.8);
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+            padding: 40px 60px;
+            text-align: center;
+            color: #b0b0d0;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #ff1a75;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 20px;
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 40px 20px;
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+
+            .pilots-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partnership-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .partnership-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="logo_simtek.png" alt="Simtek Performance Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#pilots">Nos Pilotes</a></li>
+            <li><a href="#join">Rejoins Nous</a></li>
+        </ul>
+        <a href="https://discord.gg/Wycg5DDj" target="_blank" class="cta-button">Nous Contacter</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-slider">
+            <div class="slide slide-1"></div>
+            <div class="slide slide-2"></div>
+            <div class="slide slide-3"></div>
+            <div class="slide slide-4"></div>
+        </div>
+        
+        <div class="hero-logo-container">
+            <img src="logo_simtek.png" alt="Simtek Performance Logo" class="hero-logo">
+        </div>
+        
+        <p class="hero-subtitle">Équipe de SimRacing dédiée à l'excellence de la course virtuelle</p>
+        
+        <div class="hero-buttons">
+            <a href="https://discord.gg/Wycg5DDj" target="_blank" class="cta-button">Rejoindre l'équipe</a>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partnership">
+        <div class="partnership-container">
+            <div class="partnership-content">
+                <h2>Notre Partenariat avec <span class="partner-highlight">ComputeRent</span></h2>
+                
+                <p>Simtek Performance est fière de s'associer avec <strong>ComputeRent.fr</strong>, leader en solutions informatiques haute performance. Ce partenariat représente bien plus qu'une simple collaboration : c'est une union de deux entités partageant la même philosophie d'<strong>excellence, d'innovation et de performance</strong>.</p>
+
+                <div class="partnership-details">
+                    <div class="partnership-point">
+                        <h3>🖥️ Technologie de Pointe</h3>
+                        <p>ComputeRent.fr nous fournit des solutions informatiques premium permettant à nos pilotes de disposer d'équipements de last-generation pour optimiser leurs performances en SimRacing. Des PC ultra-puissants aux configurations sur mesure, chaque détail est pensé pour la victoire.</p>
+                    </div>
+
+                    <div class="partnership-point">
+                        <h3>⚡ Performance Garantie</h3>
+                        <p>Notre collaboration garantit à Simtek Performance un accès à l'infrastructure informatique la plus fiable et performante du marché. Zéro lag, zéro compromis : juste la perfection pour nos courses virtuelles les plus exigeantes.</p>
+                    </div>
+
+                    <div class="partnership-point">
+                        <h3>🤝 Partenaires de Confiance</h3>
+                        <p>ComputeRent.fr comprend les enjeux du SimRacing professionnel et s'engage à nos côtés pour repousser les limites. Une relation fondée sur la transparence, la réactivité et l'engagement mutuel vers l'excellence.</p>
+                    </div>
+
+                    <div class="partnership-point">
+                        <h3>🚀 Innovations Futures</h3>
+                        <p>Ensemble, Simtek Performance et ComputeRent.fr repoussent les frontières du possible. Des solutions cloud gaming aux dernières technologies de rendu graphique, nous construisons l'avenir du SimRacing compétitif.</p>
+                    </div>
+                </div>
+
+                <div class="partnership-cta">
+                    <p><strong>ComputeRent.fr</strong> : Le partenaire technologique officiel de Simtek Performance</p>
+                    <a href="https://computerent.fr" target="_blank" class="partner-button">Visiter ComputeRent.fr</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="races">
+        <h2>Nos Dernières Courses</h2>
+        <div class="cards-grid">
+            <div class="card race-card">
+                <h3>🏁 24h du Mans</h3>
+                <div class="race-info">
+                    <div class="race-detail">
+                        <span class="race-label">Pilotes</span>
+                        <span class="race-value">Hugo, Denis, Guillaume</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Circuit</span>
+                        <span class="race-value">Le Mans</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Durée</span>
+                        <span class="race-value">24 heures</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Résultat</span>
+                        <span class="race-value">À venir 28/29/30 Nov</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card race-card">
+                <h3>🏎️ 12h de Spa</h3>
+                <div class="race-info">
+                    <div class="race-detail">
+                        <span class="race-label">Pilotes</span>
+                        <span class="race-value">Hugo, Denis, Guillaume</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Circuit</span>
+                        <span class="race-value">Spa</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Durée</span>
+                        <span class="race-value">12 heures</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Résultat</span>
+                        <span class="race-value">Top 5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card race-card">
+                <h3>🚗 6H de Fuji 40</h3>
+                <div class="race-info">
+                    <div class="race-detail">
+                        <span class="race-label">Pilotes</span>
+                        <span class="race-value">Hugo, Denis, Guillaume</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Circuit</span>
+                        <span class="race-value">Fuji</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Durée</span>
+                        <span class="race-value">6 heures</span>
+                    </div>
+                    <div class="race-detail">
+                        <span class="race-label">Résultat</span>
+                        <span class="race-value">40ème</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilots Section -->
+    <section id="pilots">
+        <h2>Nos Pilotes</h2>
+        <div class="pilots-grid">
+            <div class="pilot-card">
+                <div class="pilot-image">
+                    <img src="hugo.png" alt="Hugo">
+                </div>
+                <div class="pilot-info">
+                    <h3>Hugo</h3>
+                    <div class="pilot-stats">
+                        <div class="stat">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label">Victoires</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">40</span>
+                            <span class="stat-label">Podiums</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">49</span>
+                            <span class="stat-label">Top 5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pilot-card">
+                <div class="pilot-image">
+                    <img src="guillaume.png" alt="Guillaume">
+                </div>
+                <div class="pilot-info">
+                    <h3>Guillaume</h3>
+                    <div class="pilot-stats">
+                        <div class="stat">
+                            <span class="stat-value">19</span>
+                            <span class="stat-label">Victoires</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">54</span>
+                            <span class="stat-label">Podiums</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">84</span>
+                            <span class="stat-label">Top 5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pilot-card">
+                <div class="pilot-image">
+                    <img src="denis.png" alt="Denis">
+                </div>
+                <div class="pilot-info">
+                    <h3>Denis</h3>
+                    <div class="pilot-stats">
+                        <div class="stat">
+                            <span class="stat-value">5</span>
+                            <span class="stat-label">Victoires</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">20</span>
+                            <span class="stat-label">Podiums</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">25</span>
+                            <span class="stat-label">Top 5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Racing Gallery Section -->
+    <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 1600px; margin: 0 auto;">
+            <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;">
+                <img src="circuit1.png" alt="Circuit de course 1" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;">
+                <img src="circuit2.png" alt="Circuit de course 2" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;">
+                <img src="car-top.png" alt="SIMTEK Performance - Vue de dessus" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join">
+        <h2>Rejoins Nous</h2>
+        
+        <div class="join-container">
+            <div class="join-content">
+                <div class="join-text">
+                    <h3>Conditions pour Rejoindre Simtek Performance</h3>
+                    <p>Tu rêves de piloter au niveau professionnel dans Simtek Performance ? Voici ce que nous attendons de nos pilotes :</p>
+                    
+                    <div class="conditions-list">
+                        <div class="condition-item">
+                            <span class="condition-icon">🤝</span>
+                            <div>
+                                <h4>Esprit d'Équipe</h4>
+                                <p>Engagement envers la discipline de l'équipe, communication fluide et respect des protocoles compétitifs.</p>
+                            </div>
+                        </div>
+
+                        <div class="condition-item">
+                            <span class="condition-icon">📅</span>
+                            <div>
+                                <h4>Disponibilité</h4>
+                                <p>Capacité à participer aux entraînements réguliers et aux courses programmées du calendrier officiel.</p>
+                            </div>
+                        </div>
+
+                        <div class="condition-item">
+                            <span class="condition-icon">🚀</span>
+                            <div>
+                                <h4>Potentiel de Développement</h4>
+                                <p>Volonté d'amélioration continue, coachabilité et ambition de repousser les limites du SimRacing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="discord-box-centered">
+                        <h3>Nous Rejoindre</h3>
+                        <p>Prêt à relever le défi ? Rejoins notre communauté Discord et envoie ta candidature !</p>
+                        <a href="https://discord.gg/Wycg5DDj" target="_blank" class="discord-button">
+                            <span class="discord-icon">💬</span>
+                            Rejoindre Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
+        <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
+        <div class="social-links">
+            <a href="https://discord.gg/Wycg5DDj" target="_blank">Discord</a>
+        </div>
+    </footer>
+</body>
+</html>
