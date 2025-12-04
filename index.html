@@ -406,7 +406,7 @@
             font-weight: 600;
         }
 
-        /* Pilots Grid */
+        /* Pilots Grid AMÉLIORATION DU CADRAGE */
         .pilots-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -432,19 +432,62 @@
             box-shadow: 0 15px 40px rgba(255, 26, 117, 0.2);
         }
 
+        /* AMÉLIORATION PRINCIPALE : Meilleur cadrage des photos */
         .pilot-image {
             width: 100%;
-            aspect-ratio: 16 / 10;
+            height: 280px; /* Hauteur fixe pour uniformité */
             overflow: hidden;
             background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
+            position: relative;
         }
 
+        /* SOLUTION 1 : Ajustement automatique avec contain pour voir toute l'image */
         .pilot-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: center 25%;
+            object-fit: contain; /* Changé de cover à contain pour voir toute l'image */
+            object-position: center center; /* Centrage parfait */
             transition: transform 0.3s ease;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 26, 62, 0.95) 100%);
+        }
+
+        /* SOLUTION ALTERNATIVE 2 : Si vous préférez remplir tout l'espace, utilisez cette classe */
+        .pilot-image-fill img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Remplit tout l'espace */
+            object-position: center top; /* Focus sur le haut de l'image où se trouve généralement le visage */
+            transition: transform 0.3s ease;
+        }
+
+        /* SOLUTION 3 : Pour un cadrage portrait optimal */
+        .pilot-image-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 15%; /* Ajusté pour mieux cadrer les visages */
+            transition: transform 0.3s ease;
+        }
+
+        /* Classes individuelles pour ajuster chaque pilote si nécessaire */
+        .pilot-hugo .pilot-image img {
+            object-position: center 20%; /* Ajustement spécifique pour Hugo */
+        }
+
+        .pilot-guillaume .pilot-image img {
+            object-position: center 18%; /* Ajustement spécifique pour Guillaume */
+        }
+
+        .pilot-denis .pilot-image img {
+            object-position: center 22%; /* Ajustement spécifique pour Denis */
+        }
+
+        .pilot-mathis .pilot-image img {
+            object-position: center 20%; /* Ajustement spécifique pour Mathis */
+        }
+
+        .pilot-renaud .pilot-image img {
+            object-position: center 20%; /* Ajustement spécifique pour Renaud */
         }
 
         .pilot-card:hover .pilot-image img {
@@ -848,11 +891,11 @@
         </div>
     </section>
 
-    <!-- Pilots Section -->
+    <!-- Pilots Section avec classes personnalisées pour chaque pilote -->
     <section id="pilots">
         <h2>Nos Pilotes</h2>
         <div class="pilots-grid">
-            <div class="pilot-card">
+            <div class="pilot-card pilot-hugo">
                 <div class="pilot-image">
                     <img src="hugo.png" alt="Hugo">
                 </div>
@@ -875,7 +918,7 @@
                 </div>
             </div>
 
-            <div class="pilot-card">
+            <div class="pilot-card pilot-guillaume">
                 <div class="pilot-image">
                     <img src="guillaume.png" alt="Guillaume">
                 </div>
@@ -898,7 +941,7 @@
                 </div>
             </div>
 
-            <div class="pilot-card">
+            <div class="pilot-card pilot-denis">
                 <div class="pilot-image">
                     <img src="denis.png" alt="Denis">
                 </div>
@@ -921,7 +964,7 @@
                 </div>
             </div>
             
-                        <div class="pilot-card">
+            <div class="pilot-card pilot-mathis">
                 <div class="pilot-image">
                     <img src="mathis.png" alt="Mathis">
                 </div>
@@ -944,8 +987,7 @@
                 </div>
             </div>
 
-            
-            <div class="pilot-card">
+            <div class="pilot-card pilot-renaud">
                 <div class="pilot-image">
                     <img src="Renaud.png" alt="Renaud">
                 </div>
