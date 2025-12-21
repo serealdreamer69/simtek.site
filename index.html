@@ -1060,22 +1060,30 @@
 <section style="padding: 80px 60px; background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.8) 100%);">
     <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;">🔴 LIVE</h2>
     <div style="max-width: 900px; margin: 0 auto;">
-       <div id="live-container" style="position:relative;">
-    
-    <!-- IMAGE HORS LIVE -->
-    <img id="offline-img"
-         src="offline-live.jpg"
-         style="width:100%; height:500px; object-fit:cover; border-radius:20px;">
+  <div style="position:relative; max-width:900px; margin:0 auto;">
 
-    <!-- PLAYER LIVE -->
-    <iframe id="live-iframe"
-        src="https://www.youtube.com/embed/live_stream?channel=UCwIyQLGVWaCPNpYSGfx8KEg&autoplay=1&mute=1"
-        style="display:none; width:100%; height:500px; border-radius:20px;"
+    <!-- IFRAME TOUJOURS EN DESSOUS -->
+    <iframe
+        src="https://www.youtube.com/embed/live_stream?channel=UCwIyQLGVWaCPNpYSGfx8KEg"
+        style="width:100%; height:500px; border-radius:20px;"
         frameborder="0"
-        allow="autoplay"
         allowfullscreen>
     </iframe>
 
+    <!-- IMAGE PAR-DESSUS -->
+    <img
+        id="live-cover"
+        src="offline-live.jpg"
+        style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:20px;
+            cursor:pointer;
+        ">
 </div>
 </section>
 
