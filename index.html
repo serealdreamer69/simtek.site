@@ -1160,20 +1160,12 @@
         </div>
     </footer>
 
-    <script>
-    const iframe = document.getElementById("live-iframe");
-    const offline = document.getElementById("offline-img");
-
-    iframe.onload = () => {
-        iframe.style.display = "block";
-        offline.style.display = "none";
-    };
-
-    iframe.onerror = () => {
-        iframe.style.display = "none";
-        offline.style.display = "block";
-    };
-    </script>
+<script>
+/*
+Quand TU veux afficher le live :
+document.getElementById("live-cover").style.display = "none";
+*/
+</script>
 
 </body>
 </html>
