@@ -1061,6 +1061,15 @@
     <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;">🔴 LIVE</h2>
     <div style="max-width: 900px; margin: 0 auto;">
 <div id="twitch-embed"></div>
+<!-- Conteneur avec image de couverture -->
+<div style="position: relative; max-width: 900px; margin: 0 auto;">
+    <!-- Image qui cache le message "Déconnecté" -->
+    <div id="offline-cover" style="position: absolute; width: 100%; height: 600px; background: url('car-top.png') center/cover; border-radius: 20px; z-index: 999; pointer-events: none;"></div>
+    
+    <!-- Votre embed Twitch -->
+    <div id="twitch-embed"></div>
+</div>
+
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script type="text/javascript">
   new Twitch.Embed("twitch-embed", {
@@ -1070,7 +1079,7 @@
     theme: "dark",
     layout: "video"
   });
-</script>
+</script></script>
 
     <!-- Racing Gallery Section -->
     <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
