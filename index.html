@@ -1151,5 +1151,21 @@
             <a href="https://discord.gg/DKhEsaA4Z9" target="_blank">Discord</a>
         </div>
     </footer>
+
+    <script>
+    const iframe = document.getElementById("live-iframe");
+    const offline = document.getElementById("offline-img");
+
+    iframe.onload = () => {
+        iframe.style.display = "block";
+        offline.style.display = "none";
+    };
+
+    iframe.onerror = () => {
+        iframe.style.display = "none";
+        offline.style.display = "block";
+    };
+    </script>
+
 </body>
 </html>
