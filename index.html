@@ -210,45 +210,19 @@
         .hero-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
             position: relative;
             z-index: 10;
         }
 
-        /* Section */
+        /* Sections générales */
         section {
             padding: 80px 60px;
         }
 
         section h2 {
-            font-size: 48px;
-            font-weight: 900;
-            margin-bottom: 50px;
             text-align: center;
-            letter-spacing: -1px;
-        }
-
-        /* Partnership Section */
-        .partnership {
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.08) 0%, rgba(0, 212, 255, 0.08) 100%);
-            border-top: 2px solid rgba(255, 26, 117, 0.2);
-            border-bottom: 2px solid rgba(255, 26, 117, 0.2);
-        }
-
-        .partnership-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .partnership-content h2 {
             font-size: 48px;
-            color: #ffffff;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .partner-highlight {
+            margin-bottom: 50px;
             background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -256,347 +230,761 @@
             font-weight: 900;
         }
 
+        /* Partnership Section */
+        .partnership {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partnership::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 26, 117, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .partnership-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .partnership-content h2 {
+            margin-bottom: 30px;
+        }
+
+        .partner-highlight {
+            color: #00d4ff;
+            -webkit-text-fill-color: #00d4ff;
+        }
+
         .partnership-content > p {
+            text-align: center;
             font-size: 16px;
             color: #b0b0d0;
-            margin-bottom: 40px;
+            max-width: 800px;
+            margin: 0 auto 50px;
             line-height: 1.8;
-            text-align: justify;
         }
 
         .partnership-details {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-bottom: 40px;
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
         .partnership-point {
-            background: rgba(255, 26, 117, 0.1);
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
             border: 1px solid rgba(255, 26, 117, 0.2);
-            border-radius: 12px;
-            padding: 25px;
+            border-radius: 15px;
+            padding: 30px;
             transition: all 0.3s ease;
         }
 
         .partnership-point:hover {
-            background: rgba(255, 26, 117, 0.15);
-            border-color: rgba(255, 26, 117, 0.4);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 26, 117, 0.15);
+            border-color: rgba(255, 26, 117, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 26, 117, 0.2);
         }
 
         .partnership-point h3 {
             font-size: 18px;
             color: #ff1a75;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
         .partnership-point p {
-            color: #b0b0d0;
             font-size: 13px;
+            color: #b0b0d0;
             line-height: 1.7;
-            margin: 0;
         }
 
         .partnership-cta {
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);
-            border: 2px solid rgba(255, 26, 117, 0.3);
-            border-radius: 15px;
-            padding: 30px;
             text-align: center;
-            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 26, 117, 0.1) 100%);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
         }
 
         .partnership-cta p {
             font-size: 16px;
             color: #ffffff;
             margin-bottom: 20px;
-            font-weight: 600;
         }
 
         .partner-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
             color: white;
-            text-decoration: none;
-            padding: 14px 35px;
+            border: none;
+            padding: 15px 40px;
             border-radius: 50px;
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 600;
+            cursor: pointer;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
-            border: none;
-            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+            text-decoration: none;
+            display: inline-block;
         }
 
         .partner-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.6);
         }
 
         /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-top: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .card {
-            background: rgba(255, 26, 117, 0.05);
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
             border: 1px solid rgba(255, 26, 117, 0.2);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 30px;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            border-color: #ff1a75;
-            box-shadow: 0 15px 40px rgba(255, 26, 117, 0.2);
+            border-color: rgba(255, 26, 117, 0.6);
+            box-shadow: 0 20px 40px rgba(255, 26, 117, 0.3);
         }
 
         .card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 20px;
             color: #ff1a75;
+            font-weight: 700;
         }
 
-        .card p {
-            color: #b0b0d0;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
+        /* Race Cards */
         .race-card {
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .race-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
         }
 
         .race-info {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: 15px;
         }
 
         .race-detail {
             display: flex;
-            flex-direction: column;
-            gap: 5px;
-            border-left: 2px solid #ff1a75;
-            padding-left: 12px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .race-detail:last-child {
+            border-bottom: none;
         }
 
         .race-label {
-            font-size: 11px;
-            color: #00d4ff;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
+            color: #b0b0d0;
+            font-size: 14px;
         }
 
         .race-value {
+            color: #00d4ff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* ============================================= */
+        /* SECTION PLANNING LMU - NOUVEAU STYLE */
+        /* ============================================= */
+        
+        #planning {
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 26, 62, 0.95) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #planning::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff1a75, #00d4ff, #ff1a75);
+            background-size: 200% 100%;
+            animation: gradientMove 3s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .planning-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .planning-header h2 {
+            margin-bottom: 10px;
+        }
+
+        .planning-update {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 26, 117, 0.15);
+            border: 1px solid rgba(255, 26, 117, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
             font-size: 13px;
             color: #b0b0d0;
-            font-weight: 600;
         }
 
-        /* Pilots Grid AMÉLIORATION DU CADRAGE */
-        .pilots-grid {
+        .planning-update .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .planning-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-top: 40px;
             max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
-        .pilot-card {
-            background: rgba(255, 26, 117, 0.05);
+        .planning-section {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.9) 100%);
             border: 1px solid rgba(255, 26, 117, 0.2);
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
-        .pilot-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff1a75;
-            box-shadow: 0 15px 40px rgba(255, 26, 117, 0.2);
+        .planning-section:hover {
+            border-color: rgba(255, 26, 117, 0.5);
+            box-shadow: 0 10px 40px rgba(255, 26, 117, 0.2);
         }
 
-        /* AMÉLIORATION PRINCIPALE : Meilleur cadrage des photos */
-        .pilot-image {
-            width: 100%;
-            height: 280px; /* Hauteur fixe pour uniformité */
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
-            position: relative;
+        .planning-section.full-width {
+            grid-column: 1 / -1;
         }
 
-        /* SOLUTION 1 : Ajustement automatique avec contain pour voir toute l'image */
-        .pilot-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Changé de cover à contain pour voir toute l'image */
-            object-position: center center; /* Centrage parfait */
-            transition: transform 0.3s ease;
-            background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 26, 62, 0.95) 100%);
+        .section-header {
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* SOLUTION ALTERNATIVE 2 : Si vous préférez remplir tout l'espace, utilisez cette classe */
-        .pilot-image-fill img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Remplit tout l'espace */
-            object-position: center top; /* Focus sur le haut de l'image où se trouve généralement le visage */
-            transition: transform 0.3s ease;
+        .section-icon {
+            font-size: 28px;
         }
 
-        /* SOLUTION 3 : Pour un cadrage portrait optimal */
-        .pilot-image-portrait img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 15%; /* Ajusté pour mieux cadrer les visages */
-            transition: transform 0.3s ease;
+        .section-title {
+            flex: 1;
         }
 
-        /* Classes individuelles pour ajuster chaque pilote si nécessaire */
-        .pilot-hugo .pilot-image img {
-            object-position: center 20%; /* Ajustement spécifique pour Hugo */
+        .section-title h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3px;
         }
 
-        .pilot-guillaume .pilot-image img {
-            object-position: center 18%; /* Ajustement spécifique pour Guillaume */
+        .section-title span {
+            font-size: 12px;
+            color: #b0b0d0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .pilot-denis .pilot-image img {
-            object-position: center 22%; /* Ajustement spécifique pour Denis */
-        }
-
-        .pilot-pierrick .pilot-image img {
-            object-position: center 20%; /* Ajustement spécifique pour Pierrick */
-        }
-
-        .pilot-renaud .pilot-image img {
-            object-position: center 20%; /* Ajustement spécifique pour Renaud */
-        }
-
-        .pilot-card:hover .pilot-image img {
-            transform: scale(1.05);
-        }
-
-        .pilot-info {
+        .section-content {
             padding: 20px;
         }
 
-        .pilot-info h3 {
-            font-size: 18px;
-            color: #ff1a75;
-            margin-bottom: 15px;
-            font-weight: 900;
+        /* Daily Races Tiers */
+        .tier-block {
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tier-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .tier-header {
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tier-badge {
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tier-bronze .tier-badge {
+            background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
+            color: #fff;
+        }
+
+        .tier-silver .tier-badge {
+            background: linear-gradient(135deg, #C0C0C0 0%, #808080 100%);
+            color: #1a1a3e;
+        }
+
+        .tier-gold .tier-badge {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a3e;
+        }
+
+        .tier-races {
+            padding: 0 18px 15px;
+        }
+
+        .race-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .race-item:last-child {
+            border-bottom: none;
+        }
+
+        .race-flag {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .race-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .race-classes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 5px;
+        }
+
+        .class-badge {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
             text-transform: uppercase;
         }
 
-        .pilot-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .class-badge.hypercar {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: #fff;
+        }
+
+        .class-badge.lmgt3 {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #fff;
+        }
+
+        .class-badge.lmp2 {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: #fff;
+        }
+
+        .class-badge.lmp3 {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: #fff;
+        }
+
+        .race-track {
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .race-track .config {
+            color: #b0b0d0;
+            font-weight: 400;
+        }
+
+        .race-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        .setup-badge {
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .setup-badge.fixed {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .setup-badge.open {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .duration-badge {
+            font-size: 12px;
+            color: #00d4ff;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .extra-badge {
+            font-size: 10px;
+            padding: 3px 8px;
+            background: rgba(255, 26, 117, 0.2);
+            color: #ff1a75;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Weekly & Special Event Cards */
+        .event-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .event-main {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .event-flag {
+            font-size: 40px;
+        }
+
+        .event-info h4 {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .event-info .event-classes {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .event-track {
+            font-size: 14px;
+            color: #b0b0d0;
+            margin-bottom: 5px;
+        }
+
+        .event-duration {
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .event-settings {
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .setting-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #b0b0d0;
+        }
+
+        .setting-item .icon {
+            font-size: 14px;
+        }
+
+        .event-schedule {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .schedule-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b0b0d0;
+            margin-bottom: 10px;
+        }
+
+        .schedule-days {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .day-badge {
+            padding: 6px 14px;
+            background: rgba(255, 26, 117, 0.15);
+            border: 1px solid rgba(255, 26, 117, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: #ff1a75;
+            font-weight: 600;
+        }
+
+        .schedule-times {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .time-badge {
+            padding: 5px 12px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 6px;
+            font-size: 12px;
+            color: #00d4ff;
+            font-weight: 500;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Special Event Highlight */
+        .special-event-section {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(26, 26, 62, 0.9) 100%);
+            border-color: rgba(255, 26, 117, 0.4);
+        }
+
+        .special-event-section .section-header {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, transparent 100%);
+        }
+
+        /* ============================================= */
+        /* FIN SECTION PLANNING LMU */
+        /* ============================================= */
+
+        /* Pilots Section */
+        .pilots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .pilot-card {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .pilot-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+        }
+
+        .pilot-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: #ff1a75;
+            box-shadow: 0 30px 60px rgba(255, 26, 117, 0.4);
+        }
+
+        .pilot-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pilot-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(transparent, rgba(10, 14, 39, 1));
+        }
+
+        .pilot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .pilot-card:hover .pilot-image img {
+            transform: scale(1.1);
+        }
+
+        .pilot-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .pilot-info h3 {
+            font-size: 26px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .pilot-stats {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
         }
 
         .stat {
-            background: rgba(255, 26, 117, 0.1);
-            border: 1px solid rgba(255, 26, 117, 0.3);
-            border-radius: 10px;
-            padding: 12px 8px;
             text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .pilot-card:hover .stat {
-            background: rgba(255, 26, 117, 0.2);
-            border-color: rgba(255, 26, 117, 0.5);
         }
 
         .stat-value {
             display: block;
-            font-size: 24px;
+            font-size: 32px;
             font-weight: 900;
-            color: #00d4ff;
-            margin-bottom: 5px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .stat-label {
-            display: block;
-            font-size: 11px;
+            font-size: 12px;
             color: #b0b0d0;
             text-transform: uppercase;
-            font-weight: 600;
             letter-spacing: 1px;
         }
 
         /* Join Section */
+        #join {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+        }
+
         .join-container {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .join-content {
             display: flex;
             flex-direction: column;
-            width: 100%;
             align-items: center;
         }
 
         .join-text {
             width: 100%;
-            text-align: center;
         }
 
         .join-text h3 {
-            font-size: 32px;
+            font-size: 28px;
             color: #ff1a75;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-align: center;
             font-weight: 900;
         }
 
         .join-text > p {
             color: #b0b0d0;
-            font-size: 16px;
+            font-size: 14px;
             margin-bottom: 30px;
+            text-align: center;
             line-height: 1.8;
         }
 
         .conditions-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 700px;
             margin: 0 auto 40px;
-            max-width: 1000px;
         }
 
         .condition-item {
             display: flex;
+            align-items: flex-start;
             gap: 15px;
-            background: rgba(255, 26, 117, 0.08);
-            border: 1px solid rgba(255, 26, 117, 0.2);
+            padding: 18px 25px;
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.6) 0%, rgba(10, 14, 39, 0.6) 100%);
+            border: 1px solid rgba(255, 26, 117, 0.15);
             border-radius: 12px;
-            padding: 20px;
             transition: all 0.3s ease;
         }
 
         .condition-item:hover {
-            background: rgba(255, 26, 117, 0.15);
             border-color: rgba(255, 26, 117, 0.4);
             transform: translateX(5px);
         }
@@ -708,6 +1096,16 @@
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .planning-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .planning-section.full-width {
+                grid-column: 1;
+            }
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 15px 20px;
@@ -740,6 +1138,27 @@
             .partnership-details {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .race-item {
+                flex-wrap: wrap;
+            }
+            
+            .race-meta {
+                width: 100%;
+                justify-content: flex-start;
+                margin-top: 10px;
+                padding-left: 32px;
+            }
+            
+            .event-main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .schedule-days, .schedule-times {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 1200px) {
@@ -757,6 +1176,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#hero">Accueil</a></li>
+            <li><a href="#planning">Planning LMU</a></li>
             <li><a href="#pilots">Nos Pilotes</a></li>
             <li><a href="#join">Rejoins Nous</a></li>
         </ul>
@@ -911,6 +1331,263 @@
             </div>
         </div>
     </section>
+
+    <!-- ============================================= -->
+    <!-- SECTION PLANNING LMU -->
+    <!-- ============================================= -->
+    <section id="planning">
+        <div class="planning-header">
+            <h2>📅 Planning LMU</h2>
+            <div class="planning-update">
+                <span class="pulse-dot"></span>
+                <span>Mis à jour : <strong id="update-date">Semaine du 23/12</strong></span>
+            </div>
+        </div>
+
+        <div class="planning-grid">
+            <!-- DAILY RACES -->
+            <div class="planning-section">
+                <div class="section-header">
+                    <span class="section-icon">🏁</span>
+                    <div class="section-title">
+                        <h3>Daily Races</h3>
+                        <span>Courses quotidiennes</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- Bronze / Débutant -->
+                    <div class="tier-block tier-bronze">
+                        <div class="tier-header">
+                            <span class="tier-badge">Débutant</span>
+                        </div>
+                        <div class="tier-races">
+                            <div class="race-item">
+                                <span class="race-flag">🇧🇭</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Bahrain <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">20 min</span>
+                                </div>
+                            </div>
+                            <div class="race-item">
+                                <span class="race-flag">🇺🇸</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Sebring <span class="config">(WEC)</span> - Ford Mustang</div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">20 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Silver / Intermédiaire -->
+                    <div class="tier-block tier-silver">
+                        <div class="tier-header">
+                            <span class="tier-badge">Intermédiaire</span>
+                        </div>
+                        <div class="tier-races">
+                            <div class="race-item">
+                                <span class="race-flag">🇮🇹</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmp2">LMP2</span>
+                                        <span class="class-badge lmp3">LMP3</span>
+                                    </div>
+                                    <div class="race-track">Monza <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">22 min</span>
+                                    <span class="extra-badge">Fuel x2</span>
+                                </div>
+                            </div>
+                            <div class="race-item">
+                                <span class="race-flag">🇧🇪</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmp2">LMP2</span>
+                                        <span class="class-badge lmp3">LMP3</span>
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Spa <span class="config">(ELMS)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge open">Open</span>
+                                    <span class="duration-badge">40 min</span>
+                                    <span class="extra-badge">Fuel x2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gold / Avancé -->
+                    <div class="tier-block tier-gold">
+                        <div class="tier-header">
+                            <span class="tier-badge">Avancé</span>
+                        </div>
+                        <div class="tier-races">
+                            <div class="race-item">
+                                <span class="race-flag">🇺🇸</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge hypercar">Hypercar</span>
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">COTA <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">40 min</span>
+                                </div>
+                            </div>
+                            <div class="race-item">
+                                <span class="race-flag">🇺🇸</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge hypercar">Hypercar</span>
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Sebring <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge open">Open</span>
+                                    <span class="duration-badge">60 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEC WEEKLY -->
+            <div class="planning-section">
+                <div class="section-header">
+                    <span class="section-icon">🏆</span>
+                    <div class="section-title">
+                        <h3>WEC Weekly</h3>
+                        <span>Course hebdomadaire</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="event-card">
+                        <div class="event-main">
+                            <span class="event-flag">🇧🇷</span>
+                            <div class="event-info">
+                                <h4>Interlagos</h4>
+                                <div class="event-classes">
+                                    <span class="class-badge hypercar">Hypercar</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="event-track">Configuration WEC • <span class="setup-badge open">Open Setup</span></div>
+                                <div class="event-duration">100 min</div>
+                            </div>
+                        </div>
+                        <div class="event-settings">
+                            <div class="setting-item">
+                                <span class="icon">🚗</span>
+                                <span>38 cars splits</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🌡️</span>
+                                <span>No tyre warmers</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🛞</span>
+                                <span>Pneus : 10</span>
+                            </div>
+                        </div>
+                        <div class="event-schedule">
+                            <div class="schedule-label">📅 Jours disponibles</div>
+                            <div class="schedule-days">
+                                <span class="day-badge">Mercredi</span>
+                                <span class="day-badge">Jeudi</span>
+                                <span class="day-badge">Lundi</span>
+                            </div>
+                            <div class="schedule-label">🕐 Horaires (UTC+1)</div>
+                            <div class="schedule-times">
+                                <span class="time-badge">01:00</span>
+                                <span class="time-badge">04:00</span>
+                                <span class="time-badge">11:00</span>
+                                <span class="time-badge">14:00</span>
+                                <span class="time-badge">17:00</span>
+                                <span class="time-badge">20:00</span>
+                                <span class="time-badge">22:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPECIAL EVENT - Full Width -->
+            <div class="planning-section special-event-section full-width">
+                <div class="section-header">
+                    <span class="section-icon">⭐</span>
+                    <div class="section-title">
+                        <h3>Special Event</h3>
+                        <span>Événement spécial de la semaine</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="event-card">
+                        <div class="event-main">
+                            <span class="event-flag">🇺🇸</span>
+                            <div class="event-info">
+                                <h4>8 Heures de Sebring</h4>
+                                <div class="event-classes">
+                                    <span class="class-badge hypercar">Hypercar</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="event-track">Sebring (WEC) • <span class="setup-badge open">Open Setup</span></div>
+                                <div class="event-duration">480 min (8h)</div>
+                            </div>
+                        </div>
+                        <div class="event-settings">
+                            <div class="setting-item">
+                                <span class="icon">🚗</span>
+                                <span>38 cars splits</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🌡️</span>
+                                <span>No tyre warmers</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🛞</span>
+                                <span>Pneus : 26</span>
+                            </div>
+                        </div>
+                        <div class="event-schedule">
+                            <div class="schedule-label">📅 Jours disponibles</div>
+                            <div class="schedule-days">
+                                <span class="day-badge">Vendredi</span>
+                                <span class="day-badge">Samedi</span>
+                                <span class="day-badge">Dimanche</span>
+                            </div>
+                            <div class="schedule-label">🕐 Horaires (UTC+1)</div>
+                            <div class="schedule-times">
+                                <span class="time-badge">04:00</span>
+                                <span class="time-badge">10:00</span>
+                                <span class="time-badge">15:00</span>
+                                <span class="time-badge">22:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================= -->
+    <!-- FIN SECTION PLANNING LMU -->
+    <!-- ============================================= -->
 
     <!-- Pilots Section avec classes personnalisées pour chaque pilote -->
     <section id="pilots">
