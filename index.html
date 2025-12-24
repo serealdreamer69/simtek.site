@@ -13,7 +13,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- AJOUTEZ ICI LES NOUVELLES BALISES META -->
     <meta name="description" content="SimTek Performance - Équipe professionnelle de SimRacing. Courses virtuelles, compétitions iRacing, ACC et Le Mans Ultimate.">
     <meta property="og:title" content="SimTek Performance - Équipe SimRacing">
     <meta property="og:description" content="Rejoignez l'élite du SimRacing avec SimTek Performance">
@@ -38,20 +37,9 @@
             line-height: 1.6;
         }
 
-       /* Navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background: rgba(10, 14, 39, 0.95);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 26, 117, 0.2);
-    transition: transform 0.3s ease;  /* ← AJOUTEZ CETTE LIGNE */
-}            display: flex;
+        /* Navigation */
+        nav {
+            display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
@@ -61,6 +49,7 @@ nav {
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+            transition: transform 0.3s ease;
         }
 
         .logo {
@@ -129,6 +118,124 @@ nav {
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6);
+        }
+
+        /* Menu Hamburger Mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: #ff1a75;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(9px, 9px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(9px, -9px);
+        }
+
+        /* Menu Mobile Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.98) 0%, rgba(26, 26, 62, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 40px;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .mobile-menu-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-links a:hover {
+            color: #ff1a75;
+            transform: scale(1.1);
+        }
+
+        .mobile-cta {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(255, 26, 117, 0.5);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 26, 117, 0.7);
         }
 
 /* Hero Section */
@@ -1157,9 +1264,71 @@ nav {
             }
         }
 
+        @media (max-width: 768px) {
+            /* Afficher le hamburger */
+            .hamburger {
+                display: flex;
+            }
+
+            /* Cacher les liens desktop */
+            .nav-links,
+            nav .cta-button {
+                display: none;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+                min-height: 70vh;
+            }
+            
+            .hero-video {
+                width: 95%;
+                height: 60%;
+            }
+            
+            section {
+                padding: 40px 20px;
+            }
+            
+            h2 {
+                font-size: 32px !important;
+            }
+            
+            .pilots-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partnership-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .race-item {
+                flex-wrap: wrap;
+            }
+            
+            .race-meta {
+                width: 100%;
+                justify-content: flex-start;
+                margin-top: 10px;
+                padding-left: 32px;
+            }
+            
+            .event-main {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
             
             .schedule-days, .schedule-times {
                 justify-content: center;
+            }
+
+            iframe {
+                height: 300px !important;
             }
         }
 
@@ -1168,81 +1337,11 @@ nav {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        /* ========== RESPONSIVE MOBILE ========== */
-@media (max-width: 768px) {
-    /* Navigation */
-    nav {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-    
-    /* Hero Section */
-    .hero {
-        padding: 40px 20px;
-        min-height: 70vh;
-    }
-    
-    .hero h1 {
-        font-size: 32px !important;
-    }
-    
-    .hero p {
-        font-size: 16px !important;
-    }
-    
-    .hero-video {
-        width: 95%;
-        height: 60%;
-    }
-    
-    /* Stats Grid */
-    .stats-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    /* Pilot Cards */
-    .pilot-grid {
-        grid-template-columns: 1fr !important;
-        gap: 30px;
-    }
-    
-    /* Gallery */
-    #gallery > div {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    /* Sections générales */
-    section {
-        padding: 40px 20px !important;
-    }
-    
-    /* Titres */
-    h2 {
-        font-size: 32px !important;
-    }
-    
-    /* Twitch Player */
-    iframe {
-        height: 300px !important;
-    }
-}
     </style>
 </head>
 <body>
     <!-- Navigation -->
-   <!-- Navigation -->
-<nav>
+   <nav>
     <div class="logo">
         <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
     </div>
@@ -1257,7 +1356,30 @@ nav {
     <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">
         Nous Contacter
     </a>
+
+    <!-- Hamburger Mobile -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </nav>
+
+<!-- Menu Mobile Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+        <div class="mobile-menu-links">
+            <a href="#hero" class="mobile-link">Accueil</a>
+            <a href="#planning" class="mobile-link">Planning LMU</a>
+            <a href="#pilots" class="mobile-link">Nos Pilotes</a>
+            <a href="#join" class="mobile-link">Rejoins Nous</a>
+        </div>
+        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">
+            Nous Contacter
+        </a>
+    </div>
+</div>
+
 <!-- Hero Section -->
 <section class="hero" id="hero">
 
@@ -1913,23 +2035,40 @@ nav {
         <i class="fab fa-instagram"></i> Instagram
     </a>
 </div>    </footer>
-<script>
-let lastScroll = 0;
-const nav = document.querySelector('nav');
 
+<!-- Scripts -->
+<script>
+// Menu Hamburger
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+// Toggle menu au clic sur hamburger
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+});
+
+// Fermer le menu au clic sur un lien
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    });
+});
+
+// Fermer le menu au scroll
+let lastScrollForMenu = 0;
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    // Si on scrolle vers le bas ET qu'on a dépassé 100px
-    if (currentScroll > lastScroll && currentScroll > 100) {
-        nav.style.transform = 'translateY(-100%)';
-    } 
-    // Si on scrolle vers le haut
-    else {
-        nav.style.transform = 'translateY(0)';
+    // Si on scroll (up ou down) et que le menu est ouvert
+    if (Math.abs(currentScroll - lastScrollForMenu) > 10 && mobileMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
     }
     
-    lastScroll = currentScroll;
+    lastScrollForMenu = currentScroll;
 });
 </script>
 </body>
