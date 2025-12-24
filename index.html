@@ -18,7 +18,7 @@
     <meta property="og:title" content="SimTek Performance - Équipe SimRacing">
     <meta property="og:description" content="Rejoignez l'élite du SimRacing avec SimTek Performance">
     <meta property="og:image" content="Logo_SIMTEK.png">
-    <meta property="og:url" content="https://simtek-site.vercel.app">
+    <meta property="og:url" content="https://simtekperformance.com">
     <meta name="keywords" content="simracing, esport, simtek, racing, iRacing, ACC, Le Mans Ultimate">
    
     <title>Simtek Performance - Équipe de SimRacing</title>
@@ -1146,55 +1146,6 @@
             }
         }
 
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                gap: 20px;
-                font-size: 12px;
-            }
-
-            .hero {
-                min-height: 60vh;
-                padding: 40px 20px;
-            }
-
-            section {
-                padding: 40px 20px;
-            }
-
-            section h2 {
-                font-size: 32px;
-            }
-
-            .pilots-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .partnership-details {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .race-item {
-                flex-wrap: wrap;
-            }
-            
-            .race-meta {
-                width: 100%;
-                justify-content: flex-start;
-                margin-top: 10px;
-                padding-left: 32px;
-            }
-            
-            .event-main {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
             
             .schedule-days, .schedule-times {
                 justify-content: center;
@@ -1206,6 +1157,75 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+        /* ========== RESPONSIVE MOBILE ========== */
+@media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 40px 20px;
+        min-height: 70vh;
+    }
+    
+    .hero h1 {
+        font-size: 32px !important;
+    }
+    
+    .hero p {
+        font-size: 16px !important;
+    }
+    
+    .hero-video {
+        width: 95%;
+        height: 60%;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* Pilot Cards */
+    .pilot-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    
+    /* Gallery */
+    #gallery > div {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* Sections générales */
+    section {
+        padding: 40px 20px !important;
+    }
+    
+    /* Titres */
+    h2 {
+        font-size: 32px !important;
+    }
+    
+    /* Twitch Player */
+    iframe {
+        height: 300px !important;
+    }
+}
     </style>
 </head>
 <body>
