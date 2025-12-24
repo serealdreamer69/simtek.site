@@ -13,6 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- AJOUTEZ ICI LES NOUVELLES BALISES META -->
     <meta name="description" content="SimTek Performance - Équipe professionnelle de SimRacing. Courses virtuelles, compétitions iRacing, ACC et Le Mans Ultimate.">
     <meta property="og:title" content="SimTek Performance - Équipe SimRacing">
     <meta property="og:description" content="Rejoignez l'élite du SimRacing avec SimTek Performance">
@@ -21,7 +22,7 @@
     <meta name="keywords" content="simracing, esport, simtek, racing, iRacing, ACC, Le Mans Ultimate">
    
     <title>Simtek Performance - Équipe de SimRacing</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -37,9 +38,20 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
-            display: flex;
+       /* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+    transition: transform 0.3s ease;  /* ← AJOUTEZ CETTE LIGNE */
+}            display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
@@ -49,7 +61,6 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 26, 117, 0.2);
-            transition: transform 0.3s ease;
         }
 
         .logo {
@@ -120,40 +131,94 @@
             box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6);
         }
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh;
-            padding: 60px 40px;
-            text-align: center;
-            background: linear-gradient(
-              135deg,
-              rgba(10, 14, 39, 0.45) 0%,
-              rgba(26, 26, 62, 0.45) 100%
-            );
-            position: relative;
-            overflow: hidden;
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 60px 40px;
+    text-align: center;
+
+    background: linear-gradient(
+      135deg,
+      rgba(10, 14, 39, 0.45) 0%,
+      rgba(26, 26, 62, 0.45) 100%
+    );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 75%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 25px;
+    box-shadow: 
+        0 25px 80px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(255, 26, 117, 0.3),
+        inset 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: none;
         }
 
-        .hero-video {
+        .slide {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 75%;
-            object-fit: cover;
-            z-index: -1;
-            border-radius: 25px;
-            box-shadow: 
-                0 25px 80px rgba(0, 0, 0, 0.5),
-                0 0 40px rgba(255, 26, 117, 0.3),
-                inset 0 0 20px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 4s ease-in-out;
+            background-size: cover;
+            background-position: center;
         }
+
+        .slide-1 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide-2 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide-3 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide-4 {
+            background: url('racing.jpg') center/cover;
+        }
+
+        .slide:first-child {
+            opacity: 1;
+        }
+
+        @keyframes slideshow {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            25% { opacity: 1; }
+            35% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .slide-1 { animation: slideshow 16s infinite; }
+        .slide-2 { animation: slideshow 16s 4s infinite; }
+        .slide-3 { animation: slideshow 16s 8s infinite; }
+        .slide-4 { animation: slideshow 16s 12s infinite; }
 
         .hero-logo-container {
             margin-bottom: 40px;
@@ -408,7 +473,10 @@
             font-size: 14px;
         }
 
-        /* SECTION PLANNING LMU */
+        /* ============================================= */
+        /* SECTION PLANNING LMU - NOUVEAU STYLE */
+        /* ============================================= */
+        
         #planning {
             background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 26, 62, 0.95) 100%);
             position: relative;
@@ -525,6 +593,7 @@
             padding: 20px;
         }
 
+        /* Daily Races Tiers */
         .tier-block {
             margin-bottom: 20px;
             background: rgba(0, 0, 0, 0.2);
@@ -682,6 +751,7 @@
             font-weight: 600;
         }
 
+        /* Weekly & Special Event Cards */
         .event-card {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 15px;
@@ -795,6 +865,7 @@
             font-family: 'Courier New', monospace;
         }
 
+        /* Special Event Highlight */
         .special-event-section {
             background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(26, 26, 62, 0.9) 100%);
             border-color: rgba(255, 26, 117, 0.4);
@@ -803,6 +874,10 @@
         .special-event-section .section-header {
             background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, transparent 100%);
         }
+
+        /* ============================================= */
+        /* FIN SECTION PLANNING LMU */
+        /* ============================================= */
 
         /* Pilots Section */
         .pilots-grid {
@@ -1082,196 +1157,130 @@
             }
         }
 
+            
+            .schedule-days, .schedule-times {
+                justify-content: center;
+            }
+        }
+
         @media (max-width: 1200px) {
             .partnership-details {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
         /* ========== RESPONSIVE MOBILE ========== */
-        @media (max-width: 768px) {
-            /* Cacher menu desktop */
-            nav .nav-links,
-            nav .cta-button {
-                display: none !important;
-            }
-            
-            nav {
-                padding: 15px 20px;
-            }
-            
-            /* Hero Section */
-            .hero {
-                padding: 40px 20px;
-                min-height: 70vh;
-            }
-            
-            .hero-video {
-                width: 95%;
-                height: 60%;
-            }
-            
-            /* Sections générales */
-            section {
-                padding: 40px 20px !important;
-            }
-            
-            h2 {
-                font-size: 32px !important;
-            }
-            
-            /* Gallery */
-            #gallery > div {
-                grid-template-columns: 1fr !important;
-                gap: 20px;
-            }
-            
-            /* Twitch Player */
-            iframe {
-                height: 300px !important;
-            }
-
-            .partnership-details {
-                grid-template-columns: 1fr !important;
-                gap: 20px;
-            }
-
-            .race-item {
-                flex-wrap: wrap;
-            }
-            
-            .race-meta {
-                width: 100%;
-                justify-content: flex-start;
-                margin-top: 10px;
-                padding-left: 32px;
-            }
-            
-            .event-main {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .schedule-days, .schedule-times {
-                justify-content: center;
-            }
-            
-            /* Padding bas pour le menu mobile */
-            body {
-                padding-bottom: 80px;
-            }
-        }
-
-        /* ========== NAVIGATION MOBILE PAR ONGLETS ========== */
-        .mobile-tabs {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-section {
-                display: none;
-                animation: fadeIn 0.3s ease;
-            }
-            
-            .mobile-section.active {
-                display: block;
-            }
-            
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            
-            /* Menu onglets fixe en bas */
-            .mobile-tabs {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: rgba(10, 14, 39, 0.98);
-                backdrop-filter: blur(15px);
-                border-top: 2px solid rgba(255, 26, 117, 0.3);
-                justify-content: space-around;
-                padding: 10px 5px;
-                z-index: 9999;
-                box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.5);
-            }
-            
-            .tab-item {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 5px;
-                padding: 8px 10px;
-                color: #b0b0d0;
-                text-decoration: none;
-                font-size: 11px;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                transition: all 0.3s ease;
-                cursor: pointer;
-                flex: 1;
-                border-radius: 10px;
-            }
-            
-            .tab-item i {
-                font-size: 20px;
-                transition: all 0.3s ease;
-            }
-            
-            .tab-item.active {
-                color: #ff1a75;
-                background: rgba(255, 26, 117, 0.1);
-            }
-            
-            .tab-item.active i {
-                transform: scale(1.2);
-            }
-        }
+@media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 40px 20px;
+        min-height: 70vh;
+    }
+    
+    .hero h1 {
+        font-size: 32px !important;
+    }
+    
+    .hero p {
+        font-size: 16px !important;
+    }
+    
+    .hero-video {
+        width: 95%;
+        height: 60%;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* Pilot Cards */
+    .pilot-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    
+    /* Gallery */
+    #gallery > div {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    /* Sections générales */
+    section {
+        padding: 40px 20px !important;
+    }
+    
+    /* Titres */
+    h2 {
+        font-size: 32px !important;
+    }
+    
+    /* Twitch Player */
+    iframe {
+        height: 300px !important;
+    }
+}
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
-        </div>
+   <!-- Navigation -->
+<nav>
+    <div class="logo">
+        <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
+    </div>
 
-        <ul class="nav-links">
-            <li><a href="#hero">Accueil</a></li>
-            <li><a href="#planning">Planning LMU</a></li>
-            <li><a href="#pilots">Nos Pilotes</a></li>
-            <li><a href="#join">Rejoins Nous</a></li>
-        </ul>
+    <ul class="nav-links">
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#planning">Planning LMU</a></li>
+        <li><a href="#pilots">Nos Pilotes</a></li>
+        <li><a href="#join">Rejoins Nous</a></li>
+    </ul>
 
+    <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">
+        Nous Contacter
+    </a>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="hero">
+
+    <!-- Vidéo de fond -->
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="488video.webm" type="video/webm">
+    </video>
+
+    <div class="hero-logo-container">
+        <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="hero-logo">
+    </div>
+
+    <p class="hero-subtitle">
+        Team Esport dédiée à l'excellence du Simracing
+    </p>
+
+    <div class="hero-buttons">
         <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">
-            Nous Contacter
+            Rejoindre l'équipe
         </a>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="488video.webm" type="video/webm">
-        </video>
-
-        <div class="hero-logo-container">
-            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="hero-logo">
-        </div>
-
-        <p class="hero-subtitle">
-            Team Esport dédiée à l'excellence du Simracing
-        </p>
-
-        <div class="hero-buttons">
-            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">
-                Rejoindre l'équipe
-            </a>
-        </div>
-    </section>
+</section>
 
     <!-- Partnership Section -->
     <section class="partnership">
@@ -1402,7 +1411,9 @@
         </div>
     </section>
 
+    <!-- ============================================= -->
     <!-- SECTION PLANNING LMU -->
+    <!-- ============================================= -->
     <section id="planning">
         <div class="planning-header">
             <h2>📅 Planning LMU</h2>
@@ -1653,8 +1664,11 @@
             </div>
         </div>
     </section>
+    <!-- ============================================= -->
+    <!-- FIN SECTION PLANNING LMU -->
+    <!-- ============================================= -->
 
-    <!-- Pilots Section -->
+    <!-- Pilots Section avec classes personnalisées pour chaque pilote -->
     <section id="pilots">
         <h2>Nos Pilotes</h2>
         <div class="pilots-grid">
@@ -1773,6 +1787,7 @@
                 </div>
             </div>
 
+
             <div class="pilot-card pilot-renaud">
                 <div class="pilot-image">
                     <img src="Renaud.png" alt="Renaud">
@@ -1797,32 +1812,29 @@
             </div>
         </div>
     </section>
-
     <!-- Video Highlights Section -->
-    <section style="padding: 80px 60px;">
-        <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;"></h2>
-        <div style="max-width: 900px; margin: 0 auto;">
-            <video autoplay loop muted style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4);">
-                <source src="videosite2.webm" type="video/webm">
-                <source src="videosite2.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>
-
+<section style="padding: 80px 60px;">
+    <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;"></h2>
+    <div style="max-width: 900px; margin: 0 auto;">
+        <video autoplay loop muted style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4);">
+            <source src="videosite2.webm" type="video/webm">
+            <source src="videosite2.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
     <!-- Live Streaming Section -->
-    <section style="padding: 80px 60px; background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.8) 100%);">
-        <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;">🔴 LIVE</h2>
-        <div style="max-width: 900px; margin: 0 auto;">
-            <iframe
-                src="https://player.twitch.tv/?channel=simtekperformance&parent=simtekperformance.com&parent=www.simtekperformance.com"
-                height="600"
-                width="100%"
-                allowfullscreen>
-            </iframe>    
-        </div>
-    </section>
-
-    <!-- Racing Gallery Section -->
+<section style="padding: 80px 60px; background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.8) 100%);">
+    <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;">🔴 LIVE</h2>
+    <div style="max-width: 900px; margin: 0 auto;">
+<iframe
+    src="https://player.twitch.tv/?channel=simtekperformance&parent=simtekperformance.com&parent=www.simtekperformance.com"
+    height="600"
+    width="100%"
+    allowfullscreen>
+</iframe>    
+    
+</div>
+</section>    <!-- Racing Gallery Section -->
     <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 1600px; margin: 0 auto;">
             <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 40px 80px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;">
@@ -1831,9 +1843,9 @@
             <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;">
                 <img src="circuit2.png" alt="SIMTEK Performance - Vue de dessus" style="width: 150%; height: auto; display: block; object-fit: cover; margin-left: 0px; margin-top: 0px;">
             </div>
-            <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;">
+           <div style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;">
                 <img src="car-top.png" alt="SIMTEK Performance - Vue de dessus" style="width: 125%; height: auto; display: block; object-fit: cover; margin-left: -40px; margin-top: 0px;">
-            </div>
+        </div>
         </div>
     </section>
 
@@ -1890,127 +1902,35 @@
     <footer>
         <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
         <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
-        <div class="social-links">
-            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank">
-                <i class="fab fa-discord"></i> Discord
-            </a>
-            <a href="https://www.twitch.tv/simtekperformance" target="_blank">
-                <i class="fab fa-twitch"></i> Twitch
-            </a>
-            <a href="https://www.instagram.com/simtek_performance" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-        </div>
-    </footer>
+<div class="social-links">
+    <a href="https://discord.gg/DKhEsaA4Z9" target="_blank">
+        <i class="fab fa-discord"></i> Discord
+    </a>
+    <a href="https://www.twitch.tv/simtekperformance" target="_blank">
+        <i class="fab fa-twitch"></i> Twitch
+    </a>
+    <a href="https://www.instagram.com/simtek_performance" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+</div>    </footer>
+<script>
+let lastScroll = 0;
+const nav = document.querySelector('nav');
 
-    <!-- Menu Mobile Onglets -->
-    <nav class="mobile-tabs">
-        <div class="tab-item active" data-tab="home">
-            <i class="fas fa-home"></i>
-            <span>Accueil</span>
-        </div>
-        <div class="tab-item" data-tab="planning">
-            <i class="fas fa-calendar-alt"></i>
-            <span>Planning</span>
-        </div>
-        <div class="tab-item" data-tab="pilots">
-            <i class="fas fa-users"></i>
-            <span>Pilotes</span>
-        </div>
-        <div class="tab-item" data-tab="results">
-            <i class="fas fa-trophy"></i>
-            <span>Résultats</span>
-        </div>
-        <div class="tab-item" data-tab="join">
-            <i class="fas fa-user-plus"></i>
-            <span>Rejoindre</span>
-        </div>
-    </nav>
-
-    <!-- Scripts -->
-    <script>
-    // Menu scroll hide/show
-    let lastScroll = 0;
-    const nav = document.querySelector('nav');
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            nav.style.transform = 'translateY(-100%)';
-        } else {
-            nav.style.transform = 'translateY(0)';
-        }
-        
-        lastScroll = currentScroll;
-    });
-
-    // Navigation mobile par onglets
-    if (window.innerWidth <= 768) {
-        const hero = document.querySelector('.hero');
-        const partnership = document.querySelector('.partnership');
-        const planning = document.querySelector('#planning');
-        const races = document.querySelector('#races');
-        const pilots = document.querySelector('#pilots');
-        const videoSections = document.querySelectorAll('section');
-        let videoSection = null;
-        let liveSection = null;
-        
-        // Trouver les sections vidéo et live
-        videoSections.forEach((section, index) => {
-            if (section.querySelector('video') && !section.classList.contains('hero')) {
-                videoSection = section;
-            }
-            if (section.querySelector('iframe')) {
-                liveSection = section;
-            }
-        });
-        
-        const gallery = document.querySelector('#gallery');
-        const join = document.querySelector('#join');
-        
-        // Grouper les sections par onglet
-        const sections = {
-            home: [hero, partnership],
-            planning: [planning],
-            pilots: [pilots, videoSection],
-            results: [races, liveSection, gallery],
-            join: [join]
-        };
-        
-        // Fonction pour afficher un onglet
-        function showTab(tabName) {
-            Object.values(sections).flat().forEach(section => {
-                if (section) {
-                    section.style.display = 'none';
-                }
-            });
-            
-            sections[tabName].forEach(section => {
-                if (section) {
-                    section.style.display = 'block';
-                    section.classList.add('mobile-section', 'active');
-                }
-            });
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            
-            document.querySelectorAll('.tab-item').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-        }
-        
-        // Event listeners
-        document.querySelectorAll('.tab-item').forEach(tab => {
-            tab.addEventListener('click', () => {
-                showTab(tab.dataset.tab);
-            });
-        });
-        
-        // Afficher l'onglet Home par défaut
-        showTab('home');
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    // Si on scrolle vers le bas ET qu'on a dépassé 100px
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        nav.style.transform = 'translateY(-100%)';
+    } 
+    // Si on scrolle vers le haut
+    else {
+        nav.style.transform = 'translateY(0)';
     }
-    </script>
+    
+    lastScroll = currentScroll;
+});
+</script>
 </body>
 </html>
