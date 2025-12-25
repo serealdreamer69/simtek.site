@@ -169,6 +169,37 @@
             transform: rotate(-45deg) translate(9px, -9px);
         }
 
+        /* Classes pour gérer l'affichage desktop/mobile des liens */
+        .mobile-only {
+            display: none;
+        }
+        
+        .desktop-only {
+            display: block;
+        }
+        
+        /* Bouton mobile pour formulaire pilotes */
+        .join-button-mobile {
+            display: none;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 300px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+        }
+        
+        .join-button-mobile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
         /* Menu Mobile Overlay */
         .mobile-menu {
             display: none;
@@ -1296,6 +1327,25 @@
                 display: none;
             }
 
+            /* Gestion des liens desktop/mobile */
+            .desktop-only {
+                display: none !important;
+            }
+            
+            .mobile-only {
+                display: block !important;
+            }
+            
+            /* Cacher le formulaire de recrutement sur mobile */
+            #join .recruitment-form {
+                display: none !important;
+            }
+            
+            /* Afficher le bouton mobile pour le formulaire */
+            .join-button-mobile {
+                display: block;
+            }
+
             nav {
                 padding: 15px 20px;
             }
@@ -1778,7 +1828,9 @@
         <li><a href="#hero">Accueil</a></li>
         <li><a href="#planning">Planning LMU</a></li>
         <li><a href="#pilots">Nos Pilotes</a></li>
-        <li><a href="#join">Rejoins Nous</a></li>
+        <li><a href="become-partner.html">Become Partner</a></li>
+        <li class="desktop-only"><a href="#join">Rejoins Nous</a></li>
+        <li class="mobile-only"><a href="pilot-recruitment.html">Rejoins Nous</a></li>
     </ul>
 
     <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">
@@ -1800,7 +1852,8 @@
             <a href="#hero" class="mobile-link">Accueil</a>
             <a href="#planning" class="mobile-link">Planning LMU</a>
             <a href="#pilots" class="mobile-link">Nos Pilotes</a>
-            <a href="#join" class="mobile-link">Rejoins Nous</a>
+            <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
+            <a href="become-partner.html" class="mobile-link">Become Partner</a>
         </div>
         <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">
             Nous Contacter
@@ -2467,6 +2520,11 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Bouton pour mobile uniquement -->
+                    <a href="pilot-recruitment.html" class="join-button-mobile">
+                        📋 Remplir le Formulaire de Candidature
+                    </a>
 
                     <!-- FORMULAIRE DE RECRUTEMENT -->
                     <form class="recruitment-form scroll-animate fade-in" action="https://formspree.io/f/xjgbqgyy" method="POST">
