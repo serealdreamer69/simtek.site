@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejoindre l'équipe - Simtek Performance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(10, 14, 39, 0.95);
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #ff1a75;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff1a75;
+        }
+
+        /* Container principal */
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #b0b0d0;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        /* Conditions */
+        .conditions-section {
+            margin-bottom: 50px;
+        }
+
+        .conditions-list {
+            display: grid;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .condition-item {
+            display: flex;
+            gap: 15px;
+            background: rgba(255, 26, 117, 0.08);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .condition-item:hover {
+            background: rgba(255, 26, 117, 0.15);
+            border-color: rgba(255, 26, 117, 0.4);
+            transform: translateX(5px);
+        }
+
+        .condition-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .condition-item h4 {
+            color: #00d4ff;
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .condition-item p {
+            color: #b0b0d0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Formulaire */
+        .recruitment-form {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .recruitment-form h3 {
+            font-size: 28px;
+            color: #ff1a75;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .recruitment-form > p {
+            text-align: center;
+            color: #b0b0d0;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section-title {
+            font-size: 18px;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group label .required {
+            color: #ff1a75;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 26, 117, 0.3);
+            border-radius: 8px;
+            padding: 12px 15px;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff1a75;
+            background: rgba(255, 26, 117, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .checkbox-item:hover {
+            background: rgba(255, 26, 117, 0.1);
+        }
+
+        .checkbox-item input[type="checkbox"],
+        .checkbox-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #ff1a75;
+        }
+
+        .checkbox-item label {
+            color: #b0b0d0;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+            flex: 1;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        /* Divider */
+        .form-divider {
+            text-align: center;
+            margin: 40px 0;
+            color: #b0b0d0;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .form-divider::before,
+        .form-divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: rgba(255, 26, 117, 0.3);
+        }
+
+        .form-divider::before {
+            left: 0;
+        }
+
+        .form-divider::after {
+            right: 0;
+        }
+
+        /* Discord Box */
+        .discord-box-centered {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            border-radius: 15px;
+            padding: 30px 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .discord-box-centered h3 {
+            color: #ff1a75;
+            font-size: 24px;
+            margin-bottom: 12px;
+            font-weight: 900;
+        }
+
+        .discord-box-centered > p {
+            color: #b0b0d0;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .discord-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+        }
+
+        .discord-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.8);
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+            padding: 40px 20px;
+            text-align: center;
+            color: #b0b0d0;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .recruitment-form {
+                padding: 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">SIMTEK</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#pilots">Pilotes</a></li>
+            <li><a href="index.html#races">Courses</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <h1>Rejoins l'équipe</h1>
+        <p class="subtitle">Tu rêves de piloter au niveau professionnel dans Simtek Performance ?</p>
+
+        <!-- Conditions -->
+        <div class="conditions-section">
+            <div class="conditions-list">
+                <div class="condition-item">
+                    <span class="condition-icon">🤝</span>
+                    <div>
+                        <h4>Esprit d'Équipe</h4>
+                        <p>Engagement envers la discipline de l'équipe, communication fluide et respect des protocoles compétitifs.</p>
+                    </div>
+                </div>
+
+                <div class="condition-item">
+                    <span class="condition-icon">📅</span>
+                    <div>
+                        <h4>Disponibilité</h4>
+                        <p>Capacité à participer aux entraînements réguliers et aux courses programmées du calendrier officiel.</p>
+                    </div>
+                </div>
+
+                <div class="condition-item">
+                    <span class="condition-icon">🚀</span>
+                    <div>
+                        <h4>Potentiel de Développement</h4>
+                        <p>Volonté d'amélioration continue, coachabilité et ambition de repousser les limites du SimRacing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULAIRE DE RECRUTEMENT -->
+        <form class="recruitment-form" action="https://formspree.io/f/xjgbqgyy" method="POST">
+            <h3>📋 Formulaire de Candidature</h3>
+            <p>Remplis ce formulaire pour postuler chez SIMTEK Performance</p>
+
+            <!-- Informations de base -->
+            <div class="form-section">
+                <div class="form-section-title">📌 Informations de base</div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nom complet <span class="required">*</span></label>
+                        <input type="text" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Âge <span class="required">*</span></label>
+                        <input type="number" name="age" min="13" max="99" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Région</label>
+                        <input type="text" name="region" placeholder="Ex: Europe, Amérique du Nord...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expérience SimRacing -->
+            <div class="form-section">
+                <div class="form-section-title">🎮 Expérience SimRacing</div>
+                
+                <div class="form-group full-width">
+                    <label>Niveau actuel <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="checkbox-item">
+                            <input type="radio" id="niveau1" name="niveau" value="Débutant (moins de 6 mois)" required>
+                            <label for="niveau1">Débutant (moins de 6 mois)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="niveau2" name="niveau" value="Intermédiaire (6 mois - 2 ans)" required>
+                            <label for="niveau2">Intermédiaire (6 mois - 2 ans)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="niveau3" name="niveau" value="Avancé (2-5 ans)" required>
+                            <label for="niveau3">Avancé (2-5 ans)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="niveau4" name="niveau" value="Expert/Pro (5+ ans)" required>
+                            <label for="niveau4">Expert/Pro (5+ ans)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Simulateurs utilisés <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sim1" name="simulateurs" value="Le Mans Ultimate">
+                            <label for="sim1">Le Mans Ultimate</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sim2" name="simulateurs" value="iRacing">
+                            <label for="sim2">iRacing</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sim3" name="simulateurs" value="Assetto Corsa Competizione">
+                            <label for="sim3">Assetto Corsa Competizione</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="sim4" name="simulateurs" value="Autre">
+                            <label for="sim4">Autre</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>iRating / Safety Rating (iRacing)</label>
+                        <input type="text" name="irating" placeholder="Ex: 2500 iRating, A 4.0 SR">
+                    </div>
+                    <div class="form-group">
+                        <label>Safety Rating (LMU)</label>
+                        <input type="text" name="lmu_rating" placeholder="Ex: A, B, C...">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Compte RACECONTROLE PRO ou PRO+ <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="checkbox-item">
+                            <input type="radio" id="rc_oui" name="racecontrole" value="Oui" required>
+                            <label for="rc_oui">Oui</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="rc_non" name="racecontrole" value="Non" required>
+                            <label for="rc_non">Non</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Voitures préférées/maîtrisées</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="car1" name="voitures" value="Hypercar">
+                            <label for="car1">Hypercar</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="car2" name="voitures" value="LMP2">
+                            <label for="car2">LMP2</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="car3" name="voitures" value="LMP3">
+                            <label for="car3">LMP3</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="car4" name="voitures" value="LMGT3">
+                            <label for="car4">LMGT3</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disponibilité -->
+            <div class="form-section">
+                <div class="form-section-title">⏰ Disponibilité</div>
+                
+                <div class="form-group full-width">
+                    <label>Heures disponibles par semaine <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="checkbox-item">
+                            <input type="radio" id="heures1" name="heures_semaine" value="5-10h" required>
+                            <label for="heures1">5-10h</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="heures2" name="heures_semaine" value="10-20h" required>
+                            <label for="heures2">10-20h</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="heures3" name="heures_semaine" value="20-30h" required>
+                            <label for="heures3">20-30h</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="radio" id="heures4" name="heures_semaine" value="30h+" required>
+                            <label for="heures4">30h+</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Créneaux horaires disponibles <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="creneau1" name="creneaux" value="Semaine en journée">
+                            <label for="creneau1">Semaine en journée</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="creneau2" name="creneaux" value="Semaine en soirée (18h-23h)">
+                            <label for="creneau2">Semaine en soirée (18h-23h)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="creneau3" name="creneaux" value="Week-end">
+                            <label for="creneau3">Week-end</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Motivation -->
+            <div class="form-section">
+                <div class="form-section-title">💬 Motivation</div>
+                
+                <div class="form-group full-width">
+                    <label>Pourquoi veux-tu rejoindre SIMTEK Performance ? <span class="required">*</span></label>
+                    <textarea name="motivation" required placeholder="Explique-nous ce qui te motive..."></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Expérience en équipe/compétition ?</label>
+                    <textarea name="experience_equipe" placeholder="Raconte-nous ton expérience..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">
+                📤 Envoyer ma Candidature
+            </button>
+        </form>
+
+        <div class="form-divider">OU</div>
+
+        <div class="discord-box-centered">
+            <h3>Rejoins notre Discord</h3>
+            <p>Tu préfères discuter d'abord ? Rejoins notre serveur Discord !</p>
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="discord-button">
+                <span class="discord-icon">💬</span>
+                Rejoindre Discord
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
+        <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
+    </footer>
+</body>
+</html>
