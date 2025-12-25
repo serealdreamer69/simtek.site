@@ -1343,6 +1343,63 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        /* ============================================= */
+        /* ANIMATIONS AU SCROLL */
+        /* ============================================= */
+        
+        /* États initiaux (avant animation) */
+        .scroll-animate {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-animate.fade-in {
+            transform: translateY(30px);
+        }
+
+        .scroll-animate.slide-left {
+            transform: translateX(-50px);
+        }
+
+        .scroll-animate.slide-right {
+            transform: translateX(50px);
+        }
+
+        .scroll-animate.scale-up {
+            transform: scale(0.9);
+        }
+
+        /* État animé (visible) */
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        /* Délais pour animations en cascade */
+        .scroll-animate.delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .scroll-animate.delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .scroll-animate.delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .scroll-animate.delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .scroll-animate.delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        .scroll-animate.delay-6 {
+            transition-delay: 0.6s;
+        }
     </style>
 </head>
 <body>
@@ -1419,22 +1476,22 @@
                 <p>Simtek Performance est fière de s'associer avec <strong>ComputeRent.fr</strong>, leader en solutions informatiques haute performance. Ce partenariat représente bien plus qu'une simple collaboration : c'est une union de deux entités partageant la même philosophie d'<strong>excellence, d'innovation et de performance</strong>.</p>
 
                 <div class="partnership-details">
-                    <div class="partnership-point">
+                    <div class="partnership-point scroll-animate slide-left delay-1">
                         <h3>🖥️ Technologie de Pointe</h3>
                         <p>ComputeRent.fr nous fournit des solutions informatiques premium permettant à nos pilotes de disposer d'équipements de last-generation pour optimiser leurs performances en SimRacing. Des PC ultra-puissants aux configurations sur mesure, chaque détail est pensé pour la victoire.</p>
                     </div>
 
-                    <div class="partnership-point">
+                    <div class="partnership-point scroll-animate slide-right delay-2">
                         <h3>⚡ Performance Garantie</h3>
                         <p>Notre collaboration garantit à Simtek Performance un accès à l'infrastructure informatique la plus fiable et performante du marché. Zéro lag, zéro compromis : juste la perfection pour nos courses virtuelles les plus exigeantes.</p>
                     </div>
 
-                    <div class="partnership-point">
+                    <div class="partnership-point scroll-animate slide-left delay-3">
                         <h3>🤝 Partenaires de Confiance</h3>
                         <p>ComputeRent.fr comprend les enjeux du SimRacing professionnel et s'engage à nos côtés pour repousser les limites. Une relation fondée sur la transparence, la réactivité et l'engagement mutuel vers l'excellence.</p>
                     </div>
 
-                    <div class="partnership-point">
+                    <div class="partnership-point scroll-animate slide-right delay-4">
                         <h3>🚀 Innovations Futures</h3>
                         <p>Ensemble, Simtek Performance et ComputeRent.fr repoussent les frontières du possible. Des solutions cloud gaming aux dernières technologies de rendu graphique, nous construisons l'avenir du SimRacing compétitif.</p>
                     </div>
@@ -1452,7 +1509,7 @@
     <section id="races">
         <h2>Résultats Courses Officielles</h2>
         <div class="cards-grid">
-            <div class="card race-card">
+            <div class="card race-card scroll-animate fade-in delay-1">
                 <h3>🏁 6h de Fuji</h3>
                 <div class="race-info">
                     <div class="race-detail">
@@ -1473,7 +1530,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card race-card">
+            <div class="card race-card scroll-animate fade-in delay-2">
                 <h3>🏁12h de Spa</h3>
                 <div class="race-info">
                     <div class="race-detail">
@@ -1494,7 +1551,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card race-card">
+            <div class="card race-card scroll-animate fade-in delay-3">
                 <h3>🏁 24h du Mans</h3>
                 <div class="race-info">
                     <div class="race-detail">
@@ -1515,7 +1572,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card race-card">
+            <div class="card race-card scroll-animate fade-in delay-4">
                 <h3>🏁 6H du Paul Ricard</h3>
                 <div class="race-info">
                     <div class="race-detail">
@@ -1800,7 +1857,7 @@
     <section id="pilots">
         <h2>Nos Pilotes</h2>
         <div class="pilots-grid">
-            <div class="pilot-card pilot-hugo">
+            <div class="pilot-card pilot-hugo scroll-animate scale-up delay-1">
                 <div class="pilot-image">
                     <img src="hugo.png" alt="Hugo">
                 </div>
@@ -1823,7 +1880,7 @@
                 </div>
             </div>
 
-            <div class="pilot-card pilot-guillaume">
+            <div class="pilot-card pilot-guillaume scroll-animate scale-up delay-2">
                 <div class="pilot-image">
                     <img src="guillaume.png" alt="Guillaume">
                 </div>
@@ -1846,7 +1903,7 @@
                 </div>
             </div>
 
-            <div class="pilot-card pilot-denis">
+            <div class="pilot-card pilot-denis scroll-animate scale-up delay-3">
                 <div class="pilot-image">
                     <img src="denis.png" alt="Denis">
                 </div>
@@ -1869,7 +1926,7 @@
                 </div>
             </div>
             
-            <div class="pilot-card pilot-pierrick">
+            <div class="pilot-card pilot-pierrick scroll-animate scale-up delay-4">
                 <div class="pilot-image">
                     <img src="Pierrick.png" alt="pierrick">
                 </div>
@@ -1892,7 +1949,7 @@
                 </div>
             </div>
             
-            <div class="pilot-card pilot-ben">
+            <div class="pilot-card pilot-ben scroll-animate scale-up delay-5">
                 <div class="pilot-image">
                     <img src="ben.png" alt="Ben">
                 </div>
@@ -1916,7 +1973,7 @@
             </div>
 
 
-            <div class="pilot-card pilot-renaud">
+            <div class="pilot-card pilot-renaud scroll-animate scale-up delay-6">
                 <div class="pilot-image">
                     <img src="Renaud.png" alt="Renaud">
                 </div>
@@ -1988,7 +2045,7 @@
                     <p>Tu rêves de piloter au niveau professionnel dans Simtek Performance ? Voici ce que nous attendons de nos pilotes :</p>
                     
                     <div class="conditions-list">
-                        <div class="condition-item">
+                        <div class="condition-item scroll-animate slide-left delay-1">
                             <span class="condition-icon">🤝</span>
                             <div>
                                 <h4>Esprit d'Équipe</h4>
@@ -1996,7 +2053,7 @@
                             </div>
                         </div>
 
-                        <div class="condition-item">
+                        <div class="condition-item scroll-animate slide-left delay-2">
                             <span class="condition-icon">📅</span>
                             <div>
                                 <h4>Disponibilité</h4>
@@ -2004,7 +2061,7 @@
                             </div>
                         </div>
 
-                        <div class="condition-item">
+                        <div class="condition-item scroll-animate slide-left delay-3">
                             <span class="condition-icon">🚀</span>
                             <div>
                                 <h4>Potentiel de Développement</h4>
@@ -2075,6 +2132,34 @@ window.addEventListener('scroll', () => {
     }
     
     lastScrollForMenu = currentScroll;
+});
+
+// ============================================= 
+// ANIMATIONS AU SCROLL
+// ============================================= 
+
+// Observer pour détecter quand les éléments entrent dans le viewport
+const observerOptions = {
+    threshold: 0.15, // L'élément doit être visible à 15% pour déclencher l'animation
+    rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant que l'élément soit totalement visible
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            // Une fois animé, on arrête d'observer (animation une seule fois)
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observer tous les éléments avec la classe scroll-animate
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
 });
 </script>
 </body>
