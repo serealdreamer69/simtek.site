@@ -79,7 +79,7 @@
         }
 
         .logo-img {
-            height: 50px;
+            height: 70px;
             width: auto;
             object-fit: contain;
         }
@@ -1416,6 +1416,74 @@
         }
 
         /* ============================================= */
+        /* BOUTON BACK TO TOP */
+        /* ============================================= */
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(100px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        .back-to-top i {
+            font-size: 24px;
+            color: white;
+        }
+
+        /* Animation de la flèche */
+        @keyframes arrowBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .back-to-top:hover i {
+            animation: arrowBounce 0.6s ease-in-out infinite;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .back-to-top i {
+                font-size: 20px;
+            }
+        }
+
+        /* ============================================= */
         /* LIGHTBOX GALERIE */
         /* ============================================= */
         
@@ -2379,7 +2447,7 @@
                     </div>
 
                     <!-- FORMULAIRE DE RECRUTEMENT -->
-                    <form class="recruitment-form scroll-animate fade-in" action="https://formspree.io/f/xjgbqqyy" method="POST">
+                    <form class="recruitment-form scroll-animate fade-in" action="https://formspree.io/f/xjgbqgyy" method="POST">
                         <h3>📋 Formulaire de Candidature</h3>
                         <p>Remplis ce formulaire pour postuler chez SIMTEK Performance</p>
 
@@ -2586,6 +2654,11 @@
         </div>
     </section>
 
+    <!-- Bouton Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
@@ -2635,6 +2708,29 @@ window.addEventListener('scroll', () => {
     }
     
     lastScrollForMenu = currentScroll;
+});
+
+// ============================================= 
+// BOUTON BACK TO TOP
+// ============================================= 
+
+const backToTopButton = document.getElementById('backToTop');
+
+// Afficher/masquer le bouton selon le scroll
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+    } else {
+        backToTopButton.classList.remove('visible');
+    }
+});
+
+// Remonter en haut au clic
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // ============================================= 
