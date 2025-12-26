@@ -30,10 +30,20 @@
         }
 
         .logo {
-            font-size: 24px;
-            color: #ff1a75;
-            font-weight: bold;
-            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -362,6 +372,10 @@
                 padding: 15px 20px;
             }
 
+            .logo-img {
+                height: 50px;
+            }
+
             h1 {
                 font-size: 42px;
             }
@@ -384,7 +398,9 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="logo">SIMTEK</a>
+        <a href="index.html" class="logo">
+            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="partners.html">Partenaires</a></li>
@@ -406,6 +422,21 @@
             <p>Nous sommes 6 pilotes passionnés de SimRacing, unis par la même vision : repousser nos limites et représenter l'excellence dans les courses virtuelles. De la 24h du Mans aux endurances de Spa, nous donnons tout sur chaque circuit.</p>
             <br>
             <p>SimTek Performance n'est pas qu'une équipe, c'est une aventure humaine. Nous construisons quelque chose de spécial, course après course, avec authenticité et détermination.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Pilotes passionnés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Le Mans finishers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Passion pure</div>
+            </div>
         </div>
     </section>
 
@@ -453,6 +484,7 @@
         
         <div class="support-cards">
             <div class="support-card">
+                <div class="support-emoji">💙</div>
                 <h3 class="support-title">SUPPORTER</h3>
                 <p class="support-description">
                     Votre nom sur notre site<br>
@@ -462,6 +494,7 @@
             </div>
             
             <div class="support-card">
+                <div class="support-emoji">🏁</div>
                 <h3 class="support-title">PARTENAIRE</h3>
                 <p class="support-description">
                     Logo sur site et livrées<br>
@@ -470,8 +503,9 @@
                 </p>
             </div>
             
-            <div class="support-card">              
-               <h3 class="support-title">PARTENAIRE PRINCIPAL</h3>
+            <div class="support-card">
+                <div class="support-emoji">🏆</div>
+                <h3 class="support-title">PARTENAIRE PRINCIPAL</h3>
                 <p class="support-description">
                     Visibilité maximale<br>
                     Nom dans l'équipe possible<br>
@@ -559,7 +593,7 @@
         
         <div class="cta-buttons">
             <a href="partner-contact.html" class="btn-primary">On discute ?</a>
-            <a href="index.html#races" class="btn-secondary">Résultats Courses Officielles</a>
+            <a href="index.html#races" class="btn-secondary">Voir nos résultats</a>
         </div>
     </section>
 
