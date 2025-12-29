@@ -2565,10 +2565,16 @@
                     </a>
 
                     <!-- FORMULAIRE DE RECRUTEMENT -->
-                    <form class="recruitment-form scroll-animate fade-in" action="https://formspree.io/f/xjgbqgyy" method="POST">
-                        <h3>📋 Formulaire de Candidature</h3>
-                        <p>Remplis ce formulaire pour postuler chez SIMTEK Performance</p>
-
+<form class="recruitment-form scroll-animate fade-in" action="https://formsubmit.co/recrutement@simtekperformance.com" method="POST">
+    
+    <!-- AJOUTEZ CES 3 LIGNES JUSTE APRÈS LE <form> -->
+    <input type="hidden" name="_next" value="https://www.simtekperformance.com">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nouvelle candidature pilote SimTek!">
+    
+    <h3>📋 Formulaire de Candidature</h3>
+    <p>Remplis ce formulaire pour postuler chez SIMTEK Performance</p>
+    
                         <!-- Informations de base -->
                         <div class="form-section">
                             <div class="form-section-title">📌 Informations de base</div>
