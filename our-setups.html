@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CB6CLV56G3');
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez les setups complets de l'équipe SimTek Performance. Configurations PC et simrigs professionnels pour Le Mans Ultimate, iRacing et ACC.">
+    <meta property="og:title" content="Nos Setups Simracing - SimTek Performance">
+    <meta property="og:description" content="Configurations PC et simrigs professionnels de notre équipe simracing">
+    <meta property="og:image" content="Logo_SIMTEK.png">
+    <meta property="og:url" content="https://simtekperformance.com/our-setups.html">
+    <meta property="og:type" content="website">
+    <meta name="keywords" content="setup simracing, simrig, cockpit simracing, PC simracing, configuration simracing pro, Le Mans Ultimate, iRacing, matériel simracing">
+    <meta name="author" content="Simtek Performance">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff1a75">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nos Setups Simracing - SimTek Performance">
+    <meta name="twitter:description" content="Découvrez les configurations complètes de notre équipe professionnelle">
+    <meta name="twitter:image" content="Logo_SIMTEK.png">
+    
+    <!-- Preconnect pour performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <title>Nos Setups Simracing - Matériel & Configurations | SimTek Performance</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Logo_SIMTEK.png">
+    <link rel="shortcut icon" type="image/png" href="Logo_SIMTEK.png">
+    <link rel="apple-touch-icon" href="Logo_SIMTEK.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff1a75, #ff6b9d);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff6b9d 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 26, 117, 0.5);
+        }
+
+        /* Burger Menu */
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero-setups {
+            padding: 120px 60px 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 26, 62, 0.9) 100%);
+        }
+
+        .hero-setups h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff6b9d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-setups p {
+            font-size: 1.3rem;
+            color: #b8b8d4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            padding: 60px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ff1a75;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d1d1e9;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Setups Container */
+        .setups-container {
+            padding: 40px 60px 100px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .setups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 50px;
+        }
+
+        .setup-card {
+            background: rgba(26, 26, 62, 0.6);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 26, 117, 0.2);
+        }
+
+        .setup-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(255, 26, 117, 0.4);
+            border-color: rgba(255, 26, 117, 0.6);
+        }
+
+        .setup-image-container {
+            width: 100%;
+            height: 400px;
+            background: rgba(10, 14, 39, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .setup-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .setup-image-placeholder {
+            color: #666;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .setup-content {
+            padding: 35px;
+        }
+
+        .setup-header {
+            margin-bottom: 25px;
+            border-bottom: 2px solid rgba(255, 26, 117, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .setup-content h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #ff6b9d;
+        }
+
+        .setup-owner {
+            font-size: 1rem;
+            color: #b8b8d4;
+            font-style: italic;
+        }
+
+        .setup-sections {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .setup-section {
+            background: rgba(10, 14, 39, 0.4);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 3px solid #ff1a75;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #ff6b9d;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 1.1rem;
+        }
+
+        .setup-specs {
+            list-style: none;
+        }
+
+        .setup-specs li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .setup-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: #b8b8d4;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .spec-value {
+            color: #ffffff;
+            text-align: right;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 14, 39, 0.95);
+            padding: 40px 60px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            color: #b8b8d4;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff1a75;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .setups-grid {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 30px;
+            }
+
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: rgba(10, 14, 39, 0.98);
+                width: 100%;
+                padding: 40px;
+                transition: right 0.3s ease;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .hero-setups {
+                padding: 80px 30px 60px;
+            }
+
+            .hero-setups h1 {
+                font-size: 2.5rem;
+            }
+
+            .intro-section,
+            .setups-container {
+                padding: 60px 30px;
+            }
+
+            .setups-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .setup-image-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#planning">Planning LMU</a></li>
+            <li><a href="index.html#pilots">Nos Pilotes</a></li>
+            <li><a href="sponsors-details.html">Nos Sponsors</a></li>
+            <li><a href="our-setups.html" class="active">Nos Setups</a></li>
+            <li><a href="become-partner.html">Become Partner</a></li>
+            <li><a href="pilot-recruitment.html">Rejoins Nous</a></li>
+        </ul>
+        <a href="https://discord.gg/DKhEsaA4Z9" class="cta-button">Nous Contacter</a>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-setups">
+        <h1>🏎️ Nos Setups Simracing</h1>
+        <p>Découvrez les configurations complètes de notre équipe pour dominer sur Le Mans Ultimate, iRacing et Assetto Corsa Competizione</p>
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro-section">
+        <h2>Le Matériel qui Fait la Différence</h2>
+        <p class="intro-text">
+            Chez SimTek Performance, nous croyons que l'excellence en simracing commence par un équipement de qualité. 
+            Nos pilotes utilisent des configurations optimisées pour offrir le meilleur compromis entre performance, immersion et précision.
+        </p>
+    </section>
+
+    <!-- Setups Grid -->
+    <div class="setups-container">
+        <div class="setups-grid">
+            
+            <!-- Setup Hugo -->
+            <div class="setup-card">
+                <div class="setup-image-container">
+                    <!-- Remplacez par votre vraie image -->
+                    <!-- <img src="setup-hugo.jpg" alt="Setup complet Hugo SimTek Performance"> -->
+                    <div class="setup-image-placeholder">
+                        📸 Insérez ici la photo du setup de Hugo<br>
+                        (Vue d'ensemble : simrig + écrans + PC)
+                    </div>
+                </div>
+                <div class="setup-content">
+                    <div class="setup-header">
+                        <h3>Setup Hugo</h3>
+                        <p class="setup-owner">Configuration Pro Endurance - Hypercar Specialist</p>
+                    </div>
+
+                    <div class="setup-sections">
+                        <!-- Section Simrig -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-steering-wheel"></i>
+                                Simrig & Périphériques
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Châssis</span>
+                                    <span class="spec-value">SimLab GT1-EVO</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Volant</span>
+                                    <span class="spec-value">Simucube 2 Pro 25Nm</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Pédalier</span>
+                                    <span class="spec-value">Heusinkveld Sprint</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Siège</span>
+                                    <span class="spec-value">Sparco Grid-Q</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Écrans</span>
+                                    <span class="spec-value">Triple 32" 1440p 165Hz</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Section PC -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-desktop"></i>
+                                Configuration PC
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Processeur</span>
+                                    <span class="spec-value">AMD Ryzen 9 7950X3D</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Carte Graphique</span>
+                                    <span class="spec-value">NVIDIA RTX 4090 24GB</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">RAM</span>
+                                    <span class="spec-value">64GB DDR5 6000MHz</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Stockage</span>
+                                    <span class="spec-value">2TB NVMe Gen4</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Alimentation</span>
+                                    <span class="spec-value">Corsair 1000W 80+ Platinum</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setup Guillaume -->
+            <div class="setup-card">
+                <div class="setup-image-container">
+                    <!-- <img src="setup-guillaume.jpg" alt="Setup complet Guillaume SimTek Performance"> -->
+                    <div class="setup-image-placeholder">
+                        📸 Insérez ici la photo du setup de Guillaume<br>
+                        (Vue d'ensemble : simrig + écrans + PC)
+                    </div>
+                </div>
+                <div class="setup-content">
+                    <div class="setup-header">
+                        <h3>Setup Guillaume</h3>
+                        <p class="setup-owner">Configuration Équilibrée - GT3 Specialist</p>
+                    </div>
+
+                    <div class="setup-sections">
+                        <!-- Section Simrig -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-steering-wheel"></i>
+                                Simrig & Périphériques
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Châssis</span>
+                                    <span class="spec-value">Next Level Racing GT Track</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Volant</span>
+                                    <span class="spec-value">Fanatec DD Pro 8Nm</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Pédalier</span>
+                                    <span class="spec-value">Fanatec ClubSport V3</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Siège</span>
+                                    <span class="spec-value">Siège Racing Intégré</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Écran</span>
+                                    <span class="spec-value">49" Ultrawide 1440p 240Hz</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Shifter</span>
+                                    <span class="spec-value">Fanatec ClubSport SQ 1.5</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Section PC -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-desktop"></i>
+                                Configuration PC
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Processeur</span>
+                                    <span class="spec-value">Intel i7-14700K</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Carte Graphique</span>
+                                    <span class="spec-value">NVIDIA RTX 4070 Ti 12GB</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">RAM</span>
+                                    <span class="spec-value">32GB DDR5 5600MHz</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Stockage</span>
+                                    <span class="spec-value">1TB NVMe Gen4</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Alimentation</span>
+                                    <span class="spec-value">Corsair 850W 80+ Gold</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setup Denis -->
+            <div class="setup-card">
+                <div class="setup-image-container">
+                    <!-- <img src="setup-denis.jpg" alt="Setup complet Denis SimTek Performance"> -->
+                    <div class="setup-image-placeholder">
+                        📸 Insérez ici la photo du setup de Denis<br>
+                        (Vue d'ensemble : simrig + casque VR + PC)
+                    </div>
+                </div>
+                <div class="setup-content">
+                    <div class="setup-header">
+                        <h3>Setup Denis</h3>
+                        <p class="setup-owner">Configuration VR Immersive - LMP2 Specialist</p>
+                    </div>
+
+                    <div class="setup-sections">
+                        <!-- Section Simrig -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-steering-wheel"></i>
+                                Simrig & Périphériques
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Châssis</span>
+                                    <span class="spec-value">SimLab P1-X + Motion Platform</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Volant</span>
+                                    <span class="spec-value">Asetek Invicta 27Nm</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Pédalier</span>
+                                    <span class="spec-value">Simtag Hydraulic Pro</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Siège</span>
+                                    <span class="spec-value">Sparco Pro ADV QRT</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Casque VR</span>
+                                    <span class="spec-value">Meta Quest 3 512GB</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Motion System</span>
+                                    <span class="spec-value">D-Box 3 DOF</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Section PC -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-desktop"></i>
+                                Configuration PC
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Processeur</span>
+                                    <span class="spec-value">AMD Ryzen 9 7900X</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Carte Graphique</span>
+                                    <span class="spec-value">NVIDIA RTX 4080 16GB</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">RAM</span>
+                                    <span class="spec-value">32GB DDR5 6000MHz</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Stockage</span>
+                                    <span class="spec-value">2TB NVMe Gen4</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Alimentation</span>
+                                    <span class="spec-value">Corsair 1000W 80+ Platinum</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Setup Pierrick -->
+            <div class="setup-card">
+                <div class="setup-image-container">
+                    <!-- <img src="setup-pierrick.jpg" alt="Setup complet Pierrick SimTek Performance"> -->
+                    <div class="setup-image-placeholder">
+                        📸 Insérez ici la photo du setup de Pierrick<br>
+                        (Vue d'ensemble : simrig + écrans + PC)
+                    </div>
+                </div>
+                <div class="setup-content">
+                    <div class="setup-header">
+                        <h3>Setup Pierrick</h3>
+                        <p class="setup-owner">Configuration Compacte Performance</p>
+                    </div>
+
+                    <div class="setup-sections">
+                        <!-- Section Simrig -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-steering-wheel"></i>
+                                Simrig & Périphériques
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Châssis</span>
+                                    <span class="spec-value">Trak Racer TR8</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Volant</span>
+                                    <span class="spec-value">Moza R9 9Nm</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Pédalier</span>
+                                    <span class="spec-value">Moza CRP2</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Siège</span>
+                                    <span class="spec-value">Siège Bucket Intégré</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Écran</span>
+                                    <span class="spec-value">34" Ultrawide 1440p 144Hz</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Section PC -->
+                        <div class="setup-section">
+                            <h4 class="section-title">
+                                <i class="fas fa-desktop"></i>
+                                Configuration PC
+                            </h4>
+                            <ul class="setup-specs">
+                                <li>
+                                    <span class="spec-label">Processeur</span>
+                                    <span class="spec-value">AMD Ryzen 7 7800X3D</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Carte Graphique</span>
+                                    <span class="spec-value">NVIDIA RTX 4070 12GB</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">RAM</span>
+                                    <span class="spec-value">32GB DDR5 5600MHz</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Stockage</span>
+                                    <span class="spec-value">1TB NVMe Gen4</span>
+                                </li>
+                                <li>
+                                    <span class="spec-label">Alimentation</span>
+                                    <span class="spec-value">Be Quiet! 750W 80+ Gold</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">© 2025 Simtek Performance - Tous droits réservés</p>
+            <p class="footer-text">Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
+            <div class="social-links">
+                <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" aria-label="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://www.twitch.tv/simtekperformance" target="_blank" aria-label="Twitch">
+                    <i class="fab fa-twitch"></i>
+                </a>
+                <a href="https://www.instagram.com/simtek_performance" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burger.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
