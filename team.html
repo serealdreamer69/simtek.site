@@ -208,39 +208,88 @@
         }
 
         /* Setup Content */
-        .pilot-setup {
+        .pilot-content {
             padding: 25px 20px;
         }
 
-        .setup-title {
-            font-size: 16px;
+        /* Stats LMU Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stats-title {
             color: #ff1a75;
-            margin-bottom: 18px;
+            font-size: 16px;
             font-weight: bold;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        /* Setup Sections */
-        .setup-section {
-            margin-bottom: 25px;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
-        .setup-section h3 {
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255, 26, 117, 0.2);
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
             color: #00d4ff;
-            font-size: 15px;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            display: block;
         }
 
-        /* Setup Items */
+        .stat-label {
+            font-size: 11px;
+            color: #b0b0d0;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .category-badge {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Simrig Section */
+        .simrig-section {
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .simrig-title {
+            color: #00d4ff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .setup-item {
             display: flex;
             justify-content: space-between;
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
             font-size: 13px;
         }
 
@@ -257,29 +306,6 @@
             text-align: right;
             font-weight: 600;
             max-width: 60%;
-        }
-
-        /* Simrig Section */
-        .simrig-section {
-            background: rgba(255, 26, 117, 0.05);
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 18px;
-        }
-
-        .simrig-section .setup-item {
-            border-bottom: 1px solid rgba(255, 26, 117, 0.1);
-        }
-
-        /* PC Section */
-        .pc-section {
-            background: rgba(0, 212, 255, 0.05);
-            border-radius: 10px;
-            padding: 12px;
-        }
-
-        .pc-section .setup-item {
-            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
         }
 
         /* Footer */
@@ -327,8 +353,8 @@
                 font-size: 24px;
             }
 
-            .pilot-setup {
-                padding: 20px;
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -371,7 +397,7 @@
             <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
         </a>
         
-                <ul class="nav-links">
+        <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="team.html">Notre Équipe</a></li>
             <li><a href="sponsors-details.html">Nos Sponsors</a></li>
@@ -387,7 +413,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Accueil</a>
         <a href="team.html">Notre Équipe</a>
         <a href="sponsors-details.html">Nos Sponsors</a>
@@ -414,15 +440,41 @@
                     <img src="pilote1.jpg" alt="Pilote 1">
                     <h2 class="pilot-name">Pilote 1</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Hypercar - LMU</div>
-                    
+                <div class="pilot-content">
+                    <!-- Stats LMU Section -->
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">127</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">24</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">45</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 HYPERCAR
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- SimRig Section -->
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">SimLab P1-X</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -437,41 +489,12 @@
                             <span class="setup-value">Heusinkveld Ultimate</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Sparco REV</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">SimLab P1-X</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Triple 32" 144Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Fanatec SQ 1.5</span>
-                        </div>
-                    </div>
-
-                    <!-- PC Section -->
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Intel i9-14900K</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4090 24Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR5 6000MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">2TB NVMe Gen4</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">1000W 80+ Gold</span>
                         </div>
                     </div>
                 </div>
@@ -483,14 +506,39 @@
                     <img src="pilote2.jpg" alt="Pilote 2">
                     <h2 class="pilot-name">Pilote 2</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration LMP2 - Endurance</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">89</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">18</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">32</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMP2
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">Trak Racer TR160</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -505,40 +553,12 @@
                             <span class="setup-value">Fanatec V3</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">OMP TRS-E</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">Trak Racer TR160</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Ultrawide 49" 240Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">N/A</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">AMD Ryzen 9 7900X</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4080 16Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR5 5600MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">1TB NVMe Gen4</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">850W 80+ Gold</span>
                         </div>
                     </div>
                 </div>
@@ -550,14 +570,39 @@
                     <img src="pilote3.jpg" alt="Pilote 3">
                     <h2 class="pilot-name">Pilote 3</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration GT3 - Sprint</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">156</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">31</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">58</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMGT3
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">GT Omega Prime</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -572,40 +617,12 @@
                             <span class="setup-value">Moza CRP</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">GT Omega RS9</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">GT Omega Prime</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">VR - Meta Quest 3</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Moza HGP</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Intel i7-13700K</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4070Ti 12Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR5 5200MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">1TB NVMe</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">750W 80+ Gold</span>
                         </div>
                     </div>
                 </div>
@@ -617,14 +634,39 @@
                     <img src="pilote4.jpg" alt="Pilote 4">
                     <h2 class="pilot-name">Pilote 4</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Multi-class</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">201</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">42</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">78</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMP3
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">Next Level Racing F-GT</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -639,40 +681,12 @@
                             <span class="setup-value">CSL Elite V2</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Intégré NLR</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">Next Level Racing F-GT</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Triple 27" 144Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">ClubSport 1.5</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Ryzen 7 5800X3D</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4070 12Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR4 3600MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">1TB NVMe</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">750W 80+ Gold</span>
                         </div>
                     </div>
                 </div>
@@ -684,14 +698,39 @@
                     <img src="pilote5.jpg" alt="Pilote 5">
                     <h2 class="pilot-name">Pilote 5</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Pro - LMU</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">98</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">19</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">37</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 HYPERCAR
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">SimLab GT1-EVO</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -706,40 +745,12 @@
                             <span class="setup-value">Heusinkveld Sprint</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Sparco Circuit II</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">SimLab GT1-EVO</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Triple 32" 2K 165Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Pro-Sim Sequential</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Intel i9-13900K</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4080 16Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">64GB DDR5 5600MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">2TB NVMe Gen4</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">1000W 80+ Platinum</span>
                         </div>
                     </div>
                 </div>
@@ -751,14 +762,39 @@
                     <img src="pilote6.jpg" alt="Pilote 6">
                     <h2 class="pilot-name">Pilote 6</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Endurance</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">45</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">7</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMP2
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">Playseat Evolution</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -773,40 +809,12 @@
                             <span class="setup-value">T-LCM Load Cell</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Playseat</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">Playseat Evolution</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Single 27" 165Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">TH8A</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Intel i5-12600K</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 3070 8Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">16GB DDR4 3200MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">512GB NVMe</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">650W 80+ Bronze</span>
                         </div>
                     </div>
                 </div>
@@ -818,14 +826,39 @@
                     <img src="pilote7.jpg" alt="Pilote 7">
                     <h2 class="pilot-name">Pilote 7</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration GT - ACC</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">178</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">21</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">52</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">89</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMGT3
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">JCL Custom</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -840,40 +873,12 @@
                             <span class="setup-value">VRS DirectForce</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Recaro Pole Position</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">JCL Custom</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Triple 32" 4K 144Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Aiologs Sequential</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">AMD Ryzen 9 7950X</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4090 24Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">64GB DDR5 6000MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">4TB NVMe Gen5</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">1200W 80+ Platinum</span>
                         </div>
                     </div>
                 </div>
@@ -885,14 +890,39 @@
                     <img src="pilote8.jpg" alt="Pilote 8">
                     <h2 class="pilot-name">Pilote 8</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Formula</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">67</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">11</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">23</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMP3
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">RSeat Formula V2</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -907,40 +937,12 @@
                             <span class="setup-value">G Pro Pedals</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">RSeat Formula</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">RSeat Formula V2</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Single 34" Ultrawide</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">N/A</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Ryzen 5 7600X</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4060Ti 16Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR5 5200MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">1TB NVMe</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">650W 80+ Gold</span>
                         </div>
                     </div>
                 </div>
@@ -952,14 +954,39 @@
                     <img src="pilote9.jpg" alt="Pilote 9">
                     <h2 class="pilot-name">Pilote 9</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Rally</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">134</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">9</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">28</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">51</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 HYPERCAR
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">DIY 8020</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -974,40 +1001,12 @@
                             <span class="setup-value">Simagic P2000</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Corbeau FX1</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">DIY 8020</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">VR - Pico 4</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Simagic Q1s</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Intel i7-12700K</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 3080Ti 12Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR4 3600MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">2TB NVMe</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">850W 80+ Gold</span>
                         </div>
                     </div>
                 </div>
@@ -1019,14 +1018,39 @@
                     <img src="pilote10.jpg" alt="Pilote 10">
                     <h2 class="pilot-name">Pilote 10</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Budget</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">23</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">0</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">2</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMP2
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">Bureau Gaming</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -1041,40 +1065,12 @@
                             <span class="setup-value">Stock G923</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Chaise Bureau</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">Bureau Gaming</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Single 24" 144Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Logitech Shifter</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Ryzen 5 5600X</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 3060 12Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">16GB DDR4 3200MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">512GB NVMe</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">550W 80+ Bronze</span>
                         </div>
                     </div>
                 </div>
@@ -1086,14 +1082,39 @@
                     <img src="pilote11.jpg" alt="Pilote 11">
                     <h2 class="pilot-name">Pilote 11</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Premium</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">234</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">32</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">67</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">112</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMGT3
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">SimLab P1-X Pro</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -1108,40 +1129,12 @@
                             <span class="setup-value">Heusinkveld Ultimate+</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Sparco Pro ADV</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">SimLab P1-X Pro</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Triple 43" 4K</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Quaife Sequential</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Intel i9-14900KS</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4090 24Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">128GB DDR5 6400MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">8TB NVMe RAID 0</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">1600W 80+ Titanium</span>
                         </div>
                     </div>
                 </div>
@@ -1153,14 +1146,39 @@
                     <img src="pilote12.jpg" alt="Pilote 12">
                     <h2 class="pilot-name">Pilote 12</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Touring</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">112</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">7</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">22</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">41</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMP3
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">Sim-Lab GT-EVO</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -1175,40 +1193,12 @@
                             <span class="setup-value">Fanatec V3 Inverted</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Sabelt GT-140</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">Sim-Lab GT-EVO</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Single 55" OLED</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Fanatec CSS SQ</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Ryzen 7 7800X3D</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4070Ti Super</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR5 6000MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">2TB NVMe Gen4</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">850W 80+ Platinum</span>
                         </div>
                     </div>
                 </div>
@@ -1220,14 +1210,39 @@
                     <img src="pilote13.jpg" alt="Pilote 13">
                     <h2 class="pilot-name">Pilote 13</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Drift</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">87</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">14</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">29</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 HYPERCAR
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">Vesaro V-Sport</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -1242,40 +1257,12 @@
                             <span class="setup-value">Tilton Racing</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Bride Zeta IV</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">Vesaro V-Sport</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Triple 27" 240Hz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Thrustmaster TSS</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">Intel i5-13600K</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4070 12Go</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">32GB DDR5 5200MHz</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">1TB NVMe + 1TB SATA</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">750W 80+ Gold</span>
                         </div>
                     </div>
                 </div>
@@ -1287,14 +1274,39 @@
                     <img src="pilote14.jpg" alt="Pilote 14">
                     <h2 class="pilot-name">Pilote 14</h2>
                 </div>
-                <div class="pilot-setup">
-                    <div class="setup-title">Configuration Hybrid</div>
-                    
+                <div class="pilot-content">
+                    <div class="stats-section">
+                        <div class="stats-title">
+                            <span>🏁</span>
+                            <span>STATISTIQUES LE MANS ULTIMATE</span>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">256</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">45</span>
+                                <span class="stat-label">Victoires</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">89</span>
+                                <span class="stat-label">Podiums</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">142</span>
+                                <span class="stat-label">Top 5</span>
+                            </div>
+                            <div class="category-badge">
+                                🏆 LMGT3
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="simrig-section">
-                        <h3>🎮 Simrig & Périphériques</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Châssis</span>
-                            <span class="setup-value">Motion System V3</span>
+                        <div class="simrig-title">
+                            <span>🎮</span>
+                            <span>SETUP SIMRACING</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Base</span>
@@ -1309,40 +1321,12 @@
                             <span class="setup-value">RealGear GTpro3</span>
                         </div>
                         <div class="setup-item">
-                            <span class="setup-label">Siège</span>
-                            <span class="setup-value">Racetech RT4100HR</span>
+                            <span class="setup-label">Châssis</span>
+                            <span class="setup-value">Motion System V3</span>
                         </div>
                         <div class="setup-item">
                             <span class="setup-label">Écran</span>
                             <span class="setup-value">Varjo Aero VR</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Shifter</span>
-                            <span class="setup-value">Prosim H-Pattern</span>
-                        </div>
-                    </div>
-
-                    <div class="pc-section">
-                        <h3>💻 Configuration PC</h3>
-                        <div class="setup-item">
-                            <span class="setup-label">Processeur</span>
-                            <span class="setup-value">AMD Threadripper Pro</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Carte Graphique</span>
-                            <span class="setup-value">RTX 4090 x2 SLI</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">RAM</span>
-                            <span class="setup-value">256GB DDR5 ECC</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Stockage</span>
-                            <span class="setup-value">16TB NVMe Array</span>
-                        </div>
-                        <div class="setup-item">
-                            <span class="setup-label">Alimentation</span>
-                            <span class="setup-value">2000W Redundant PSU</span>
                         </div>
                     </div>
                 </div>
