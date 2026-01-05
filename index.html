@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-CB6CLV56G3');
 </script>
 <head>
@@ -24,17 +23,14 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ff1a75">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SimTek Performance - Équipe SimRacing">
     <meta name="twitter:description" content="Rejoignez l'élite du SimRacing avec SimTek Performance">
     <meta name="twitter:image" content="Logo_SIMTEK.png">
     
-    <!-- Preconnect pour performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -58,7 +54,6 @@
     
     <title>SimTek Performance - Équipe Simracing France | Le Mans Ultimate, iRacing, ACC</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="Logo_SIMTEK.png">
     <link rel="shortcut icon" type="image/png" href="Logo_SIMTEK.png">
     <link rel="apple-touch-icon" href="Logo_SIMTEK.png">
@@ -79,7 +74,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -162,7 +156,6 @@
             box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6);
         }
 
-        /* Menu Hamburger Mobile */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -191,16 +184,9 @@
             transform: rotate(-45deg) translate(9px, -9px);
         }
 
-        /* Classes pour gérer l'affichage desktop/mobile des liens */
-        .mobile-only {
-            display: none;
-        }
+        .mobile-only { display: none; }
+        .desktop-only { display: block; }
         
-        .desktop-only {
-            display: block;
-        }
-        
-        /* Bouton mobile pour formulaire pilotes */
         .join-button-mobile {
             display: none;
             background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
@@ -222,7 +208,6 @@
             box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
         }
 
-        /* Menu Mobile Overlay */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -311,94 +296,32 @@
             box-shadow: 0 12px 35px rgba(255, 26, 117, 0.7);
         }
 
-/* Hero Section */
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 90vh;
-    padding: 60px 40px;
-    text-align: center;
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.45) 0%, rgba(26, 26, 62, 0.45) 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-    background: linear-gradient(
-      135deg,
-      rgba(10, 14, 39, 0.45) 0%,
-      rgba(26, 26, 62, 0.45) 100%
-    );
-
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 75%;
-    object-fit: cover;
-    z-index: -1;
-    border-radius: 25px;
-    box-shadow: 
-        0 25px 80px rgba(0, 0, 0, 0.5),
-        0 0 40px rgba(255, 26, 117, 0.3),
-        inset 0 0 20px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-        .hero-slider {
+        .hero-video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 75%;
+            object-fit: cover;
+            z-index: -1;
+            border-radius: 25px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 26, 117, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 4s ease-in-out;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .slide-1 {
-            background: url('racing.jpg') center/cover;
-        }
-
-        .slide-2 {
-            background: url('racing.jpg') center/cover;
-        }
-
-        .slide-3 {
-            background: url('racing.jpg') center/cover;
-        }
-
-        .slide-4 {
-            background: url('racing.jpg') center/cover;
-        }
-
-        .slide:first-child {
-            opacity: 1;
-        }
-
-        @keyframes slideshow {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            25% { opacity: 1; }
-            35% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-
-        .slide-1 { animation: slideshow 16s infinite; }
-        .slide-2 { animation: slideshow 16s 4s infinite; }
-        .slide-3 { animation: slideshow 16s 8s infinite; }
-        .slide-4 { animation: slideshow 16s 12s infinite; }
 
         .hero-logo-container {
             margin-bottom: 40px;
@@ -420,12 +343,8 @@
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         .hero-subtitle {
@@ -445,7 +364,6 @@
             z-index: 10;
         }
 
-        /* Sections générales */
         section {
             padding: 80px 60px;
         }
@@ -461,124 +379,6 @@
             font-weight: 900;
         }
 
-        /* Partnership Section */
-        .partnership {
-            background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.8) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .partnership::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255, 26, 117, 0.1) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-        }
-
-        .partnership-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .partnership-content h2 {
-            margin-bottom: 30px;
-        }
-
-        .partner-highlight {
-            color: #00d4ff;
-            -webkit-text-fill-color: #00d4ff;
-        }
-
-        .partnership-content > p {
-            text-align: center;
-            font-size: 16px;
-            color: #b0b0d0;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            line-height: 1.8;
-        }
-
-        .partnership-details {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .partnership-point {
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
-            border: 1px solid rgba(255, 26, 117, 0.2);
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .partnership-point:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 26, 117, 0.5);
-            box-shadow: 0 10px 30px rgba(255, 26, 117, 0.2);
-        }
-
-        .partnership-point h3 {
-            font-size: 18px;
-            color: #ff1a75;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .partnership-point p {
-            font-size: 13px;
-            color: #b0b0d0;
-            line-height: 1.7;
-        }
-
-        .partnership-cta {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 26, 117, 0.1) 100%);
-            border-radius: 15px;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-        }
-
-        .partnership-cta p {
-            font-size: 16px;
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .partner-button {
-            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .partner-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.6);
-        }
-
-        /* Cards Grid */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -608,7 +408,6 @@
             font-weight: 700;
         }
 
-        /* Race Cards */
         .race-card {
             position: relative;
             overflow: hidden;
@@ -653,369 +452,323 @@
             font-size: 14px;
         }
 
-<!-- ============================================= -->
-    <!-- SECTION PLANNING LMU -->
-    <!-- ============================================= -->
-    <section id="planning">
-        <div class="planning-header">
-            <h2>📅 Planning LMU</h2>
-            <div class="planning-update">
-                <span class="pulse-dot"></span>
-                <span>Mis à jour : <strong id="update-date">Semaine du 06/01</strong></span>
-            </div>
-        </div>
-
-        <div class="planning-grid">
-            <!-- DAILY RACES -->
-            <div class="planning-section">
-                <div class="section-header">
-                    <span class="section-icon">🏁</span>
-                    <div class="section-title">
-                        <h3>Daily Races</h3>
-                        <span>Courses quotidiennes</span>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <!-- Bronze / Débutant -->
-                    <div class="tier-block tier-bronze">
-                        <div class="tier-header">
-                            <span class="tier-badge">Débutant</span>
-                        </div>
-                        <div class="tier-races">
-                            <div class="race-item">
-                                <span class="race-flag">🇧🇪</span>
-                                <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge lmgt3">LMGT3</span>
-                                    </div>
-                                    <div class="race-track">Spa-Francorchamps <span class="config">(WEC)</span></div>
-                                </div>
-                                <div class="race-meta">
-                                    <span class="setup-badge fixed">Fixed</span>
-                                    <span class="duration-badge">20 min</span>
-                                </div>
-                            </div>
-                            <div class="race-item">
-                                <span class="race-flag">🇫🇷</span>
-                                <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge lmgt3">LMGT3</span>
-                                    </div>
-                                    <div class="race-track">Le Mans <span class="config">(WEC)</span> - McLaren 720S</div>
-                                </div>
-                                <div class="race-meta">
-                                    <span class="setup-badge fixed">Fixed</span>
-                                    <span class="duration-badge">20 min</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Silver / Intermédiaire -->
-                    <div class="tier-block tier-silver">
-                        <div class="tier-header">
-                            <span class="tier-badge">Intermédiaire</span>
-                        </div>
-                        <div class="tier-races">
-                            <div class="race-item">
-                                <span class="race-flag">🇮🇹</span>
-                                <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge lmp2">LMP2</span>
-                                        <span class="class-badge lmp3">LMP3</span>
-                                    </div>
-                                    <div class="race-track">Imola <span class="config">(WEC)</span></div>
-                                </div>
-                                <div class="race-meta">
-                                    <span class="setup-badge fixed">Fixed</span>
-                                    <span class="duration-badge">22 min</span>
-                                    <span class="extra-badge">Fuel x2</span>
-                                </div>
-                            </div>
-                            <div class="race-item">
-                                <span class="race-flag">🇵🇹</span>
-                                <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge lmp2">LMP2</span>
-                                        <span class="class-badge lmp3">LMP3</span>
-                                        <span class="class-badge lmgt3">LMGT3</span>
-                                    </div>
-                                    <div class="race-track">Portimão <span class="config">(WEC)</span></div>
-                                </div>
-                                <div class="race-meta">
-                                    <span class="setup-badge open">Open</span>
-                                    <span class="duration-badge">40 min</span>
-                                    <span class="extra-badge">Fuel x2</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Gold / Avancé -->
-                    <div class="tier-block tier-gold">
-                        <div class="tier-header">
-                            <span class="tier-badge">Avancé</span>
-                        </div>
-                        <div class="tier-races">
-                            <div class="race-item">
-                                <span class="race-flag">🇫🇷</span>
-                                <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge hypercar">Hypercar</span>
-                                        <span class="class-badge lmgt3">LMGT3</span>
-                                    </div>
-                                    <div class="race-track">Paul Ricard <span class="config">(ELMS)</span></div>
-                                </div>
-                                <div class="race-meta">
-                                    <span class="setup-badge fixed">Fixed</span>
-                                    <span class="duration-badge">40 min</span>
-                                </div>
-                            </div>
-                            <div class="race-item">
-                                <span class="race-flag">🇧🇭</span>
-                                <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge hypercar">Hypercar</span>
-                                        <span class="class-badge lmgt3">LMGT3</span>
-                                    </div>
-                                    <div class="race-track">Bahrain <span class="config">(WEC)</span></div>
-                                </div>
-                                <div class="race-meta">
-                                    <span class="setup-badge open">Open</span>
-                                    <span class="duration-badge">60 min</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- WEC WEEKLY -->
-            <div class="planning-section">
-                <div class="section-header">
-                    <span class="section-icon">🏆</span>
-                    <div class="section-title">
-                        <h3>WEC Weekly</h3>
-                        <span>Course hebdomadaire</span>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <div class="event-card">
-                        <div class="event-main">
-                            <span class="event-flag">🇧🇪</span>
-                            <div class="event-info">
-                                <h4>Spa-Francorchamps</h4>
-                                <div class="event-classes">
-                                    <span class="class-badge hypercar">Hypercar</span>
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="event-track">Configuration WEC • <span class="setup-badge open">Open Setup</span></div>
-                                <div class="event-duration">100 min</div>
-                            </div>
-                        </div>
-                        <div class="event-settings">
-                            <div class="setting-item">
-                                <span class="icon">🚗</span>
-                                <span>38 cars splits</span>
-                            </div>
-                            <div class="setting-item">
-                                <span class="icon">🌡️</span>
-                                <span>No tyre warmers</span>
-                            </div>
-                            <div class="setting-item">
-                                <span class="icon">🛞</span>
-                                <span>Pneus : 10</span>
-                            </div>
-                        </div>
-                        <div class="event-schedule">
-                            <div class="schedule-label">📅 Jours disponibles</div>
-                            <div class="schedule-days">
-                                <span class="day-badge">Mercredi</span>
-                                <span class="day-badge">Jeudi</span>
-                                <span class="day-badge">Lundi</span>
-                            </div>
-                            <div class="schedule-label">🕐 Horaires (UTC+1)</div>
-                            <div class="schedule-times">
-                                <span class="time-badge">01:00</span>
-                                <span class="time-badge">04:00</span>
-                                <span class="time-badge">11:00</span>
-                                <span class="time-badge">14:00</span>
-                                <span class="time-badge">17:00</span>
-                                <span class="time-badge">20:00</span>
-                                <span class="time-badge">22:00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SPECIAL EVENT - Full Width -->
-            <div class="planning-section special-event-section full-width">
-                <div class="section-header">
-                    <span class="section-icon">⭐</span>
-                    <div class="section-title">
-                        <h3>Special Event</h3>
-                        <span>Événement spécial de la semaine</span>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <div class="event-card">
-                        <div class="event-main">
-                            <span class="event-flag">🇵🇹</span>
-                            <div class="event-info">
-                                <h4>ELMS 4 Hours of Portimão</h4>
-                                <div class="event-classes">
-                                    <span class="class-badge lmp2">LMP2</span>
-                                    <span class="class-badge lmp3">LMP3</span>
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="event-track">Portimão (WEC) • <span class="setup-badge open">Open Setup</span></div>
-                                <div class="event-duration">240 min (4h)</div>
-                            </div>
-                        </div>
-                        <div class="event-settings">
-                            <div class="setting-item">
-                                <span class="icon">🚗</span>
-                                <span>38 cars splits</span>
-                            </div>
-                            <div class="setting-item">
-                                <span class="icon">🌡️</span>
-                                <span>No tyre warmers</span>
-                            </div>
-                            <div class="setting-item">
-                                <span class="icon">🛞</span>
-                                <span>Pneus : 12</span>
-                            </div>
-                            <div class="setting-item">
-                                <span class="icon">⏱️</span>
-                                <span>10min Practice + 15min Qualif</span>
-                            </div>
-                        </div>
-                        <div class="event-schedule">
-                            <div class="schedule-label">📅 9, 10, 11 Janvier 2026</div>
-                            <div class="schedule-days">
-                                <span class="day-badge">Vendredi</span>
-                                <span class="day-badge">Samedi</span>
-                                <span class="day-badge">Dimanche</span>
-                            </div>
-                            <div class="schedule-label">🕐 Horaires (UTC+1)</div>
-                            <div class="schedule-times">
-                                <span class="time-badge">04:00</span>
-                                <span class="time-badge">10:00</span>
-                                <span class="time-badge">15:00</span>
-                                <span class="time-badge">22:00</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ============================================= -->
-    <!-- FIN SECTION PLANNING LMU -->
-    <!-- ============================================= -->
-        /* Pilots Section */
-        .pilots-grid {
+        /* PLANNING LMU STYLES */
+        #planning {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.6) 0%, rgba(10, 14, 39, 0.8) 100%);
+        }
+        
+        .planning-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .planning-header h2 {
+            margin-bottom: 15px;
+        }
+        
+        .planning-update {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 26, 117, 0.1);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 26, 117, 0.3);
+        }
+        
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .planning-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
         }
-
-        .pilot-card {
+        
+        .planning-section {
             background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
-            border: 2px solid rgba(255, 26, 117, 0.3);
-            border-radius: 25px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .pilot-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
-        }
-
-        .pilot-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: #ff1a75;
-            box-shadow: 0 30px 60px rgba(255, 26, 117, 0.4);
-        }
-
-        .pilot-image {
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .pilot-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(transparent, rgba(10, 14, 39, 1));
-        }
-
-        .pilot-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .pilot-card:hover .pilot-image img {
-            transform: scale(1.1);
-        }
-
-        .pilot-info {
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 20px;
             padding: 25px;
-            text-align: center;
+            transition: all 0.3s ease;
         }
-
-        .pilot-info h3 {
-            font-size: 26px;
-            color: #ffffff;
-            margin-bottom: 20px;
-            font-weight: 800;
+        
+        .planning-section:hover {
+            border-color: rgba(255, 26, 117, 0.5);
+            box-shadow: 0 10px 40px rgba(255, 26, 117, 0.2);
         }
-
-        .pilot-stats {
+        
+        .planning-section.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .section-header {
             display: flex;
-            justify-content: space-around;
+            align-items: center;
             gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        .stat {
-            text-align: center;
+        
+        .section-icon {
+            font-size: 28px;
         }
-
-        .stat-value {
-            display: block;
-            font-size: 32px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        
+        .section-title h3 {
+            font-size: 20px;
+            color: #ff1a75;
+            margin: 0;
         }
-
-        .stat-label {
+        
+        .section-title span {
             font-size: 12px;
             color: #b0b0d0;
+        }
+        
+        .tier-block {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .tier-header {
+            padding: 10px 15px;
+        }
+        
+        .tier-bronze .tier-header { background: linear-gradient(135deg, rgba(205, 127, 50, 0.3) 0%, rgba(205, 127, 50, 0.1) 100%); }
+        .tier-silver .tier-header { background: linear-gradient(135deg, rgba(192, 192, 192, 0.3) 0%, rgba(192, 192, 192, 0.1) 100%); }
+        .tier-gold .tier-header { background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0.1) 100%); }
+        
+        .tier-badge {
+            font-size: 14px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        
+        .tier-bronze .tier-badge { color: #CD7F32; }
+        .tier-silver .tier-badge { color: #C0C0C0; }
+        .tier-gold .tier-badge { color: #FFD700; }
+        
+        .tier-races {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .race-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .race-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .race-item:hover {
+            background: rgba(255, 26, 117, 0.1);
+        }
+        
+        .race-flag {
+            font-size: 24px;
+        }
+        
+        .race-details {
+            flex: 1;
+        }
+        
+        .race-classes {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .class-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .class-badge.hypercar { background: #ff1a75; color: white; }
+        .class-badge.lmgt3 { background: #00d4ff; color: #0a0e27; }
+        .class-badge.lmp2 { background: #7b68ee; color: white; }
+        .class-badge.lmp3 { background: #ffa500; color: #0a0e27; }
+        
+        .race-track {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        
+        .race-track .config {
+            color: #b0b0d0;
+            font-size: 12px;
+        }
+        
+        .race-meta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .setup-badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .setup-badge.fixed { background: rgba(255, 26, 117, 0.2); color: #ff1a75; border: 1px solid #ff1a75; }
+        .setup-badge.open { background: rgba(0, 212, 255, 0.2); color: #00d4ff; border: 1px solid #00d4ff; }
+        
+        .duration-badge {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 11px;
+            color: #b0b0d0;
+        }
+        
+        .extra-badge {
+            padding: 4px 10px;
+            background: rgba(255, 165, 0, 0.2);
+            border: 1px solid #ffa500;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #ffa500;
+            font-weight: 600;
+        }
+        
+        .event-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .event-main {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .event-flag {
+            font-size: 36px;
+        }
+        
+        .event-info h4 {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+        }
+        
+        .event-classes {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .event-track {
+            font-size: 13px;
+            color: #b0b0d0;
+            margin-bottom: 5px;
+        }
+        
+        .event-duration {
+            font-size: 14px;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        
+        .event-settings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .setting-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #b0b0d0;
+        }
+        
+        .setting-item .icon {
+            font-size: 16px;
+        }
+        
+        .event-schedule {
+            padding: 15px;
+            background: rgba(255, 26, 117, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 26, 117, 0.1);
+        }
+        
+        .schedule-label {
+            font-size: 12px;
+            color: #b0b0d0;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .schedule-days, .schedule-times {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .schedule-days:last-child, .schedule-times:last-child {
+            margin-bottom: 0;
+        }
+        
+        .day-badge {
+            padding: 6px 12px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 6px;
+            font-size: 12px;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        
+        .time-badge {
+            padding: 6px 12px;
+            background: rgba(255, 26, 117, 0.1);
+            border: 1px solid rgba(255, 26, 117, 0.3);
+            border-radius: 6px;
+            font-size: 12px;
+            color: #ff1a75;
+            font-weight: 600;
+        }
 
-        /* Join Section */
         #join {
             background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
         }
@@ -1137,7 +890,6 @@
             box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
             border: none;
             cursor: pointer;
-            width: auto;
         }
 
         .discord-button:hover {
@@ -1145,382 +897,6 @@
             box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
         }
 
-        .discord-icon {
-            font-size: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(10, 14, 39, 0.8);
-            border-top: 1px solid rgba(255, 26, 117, 0.2);
-            padding: 40px 60px;
-            text-align: center;
-            color: #b0b0d0;
-        }
-
-        footer p {
-            margin: 10px 0;
-            font-size: 14px;
-        }
-
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: #ff1a75;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #00d4ff;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .planning-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .planning-section.full-width {
-                grid-column: 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Afficher le hamburger */
-            .hamburger {
-                display: flex;
-            }
-
-            /* Cacher les liens desktop */
-            .nav-links,
-            nav .cta-button {
-                display: none;
-            }
-
-            /* Gestion des liens desktop/mobile */
-            .desktop-only {
-                display: none !important;
-            }
-            
-            .mobile-only {
-                display: block !important;
-            }
-            
-            /* Cacher le formulaire de recrutement sur mobile */
-            #join .recruitment-form {
-                display: none !important;
-            }
-            
-            /* Afficher le bouton mobile pour le formulaire */
-            .join-button-mobile {
-                display: block;
-            }
-
-            nav {
-                padding: 15px 20px;
-            }
-            
-            .hero {
-                padding: 40px 20px;
-                min-height: 70vh;
-            }
-            
-            .hero-video {
-                width: 95%;
-                height: 60%;
-            }
-            
-            section {
-                padding: 40px 20px;
-            }
-            
-            h2 {
-                font-size: 32px !important;
-            }
-            
-            .pilots-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .partnership-details {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .race-item {
-                flex-wrap: wrap;
-            }
-            
-            .race-meta {
-                width: 100%;
-                justify-content: flex-start;
-                margin-top: 10px;
-                padding-left: 32px;
-            }
-            
-            .event-main {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            
-            .schedule-days, .schedule-times {
-                justify-content: center;
-            }
-
-            iframe {
-                height: 300px !important;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .partnership-details {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* ============================================= */
-        /* ANIMATIONS AU SCROLL */
-        /* ============================================= */
-        
-        /* États initiaux (avant animation) */
-        .scroll-animate {
-            opacity: 0;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .scroll-animate.fade-in {
-            transform: translateY(30px);
-        }
-
-        .scroll-animate.slide-left {
-            transform: translateX(-50px);
-        }
-
-        .scroll-animate.slide-right {
-            transform: translateX(50px);
-        }
-
-        .scroll-animate.scale-up {
-            transform: scale(0.9);
-        }
-
-        /* État animé (visible) */
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: translateY(0) translateX(0) scale(1);
-        }
-
-        /* Délais pour animations en cascade */
-        .scroll-animate.delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .scroll-animate.delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        .scroll-animate.delay-3 {
-            transition-delay: 0.3s;
-        }
-
-        .scroll-animate.delay-4 {
-            transition-delay: 0.4s;
-        }
-
-        .scroll-animate.delay-5 {
-            transition-delay: 0.5s;
-        }
-
-        .scroll-animate.delay-6 {
-            transition-delay: 0.6s;
-        }
-
-        /* ============================================= */
-        /* BOUTON BACK TO TOP */
-        /* ============================================= */
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(100px);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
-        }
-
-        .back-to-top i {
-            font-size: 24px;
-            color: white;
-        }
-
-        /* Animation de la flèche */
-        @keyframes arrowBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .back-to-top:hover i {
-            animation: arrowBounce 0.6s ease-in-out infinite;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .back-to-top {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .back-to-top i {
-                font-size: 20px;
-            }
-        }
-
-        /* ============================================= */
-        /* LIGHTBOX GALERIE */
-        /* ============================================= */
-        
-        .gallery-image-container {
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-image-container::after {
-            content: '🔍';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 48px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .gallery-image-container:hover::after {
-            opacity: 0.8;
-        }
-
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-
-        .lightbox-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 40px;
-            color: white;
-            cursor: pointer;
-            background: rgba(255, 26, 117, 0.8);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            background: #ff1a75;
-            transform: rotate(90deg);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 50px;
-            color: white;
-            cursor: pointer;
-            background: rgba(255, 26, 117, 0.6);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-nav:hover {
-            background: #ff1a75;
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        /* ============================================= */
-        /* FORMULAIRE DE RECRUTEMENT */
-        /* ============================================= */
-        
         .recruitment-form {
             background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
             border: 2px solid rgba(255, 26, 117, 0.3);
@@ -1666,11 +1042,6 @@
             box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
         }
 
-        .submit-button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
         .form-divider {
             text-align: center;
             margin: 30px 0;
@@ -1679,232 +1050,329 @@
             font-weight: 600;
         }
 
+        footer {
+            background: rgba(10, 14, 39, 0.8);
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+            padding: 40px 60px;
+            text-align: center;
+            color: #b0b0d0;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #ff1a75;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00d4ff;
+        }
+
+        .gallery-image-container {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-image-container::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .gallery-image-container:hover::after {
+            opacity: 0.8;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: rgba(255, 26, 117, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: #ff1a75;
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            background: rgba(255, 26, 117, 0.6);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: #ff1a75;
+        }
+
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(100px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        .back-to-top i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .scroll-animate {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .scroll-animate.fade-in { transform: translateY(30px); }
+        .scroll-animate.slide-left { transform: translateX(-50px); }
+        .scroll-animate.scale-up { transform: scale(0.9); }
+
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
+
+        .scroll-animate.delay-1 { transition-delay: 0.1s; }
+        .scroll-animate.delay-2 { transition-delay: 0.2s; }
+        .scroll-animate.delay-3 { transition-delay: 0.3s; }
+        .scroll-animate.delay-4 { transition-delay: 0.4s; }
+
+        @media (max-width: 1024px) {
+            .planning-grid { grid-template-columns: 1fr; }
+            .planning-section.full-width { grid-column: 1; }
+        }
+
         @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .recruitment-form {
-                padding: 30px 20px;
-            }
-
-            .radio-group {
-                flex-direction: column;
-            }
+            .hamburger { display: flex; }
+            .nav-links, nav .cta-button { display: none; }
+            .desktop-only { display: none !important; }
+            .mobile-only { display: block !important; }
+            #join .recruitment-form { display: none !important; }
+            .join-button-mobile { display: block; }
+            nav { padding: 15px 20px; }
+            .hero { padding: 40px 20px; min-height: 70vh; }
+            .hero-video { width: 95%; height: 60%; }
+            section { padding: 40px 20px; }
+            h2 { font-size: 32px !important; }
+            .form-row { grid-template-columns: 1fr; }
+            .recruitment-form { padding: 30px 20px; }
+            .radio-group { flex-direction: column; }
+            .race-item { flex-wrap: wrap; }
+            .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
+            .event-main { flex-direction: column; align-items: center; text-align: center; }
+            .schedule-days, .schedule-times { justify-content: center; }
+            iframe { height: 300px !important; }
+            .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .back-to-top i { font-size: 20px; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-   <nav>
-    <div class="logo">
-        <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="#hero">Accueil</a></li>
-        <li><a href="#planning">Planning LMU</a></li>
-        <li><a href="team.html">Notre Équipe</a></li>
-        <li><a href="sponsors-details.html">Nos Sponsors</a></li>
-        <li><a href="become-partner.html">Become Partner</a></li>
-        <li class="desktop-only"><a href="#join">Rejoins Nous</a></li>
-        <li class="mobile-only"><a href="pilot-recruitment.html">Rejoins Nous</a></li>
-    </ul>
-
-    <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">
-        Nous Contacter
-    </a>
-
-    <!-- Hamburger Mobile -->
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</nav>
-
-<!-- Menu Mobile Overlay -->
-<div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-content">
-        <div class="mobile-menu-links">
-            <a href="#hero" class="mobile-link">Accueil</a>
-            <a href="#planning" class="mobile-link">Planning LMU</a>
-            <a href="team.html" class="mobile-link">Notre Équipe</a>
-            <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
-            <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
-            <a href="become-partner.html" class="mobile-link">Become Partner</a>
+    <nav>
+        <div class="logo">
+            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
         </div>
-        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">
-            Nous Contacter
-        </a>
+        <ul class="nav-links">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#planning">Planning LMU</a></li>
+            <li><a href="team.html">Notre Équipe</a></li>
+            <li><a href="sponsors-details.html">Nos Sponsors</a></li>
+            <li><a href="become-partner.html">Become Partner</a></li>
+            <li class="desktop-only"><a href="#join">Rejoins Nous</a></li>
+            <li class="mobile-only"><a href="pilot-recruitment.html">Rejoins Nous</a></li>
+        </ul>
+        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Nous Contacter</a>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="#hero" class="mobile-link">Accueil</a>
+                <a href="#planning" class="mobile-link">Planning LMU</a>
+                <a href="team.html" class="mobile-link">Notre Équipe</a>
+                <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
+                <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
+                <a href="become-partner.html" class="mobile-link">Become Partner</a>
+            </div>
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Nous Contacter</a>
+        </div>
     </div>
-</div>
 
-<!-- Hero Section -->
-<section class="hero" id="hero">
+    <section class="hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="488video.webm" type="video/webm">
+        </video>
+        <div class="hero-logo-container">
+            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="hero-logo">
+        </div>
+        <p class="hero-subtitle">Team Esport dédiée à l'excellence du Simracing</p>
+        <div class="hero-buttons">
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Rejoindre l'équipe</a>
+        </div>
+    </section>
 
-    <!-- Vidéo de fond -->
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="488video.webm" type="video/webm">
-    </video>
+    <section style="padding: 80px 60px; max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; color: #ff1a75; margin-bottom: 30px; text-align: center;">L'Excellence du Simracing en France</h2>
+        <div style="font-size: 1.1rem; line-height: 1.8; color: #d1d1e9;">
+            <p style="margin-bottom: 20px;"><strong>SimTek Performance</strong> est une équipe simracing française dédiée à la compétition virtuelle de haut niveau. Spécialisés dans les courses d'endurance sur <strong>Le Mans Ultimate</strong>, <strong>iRacing</strong> et <strong>Assetto Corsa Competizione</strong>, nos pilotes participent aux championnats les plus prestigieux du simracing mondial.</p>
+            <p style="margin-bottom: 20px;">Notre équipe esport recherche constamment de nouveaux talents. Que vous soyez pilote de Hypercar, LMP2, LMP3 ou LMGT3, nous offrons un environnement professionnel avec coaching et entraînements réguliers.</p>
+        </div>
+    </section>
 
-    <div class="hero-logo-container">
-        <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="hero-logo">
-    </div>
-
-    <p class="hero-subtitle">
-        Team Esport dédiée à l'excellence du Simracing
-    </p>
-
-    <div class="hero-buttons">
-        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">
-            Rejoindre l'équipe
-        </a>
-    </div>
-
-</section>
-
-<!-- Section SEO - Contenu pour le référencement -->
-<section style="padding: 80px 60px; max-width: 1200px; margin: 0 auto;">
-    <h2 style="font-size: 2.5rem; color: #ff1a75; margin-bottom: 30px; text-align: center;">
-        L'Excellence du Simracing en France
-    </h2>
-    <div style="font-size: 1.1rem; line-height: 1.8; color: #d1d1e9;">
-        <p style="margin-bottom: 20px;">
-            <strong>SimTek Performance</strong> est une équipe simracing française dédiée à la compétition virtuelle de haut niveau. 
-            Spécialisés dans les courses d'endurance sur <strong>Le Mans Ultimate</strong>, <strong>iRacing</strong> 
-            et <strong>Assetto Corsa Competizione</strong>, nos pilotes participent aux championnats les plus prestigieux 
-            du simracing mondial, incluant les 24 Heures du Mans virtuelles, les championnats WEC et IMSA.
-        </p>
-        <p style="margin-bottom: 20px;">
-            Notre équipe esport recherche constamment de nouveaux talents pour rejoindre nos rangs. Que vous soyez 
-            pilote de Hypercar, LMP2, LMP3 ou LMGT3, nous offrons un environnement professionnel avec coaching, 
-            entraînements réguliers et participation aux plus grandes compétitions de simracing. Le recrutement est 
-            ouvert aux pilotes motivés et passionnés, prêts à s'investir dans la compétition au plus haut niveau.
-        </p>
-        <p style="margin-bottom: 20px;">
-            Découvrez nos <a href="our-setups.html" style="color: #ff6b9d; text-decoration: underline;">setups simracing</a> 
-            et configurations PC utilisées par nos pilotes professionnels pour dominer sur les circuits virtuels. 
-            Du matériel haut de gamme aux réglages optimisés, nous partageons notre expertise pour vous aider à 
-            performer dans vos propres compétitions.
-        </p>
-    </div>
-</section>
-
-    <!-- Courses Section -->
     <section id="races">
         <h2>Résultats Courses Officielles</h2>
         <div class="cards-grid">
             <div class="card race-card scroll-animate fade-in delay-1">
                 <h3>🏁 6h de Fuji</h3>
                 <div class="race-info">
-                    <div class="race-detail">
-                        <span class="race-label">Pilotes</span>
-                        <span class="race-value">Hugo, Denis, Guillaume</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Circuit</span>
-                        <span class="race-value">Fuji</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Durée</span>
-                        <span class="race-value">6 heures</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Résultat</span>
-                        <span class="race-value">14ème</span>
-                    </div>
+                    <div class="race-detail"><span class="race-label">Pilotes</span><span class="race-value">Hugo, Denis, Guillaume</span></div>
+                    <div class="race-detail"><span class="race-label">Circuit</span><span class="race-value">Fuji</span></div>
+                    <div class="race-detail"><span class="race-label">Durée</span><span class="race-value">6 heures</span></div>
+                    <div class="race-detail"><span class="race-label">Résultat</span><span class="race-value">14ème</span></div>
                 </div>
             </div>
             <div class="card race-card scroll-animate fade-in delay-2">
-                <h3>🏁12h de Spa</h3>
+                <h3>🏁 12h de Spa</h3>
                 <div class="race-info">
-                    <div class="race-detail">
-                        <span class="race-label">Pilotes</span>
-                        <span class="race-value">Hugo, Denis, Guillaume</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Circuit</span>
-                        <span class="race-value">Spa</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Durée</span>
-                        <span class="race-value">12 heures</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Résultat</span>
-                        <span class="race-value">5ème</span>
-                    </div>
+                    <div class="race-detail"><span class="race-label">Pilotes</span><span class="race-value">Hugo, Denis, Guillaume</span></div>
+                    <div class="race-detail"><span class="race-label">Circuit</span><span class="race-value">Spa</span></div>
+                    <div class="race-detail"><span class="race-label">Durée</span><span class="race-value">12 heures</span></div>
+                    <div class="race-detail"><span class="race-label">Résultat</span><span class="race-value">5ème</span></div>
                 </div>
             </div>
             <div class="card race-card scroll-animate fade-in delay-3">
                 <h3>🏁 24h du Mans</h3>
                 <div class="race-info">
-                    <div class="race-detail">
-                        <span class="race-label">Pilotes</span>
-                        <span class="race-value">Hugo, Pierrick, Guillaume</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Circuit</span>
-                        <span class="race-value">La Sarthe</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Durée</span>
-                        <span class="race-value">24 heures</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Résultat</span>
-                        <span class="race-value">18ème</span>
-                    </div>
+                    <div class="race-detail"><span class="race-label">Pilotes</span><span class="race-value">Hugo, Pierrick, Guillaume</span></div>
+                    <div class="race-detail"><span class="race-label">Circuit</span><span class="race-value">La Sarthe</span></div>
+                    <div class="race-detail"><span class="race-label">Durée</span><span class="race-value">24 heures</span></div>
+                    <div class="race-detail"><span class="race-label">Résultat</span><span class="race-value">18ème</span></div>
                 </div>
             </div>
             <div class="card race-card scroll-animate fade-in delay-4">
                 <h3>🏁 6h Paul Ricard</h3>
                 <div class="race-info">
-                    <div class="race-detail">
-                        <span class="race-label">Pilotes</span>
-                        <span class="race-value">Hugo, Denis, Guillaume</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Circuit</span>
-                        <span class="race-value">Paul Ricard</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Durée</span>
-                        <span class="race-value">6 heures</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Résultat</span>
-                        <span class="race-value">7ème</span>
-                    </div>
+                    <div class="race-detail"><span class="race-label">Pilotes</span><span class="race-value">Hugo, Denis, Guillaume</span></div>
+                    <div class="race-detail"><span class="race-label">Circuit</span><span class="race-value">Paul Ricard</span></div>
+                    <div class="race-detail"><span class="race-label">Durée</span><span class="race-value">6 heures</span></div>
+                    <div class="race-detail"><span class="race-label">Résultat</span><span class="race-value">7ème</span></div>
                 </div>
             </div>
             <div class="card race-card scroll-animate fade-in delay-3">
-                <h3>🏁 6h de Monza </h3>
+                <h3>🏁 6h de Monza</h3>
                 <div class="race-info">
-                    <div class="race-detail">
-                        <span class="race-label">Pilotes</span>
-                        <span class="race-value">Anthony D, Anthony M, Quentin</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Circuit</span>
-                        <span class="race-value">Monza</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Durée</span>
-                        <span class="race-value">6 heures</span>
-                    </div>
-                    <div class="race-detail">
-                        <span class="race-label">Résultat</span>
-                        <span class="race-value">3ème</span>
-                    </div>
+                    <div class="race-detail"><span class="race-label">Pilotes</span><span class="race-value">Anthony D, Anthony M, Quentin</span></div>
+                    <div class="race-detail"><span class="race-label">Circuit</span><span class="race-value">Monza</span></div>
+                    <div class="race-detail"><span class="race-label">Durée</span><span class="race-value">6 heures</span></div>
+                    <div class="race-detail"><span class="race-label">Résultat</span><span class="race-value">3ème</span></div>
                 </div>
             </div>
-
         </div>
     </section>
 
-<!-- ============================================= -->
+    <!-- ============================================= -->
     <!-- SECTION PLANNING LMU -->
     <!-- ============================================= -->
     <section id="planning">
@@ -1912,12 +1380,11 @@
             <h2>📅 Planning LMU</h2>
             <div class="planning-update">
                 <span class="pulse-dot"></span>
-                <span>Mis à jour : <strong id="update-date">Semaine du 30/12</strong></span>
+                <span>Mis à jour : <strong id="update-date">Semaine du 06/01</strong></span>
             </div>
         </div>
 
         <div class="planning-grid">
-            <!-- DAILY RACES -->
             <div class="planning-section">
                 <div class="section-header">
                     <span class="section-icon">🏁</span>
@@ -1927,19 +1394,14 @@
                     </div>
                 </div>
                 <div class="section-content">
-                    <!-- Bronze / Débutant -->
                     <div class="tier-block tier-bronze">
-                        <div class="tier-header">
-                            <span class="tier-badge">Débutant</span>
-                        </div>
+                        <div class="tier-header"><span class="tier-badge">Débutant</span></div>
                         <div class="tier-races">
                             <div class="race-item">
-                                <span class="race-flag">🇵🇹</span>
+                                <span class="race-flag">🇧🇪</span>
                                 <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge lmgt3">LMGT3</span>
-                                    </div>
-                                    <div class="race-track">Portimao <span class="config">(WEC)</span></div>
+                                    <div class="race-classes"><span class="class-badge lmgt3">LMGT3</span></div>
+                                    <div class="race-track">Spa-Francorchamps <span class="config">(WEC)</span></div>
                                 </div>
                                 <div class="race-meta">
                                     <span class="setup-badge fixed">Fixed</span>
@@ -1947,12 +1409,10 @@
                                 </div>
                             </div>
                             <div class="race-item">
-                                <span class="race-flag">🇯🇵</span>
+                                <span class="race-flag">🇫🇷</span>
                                 <div class="race-details">
-                                    <div class="race-classes">
-                                        <span class="class-badge lmgt3">LMGT3</span>
-                                    </div>
-                                    <div class="race-track">Fuji <span class="config">(Classic)</span> - Mercedes-AMG</div>
+                                    <div class="race-classes"><span class="class-badge lmgt3">LMGT3</span></div>
+                                    <div class="race-track">Le Mans <span class="config">(WEC)</span> - McLaren 720S</div>
                                 </div>
                                 <div class="race-meta">
                                     <span class="setup-badge fixed">Fixed</span>
@@ -1962,20 +1422,17 @@
                         </div>
                     </div>
 
-                    <!-- Silver / Intermédiaire -->
                     <div class="tier-block tier-silver">
-                        <div class="tier-header">
-                            <span class="tier-badge">Intermédiaire</span>
-                        </div>
+                        <div class="tier-header"><span class="tier-badge">Intermédiaire</span></div>
                         <div class="tier-races">
                             <div class="race-item">
-                                <span class="race-flag">🇺🇸</span>
+                                <span class="race-flag">🇮🇹</span>
                                 <div class="race-details">
                                     <div class="race-classes">
                                         <span class="class-badge lmp2">LMP2</span>
                                         <span class="class-badge lmp3">LMP3</span>
                                     </div>
-                                    <div class="race-track">Sebring <span class="config">(WEC)</span></div>
+                                    <div class="race-track">Imola <span class="config">(WEC)</span></div>
                                 </div>
                                 <div class="race-meta">
                                     <span class="setup-badge fixed">Fixed</span>
@@ -1984,14 +1441,14 @@
                                 </div>
                             </div>
                             <div class="race-item">
-                                <span class="race-flag">🇧🇷</span>
+                                <span class="race-flag">🇵🇹</span>
                                 <div class="race-details">
                                     <div class="race-classes">
                                         <span class="class-badge lmp2">LMP2</span>
                                         <span class="class-badge lmp3">LMP3</span>
                                         <span class="class-badge lmgt3">LMGT3</span>
                                     </div>
-                                    <div class="race-track">Interlagos <span class="config">(ELMS)</span></div>
+                                    <div class="race-track">Portimão <span class="config">(WEC)</span></div>
                                 </div>
                                 <div class="race-meta">
                                     <span class="setup-badge open">Open</span>
@@ -2002,20 +1459,17 @@
                         </div>
                     </div>
 
-                    <!-- Gold / Avancé -->
                     <div class="tier-block tier-gold">
-                        <div class="tier-header">
-                            <span class="tier-badge">Avancé</span>
-                        </div>
+                        <div class="tier-header"><span class="tier-badge">Avancé</span></div>
                         <div class="tier-races">
                             <div class="race-item">
-                                <span class="race-flag">🇬🇧</span>
+                                <span class="race-flag">🇫🇷</span>
                                 <div class="race-details">
                                     <div class="race-classes">
                                         <span class="class-badge hypercar">Hypercar</span>
                                         <span class="class-badge lmgt3">LMGT3</span>
                                     </div>
-                                    <div class="race-track">Silverstone <span class="config">(ELMS)</span></div>
+                                    <div class="race-track">Paul Ricard <span class="config">(ELMS)</span></div>
                                 </div>
                                 <div class="race-meta">
                                     <span class="setup-badge fixed">Fixed</span>
@@ -2023,13 +1477,13 @@
                                 </div>
                             </div>
                             <div class="race-item">
-                                <span class="race-flag">🇮🇹</span>
+                                <span class="race-flag">🇧🇭</span>
                                 <div class="race-details">
                                     <div class="race-classes">
                                         <span class="class-badge hypercar">Hypercar</span>
                                         <span class="class-badge lmgt3">LMGT3</span>
                                     </div>
-                                    <div class="race-track">Monza <span class="config">(WEC)</span></div>
+                                    <div class="race-track">Bahrain <span class="config">(WEC)</span></div>
                                 </div>
                                 <div class="race-meta">
                                     <span class="setup-badge open">Open</span>
@@ -2041,7 +1495,6 @@
                 </div>
             </div>
 
-            <!-- WEC WEEKLY -->
             <div class="planning-section">
                 <div class="section-header">
                     <span class="section-icon">🏆</span>
@@ -2053,9 +1506,9 @@
                 <div class="section-content">
                     <div class="event-card">
                         <div class="event-main">
-                            <span class="event-flag">🇵🇹</span>
+                            <span class="event-flag">🇧🇪</span>
                             <div class="event-info">
-                                <h4>Portimao</h4>
+                                <h4>Spa-Francorchamps</h4>
                                 <div class="event-classes">
                                     <span class="class-badge hypercar">Hypercar</span>
                                     <span class="class-badge lmgt3">LMGT3</span>
@@ -2065,18 +1518,9 @@
                             </div>
                         </div>
                         <div class="event-settings">
-                            <div class="setting-item">
-                                <span class="icon">🚗</span>
-                                <span>38 cars splits</span>
-                            </div>
-                            <div class="setting-item">
-                                <span class="icon">🌡️</span>
-                                <span>No tyre warmers</span>
-                            </div>
-                            <div class="setting-item">
-                                <span class="icon">🛞</span>
-                                <span>Pneus : 10</span>
-                            </div>
+                            <div class="setting-item"><span class="icon">🚗</span><span>38 cars splits</span></div>
+                            <div class="setting-item"><span class="icon">🌡️</span><span>No tyre warmers</span></div>
+                            <div class="setting-item"><span class="icon">🛞</span><span>Pneus : 10</span></div>
                         </div>
                         <div class="event-schedule">
                             <div class="schedule-label">📅 Jours disponibles</div>
@@ -2100,7 +1544,6 @@
                 </div>
             </div>
 
-            <!-- SPECIAL EVENT - Full Width -->
             <div class="planning-section special-event-section full-width">
                 <div class="section-header">
                     <span class="section-icon">⭐</span>
@@ -2112,21 +1555,37 @@
                 <div class="section-content">
                     <div class="event-card">
                         <div class="event-main">
-                            <span class="event-flag">🇮🇹</span>
+                            <span class="event-flag">🇵🇹</span>
                             <div class="event-info">
-                                <h4>Thrustmaster 6 Hours of Monza</h4>
+                                <h4>ELMS 4 Hours of Portimão</h4>
                                 <div class="event-classes">
-                                    <span class="class-badge hypercar">Hypercar</span>
+                                    <span class="class-badge lmp2">LMP2</span>
+                                    <span class="class-badge lmp3">LMP3</span>
                                     <span class="class-badge lmgt3">LMGT3</span>
                                 </div>
-                                <div class="event-track">Monza (WEC) • <span class="setup-badge open">Open Setup</span></div>
-                                <div class="event-duration">360 min (6h)</div>
+                                <div class="event-track">Portimão (WEC) • <span class="setup-badge open">Open Setup</span></div>
+                                <div class="event-duration">240 min (4h)</div>
                             </div>
                         </div>
                         <div class="event-settings">
-                            <div class="setting-item">
-                                <span class="icon">📌</span>
-                                <span>Infos complètes sur Discord LMU #online-status-schedule</span>
+                            <div class="setting-item"><span class="icon">🚗</span><span>38 cars splits</span></div>
+                            <div class="setting-item"><span class="icon">🌡️</span><span>No tyre warmers</span></div>
+                            <div class="setting-item"><span class="icon">🛞</span><span>Pneus : 12</span></div>
+                            <div class="setting-item"><span class="icon">⏱️</span><span>10min Practice + 15min Qualif</span></div>
+                        </div>
+                        <div class="event-schedule">
+                            <div class="schedule-label">📅 9, 10, 11 Janvier 2026</div>
+                            <div class="schedule-days">
+                                <span class="day-badge">Vendredi</span>
+                                <span class="day-badge">Samedi</span>
+                                <span class="day-badge">Dimanche</span>
+                            </div>
+                            <div class="schedule-label">🕐 Horaires (UTC+1)</div>
+                            <div class="schedule-times">
+                                <span class="time-badge">04:00</span>
+                                <span class="time-badge">10:00</span>
+                                <span class="time-badge">15:00</span>
+                                <span class="time-badge">22:00</span>
                             </div>
                         </div>
                     </div>
@@ -2137,46 +1596,38 @@
     <!-- ============================================= -->
     <!-- FIN SECTION PLANNING LMU -->
     <!-- ============================================= -->
-    
-    <!-- Video Highlights Section -->
-<section style="padding: 80px 60px;">
-    <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;"></h2>
-    <div style="max-width: 900px; margin: 0 auto;">
-        <video autoplay loop muted style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4);">
-            <source src="videosite2.webm" type="video/webm">
-            <source src="videosite2.mp4" type="video/mp4">
-        </video>
-    </div>
-</section>
-    <!-- Live Streaming Section -->
-<section style="padding: 80px 60px; background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.8) 100%);">
-    <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;">🔴 LIVE</h2>
-    <div style="max-width: 900px; margin: 0 auto;">
-<iframe
-    src="https://player.twitch.tv/?channel=simtekperformance&parent=simtekperformance.com&parent=www.simtekperformance.com"
-    height="600"
-    width="100%"
-    allowfullscreen>
-</iframe>    
-    
-</div>
-</section>    <!-- Racing Gallery Section -->
-    <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
-        <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 1600px; margin: 0 auto;">
-            <div class="gallery-image-container scroll-animate scale-up delay-1" style="overflow: hidden; border-radius: 20px; box-shadow: 0 40px 80px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;" onclick="openLightbox(0)">
-                <img src="circuit1.png" loading="lazy" alt="SIMTEK Performance - Circuit 1" style="width: 125%; height: auto; display: block; object-fit: cover; margin-left: 0px; margin-top: 0px;">
-            </div>
-            <div class="gallery-image-container scroll-animate scale-up delay-2" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;" onclick="openLightbox(1)">
-                <img src="circuit2.png" loading="lazy" alt="SIMTEK Performance - Circuit 2" style="width: 150%; height: auto; display: block; object-fit: cover; margin-left: 0px; margin-top: 0px;">
-            </div>
-           <div class="gallery-image-container scroll-animate scale-up delay-3" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4); transition: transform 0.3s ease;" onclick="openLightbox(2)">
-                <img src="car-top.png" loading="lazy" alt="SIMTEK Performance - Vue de dessus" style="width: 125%; height: auto; display: block; object-fit: cover; margin-left: -40px; margin-top: 0px;">
-        </div>
+
+    <section style="padding: 80px 60px;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <video autoplay loop muted style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4);">
+                <source src="videosite2.webm" type="video/webm">
+                <source src="videosite2.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
-    <!-- Lightbox -->
+    <section style="padding: 80px 60px; background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.8) 100%);">
+        <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px; color: #ff1a75;">🔴 LIVE</h2>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <iframe src="https://player.twitch.tv/?channel=simtekperformance&parent=simtekperformance.com&parent=www.simtekperformance.com" height="600" width="100%" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
+        <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; max-width: 1600px; margin: 0 auto;">
+            <div class="gallery-image-container scroll-animate scale-up delay-1" style="overflow: hidden; border-radius: 20px; box-shadow: 0 40px 80px rgba(255, 26, 117, 0.4);" onclick="openLightbox(0)">
+                <img src="circuit1.png" loading="lazy" alt="SIMTEK Performance - Circuit 1" style="width: 125%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div class="gallery-image-container scroll-animate scale-up delay-2" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4);" onclick="openLightbox(1)">
+                <img src="circuit2.png" loading="lazy" alt="SIMTEK Performance - Circuit 2" style="width: 150%; height: auto; display: block; object-fit: cover;">
+            </div>
+            <div class="gallery-image-container scroll-animate scale-up delay-3" style="overflow: hidden; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4);" onclick="openLightbox(2)">
+                <img src="car-top.png" loading="lazy" alt="SIMTEK Performance - Vue de dessus" style="width: 125%; height: auto; display: block; object-fit: cover; margin-left: -40px;">
+            </div>
+        </div>
+    </section>
+
     <div class="lightbox" id="lightbox">
         <span class="lightbox-close" onclick="closeLightbox()">×</span>
         <span class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">❮</span>
@@ -2186,10 +1637,8 @@
         <span class="lightbox-nav lightbox-next" onclick="changeImage(1)">❯</span>
     </div>
 
-    <!-- Join Section -->
     <section id="join">
         <h2>Rejoins Nous</h2>
-        
         <div class="join-container">
             <div class="join-content">
                 <div class="join-text">
@@ -2204,7 +1653,6 @@
                                 <p>Engagement envers la discipline de l'équipe, communication fluide et respect des protocoles compétitifs.</p>
                             </div>
                         </div>
-
                         <div class="condition-item scroll-animate slide-left delay-2">
                             <span class="condition-icon">📅</span>
                             <div>
@@ -2212,7 +1660,6 @@
                                 <p>Capacité à participer aux entraînements réguliers et aux courses programmées du calendrier officiel.</p>
                             </div>
                         </div>
-
                         <div class="condition-item scroll-animate slide-left delay-3">
                             <span class="condition-icon">🚀</span>
                             <div>
@@ -2222,26 +1669,18 @@
                         </div>
                     </div>
 
-                    <!-- Bouton pour mobile uniquement -->
-                    <a href="pilot-recruitment.html" class="join-button-mobile">
-                        📋 Remplir le Formulaire de Candidature
-                    </a>
+                    <a href="pilot-recruitment.html" class="join-button-mobile">📋 Remplir le Formulaire de Candidature</a>
 
-                    <!-- FORMULAIRE DE RECRUTEMENT -->
-<form class="recruitment-form scroll-animate fade-in" action="https://formsubmit.co/guillaume.wait@gmail.com" method="POST">
-    
-    <!-- AJOUTEZ CES 3 LIGNES JUSTE APRÈS LE <form> -->
-    <input type="hidden" name="_next" value="https://www.simtekperformance.com">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="Nouvelle candidature pilote SimTek!">
-    
-    <h3>📋 Formulaire de Candidature</h3>
-    <p>Remplis ce formulaire pour postuler chez SIMTEK Performance</p>
-    
-                        <!-- Informations de base -->
+                    <form class="recruitment-form scroll-animate fade-in" action="https://formsubmit.co/guillaume.wait@gmail.com" method="POST">
+                        <input type="hidden" name="_next" value="https://www.simtekperformance.com">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="Nouvelle candidature pilote SimTek!">
+                        
+                        <h3>📋 Formulaire de Candidature</h3>
+                        <p>Remplis ce formulaire pour postuler chez SIMTEK Performance</p>
+                        
                         <div class="form-section">
                             <div class="form-section-title">📌 Informations de base</div>
-                            
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Nom complet <span class="required">*</span></label>
@@ -2252,7 +1691,6 @@
                                     <input type="email" name="email" required>
                                 </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Âge <span class="required">*</span></label>
@@ -2265,10 +1703,8 @@
                             </div>
                         </div>
 
-                        <!-- Expérience SimRacing -->
                         <div class="form-section">
                             <div class="form-section-title">🎮 Expérience SimRacing</div>
-                            
                             <div class="form-group full-width">
                                 <label>Niveau actuel <span class="required">*</span></label>
                                 <div class="radio-group">
@@ -2277,20 +1713,19 @@
                                         <label for="niveau1">Débutant (moins de 6 mois)</label>
                                     </div>
                                     <div class="checkbox-item">
-                                        <input type="radio" id="niveau2" name="niveau" value="Intermédiaire (6 mois - 2 ans)" required>
+                                        <input type="radio" id="niveau2" name="niveau" value="Intermédiaire (6 mois - 2 ans)">
                                         <label for="niveau2">Intermédiaire (6 mois - 2 ans)</label>
                                     </div>
                                     <div class="checkbox-item">
-                                        <input type="radio" id="niveau3" name="niveau" value="Avancé (2-5 ans)" required>
+                                        <input type="radio" id="niveau3" name="niveau" value="Avancé (2-5 ans)">
                                         <label for="niveau3">Avancé (2-5 ans)</label>
                                     </div>
                                     <div class="checkbox-item">
-                                        <input type="radio" id="niveau4" name="niveau" value="Expert/Pro (5+ ans)" required>
+                                        <input type="radio" id="niveau4" name="niveau" value="Expert/Pro (5+ ans)">
                                         <label for="niveau4">Expert/Pro (5+ ans)</label>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group full-width">
                                 <label>Simulateurs utilisés <span class="required">*</span></label>
                                 <div class="checkbox-group">
@@ -2312,7 +1747,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>iRating / Safety Rating (iRacing)</label>
@@ -2323,7 +1757,6 @@
                                     <input type="text" name="lmu_rating" placeholder="Ex: A, B, C...">
                                 </div>
                             </div>
-
                             <div class="form-group full-width">
                                 <label>Compte RACECONTROLE PRO ou PRO+ <span class="required">*</span></label>
                                 <div class="radio-group">
@@ -2332,12 +1765,11 @@
                                         <label for="rc_oui">Oui</label>
                                     </div>
                                     <div class="checkbox-item">
-                                        <input type="radio" id="rc_non" name="racecontrole" value="Non" required>
+                                        <input type="radio" id="rc_non" name="racecontrole" value="Non">
                                         <label for="rc_non">Non</label>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group full-width">
                                 <label>Voitures préférées/maîtrisées</label>
                                 <div class="checkbox-group">
@@ -2361,10 +1793,8 @@
                             </div>
                         </div>
 
-                        <!-- Disponibilité -->
                         <div class="form-section">
                             <div class="form-section-title">⏰ Disponibilité</div>
-                            
                             <div class="form-group full-width">
                                 <label>Heures disponibles par semaine <span class="required">*</span></label>
                                 <div class="radio-group">
@@ -2373,20 +1803,19 @@
                                         <label for="heures1">5-10h</label>
                                     </div>
                                     <div class="checkbox-item">
-                                        <input type="radio" id="heures2" name="heures_semaine" value="10-20h" required>
+                                        <input type="radio" id="heures2" name="heures_semaine" value="10-20h">
                                         <label for="heures2">10-20h</label>
                                     </div>
                                     <div class="checkbox-item">
-                                        <input type="radio" id="heures3" name="heures_semaine" value="20-30h" required>
+                                        <input type="radio" id="heures3" name="heures_semaine" value="20-30h">
                                         <label for="heures3">20-30h</label>
                                     </div>
                                     <div class="checkbox-item">
-                                        <input type="radio" id="heures4" name="heures_semaine" value="30h+" required>
+                                        <input type="radio" id="heures4" name="heures_semaine" value="30h+">
                                         <label for="heures4">30h+</label>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group full-width">
                                 <label>Créneaux horaires disponibles <span class="required">*</span></label>
                                 <div class="checkbox-group">
@@ -2406,24 +1835,19 @@
                             </div>
                         </div>
 
-                        <!-- Motivation -->
                         <div class="form-section">
                             <div class="form-section-title">💬 Motivation</div>
-                            
                             <div class="form-group full-width">
                                 <label>Pourquoi veux-tu rejoindre SIMTEK Performance ? <span class="required">*</span></label>
                                 <textarea name="motivation" required placeholder="Explique-nous ce qui te motive..."></textarea>
                             </div>
-
                             <div class="form-group full-width">
                                 <label>Expérience en équipe/compétition ?</label>
                                 <textarea name="experience_equipe" placeholder="Raconte-nous ton expérience..."></textarea>
                             </div>
                         </div>
 
-                        <button type="submit" class="submit-button">
-                            📤 Envoyer ma Candidature
-                        </button>
+                        <button type="submit" class="submit-button">📤 Envoyer ma Candidature</button>
                     </form>
 
                     <div class="form-divider">OU</div>
@@ -2441,202 +1865,107 @@
         </div>
     </section>
 
-    <!-- Bouton Back to Top -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
         <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
-<div class="social-links">
-    <a href="https://discord.gg/DKhEsaA4Z9" target="_blank">
-        <i class="fab fa-discord"></i> Discord
-    </a>
-    <a href="https://www.twitch.tv/simtekperformance" target="_blank">
-        <i class="fab fa-twitch"></i> Twitch
-    </a>
-    <a href="https://www.instagram.com/simtek_performance" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-    </a>
-</div>    </footer>
+        <div class="social-links">
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+            <a href="https://www.twitch.tv/simtekperformance" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
+            <a href="https://www.instagram.com/simtek_performance" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </footer>
 
-<!-- Scripts -->
-<script>
-// Menu Hamburger
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileLinks = document.querySelectorAll('.mobile-link');
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-// Toggle menu au clic sur hamburger
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-});
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
 
-// Fermer le menu au clic sur un lien
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-    });
-});
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
 
-// Fermer le menu au scroll
-let lastScrollForMenu = 0;
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    // Si on scroll (up ou down) et que le menu est ouvert
-    if (Math.abs(currentScroll - lastScrollForMenu) > 10 && mobileMenu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-    }
-    
-    lastScrollForMenu = currentScroll;
-});
+        let lastScrollForMenu = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (Math.abs(currentScroll - lastScrollForMenu) > 10 && mobileMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+            lastScrollForMenu = currentScroll;
+        });
 
-// ============================================= 
-// BOUTON BACK TO TOP
-// ============================================= 
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
 
-const backToTopButton = document.getElementById('backToTop');
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
-// Afficher/masquer le bouton selon le scroll
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('visible');
-    } else {
-        backToTopButton.classList.remove('visible');
-    }
-});
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-// Remonter en haut au clic
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+            animatedElements.forEach(element => observer.observe(element));
+        });
 
-// ============================================= 
-// ANIMATIONS AU SCROLL
-// ============================================= 
+        const galleryImages = ['circuit1.png', 'circuit2.png', 'car-top.png'];
+        let currentImageIndex = 0;
 
-// Observer pour détecter quand les éléments entrent dans le viewport
-const observerOptions = {
-    threshold: 0.15, // L'élément doit être visible à 15% pour déclencher l'animation
-    rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant que l'élément soit totalement visible
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            // Une fois animé, on arrête d'observer (animation une seule fois)
-            observer.unobserve(entry.target);
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
-    });
-}, observerOptions);
 
-// Observer tous les éléments avec la classe scroll-animate
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.scroll-animate');
-    animatedElements.forEach(element => {
-        observer.observe(element);
-    });
-});
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
-// ============================================= 
-// LIGHTBOX GALERIE
-// ============================================= 
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            else if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
+        }
 
-const galleryImages = [
-    'circuit1.png',
-    'circuit2.png',
-    'car-top.png'
-];
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
 
-let currentImageIndex = 0;
-
-function openLightbox(index) {
-    currentImageIndex = index;
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    
-    lightboxImage.src = galleryImages[currentImageIndex];
-    lightbox.classList.add('active');
-    
-    // Empêcher le scroll du body
-    document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-    const lightbox = document.getElementById('lightbox');
-    lightbox.classList.remove('active');
-    
-    // Réactiver le scroll du body
-    document.body.style.overflow = 'auto';
-}
-
-function changeImage(direction) {
-    currentImageIndex += direction;
-    
-    // Boucler sur les images
-    if (currentImageIndex < 0) {
-        currentImageIndex = galleryImages.length - 1;
-    } else if (currentImageIndex >= galleryImages.length) {
-        currentImageIndex = 0;
-    }
-    
-    const lightboxImage = document.getElementById('lightbox-image');
-    lightboxImage.src = galleryImages[currentImageIndex];
-}
-
-// Fermer avec Escape
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeLightbox();
-    }
-    if (e.key === 'ArrowLeft') {
-        changeImage(-1);
-    }
-    if (e.key === 'ArrowRight') {
-        changeImage(1);
-    }
-});
-
-// Fermer en cliquant en dehors de l'image
-document.getElementById('lightbox').addEventListener('click', (e) => {
-    if (e.target.id === 'lightbox') {
-        closeLightbox();
-    }
-});
-</script>
-
-<!-- Schema.org pour SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsTeam",
-  "name": "Simtek Performance",
-  "sport": "Sim Racing",
-  "description": "Équipe professionnelle de SimRacing spécialisée dans iRacing, ACC et Le Mans Ultimate",
-  "url": "https://simtekperformance.com",
-  "logo": "https://simtekperformance.com/Logo_SIMTEK.png",
-  "sameAs": [
-    "https://discord.gg/DKhEsaA4Z9",
-    "https://www.twitch.tv/simtekperformance",
-    "https://www.instagram.com/simtek_performance"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Recruitment",
-    "email": "guillaume.wait@gmail.com"
-  }
-}
-</script>
-
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+    </script>
 </body>
 </html>
