@@ -653,412 +653,267 @@
             font-size: 14px;
         }
 
-        /* ============================================= */
-        /* SECTION PLANNING LMU - NOUVEAU STYLE */
-        /* ============================================= */
-        
-        #planning {
-            background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(26, 26, 62, 0.95) 100%);
-            position: relative;
-            overflow: hidden;
-        }
+<!-- ============================================= -->
+    <!-- SECTION PLANNING LMU -->
+    <!-- ============================================= -->
+    <section id="planning">
+        <div class="planning-header">
+            <h2>📅 Planning LMU</h2>
+            <div class="planning-update">
+                <span class="pulse-dot"></span>
+                <span>Mis à jour : <strong id="update-date">Semaine du 06/01</strong></span>
+            </div>
+        </div>
 
-        #planning::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #ff1a75, #00d4ff, #ff1a75);
-            background-size: 200% 100%;
-            animation: gradientMove 3s linear infinite;
-        }
+        <div class="planning-grid">
+            <!-- DAILY RACES -->
+            <div class="planning-section">
+                <div class="section-header">
+                    <span class="section-icon">🏁</span>
+                    <div class="section-title">
+                        <h3>Daily Races</h3>
+                        <span>Courses quotidiennes</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <!-- Bronze / Débutant -->
+                    <div class="tier-block tier-bronze">
+                        <div class="tier-header">
+                            <span class="tier-badge">Débutant</span>
+                        </div>
+                        <div class="tier-races">
+                            <div class="race-item">
+                                <span class="race-flag">🇧🇪</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Spa-Francorchamps <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">20 min</span>
+                                </div>
+                            </div>
+                            <div class="race-item">
+                                <span class="race-flag">🇫🇷</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Le Mans <span class="config">(WEC)</span> - McLaren 720S</div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">20 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
+                    <!-- Silver / Intermédiaire -->
+                    <div class="tier-block tier-silver">
+                        <div class="tier-header">
+                            <span class="tier-badge">Intermédiaire</span>
+                        </div>
+                        <div class="tier-races">
+                            <div class="race-item">
+                                <span class="race-flag">🇮🇹</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmp2">LMP2</span>
+                                        <span class="class-badge lmp3">LMP3</span>
+                                    </div>
+                                    <div class="race-track">Imola <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">22 min</span>
+                                    <span class="extra-badge">Fuel x2</span>
+                                </div>
+                            </div>
+                            <div class="race-item">
+                                <span class="race-flag">🇵🇹</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge lmp2">LMP2</span>
+                                        <span class="class-badge lmp3">LMP3</span>
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Portimão <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge open">Open</span>
+                                    <span class="duration-badge">40 min</span>
+                                    <span class="extra-badge">Fuel x2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        .planning-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+                    <!-- Gold / Avancé -->
+                    <div class="tier-block tier-gold">
+                        <div class="tier-header">
+                            <span class="tier-badge">Avancé</span>
+                        </div>
+                        <div class="tier-races">
+                            <div class="race-item">
+                                <span class="race-flag">🇫🇷</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge hypercar">Hypercar</span>
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Paul Ricard <span class="config">(ELMS)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge fixed">Fixed</span>
+                                    <span class="duration-badge">40 min</span>
+                                </div>
+                            </div>
+                            <div class="race-item">
+                                <span class="race-flag">🇧🇭</span>
+                                <div class="race-details">
+                                    <div class="race-classes">
+                                        <span class="class-badge hypercar">Hypercar</span>
+                                        <span class="class-badge lmgt3">LMGT3</span>
+                                    </div>
+                                    <div class="race-track">Bahrain <span class="config">(WEC)</span></div>
+                                </div>
+                                <div class="race-meta">
+                                    <span class="setup-badge open">Open</span>
+                                    <span class="duration-badge">60 min</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        .planning-header h2 {
-            margin-bottom: 10px;
-        }
+            <!-- WEC WEEKLY -->
+            <div class="planning-section">
+                <div class="section-header">
+                    <span class="section-icon">🏆</span>
+                    <div class="section-title">
+                        <h3>WEC Weekly</h3>
+                        <span>Course hebdomadaire</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="event-card">
+                        <div class="event-main">
+                            <span class="event-flag">🇧🇪</span>
+                            <div class="event-info">
+                                <h4>Spa-Francorchamps</h4>
+                                <div class="event-classes">
+                                    <span class="class-badge hypercar">Hypercar</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="event-track">Configuration WEC • <span class="setup-badge open">Open Setup</span></div>
+                                <div class="event-duration">100 min</div>
+                            </div>
+                        </div>
+                        <div class="event-settings">
+                            <div class="setting-item">
+                                <span class="icon">🚗</span>
+                                <span>38 cars splits</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🌡️</span>
+                                <span>No tyre warmers</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🛞</span>
+                                <span>Pneus : 10</span>
+                            </div>
+                        </div>
+                        <div class="event-schedule">
+                            <div class="schedule-label">📅 Jours disponibles</div>
+                            <div class="schedule-days">
+                                <span class="day-badge">Mercredi</span>
+                                <span class="day-badge">Jeudi</span>
+                                <span class="day-badge">Lundi</span>
+                            </div>
+                            <div class="schedule-label">🕐 Horaires (UTC+1)</div>
+                            <div class="schedule-times">
+                                <span class="time-badge">01:00</span>
+                                <span class="time-badge">04:00</span>
+                                <span class="time-badge">11:00</span>
+                                <span class="time-badge">14:00</span>
+                                <span class="time-badge">17:00</span>
+                                <span class="time-badge">20:00</span>
+                                <span class="time-badge">22:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        .planning-update {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 26, 117, 0.15);
-            border: 1px solid rgba(255, 26, 117, 0.3);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 13px;
-            color: #b0b0d0;
-        }
-
-        .planning-update .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background: #00ff88;
-            border-radius: 50%;
-            animation: pulseDot 2s ease-in-out infinite;
-        }
-
-        @keyframes pulseDot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-
-        .planning-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .planning-section {
-            background: linear-gradient(135deg, rgba(26, 26, 62, 0.8) 0%, rgba(10, 14, 39, 0.9) 100%);
-            border: 1px solid rgba(255, 26, 117, 0.2);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .planning-section:hover {
-            border-color: rgba(255, 26, 117, 0.5);
-            box-shadow: 0 10px 40px rgba(255, 26, 117, 0.2);
-        }
-
-        .planning-section.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .section-header {
-            padding: 20px 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .section-icon {
-            font-size: 28px;
-        }
-
-        .section-title {
-            flex: 1;
-        }
-
-        .section-title h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 3px;
-        }
-
-        .section-title span {
-            font-size: 12px;
-            color: #b0b0d0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-content {
-            padding: 20px;
-        }
-
-        /* Daily Races Tiers */
-        .tier-block {
-            margin-bottom: 20px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .tier-block:last-child {
-            margin-bottom: 0;
-        }
-
-        .tier-header {
-            padding: 12px 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .tier-badge {
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .tier-bronze .tier-badge {
-            background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
-            color: #fff;
-        }
-
-        .tier-silver .tier-badge {
-            background: linear-gradient(135deg, #C0C0C0 0%, #808080 100%);
-            color: #1a1a3e;
-        }
-
-        .tier-gold .tier-badge {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #1a1a3e;
-        }
-
-        .tier-races {
-            padding: 0 18px 15px;
-        }
-
-        .race-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .race-item:last-child {
-            border-bottom: none;
-        }
-
-        .race-flag {
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .race-details {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .race-classes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 5px;
-        }
-
-        .class-badge {
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .class-badge.hypercar {
-            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
-            color: #fff;
-        }
-
-        .class-badge.lmgt3 {
-            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-            color: #fff;
-        }
-
-        .class-badge.lmp2 {
-            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
-            color: #fff;
-        }
-
-        .class-badge.lmp3 {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: #fff;
-        }
-
-        .race-track {
-            font-size: 13px;
-            color: #ffffff;
-            font-weight: 500;
-        }
-
-        .race-track .config {
-            color: #b0b0d0;
-            font-weight: 400;
-        }
-
-        .race-meta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-shrink: 0;
-        }
-
-        .setup-badge {
-            font-size: 10px;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .setup-badge.fixed {
-            background: rgba(255, 193, 7, 0.2);
-            color: #ffc107;
-            border: 1px solid rgba(255, 193, 7, 0.3);
-        }
-
-        .setup-badge.open {
-            background: rgba(0, 255, 136, 0.2);
-            color: #00ff88;
-            border: 1px solid rgba(0, 255, 136, 0.3);
-        }
-
-        .duration-badge {
-            font-size: 12px;
-            color: #00d4ff;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .extra-badge {
-            font-size: 10px;
-            padding: 3px 8px;
-            background: rgba(255, 26, 117, 0.2);
-            color: #ff1a75;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        /* Weekly & Special Event Cards */
-        .event-card {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            padding: 25px;
-        }
-
-        .event-main {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .event-flag {
-            font-size: 40px;
-        }
-
-        .event-info h4 {
-            font-size: 18px;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .event-info .event-classes {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        .event-track {
-            font-size: 14px;
-            color: #b0b0d0;
-            margin-bottom: 5px;
-        }
-
-        .event-duration {
-            font-size: 24px;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .event-settings {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .setting-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            color: #b0b0d0;
-        }
-
-        .setting-item .icon {
-            font-size: 14px;
-        }
-
-        .event-schedule {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-        }
-
-        .schedule-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #b0b0d0;
-            margin-bottom: 10px;
-        }
-
-        .schedule-days {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 15px;
-        }
-
-        .day-badge {
-            padding: 6px 14px;
-            background: rgba(255, 26, 117, 0.15);
-            border: 1px solid rgba(255, 26, 117, 0.3);
-            border-radius: 20px;
-            font-size: 12px;
-            color: #ff1a75;
-            font-weight: 600;
-        }
-
-        .schedule-times {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .time-badge {
-            padding: 5px 12px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 6px;
-            font-size: 12px;
-            color: #00d4ff;
-            font-weight: 500;
-            font-family: 'Courier New', monospace;
-        }
-
-        /* Special Event Highlight */
-        .special-event-section {
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(26, 26, 62, 0.9) 100%);
-            border-color: rgba(255, 26, 117, 0.4);
-        }
-
-        .special-event-section .section-header {
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, transparent 100%);
-        }
-
-        /* ============================================= */
-        /* FIN SECTION PLANNING LMU */
-        /* ============================================= */
-
+            <!-- SPECIAL EVENT - Full Width -->
+            <div class="planning-section special-event-section full-width">
+                <div class="section-header">
+                    <span class="section-icon">⭐</span>
+                    <div class="section-title">
+                        <h3>Special Event</h3>
+                        <span>Événement spécial de la semaine</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="event-card">
+                        <div class="event-main">
+                            <span class="event-flag">🇵🇹</span>
+                            <div class="event-info">
+                                <h4>ELMS 4 Hours of Portimão</h4>
+                                <div class="event-classes">
+                                    <span class="class-badge lmp2">LMP2</span>
+                                    <span class="class-badge lmp3">LMP3</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="event-track">Portimão (WEC) • <span class="setup-badge open">Open Setup</span></div>
+                                <div class="event-duration">240 min (4h)</div>
+                            </div>
+                        </div>
+                        <div class="event-settings">
+                            <div class="setting-item">
+                                <span class="icon">🚗</span>
+                                <span>38 cars splits</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🌡️</span>
+                                <span>No tyre warmers</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">🛞</span>
+                                <span>Pneus : 12</span>
+                            </div>
+                            <div class="setting-item">
+                                <span class="icon">⏱️</span>
+                                <span>10min Practice + 15min Qualif</span>
+                            </div>
+                        </div>
+                        <div class="event-schedule">
+                            <div class="schedule-label">📅 9, 10, 11 Janvier 2026</div>
+                            <div class="schedule-days">
+                                <span class="day-badge">Vendredi</span>
+                                <span class="day-badge">Samedi</span>
+                                <span class="day-badge">Dimanche</span>
+                            </div>
+                            <div class="schedule-label">🕐 Horaires (UTC+1)</div>
+                            <div class="schedule-times">
+                                <span class="time-badge">04:00</span>
+                                <span class="time-badge">10:00</span>
+                                <span class="time-badge">15:00</span>
+                                <span class="time-badge">22:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================= -->
+    <!-- FIN SECTION PLANNING LMU -->
+    <!-- ============================================= -->
         /* Pilots Section */
         .pilots-grid {
             display: grid;
