@@ -26,9 +26,30 @@
         .leadership-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 80px; }
         .person-card { background: rgba(26, 26, 62, 0.6); border: 2px solid rgba(255, 26, 117, 0.3); border-radius: 15px; overflow: hidden; transition: all 0.3s ease; }
         .person-card:hover { transform: translateY(-5px); border-color: #ff1a75; box-shadow: 0 15px 30px rgba(255, 26, 117, 0.3); }
-        .person-header-inline { display: flex; align-items: center; gap: 15px; padding: 20px; background: rgba(10, 14, 39, 0.3); border-bottom: 1px solid rgba(255, 26, 117, 0.2); }
-        .person-photo-circle { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #ff1a75; flex-shrink: 0; }
-        .person-header-info { flex: 1; }
+        .person-header-inline { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 20px; 
+            background: rgba(10, 14, 39, 0.8); 
+            background-size: cover; 
+            background-position: center; 
+            background-blend-mode: overlay;
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2); 
+            position: relative;
+        }
+        .person-header-inline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 14, 39, 0.7);
+            z-index: 0;
+        }
+        .person-photo-circle { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #ff1a75; flex-shrink: 0; position: relative; z-index: 1; }
+        .person-header-info { flex: 1; position: relative; z-index: 1; }
         .person-role-badge { background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); padding: 4px 12px; border-radius: 12px; font-size: 9px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 5px; }
         .person-name { font-size: 18px; font-weight: bold; color: #ff1a75; }
         .person-info-details { padding: 20px; }
@@ -46,6 +67,8 @@
         .team-leader { background: rgba(26, 26, 62, 0.6); border: 2px solid rgba(0, 212, 255, 0.3); border-radius: 15px; overflow: hidden; margin-bottom: 30px; }
         .team-leader .person-photo-circle { border-color: #00d4ff; }
         .team-leader .person-role-badge { background: linear-gradient(135deg, #00d4ff 0%, #0088ff 100%); }
+        .team-leader .person-header-inline { flex-direction: column; text-align: center; }
+        .team-leader .person-name { text-align: center; }
         .pilots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
         .category-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
         .category-content.active { max-height: 15000px; }
@@ -94,7 +117,7 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
@@ -111,7 +134,7 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
@@ -130,7 +153,7 @@
             </div>
             <div class="category-content" id="content-gt3">
         <div class="team-leader">
-            <div class="person-header-inline">
+            <div class="person-header-inline" style="background-image: url('car-chef-gt3-alpha.png');">
                 <img src="chef-gt3-alpha.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/00d4ff/ffffff?text=C'">
                 <div class="person-header-info">
                     <div class="person-role-badge">CHEF D'ÉQUIPE GT3 ALPHA</div>
@@ -142,13 +165,14 @@
                     <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                    <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                    <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                 </div>
             </div>
         </div>
+
         <div class="pilots-grid">
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3A-1.png');">
                     <img src="pilot-GT3A-1.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3A1'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -160,12 +184,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3A-2.png');">
                     <img src="pilot-GT3A-2.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3A2'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -177,12 +201,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3A-3.png');">
                     <img src="pilot-GT3A-3.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3A3'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -194,12 +218,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3A-4.png');">
                     <img src="pilot-GT3A-4.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3A4'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -211,12 +235,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3A-5.png');">
                     <img src="pilot-GT3A-5.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3A5'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -228,13 +252,13 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="team-leader">
-            <div class="person-header-inline">
+            <div class="person-header-inline" style="background-image: url('car-chef-gt3-bravo.png');">
                 <img src="chef-gt3-bravo.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/00d4ff/ffffff?text=C'">
                 <div class="person-header-info">
                     <div class="person-role-badge">CHEF D'ÉQUIPE GT3 BRAVO</div>
@@ -246,13 +270,14 @@
                     <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                    <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                    <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                 </div>
             </div>
         </div>
+
         <div class="pilots-grid">
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3B-1.png');">
                     <img src="pilot-GT3B-1.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3B1'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -264,12 +289,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3B-2.png');">
                     <img src="pilot-GT3B-2.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3B2'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -281,12 +306,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3B-3.png');">
                     <img src="pilot-GT3B-3.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3B3'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -298,12 +323,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3B-4.png');">
                     <img src="pilot-GT3B-4.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3B4'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -315,12 +340,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-GT3B-5.png');">
                     <img src="pilot-GT3B-5.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=GT3B5'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -332,7 +357,7 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
@@ -352,7 +377,7 @@
             </div>
             <div class="category-content" id="content-lmp">
         <div class="team-leader">
-            <div class="person-header-inline">
+            <div class="person-header-inline" style="background-image: url('car-chef-lmp.png');">
                 <img src="chef-lmp.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/00d4ff/ffffff?text=C'">
                 <div class="person-header-info">
                     <div class="person-role-badge">CHEF D'ÉQUIPE LMP2/3</div>
@@ -364,13 +389,14 @@
                     <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                    <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                    <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                 </div>
             </div>
         </div>
+
         <div class="pilots-grid">
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-LMP-1.png');">
                     <img src="pilot-LMP-1.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=LMP1'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -382,12 +408,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-LMP-2.png');">
                     <img src="pilot-LMP-2.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=LMP2'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -399,12 +425,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-LMP-3.png');">
                     <img src="pilot-LMP-3.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=LMP3'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -416,12 +442,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-LMP-4.png');">
                     <img src="pilot-LMP-4.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=LMP4'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -433,12 +459,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-LMP-5.png');">
                     <img src="pilot-LMP-5.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=LMP5'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -450,7 +476,7 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
@@ -470,7 +496,7 @@
             </div>
             <div class="category-content" id="content-hypercar">
         <div class="team-leader">
-            <div class="person-header-inline">
+            <div class="person-header-inline" style="background-image: url('car-chef-hypercar.png');">
                 <img src="chef-hypercar.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/00d4ff/ffffff?text=C'">
                 <div class="person-header-info">
                     <div class="person-role-badge">CHEF D'ÉQUIPE HYPERCARS</div>
@@ -482,13 +508,14 @@
                     <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                     <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                    <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                    <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                 </div>
             </div>
         </div>
+
         <div class="pilots-grid">
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-HYP-1.png');">
                     <img src="pilot-HYP-1.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=HYP1'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -500,12 +527,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-HYP-2.png');">
                     <img src="pilot-HYP-2.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=HYP2'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -517,12 +544,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-HYP-3.png');">
                     <img src="pilot-HYP-3.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=HYP3'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -534,12 +561,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-HYP-4.png');">
                     <img src="pilot-HYP-4.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=HYP4'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -551,12 +578,12 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
             <div class="person-card">
-                <div class="person-header-inline">
+                <div class="person-header-inline" style="background-image: url('car-HYP-5.png');">
                     <img src="pilot-HYP-5.png" class="person-photo-circle" onerror="this.src='https://via.placeholder.com/70/ff1a75/ffffff?text=HYP5'">
                     <div class="person-header-info">
                         <div class="person-role-badge">PILOTE</div>
@@ -568,7 +595,7 @@
                         <div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
                         <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-                        <div class="spec-item"><span class="spec-label">Passion</span><span class="spec-value">À remplir</span></div>
+                        <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
                     </div>
                 </div>
             </div>
