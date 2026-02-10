@@ -88,22 +88,23 @@
             justify-content: center; 
             align-items: center;
             padding: 20px;
+            overflow-y: auto;
         }
         .setup-modal.active { display: flex; }
         .setup-modal-content { 
-            max-width: 90%; 
-            max-height: 90%; 
+            max-width: 600px;
+            width: 100%;
             position: relative;
+            transform: scale(1.2);
         }
-        .setup-modal-image { 
-            max-width: 100%; 
-            max-height: 85vh; 
-            border-radius: 15px;
-            box-shadow: 0 0 50px rgba(255, 26, 117, 0.5);
+        .setup-modal .person-card {
+            max-width: none;
+            width: 100%;
+            margin: 0;
         }
         .setup-modal-close { 
             position: absolute; 
-            top: -40px; 
+            top: -50px; 
             right: 0; 
             background: #ff1a75; 
             border: none; 
@@ -117,6 +118,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
+            z-index: 10001;
         }
         .setup-modal-close:hover { 
             background: #ff3388; 
@@ -659,7 +661,7 @@
     <div class="setup-modal" id="setupModal">
         <div class="setup-modal-content">
             <button class="setup-modal-close" onclick="closeSetupModal()">×</button>
-            <img id="setupImage" src="" alt="Setup" class="setup-modal-image">
+            <div id="setupCardContent"></div>
         </div>
     </div>
     
@@ -691,10 +693,18 @@
         window.addEventListener('resize', initCategories);
         
         // Popup Setup Photo
-        function openSetupModal(setupImageSrc) {
+        function openSetupModal(cardElement) {
             const modal = document.getElementById('setupModal');
-            const img = document.getElementById('setupImage');
-            img.src = setupImageSrc;
+            const content = document.getElementById('setupCardContent');
+            
+            // Cloner la carte complète
+            const cardClone = cardElement.cloneNode(true);
+            cardClone.style.cursor = 'default';
+            
+            // Vider le contenu précédent et ajouter le clone
+            content.innerHTML = '';
+            content.appendChild(cardClone);
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -712,14 +722,10 @@
             }
         });
         
-        // Ajouter onclick sur cartes pilotes (pas les chefs ni direction)
+        // Ajouter onclick sur cartes pilotes
         document.querySelectorAll('.pilots-grid .person-card').forEach(card => {
             card.addEventListener('click', function() {
-                const headerBg = this.querySelector('.person-header-inline').style.backgroundImage;
-                if (headerBg && headerBg !== 'none') {
-                    const url = headerBg.replace(/url\(['"]?(.+?)['"]?\)/, '$1');
-                    openSetupModal(url);
-                }
+                openSetupModal(this);
             });
         });
     </script>
