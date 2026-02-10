@@ -130,7 +130,7 @@
         @media (min-width: 769px) and (max-width: 1300px) { .pilots-grid { grid-template-columns: repeat(2, 400px); } }
         @media (min-width: 769px) { .category-content { max-height: none !important; } .category-toggle { display: none; } }
     
-        /* Nouvelle structure en colonnes */
+        /* Structure en colonnes alignées */
         .directors-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -141,11 +141,17 @@
             margin-right: auto;
         }
         
-        .category-banners-grid {
+        .teams-columns-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            margin-bottom: 20px;
+            align-items: start;
+        }
+        
+        .team-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .category-banner {
@@ -186,41 +192,10 @@
             margin: 0;
         }
         
-        .chiefs-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .pilots-columns-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            align-items: start;
-        }
-        
-        .pilot-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        @media (max-width: 1400px) {
-            .chiefs-grid, .category-banners-grid, .pilots-columns-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .directors-grid, .chiefs-grid, .category-banners-grid, .pilots-columns-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         /* Couleurs par équipe */
         .team-gt3a .person-card,
-        .team-gt3a .team-leader {
+        .team-gt3a .team-leader,
+        .team-gt3a .category-banner {
             border-color: #ff1a75 !important;
         }
         .team-gt3a .person-card:hover,
@@ -232,7 +207,8 @@
         }
         
         .team-gt3b .person-card,
-        .team-gt3b .team-leader {
+        .team-gt3b .team-leader,
+        .team-gt3b .category-banner {
             border-color: #00d4ff !important;
         }
         .team-gt3b .person-card:hover,
@@ -244,7 +220,8 @@
         }
         
         .team-lmp .person-card,
-        .team-lmp .team-leader {
+        .team-lmp .team-leader,
+        .team-lmp .category-banner {
             border-color: #ffcc00 !important;
         }
         .team-lmp .person-card:hover,
@@ -256,7 +233,8 @@
         }
         
         .team-hyp .person-card,
-        .team-hyp .team-leader {
+        .team-hyp .team-leader,
+        .team-hyp .category-banner {
             border-color: #00ff88 !important;
         }
         .team-hyp .person-card:hover,
@@ -265,6 +243,18 @@
         }
         .team-hyp .person-photo-circle {
             border-color: #00ff88 !important;
+        }
+        
+        @media (max-width: 1400px) {
+            .teams-columns-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .directors-grid, .teams-columns-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
     </style>
@@ -335,33 +325,15 @@
 </div>
         </div>
         
-        <!-- Bannières catégories EN PREMIER -->
-        <div class="category-banners-grid">
-            <div class="category-banner" style="background-image: url('category-gt3-alpha.png');">
-                <div class="category-banner-content">
-                    <h3>🏎️ GT3 Alpha</h3>
+        <!-- 4 colonnes : Catégorie → Chef → Pilotes -->
+        <div class="teams-columns-grid">
+            <!-- Colonne GT3 Alpha -->
+            <div class="team-column team-gt3a">
+                <div class="category-banner" style="background-image: url('category-gt3-alpha.png');">
+                    <div class="category-banner-content">
+                        <h3>🏎️ GT3 Alpha</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="category-banner" style="background-image: url('category-gt3-bravo.png');">
-                <div class="category-banner-content">
-                    <h3>🏎️ GT3 Bravo</h3>
-                </div>
-            </div>
-            <div class="category-banner" style="background-image: url('category-lmp.png');">
-                <div class="category-banner-content">
-                    <h3>⚡ LMP2/3</h3>
-                </div>
-            </div>
-            <div class="category-banner" style="background-image: url('category-hypercar.png');">
-                <div class="category-banner-content">
-                    <h3>🚀 Hypercars</h3>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Chefs d'équipe EN DESSOUS -->
-        <div class="chiefs-grid">
-            <div class="team-gt3a">
                 <div class="team-leader">
 <div class="person-header-inline" style="background-image: url('car-chef-gt3-alpha.png');">
 <img class="person-photo-circle" src="chef-gt3-alpha.png"/>
@@ -370,42 +342,15 @@
 <h3 class="person-name">Anthony.M</h3>
 </div>
 </div>
-            </div>
-            <div class="team-gt3b">
-                <div class="team-leader">
-<div class="person-header-inline" style="background-image: url('car-chef-gt3-bravo.png');">
-<img class="person-photo-circle" src="chef-gt3-bravo.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">CHEF D'ÉQUIPE GT3 BRAVO</div>
-<h3 class="person-name">Quentin.S</h3>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Azetek Invicta 27Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Simagic Gt Néo</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Rseat P1</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Azetek Invicta</span></div>
 </div>
 </div>
-            </div>
-            <div class="team-lmp">
-                <div class="team-leader">
-<div class="person-header-inline" style="background-image: url('car-chef-lmp.png');">
-<img class="person-photo-circle" src="chef-lmp.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">CHEF D'ÉQUIPE LMP2/3</div>
-<h3 class="person-name">Guillaume.w</h3>
 </div>
-</div>
-            </div>
-            <div class="team-hyp">
-                <div class="team-leader">
-<div class="person-header-inline" style="background-image: url('car-chef-hypercar.png');">
-<img class="person-photo-circle" src="chef-hypercar.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">CHEF D'ÉQUIPE HYPERCARS</div>
-<h3 class="person-name">Hugo.R</h3>
-</div>
-</div>
-            </div>
-        </div>
-        
-        <!-- Pilotes en colonnes -->
-        <div class="pilots-columns-grid">
-            <div class="pilot-column">
                 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-GT3A-1.png');">
 <img class="person-photo-circle" src="pilot-GT3A-1.png"/>
@@ -488,7 +433,31 @@
 </div>
 </div>
             </div>
-            <div class="pilot-column">
+            
+            <!-- Colonne GT3 Bravo -->
+            <div class="team-column team-gt3b">
+                <div class="category-banner" style="background-image: url('category-gt3-bravo.png');">
+                    <div class="category-banner-content">
+                        <h3>🏎️ GT3 Bravo</h3>
+                    </div>
+                </div>
+                <div class="team-leader">
+<div class="person-header-inline" style="background-image: url('car-chef-gt3-bravo.png');">
+<img class="person-photo-circle" src="chef-gt3-bravo.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">CHEF D'ÉQUIPE GT3 BRAVO</div>
+<h3 class="person-name">Quentin.S</h3>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Thrusmaster T300 Racing</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Ferrari F1 Wheel Add-On </span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Wheel Stand GT Prospan</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">T-LCM&gt;</span></div>
+</div>
+</div>
+</div>
                 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-GT3B-1.png');">
 <img class="person-photo-circle" src="pilot-GT3B-1.png"/>
@@ -571,7 +540,31 @@
 </div>
 </div>
             </div>
-            <div class="pilot-column">
+            
+            <!-- Colonne LMP2/3 -->
+            <div class="team-column team-lmp">
+                <div class="category-banner" style="background-image: url('category-lmp.png');">
+                    <div class="category-banner-content">
+                        <h3>⚡ LMP2/3</h3>
+                    </div>
+                </div>
+                <div class="team-leader">
+<div class="person-header-inline" style="background-image: url('car-chef-lmp.png');">
+<img class="person-photo-circle" src="chef-lmp.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">CHEF D'ÉQUIPE LMP2/3</div>
+<h3 class="person-name">Guillaume.w</h3>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
+</div>
+</div>
+</div>
                 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-LMP-1.png');">
 <img class="person-photo-circle" src="pilot-LMP-1.png"/>
@@ -654,7 +647,31 @@
 </div>
 </div>
             </div>
-            <div class="pilot-column">
+            
+            <!-- Colonne Hypercars -->
+            <div class="team-column team-hyp">
+                <div class="category-banner" style="background-image: url('category-hypercar.png');">
+                    <div class="category-banner-content">
+                        <h3>🚀 Hypercars</h3>
+                    </div>
+                </div>
+                <div class="team-leader">
+<div class="person-header-inline" style="background-image: url('car-chef-hypercar.png');">
+<img class="person-photo-circle" src="chef-hypercar.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">CHEF D'ÉQUIPE HYPERCARS</div>
+<h3 class="person-name">Hugo.R</h3>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8 Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec McLaren GT3 V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Opltite S3</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL</span></div>
+</div>
+</div>
+</div>
                 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-HYP-1.png');">
 <img class="person-photo-circle" src="pilot-HYP-1.png"/>
@@ -782,7 +799,7 @@
             }
         });
         
-        document.querySelectorAll('.pilot-column .person-card').forEach(card => {
+        document.querySelectorAll('.team-column .person-card').forEach(card => {
             card.addEventListener('click', function() {
                 openSetupModal(this);
             });
