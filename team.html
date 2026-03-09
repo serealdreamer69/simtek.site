@@ -849,26 +849,52 @@
                     const name  = card.querySelector('.person-name')?.textContent || '';
                     const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
                     const badge = card.querySelector('.person-role-badge')?.textContent || '';
+
+                    // Wrapper accordéon
+                    const accordionWrapper = document.createElement('div');
+                    accordionWrapper.style.cssText = 'border: 2px solid rgba(255,255,255,0.4); border-radius: 12px; overflow: hidden; background: rgba(10,14,39,0.92);';
+
+                    // Mini header cliquable
                     const mini = document.createElement('div');
                     mini.className = 'mobile-mini-card';
-                    mini.style.cssText = 'position:relative; top:auto; border-color:rgba(255,255,255,0.4); cursor:pointer;';
+                    mini.style.cssText = 'position:relative; top:auto; border:none; cursor:pointer; border-radius:0;';
                     mini.innerHTML = `
                         <img src="${photo}" class="mini-photo" style="border-color:rgba(255,255,255,0.6)">
-                        <div>
+                        <div style="flex:1">
                             <div class="mini-badge" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.5)">${badge}</div>
                             <div class="mini-name" style="color:#ffffff">${name}</div>
-                        </div>`;
+                        </div>
+                        <span class="dir-arrow" style="color:#fff;font-size:16px;margin-right:8px">▼</span>`;
+
+                    // Zone dépliable avec les specs
+                    const expandable = document.createElement('div');
+                    expandable.style.cssText = 'max-height: 0; overflow: hidden; transition: max-height 0.4s ease;';
+                    const specs = card.querySelector('.person-info-details');
+                    if (specs) {
+                        const specsClone = specs.cloneNode(true);
+                        specsClone.style.padding = '10px 15px';
+                        expandable.appendChild(specsClone);
+                    }
+
+                    let isOpen = false;
                     mini.addEventListener('click', () => {
-                        const modal = document.getElementById('setupModal');
-                        const content = document.getElementById('setupCardContent');
-                        const cardClone = card.cloneNode(true);
-                        cardClone.style.cursor = 'default';
-                        content.innerHTML = '';
-                        content.appendChild(cardClone);
-                        modal.classList.add('active');
-                        document.body.style.overflow = 'hidden';
+                        isOpen = !isOpen;
+                        expandable.style.maxHeight = isOpen ? '300px' : '0';
+                        mini.querySelector('.dir-arrow').textContent = isOpen ? '▲' : '▼';
                     });
-                    dirWrapper.appendChild(mini);
+
+                    // Collapse au scroll
+                    window.addEventListener('scroll', () => {
+                        if (isOpen) {
+                            isOpen = false;
+                            expandable.style.maxHeight = '0';
+                            mini.querySelector('.dir-arrow').textContent = '▼';
+                        }
+                    }, { passive: true });
+
+                    accordionWrapper.appendChild(mini);
+                    accordionWrapper.appendChild(expandable);
+                    dirWrapper.appendChild(accordionWrapper);
                 });
                 section.appendChild(dirWrapper);
             }
