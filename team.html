@@ -261,6 +261,9 @@
             .directors-grid, .teams-columns-grid {
                 grid-template-columns: 1fr;
             }
+            .directors-grid {
+                display: none;
+            }
         }
 
         /* ── Mobile Stack View ── */
@@ -836,6 +839,39 @@
 
             section.innerHTML = '';
             const spacing = 68;
+
+            // Direction cards (Guillaume & Denis)
+            const directionCards = Array.from(document.querySelectorAll('.directors-grid .person-card'));
+            if (directionCards.length > 0) {
+                const dirWrapper = document.createElement('div');
+                dirWrapper.style.cssText = 'margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px;';
+                directionCards.forEach(card => {
+                    const name  = card.querySelector('.person-name')?.textContent || '';
+                    const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
+                    const badge = card.querySelector('.person-role-badge')?.textContent || '';
+                    const mini = document.createElement('div');
+                    mini.className = 'mobile-mini-card';
+                    mini.style.cssText = 'position:relative; top:auto; border-color:rgba(255,255,255,0.4); cursor:pointer;';
+                    mini.innerHTML = `
+                        <img src="${photo}" class="mini-photo" style="border-color:rgba(255,255,255,0.6)">
+                        <div>
+                            <div class="mini-badge" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.5)">${badge}</div>
+                            <div class="mini-name" style="color:#ffffff">${name}</div>
+                        </div>`;
+                    mini.addEventListener('click', () => {
+                        const modal = document.getElementById('setupModal');
+                        const content = document.getElementById('setupCardContent');
+                        const cardClone = card.cloneNode(true);
+                        cardClone.style.cursor = 'default';
+                        content.innerHTML = '';
+                        content.appendChild(cardClone);
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+                    dirWrapper.appendChild(mini);
+                });
+                section.appendChild(dirWrapper);
+            }
 
             teams.forEach(team => {
                 const col = document.querySelector(team.selector);
