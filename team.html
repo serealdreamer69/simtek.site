@@ -97,6 +97,12 @@
             position: relative;
             transform: scale(1.2);
         }
+        @media (max-width: 768px) {
+            .setup-modal-content {
+                transform: none;
+                width: calc(100% - 40px);
+            }
+        }
         .setup-modal .person-card {
             max-width: none;
             width: 100%;
