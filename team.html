@@ -108,6 +108,27 @@
             width: 100%;
             margin: 0;
         }
+        .setup-photo-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0 0 13px 13px;
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+        }
+        .setup-photo-container img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .setup-photo-label {
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #b0b0d0;
+            padding: 8px;
+            background: rgba(10, 14, 39, 0.8);
+        }
         .setup-modal-close { 
             position: absolute; 
             top: -50px; 
@@ -355,7 +376,6 @@
         <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="team.html">Équipe</a></li>
-            <li><a href="our-setups.html">Nos Setups</a></li>
             <li><a href="pilot-recruitment.html">Recrutement</a></li>
             <li><a href="become-partner.html">Devenir Partenaire</a></li>
         </ul>
@@ -365,7 +385,6 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Accueil</a>
         <a href="team.html">Équipe</a>
-        <a href="our-setups.html">Nos Setups</a>
         <a href="pilot-recruitment.html">Recrutement</a>
         <a href="become-partner.html">Devenir Partenaire</a>
     </div>
@@ -640,7 +659,7 @@
                     </div>
                 </div>
                 <div class="team-leader">
-<div class="person-header-inline" style="background-image: url('car-chef-lmp.png');">
+<div class="person-header-inline" style="background-image: url('setup-guillaume.jpg');">
 <img class="person-photo-circle" src="chef-lmp.png"/>
 <div class="person-header-info">
 <div class="person-role-badge">CHEF D'ÉQUIPE LMP2/3</div>
@@ -801,8 +820,25 @@
                 if (photo) photo.style.setProperty('border-color', teamColor, 'important');
             }
 
+            // Extraire la photo du setup depuis le background-image
+            const headerEl = cardElement.querySelector('.person-header-inline');
+            const bgStyle = headerEl ? headerEl.style.backgroundImage : '';
+            const setupSrc = bgStyle ? bgStyle.replace(/url\(['"]?(.*?)['"]?\)/, '$1') : '';
+
             content.innerHTML = '';
             content.appendChild(cardClone);
+
+            // Ajouter la photo du setup si elle existe
+            if (setupSrc && setupSrc !== bgStyle) {
+                const photoContainer = document.createElement('div');
+                photoContainer.className = 'setup-photo-container';
+                photoContainer.innerHTML = `
+                    <div class="setup-photo-label">📸 Setup</div>
+                    <img src="${setupSrc}" alt="Setup" onerror="this.parentElement.style.display='none'">
+                `;
+                cardClone.appendChild(photoContainer);
+            }
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
