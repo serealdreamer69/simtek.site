@@ -257,6 +257,86 @@
             }
         }
 
+        /* ── Mobile Stack View ── */
+        .mobile-team-section { display: none; }
+
+        @media (max-width: 768px) {
+            .teams-columns-grid { display: none !important; }
+            .mobile-team-section { display: block; margin-top: 10px; }
+
+            .mobile-folder {
+                border: 2px solid;
+                border-radius: 15px;
+                margin-bottom: 20px;
+                background: rgba(26, 26, 62, 0.6);
+                overflow: hidden;
+            }
+
+            .mobile-folder-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 18px 20px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .mobile-stack {
+                display: none;
+                position: relative;
+                margin: 0 15px 20px;
+            }
+
+            .mobile-stack.open { display: block; }
+
+            .mobile-mini-card {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 70px;
+                border: 2px solid;
+                border-radius: 12px;
+                background: rgba(10, 14, 39, 0.92);
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 10px 15px;
+                cursor: pointer;
+                transition: transform 0.15s;
+            }
+
+            .mobile-mini-card:active { transform: scale(0.97); }
+
+            .mini-photo {
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid;
+                flex-shrink: 0;
+            }
+
+            .mini-badge {
+                font-size: 8px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: #0a0e27;
+                padding: 2px 8px;
+                border-radius: 8px;
+                display: inline-block;
+                margin-bottom: 4px;
+            }
+
+            .mini-name {
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+
     </style>
 </head>
 
@@ -661,6 +741,9 @@
 </div>
             </div>
         </div>
+        
+        <!-- Mobile Stack View -->
+        <div id="mobileTeamSection" class="mobile-team-section"></div>
     </div>
     
     <div class="setup-modal" id="setupModal">
@@ -710,6 +793,75 @@
                 openSetupModal(this);
             });
         });
+
+        // ── Mobile Stack View ──
+        function buildMobileView() {
+            const section = document.getElementById('mobileTeamSection');
+            if (!section) return;
+
+            const teams = [
+                { selector: '.team-gt3a', name: 'GT3 Alpha', color: '#ff1a75' },
+                { selector: '.team-gt3b', name: 'GT3 Bravo', color: '#00d4ff' },
+                { selector: '.team-lmp',  name: 'LMP2/3',    color: '#ffcc00' },
+                { selector: '.team-hyp',  name: 'Hypercars',  color: '#00ff88' },
+            ];
+
+            section.innerHTML = '';
+            const spacing = 68;
+
+            teams.forEach(team => {
+                const col = document.querySelector(team.selector);
+                if (!col) return;
+
+                const cards = Array.from(col.querySelectorAll('.team-leader, .person-card'));
+                const stackHeight = (cards.length - 1) * spacing + 70;
+
+                const folder = document.createElement('div');
+                folder.className = 'mobile-folder';
+                folder.style.borderColor = team.color;
+
+                const header = document.createElement('div');
+                header.className = 'mobile-folder-header';
+                header.style.color = team.color;
+                header.innerHTML = `<span>${team.name}</span><span class="mobile-folder-arrow">▼</span>`;
+
+                const stack = document.createElement('div');
+                stack.className = 'mobile-stack';
+                stack.style.height = stackHeight + 'px';
+
+                cards.forEach((card, i) => {
+                    const name  = card.querySelector('.person-name')?.textContent || '';
+                    const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
+                    const badge = card.querySelector('.person-role-badge')?.textContent || '';
+
+                    const mini = document.createElement('div');
+                    mini.className = 'mobile-mini-card';
+                    mini.style.borderColor = team.color;
+                    mini.style.top = (i * spacing) + 'px';
+                    mini.style.zIndex = cards.length - i;
+                    mini.innerHTML = `
+                        <img src="${photo}" class="mini-photo" style="border-color:${team.color}">
+                        <div>
+                            <div class="mini-badge" style="background:${team.color}">${badge}</div>
+                            <div class="mini-name" style="color:${team.color}">${name}</div>
+                        </div>`;
+
+                    mini.addEventListener('click', () => openSetupModal(card));
+                    stack.appendChild(mini);
+                });
+
+                header.addEventListener('click', () => {
+                    const isOpen = stack.classList.toggle('open');
+                    header.querySelector('.mobile-folder-arrow').textContent = isOpen ? '▲' : '▼';
+                });
+
+                folder.appendChild(header);
+                folder.appendChild(stack);
+                section.appendChild(folder);
+            });
+        }
+
+        buildMobileView();
     </script>
 </body>
 </html>
