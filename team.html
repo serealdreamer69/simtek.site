@@ -776,6 +776,28 @@
             const content = document.getElementById('setupCardContent');
             const cardClone = cardElement.cloneNode(true);
             cardClone.style.cursor = 'default';
+
+            // Détecter la couleur de l'équipe parente
+            const teamColors = {
+                'team-gt3a': '#ff1a75',
+                'team-gt3b': '#00d4ff',
+                'team-lmp':  '#ffcc00',
+                'team-hyp':  '#00ff88',
+            };
+            let teamColor = null;
+            const parentCol = cardElement.closest('.team-column');
+            if (parentCol) {
+                for (const [cls, color] of Object.entries(teamColors)) {
+                    if (parentCol.classList.contains(cls)) { teamColor = color; break; }
+                }
+            }
+            if (teamColor) {
+                cardClone.style.borderColor = teamColor;
+                cardClone.style.setProperty('border-color', teamColor, 'important');
+                const photo = cardClone.querySelector('.person-photo-circle');
+                if (photo) photo.style.setProperty('border-color', teamColor, 'important');
+            }
+
             content.innerHTML = '';
             content.appendChild(cardClone);
             modal.classList.add('active');
@@ -842,14 +864,14 @@
 
                     const mini = document.createElement('div');
                     mini.className = 'mobile-mini-card';
-                    mini.style.borderColor = team.color;
+                    mini.style.borderColor = team.color + '55';
                     mini.style.top = (i * spacing) + 'px';
                     mini.style.zIndex = cards.length - i;
                     mini.innerHTML = `
-                        <img src="${photo}" class="mini-photo" style="border-color:${team.color}">
+                        <img src="${photo}" class="mini-photo" style="border-color:${team.color}88">
                         <div>
-                            <div class="mini-badge" style="background:${team.color}">${badge}</div>
-                            <div class="mini-name" style="color:${team.color}">${name}</div>
+                            <div class="mini-badge" style="background:${team.color}99;color:#fff">${badge}</div>
+                            <div class="mini-name" style="color:${team.color}cc">${name}</div>
                         </div>`;
 
                     mini.addEventListener('click', () => openSetupModal(card));
