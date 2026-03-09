@@ -855,7 +855,7 @@
             }
         });
         
-        document.querySelectorAll('.team-column .person-card').forEach(card => {
+        document.querySelectorAll('.team-column .person-card, .team-column .team-leader').forEach(card => {
             card.addEventListener('click', function() {
                 openSetupModal(this);
             });
