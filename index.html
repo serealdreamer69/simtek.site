@@ -1290,43 +1290,24 @@
                 to   { opacity: 1; transform: translateY(0); }
             }
 
-            /* ── Accordion event-cards mobile ── */
-            .event-card {
+            /* ── Accordion section-level mobile (Weekly, Special Event) ── */
+            .planning-section .section-header {
                 cursor: pointer;
+                user-select: none;
             }
-            .event-main {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-            }
-            .event-arrow {
+            .section-arrow {
                 font-size: 14px;
                 color: #00d4ff;
                 transition: transform 0.3s ease;
                 flex-shrink: 0;
-                margin-left: 10px;
-                margin-top: 4px;
+                margin-left: auto;
             }
-            .event-card.open .event-arrow { transform: rotate(180deg); }
-            .event-settings,
-            .event-schedule {
+            .planning-section.open .section-arrow { transform: rotate(180deg); }
+            .planning-section .section-content {
                 display: none;
+                animation: tierFadeIn 0.3s ease;
             }
-            .event-card.open .event-settings,
-            .event-card.open .event-schedule {
-                display: flex;
-            }
-            .event-card.open .event-schedule {
-                display: block;
-            }
-            @keyframes eventFadeIn {
-                from { opacity: 0; transform: translateY(-6px); }
-                to   { opacity: 1; transform: translateY(0); }
-            }
-            .event-card.open .event-settings,
-            .event-card.open .event-schedule {
-                animation: eventFadeIn 0.3s ease;
-            }
+            .planning-section.open .section-content { display: block; }
         }
     </style>
 </head>
@@ -1612,6 +1593,7 @@
                     <h3>Weekly Races</h3>
                     <span>Courses hebdomadaires (Solo)</span>
                 </div>
+                <span class="section-arrow">▼</span>
             </div>
             <div class="section-content">
                 <!-- WEC Weekly -->
@@ -1627,7 +1609,6 @@
                             <div class="event-track">Monza (WEC) • <span class="setup-badge open">Open Setup</span></div>
                             <div class="event-duration">100 min</div>
                         </div>
-                        <span class="event-arrow">▼</span>
                     </div>
                     <div class="event-settings">
                         <div class="setting-item">
@@ -1678,7 +1659,6 @@
                             <div class="event-track">Paul Ricard (ELMS) • <span class="setup-badge open">Open Setup</span></div>
                             <div class="event-duration">144 min (2h24)</div>
                         </div>
-                        <span class="event-arrow">▼</span>
                     </div>
                     <div class="event-settings">
                         <div class="setting-item">
@@ -1724,6 +1704,7 @@
                     <h3>Special Event (Team)</h3>
                     <span>Événement spécial de la semaine</span>
                 </div>
+                <span class="section-arrow">▼</span>
             </div>
             <div class="section-content">
                 <div class="event-card">
@@ -1738,7 +1719,6 @@
                             <div class="event-track">Qatar (WEC) • <span class="setup-badge open">Open Setup</span> • 335 tours</div>
                             <div class="event-duration">600 min (10h) 🏆</div>
                         </div>
-                        <span class="event-arrow">▼</span>
                     </div>
                     <div class="event-settings">
                         <div class="setting-item">
@@ -2155,9 +2135,9 @@
                 });
             });
 
-            document.querySelectorAll('.event-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    card.classList.toggle('open');
+            document.querySelectorAll('.planning-section .section-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    header.closest('.planning-section').classList.toggle('open');
                 });
             });
         }
