@@ -1289,6 +1289,44 @@
                 from { opacity: 0; transform: translateY(-6px); }
                 to   { opacity: 1; transform: translateY(0); }
             }
+
+            /* ── Accordion event-cards mobile ── */
+            .event-card {
+                cursor: pointer;
+            }
+            .event-main {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .event-arrow {
+                font-size: 14px;
+                color: #00d4ff;
+                transition: transform 0.3s ease;
+                flex-shrink: 0;
+                margin-left: 10px;
+                margin-top: 4px;
+            }
+            .event-card.open .event-arrow { transform: rotate(180deg); }
+            .event-settings,
+            .event-schedule {
+                display: none;
+            }
+            .event-card.open .event-settings,
+            .event-card.open .event-schedule {
+                display: flex;
+            }
+            .event-card.open .event-schedule {
+                display: block;
+            }
+            @keyframes eventFadeIn {
+                from { opacity: 0; transform: translateY(-6px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            .event-card.open .event-settings,
+            .event-card.open .event-schedule {
+                animation: eventFadeIn 0.3s ease;
+            }
         }
     </style>
 </head>
@@ -1589,6 +1627,7 @@
                             <div class="event-track">Monza (WEC) • <span class="setup-badge open">Open Setup</span></div>
                             <div class="event-duration">100 min</div>
                         </div>
+                        <span class="event-arrow">▼</span>
                     </div>
                     <div class="event-settings">
                         <div class="setting-item">
@@ -1639,6 +1678,7 @@
                             <div class="event-track">Paul Ricard (ELMS) • <span class="setup-badge open">Open Setup</span></div>
                             <div class="event-duration">144 min (2h24)</div>
                         </div>
+                        <span class="event-arrow">▼</span>
                     </div>
                     <div class="event-settings">
                         <div class="setting-item">
@@ -1698,6 +1738,7 @@
                             <div class="event-track">Qatar (WEC) • <span class="setup-badge open">Open Setup</span> • 335 tours</div>
                             <div class="event-duration">600 min (10h) 🏆</div>
                         </div>
+                        <span class="event-arrow">▼</span>
                     </div>
                     <div class="event-settings">
                         <div class="setting-item">
@@ -2111,6 +2152,12 @@
             document.querySelectorAll('.tier-header').forEach(header => {
                 header.addEventListener('click', () => {
                     header.closest('.tier-block').classList.toggle('open');
+                });
+            });
+
+            document.querySelectorAll('.event-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    card.classList.toggle('open');
                 });
             });
         }
