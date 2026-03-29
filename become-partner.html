@@ -370,9 +370,52 @@
         }
 
         /* Mobile */
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
         @media (max-width: 768px) {
             nav {
                 padding: 15px 20px;
+                position: relative;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                background: rgba(10, 14, 39, 0.98);
+                padding: 20px;
+                border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+                z-index: 999;
+            }
+
+            .nav-links.open {
+                display: flex;
             }
 
             .logo-img {
@@ -404,7 +447,10 @@
         <a href="index.html" class="logo">
             <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
         </a>
-                <ul class="nav-links">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="team.html">Notre Équipe</a></li>
             <li><a href="sponsors-details.html">Nos Sponsors</a></li>
@@ -606,5 +652,10 @@
         <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
         <p style="color: #666; margin-top: 10px;">Une équipe qui monte • Une passion qui nous unit</p>
     </footer>
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
