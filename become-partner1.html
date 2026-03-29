@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Devenez partenaire de SimTek Performance. Sponsorisez notre équipe simracing professionnelle et bénéficiez d'une visibilité sur Le Mans Ultimate, iRacing et nos réseaux sociaux.">
+    <meta name="keywords" content="sponsor simracing, partenariat esport, sponsoring simracing, partenaire équipe simracing, visibilité simracing">
+    <meta name="robots" content="index, follow">
+    <title>Devenir Partenaire - Sponsoring SimTek Performance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(10, 14, 39, 0.95);
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff1a75;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 26, 117, 0.1) 0%, transparent 70%);
+            animation: pulse 15s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #b0b0d0;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            color: #888;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .story-title {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ff1a75;
+        }
+
+        .story-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #b0b0d0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 26, 117, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #b0b0d0;
+            margin-top: 10px;
+        }
+
+        /* What We Offer */
+        .offer-section {
+            padding: 80px 20px;
+            background: rgba(255, 26, 117, 0.05);
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .offer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .offer-icon {
+            color: #00d4ff;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .offer-text {
+            color: #b0b0d0;
+            line-height: 1.6;
+        }
+
+        /* Support Types */
+        .support-section {
+            padding: 80px 20px;
+        }
+
+        .support-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .support-card {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.2);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .support-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff1a75;
+            box-shadow: 0 20px 40px rgba(255, 26, 117, 0.2);
+        }
+
+        .support-emoji {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .support-title {
+            color: #ff1a75;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .support-description {
+            color: #b0b0d0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Why Support Us */
+        .why-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 26, 117, 0.05) 100%);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .why-column h3 {
+            color: #00d4ff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .why-list {
+            list-style: none;
+        }
+
+        .why-list li {
+            padding: 10px 0;
+            color: #b0b0d0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .why-list li:before {
+            content: '→';
+            color: #ff1a75;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            color: #b0b0d0;
+            margin-bottom: 40px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            padding: 15px 40px;
+            border: 2px solid #00d4ff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Message clé */
+        .key-message {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border-left: 4px solid #ff1a75;
+            padding: 30px;
+            margin: 60px auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        .key-message p {
+            font-size: 20px;
+            color: #ffffff;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
+        </a>
+                <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="team.html">Notre Équipe</a></li>
+            <li><a href="sponsors-details.html">Nos Sponsors</a></li>
+            <li><a href="become-partner.html">Devenir Sponsor</a></li>
+            <li><a href="pilot-recruitment.html">Rejoins Nous</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1 class="gradient-text">Join the Journey</h1>
+        <p class="hero-subtitle">Nous sommes SimTek Performance</p>
+        <p class="hero-text">Une jeune équipe passionnée qui monte • Grandissez avec nous depuis le début</p>
+    </div>
+
+    <!-- Notre Histoire -->
+    <section class="story-section container">
+        <h2 class="story-title">Notre Histoire</h2>
+        <div class="story-content">
+            <p>Nous sommes 6 pilotes passionnés de SimRacing, unis par la même vision : repousser nos limites et représenter l'excellence dans les courses virtuelles. De la 24h du Mans aux endurances de Spa, nous donnons tout sur chaque circuit.</p>
+            <br>
+            <p>SimTek Performance n'est pas qu'une équipe, c'est une aventure humaine. Nous construisons quelque chose de spécial, course après course, avec authenticité et détermination.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Pilotes passionnés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Le Mans finishers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Passion pure</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ce qu'on propose -->
+    <section class="offer-section">
+        <div class="container">
+            <h2 class="story-title">Ce qu'on vous propose</h2>
+            <p style="text-align: center; color: #b0b0d0; margin-bottom: 40px;">
+                Un partenariat authentique et transparent
+            </p>
+            
+            <div class="offer-grid">
+                <div class="offer-item">
+                    <span class="offer-icon">✅</span>
+                    <span class="offer-text">Votre logo sur notre site web et nos réseaux sociaux</span>
+                </div>
+                <div class="offer-item">
+                    <span class="offer-icon">✅</span>
+                    <span class="offer-text">Votre marque sur nos livrées de course</span>
+                </div>
+                <div class="offer-item">
+                    <span class="offer-icon">✅</span>
+                    <span class="offer-text">Mentions et remerciements dans nos streams Twitch</span>
+                </div>
+                <div class="offer-item">
+                    <span class="offer-icon">✅</span>
+                    <span class="offer-text">Posts dédiés sur nos réseaux sociaux</span>
+                </div>
+                <div class="offer-item">
+                    <span class="offer-icon">✅</span>
+                    <span class="offer-text">Un partenariat direct avec une équipe qui monte</span>
+                </div>
+                <div class="offer-item">
+                    <span class="offer-icon">✅</span>
+                    <span class="offer-text">Rapports réguliers sur nos performances et votre visibilité</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types de soutien -->
+    <section class="support-section container">
+        <h2 class="story-title">Comment nous soutenir</h2>
+        <p style="text-align: center; color: #b0b0d0;">Chaque aide compte, peu importe sa forme</p>
+        
+        <div class="support-cards">
+            <div class="support-card">
+                <div class="support-emoji">💙</div>
+                <h3 class="support-title">SUPPORTER</h3>
+                <p class="support-description">
+                    Votre nom sur notre site<br>
+                    Remerciements sur nos réseaux<br>
+                    Notre reconnaissance éternelle
+                </p>
+            </div>
+            
+            <div class="support-card">
+                <div class="support-emoji">🏁</div>
+                <h3 class="support-title">PARTENAIRE</h3>
+                <p class="support-description">
+                    Logo sur site et livrées<br>
+                    Posts dédiés réguliers<br>
+                    Visibilité dans nos streams
+                </p>
+            </div>
+            
+            <div class="support-card">
+                <div class="support-emoji">🏆</div>
+                <h3 class="support-title">PARTENAIRE PRINCIPAL</h3>
+                <p class="support-description">
+                    Visibilité maximale<br>
+                    Nom dans l'équipe possible<br>
+                    Collaboration étroite
+                </p>
+            </div>
+        </div>
+
+        <div class="key-message">
+            <p>"Pas de grille tarifaire, pas de package rigide. Discutons ensemble de ce qui fonctionne pour vous et pour nous."</p>
+        </div>
+    </section>
+
+    <!-- Pourquoi nous soutenir -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="story-title">Pourquoi nous rejoindre maintenant</h2>
+            
+            <div class="why-grid">
+                <div class="why-column">
+                    <h3>Vous nous aidez à :</h3>
+                    <ul class="why-list">
+                        <li>Participer à plus de compétitions prestigieuses</li>
+                        <li>Améliorer notre matériel et nos setups</li>
+                        <li>Développer notre présence médiatique</li>
+                        <li>Former les futures générations de simracers</li>
+                    </ul>
+                </div>
+                
+                <div class="why-column">
+                    <h3>Ensemble on peut :</h3>
+                    <ul class="why-list">
+                        <li>Construire une success story depuis le début</li>
+                        <li>Partager la passion du SimRacing</li>
+                        <li>Créer une communauté engagée</li>
+                        <li>Repousser les limites du possible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autres formes d'aide -->
+    <section class="support-section container">
+        <h2 class="story-title">D'autres façons de nous aider</h2>
+        <p style="text-align: center; color: #b0b0d0; margin-bottom: 40px;">
+            Le soutien financier n'est pas la seule option
+        </p>
+        
+        <div class="offer-grid">
+            <div class="offer-item">
+                <span class="offer-icon">🎮</span>
+                <span class="offer-text"><strong>Matériel :</strong> Prêt ou don de volants, pédales, ou équipement sim</span>
+            </div>
+            <div class="offer-item">
+                <span class="offer-icon">🎨</span>
+                <span class="offer-text"><strong>Services :</strong> Graphisme, montage vidéo, développement web</span>
+            </div>
+            <div class="offer-item">
+                <span class="offer-icon">📢</span>
+                <span class="offer-text"><strong>Visibilité :</strong> Partages sur les réseaux, bouche-à-oreille</span>
+            </div>
+            <div class="offer-item">
+                <span class="offer-icon">🤝</span>
+                <span class="offer-text"><strong>Réseau :</strong> Mise en relation avec d'autres partenaires potentiels</span>
+            </div>
+            <div class="offer-item">
+                <span class="offer-icon">🎓</span>
+                <span class="offer-text"><strong>Expertise :</strong> Coaching, conseils techniques, stratégie</span>
+            </div>
+            <div class="offer-item">
+                <span class="offer-icon">💬</span>
+                <span class="offer-text"><strong>Communauté :</strong> Animation de notre Discord, modération</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <h2 class="cta-title gradient-text">Prêt à écrire l'histoire avec nous ?</h2>
+        <p class="cta-subtitle">
+            N'investissez pas dans une équipe établie.<br>
+            Investissez dans une équipe qui monte et grandissez avec nous depuis le début.
+        </p>
+        
+        <div class="cta-buttons">
+            <a href="partner-contact.html" class="btn-primary">On discute ?</a>
+            <a href="index.html#races" class="btn-secondary">Voir nos résultats</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
+        <p style="color: #666; margin-top: 10px;">Une équipe qui monte • Une passion qui nous unit</p>
+    </footer>
+</body>
+</html>
