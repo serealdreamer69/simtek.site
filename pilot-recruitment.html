@@ -22,50 +22,169 @@
             min-height: 100vh;
         }
 
-        /* Navigation */
+                /* ── Navigation ── */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 60px;
             background: rgba(10, 14, 39, 0.95);
-            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+            transition: transform 0.3s ease;
         }
-
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-
         .logo-img {
-            height: 60px;
+            height: 80px;
             width: auto;
             object-fit: contain;
-            transition: transform 0.3s ease;
         }
-
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 40px;
             list-style: none;
         }
-
         .nav-links a {
             color: #ffffff;
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
         }
-
-        .nav-links a:hover {
-            color: #ff1a75;
+        .nav-links a:hover { color: #ff1a75; }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .cta-button {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: #ff1a75;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(9px, 9px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(9px, -9px); }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.98) 0%, rgba(26, 26, 62, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu.active { display: flex; opacity: 1; }
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 40px;
+        }
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .mobile-menu-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+        .mobile-menu-links a:hover::after { width: 100%; }
+        .mobile-menu-links a:hover { color: #ff1a75; transform: scale(1.1); }
+        .mobile-cta {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(255, 26, 117, 0.5);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .mobile-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 26, 117, 0.7);
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links, nav .cta-button { display: none; }
+            nav { padding: 15px 20px; }
         }
 
         /* Container principal */
@@ -408,19 +527,39 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">
+        <nav>
+        <div class="logo">
             <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
-        </a>
-                <ul class="nav-links">
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#planning">Planning LMU</a></li>
             <li><a href="team.html">Notre Équipe</a></li>
             <li><a href="sponsors-details.html">Nos Sponsors</a></li>
-            <li><a href="become-partner.html">Devenir Sponsor</a></li>
+            <li><a href="become-partner.html">Become Partner</a></li>
             <li><a href="pilot-recruitment.html">Rejoins Nous</a></li>
         </ul>
+        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Nous Contacter</a>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="index.html" class="mobile-link">Accueil</a>
+                <a href="index.html#planning" class="mobile-link">Planning LMU</a>
+                <a href="team.html" class="mobile-link">Notre Équipe</a>
+                <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
+                <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
+                <a href="become-partner.html" class="mobile-link">Become Partner</a>
+            </div>
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Nous Contacter</a>
+        </div>
+    </div>
     <div class="main-container">
         <h1>Rejoins l'équipe</h1>
         <p class="subtitle">Tu rêves de piloter au niveau professionnel dans Simtek Performance ?</p>
@@ -665,5 +804,26 @@
         <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
         <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
     </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        window.addEventListener('scroll', () => {
+            if (mobileMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
