@@ -501,6 +501,168 @@
             }
         }
 
+        /* ── Mobile Pilot Popup ── */
+        @media (max-width: 768px) {
+
+            .pilot-popup-overlay {
+                display: none;
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.88);
+                z-index: 3000;
+                align-items: center;
+                justify-content: center;
+                padding: 16px;
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+            }
+            .pilot-popup-overlay.active {
+                display: flex;
+            }
+
+            .pilot-popup {
+                position: relative;
+                background: linear-gradient(160deg, #0d1130 0%, #1a1a3e 100%);
+                border-radius: 22px;
+                width: 100%;
+                max-width: 370px;
+                max-height: 88vh;
+                overflow-y: auto;
+                border: 2px solid rgba(255, 26, 117, 0.35);
+                box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.04);
+                scroll-behavior: smooth;
+            }
+            .pilot-popup::-webkit-scrollbar { width: 4px; }
+            .pilot-popup::-webkit-scrollbar-track { background: transparent; }
+            .pilot-popup::-webkit-scrollbar-thumb { background: rgba(255,26,117,0.4); border-radius: 4px; }
+
+            /* Top accent bar (team color set by JS) */
+            .pilot-popup-accent {
+                height: 4px;
+                border-radius: 22px 22px 0 0;
+                background: #ff1a75;
+                flex-shrink: 0;
+            }
+
+            /* Close button */
+            .pilot-popup-close {
+                position: absolute;
+                top: 14px;
+                right: 14px;
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                background: rgba(255, 26, 117, 0.15);
+                border: 1px solid rgba(255, 26, 117, 0.35);
+                color: #ffffff;
+                font-size: 20px;
+                line-height: 1;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10;
+                transition: background 0.2s;
+            }
+            .pilot-popup-close:hover { background: rgba(255,26,117,0.4); }
+
+            /* Header : photo + nom + badge */
+            .pilot-popup-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 20px 20px;
+                gap: 10px;
+                text-align: center;
+            }
+            .pilot-popup-photo {
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #ff1a75;
+                box-shadow: 0 0 20px rgba(255,26,117,0.4);
+            }
+            .pilot-popup-badge {
+                font-size: 10px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                background: rgba(255,26,117,0.2);
+                border: 1px solid rgba(255,26,117,0.45);
+                color: #ff1a75;
+                padding: 3px 10px;
+                border-radius: 20px;
+            }
+            .pilot-popup-name {
+                font-size: 22px;
+                font-weight: 800;
+                color: #ffffff;
+                letter-spacing: 1px;
+            }
+
+            /* Section titles */
+            .pilot-popup-section-title {
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                color: #ff1a75;
+                padding: 0 18px 8px;
+                border-bottom: 1px solid rgba(255,26,117,0.15);
+                margin: 0 18px 4px;
+            }
+
+            /* Row item */
+            .pilot-popup-row {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 10px 18px;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+            }
+            .pilot-popup-row:last-child { border-bottom: none; }
+            .pilot-popup-row-icon {
+                font-size: 17px;
+                width: 26px;
+                text-align: center;
+                flex-shrink: 0;
+            }
+            .pilot-popup-row-label {
+                font-size: 11px;
+                color: rgba(255,255,255,0.45);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                min-width: 70px;
+                flex-shrink: 0;
+            }
+            .pilot-popup-row-value {
+                font-size: 13px;
+                color: #ffffff;
+                font-weight: 600;
+                flex: 1;
+                text-align: right;
+            }
+            .pilot-popup-row-value.empty {
+                color: rgba(255,255,255,0.3);
+                font-style: italic;
+                font-weight: 400;
+            }
+
+            /* Setup photo */
+            .pilot-popup-setup-img {
+                width: calc(100% - 36px);
+                margin: 12px 18px 18px;
+                border-radius: 12px;
+                object-fit: cover;
+                max-height: 180px;
+                border: 1px solid rgba(255,255,255,0.08);
+            }
+
+            /* Spacer between sections */
+            .pilot-popup-spacer { height: 16px; }
+        }
+
     </style>
 </head>
 
@@ -913,6 +1075,15 @@
         </div>
     </div>
     
+    <!-- Mobile Pilot Popup -->
+    <div class="pilot-popup-overlay" id="pilotPopupOverlay">
+        <div class="pilot-popup" id="pilotPopup">
+            <div class="pilot-popup-accent" id="pilotPopupAccent"></div>
+            <button class="pilot-popup-close" id="pilotPopupClose" onclick="closePilotPopup()">×</button>
+            <div id="pilotPopupInner"></div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2025 Simtek Performance - Tous droits réservés</p>
     </footer>
@@ -1010,6 +1181,135 @@
             card.addEventListener('click', function() {
                 openSetupModal(this);
             });
+        });
+
+        // ── Données pilotes (à remplir quand les pilotes transmettent leurs infos) ──
+        const pilotData = {
+            'Thibault.C':   { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Dylan':        { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Damien':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Esteban.B':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Maceo.R':      { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Anthony.D':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Paul.T':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Maxime':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Christophe.A': { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Mathieu.D':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Florent.L':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Cyrille':      { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Jacy.L':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+        };
+
+        function val(v) {
+            const isEmpty = !v || v.trim() === 'À remplir' || v.trim() === '';
+            return `<span class="pilot-popup-row-value${isEmpty ? ' empty' : ''}">${isEmpty ? 'À remplir' : v}</span>`;
+        }
+
+        function openPilotMobilePopup(card, teamColor) {
+            const name   = card.querySelector('.person-name')?.textContent.trim() || '';
+            const photo  = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
+            const badge  = card.querySelector('.person-role-badge')?.textContent.trim() || '';
+            const data   = pilotData[name] || {};
+
+            // Specs matériel
+            const specs = {};
+            card.querySelectorAll('.spec-item').forEach(item => {
+                const lbl = item.querySelector('.spec-label')?.textContent.trim();
+                const spv = item.querySelector('.spec-value')?.textContent.trim();
+                if (lbl) specs[lbl] = spv || '';
+            });
+
+            // Setup photo (background-image du header)
+            const headerEl = card.querySelector('.person-header-inline');
+            const bgStyle  = headerEl ? headerEl.style.backgroundImage : '';
+            const setupSrc = bgStyle ? bgStyle.replace(/url\(['"]?(.*?)['"]?\)/, '$1') : '';
+            const hasSetup = setupSrc && setupSrc !== bgStyle;
+
+            const color = teamColor || '#ff1a75';
+
+            document.getElementById('pilotPopupAccent').style.background = color;
+            document.getElementById('pilotPopup').style.borderColor = color + '55';
+
+            document.getElementById('pilotPopupInner').innerHTML = `
+                <div class="pilot-popup-header">
+                    <img src="${photo}" class="pilot-popup-photo" style="border-color:${color};box-shadow:0 0 20px ${color}55" onerror="this.style.display='none'">
+                    <div class="pilot-popup-badge" style="color:${color};background:${color}22;border-color:${color}55">${badge}</div>
+                    <div class="pilot-popup-name">${name}</div>
+                </div>
+
+                <div class="pilot-popup-section-title" style="color:${color};border-color:${color}33">🏎️ Profil</div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🎂</span>
+                    <span class="pilot-popup-row-label">Anniversaire</span>
+                    ${val(data.birthday)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🕹️</span>
+                    <span class="pilot-popup-row-label">Début sim</span>
+                    ${val(data.simstart)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">💻</span>
+                    <span class="pilot-popup-row-label">Plateforme</span>
+                    ${val(data.platform)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">📍</span>
+                    <span class="pilot-popup-row-label">Circuit</span>
+                    ${val(data.circuit)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🚗</span>
+                    <span class="pilot-popup-row-label">Voiture</span>
+                    ${val(data.car)}
+                </div>
+
+                <div class="pilot-popup-spacer"></div>
+                <div class="pilot-popup-section-title" style="color:${color};border-color:${color}33">🖥️ Setup</div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">⚙️</span>
+                    <span class="pilot-popup-row-label">Base</span>
+                    ${val(specs['Base'])}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🎮</span>
+                    <span class="pilot-popup-row-label">Volant</span>
+                    ${val(specs['Volant'])}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🦶</span>
+                    <span class="pilot-popup-row-label">Pédalier</span>
+                    ${val(specs['Pédalier'])}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🪑</span>
+                    <span class="pilot-popup-row-label">Châssis</span>
+                    ${val(specs['Châssis'])}
+                </div>
+                ${hasSetup ? `
+                <div class="pilot-popup-spacer"></div>
+                <div class="pilot-popup-section-title" style="color:${color};border-color:${color}33">📸 Photo Setup</div>
+                <img src="${setupSrc}" class="pilot-popup-setup-img"
+                     onerror="this.parentElement && this.closest('.pilot-popup-section-title, img') && this.remove()"
+                     alt="Setup de ${name}">
+                ` : ''}
+                <div class="pilot-popup-spacer"></div>
+            `;
+
+            const overlay = document.getElementById('pilotPopupOverlay');
+            overlay.classList.add('active');
+            document.getElementById('pilotPopup').scrollTop = 0;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePilotPopup() {
+            document.getElementById('pilotPopupOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer en cliquant sur l'overlay (hors popup)
+        document.getElementById('pilotPopupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closePilotPopup();
         });
 
         // ── Mobile Stack View ──
@@ -1123,7 +1423,14 @@
                             <div class="mini-name" style="color:${team.color}cc">${name}</div>
                         </div>`;
 
-                    mini.addEventListener('click', () => openSetupModal(card));
+                    mini.addEventListener('click', () => {
+                        const isPilot = card.querySelector('.person-role-badge')?.textContent.trim() === 'PILOTE';
+                        if (isPilot && window.innerWidth <= 768) {
+                            openPilotMobilePopup(card, team.color);
+                        } else {
+                            openSetupModal(card);
+                        }
+                    });
                     stack.appendChild(mini);
                 });
 
