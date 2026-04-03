@@ -1159,7 +1159,6 @@
 </div>
 </div>
             </div>
-            </div>
             
             <!-- Colonne Hypercars -->
             <div class="team-column team-hyp">
@@ -1386,12 +1385,15 @@
             document.getElementById('pilotPopupAccent').style.background = color;
             document.getElementById('pilotPopup').style.borderColor = color + '55';
 
+            const licenseBadgesHTML = card.querySelector('.license-badges')?.outerHTML || '';
+
             document.getElementById('pilotPopupInner').innerHTML = `
                 <div class="pilot-popup-header">
                     <img src="${photo}" class="pilot-popup-photo" style="border-color:${color};box-shadow:0 0 14px ${color}55" onerror="this.style.display='none'">
                     <div class="pilot-popup-header-text">
                         <div class="pilot-popup-badge" style="color:${color};background:${color}22;border-color:${color}55">${badge}</div>
                         <div class="pilot-popup-name">${name}</div>
+                        ${licenseBadgesHTML}
                     </div>
                 </div>
 
@@ -1561,6 +1563,7 @@
                     const name  = card.querySelector('.person-name')?.textContent || '';
                     const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
                     const badge = card.querySelector('.person-role-badge')?.textContent || '';
+                    const licenseBadgesHTML = card.querySelector('.license-badges')?.outerHTML || '';
 
                     const mini = document.createElement('div');
                     mini.className = 'mobile-mini-card';
@@ -1572,6 +1575,7 @@
                         <div>
                             <div class="mini-badge" style="background:${team.color}99;color:#fff">${badge}</div>
                             <div class="mini-name" style="color:${team.color}cc">${name}</div>
+                            ${licenseBadgesHTML}
                         </div>`;
 
                     mini.addEventListener('click', () => {
