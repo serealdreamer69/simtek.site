@@ -1572,10 +1572,12 @@
                     mini.style.zIndex = cards.length - i;
                     mini.innerHTML = `
                         <img src="${photo}" class="mini-photo" style="border-color:${team.color}88">
-                        <div>
+                        <div style="flex:1;min-width:0;">
                             <div class="mini-badge" style="background:${team.color}99;color:#fff">${badge}</div>
-                            <div class="mini-name" style="color:${team.color}cc">${name}</div>
-                            ${licenseBadgesHTML}
+                            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                                <div class="mini-name" style="color:${team.color}cc">${name}</div>
+                                ${licenseBadgesHTML}
+                            </div>
                         </div>`;
 
                     mini.addEventListener('click', () => {
