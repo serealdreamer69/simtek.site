@@ -657,6 +657,11 @@
             margin-top: 5px;
             flex-wrap: wrap;
         }
+        .mobile-mini-card .license-badges {
+            margin-top: 0;
+            display: inline-flex;
+            flex-wrap: nowrap;
+        }
         .license-badge {
             display: inline-flex;
             border-radius: 6px;
@@ -1563,7 +1568,8 @@
                     const name  = card.querySelector('.person-name')?.textContent || '';
                     const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
                     const badge = card.querySelector('.person-role-badge')?.textContent || '';
-                    const licenseBadgesHTML = card.querySelector('.license-badges')?.outerHTML || '';
+                    const licenseBadgesEl = card.querySelector('.license-badges');
+                    const licenseBadgesHTML = licenseBadgesEl ? licenseBadgesEl.outerHTML : '';
 
                     const mini = document.createElement('div');
                     mini.className = 'mobile-mini-card';
@@ -1574,8 +1580,8 @@
                         <img src="${photo}" class="mini-photo" style="border-color:${team.color}88">
                         <div style="flex:1;min-width:0;">
                             <div class="mini-badge" style="background:${team.color}99;color:#fff">${badge}</div>
-                            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-                                <div class="mini-name" style="color:${team.color}cc">${name}</div>
+                            <div style="display:flex;align-items:center;gap:6px;flex-wrap:nowrap;">
+                                <div class="mini-name" style="color:${team.color}cc;margin:0;">${name}</div>
                                 ${licenseBadgesHTML}
                             </div>
                         </div>`;
