@@ -650,6 +650,39 @@
         /* Spacer between sections */
         .pilot-popup-spacer { height: 8px; }
 
+        /* ── License Badges (DR / SR) ── */
+        .license-badges {
+            display: flex;
+            gap: 6px;
+            margin-top: 5px;
+            flex-wrap: wrap;
+        }
+        .license-badge {
+            display: inline-flex;
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+        }
+        .lb-type {
+            padding: 3px 6px;
+            background: #3a3a4a;
+            color: #ffffff;
+        }
+        .lb-level {
+            padding: 3px 7px;
+            color: #ffffff;
+        }
+        /* Silver */
+        .lb-s1, .lb-s2, .lb-s3 { background: #7a7a8a; }
+        /* Platinum */
+        .lb-p1, .lb-p2, .lb-p3 { background: #6090c0; }
+        /* Gold */
+        .lb-g1, .lb-g2, .lb-g3 { background: #c08010; }
+        /* Bronze */
+        .lb-b1, .lb-b2, .lb-b3 { background: #8a5a18; }
+
         /* Mobile overrides — resserrer sur petits écrans */
         @media (max-width: 768px) {
             .pilot-popup-overlay { padding: 12px; }
@@ -715,6 +748,10 @@
 <div class="person-header-info">
 <div class="person-role-badge">PROPRIÉTAIRE</div>
 <h3 class="person-name">Guillaume</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -732,6 +769,10 @@
 <div class="person-header-info">
 <div class="person-role-badge">TEAM PRINCIPAL</div>
 <h3 class="person-name">Denis</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -760,6 +801,10 @@
 <div class="person-header-info">
 <div class="person-role-badge">CHEF D'ÉQUIPE GT3 ALPHA</div>
 <h3 class="person-name">Anthony.M</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s1">S1</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -771,44 +816,17 @@
 </div>
 </div>
 </div>
-                <div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3A-1.png');">
-<img class="person-photo-circle" src="pilot-GT3A-1.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Thibault.C</h3>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R12</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">TrackRacer</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza CRP-2</span></div>
-</div>
-</div>
-</div><div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3A-2.png');">
-<img class="person-photo-circle" src="pilot-GT3A-2.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Dylan</h3>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
-</div>
-</div>
-</div><div class="person-card">
+                <!-- 1. Damien — S2 -->
+<div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-GT3A-4.png');">
 <img class="person-photo-circle" src="pilot-GT3A-4.png"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
 <h3 class="person-name">Damien</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -819,23 +837,138 @@
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Thrustmaster TCLM</span></div>
 </div>
 </div>
-</div><div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3A-4.png');">
-<img class="person-photo-circle" src="pilot-GT3A-5.png"/>
+</div>
+<!-- 2. Thibault.C — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3A-1.png');">
+<img class="person-photo-circle" src="pilot-GT3A-1.png"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Esteban.B</h3>
+<h3 class="person-name">Thibault.C</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p2">P2</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
 <div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">thrustmaster TX</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Ferrari sf1000 addon thrustmaster</span></div>
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R12</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">TrackRacer</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza CRP-2</span></div>
+</div>
+</div>
+</div>
+<!-- 3. Dylan — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3A-2.png');">
+<img class="person-photo-circle" src="pilot-GT3A-2.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Dylan</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g3">G3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
+</div>
+</div>
+</div>
+<!-- 4. Maceo.R — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-1.png');">
+<img class="person-photo-circle" src="pilot-GT3B-1.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Maceo.R</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R5</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite S3</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Sr8</span></div>
+</div>
+</div>
+</div>
+<!-- 5. Anthony.D — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-2.png');">
+<img class="person-photo-circle" src="pilot-GT3B-2.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Anthony.D</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">McLaren GT3 V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Infinity S8</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL</span></div>
+</div>
+</div>
+</div>
+<!-- 6. Maxime — S2 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-4.png');">
+<img class="person-photo-circle" src="pilot-GT3B-4.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Maxime</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g2">G2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec DD Pro</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec Formula V2.5 X</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplit SR8</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Asete Forte</span></div>
+</div>
+</div>
+</div>
+<!-- 7. Christophe.A — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
+<img class="person-photo-circle" src="pilot-GT3B-5.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Christophe.A</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R9</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Roue KS</span></div>
 <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">PlaySeat Challenge</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">thrustmaster </span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza SRP </span></div>
 </div>
 </div>
-
 </div>
             </div>
             
@@ -852,6 +985,10 @@
 <div class="person-header-info">
 <div class="person-role-badge">CHEF D'ÉQUIPE GT3 BRAVO</div>
 <h3 class="person-name">Quentin.S</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g2">G2</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -863,44 +1000,17 @@
 </div>
 </div>
 </div>
-                <div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3B-1.png');">
-<img class="person-photo-circle" src="pilot-GT3B-1.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Maceo.R</h3>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R5</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite S3</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Sr8</span></div>
-</div>
-</div>
-</div><div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3B-2.png');">
-<img class="person-photo-circle" src="pilot-GT3B-2.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Anthony.D</h3>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">McLaren GT3 V2</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Infinity S8</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL</span></div>
-</div>
-</div>
-</div><div class="person-card">
+                <!-- 1. Paul.T — B3 -->
+<div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-GT3B-3.png');">
 <img class="person-photo-circle" src="pilot-GT3B-3.png"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
 <h3 class="person-name">Paul.T</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g1">G1</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -911,44 +1021,18 @@
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Simagic P1000</span></div>
 </div>
 </div>
-</div><div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3B-4.png');">
-<img class="person-photo-circle" src="pilot-GT3B-4.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Maxime</h3>
 </div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec DD Pro</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec Formula V2.5 X</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplit SR8</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Asete Forte</span></div>
-</div>
-</div>
-</div><div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
-<img class="person-photo-circle" src="pilot-GT3B-5.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Christophe.A</h3>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R9</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Roue KS</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">PlaySeat Challenge</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza SRP </span></div>
-</div>
-</div>
-</div><div class="person-card">
+<!-- 2. Romuald.D — B3 -->
+<div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
 <img class="person-photo-circle" src="pilot-GT3B-6.png"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
 <h3 class="person-name">Romuald.D</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-b3">B3</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -959,8 +1043,24 @@
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">TLC-M</span></div>
 </div>
 </div>
-
-
+</div>
+<!-- 3. Esteban.B — sans badge -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3A-4.png');">
+<img class="person-photo-circle" src="pilot-GT3A-5.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Esteban.B</h3>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">thrustmaster TX</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Ferrari sf1000 addon thrustmaster</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">PlaySeat Challenge</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">thrustmaster </span></div>
+</div>
+</div>
 </div>
             </div>
             
@@ -977,6 +1077,10 @@
 <div class="person-header-info">
 <div class="person-role-badge">CHEF D'ÉQUIPE LMP2/3</div>
 <h3 class="person-name">Guillaume.w</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -987,28 +1091,18 @@
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Heusinkveld Ultimate+</span></div>
 </div>
 </div>
-</div><div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-LMP-2.png');">
-<img class="person-photo-circle" src="pilot-LMP-2.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Mathieu.D</h3>
 </div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">TS-XW Racer</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">ThrustMaster TM Open Wheel</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplit Challenge</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">ThrustMaster T-LCM</span></div>
-</div>
-</div>
-</div><div class="person-card">
+<!-- 1. Florent.L — S1 -->
+<div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-LMP-4.png');">
 <img class="person-photo-circle" src="pilot-LMP-4.png"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
 <h3 class="person-name">Florent.L</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g3">G3</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -1019,28 +1113,18 @@
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
 </div>
 </div>
-</div><div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-LMP-5.png');">
-<img class="person-photo-circle" src="pilot-LMP-5.png"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Cyrille</h3>
 </div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec Csl DD 8Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Bmw GT2</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Chassis Alu sur Mesure</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec Csl LoadCell</span></div>
-</div>
-</div>
-</div><div class="person-card">
+<!-- 2. Jacy.L — B3 -->
+<div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-LMP-5.png');">
 <img class="person-photo-circle" src="pilot-LMP-6.png"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
 <h3 class="person-name">Jacy.L</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g1">G1</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -1051,8 +1135,29 @@
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Thrustmaster Pedal</span></div>
 </div>
 </div>
-
-            </div>
+</div>
+<!-- 3. Cyrille — B2 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-LMP-5.png');">
+<img class="person-photo-circle" src="pilot-LMP-5.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Cyrille</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b2">B2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-b3">B0</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec Csl DD 8Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Bmw GT2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Chassis Alu sur Mesure</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec Csl LoadCell</span></div>
+</div>
+</div>
+</div>
             </div>
             
             <!-- Colonne Hypercars -->
@@ -1068,6 +1173,10 @@
 <div class="person-header-info">
 <div class="person-role-badge">CHEF D'ÉQUIPE HYPERCARS</div>
 <h3 class="person-name">Hugo.R</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p2">P2</span></span>
+</div>
 </div>
 </div>
 <div class="person-info-details">
@@ -1276,12 +1385,15 @@
             document.getElementById('pilotPopupAccent').style.background = color;
             document.getElementById('pilotPopup').style.borderColor = color + '55';
 
+            const licenseBadgesHTML = card.querySelector('.license-badges')?.outerHTML || '';
+
             document.getElementById('pilotPopupInner').innerHTML = `
                 <div class="pilot-popup-header">
                     <img src="${photo}" class="pilot-popup-photo" style="border-color:${color};box-shadow:0 0 14px ${color}55" onerror="this.style.display='none'">
                     <div class="pilot-popup-header-text">
                         <div class="pilot-popup-badge" style="color:${color};background:${color}22;border-color:${color}55">${badge}</div>
                         <div class="pilot-popup-name">${name}</div>
+                        ${licenseBadgesHTML}
                     </div>
                 </div>
 
@@ -1451,6 +1563,7 @@
                     const name  = card.querySelector('.person-name')?.textContent || '';
                     const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
                     const badge = card.querySelector('.person-role-badge')?.textContent || '';
+                    const licenseBadgesHTML = card.querySelector('.license-badges')?.outerHTML || '';
 
                     const mini = document.createElement('div');
                     mini.className = 'mobile-mini-card';
@@ -1459,9 +1572,12 @@
                     mini.style.zIndex = cards.length - i;
                     mini.innerHTML = `
                         <img src="${photo}" class="mini-photo" style="border-color:${team.color}88">
-                        <div>
+                        <div style="flex:1;min-width:0;">
                             <div class="mini-badge" style="background:${team.color}99;color:#fff">${badge}</div>
-                            <div class="mini-name" style="color:${team.color}cc">${name}</div>
+                            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+                                <div class="mini-name" style="color:${team.color}cc">${name}</div>
+                                ${licenseBadgesHTML}
+                            </div>
                         </div>`;
 
                     mini.addEventListener('click', () => {
