@@ -501,155 +501,167 @@
             }
         }
 
-        /* ── Mobile Pilot Popup ── */
+        /* ── Pilot Popup (mobile + desktop) ── */
+        .pilot-popup-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .pilot-popup-overlay.active {
+            display: flex;
+        }
+
+        .pilot-popup {
+            position: relative;
+            background: linear-gradient(160deg, #0d1130 0%, #1a1a3e 100%);
+            border-radius: 22px;
+            width: 100%;
+            max-width: 480px;
+            border: 2px solid rgba(255, 26, 117, 0.35);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.04);
+            overflow: hidden;
+        }
+
+        /* Top accent bar */
+        .pilot-popup-accent {
+            height: 4px;
+            border-radius: 22px 22px 0 0;
+            background: #ff1a75;
+        }
+
+        /* Close button */
+        .pilot-popup-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 26, 117, 0.15);
+            border: 1px solid rgba(255, 26, 117, 0.35);
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+        .pilot-popup-close:hover { background: rgba(255,26,117,0.4); }
+
+        /* Header : photo + nom + badge */
+        .pilot-popup-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px 22px 14px;
+            gap: 16px;
+        }
+        .pilot-popup-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff1a75;
+            box-shadow: 0 0 18px rgba(255,26,117,0.35);
+            flex-shrink: 0;
+        }
+        .pilot-popup-header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .pilot-popup-badge {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: rgba(255,26,117,0.15);
+            border: 1px solid rgba(255,26,117,0.4);
+            color: #ff1a75;
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .pilot-popup-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section titles */
+        .pilot-popup-section-title {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ff1a75;
+            padding: 0 18px 7px;
+            border-bottom: 1px solid rgba(255,26,117,0.15);
+            margin: 4px 18px 2px;
+        }
+
+        /* Row item */
+        .pilot-popup-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 9px 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .pilot-popup-row:last-child { border-bottom: none; }
+        .pilot-popup-row-icon {
+            font-size: 15px;
+            width: 22px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .pilot-popup-row-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            min-width: 72px;
+            flex-shrink: 0;
+        }
+        .pilot-popup-row-value {
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 600;
+            flex: 1;
+            text-align: right;
+        }
+        .pilot-popup-row-value.empty {
+            color: rgba(255,255,255,0.3);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* Spacer between sections */
+        .pilot-popup-spacer { height: 8px; }
+
+        /* Mobile overrides — resserrer sur petits écrans */
         @media (max-width: 768px) {
-
-            .pilot-popup-overlay {
-                display: none;
-                position: fixed;
-                inset: 0;
-                background: rgba(0, 0, 0, 0.88);
-                z-index: 3000;
-                align-items: center;
-                justify-content: center;
-                padding: 12px;
-                backdrop-filter: blur(6px);
-                -webkit-backdrop-filter: blur(6px);
-            }
-            .pilot-popup-overlay.active {
-                display: flex;
-            }
-
-            .pilot-popup {
-                position: relative;
-                background: linear-gradient(160deg, #0d1130 0%, #1a1a3e 100%);
-                border-radius: 18px;
-                width: 100%;
-                max-width: 370px;
-                border: 2px solid rgba(255, 26, 117, 0.35);
-                box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.04);
-                overflow: hidden;
-            }
-
-            /* Top accent bar */
-            .pilot-popup-accent {
-                height: 3px;
-                border-radius: 18px 18px 0 0;
-                background: #ff1a75;
-            }
-
-            /* Close button */
-            .pilot-popup-close {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                background: rgba(255, 26, 117, 0.15);
-                border: 1px solid rgba(255, 26, 117, 0.35);
-                color: #ffffff;
-                font-size: 18px;
-                line-height: 1;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10;
-                transition: background 0.2s;
-            }
-            .pilot-popup-close:hover { background: rgba(255,26,117,0.4); }
-
-            /* Header : photo + nom + badge — layout horizontal pour gagner de la place */
-            .pilot-popup-header {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                padding: 14px 16px 10px;
-                gap: 12px;
-            }
-            .pilot-popup-photo {
-                width: 58px;
-                height: 58px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 2px solid #ff1a75;
-                box-shadow: 0 0 14px rgba(255,26,117,0.35);
-                flex-shrink: 0;
-            }
-            .pilot-popup-header-text {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-            }
-            .pilot-popup-badge {
-                font-size: 9px;
-                font-weight: 700;
-                letter-spacing: 1.5px;
-                text-transform: uppercase;
-                background: rgba(255,26,117,0.15);
-                border: 1px solid rgba(255,26,117,0.4);
-                color: #ff1a75;
-                padding: 2px 8px;
-                border-radius: 20px;
-                display: inline-block;
-            }
-            .pilot-popup-name {
-                font-size: 18px;
-                font-weight: 800;
-                color: #ffffff;
-                letter-spacing: 0.5px;
-            }
-
-            /* Section titles */
-            .pilot-popup-section-title {
-                font-size: 9px;
-                font-weight: 700;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                color: #ff1a75;
-                padding: 0 14px 5px;
-                border-bottom: 1px solid rgba(255,26,117,0.15);
-                margin: 4px 14px 2px;
-            }
-
-            /* Row item */
-            .pilot-popup-row {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                padding: 6px 14px;
-                border-bottom: 1px solid rgba(255,255,255,0.05);
-            }
-            .pilot-popup-row:last-child { border-bottom: none; }
-            .pilot-popup-row-icon {
-                font-size: 13px;
-                width: 20px;
-                text-align: center;
-                flex-shrink: 0;
-            }
-            .pilot-popup-row-label {
-                font-size: 10px;
-                color: rgba(255,255,255,0.45);
-                text-transform: uppercase;
-                letter-spacing: 0.8px;
-                min-width: 62px;
-                flex-shrink: 0;
-            }
-            .pilot-popup-row-value {
-                font-size: 12px;
-                color: #ffffff;
-                font-weight: 600;
-                flex: 1;
-                text-align: right;
-            }
-            .pilot-popup-row-value.empty {
-                color: rgba(255,255,255,0.3);
-                font-style: italic;
-                font-weight: 400;
-            }
-
-            /* Spacer between sections */
+            .pilot-popup-overlay { padding: 12px; }
+            .pilot-popup { max-width: 370px; border-radius: 18px; }
+            .pilot-popup-header { padding: 14px 16px 10px; gap: 12px; }
+            .pilot-popup-photo { width: 58px; height: 58px; }
+            .pilot-popup-name { font-size: 18px; }
+            .pilot-popup-section-title { font-size: 9px; padding: 0 14px 5px; margin: 4px 14px 2px; }
+            .pilot-popup-row { padding: 6px 14px; gap: 8px; }
+            .pilot-popup-row-icon { font-size: 13px; width: 20px; }
+            .pilot-popup-row-label { font-size: 10px; min-width: 62px; }
+            .pilot-popup-row-value { font-size: 12px; }
             .pilot-popup-spacer { height: 6px; }
         }
 
@@ -931,6 +943,23 @@
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza SRP </span></div>
 </div>
 </div>
+</div><div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
+<img class="person-photo-circle" src="pilot-GT3B-6.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Romuald.D</h3>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R9</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Gs V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Alu sur-mesure</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">TLC-M</span></div>
+</div>
+</div>
+
 
 </div>
             </div>
@@ -1065,7 +1094,7 @@
         </div>
     </div>
     
-    <!-- Mobile Pilot Popup -->
+    <!-- Pilot Popup -->
     <div class="pilot-popup-overlay" id="pilotPopupOverlay">
         <div class="pilot-popup" id="pilotPopup">
             <div class="pilot-popup-accent" id="pilotPopupAccent"></div>
@@ -1169,7 +1198,26 @@
         
         document.querySelectorAll('.team-column .person-card, .team-column .team-leader').forEach(card => {
             card.addEventListener('click', function() {
-                openSetupModal(this);
+                const badge = this.querySelector('.person-role-badge')?.textContent.trim() || '';
+                const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF');
+                if (isPilotOrChef) {
+                    const teamColors = {
+                        'team-gt3a': '#ff1a75',
+                        'team-gt3b': '#00d4ff',
+                        'team-lmp':  '#ffcc00',
+                        'team-hyp':  '#00ff88',
+                    };
+                    let teamColor = '#ff1a75';
+                    const parentCol = this.closest('.team-column');
+                    if (parentCol) {
+                        for (const [cls, color] of Object.entries(teamColors)) {
+                            if (parentCol.classList.contains(cls)) { teamColor = color; break; }
+                        }
+                    }
+                    openPilotPopup(this, teamColor);
+                } else {
+                    openSetupModal(this);
+                }
             });
         });
 
@@ -1179,21 +1227,23 @@
             'Anthony.M':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
             'Quentin.S':    { birthday: '26/10/2006', simstart: '17 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans', car: 'porsche 911' },
             'Guillaume.w':  { birthday: '19/01/1988', simstart: '32', platform: 'Le Mans Ultimate', circuit: 'Spa Francorchamps', car: 'Ferrari 333SP' },
-            'Hugo.R':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'Le Mans Ultimate', circuit: 'À remplir', car: 'À remplir' },
+            'Hugo.R':       { birthday: '28/07/2010', simstart: '13 ans', platform: 'Le Mans Ultimate', circuit: 'Spa Francorchamps', car: 'McLaren Senna' },
             // Pilotes
             'Thibault.C':   { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
             'Dylan':        { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
-            'Damien':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Damien':       { birthday: '24/08/1986', simstart: '25 ans', platform: 'Le Mans Utlimate', circuit: 'Portimao', car: 'Mercedes C63 S AMG' },
             'Esteban.B':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
-            'Maceo.R':      { birthday: '14/069/2007', simstart: '17 ans', platform: 'Le Mans Ultimate', circuit: 'Kyalami', car: 'Lancia 037' },
+            'Maceo.R':      { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
             'Anthony.D':    { birthday: '03/12/1993', simstart: '30 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans Bugati', car: 'BMW M3 Compétition' },
             'Paul.T':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
             'Maxime':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
             'Christophe.A': { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
             'Mathieu.D':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
-            'Florent.L':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Florent.L':    { birthday: '28/05/1993', simstart: '8 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans ', car: 'Aston Martin Vantage' },
             'Cyrille':      { birthday: '27/03/1985', simstart: '39 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Nissan Skyline R34' },
-            'Jacy.L':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'Le Mans Ultimate', circuit: 'À remplir', car: 'À remplir' },
+            'Jacy.L':       { birthday: '25/01/2004', simstart: '15 ans', platform: 'Le Mans Ultimate', circuit: 'Jeddah', car: 'McLaren P1' },
+            'Romuald.D':    { birthday: '18/10/1979', simstart: '44 ans', platform: 'Le Mans Ultimate', circuit: 'nurburgring nordschleife', car: 'Porsche GT3 RS 992.2' },
+
         };
 
         function val(v) {
@@ -1201,7 +1251,7 @@
             return `<span class="pilot-popup-row-value${isEmpty ? ' empty' : ''}">${isEmpty ? 'À remplir' : v}</span>`;
         }
 
-        function openPilotMobilePopup(card, teamColor) {
+        function openPilotPopup(card, teamColor) {
             const name   = card.querySelector('.person-name')?.textContent.trim() || '';
             const photo  = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
             const badge  = card.querySelector('.person-role-badge')?.textContent.trim() || '';
@@ -1417,8 +1467,8 @@
                     mini.addEventListener('click', () => {
                         const badge = card.querySelector('.person-role-badge')?.textContent.trim() || '';
                         const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF');
-                        if (isPilotOrChef && window.innerWidth <= 768) {
-                            openPilotMobilePopup(card, team.color);
+                        if (isPilotOrChef) {
+                            openPilotPopup(card, team.color);
                         } else {
                             openSetupModal(card);
                         }
