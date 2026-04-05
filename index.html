@@ -1341,6 +1341,24 @@
                 user-select: none;
             }
         }
+
+        /* ── Championnats : semaines ── */
+        .champ-week-row { display:flex; gap:10px; align-items:center; font-size:13px; }
+        .champ-week-label {
+            color: #ff1a75;
+            font-weight: 700;
+            min-width: 60px;
+            transition: color 0.3s ease;
+        }
+        .champ-week-row.week-active .champ-week-label {
+            color: #00e676;
+        }
+        .champ-week-row.week-active {
+            background: rgba(0, 230, 118, 0.08);
+            border-radius: 6px;
+            padding: 3px 6px;
+            margin: 0 -6px;
+        }
     </style>
 </head>
 <body>
@@ -1794,14 +1812,14 @@
                     🕐 Mar & Ven : 11h 14h 16h 18h 20h 23h UTC · Mer & Sam : 02h 08h UTC
                 </div>
                 <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 1</span><span>Barcelona (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 2</span><span>Silverstone (National)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 3</span><span>Paul Ricard (Short)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 4</span><span>Spa-Francorchamps (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 5</span><span>Sebring (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 6</span><span>Le Mans (Mulsanne)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 7</span><span>Fuji (Classic)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ff1a75; font-weight:700; min-width:60px;">Week 8</span><span>Qatar (Short)</span></div>
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Barcelona (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Silverstone (National)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Paul Ricard (Short)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Spa-Francorchamps (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Sebring (WEC)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Le Mans (Mulsanne)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Fuji (Classic)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Qatar (Short)</span></div>
                 </div>
             </div>
         </div>
@@ -1830,14 +1848,14 @@
                     🕐 Mar & Ven : 11h 14h 16h 18h 20h 23h UTC · Mer & Sam : 02h 08h UTC
                 </div>
                 <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 1</span><span>Silverstone (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 2</span><span>Qatar (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 3</span><span>Sebring (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 4</span><span>Le Mans (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 5</span><span>Silverstone (International)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 6</span><span>Spa-Francorchamps (Endurance)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 7</span><span>Imola (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#c0c0c0; font-weight:700; min-width:60px;">Week 8</span><span>Paul Ricard (3a)</span></div>
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Silverstone (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Qatar (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Sebring (WEC)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Le Mans (WEC)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Silverstone (International)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Spa-Francorchamps (Endurance)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Imola (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Paul Ricard (3a)</span></div>
                 </div>
             </div>
         </div>
@@ -1866,14 +1884,14 @@
                     🕐 Mer & Dim : 02h 08h 11h 14h 16h 18h 20h 23h UTC
                 </div>
                 <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 1</span><span>Imola (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 2</span><span>Le Mans (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 3</span><span>Silverstone (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 4</span><span>COTA (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 5</span><span>Spa-Francorchamps (Endurance)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 6</span><span>Sebring (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 7</span><span>Paul Ricard (Short)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 8</span><span>Qatar (WEC)</span></div>
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Imola (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Le Mans (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Silverstone (WEC)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>COTA (WEC)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Spa-Francorchamps (Endurance)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Sebring (WEC)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Paul Ricard (Short)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Qatar (WEC)</span></div>
                 </div>
             </div>
         </div>
@@ -1902,14 +1920,14 @@
                     🕐 Mer & Sam : 11h 14h 16h 18h 20h 23h UTC · Jeu & Dim : 02h 08h UTC
                 </div>
                 <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 1</span><span>Fuji (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 2</span><span>Interlagos (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 3</span><span>Spa-Francorchamps (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 4</span><span>Qatar (Short)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 5</span><span>Bahrain (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 6</span><span>Barcelona (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 7</span><span>Monza (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00d4ff; font-weight:700; min-width:60px;">Week 8</span><span>Le Mans (WEC)</span></div>
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Fuji (WEC)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Interlagos (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Spa-Francorchamps (WEC)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Qatar (Short)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Bahrain (WEC)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Barcelona (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza (WEC)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans (WEC)</span></div>
                 </div>
             </div>
         </div>
@@ -1938,14 +1956,14 @@
                     🕐 Jeu & Lun : 11h 14h 16h 18h 20h 23h UTC · Ven & Mar : 02h 08h UTC
                 </div>
                 <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 1</span><span>Portimao (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 2</span><span>COTA (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 3</span><span>Barcelona (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 4</span><span>Imola (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 5</span><span>Paul Ricard (1a-V2)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 6</span><span>Monza (Curva Grande)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 7</span><span>Silverstone (ELMS)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#00ff88; font-weight:700; min-width:60px;">Week 8</span><span>Spa-Francorchamps (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Portimao (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>COTA (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Barcelona (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Imola (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Paul Ricard (1a-V2)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Monza (Curva Grande)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps (ELMS)</span></div>
                 </div>
             </div>
         </div>
@@ -1974,14 +1992,14 @@
                     🕐 Ven : 23h UTC · Sam : 09h & 16h UTC
                 </div>
                 <div style="display:flex; flex-direction:column; gap:6px;">
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 1</span><span style="color:#666;">— Off —</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 2</span><span>Paul Ricard (1a)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 3</span><span style="color:#666;">— Off —</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 4</span><span>Monza (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 5</span><span style="color:#666;">— Off —</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 6</span><span>Interlagos (WEC)</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 7</span><span style="color:#666;">— Off —</span></div>
-                    <div style="display:flex; gap:10px; align-items:center; font-size:13px;"><span style="color:#ffd700; font-weight:700; min-width:60px;">Week 8</span><span>Barcelona (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Paul Ricard (1a)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Monza (WEC)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Interlagos (WEC)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Barcelona (ELMS)</span></div>
                 </div>
             </div>
         </div>
@@ -2359,6 +2377,23 @@
                 header.closest('.planning-section').classList.toggle('open');
             });
         });
+
+        // ── Championnats : surbrillance semaine en cours ──
+        (function() {
+            var seasonStart = new Date('2026-04-07T00:00:00');
+            var seasonEnd   = new Date('2026-06-03T00:00:00'); // après week 8
+            var now = new Date();
+
+            if (now < seasonStart || now >= seasonEnd) return;
+
+            var msPerWeek = 7 * 24 * 60 * 60 * 1000;
+            var currentWeek = Math.floor((now - seasonStart) / msPerWeek) + 1;
+            if (currentWeek < 1 || currentWeek > 8) return;
+
+            document.querySelectorAll('.champ-week-row[data-week="' + currentWeek + '"]').forEach(function(row) {
+                row.classList.add('week-active');
+            });
+        })();
     </script>
 </body>
 </html>
