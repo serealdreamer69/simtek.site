@@ -1382,54 +1382,7 @@
             padding: 3px 6px;
             margin: 0 -6px;
         }
-        /* ── Championnats : groupes hamburger mobile ── */
-        .champ-mobile-groups { display: none; }
-        .champ-group {
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .champ-group-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
-            background: rgba(10,14,39,0.9);
-            cursor: pointer;
-            user-select: none;
-        }
-        .champ-group-circle {
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .champ-group-label {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            flex: 1;
-        }
-        .champ-group-arrow {
-            font-size: 13px;
-            color: #00d4ff;
-            transition: transform 0.3s ease;
-        }
-        .champ-group.open .champ-group-arrow { transform: rotate(180deg); }
-        .champ-group-content {
-            display: none;
-            background: rgba(26,26,62,0.6);
-            padding: 0 14px 14px;
-        }
-        .champ-group.open .champ-group-content { display: block; }
-        .champ-sub-title {
-            font-size: 13px;
-            font-weight: 700;
-            padding: 12px 0 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            margin-bottom: 8px;
-        }
-        .champ-sub-block { margin-bottom: 16px; }
+
 
         /* ── Back to top ── */
         .back-to-top {
@@ -1531,54 +1484,7 @@
             }
         }
 
-        /* ── Championnats : groupes hamburger mobile ── */
-        .champ-mobile-groups { display: none; }
-        .champ-group {
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .champ-group-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
-            background: rgba(10,14,39,0.9);
-            cursor: pointer;
-            user-select: none;
-        }
-        .champ-group-circle {
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .champ-group-label {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            flex: 1;
-        }
-        .champ-group-arrow {
-            font-size: 13px;
-            color: #00d4ff;
-            transition: transform 0.3s ease;
-        }
-        .champ-group.open .champ-group-arrow { transform: rotate(180deg); }
-        .champ-group-content {
-            display: none;
-            background: rgba(26,26,62,0.6);
-            padding: 0 14px 14px;
-        }
-        .champ-group.open .champ-group-content { display: block; }
-        .champ-sub-title {
-            font-size: 13px;
-            font-weight: 700;
-            padding: 12px 0 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            margin-bottom: 8px;
-        }
-        .champ-sub-block { margin-bottom: 16px; }
+
         .champ-week-row { display:flex; gap:10px; align-items:center; font-size:13px; }
         .champ-week-label {
             color: #ff1a75;
@@ -1605,14 +1511,13 @@
             <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
         </div>
         <ul class="nav-links">
-            <li><a href="#hero">Accueil</a></li>
+            <li><a href="index.html">Accueil</a></li>
             <li><a href="#planning">Planning des courses</a></li>
-                            <li><a href="#championnats">Championnats</a></li>
+            <li><a href="#championnats">Championnats</a></li>
             <li><a href="team.html">Notre Équipe</a></li>
             <li><a href="sponsors-details.html">Nos Sponsors</a></li>
             <li><a href="become-partner.html">Become Partner</a></li>
-            <li class="desktop-only"><a href="#join">Rejoins Nous</a></li>
-            <li class="mobile-only"><a href="pilot-recruitment.html">Rejoins Nous</a></li>
+            <li><a href="pilot-recruitment.html">Rejoins Nous</a></li>
         </ul>
         <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Nous Contacter</a>
         <div class="hamburger" id="hamburger">
@@ -1621,6 +1526,22 @@
             <span></span>
         </div>
     </nav>
+
+    <!-- Menu mobile plein écran -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="index.html" class="mobile-link">Accueil</a>
+                <a href="#planning" class="mobile-link">Planning des courses</a>
+                <a href="#championnats" class="mobile-link">Championnats</a>
+                <a href="team.html" class="mobile-link">Notre Équipe</a>
+                <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
+                <a href="become-partner.html" class="mobile-link">Become Partner</a>
+                <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
+            </div>
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Rejoindre Discord</a>
+        </div>
+    </div>
 
 <!-- SECTION PLANNING LMU -->
 <!-- ============================================= -->
@@ -2314,8 +2235,7 @@
 
         document.querySelectorAll('.planning-section .section-header').forEach(header => {
             header.addEventListener('click', () => {
-                if (header.closest('.champ-grid')) return;
-                header.closest('.planning-section').classList.toggle('open');
+header.closest('.planning-section').classList.toggle('open');
             });
         });
 
