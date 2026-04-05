@@ -1283,50 +1283,11 @@
         @media (max-width: 1024px) {
             .planning-grid { grid-template-columns: 1fr; }
             .planning-section.full-width { grid-column: 1; }
-            .champ-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .champ-grid { display: none; }
+            .champ-mobile-groups { display: block; }
             #championnats { padding: 40px 12px 60px !important; }
         }
 
-        /* ── Popup championnats mobile ── */
-        .champ-popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.75);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .champ-popup-overlay.active { display: flex; }
-        .champ-popup {
-            background: linear-gradient(135deg, rgba(26,26,62,0.98) 0%, rgba(10,14,39,0.98) 100%);
-            border: 1px solid rgba(255,26,117,0.3);
-            border-radius: 20px;
-            padding: 25px;
-            width: 100%;
-            max-width: 420px;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        .champ-popup-title {
-            font-size: 18px;
-            color: #ff1a75;
-            font-weight: 700;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .champ-popup-close {
-            position: absolute;
-            top: 15px; right: 18px;
-            font-size: 22px;
-            color: #b0b0d0;
-            cursor: pointer;
-            line-height: 1;
-        }
 
         @media (max-width: 768px) {
             .hamburger { display: flex; }
@@ -1385,7 +1346,54 @@
             }
         }
 
-        /* ── Championnats : semaines ── */
+        /* ── Championnats : groupes hamburger mobile ── */
+        .champ-mobile-groups { display: none; }
+        .champ-group {
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .champ-group-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            background: rgba(10,14,39,0.9);
+            cursor: pointer;
+            user-select: none;
+        }
+        .champ-group-circle {
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .champ-group-label {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            flex: 1;
+        }
+        .champ-group-arrow {
+            font-size: 13px;
+            color: #00d4ff;
+            transition: transform 0.3s ease;
+        }
+        .champ-group.open .champ-group-arrow { transform: rotate(180deg); }
+        .champ-group-content {
+            display: none;
+            background: rgba(26,26,62,0.6);
+            padding: 0 14px 14px;
+        }
+        .champ-group.open .champ-group-content { display: block; }
+        .champ-sub-title {
+            font-size: 13px;
+            font-weight: 700;
+            padding: 12px 0 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            margin-bottom: 8px;
+        }
+        .champ-sub-block { margin-bottom: 16px; }
         .champ-week-row { display:flex; gap:10px; align-items:center; font-size:13px; }
         .champ-week-label {
             color: #ff1a75;
@@ -2015,7 +2023,7 @@
 <!-- WORLD ENDURANCE CHAMPIONSHIP (TEAM) -->
         <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
             <div class="section-header">
-                <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
+                <span style="background:#ffffff;color:#00aadd;font-weight:900;font-size:11px;padding:3px 7px;border-radius:5px;flex-shrink:0;letter-spacing:1.5px;font-family:'Segoe UI',sans-serif;">WEC</span>
                 <div class="section-title">
                     <h3>World Endurance Championship</h3>
                     <span>TEAM · Bronze 2 SR · 8h · Hypercar & LMGT3</span>
@@ -2047,10 +2055,12 @@
             </div>
         </div>
 
-    </div>
-</section>
-<!-- ============================================= -->
-<!-- FIN SECTION CHAMPIONNATS LMU -->
+    </div><!-- fin champ-grid -->
+
+    <!-- Groupes hamburger championnats (mobile uniquement) -->
+    <div class="champ-mobile-groups" id="champMobileGroups"></div>
+
+</section> LMU -->
 <!-- ============================================= -->
 
 
@@ -2306,15 +2316,6 @@
         </div>
     </section>
 
-    <!-- Popup championnats mobile -->
-    <div class="champ-popup-overlay" id="champPopupOverlay">
-        <div class="champ-popup" id="champPopup">
-            <span class="champ-popup-close" id="champPopupClose">✕</span>
-            <div class="champ-popup-title" id="champPopupTitle"></div>
-            <div id="champPopupContent"></div>
-        </div>
-    </div>
-
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -2426,55 +2427,100 @@
 
         document.querySelectorAll('.planning-section .section-header').forEach(header => {
             header.addEventListener('click', () => {
-                // Bloquer l'accordéon sur les championnats en mobile → popup à la place
-                if (window.innerWidth <= 1024 && header.closest('.champ-grid')) return;
-                header.closest('.planning-section').classList.toggle('open');
+header.closest('.planning-section').classList.toggle('open');
             });
         });
 
-        // ── Popup championnats (mobile uniquement) ──
+        // ── Groupes championnats mobile ──
         (function() {
-            var overlay = document.getElementById('champPopupOverlay');
-            var popupTitle = document.getElementById('champPopupTitle');
-            var popupContent = document.getElementById('champPopupContent');
+            var groups = [
+                {
+                    label: 'Bronze',
+                    color: '#cd7f32',
+                    selectors: ['<!-- LMGT3 SPRINT CUP -->', '<!-- LMP3 MASTERS -->']
+                },
+                {
+                    label: 'Silver',
+                    color: '#c0c0c0',
+                    selectors: ['<!-- PROTOTYPE CHALLENGE -->', '<!-- EUROPEAN LE MANS SERIES -->']
+                },
+                {
+                    label: 'Gold',
+                    color: '#ffd700',
+                    selectors: ['<!-- 2.4H SERIES -->']
+                },
+                {
+                    label: 'World Endurance Championship',
+                    color: '#cd7f32',
+                    selectors: ['<!-- WORLD ENDURANCE CHAMPIONSHIP (TEAM) -->']
+                }
+            ];
 
-            function isMobile() { return window.innerWidth <= 1024; }
+            // Map comment markers to card elements
+            var cards = Array.from(document.querySelectorAll('.champ-grid .planning-section'));
+            var markers = [
+                'LMGT3 Sprint Cup', 'Prototype Challenge', '2.4h Series',
+                'LMP3 Masters', 'European Le Mans Series', 'World Endurance Championship'
+            ];
 
-            function openPopup(card) {
-                var title = card.querySelector('.section-title h3')?.textContent || '';
-                var sub   = card.querySelector('.section-title span')?.textContent || '';
-                var content = card.querySelector('.section-content');
-                if (!content) return;
-                popupTitle.textContent = title + (sub ? ' — ' + sub : '');
-                popupContent.innerHTML = content.innerHTML;
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            function getCard(name) {
+                return cards.find(c => c.querySelector('h3')?.textContent.trim() === name);
             }
 
-            function closePopup() {
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+            var groupDefs = [
+                { label: 'Bronze',   color: '#cd7f32', names: ['LMGT3 Sprint Cup', 'LMP3 Masters'] },
+                { label: 'Silver',   color: '#c0c0c0', names: ['Prototype Challenge', 'European Le Mans Series'] },
+                { label: 'Gold',     color: '#ffd700', names: ['2.4h Series'] },
+                { label: 'World Endurance Championship', color: '#cd7f32', names: ['World Endurance Championship'] }
+            ];
 
-            // Clic sur une carte du champ-grid en mobile
-            document.querySelectorAll('.champ-grid .planning-section').forEach(function(card) {
-                card.querySelector('.section-header').addEventListener('click', function(e) {
-                    if (!isMobile()) return; // desktop = accordéon normal
-                    e.stopPropagation();
-                    openPopup(card);
+            var container = document.getElementById('champMobileGroups');
+            if (!container) return;
+
+            groupDefs.forEach(function(def) {
+                var group = document.createElement('div');
+                group.className = 'champ-group';
+
+                var header = document.createElement('div');
+                header.className = 'champ-group-header';
+                header.innerHTML = '<span class="champ-group-circle" style="background:' + def.color + ';box-shadow:0 0 6px ' + def.color + '88"></span>'
+                    + '<span class="champ-group-label">' + def.label + '</span>'
+                    + '<span class="champ-group-arrow">▼</span>';
+
+                var content = document.createElement('div');
+                content.className = 'champ-group-content';
+
+                def.names.forEach(function(name) {
+                    var card = getCard(name);
+                    if (!card) return;
+                    var sub = document.createElement('div');
+                    sub.className = 'champ-sub-block';
+                    var subtitle = card.querySelector('.section-title span')?.textContent || '';
+                    sub.innerHTML = '<div class="champ-sub-title" style="color:' + def.color + '">'
+                        + name + (subtitle ? ' <span style="color:#b0b0d0;font-weight:400;font-size:12px;">— ' + subtitle + '</span>' : '')
+                        + '</div>'
+                        + card.querySelector('.section-content').innerHTML;
+                    content.appendChild(sub);
                 });
+
+                header.addEventListener('click', function() {
+                    // Fermer les autres
+                    document.querySelectorAll('.champ-group.open').forEach(function(g) {
+                        if (g !== group) g.classList.remove('open');
+                    });
+                    group.classList.toggle('open');
+                });
+
+                group.appendChild(header);
+                group.appendChild(content);
+                container.appendChild(group);
             });
 
-            // Fermeture
-            document.getElementById('champPopupClose').addEventListener('click', closePopup);
-            overlay.addEventListener('click', function(e) {
-                if (e.target === overlay || e.target === document.getElementById('champPopup')) closePopup();
-            });
-            document.getElementById('champPopup').addEventListener('click', closePopup);
-
-            // Fermeture au scroll
+            // Fermer au scroll
             window.addEventListener('scroll', function() {
-                if (overlay.classList.contains('active')) closePopup();
+                document.querySelectorAll('.champ-group.open').forEach(function(g) {
+                    g.classList.remove('open');
+                });
             }, { passive: true });
         })();
 
