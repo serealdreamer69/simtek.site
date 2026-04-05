@@ -527,13 +527,23 @@
         }
         
         .tier-block {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             border-radius: 12px;
             overflow: hidden;
         }
         
         .tier-header {
-            padding: 10px 15px;
+            padding: 12px 15px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: filter 0.2s ease;
+        }
+
+        .tier-header:hover {
+            filter: brightness(1.3);
         }
         
         .tier-bronze .tier-header { background: linear-gradient(135deg, rgba(205, 127, 50, 0.3) 0%, rgba(205, 127, 50, 0.1) 100%); }
@@ -550,10 +560,15 @@
         .tier-bronze .tier-badge { color: #CD7F32; }
         .tier-silver .tier-badge { color: #C0C0C0; }
         .tier-gold .tier-badge { color: #FFD700; }
+
+        .tier-header .tier-open-icon {
+            font-size: 13px;
+            color: #b0b0d0;
+        }
         
+        /* tier-races masqué partout : contenu affiché dans le popup */
         .tier-races {
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
+            display: none;
         }
         
         .race-item {
@@ -1322,7 +1337,7 @@
                 <div class="tier-block tier-bronze">
                     <div class="tier-header">
                         <span class="tier-badge">Débutant</span>
-                        <span class="tier-arrow">▼</span>
+                        <span class="tier-open-icon">▶</span>
                     </div>
                     <div class="tier-races">
                         <div class="race-item">
@@ -1358,7 +1373,7 @@
                 <div class="tier-block tier-silver">
                     <div class="tier-header">
                         <span class="tier-badge">Intermédiaire</span>
-                        <span class="tier-arrow">▼</span>
+                        <span class="tier-open-icon">▶</span>
                     </div>
                     <div class="tier-races">
                         <div class="race-item">
@@ -1409,7 +1424,7 @@
                 <div class="tier-block tier-gold">
                     <div class="tier-header">
                         <span class="tier-badge">Avancé</span>
-                        <span class="tier-arrow">▼</span>
+                        <span class="tier-open-icon">▶</span>
                     </div>
                     <div class="tier-races">
                         <div class="race-item">
@@ -1978,19 +1993,23 @@
     </footer>
 
     <script>
-        // ── Accordion tiers (mobile) + Popup sections (PC) ──
+        // ── Planning : accordéon section → popup tier ──
         var planningOverlay = document.getElementById('planningPopupOverlay');
 
-        function openPlanningPopup(section) {
-            var icon    = section.querySelector('.section-icon') ? section.querySelector('.section-icon').textContent : '';
-            var title   = section.querySelector('.section-title h3') ? section.querySelector('.section-title h3').textContent : '';
-            var sub     = section.querySelector('.section-title span') ? section.querySelector('.section-title span').textContent : '';
-            var content = section.querySelector('.section-content');
-            if (!content) return;
+        function openTierPopup(tierBlock) {
+            var badge = tierBlock.querySelector('.tier-badge') ? tierBlock.querySelector('.tier-badge').textContent.trim() : '';
+            var races = tierBlock.querySelector('.tier-races');
+            if (!races) return;
+
+            var icon = '🏅';
+            if (tierBlock.classList.contains('tier-bronze')) icon = '🥉';
+            else if (tierBlock.classList.contains('tier-silver')) icon = '🥈';
+            else if (tierBlock.classList.contains('tier-gold'))   icon = '🥇';
+
             document.getElementById('planningPopupIcon').textContent  = icon;
-            document.getElementById('planningPopupTitle').textContent = title;
-            document.getElementById('planningPopupSub').textContent   = sub;
-            document.getElementById('planningPopupContent').innerHTML = content.innerHTML;
+            document.getElementById('planningPopupTitle').textContent = badge;
+            document.getElementById('planningPopupSub').textContent   = '';
+            document.getElementById('planningPopupContent').innerHTML = races.innerHTML;
             planningOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -2006,17 +2025,23 @@
         });
         window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePlanningPopup(); });
 
-        document.querySelectorAll('.tier-header').forEach(header => {
-            header.addEventListener('click', () => {
-                header.closest('.tier-block').classList.toggle('open');
+        // Clic section → accordéon
+        document.querySelectorAll('.planning-section .section-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                var section = header.closest('.planning-section');
+                if (section.closest('.champ-grid')) return;
+                document.querySelectorAll('.planning-section.open').forEach(function(s) {
+                    if (s !== section) s.classList.remove('open');
+                });
+                section.classList.toggle('open');
             });
         });
 
-        document.querySelectorAll('.planning-section .section-header').forEach(header => {
-            header.addEventListener('click', () => {
-                var section = header.closest('.planning-section');
-                if (section.closest('.champ-grid')) return;
-                openPlanningPopup(section);
+        // Clic tier → popup
+        document.querySelectorAll('.planning-section .tier-header').forEach(function(header) {
+            header.addEventListener('click', function(e) {
+                e.stopPropagation();
+                openTierPopup(header.closest('.tier-block'));
             });
         });
 
