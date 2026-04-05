@@ -465,6 +465,24 @@
             padding: 3px 6px;
             margin: 0 -6px;
         }
+
+        /* ── Tablettes et mobiles : hamburger + layout ── */
+        @media (max-width: 1024px) {
+            .hamburger { display: flex; }
+            .nav-links, nav .cta-button { display: none; }
+            .desktop-only { display: none !important; }
+            .mobile-only  { display: block !important; }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            section { padding: 40px 20px; }
+            h2 { font-size: 32px !important; }
+            .hero { padding: 40px 20px; min-height: 70vh; }
+            .form-row { grid-template-columns: 1fr; }
+            .radio-group { flex-direction: column; }
+        }
+
     </style>
 </head>
 <body>
