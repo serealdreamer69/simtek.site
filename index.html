@@ -2427,52 +2427,26 @@
 
         document.querySelectorAll('.planning-section .section-header').forEach(header => {
             header.addEventListener('click', () => {
-header.closest('.planning-section').classList.toggle('open');
+                header.closest('.planning-section').classList.toggle('open');
             });
         });
 
         // ── Groupes championnats mobile ──
         (function() {
-            var groups = [
-                {
-                    label: 'Bronze',
-                    color: '#cd7f32',
-                    selectors: ['<!-- LMGT3 SPRINT CUP -->', '<!-- LMP3 MASTERS -->']
-                },
-                {
-                    label: 'Silver',
-                    color: '#c0c0c0',
-                    selectors: ['<!-- PROTOTYPE CHALLENGE -->', '<!-- EUROPEAN LE MANS SERIES -->']
-                },
-                {
-                    label: 'Gold',
-                    color: '#ffd700',
-                    selectors: ['<!-- 2.4H SERIES -->']
-                },
-                {
-                    label: 'World Endurance Championship',
-                    color: '#cd7f32',
-                    selectors: ['<!-- WORLD ENDURANCE CHAMPIONSHIP (TEAM) -->']
-                }
+            var groupDefs = [
+                { label: 'Bronze', color: '#cd7f32', names: ['LMGT3 Sprint Cup', 'LMP3 Masters'] },
+                { label: 'Silver', color: '#c0c0c0', names: ['Prototype Challenge', 'European Le Mans Series'] },
+                { label: 'Gold',   color: '#ffd700', names: ['2.4h Series'] },
+                { label: 'World Endurance Championship', color: '#cd7f32', names: ['World Endurance Championship'], wec: true }
             ];
 
-            // Map comment markers to card elements
             var cards = Array.from(document.querySelectorAll('.champ-grid .planning-section'));
-            var markers = [
-                'LMGT3 Sprint Cup', 'Prototype Challenge', '2.4h Series',
-                'LMP3 Masters', 'European Le Mans Series', 'World Endurance Championship'
-            ];
 
             function getCard(name) {
-                return cards.find(c => c.querySelector('h3')?.textContent.trim() === name);
+                return cards.find(function(c) {
+                    return c.querySelector('h3') && c.querySelector('h3').textContent.trim() === name;
+                });
             }
-
-            var groupDefs = [
-                { label: 'Bronze',   color: '#cd7f32', names: ['LMGT3 Sprint Cup', 'LMP3 Masters'] },
-                { label: 'Silver',   color: '#c0c0c0', names: ['Prototype Challenge', 'European Le Mans Series'] },
-                { label: 'Gold',     color: '#ffd700', names: ['2.4h Series'] },
-                { label: 'World Endurance Championship', color: '#cd7f32', names: ['World Endurance Championship'] }
-            ];
 
             var container = document.getElementById('champMobileGroups');
             if (!container) return;
@@ -2483,7 +2457,12 @@ header.closest('.planning-section').classList.toggle('open');
 
                 var header = document.createElement('div');
                 header.className = 'champ-group-header';
-                header.innerHTML = '<span class="champ-group-circle" style="background:' + def.color + ';box-shadow:0 0 6px ' + def.color + '88"></span>'
+
+                var iconHtml = def.wec
+                    ? '<span style="background:#fff;color:#00aadd;font-weight:900;font-size:10px;padding:2px 6px;border-radius:4px;flex-shrink:0;letter-spacing:1px;">WEC</span>'
+                    : '<span class="champ-group-circle" style="background:' + def.color + ';box-shadow:0 0 6px ' + def.color + '88"></span>';
+
+                header.innerHTML = iconHtml
                     + '<span class="champ-group-label">' + def.label + '</span>'
                     + '<span class="champ-group-arrow">▼</span>';
 
@@ -2495,16 +2474,18 @@ header.closest('.planning-section').classList.toggle('open');
                     if (!card) return;
                     var sub = document.createElement('div');
                     sub.className = 'champ-sub-block';
-                    var subtitle = card.querySelector('.section-title span')?.textContent || '';
+                    var titleSpan = card.querySelector('.section-title span');
+                    var subtitle = titleSpan ? titleSpan.textContent : '';
+                    var sectionContent = card.querySelector('.section-content');
                     sub.innerHTML = '<div class="champ-sub-title" style="color:' + def.color + '">'
-                        + name + (subtitle ? ' <span style="color:#b0b0d0;font-weight:400;font-size:12px;">— ' + subtitle + '</span>' : '')
+                        + name
+                        + (subtitle ? ' <span style="color:#b0b0d0;font-weight:400;font-size:12px;">— ' + subtitle + '</span>' : '')
                         + '</div>'
-                        + card.querySelector('.section-content').innerHTML;
+                        + (sectionContent ? sectionContent.innerHTML : '');
                     content.appendChild(sub);
                 });
 
                 header.addEventListener('click', function() {
-                    // Fermer les autres
                     document.querySelectorAll('.champ-group.open').forEach(function(g) {
                         if (g !== group) g.classList.remove('open');
                     });
@@ -2516,7 +2497,6 @@ header.closest('.planning-section').classList.toggle('open');
                 container.appendChild(group);
             });
 
-            // Fermer au scroll
             window.addEventListener('scroll', function() {
                 document.querySelectorAll('.champ-group.open').forEach(function(g) {
                     g.classList.remove('open');
@@ -2524,7 +2504,7 @@ header.closest('.planning-section').classList.toggle('open');
             }, { passive: true });
         })();
 
-        // ── Fermeture des accordéons au scroll ──
+                // ── Fermeture des accordéons au scroll ──
         (function() {
             var scrollTimer;
             window.addEventListener('scroll', function() {
