@@ -2378,6 +2378,19 @@
             });
         });
 
+        // ── Fermeture des accordéons au scroll ──
+        (function() {
+            var scrollTimer;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(function() {
+                    document.querySelectorAll('.planning-section.open').forEach(function(section) {
+                        section.classList.remove('open');
+                    });
+                }, 150);
+            }, { passive: true });
+        })();
+
         // ── Championnats : surbrillance semaine en cours ──
         (function() {
             var seasonStart = new Date('2026-04-07T00:00:00');
