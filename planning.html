@@ -3,6 +3,22 @@
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3"></script>
+    <!-- Popup planning sections (PC) -->
+    <div class="planning-popup-overlay" id="planningPopupOverlay">
+        <div class="planning-popup" id="planningPopup">
+            <span class="planning-popup-close" id="planningPopupClose">✕</span>
+            <div class="planning-popup-header">
+                <span class="planning-popup-icon" id="planningPopupIcon"></span>
+                <div>
+                    <div class="planning-popup-title" id="planningPopupTitle"></div>
+                    <div class="planning-popup-sub" id="planningPopupSub"></div>
+                </div>
+            </div>
+            <div id="planningPopupContent"></div>
+        </div>
+    </div>
+
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -1098,409 +1114,151 @@
             transform: scale(1.05);
         }
 
-        @media (max-width: 900px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+        @media (max-width: 1024px) {
+            /* ── Nav : hamburger uniquement ── */
+            .hamburger { display: flex; }
+            .nav-links, nav .cta-button { display: none; }
+            .desktop-only { display: none !important; }
+            .mobile-only { display: block !important; }
+
+            /* ── Layout ── */
+            nav { padding: 15px 20px; }
+            section { padding: 40px 20px; }
+            h2 { font-size: 32px !important; }
+            .form-row { grid-template-columns: 1fr; }
+            .radio-group { flex-direction: column; }
+            .race-item { flex-wrap: wrap; }
+            .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
+            .event-main { flex-direction: column; align-items: center; text-align: center; }
+            .schedule-days, .schedule-times { justify-content: center; }
+            .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+
+            /* ── Planning grid ── */
+            .planning-grid { grid-template-columns: 1fr; }
+            .planning-section.full-width { grid-column: 1; }
+
+            /* ── Championnats mobile ── */
+            .champ-grid { display: none !important; }
+            .champ-mobile-groups { display: block !important; }
+            #championnats { padding: 40px 12px 60px !important; }
+
+            /* ── Accordion tiers mobile ── */
+            .tier-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                user-select: none;
+                padding: 12px 15px;
             }
+            .tier-arrow { font-size: 14px; transition: transform 0.3s ease; flex-shrink: 0; }
+            .tier-bronze .tier-arrow { color: #CD7F32; }
+            .tier-silver .tier-arrow { color: #C0C0C0; }
+            .tier-gold   .tier-arrow { color: #FFD700; }
+            .tier-block.open .tier-arrow { transform: rotate(180deg); }
+            .tier-races { display: none; animation: tierFadeIn 0.3s ease; }
+            .tier-block.open .tier-races { display: block; }
+            @keyframes tierFadeIn {
+                from { opacity: 0; transform: translateY(-6px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            .planning-section .section-header { cursor: pointer; user-select: none; }
         }
 
-        .gallery-image-container::after {
-            content: '🔍';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 48px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
 
-        .gallery-image-container:hover::after {
-            opacity: 0.8;
-        }
-
-        .lightbox {
+        /* ── Popup planning sections (PC uniquement) ── */
+        .planning-popup-overlay {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
-            justify-content: center;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 3000;
             align-items: center;
+            justify-content: center;
+            padding: 30px;
         }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
+        .planning-popup-overlay.active { display: flex; }
+        .planning-popup {
+            background: linear-gradient(135deg, rgba(26,26,62,0.98) 0%, rgba(10,14,39,0.98) 100%);
+            border: 1px solid rgba(255,26,117,0.3);
+            border-radius: 20px;
+            padding: 35px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
             position: relative;
         }
-
-        .lightbox-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .lightbox-close {
+        .planning-popup-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 40px;
-            color: white;
-            cursor: pointer;
-            background: rgba(255, 26, 117, 0.8);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            background: #ff1a75;
-            transform: rotate(90deg);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 50px;
-            color: white;
-            cursor: pointer;
-            background: rgba(255, 26, 117, 0.6);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-nav:hover {
-            background: #ff1a75;
-        }
-
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(100px);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
-        }
-
-        .back-to-top i {
+            top: 15px; right: 20px;
             font-size: 24px;
-            color: white;
+            color: #b0b0d0;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
         }
-
-        .scroll-animate {
-            opacity: 0;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .scroll-animate.fade-in { transform: translateY(30px); }
-        .scroll-animate.slide-left { transform: translateX(-50px); }
-        .scroll-animate.scale-up { transform: scale(0.9); }
-
-        .scroll-animate.is-visible {
-            opacity: 1;
-            transform: translateY(0) translateX(0) scale(1);
-        }
-
-        .scroll-animate.delay-1 { transition-delay: 0.1s; }
-        .scroll-animate.delay-2 { transition-delay: 0.2s; }
-        .scroll-animate.delay-3 { transition-delay: 0.3s; }
-        .scroll-animate.delay-4 { transition-delay: 0.4s; }
-
-        @media (max-width: 1024px) {
-            .planning-grid { grid-template-columns: 1fr; }
-            .planning-section.full-width { grid-column: 1; }
-            .champ-grid { display: none !important; }
-            .champ-mobile-groups { display: block !important; }
-            #championnats { padding: 40px 12px 60px !important; }
-        }
-
-
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .nav-links, nav .cta-button { display: none; }
-            .desktop-only { display: none !important; }
-            .mobile-only { display: block !important; }
-            #join .recruitment-form { display: none !important; }
-            .join-button-mobile { display: block; }
-            nav { padding: 15px 20px; }
-            .hero { padding: 40px 20px; min-height: 70vh; }
-            .hero-video { width: 95%; height: 60%; }
-            section { padding: 40px 20px; }
-            h2 { font-size: 32px !important; }
-            .form-row { grid-template-columns: 1fr; }
-            .recruitment-form { padding: 30px 20px; }
-            .radio-group { flex-direction: column; }
-            .race-item { flex-wrap: wrap; }
-            .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
-            .event-main { flex-direction: column; align-items: center; text-align: center; }
-            .schedule-days, .schedule-times { justify-content: center; }
-            .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
-            .back-to-top i { font-size: 20px; }
-
-            /* ── Accordion tiers mobile ── */
-            .tier-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
-                user-select: none;
-                padding: 12px 15px;
-            }
-            .tier-arrow {
-                font-size: 14px;
-                transition: transform 0.3s ease;
-                flex-shrink: 0;
-            }
-            .tier-bronze .tier-arrow { color: #CD7F32; }
-            .tier-silver .tier-arrow { color: #C0C0C0; }
-            .tier-gold   .tier-arrow { color: #FFD700; }
-            .tier-block.open .tier-arrow { transform: rotate(180deg); }
-            .tier-races {
-                display: none;
-                animation: tierFadeIn 0.3s ease;
-            }
-            .tier-block.open .tier-races { display: block; }
-            @keyframes tierFadeIn {
-                from { opacity: 0; transform: translateY(-6px); }
-                to   { opacity: 1; transform: translateY(0); }
-            }
-
-            /* ── Accordion section-level mobile (Weekly, Special Event) ── */
-            .planning-section .section-header {
-                cursor: pointer;
-                user-select: none;
-            }
-        }
-
-        /* ── Championnats : groupes hamburger mobile ── */
-        .champ-mobile-groups { display: none; }
-        .champ-group {
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .champ-group-header {
+        .planning-popup-close:hover { color: #ff1a75; }
+        .planning-popup-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 14px 16px;
-            background: rgba(10,14,39,0.9);
-            cursor: pointer;
-            user-select: none;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .champ-group-circle {
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        .champ-group-label {
-            font-size: 15px;
-            font-weight: 700;
-            color: #ffffff;
-            flex: 1;
-        }
-        .champ-group-arrow {
-            font-size: 13px;
-            color: #00d4ff;
-            transition: transform 0.3s ease;
-        }
-        .champ-group.open .champ-group-arrow { transform: rotate(180deg); }
-        .champ-group-content {
+        .planning-popup-icon { font-size: 28px; }
+        .planning-popup-title { font-size: 22px; color: #ff1a75; font-weight: 700; margin: 0; }
+        .planning-popup-sub { font-size: 13px; color: #b0b0d0; margin: 4px 0 0; }
+
+    </style>
+</head>
+        /* ── Popup planning sections (PC uniquement) ── */
+        .planning-popup-overlay {
             display: none;
-            background: rgba(26,26,62,0.6);
-            padding: 0 14px 14px;
-        }
-        .champ-group.open .champ-group-content { display: block; }
-        .champ-sub-title {
-            font-size: 13px;
-            font-weight: 700;
-            padding: 12px 0 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            margin-bottom: 8px;
-        }
-        .champ-sub-block { margin-bottom: 16px; }
-        .champ-week-row { display:flex; gap:10px; align-items:center; font-size:13px; }
-        .champ-week-label {
-            color: #ff1a75;
-            font-weight: 700;
-            min-width: 60px;
-            transition: color 0.3s ease;
-        }
-        .champ-week-row.week-active .champ-week-label {
-            color: #00e676;
-        }
-        .champ-week-row.week-active {
-            background: rgba(0, 230, 118, 0.08);
-            border-radius: 6px;
-            padding: 3px 6px;
-            margin: 0 -6px;
-        }
-
-
-        /* ── Back to top ── */
-        .back-to-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
-            border-radius: 50%;
-            display: flex;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 3000;
             align-items: center;
             justify-content: center;
+            padding: 30px;
+        }
+        .planning-popup-overlay.active { display: flex; }
+        .planning-popup {
+            background: linear-gradient(135deg, rgba(26,26,62,0.98) 0%, rgba(10,14,39,0.98) 100%);
+            border: 1px solid rgba(255,26,117,0.3);
+            border-radius: 20px;
+            padding: 35px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .planning-popup-close {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 24px;
+            color: #b0b0d0;
             cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
-            z-index: 999;
+            line-height: 1;
+            transition: color 0.2s;
         }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { transform: translateY(-3px); }
-        .back-to-top i { color: white; font-size: 18px; }
-
-        footer {
-            background: rgba(10, 14, 39, 0.95);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 26, 117, 0.2);
+        .planning-popup-close:hover { color: #ff1a75; }
+        .planning-popup-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        footer p { color: #b0b0d0; }
-        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
-        .social-links a { color: #b0b0d0; text-decoration: none; transition: color 0.3s; }
-        .social-links a:hover { color: #ff1a75; }
-
-        @media (max-width: 1024px) {
-            .planning-grid { grid-template-columns: 1fr; }
-            .planning-section.full-width { grid-column: 1; }
-            .champ-grid { display: none !important; }
-            .champ-mobile-groups { display: block !important; }
-            #championnats { padding: 40px 12px 60px !important; }
-        }
-
-
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .nav-links, nav .cta-button { display: none; }
-            .desktop-only { display: none !important; }
-            .mobile-only { display: block !important; }
-            #join .recruitment-form { display: none !important; }
-            .join-button-mobile { display: block; }
-            nav { padding: 15px 20px; }
-            .hero { padding: 40px 20px; min-height: 70vh; }
-            .hero-video { width: 95%; height: 60%; }
-            section { padding: 40px 20px; }
-            h2 { font-size: 32px !important; }
-            .form-row { grid-template-columns: 1fr; }
-            .recruitment-form { padding: 30px 20px; }
-            .radio-group { flex-direction: column; }
-            .race-item { flex-wrap: wrap; }
-            .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
-            .event-main { flex-direction: column; align-items: center; text-align: center; }
-            .schedule-days, .schedule-times { justify-content: center; }
-            .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
-            .back-to-top i { font-size: 20px; }
-
-            /* ── Accordion tiers mobile ── */
-            .tier-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
-                user-select: none;
-                padding: 12px 15px;
-            }
-            .tier-arrow {
-                font-size: 14px;
-                transition: transform 0.3s ease;
-                flex-shrink: 0;
-            }
-            .tier-bronze .tier-arrow { color: #CD7F32; }
-            .tier-silver .tier-arrow { color: #C0C0C0; }
-            .tier-gold   .tier-arrow { color: #FFD700; }
-            .tier-block.open .tier-arrow { transform: rotate(180deg); }
-            .tier-races {
-                display: none;
-                animation: tierFadeIn 0.3s ease;
-            }
-            .tier-block.open .tier-races { display: block; }
-            @keyframes tierFadeIn {
-                from { opacity: 0; transform: translateY(-6px); }
-                to   { opacity: 1; transform: translateY(0); }
-            }
-
-            /* ── Accordion section-level mobile (Weekly, Special Event) ── */
-            .planning-section .section-header {
-                cursor: pointer;
-                user-select: none;
-            }
-        }
-
-
-        .champ-week-row { display:flex; gap:10px; align-items:center; font-size:13px; }
-        .champ-week-label {
-            color: #ff1a75;
-            font-weight: 700;
-            min-width: 60px;
-            transition: color 0.3s ease;
-        }
-        .champ-week-row.week-active .champ-week-label {
-            color: #00e676;
-        }
-        .champ-week-row.week-active {
-            background: rgba(0, 230, 118, 0.08);
-            border-radius: 6px;
-            padding: 3px 6px;
-            margin: 0 -6px;
-        }
+        .planning-popup-icon { font-size: 28px; }
+        .planning-popup-title { font-size: 22px; color: #ff1a75; font-weight: 700; margin: 0; }
+        .planning-popup-sub { font-size: 13px; color: #b0b0d0; margin: 4px 0 0; }
 
     </style>
 </head>
@@ -2226,7 +1984,34 @@
     </footer>
 
     <script>
-        // ── Accordion planning sections ──
+        // ── Accordion tiers (mobile) + Popup sections (PC) ──
+        var planningOverlay = document.getElementById('planningPopupOverlay');
+
+        function openPlanningPopup(section) {
+            var icon    = section.querySelector('.section-icon') ? section.querySelector('.section-icon').textContent : '';
+            var title   = section.querySelector('.section-title h3') ? section.querySelector('.section-title h3').textContent : '';
+            var sub     = section.querySelector('.section-title span') ? section.querySelector('.section-title span').textContent : '';
+            var content = section.querySelector('.section-content');
+            if (!content) return;
+            document.getElementById('planningPopupIcon').textContent  = icon;
+            document.getElementById('planningPopupTitle').textContent = title;
+            document.getElementById('planningPopupSub').textContent   = sub;
+            document.getElementById('planningPopupContent').innerHTML = content.innerHTML;
+            planningOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePlanningPopup() {
+            planningOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('planningPopupClose').addEventListener('click', closePlanningPopup);
+        planningOverlay.addEventListener('click', function(e) {
+            if (e.target === planningOverlay) closePlanningPopup();
+        });
+        window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePlanningPopup(); });
+
         document.querySelectorAll('.tier-header').forEach(header => {
             header.addEventListener('click', () => {
                 header.closest('.tier-block').classList.toggle('open');
@@ -2235,7 +2020,13 @@
 
         document.querySelectorAll('.planning-section .section-header').forEach(header => {
             header.addEventListener('click', () => {
-header.closest('.planning-section').classList.toggle('open');
+                var section = header.closest('.planning-section');
+                if (section.closest('.champ-grid')) return;
+                if (window.innerWidth > 1024) {
+                    openPlanningPopup(section);
+                } else {
+                    section.classList.toggle('open');
+                }
             });
         });
 
