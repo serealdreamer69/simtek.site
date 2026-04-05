@@ -524,6 +524,83 @@
                 max-width: 300px;
             }
         }
+
+        /* ── Formulaire contact partenariat ── */
+        .partner-form-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .partner-form-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .partner-form-section .subtitle {
+            text-align: center;
+            color: #b0b0d0;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .form-card {
+            background: rgba(255, 26, 117, 0.05);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .intro-text {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border-left: 3px solid #ff1a75;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        .intro-text p { color: #b0b0d0; line-height: 1.6; }
+        .form-card .form-group { margin-bottom: 25px; }
+        .form-card label { display: block; color: #b0b0d0; margin-bottom: 8px; font-size: 14px; font-weight: 500; }
+        .form-card .required { color: #ff1a75; }
+        .form-card input, .form-card select, .form-card textarea {
+            width: 100%; padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 10px; color: #ffffff; font-size: 16px; transition: all 0.3s;
+        }
+        .form-card input::placeholder, .form-card textarea::placeholder { color: #666; }
+        .form-card input:focus, .form-card select:focus, .form-card textarea:focus {
+            outline: none; border-color: #ff1a75; background: rgba(255, 255, 255, 0.1);
+        }
+        .form-card select { cursor: pointer; }
+        .form-card select option { background: #1a1a3e; color: #ffffff; }
+        .form-card textarea { min-height: 150px; resize: vertical; font-family: inherit; }
+        .interest-cards { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 10px; }
+        .interest-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 26, 117, 0.2);
+            border-radius: 12px; padding: 15px; cursor: pointer;
+            transition: all 0.3s; display: flex; align-items: center; gap: 15px;
+        }
+        .interest-card:hover { border-color: #ff1a75; background: rgba(255, 26, 117, 0.1); }
+        .interest-card input[type="checkbox"] { width: auto; margin: 0; }
+        .interest-content { flex: 1; }
+        .interest-emoji { font-size: 24px; }
+        .interest-title { color: #ff1a75; font-weight: 600; margin-bottom: 5px; }
+        .interest-desc { color: #b0b0d0; font-size: 13px; }
+        .submit-btn {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white; border: none; padding: 18px 40px;
+            border-radius: 50px; font-size: 18px; font-weight: 600;
+            cursor: pointer; width: 100%; transition: transform 0.3s; margin-top: 30px;
+        }
+        .submit-btn:hover { transform: translateY(-2px); }
+        .final-note {
+            margin-top: 30px; padding: 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px; text-align: center;
+        }
+        .final-note p { color: #b0b0d0; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -732,16 +809,129 @@
         </div>
     </section>
 
-    <!-- CTA Final -->
+    <!-- CTA Final + Formulaire intégré -->
     <section class="cta-section">
         <h2 class="cta-title gradient-text">Prêt à écrire l'histoire avec nous ?</h2>
         <p class="cta-subtitle">
             N'investissez pas dans une équipe établie.<br>
             Investissez dans une équipe qui monte et grandissez avec nous depuis le début.
         </p>
-        
-        <div class="cta-buttons">
-            <a href="partner-contact.html" class="btn-primary">On discute ?</a>
+    </section>
+
+    <section>
+        <div class="partner-form-section">
+            <h2>On discute ?</h2>
+            <p class="subtitle">Construisons ensemble un partenariat qui nous ressemble</p>
+            <div class="form-card">
+                <div class="intro-text">
+                    <p>
+                        <strong>Pas de pression, pas de package imposé.</strong><br>
+                        Racontez-nous qui vous êtes, ce que vous faites, et voyons comment on peut collaborer de la meilleure façon possible.
+                    </p>
+                </div>
+                <form action="https://formsubmit.co/guillaume.wait@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="https://www.simtekperformance.com">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="💼 Nouveau SPONSOR intéressé">
+                    <div class="form-group">
+                        <label for="name">Votre nom <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Entreprise / Organisation</label>
+                        <input type="text" id="company" name="company" placeholder="Nom de votre entreprise (optionnel)">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
+                    </div>
+                    <div class="form-group">
+                        <label>Comment souhaitez-vous nous aider ?</label>
+                        <div class="interest-cards">
+                            <label class="interest-card">
+                                <input type="checkbox" name="interest" value="financial">
+                                <span class="interest-emoji">💰</span>
+                                <div class="interest-content">
+                                    <div class="interest-title">Soutien financier</div>
+                                    <div class="interest-desc">Sponsoring classique, chaque euro compte</div>
+                                </div>
+                            </label>
+                            <label class="interest-card">
+                                <input type="checkbox" name="interest" value="material">
+                                <span class="interest-emoji">🎮</span>
+                                <div class="interest-content">
+                                    <div class="interest-title">Matériel / Équipement</div>
+                                    <div class="interest-desc">Volants, pédales, PC, ou autre matériel sim</div>
+                                </div>
+                            </label>
+                            <label class="interest-card">
+                                <input type="checkbox" name="interest" value="services">
+                                <span class="interest-emoji">🎨</span>
+                                <div class="interest-content">
+                                    <div class="interest-title">Services / Compétences</div>
+                                    <div class="interest-desc">Design, vidéo, web, coaching...</div>
+                                </div>
+                            </label>
+                            <label class="interest-card">
+                                <input type="checkbox" name="interest" value="visibility">
+                                <span class="interest-emoji">📢</span>
+                                <div class="interest-content">
+                                    <div class="interest-title">Visibilité / Réseau</div>
+                                    <div class="interest-desc">Partages, contacts, mise en relation</div>
+                                </div>
+                            </label>
+                            <label class="interest-card">
+                                <input type="checkbox" name="interest" value="other">
+                                <span class="interest-emoji">💡</span>
+                                <div class="interest-content">
+                                    <div class="interest-title">Autre idée</div>
+                                    <div class="interest-desc">Vous avez une proposition unique ?</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget envisagé (optionnel)</label>
+                        <select id="budget" name="budget">
+                            <option value="">Sélectionner...</option>
+                            <option value="< 100€">Moins de 100€</option>
+                            <option value="100-500€">100€ - 500€</option>
+                            <option value="500-1000€">500€ - 1000€</option>
+                            <option value="1000€+">Plus de 1000€</option>
+                            <option value="services">Apport en nature/services</option>
+                            <option value="discuss">À discuter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message <span class="required">*</span></label>
+                        <textarea id="message" name="message" placeholder="Parlez-nous de vous, de votre entreprise, de vos idées... On veut tout savoir ! Pas besoin d'être formel, on est entre passionnés 😊" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="source">Comment nous avez-vous découvert ?</label>
+                        <select id="source" name="source">
+                            <option value="">Sélectionner...</option>
+                            <option value="twitch">Twitch</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="discord">Discord</option>
+                            <option value="bouche-oreille">Bouche à oreille</option>
+                            <option value="course">Vu en course</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Envoyer le message</button>
+                </form>
+                <div class="final-note">
+                    <p>
+                        <strong>Promis, pas de spam !</strong><br>
+                        On vous recontacte rapidement pour discuter autour d'un café virtuel
+                        (ou réel si vous êtes dans le coin 😉)
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
