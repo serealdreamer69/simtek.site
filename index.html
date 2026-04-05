@@ -487,7 +487,7 @@
         
         .planning-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
@@ -507,7 +507,7 @@
         }
         
         .planning-section.full-width {
-            grid-column: auto;
+            grid-column: 1 / -1;
         }
         
         .section-header {
@@ -517,7 +517,26 @@
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            user-select: none;
         }
+
+        .section-arrow {
+            font-size: 14px;
+            color: #00d4ff;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+
+        .planning-section.open .section-arrow { transform: rotate(180deg); }
+
+        .planning-section .section-content {
+            display: none;
+            animation: tierFadeIn 0.3s ease;
+        }
+
+        .planning-section.open .section-content { display: block; }
         
         .section-icon {
             font-size: 28px;
@@ -1320,19 +1339,6 @@
                 cursor: pointer;
                 user-select: none;
             }
-            .section-arrow {
-                font-size: 14px;
-                color: #00d4ff;
-                transition: transform 0.3s ease;
-                flex-shrink: 0;
-                margin-left: auto;
-            }
-            .planning-section.open .section-arrow { transform: rotate(180deg); }
-            .planning-section .section-content {
-                display: none;
-                animation: tierFadeIn 0.3s ease;
-            }
-            .planning-section.open .section-content { display: block; }
         }
     </style>
 </head>
@@ -2105,20 +2111,18 @@
             if (e.target.id === 'lightbox') closeLightbox();
         });
 
-        // ── Accordion tiers mobile ──
-        if (window.innerWidth <= 768) {
-            document.querySelectorAll('.tier-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    header.closest('.tier-block').classList.toggle('open');
-                });
+        // ── Accordion planning sections (desktop + mobile) ──
+        document.querySelectorAll('.tier-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.closest('.tier-block').classList.toggle('open');
             });
+        });
 
-            document.querySelectorAll('.planning-section .section-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    header.closest('.planning-section').classList.toggle('open');
-                });
+        document.querySelectorAll('.planning-section .section-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.closest('.planning-section').classList.toggle('open');
             });
-        }
+        });
     </script>
 </body>
 </html>
