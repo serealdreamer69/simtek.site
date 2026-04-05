@@ -1283,7 +1283,8 @@
         @media (max-width: 1024px) {
             .planning-grid { grid-template-columns: 1fr; }
             .planning-section.full-width { grid-column: 1; }
-            .champ-grid { grid-template-columns: 1fr 1fr; }
+            .champ-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            #championnats { padding: 40px 12px 60px !important; }
         }
 
         /* ── Popup championnats mobile ── */
@@ -2425,6 +2426,8 @@
 
         document.querySelectorAll('.planning-section .section-header').forEach(header => {
             header.addEventListener('click', () => {
+                // Bloquer l'accordéon sur les championnats en mobile → popup à la place
+                if (window.innerWidth <= 1024 && header.closest('.champ-grid')) return;
                 header.closest('.planning-section').classList.toggle('open');
             });
         });
@@ -2465,8 +2468,9 @@
             // Fermeture
             document.getElementById('champPopupClose').addEventListener('click', closePopup);
             overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) closePopup();
+                if (e.target === overlay || e.target === document.getElementById('champPopup')) closePopup();
             });
+            document.getElementById('champPopup').addEventListener('click', closePopup);
 
             // Fermeture au scroll
             window.addEventListener('scroll', function() {
