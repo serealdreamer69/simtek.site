@@ -1114,6 +1114,20 @@
             transform: scale(1.05);
         }
 
+
+        /* Championnats groupes mobile */
+        .champ-mobile-groups { display: none; }
+        .champ-group { border-radius: 14px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .champ-group-header { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: rgba(10,14,39,0.9); cursor: pointer; user-select: none; }
+        .champ-group-circle { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
+        .champ-group-label { font-size: 15px; font-weight: 700; color: #ffffff; flex: 1; }
+        .champ-group-arrow { font-size: 13px; color: #00d4ff; transition: transform 0.3s ease; }
+        .champ-group.open .champ-group-arrow { transform: rotate(180deg); }
+        .champ-group-content { display: none; background: rgba(26,26,62,0.6); padding: 0 14px 14px; }
+        .champ-group.open .champ-group-content { display: block; }
+        .champ-sub-title { font-size: 13px; font-weight: 700; padding: 12px 0 8px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 8px; }
+        .champ-sub-block { margin-bottom: 16px; }
+
         @media (max-width: 1024px) {
             .hamburger { display: flex; }
             .nav-links, nav .cta-button { display: none; }
@@ -1957,7 +1971,6 @@
         document.querySelectorAll('.planning-section .section-header').forEach(header => {
             header.addEventListener('click', () => {
                 var section = header.closest('.planning-section');
-                if (section.closest('.champ-grid')) return;
                 if (window.innerWidth > 1024) {
                     openPlanningPopup(section);
                 } else {
