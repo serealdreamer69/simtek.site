@@ -1283,6 +1283,48 @@
         @media (max-width: 1024px) {
             .planning-grid { grid-template-columns: 1fr; }
             .planning-section.full-width { grid-column: 1; }
+            .champ-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ── Popup championnats mobile ── */
+        .champ-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .champ-popup-overlay.active { display: flex; }
+        .champ-popup {
+            background: linear-gradient(135deg, rgba(26,26,62,0.98) 0%, rgba(10,14,39,0.98) 100%);
+            border: 1px solid rgba(255,26,117,0.3);
+            border-radius: 20px;
+            padding: 25px;
+            width: 100%;
+            max-width: 420px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .champ-popup-title {
+            font-size: 18px;
+            color: #ff1a75;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .champ-popup-close {
+            position: absolute;
+            top: 15px; right: 18px;
+            font-size: 22px;
+            color: #b0b0d0;
+            cursor: pointer;
+            line-height: 1;
         }
 
         @media (max-width: 768px) {
@@ -1787,7 +1829,7 @@
         </div>
     </div>
 
-    <div class="planning-grid">
+    <div class="planning-grid champ-grid">
 
         <!-- LMGT3 SPRINT CUP -->
         <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
@@ -2263,6 +2305,15 @@
         </div>
     </section>
 
+    <!-- Popup championnats mobile -->
+    <div class="champ-popup-overlay" id="champPopupOverlay">
+        <div class="champ-popup" id="champPopup">
+            <span class="champ-popup-close" id="champPopupClose">✕</span>
+            <div class="champ-popup-title" id="champPopupTitle"></div>
+            <div id="champPopupContent"></div>
+        </div>
+    </div>
+
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -2377,6 +2428,51 @@
                 header.closest('.planning-section').classList.toggle('open');
             });
         });
+
+        // ── Popup championnats (mobile uniquement) ──
+        (function() {
+            var overlay = document.getElementById('champPopupOverlay');
+            var popupTitle = document.getElementById('champPopupTitle');
+            var popupContent = document.getElementById('champPopupContent');
+
+            function isMobile() { return window.innerWidth <= 1024; }
+
+            function openPopup(card) {
+                var title = card.querySelector('.section-title h3')?.textContent || '';
+                var sub   = card.querySelector('.section-title span')?.textContent || '';
+                var content = card.querySelector('.section-content');
+                if (!content) return;
+                popupTitle.textContent = title + (sub ? ' — ' + sub : '');
+                popupContent.innerHTML = content.innerHTML;
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePopup() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Clic sur une carte du champ-grid en mobile
+            document.querySelectorAll('.champ-grid .planning-section').forEach(function(card) {
+                card.querySelector('.section-header').addEventListener('click', function(e) {
+                    if (!isMobile()) return; // desktop = accordéon normal
+                    e.stopPropagation();
+                    openPopup(card);
+                });
+            });
+
+            // Fermeture
+            document.getElementById('champPopupClose').addEventListener('click', closePopup);
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) closePopup();
+            });
+
+            // Fermeture au scroll
+            window.addEventListener('scroll', function() {
+                if (overlay.classList.contains('active')) closePopup();
+            }, { passive: true });
+        })();
 
         // ── Fermeture des accordéons au scroll ──
         (function() {
