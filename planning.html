@@ -1114,7 +1114,6 @@
             transform: scale(1.05);
         }
 
-        /* ── Tablettes et mobiles : nav hamburger + grilles ── */
         @media (max-width: 1024px) {
             .hamburger { display: flex; }
             .nav-links, nav .cta-button { display: none; }
@@ -1127,7 +1126,6 @@
             #championnats { padding: 40px 12px 60px !important; }
         }
 
-        /* ── Mobiles uniquement : layout, typographie, accordéons ── */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             section { padding: 40px 20px; }
@@ -1139,15 +1137,7 @@
             .event-main { flex-direction: column; align-items: center; text-align: center; }
             .schedule-days, .schedule-times { justify-content: center; }
             .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
-
-            .tier-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                cursor: pointer;
-                user-select: none;
-                padding: 12px 15px;
-            }
+            .tier-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; padding: 12px 15px; }
             .tier-arrow { font-size: 14px; transition: transform 0.3s ease; flex-shrink: 0; }
             .tier-bronze .tier-arrow { color: #CD7F32; }
             .tier-silver .tier-arrow { color: #C0C0C0; }
@@ -1155,10 +1145,7 @@
             .tier-block.open .tier-arrow { transform: rotate(180deg); }
             .tier-races { display: none; animation: tierFadeIn 0.3s ease; }
             .tier-block.open .tier-races { display: block; }
-            @keyframes tierFadeIn {
-                from { opacity: 0; transform: translateY(-6px); }
-                to   { opacity: 1; transform: translateY(0); }
-            }
+            @keyframes tierFadeIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
             .planning-section .section-header { cursor: pointer; user-select: none; }
         }
 
@@ -1211,7 +1198,6 @@
 
     </style>
 </head>
-
 <body>
 
     <nav>
