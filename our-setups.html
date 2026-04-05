@@ -1,58 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3"></script>
-<script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-        window.addEventListener('scroll', () => {
-            if (mobileMenu.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CB6CLV56G3');
-</script>
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CB6CLV56G3');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez les setups complets de l'équipe SimTek Performance. Configurations PC et simrigs professionnels pour Le Mans Ultimate, iRacing et ACC.">
     <meta property="og:title" content="Nos Setups Simracing - SimTek Performance">
     <meta property="og:description" content="Configurations PC et simrigs professionnels de notre équipe simracing">
-    <meta property="og:image" content="Logo_SIMTEK.png">
-    <meta property="og:url" content="https://simtekperformance.com/our-setups.html">
+    <meta property="og:image" content="https://www.simtekperformance.com/Logo_SIMTEK.png">
+    <meta property="og:url" content="https://www.simtekperformance.com/our-setups.html">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.simtekperformance.com/our-setups.html">
     <meta name="keywords" content="setup simracing, simrig, cockpit simracing, PC simracing, configuration simracing pro, Le Mans Ultimate, iRacing, matériel simracing">
     <meta name="author" content="Simtek Performance">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ff1a75">
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nos Setups Simracing - SimTek Performance">
-    <meta name="twitter:description" content="Découvrez les configurations complètes de notre équipe professionnelle">
-    <meta name="twitter:image" content="Logo_SIMTEK.png">
-    
-    <!-- Preconnect pour performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <title>Nos Setups Simracing - Matériel & Configurations | SimTek Performance</title>
     
@@ -1417,6 +1387,28 @@
                     });
                 }
             });
+        });
+    </script>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        window.addEventListener('scroll', () => {
+            if (mobileMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
         });
     </script>
 </body>
