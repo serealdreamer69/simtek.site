@@ -2518,11 +2518,6 @@
                 group.classList.toggle('open');
             });
         });
-        window.addEventListener('scroll', function() {
-            document.querySelectorAll('.champ-group.open').forEach(function(g) {
-                g.classList.remove('open');
-            });
-        }, { passive: true });
 
                 // ── Fermeture des accordéons au scroll ──
         (function() {
