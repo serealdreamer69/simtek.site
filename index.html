@@ -2128,7 +2128,17 @@
 
     <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
         <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
-        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="gallery-grid">
+            <div class="gallery-image-container scroll-animate scale-up delay-1" onclick="openLightbox(0)">
+                <img src="circuit1.png" loading="lazy" alt="SIMTEK Performance - Circuit 1">
+            </div>
+            <div class="gallery-image-container scroll-animate scale-up delay-2" onclick="openLightbox(1)">
+                <img src="circuit2.png" loading="lazy" alt="SIMTEK Performance - Circuit 2">
+            </div>
+            <div class="gallery-image-container scroll-animate scale-up delay-3" onclick="openLightbox(2)">
+                <img src="car-top.png" loading="lazy" alt="SIMTEK Performance - Vue de dessus">
+            </div>
+        </div>
     </section>
 
     <div class="lightbox" id="lightbox">
@@ -2440,32 +2450,21 @@
         // ═══════════════════════════════════════════════
         // GALERIE — Ajoute tes photos ici, une par ligne
         // Place les fichiers à la racine du site (même dossier que index.html)
+        // ═══════════════════════════════════════════════
+        // GALERIE — Ajoute tes photos ici, une par ligne
+        // Les 3 premières sont affichées dans la grille.
+        // Toutes les autres sont accessibles via le lightbox (flèches).
+        // Place les fichiers à la racine du site (même dossier que index.html)
         const galleryImages = [
             'circuit1.png',
             'circuit2.png',
             'car-top.png',
-            'circuit3.png',
-            'circuit4.png',
+            // 'circuit3.png',
+            // 'circuit4.png',
             'circuit5.jpg',
             // Ajoute autant de lignes que tu veux ↑
         ];
         // ═══════════════════════════════════════════════
-
-        // Génération automatique de la grille
-        const galleryGrid = document.getElementById('galleryGrid');
-        const delays = ['delay-1','delay-2','delay-3','delay-1','delay-2','delay-3'];
-        galleryImages.forEach(function(img, i) {
-            const div = document.createElement('div');
-            div.className = 'gallery-image-container scroll-animate scale-up ' + (delays[i % 3]);
-            div.setAttribute('onclick', 'openLightbox(' + i + ')');
-            const image = document.createElement('img');
-            image.src = img;
-            image.loading = 'lazy';
-            image.alt = 'SIMTEK Performance - ' + img.replace(/\.[^/.]+$/, '');
-            div.appendChild(image);
-            galleryGrid.appendChild(div);
-            observer.observe(div);
-        });
 
         let currentImageIndex = 0;
 
@@ -2488,6 +2487,8 @@
             else if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
             document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
         }
+            // Ajoute autant de lignes que tu veux ↑
+        // ═══════════════════════════════════════════════
 
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
