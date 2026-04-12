@@ -1240,6 +1240,47 @@
 
         .lightbox-prev { left: 20px; }
         .lightbox-next { right: 20px; }
+        .lightbox-nav-mobile { display: none; } /* caché sur desktop */
+
+        @media (max-width: 768px) {
+            /* Lightbox mobile : image + boutons en colonne */
+            .lightbox {
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                padding: 60px 10px 20px;
+            }
+            .lightbox-content {
+                max-width: 95%;
+                max-height: 70vh;
+            }
+            /* Cacher les boutons positionnés absolument sur mobile */
+            .lightbox-prev,
+            .lightbox-next {
+                display: none;
+            }
+            /* Afficher le wrapper boutons sous la photo */
+            .lightbox-nav-mobile {
+                display: flex;
+                gap: 30px;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+            .lightbox-nav-mobile .lightbox-nav {
+                position: static;
+                transform: none;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+            .lightbox-close {
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 28px;
+            }
+        }
 
         .back-to-top {
             position: fixed;
@@ -2148,6 +2189,11 @@
             <img id="lightbox-image" src="" alt="Image agrandie">
         </div>
         <span class="lightbox-nav lightbox-next" onclick="changeImage(1)">❯</span>
+        <!-- Boutons de navigation mobile (sous la photo) -->
+        <div class="lightbox-nav-mobile">
+            <span class="lightbox-nav" onclick="changeImage(-1)">❮</span>
+            <span class="lightbox-nav" onclick="changeImage(1)">❯</span>
+        </div>
     </div>
 
     <section id="join">
@@ -2459,9 +2505,9 @@
             'circuit1.png',
             'circuit2.png',
             'car-top.png',
-            'circuit3.png',
-            'circuit4.png',
-            // 'circuit5.jpg',
+            'circuit3.jpg',
+            'circuit4.jpg',
+            'circuit5.jpg',
             // Ajoute autant de lignes que tu veux ↑
         ];
         // ═══════════════════════════════════════════════
