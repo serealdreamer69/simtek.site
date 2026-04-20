@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CB6CLV56G3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Planning des courses et championnats LMU de SimTek Performance. Saison 10 — du 7 avril au 2 juin 2026.">
+    <meta name="keywords" content="planning simracing, championnats LMU, Le Mans Ultimate, planning courses, SimTek Performance">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Simtek Performance">
+    <meta property="og:title" content="Planning & Championnats - SimTek Performance">
+    <meta property="og:description" content="Planning des courses et championnats LMU Season 10 de SimTek Performance.">
+    <meta property="og:image" content="https://www.simtekperformance.com/Logo_SIMTEK.png">
+    <meta property="og:url" content="https://www.simtekperformance.com/planning.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.simtekperformance.com/planning.html">
+    <title>Planning & Championnats - SimTek Performance</title>
+    <link rel="icon" type="image/png" href="Logo_SIMTEK.png">
+    <link rel="shortcut icon" type="image/png" href="Logo_SIMTEK.png">
+    <link rel="apple-touch-icon" href="Logo_SIMTEK.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff1a75;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: #ff1a75;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(9px, 9px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(9px, -9px);
+        }
+
+        .mobile-only { display: none; }
+        .desktop-only { display: block; }
+        
+        .join-button-mobile {
+            display: none;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 300px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+        }
+        
+        .join-button-mobile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.98) 0%, rgba(26, 26, 62, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 40px;
+        }
+
+        .mobile-menu-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .mobile-menu-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+
+        .mobile-menu-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-links a:hover {
+            color: #ff1a75;
+            transform: scale(1.1);
+        }
+
+        .mobile-cta {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(255, 26, 117, 0.5);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 26, 117, 0.7);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 60px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.45) 0%, rgba(26, 26, 62, 0.45) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 75%;
+            object-fit: cover;
+            z-index: -1;
+            border-radius: 25px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 26, 117, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-logo-container {
+            margin-bottom: 40px;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-logo {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(255, 26, 117, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .hero-logo:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #b0b0d0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        section {
+            padding: 80px 60px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 26, 117, 0.6);
+            box-shadow: 0 20px 40px rgba(255, 26, 117, 0.3);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #ff1a75;
+            font-weight: 700;
+        }
+
+        .race-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .race-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+        }
+
+        .race-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .race-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .race-detail:last-child {
+            border-bottom: none;
+        }
+
+        .race-label {
+            color: #b0b0d0;
+            font-size: 14px;
+        }
+
+        .race-value {
+            color: #00d4ff;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+
+        /* PLANNING DES COURSES STYLES */
+        #planning {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.6) 0%, rgba(10, 14, 39, 0.8) 100%);
+        }
+        
+        .planning-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .planning-header h2 {
+            margin-bottom: 15px;
+        }
+        
+        .planning-update {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 26, 117, 0.1);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 26, 117, 0.3);
+        }
+        
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+        
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .planning-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: start;
+        }
+        
+        .planning-section {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
+            border: 1px solid rgba(255, 26, 117, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .planning-section:hover {
+            border-color: rgba(255, 26, 117, 0.5);
+            box-shadow: 0 10px 40px rgba(255, 26, 117, 0.2);
+        }
+        
+        .planning-section.full-width {
+            grid-column: auto;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .section-arrow {
+            font-size: 14px;
+            color: #00d4ff;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+
+        .planning-section.open .section-arrow { transform: rotate(180deg); }
+
+        .planning-section .section-content {
+            display: none;
+            animation: tierFadeIn 0.3s ease;
+        }
+
+        .planning-section.open .section-content { display: block; }
+        
+        .section-icon {
+            font-size: 28px;
+        }
+        
+        .section-title h3 {
+            font-size: 20px;
+            color: #ff1a75;
+            margin: 0;
+        }
+        
+        .section-title span {
+            font-size: 12px;
+            color: #b0b0d0;
+        }
+        
+        .tier-block {
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .tier-header {
+            padding: 12px 15px;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: filter 0.2s ease;
+        }
+
+        .tier-header:hover {
+            filter: brightness(1.3);
+        }
+        
+        .tier-bronze .tier-header { background: linear-gradient(135deg, rgba(205, 127, 50, 0.3) 0%, rgba(205, 127, 50, 0.1) 100%); }
+        .tier-silver .tier-header { background: linear-gradient(135deg, rgba(192, 192, 192, 0.3) 0%, rgba(192, 192, 192, 0.1) 100%); }
+        .tier-gold .tier-header { background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 215, 0, 0.1) 100%); }
+        
+        .tier-badge {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tier-bronze .tier-badge { color: #CD7F32; }
+        .tier-silver .tier-badge { color: #C0C0C0; }
+        .tier-gold .tier-badge { color: #FFD700; }
+
+        .tier-header .tier-open-icon {
+            font-size: 13px;
+            color: #b0b0d0;
+        }
+        
+        /* tier-races masqué partout : contenu affiché dans le popup */
+        .tier-races {
+            display: none;
+        }
+        
+        .race-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .race-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .race-item:hover {
+            background: rgba(255, 26, 117, 0.1);
+        }
+        
+        .race-flag {
+            font-size: 24px;
+        }
+        
+        .race-details {
+            flex: 1;
+        }
+        
+        .race-classes {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+        
+        .class-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        .class-badge.hypercar { background: #ff1a75; color: white; }
+        .class-badge.lmgt3 { background: #00d4ff; color: #0a0e27; }
+        .class-badge.lmp2 { background: #7b68ee; color: white; }
+        .class-badge.lmp3 { background: #ffa500; color: #0a0e27; }
+        
+        .race-track {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        
+        .race-track .config {
+            color: #b0b0d0;
+            font-size: 12px;
+        }
+        
+        .race-meta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .setup-badge {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .setup-badge.fixed { background: rgba(255, 26, 117, 0.2); color: #ff1a75; border: 1px solid #ff1a75; }
+        .setup-badge.open { background: rgba(0, 212, 255, 0.2); color: #00d4ff; border: 1px solid #00d4ff; }
+        
+        .duration-badge {
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 11px;
+            color: #b0b0d0;
+        }
+        
+        .extra-badge {
+            padding: 4px 10px;
+            background: rgba(255, 165, 0, 0.2);
+            border: 1px solid #ffa500;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #ffa500;
+            font-weight: 600;
+        }
+        
+        .event-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        
+        .event-main {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .event-flag {
+            font-size: 36px;
+        }
+        
+        .event-info h4 {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+        }
+        
+        .event-classes {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .event-track {
+            font-size: 13px;
+            color: #b0b0d0;
+            margin-bottom: 5px;
+        }
+        
+        .event-duration {
+            font-size: 14px;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        
+        .event-settings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .setting-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #b0b0d0;
+        }
+        
+        .setting-item .icon {
+            font-size: 16px;
+        }
+        
+        .event-schedule {
+            padding: 15px;
+            background: rgba(255, 26, 117, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 26, 117, 0.1);
+        }
+        
+        .schedule-label {
+            font-size: 12px;
+            color: #b0b0d0;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .schedule-days, .schedule-times {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .schedule-days:last-child, .schedule-times:last-child {
+            margin-bottom: 0;
+        }
+        
+        .day-badge {
+            padding: 6px 12px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 6px;
+            font-size: 12px;
+            color: #00d4ff;
+            font-weight: 600;
+        }
+        
+        .time-badge {
+            padding: 6px 12px;
+            background: rgba(255, 26, 117, 0.1);
+            border: 1px solid rgba(255, 26, 117, 0.3);
+            border-radius: 6px;
+            font-size: 12px;
+            color: #ff1a75;
+            font-weight: 600;
+        }
+
+        #join {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+        }
+
+        .join-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .join-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .join-text {
+            width: 100%;
+        }
+
+        .join-text h3 {
+            font-size: 28px;
+            color: #ff1a75;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .join-text > p {
+            color: #b0b0d0;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .conditions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .condition-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 18px 25px;
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.6) 0%, rgba(10, 14, 39, 0.6) 100%);
+            border: 1px solid rgba(255, 26, 117, 0.15);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .condition-item:hover {
+            border-color: rgba(255, 26, 117, 0.4);
+            transform: translateX(5px);
+        }
+
+        .condition-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .condition-item h4 {
+            color: #00d4ff;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .condition-item p {
+            color: #b0b0d0;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .discord-box-centered {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            border-radius: 15px;
+            padding: 30px 40px;
+            text-align: center;
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .discord-box-centered h3 {
+            color: #ff1a75;
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 900;
+        }
+
+        .discord-box-centered > p {
+            color: #b0b0d0;
+            font-size: 13px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .discord-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 40px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .discord-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        .recruitment-form {
+            background: linear-gradient(135deg, rgba(26, 26, 62, 0.9) 0%, rgba(10, 14, 39, 0.9) 100%);
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        .recruitment-form h3 {
+            font-size: 28px;
+            color: #ff1a75;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .recruitment-form > p {
+            text-align: center;
+            color: #b0b0d0;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section-title {
+            font-size: 18px;
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .form-group label .required {
+            color: #ff1a75;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 26, 117, 0.3);
+            border-radius: 8px;
+            padding: 12px 15px;
+            color: #ffffff;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff1a75;
+            background: rgba(255, 26, 117, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="checkbox"],
+        .checkbox-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #ff1a75;
+        }
+
+        .checkbox-item label {
+            color: #b0b0d0;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 15px 50px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 26, 117, 0.6);
+        }
+
+        .form-divider {
+            text-align: center;
+            margin: 30px 0;
+            color: #b0b0d0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        footer {
+            background: rgba(10, 14, 39, 0.8);
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+            padding: 40px 60px;
+            text-align: center;
+            color: #b0b0d0;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #ff1a75;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #00d4ff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-image-container {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            aspect-ratio: 16 / 9;
+            box-shadow: 0 20px 60px rgba(255, 26, 117, 0.4);
+        }
+
+        .gallery-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-image-container:hover img {
+            transform: scale(1.05);
+        }
+
+
+        /* ── Championnats : groupes mobile ── */
+        .champ-mobile-groups { display: none; }
+        .champ-group { border-radius: 14px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .champ-group-header { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: rgba(10,14,39,0.9); cursor: pointer; user-select: none; }
+        .champ-group-circle { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
+        .champ-group-label { font-size: 15px; font-weight: 700; color: #ffffff; flex: 1; }
+        .champ-group-arrow { font-size: 13px; color: #00d4ff; transition: transform 0.3s ease; }
+        .champ-group.open .champ-group-arrow { transform: rotate(180deg); }
+        .champ-group-content { display: none; background: rgba(26,26,62,0.6); padding: 0 14px 14px; }
+        .champ-group.open .champ-group-content { display: block; }
+        .champ-sub-title { font-size: 13px; font-weight: 700; padding: 12px 0 8px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 8px; }
+        .champ-sub-block { margin-bottom: 16px; }
+
+        /* ── Championnats : lignes semaines ── */
+        .champ-week-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+        .champ-week-label {
+            color: #ff1a75;
+            font-weight: 700;
+            min-width: 60px;
+            flex-shrink: 0;
+            transition: color 0.3s ease;
+        }
+        .champ-week-row.week-active .champ-week-label { color: #00e676; }
+        .champ-week-row.week-active {
+            background: rgba(0, 230, 118, 0.08);
+            border-radius: 6px;
+            padding: 3px 6px;
+            margin: 0 -6px;
+        }
+
+        @media (max-width: 1024px) {
+            /* ── Nav : hamburger uniquement ── */
+            .hamburger { display: flex; }
+            .nav-links, nav .cta-button { display: none; }
+            .desktop-only { display: none !important; }
+            .mobile-only { display: block !important; }
+
+            /* ── Layout ── */
+            nav { padding: 15px 20px; }
+            section { padding: 40px 20px; }
+            h2 { font-size: 32px !important; }
+            .form-row { grid-template-columns: 1fr; }
+            .radio-group { flex-direction: column; }
+            .race-item { flex-wrap: wrap; }
+            .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
+            .event-main { flex-direction: column; align-items: center; text-align: center; }
+            .schedule-days, .schedule-times { justify-content: center; }
+            .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+
+            /* ── Planning grid ── */
+            .planning-grid { grid-template-columns: 1fr; }
+            .planning-section.full-width { grid-column: 1; }
+
+            /* ── Championnats mobile ── */
+            .champ-grid { display: none !important; }
+            .champ-mobile-groups { display: block !important; }
+            #championnats { padding: 40px 12px 60px !important; }
+
+            /* ── Accordion tiers mobile ── */
+            .tier-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                user-select: none;
+                padding: 12px 15px;
+            }
+            .tier-arrow { font-size: 14px; transition: transform 0.3s ease; flex-shrink: 0; }
+            .tier-bronze .tier-arrow { color: #CD7F32; }
+            .tier-silver .tier-arrow { color: #C0C0C0; }
+            .tier-gold   .tier-arrow { color: #FFD700; }
+            .tier-block.open .tier-arrow { transform: rotate(180deg); }
+            .tier-races { display: none; animation: tierFadeIn 0.3s ease; }
+            .tier-block.open .tier-races { display: block; }
+            @keyframes tierFadeIn {
+                from { opacity: 0; transform: translateY(-6px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            .planning-section .section-header { cursor: pointer; user-select: none; }
+        }
+
+
+        /* ── Popup planning sections (PC uniquement) ── */
+        .planning-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.75);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        .planning-popup-overlay.active { display: flex; }
+        .planning-popup {
+            background: linear-gradient(135deg, rgba(26,26,62,0.98) 0%, rgba(10,14,39,0.98) 100%);
+            border: 1px solid rgba(255,26,117,0.3);
+            border-radius: 20px;
+            padding: 35px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .planning-popup-close {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 24px;
+            color: #b0b0d0;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .planning-popup-close:hover { color: #ff1a75; }
+        .planning-popup-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .planning-popup-icon { font-size: 28px; }
+        .planning-popup-title { font-size: 22px; color: #ff1a75; font-weight: 700; margin: 0; }
+        .planning-popup-sub { font-size: 13px; color: #b0b0d0; margin: 4px 0 0; }
+
+        @media (max-width: 1024px) {
+            .planning-popup-overlay { padding: 15px; }
+            .planning-popup { padding: 20px; max-height: 90vh; }
+            .planning-popup-title { font-size: 18px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Popup planning sections -->
+    <div class="planning-popup-overlay" id="planningPopupOverlay">
+        <div class="planning-popup" id="planningPopup">
+            <span class="planning-popup-close" id="planningPopupClose">✕</span>
+            <div class="planning-popup-header">
+                <span class="planning-popup-icon" id="planningPopupIcon"></span>
+                <div>
+                    <div class="planning-popup-title" id="planningPopupTitle"></div>
+                    <div class="planning-popup-sub" id="planningPopupSub"></div>
+                </div>
+            </div>
+            <div id="planningPopupContent"></div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">
+            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#planning">Planning des courses</a></li>
+            <li><a href="#championnats">Championnats</a></li>
+            <li><a href="team.html">Notre Équipe</a></li>
+            <li><a href="sponsors-details.html">Nos Sponsors</a></li>
+            <li><a href="become-partner.html">Become Partner</a></li>
+            <li><a href="pilot-recruitment.html">Rejoins Nous</a></li>
+        </ul>
+        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Nous Contacter</a>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Menu mobile plein écran -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="index.html" class="mobile-link">Accueil</a>
+                <a href="#planning" class="mobile-link">Planning des courses</a>
+                <a href="#championnats" class="mobile-link">Championnats</a>
+                <a href="team.html" class="mobile-link">Notre Équipe</a>
+                <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
+                <a href="become-partner.html" class="mobile-link">Become Partner</a>
+                <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
+            </div>
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Rejoindre Discord</a>
+        </div>
+    </div>
+
+<!-- SECTION PLANNING LMU -->
+<!-- ============================================= -->
+<section id="planning">
+    <div class="planning-header">
+        <h2>Planning des courses</h2>
+        <div class="planning-update">
+            <span class="pulse-dot"></span>
+            <span>Mis à jour : <strong id="update-date">Semaine du 07/04 - 🎉 Season 10!</strong></span>
+        </div>
+    </div>
+
+    <div class="planning-grid">
+        <!-- DAILY RACES -->
+        <div class="planning-section">
+            <div class="section-header">
+                <span class="section-icon">🏁</span>
+                <div class="section-title">
+                    <h3>Daily Races</h3>
+                    <span>Courses quotidiennes</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <!-- Bronze / Débutant -->
+                <div class="tier-block tier-bronze">
+                    <div class="tier-header">
+                        <span class="tier-badge">Débutant</span>
+                        <span class="tier-open-icon">▶</span>
+                    </div>
+                    <div class="tier-races">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
+                            <span>⏱ Toutes les 20min · 20min</span><span>👥 24 voitures / split</span>
+                            <span>🤝 Aides hautes autorisées</span><span>🔥 Chauffe-pneus : ON</span>
+                            <span>🛞 Pneus : 10</span>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇺🇸</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="race-track">Sebring <span class="config">(WEC)</span></div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge fixed">Fixed</span>
+                                <span class="duration-badge">20 min</span>
+                            </div>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇧🇭</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="race-track">Bahrain <span class="config">(Outer)</span> - 🌙 Night</div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge fixed">Fixed</span>
+                                <span class="duration-badge">20 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Silver / Intermédiaire -->
+                <div class="tier-block tier-silver">
+                    <div class="tier-header">
+                        <span class="tier-badge">Intermédiaire</span>
+                        <span class="tier-open-icon">▶</span>
+                    </div>
+                    <div class="tier-races">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
+                            <span>⏱ Toutes les 20min · 30min</span><span>👥 38 voitures / split</span>
+                            <span>🤝 Aides faibles autorisées</span><span>🔥 Chauffe-pneus : OFF</span>
+                            <span>🛞 Pneus : 10</span>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇫🇷</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="race-track">Paul Ricard <span class="config">(3a)</span> — LMGT3 Sprint Cup</div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge open">Open</span>
+                                <span class="duration-badge">30 min</span>
+                            </div>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇯🇵</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge lmp2">LMP2</span>
+                                    <span class="class-badge lmp3">LMP3</span>
+                                </div>
+                                <div class="race-track">Fuji <span class="config">(WEC)</span> — Prototype Fixed</div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge fixed">Fixed</span>
+                                <span class="duration-badge">30 min</span>
+                            </div>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇧🇷</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge lmp2">LMP2</span>
+                                    <span class="class-badge lmp3">LMP3</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="race-track">Interlagos <span class="config">(WEC)</span> — ELMS Sprint Trophy</div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge open">Open</span>
+                                <span class="duration-badge">30 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gold / Avancé -->
+                <div class="tier-block tier-gold">
+                    <div class="tier-header">
+                        <span class="tier-badge">Avancé</span>
+                        <span class="tier-open-icon">▶</span>
+                    </div>
+                    <div class="tier-races">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
+                            <span>⏱ Toutes les 30min</span><span>👥 38 voitures / split</span>
+                            <span>🚫 Aides interdites</span><span>🔥 Chauffe-pneus : OFF</span>
+                            <span>🛞 Pneus : 10</span>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇧🇪</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge hypercar">Hypercar</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="race-track">Spa-Francorchamps <span class="config">(WEC)</span> — One Stint Sprint</div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge open">Open</span>
+                                <span class="duration-badge">40 min</span>
+                            </div>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇪🇸</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge lmp2">LMP2</span>
+                                    <span class="class-badge lmp3">LMP3</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="race-track">Barcelona <span class="config">(ELMS)</span> — ELMS Super 60</div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge open">Open</span>
+                                <span class="duration-badge">60 min</span>
+                            </div>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇮🇹</span>
+                            <div class="race-details">
+                                <div class="race-classes">
+                                    <span class="class-badge hypercar">Hypercar</span>
+                                    <span class="class-badge lmgt3">LMGT3</span>
+                                </div>
+                                <div class="race-track">Monza <span class="config">(WEC)</span> — WEC-Xperience</div>
+                            </div>
+                            <div class="race-meta">
+                                <span class="setup-badge open">Open</span>
+                                <span class="duration-badge">60 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WEEKLY RACES -->
+        <div class="planning-section">
+            <div class="section-header">
+                <span class="section-icon">🏆</span>
+                <div class="section-title">
+                    <h3>Weekly Races</h3>
+                    <span>Courses hebdomadaires Solo</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <!-- WEC Weekly -->
+                <div class="event-card">
+                    <div class="event-main">
+                        <span class="event-flag">🇬🇧</span>
+                        <div class="event-info">
+                            <h4>WEC Weekly <span style="font-size:12px;color:#b0b0d0;font-weight:400;">[SR S1]</span></h4>
+                            <div class="event-classes">
+                                <span class="class-badge hypercar">Hypercar</span>
+                                <span class="class-badge lmgt3">LMGT3</span>
+                            </div>
+                            <div class="event-track">Silverstone (WEC) • <span class="setup-badge open">Open</span> • 38 cars</div>
+                            <div class="event-duration">100 min</div>
+                            <div style="font-size:12px;color:#b0b0d0;margin-top:6px;">🔥 Chauffe-pneus : OFF &nbsp;·&nbsp; 🛞 Pneus : 10</div>
+                        </div>
+                    </div>
+                    <div class="event-schedule">
+                        <div class="schedule-days">
+                            <span class="day-badge">Mardi</span>
+                            <span class="day-badge">Mercredi</span>
+                            <span class="day-badge">Jeudi</span>
+                            <span class="day-badge">Lundi</span>
+                        </div>
+                        <div class="schedule-times" style="margin-top: 8px;">
+                            <span class="time-badge">02:00</span>
+                            <span class="time-badge">06:00</span>
+                            <span class="time-badge">09:00</span>
+                            <span class="time-badge">12:00</span>
+                            <span class="time-badge">15:00</span>
+                            <span class="time-badge">18:00</span>
+                            <span class="time-badge">20:00</span>
+                            <span class="time-badge">23:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPECIAL EVENT : 4 Hours of Barcelona -->
+        <div class="planning-section special-event-section full-width">
+            <div class="section-header">
+                <span class="section-icon">⭐</span>
+                <div class="section-title">
+                    <h3>Special Event</h3>
+                    <span>Événement spécial — Open Entry Team</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <div class="event-card">
+                    <div class="event-main">
+                        <span class="event-flag">🇪🇸</span>
+                        <div class="event-info">
+                            <h4>4 Hours of Barcelona <span style="font-size:12px;color:#ffa500;font-weight:600;">[Open Entry]</span></h4>
+                            <div class="event-classes">
+                                <span class="class-badge lmp2">LMP2</span>
+                                <span class="class-badge lmp3">LMP3</span>
+                                <span class="class-badge lmgt3">LMGT3</span>
+                            </div>
+                            <div class="event-track">Barcelona (ELMS) • <span class="setup-badge open">Open</span> • 44 cars</div>
+                            <div class="event-duration">240 min (4h)</div>
+                            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px;font-size:12px;color:#b0b0d0;">
+                                <span>⏱ 5min Practice</span>
+                                <span>🔒 15min Quali privée</span>
+                                <span>🤝 Aides autorisées</span>
+                                <span>🔥 Chauffe-pneus : OFF</span>
+                                <span>🛞 Pneus : 14 (quali+course)</span>
+                            </div>
+                            <div style="margin-top:10px;font-size:12px;color:#b0b0d0;">
+                                🎮 Quali in-game : <strong style="color:#00d4ff;">17h30</strong> &nbsp;·&nbsp; 🏁 Départ in-game : <strong style="color:#00d4ff;">18h00</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-schedule">
+                        <div class="schedule-label">📅 10, 11 & 12 avril 2026 — Créneaux UTC :</div>
+                        <div class="schedule-times" style="margin-top: 8px;">
+                            <span class="time-badge">04:00</span>
+                            <span class="time-badge">08:00</span>
+                            <span class="time-badge">11:00</span>
+                            <span class="time-badge">14:00</span>
+                            <span class="time-badge">19:00</span>
+                            <span class="time-badge">22:00</span>
+                            <span class="time-badge">01:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================================= -->
+<!-- FIN SECTION PLANNING LMU -->
+
+<!-- SECTION CHAMPIONNATS LMU - SEASON 10 -->
+<!-- ============================================= -->
+<section id="championnats" style="padding: 60px 60px 80px;">
+    <div class="planning-header">
+        <h2>Championnats — Saison 10</h2>
+        <div class="planning-update">
+            <span>📅 Du <strong>7 avril 2026</strong> au <strong>2 juin 2026</strong> — 8 semaines</span>
+        </div>
+    </div>
+
+    <div class="planning-grid champ-grid">
+
+        <!-- LMGT3 SPRINT CUP -->
+        <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
+            <div class="section-header">
+                <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
+                <div class="section-title">
+                    <h3>LMGT3 Sprint Cup</h3>
+                    <span>Bronze 2 SR · 60min · LMGT3</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; font-size:13px; color:#b0b0d0;">
+                    <span>⏱ 3min Practice + 10min Quali</span>
+                    <span>🔁 Attempts : 3</span>
+                    <span>👥 Split : 38 / 44</span>
+                    <span>🏁 Drop Rounds : 2</span>
+                    <span>🛞 Pneus disponibles : 8</span>
+                    <span>⚠️ Track Limits : Strict (3pts)</span>
+                </div>
+                <div style="font-size:12px; color:#b0b0d0; margin-bottom:12px;">
+                    🕐 Mar & Ven : 11h 14h 16h 18h 20h 23h UTC · Mer & Sam : 02h 08h UTC
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Barcelona (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Silverstone (National)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Paul Ricard (Short)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Spa-Francorchamps (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Sebring (WEC)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Le Mans (Mulsanne)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Fuji (Classic)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Qatar (Short)</span></div>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- PROTOTYPE CHALLENGE -->
+        <div class="planning-section" style="border-color: rgba(192, 192, 192, 0.5);">
+            <div class="section-header">
+                <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#c0c0c0;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #c0c0c088;"></span>
+                <div class="section-title">
+                    <h3>Prototype Challenge</h3>
+                    <span>Silver 1 SR · 75min · LMP2 & LMP3</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; font-size:13px; color:#b0b0d0;">
+                    <span>⏱ 3min Practice + 10min Quali</span>
+                    <span>🔁 Attempts : 2</span>
+                    <span>👥 Split : 38 / 44 / 62</span>
+                    <span>🏁 Drop Rounds : 2</span>
+                    <span>🛞 Pneus disponibles : 8</span>
+                    <span>⚠️ Track Limits : Strict (4pts)</span>
+                </div>
+                <div style="font-size:12px; color:#b0b0d0; margin-bottom:12px;">
+                    🕐 Mar & Ven : 11h 14h 16h 18h 20h 23h UTC · Mer & Sam : 02h 08h UTC
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Silverstone (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Qatar (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Sebring (WEC)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Le Mans (WEC)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Silverstone (International)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Spa-Francorchamps (Endurance)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Imola (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Paul Ricard (3a)</span></div>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- 2.4H SERIES -->
+        <div class="planning-section" style="border-color: rgba(255, 215, 0, 0.5);">
+            <div class="section-header">
+                <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
+                <div class="section-title">
+                    <h3>2.4h Series</h3>
+                    <span>Gold 1 SR · 144min · Hypercar & LMGT3</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; font-size:13px; color:#b0b0d0;">
+                    <span>⏱ 3min Practice + 15min Quali</span>
+                    <span>🔁 Attempts : 2</span>
+                    <span>👥 Split : 38 / 44 / 62</span>
+                    <span>🏁 Drop Rounds : 1</span>
+                    <span>🛞 Pneus disponibles : 10</span>
+                    <span>⚠️ Track Limits : Strict (6pts)</span>
+                </div>
+                <div style="font-size:12px; color:#b0b0d0; margin-bottom:12px;">
+                    🕐 Mer & Dim : 02h 08h 11h 14h 16h 18h 20h 23h UTC
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Imola (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Le Mans (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Silverstone (WEC)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>COTA (WEC)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Spa-Francorchamps (Endurance)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Sebring (WEC)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Paul Ricard (Short)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Qatar (WEC)</span></div>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- LMP3 MASTERS -->
+        <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
+            <div class="section-header">
+                <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
+                <div class="section-title">
+                    <h3>LMP3 Masters</h3>
+                    <span>Bronze 2 SR · 60min · LMP3</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; font-size:13px; color:#b0b0d0;">
+                    <span>⏱ 3min Practice + 10min Quali</span>
+                    <span>🔁 Attempts : 3</span>
+                    <span>👥 Split : 38 / 44</span>
+                    <span>🏁 Drop Rounds : 2</span>
+                    <span>🛞 Pneus disponibles : 8</span>
+                    <span>⚠️ Track Limits : Strict (3pts)</span>
+                </div>
+                <div style="font-size:12px; color:#b0b0d0; margin-bottom:12px;">
+                    🕐 Mer & Sam : 11h 14h 16h 18h 20h 23h UTC · Jeu & Dim : 02h 08h UTC
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Fuji (WEC)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Interlagos (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Spa-Francorchamps (WEC)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Qatar (Short)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Bahrain (WEC)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Barcelona (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza (WEC)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans (WEC)</span></div>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- EUROPEAN LE MANS SERIES -->
+        <div class="planning-section" style="border-color: rgba(192, 192, 192, 0.5);">
+            <div class="section-header">
+                <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#c0c0c0;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #c0c0c088;"></span>
+                <div class="section-title">
+                    <h3>European Le Mans Series</h3>
+                    <span>Silver 1 SR · 100min · LMP2, LMP3 & LMGT3</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; font-size:13px; color:#b0b0d0;">
+                    <span>⏱ 3min Practice + 10min Quali</span>
+                    <span>🔁 Attempts : 2</span>
+                    <span>👥 Split : 38 / 44</span>
+                    <span>🏁 Drop Rounds : 2</span>
+                    <span>🛞 Pneus disponibles : 10</span>
+                    <span>⚠️ Track Limits : Strict (5pts)</span>
+                </div>
+                <div style="font-size:12px; color:#b0b0d0; margin-bottom:12px;">
+                    🕐 Jeu & Lun : 11h 14h 16h 18h 20h 23h UTC · Ven & Mar : 02h 08h UTC
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Portimao (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>COTA (WEC)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Barcelona (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Imola (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Paul Ricard (1a-V2)</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Monza (Curva Grande)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone (ELMS)</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps (ELMS)</span></div>
+                </div>
+            </div>
+        </div>
+
+        
+<!-- WORLD ENDURANCE CHAMPIONSHIP (TEAM) -->
+        <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
+            <div class="section-header">
+                <span style="background:#ffffff;color:#00aadd;font-weight:900;font-size:11px;padding:3px 7px;border-radius:5px;flex-shrink:0;letter-spacing:1.5px;font-family:'Segoe UI',sans-serif;">WEC</span>
+                <div class="section-title">
+                    <h3>World Endurance Championship</h3>
+                    <span>TEAM · Bronze 2 SR · 8h · Hypercar & LMGT3</span>
+                </div>
+                <span class="section-arrow">▼</span>
+            </div>
+            <div class="section-content">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; font-size:13px; color:#b0b0d0;">
+                    <span>⏱ 5min Practice + 15min Quali</span>
+                    <span>🔁 Attempts : 2</span>
+                    <span>👥 Split : 38 / 44</span>
+                    <span>🏁 Drop Rounds : 0</span>
+                    <span>🛞 Pneus disponibles : 26</span>
+                    <span>⚠️ Track Limits : Strict (6pts)</span>
+                </div>
+                <div style="font-size:12px; color:#b0b0d0; margin-bottom:12px;">
+                    🕐 Ven : 23h UTC · Sam : 09h & 16h UTC
+                </div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Paul Ricard (1a)</span></div>
+                    <div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Monza (WEC)</span></div>
+                    <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Interlagos (WEC)</span></div>
+                    <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span style="color:#666;">— Off —</span></div>
+                    <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Barcelona (ELMS)</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- fin champ-grid -->
+
+    <!-- Groupes hamburger championnats (mobile uniquement) -->
+    <div class="champ-mobile-groups" id="champMobileGroups">
+
+        <div class="champ-group">
+            <div class="champ-group-header">
+                <span class="champ-group-circle" style="background:#cd7f32;box-shadow:0 0 6px #cd7f3288"></span>
+                <span class="champ-group-label">Bronze</span>
+                <span class="champ-group-arrow">▼</span>
+            </div>
+            <div class="champ-group-content">
+                <div class="champ-sub-block">
+                    <div class="champ-sub-title" style="color:#cd7f32">LMGT3 Sprint Cup <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Bronze 2 SR · 60min · LMGT3</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 10min Quali</span><span>🔁 Attempts : 3</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 2</span><span>🛞 Pneus : 8</span><span>⚠️ Track Limits : 3pts</span></div>
+                    <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Mar & Ven : 11h 14h 16h 18h 20h 23h UTC · Mer & Sam : 02h 08h UTC</div>
+                    <div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Silverstone (National)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Paul Ricard (Short)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Spa-Francorchamps (ELMS)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Le Mans (Mulsanne)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Fuji (Classic)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Qatar (Short)</span></div></div>
+                </div>
+                <div class="champ-sub-block">
+                    <div class="champ-sub-title" style="color:#cd7f32">LMP3 Masters <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Bronze 2 SR · 60min · LMP3</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 10min Quali</span><span>🔁 Attempts : 3</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 2</span><span>🛞 Pneus : 8</span><span>⚠️ Track Limits : 3pts</span></div>
+                    <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Mer & Sam : 11h 14h 16h 18h 20h 23h UTC · Jeu & Dim : 02h 08h UTC</div>
+                    <div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Fuji (WEC)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Spa-Francorchamps (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Qatar (Short)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Bahrain (WEC)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans (WEC)</span></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="champ-group">
+            <div class="champ-group-header">
+                <span class="champ-group-circle" style="background:#c0c0c0;box-shadow:0 0 6px #c0c0c088"></span>
+                <span class="champ-group-label">Silver</span>
+                <span class="champ-group-arrow">▼</span>
+            </div>
+            <div class="champ-group-content">
+                <div class="champ-sub-block">
+                    <div class="champ-sub-title" style="color:#c0c0c0">Prototype Challenge <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Silver 1 SR · 75min · LMP2 & LMP3</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 10min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44 / 62</span><span>🏁 Drop Rounds : 2</span><span>🛞 Pneus : 8</span><span>⚠️ Track Limits : 4pts</span></div>
+                    <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Mar & Ven : 11h 14h 16h 18h 20h 23h UTC · Mer & Sam : 02h 08h UTC</div>
+                    <div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Silverstone (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Qatar (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Le Mans (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Silverstone (International)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Spa-Francorchamps (Endurance)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Paul Ricard (3a)</span></div></div>
+                </div>
+                <div class="champ-sub-block">
+                    <div class="champ-sub-title" style="color:#c0c0c0">European Le Mans Series <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Silver 1 SR · 100min · LMP2, LMP3 & LMGT3</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 10min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 2</span><span>🛞 Pneus : 10</span><span>⚠️ Track Limits : 5pts</span></div>
+                    <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Jeu & Lun : 11h 14h 16h 18h 20h 23h UTC · Ven & Mar : 02h 08h UTC</div>
+                    <div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Portimao (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>COTA (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Paul Ricard (1a-V2)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Monza (Curva Grande)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone (ELMS)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps (ELMS)</span></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="champ-group">
+            <div class="champ-group-header">
+                <span class="champ-group-circle" style="background:#ffd700;box-shadow:0 0 6px #ffd70088"></span>
+                <span class="champ-group-label">Gold</span>
+                <span class="champ-group-arrow">▼</span>
+            </div>
+            <div class="champ-group-content">
+                <div class="champ-sub-block">
+                    <div class="champ-sub-title" style="color:#ffd700">2.4h Series <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Gold 1 SR · 144min · Hypercar & LMGT3</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 15min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44 / 62</span><span>🏁 Drop Rounds : 1</span><span>🛞 Pneus : 10</span><span>⚠️ Track Limits : 6pts</span></div>
+                    <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Mer & Dim : 02h 08h 11h 14h 16h 18h 20h 23h UTC</div>
+                    <div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Le Mans (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Silverstone (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>COTA (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Spa-Francorchamps (Endurance)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Paul Ricard (Short)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Qatar (WEC)</span></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="champ-group">
+            <div class="champ-group-header">
+                <span style="background:#fff;color:#00aadd;font-weight:900;font-size:10px;padding:2px 6px;border-radius:4px;flex-shrink:0;letter-spacing:1px;">WEC</span>
+                <span class="champ-group-label">World Endurance Championship</span>
+                <span class="champ-group-arrow">▼</span>
+            </div>
+            <div class="champ-group-content">
+                <div class="champ-sub-block">
+                    <div class="champ-sub-title" style="color:#cd7f32">World Endurance Championship <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— TEAM · Bronze 2 SR · 8h · Hypercar & LMGT3</span></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 5min Practice + 15min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 0</span><span>🛞 Pneus : 26</span><span>⚠️ Track Limits : 6pts</span></div>
+                    <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Ven : 23h UTC · Sam : 09h & 16h UTC</div>
+                    <div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Paul Ricard (1a)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Monza (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Barcelona (ELMS)</span></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- ============================================= -->
+
+
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Simtek Performance - Tous droits réservés</p>
+        <p>Planning des courses & Championnats</p>
+        <div class="social-links">
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i> Discord</a>
+            <a href="https://www.twitch.tv/simtekperformance" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitch"></i> Twitch</a>
+            <a href="https://www.instagram.com/simtek_performance" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // ── Planning : accordéon section → popup tier ──
+        var planningOverlay = document.getElementById('planningPopupOverlay');
+
+        function openTierPopup(tierBlock) {
+            var badge = tierBlock.querySelector('.tier-badge') ? tierBlock.querySelector('.tier-badge').textContent.trim() : '';
+            var races = tierBlock.querySelector('.tier-races');
+            if (!races) return;
+
+            var icon = '🏅';
+            if (tierBlock.classList.contains('tier-bronze')) icon = '🥉';
+            else if (tierBlock.classList.contains('tier-silver')) icon = '🥈';
+            else if (tierBlock.classList.contains('tier-gold'))   icon = '🥇';
+
+            document.getElementById('planningPopupIcon').textContent  = icon;
+            document.getElementById('planningPopupTitle').textContent = badge;
+            document.getElementById('planningPopupSub').textContent   = '';
+            document.getElementById('planningPopupContent').innerHTML = races.innerHTML;
+            planningOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePlanningPopup() {
+            planningOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('planningPopupClose').addEventListener('click', closePlanningPopup);
+        planningOverlay.addEventListener('click', function(e) {
+            if (e.target === planningOverlay) closePlanningPopup();
+        });
+        window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePlanningPopup(); });
+
+        // Clic section → accordéon
+        document.querySelectorAll('.planning-section .section-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                var section = header.closest('.planning-section');
+                if (section.closest('.champ-grid')) return;
+                document.querySelectorAll('.planning-section.open').forEach(function(s) {
+                    if (s !== section) s.classList.remove('open');
+                });
+                section.classList.toggle('open');
+            });
+        });
+
+        // Clic tier → popup
+        document.querySelectorAll('.planning-section .tier-header').forEach(function(header) {
+            header.addEventListener('click', function(e) {
+                e.stopPropagation();
+                openTierPopup(header.closest('.tier-block'));
+            });
+        });
+
+        // ── Toggle groupes championnats mobile ──
+        document.querySelectorAll('.champ-group-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                var group = header.closest('.champ-group');
+                document.querySelectorAll('.champ-group.open').forEach(function(g) {
+                    if (g !== group) g.classList.remove('open');
+                });
+                group.classList.toggle('open');
+            });
+        });
+
+
+
+        // ── Championnats : surbrillance semaine en cours ──
+        (function() {
+            var seasonStart = new Date('2026-04-07T00:00:00');
+            var seasonEnd   = new Date('2026-06-03T00:00:00');
+            var now = new Date();
+            if (now < seasonStart || now >= seasonEnd) return;
+            var msPerWeek = 7 * 24 * 60 * 60 * 1000;
+            var currentWeek = Math.floor((now - seasonStart) / msPerWeek) + 1;
+            if (currentWeek < 1 || currentWeek > 8) return;
+            document.querySelectorAll('.champ-week-row[data-week="' + currentWeek + '"]').forEach(function(row) {
+                row.classList.add('week-active');
+            });
+        })();
+
+        // ── Nav hamburger ──
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+        let lastScrollForMenu = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (Math.abs(currentScroll - lastScrollForMenu) > 10 && mobileMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+            lastScrollForMenu = currentScroll;
+        });
+
+        // ── Back to top ──
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    </script>
+</body>
+</html>
