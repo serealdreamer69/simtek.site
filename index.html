@@ -1519,6 +1519,119 @@
             .planning-popup { padding: 20px; max-height: 90vh; }
             .planning-popup-title { font-size: 18px; }
         }
+
+        /* ═══════════════════════════════════════════════
+           SUPER TROFEO — CLASSEMENT PILOTES
+           ═══════════════════════════════════════════════ */
+        #super-trofeo {
+            background: linear-gradient(135deg, rgba(10,14,39,0.95) 0%, rgba(26,26,62,0.95) 100%);
+        }
+        .st-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .st-logo {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+        .st-logo-sep {
+            width: 1px;
+            height: 60px;
+            background: rgba(255,255,255,0.15);
+        }
+        .st-table-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255,26,117,0.25);
+            background: rgba(10,14,39,0.8);
+        }
+        .st-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 820px;
+        }
+        .st-table thead tr {
+            background: rgba(255,26,117,0.08);
+            border-bottom: 1px solid rgba(255,26,117,0.25);
+        }
+        .st-table th {
+            padding: 12px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #b0b0d0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        .st-th-pilote { text-align: left !important; padding-left: 16px !important; min-width: 170px; }
+        .st-th-pts { color: #00d4ff !important; min-width: 55px; }
+        .st-th-fl { color: #cc44ff !important; min-width: 45px; border-left: 1px solid rgba(255,255,255,0.07) !important; }
+        .st-th-race { min-width: 70px; font-size: 10px !important; }
+        .st-sep-left { border-left: 1px solid rgba(255,255,255,0.07) !important; }
+        .st-table td {
+            padding: 11px 8px;
+            text-align: center;
+            font-size: 13px;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .st-table tr:last-child td { border-bottom: none; }
+        .st-table tr:hover td { background: rgba(255,26,117,0.04); }
+        .st-td-pilote { text-align: left !important; padding-left: 16px !important; font-weight: 600; font-size: 14px !important; }
+        .st-td-pts { font-size: 16px !important; font-weight: 700 !important; color: #00d4ff !important; }
+        .st-td-fl { color: #cc44ff !important; font-weight: 700 !important; }
+        .st-td-race { color: #b0b0d0; font-size: 13px; }
+        .st-pos {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .st-pos-1 { background: #FFD700; color: #1a1100; }
+        .st-pos-2 { background: #C0C0C0; color: #111; }
+        .st-pos-3 { background: #CD7F32; color: #1a0800; }
+        .st-pos-n { background: rgba(255,255,255,0.08); color: #b0b0d0; }
+        .st-flag { font-size: 15px; margin-right: 7px; }
+        .st-dash { color: rgba(255,255,255,0.18); }
+        .st-note {
+            max-width: 1200px;
+            margin: 14px auto 0;
+            font-size: 12px;
+            color: #b0b0d0;
+            background: rgba(255,26,117,0.06);
+            border: 1px solid rgba(255,26,117,0.15);
+            border-radius: 10px;
+            padding: 10px 16px;
+            line-height: 1.7;
+        }
+        .st-note code {
+            background: rgba(255,255,255,0.08);
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-family: monospace;
+            color: #00d4ff;
+            font-size: 11px;
+        }
+        @media (max-width: 768px) {
+            .st-header { gap: 16px; }
+            .st-logo { height: 52px; }
+            .st-logo-sep { height: 40px; }
+            #super-trofeo { padding: 40px 12px 60px !important; }
+            .st-table { min-width: 700px; }
+            .st-th-pilote { min-width: 130px; }
+        }
     </style>
 </head>
 <body>
@@ -1546,6 +1659,7 @@
             <li><a href="#hero">Accueil</a></li>
             <li><a href="#planning">Planning des courses</a></li>
                             <li><a href="#championnats">Championnats</a></li>
+                            <li><a href="#super-trofeo">Super Trofeo</a></li>
             <li><a href="team.html">Notre Équipe</a></li>
             <li><a href="sponsors-details.html">Nos Sponsors</a></li>
             <li><a href="become-partner.html">Become Partner</a></li>
@@ -1565,6 +1679,7 @@
             <div class="mobile-menu-links">
                 <a href="#hero" class="mobile-link">Accueil</a>
                 <a href="#planning" class="mobile-link">Planning</a>
+                <a href="#super-trofeo" class="mobile-link">Super Trofeo</a>
                 <a href="team.html" class="mobile-link">Notre Équipe</a>
                 <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
                 <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
@@ -2192,6 +2307,215 @@
     </div>
 
 </section>
+<!-- ============================================= -->
+
+
+<!-- ============================================= -->
+<!-- SECTION SUPER TROFEO — CLASSEMENT PILOTES     -->
+<!-- ============================================= -->
+<section id="super-trofeo" style="padding: 60px 60px 80px;">
+
+    <!-- En-tête avec logos -->
+    <div class="st-header">
+        <img src="supertrofeo.webp" alt="Super Trofeo Logo" class="st-logo">
+        <div class="st-logo-sep"></div>
+        <h2 style="margin:0; font-size:32px;">Classement Pilotes</h2>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         TABLEAU SUPER TROFEO
+         Pour modifier un résultat :
+           → Trouve le nom du pilote dans le code
+           → Change le chiffre dans la colonne du circuit
+           → Mets à jour le total PTS du pilote
+         Pour mettre un tiret (pas de résultat) : laisse  —
+         Exemple : Hugo passe à 9 pts à Silverstone
+           → Remplace le — de Silverstone par 9
+           → Change son PTS de 6 à 15
+    ══════════════════════════════════════════════ -->
+
+    <div class="st-table-wrap">
+        <table class="st-table">
+            <thead>
+                <tr>
+                    <th style="width:44px;">Pos</th>
+                    <th class="st-th-pilote">Pilote</th>
+                    <!-- PTS = total des points -->
+                    <th class="st-th-pts">PTS</th>
+                    <!-- FL = nombre de Fastest Laps au total -->
+                    <th class="st-th-fl st-sep-left">FL</th>
+                    <!-- Les 8 épreuves — modifie les noms ici si besoin -->
+                    <th class="st-th-race st-sep-left">Monza</th>
+                    <th class="st-th-race">Silverstone</th>
+                    <th class="st-th-race">Imola</th>
+                    <th class="st-th-race">Portimao</th>
+                    <th class="st-th-race">Bahrain</th>
+                    <th class="st-th-race">Spa</th>
+                    <th class="st-th-race">Le Mans</th>
+                    <th class="st-th-race">Sebring</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- ✏️ PILOTE 1 -->
+                <tr>
+                    <td><span class="st-pos st-pos-1">1</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Christophe Avivar</td>
+                    <td class="st-td-pts">9</td>               <!-- Total PTS -->
+                    <td class="st-td-fl st-sep-left">1</td>    <!-- Total FL  -->
+                    <td class="st-td-race st-sep-left">9</td>  <!-- Monza      -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- Silverstone -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- Imola       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- Portimao    -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- Bahrain     -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- Spa         -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- Le Mans     -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- Sebring     -->
+                </tr>
+
+                <!-- ✏️ PILOTE 2 -->
+                <tr>
+                    <td><span class="st-pos st-pos-2">2</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Maxime Roy</td>
+                    <td class="st-td-pts">9</td>               <!-- Total PTS -->
+                    <td class="st-td-fl st-sep-left">1</td>    <!-- Total FL  -->
+                    <td class="st-td-race st-sep-left">9</td>  <!-- Monza      -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ PILOTE 3 -->
+                <tr>
+                    <td><span class="st-pos st-pos-3">3</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Thibault Chassard</td>
+                    <td class="st-td-pts">7</td>
+                    <td class="st-td-fl st-sep-left">0</td>
+                    <td class="st-td-race st-sep-left">7</td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ PILOTE 4 -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">4</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Hugo Rota</td>
+                    <td class="st-td-pts">6</td>
+                    <td class="st-td-fl st-sep-left">0</td>
+                    <td class="st-td-race st-sep-left">6</td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ PILOTE 5 -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">5</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Maceo Royer</td>
+                    <td class="st-td-pts">5</td>
+                    <td class="st-td-fl st-sep-left">0</td>
+                    <td class="st-td-race st-sep-left">5</td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ PILOTE 6 -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">6</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Romuald Da-Ros</td>
+                    <td class="st-td-pts">4</td>
+                    <td class="st-td-fl st-sep-left">0</td>
+                    <td class="st-td-race st-sep-left">4</td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ PILOTE 7 -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">7</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Anthony Maynard</td>
+                    <td class="st-td-pts">3</td>
+                    <td class="st-td-fl st-sep-left">0</td>
+                    <td class="st-td-race st-sep-left">3</td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ PILOTE 8 -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">8</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Guillaume Wait</td>
+                    <td class="st-td-pts">2</td>
+                    <td class="st-td-fl st-sep-left">0</td>
+                    <td class="st-td-race st-sep-left">2</td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ PILOTE 9 -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">9</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Cyril Cazes</td>
+                    <td class="st-td-pts">1</td>
+                    <td class="st-td-fl st-sep-left">0</td>
+                    <td class="st-td-race st-sep-left">1</td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Note d'aide à l'édition -->
+    <p class="st-note">
+        ✏️ <strong>Comment modifier :</strong>
+        Trouve le nom du pilote → change le chiffre dans la colonne du circuit → mets à jour son total <code>PTS</code>.
+        Pour un Fastest Lap, ajoute <code>+1</code> à sa colonne <code>FL</code>.
+        Pour un résultat vide, laisse le tiret <code>—</code> tel quel.
+    </p>
+
+</section>
+<!-- ============================================= -->
+<!-- FIN SECTION SUPER TROFEO                      -->
 <!-- ============================================= -->
 
 
