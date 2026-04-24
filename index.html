@@ -1630,7 +1630,8 @@
             .st-logo-sep { height: 40px; }
             #super-trofeo { padding: 40px 12px 60px !important; }
             .st-table { min-width: 700px; }
-            .st-th-pilote { min-width: 130px; }
+            .st-th-pilote { min-width: 160px; }
+            .st-td-pilote { white-space: nowrap; }
         }
     </style>
 </head>
@@ -2317,7 +2318,7 @@
 
     <!-- En-tête avec logos -->
     <div class="st-header">
-        <img src="supertrofeo.png" alt="Super Trofeo Logo" class="st-logo">
+        <img src="supertrofeo.webp" alt="Super Trofeo Logo" class="st-logo">
         <div class="st-logo-sep"></div>
         <h2 style="margin:0; font-size:32px;">Super-Troféo</h2>
     </div>
@@ -2361,17 +2362,12 @@
                      ✏️ COMMENT MODIFIER LES RÉSULTATS
                      ───────────────────────────────────────────────────────
                      Chaque ligne = 1 pilote. Structure :
-                       Total PTS (auto) | FL total | Monza | Silverstone | Imola | ...
+                       Total PTS | FL total | Monza | Silverstone | Imola | ...
 
                      Pour ajouter un résultat → remplace le — par le chiffre
                      Pour un pilote absent → laisse le — tel quel
-                     Pour un Fastest Lap → ajoute +1 à la colonne FL du pilote
-
-                     ✅ Le TOTAL PTS se calcule AUTOMATIQUEMENT (course + FL)
-                        Tu n'as plus besoin de le mettre à jour manuellement !
-
                      Points par course : 1er=8 · 2e=7 · 3e=6 · 4e=5 · 5e=4 · 6e=3 · 7e=2 · 8e=1 · 9e=0
-                     FL bonus : +1 pt par fastest lap (déjà inclus dans le calcul auto)
+                     N'oublie pas de mettre à jour le TOTAL PTS !
                 ═══════════════════════════════════════════════════════ -->
 
                 <!-- ✏️ CHRISTOPHE AVIVAR — Monza:8 + Silver:8 = 17 -->
@@ -3039,37 +3035,6 @@
             document.querySelectorAll('.champ-week-row[data-week="' + currentWeek + '"]').forEach(function(row) {
                 row.classList.add('week-active');
             });
-        })();
-
-        // ═══════════════════════════════════════════════
-        // SUPER TROFEO — Calcul automatique du total PTS
-        // Le total = somme des points par course + FL
-        // Tu n'as plus besoin de mettre à jour le total à la main !
-        // ═══════════════════════════════════════════════
-        (function() {
-            function calculerTotalSuperTrofeo() {
-                document.querySelectorAll('.st-table tbody tr').forEach(function(row) {
-                    var total = 0;
-
-                    // Additionne les points de chaque épreuve (ignore les —)
-                    row.querySelectorAll('.st-td-race').forEach(function(cell) {
-                        var val = parseInt(cell.textContent.trim(), 10);
-                        if (!isNaN(val)) total += val;
-                    });
-
-                    // Additionne les Fastest Laps (+1 pt par FL)
-                    var flCell = row.querySelector('.st-td-fl');
-                    if (flCell) {
-                        var fl = parseInt(flCell.textContent.trim(), 10);
-                        if (!isNaN(fl)) total += fl;
-                    }
-
-                    // Écrit le total dans la colonne PTS
-                    var ptsCell = row.querySelector('.st-td-pts');
-                    if (ptsCell) ptsCell.textContent = total;
-                });
-            }
-            document.addEventListener('DOMContentLoaded', calculerTotalSuperTrofeo);
         })();
     </script>
 </body>
