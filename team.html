@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CB6CLV56G3');
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Découvrez l'équipe SimTek Performance : pilotes, chefs de file et direction. Équipe simracing française professionnelle sur Le Mans Ultimate, iRacing et ACC.">
+<meta name="keywords" content="équipe simracing, pilotes simracing france, team simracing, SimTek Performance pilotes, esport simracing équipe">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Simtek Performance">
+<meta property="og:title" content="Notre Équipe - SimTek Performance">
+<meta property="og:description" content="Découvrez les pilotes et la direction de SimTek Performance, équipe simracing française spécialisée en endurance virtuelle.">
+<meta property="og:image" content="https://www.simtekperformance.com/Logo_SIMTEK.png">
+<meta property="og:url" content="https://www.simtekperformance.com/team.html">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://www.simtekperformance.com/team.html">
+<title>Notre Équipe - Simtek Performance</title>
+<link href="Logo_SIMTEK.png" rel="icon" type="image/png"/>
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%); color: #ffffff; min-height: 100vh; }
+        /* ── Navigation ── */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .logo { display: flex; align-items: center; justify-content: center; }
+        .logo-img { height: 80px; width: auto; object-fit: contain; }
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-links a:hover { color: #ff1a75; }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .cta-button {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6); }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: #ff1a75;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(9px, 9px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(9px, -9px); }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.98) 0%, rgba(26, 26, 62, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu.active { display: flex; opacity: 1; }
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 40px;
+        }
+        .mobile-menu-links { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+        .mobile-menu-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
+            transition: width 0.3s ease;
+        }
+        .mobile-menu-links a:hover::after { width: 100%; }
+        .mobile-menu-links a:hover { color: #ff1a75; transform: scale(1.1); }
+        .mobile-cta {
+            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 8px 25px rgba(255, 26, 117, 0.5);
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .mobile-cta:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(255, 26, 117, 0.7); }
+        .hero { text-align: center; padding: 100px 20px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%); }
+        h1 { font-size: 64px; margin-bottom: 20px; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 20px; color: #b0b0d0; }
+        .team-container { max-width: 1600px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { font-size: 36px; text-align: center; margin-bottom: 40px; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .leadership-grid { display: grid; grid-template-columns: repeat(2, 400px); gap: 25px; margin-bottom: 80px; justify-content: center; }
+        .person-card { background: rgba(26, 26, 62, 0.6); border: 2px solid rgba(255, 26, 117, 0.3); border-radius: 15px; overflow: hidden; transition: all 0.3s ease; max-width: 400px; }
+        .person-card:hover { transform: translateY(-5px); border-color: #ff1a75; box-shadow: 0 15px 30px rgba(255, 26, 117, 0.3); }
+        .person-header-inline { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            padding: 20px; 
+            background: rgba(10, 14, 39, 0.8); 
+            background-size: cover; 
+            background-position: center; 
+            background-blend-mode: overlay;
+            border-bottom: 1px solid rgba(255, 26, 117, 0.2); 
+            position: relative;
+        }
+        .person-header-inline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 14, 39, 0.7);
+            z-index: 0;
+        }
+        .person-photo-circle { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #ff1a75; flex-shrink: 0; position: relative; z-index: 1; }
+        .person-header-info { flex: 1; position: relative; z-index: 1; }
+        .person-role-badge { background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); padding: 4px 12px; border-radius: 12px; font-size: 9px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-bottom: 5px; }
+        .person-name { font-size: 18px; font-weight: bold; color: #ff1a75; }
+        .person-info-details { padding: 20px; }
+        .person-specs { display: grid; gap: 8px; }
+        .spec-item { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255, 26, 117, 0.1); }
+        .spec-label { color: #b0b0d0; text-transform: uppercase; font-size: 10px; }
+        .spec-value { color: #ffffff; font-size: 12px; text-align: right; }
+        .category-block { margin-bottom: 60px; }
+        .category-header { background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%); padding: 25px 30px; border-radius: 15px; margin-bottom: 30px; border: 2px solid rgba(255, 26, 117, 0.3); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .category-title-wrapper { display: flex; align-items: center; gap: 20px; }
+        .category-icon { font-size: 36px; }
+        .category-info h3 { font-size: 28px; color: #ff1a75; }
+        .category-info p { font-size: 14px; color: #b0b0d0; }
+        .category-toggle { font-size: 24px; color: #00d4ff; }
+        .team-leader { background: rgba(26, 26, 62, 0.6); border: 2px solid rgba(0, 212, 255, 0.3); border-radius: 15px; overflow: hidden; margin-bottom: 30px; max-width: 575px; margin-left: auto; margin-right: auto; }
+        .team-leader .person-photo-circle { border-color: #00d4ff; }
+        .team-leader .person-role-badge { background: linear-gradient(135deg, #00d4ff 0%, #0088ff 100%); }
+        .team-leader .person-header-inline { flex-direction: column; text-align: center; }
+        .team-leader .person-name { text-align: center; }
+        .pilots-grid { display: grid; grid-template-columns: repeat(3, 400px); gap: 20px; margin-bottom: 20px; justify-content: center; }
+        .category-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .category-content.active { max-height: 15000px; }
+        footer { background: rgba(10, 14, 39, 0.95); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255, 26, 117, 0.2); }
+        footer p { color: #b0b0d0; }
+        
+        /* Popup Modal Setup */
+        .setup-modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.95); 
+            z-index: 10000; 
+            justify-content: center; 
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .setup-modal.active { display: flex; }
+        .setup-modal-content { 
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            transform: scale(1.2);
+        }
+        @media (max-width: 768px) {
+            .setup-modal-content {
+                transform: none;
+                width: calc(100% - 40px);
+            }
+        }
+        .setup-modal .person-card {
+            max-width: none;
+            width: 100%;
+            margin: 0;
+        }
+        .setup-photo-container {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 0 0 13px 13px;
+            border-top: 1px solid rgba(255, 26, 117, 0.2);
+        }
+        .setup-photo-container img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+        .setup-photo-label {
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #b0b0d0;
+            padding: 8px;
+            background: rgba(10, 14, 39, 0.8);
+        }
+        .setup-modal-close { 
+            position: absolute; 
+            top: -50px; 
+            right: 0; 
+            background: #ff1a75; 
+            border: none; 
+            color: white; 
+            font-size: 30px; 
+            width: 50px; 
+            height: 50px; 
+            border-radius: 50%; 
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10001;
+        }
+        .setup-modal-close:hover { 
+            background: #ff3388; 
+            transform: rotate(90deg);
+        }
+        .person-card { cursor: pointer; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 42px; }
+            .hamburger { display: flex; }
+            .nav-links, nav .cta-button { display: none; }
+            nav { padding: 15px 20px; }
+            .leadership-grid { grid-template-columns: 1fr; }
+            .pilots-grid { grid-template-columns: 1fr; }
+        }
+        @media (min-width: 769px) and (max-width: 1300px) { .pilots-grid { grid-template-columns: repeat(2, 400px); } }
+        @media (min-width: 769px) { .category-content { max-height: none !important; } .category-toggle { display: none; } }
+    
+        /* Structure en colonnes alignées */
+        .directors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .teams-columns-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+        
+        .team-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .category-banner {
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.2) 0%, rgba(0, 212, 255, 0.2) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 26, 117, 0.3);
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 14, 39, 0.7);
+            border-radius: 13px;
+            z-index: 0;
+        }
+        
+        .category-banner-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .category-banner h3 {
+            font-size: 24px;
+            color: #ff1a75;
+            margin: 0;
+        }
+        
+        /* Couleurs par équipe */
+        .team-gt3a .person-card,
+        .team-gt3a .team-leader,
+        .team-gt3a .category-banner {
+            border-color: #ff1a75 !important;
+        }
+        .team-gt3a .person-card:hover,
+        .team-gt3a .team-leader:hover {
+            box-shadow: 0 15px 30px rgba(255, 26, 117, 0.4);
+        }
+        .team-gt3a .person-photo-circle {
+            border-color: #ff1a75 !important;
+        }
+        
+        .team-gt3b .person-card,
+        .team-gt3b .team-leader,
+        .team-gt3b .category-banner {
+            border-color: #00d4ff !important;
+        }
+        .team-gt3b .person-card:hover,
+        .team-gt3b .team-leader:hover {
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.4);
+        }
+        .team-gt3b .person-photo-circle {
+            border-color: #00d4ff !important;
+        }
+        
+        .team-lmp .person-card,
+        .team-lmp .team-leader,
+        .team-lmp .category-banner {
+            border-color: #ffcc00 !important;
+        }
+        .team-lmp .person-card:hover,
+        .team-lmp .team-leader:hover {
+            box-shadow: 0 15px 30px rgba(255, 204, 0, 0.4);
+        }
+        .team-lmp .person-photo-circle {
+            border-color: #ffcc00 !important;
+        }
+        
+        .team-hyp .person-card,
+        .team-hyp .team-leader,
+        .team-hyp .category-banner {
+            border-color: #00ff88 !important;
+        }
+        .team-hyp .person-card:hover,
+        .team-hyp .team-leader:hover {
+            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.4);
+        }
+        .team-hyp .person-photo-circle {
+            border-color: #00ff88 !important;
+        }
+        
+        @media (max-width: 1400px) {
+            .teams-columns-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .directors-grid, .teams-columns-grid {
+                grid-template-columns: 1fr;
+            }
+            .directors-grid {
+                display: none;
+            }
+        }
+
+        /* ── Mobile Stack View ── */
+        .mobile-team-section { display: none; }
+
+        @media (max-width: 768px) {
+            .teams-columns-grid { display: none !important; }
+            .mobile-team-section { display: block; margin-top: 10px; }
+
+            .mobile-folder {
+                border: 2px solid;
+                border-radius: 15px;
+                margin-bottom: 20px;
+                background: rgba(26, 26, 62, 0.6);
+                overflow: hidden;
+            }
+
+            .mobile-folder-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 18px 20px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .mobile-stack {
+                display: none;
+                position: relative;
+                margin: 0 15px 20px;
+            }
+
+            .mobile-stack.open { display: block; }
+
+            .mobile-mini-card {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 70px;
+                border: 2px solid;
+                border-radius: 12px;
+                background: rgba(10, 14, 39, 0.92);
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 10px 15px;
+                cursor: pointer;
+                transition: transform 0.15s;
+            }
+
+            .mobile-mini-card:active { transform: scale(0.97); }
+
+            .mini-photo {
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid;
+                flex-shrink: 0;
+            }
+
+            .mini-badge {
+                font-size: 8px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: #0a0e27;
+                padding: 2px 8px;
+                border-radius: 8px;
+                display: inline-block;
+                margin-bottom: 4px;
+            }
+
+            .mini-name {
+                font-size: 15px;
+                font-weight: bold;
+            }
+        }
+
+        /* ── Pilot Popup (mobile + desktop) ── */
+        .pilot-popup-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+        .pilot-popup-overlay.active {
+            display: flex;
+        }
+
+        .pilot-popup {
+            position: relative;
+            background: linear-gradient(160deg, #0d1130 0%, #1a1a3e 100%);
+            border-radius: 22px;
+            width: 100%;
+            max-width: 480px;
+            border: 2px solid rgba(255, 26, 117, 0.35);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.04);
+            overflow: hidden;
+        }
+
+        /* Top accent bar */
+        .pilot-popup-accent {
+            height: 4px;
+            border-radius: 22px 22px 0 0;
+            background: #ff1a75;
+        }
+
+        /* Close button */
+        .pilot-popup-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 26, 117, 0.15);
+            border: 1px solid rgba(255, 26, 117, 0.35);
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.2s;
+        }
+        .pilot-popup-close:hover { background: rgba(255,26,117,0.4); }
+
+        /* Header : photo + nom + badge */
+        .pilot-popup-header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px 22px 14px;
+            gap: 16px;
+        }
+        .pilot-popup-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff1a75;
+            box-shadow: 0 0 18px rgba(255,26,117,0.35);
+            flex-shrink: 0;
+        }
+        .pilot-popup-header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .pilot-popup-badge {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: rgba(255,26,117,0.15);
+            border: 1px solid rgba(255,26,117,0.4);
+            color: #ff1a75;
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .pilot-popup-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section titles */
+        .pilot-popup-section-title {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ff1a75;
+            padding: 0 18px 7px;
+            border-bottom: 1px solid rgba(255,26,117,0.15);
+            margin: 4px 18px 2px;
+        }
+
+        /* Row item */
+        .pilot-popup-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 9px 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .pilot-popup-row:last-child { border-bottom: none; }
+        .pilot-popup-row-icon {
+            font-size: 15px;
+            width: 22px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .pilot-popup-row-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.45);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            min-width: 72px;
+            flex-shrink: 0;
+        }
+        .pilot-popup-row-value {
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 600;
+            flex: 1;
+            text-align: right;
+        }
+        .pilot-popup-row-value.empty {
+            color: rgba(255,255,255,0.3);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* Spacer between sections */
+        .pilot-popup-spacer { height: 8px; }
+
+        /* ── License Badges (DR / SR) ── */
+        .license-badges {
+            display: flex;
+            gap: 6px;
+            margin-top: 5px;
+            flex-wrap: wrap;
+        }
+        .mobile-mini-card .license-badges {
+            margin-top: 0;
+            display: inline-flex;
+            flex-wrap: nowrap;
+        }
+        .license-badge {
+            display: inline-flex;
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+        }
+        .lb-type {
+            padding: 3px 6px;
+            background: #3a3a4a;
+            color: #ffffff;
+        }
+        .lb-level {
+            padding: 3px 7px;
+            color: #ffffff;
+        }
+        /* Silver */
+        .lb-s1, .lb-s2, .lb-s3 { background: #7a7a8a; }
+        /* Platinum */
+        .lb-p1, .lb-p2, .lb-p3 { background: #6090c0; }
+        /* Gold */
+        .lb-g1, .lb-g2, .lb-g3 { background: #c08010; }
+        /* Bronze */
+        .lb-b1, .lb-b2, .lb-b3 { background: #8a5a18; }
+
+        /* Mobile overrides — resserrer sur petits écrans */
+        @media (max-width: 768px) {
+            .pilot-popup-overlay { padding: 12px; }
+            .pilot-popup { max-width: 370px; border-radius: 18px; }
+            .pilot-popup-header { padding: 14px 16px 10px; gap: 12px; }
+            .pilot-popup-photo { width: 58px; height: 58px; }
+            .pilot-popup-name { font-size: 18px; }
+            .pilot-popup-section-title { font-size: 9px; padding: 0 14px 5px; margin: 4px 14px 2px; }
+            .pilot-popup-row { padding: 6px 14px; gap: 8px; }
+            .pilot-popup-row-icon { font-size: 13px; width: 20px; }
+            .pilot-popup-row-label { font-size: 10px; min-width: 62px; }
+            .pilot-popup-row-value { font-size: 12px; }
+            .pilot-popup-spacer { height: 6px; }
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="logo-img">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#planning">Planning LMU</a></li>
+            <li><a href="team.html">Notre Équipe</a></li>
+            <li><a href="sponsors-details.html">Nos Sponsors</a></li>
+            <li><a href="become-partner.html">Become Partner</a></li>
+            <li><a href="pilot-recruitment.html">Rejoins Nous</a></li>
+        </ul>
+        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Nous Contacter</a>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-links">
+                <a href="index.html" class="mobile-link">Accueil</a>
+                <a href="index.html#planning" class="mobile-link">Planning LMU</a>
+                <a href="team.html" class="mobile-link">Notre Équipe</a>
+                <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
+                <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
+                <a href="become-partner.html" class="mobile-link">Become Partner</a>
+            </div>
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Nous Contacter</a>
+        </div>
+    </div>
+    
+    <section class="hero">
+        <h1>Notre Équipe</h1>
+        <p class="hero-subtitle">La hiérarchie et l'organisation de Simtek Performance</p>
+    </section>
+    
+    <div class="team-container">
+        <!-- Direction -->
+        <div class="directors-grid">
+            <div class="person-card">
+<div class="person-header-inline">
+<img class="person-photo-circle" src="owner.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PROPRIÉTAIRE</div>
+<h3 class="person-name">Guillaume</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simagic Alpha 15Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Simagic FxPro</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Titane sur-mesure</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Heusinkveld Ultimate+</span></div>
+</div>
+</div>
+</div>
+            <div class="person-card">
+<div class="person-header-inline">
+<img class="person-photo-circle" src="team-principal.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">TEAM PRINCIPAL</div>
+<h3 class="person-name">Denis</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p1">P1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec McLaren GT3 V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite GTR S8</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec V2.5</span></div>
+</div>
+</div>
+</div>
+        </div>
+        
+        <!-- 4 colonnes : Catégorie → Chef → Pilotes -->
+        <div class="teams-columns-grid">
+            <!-- Colonne GT3 Alpha -->
+            <div class="team-column team-gt3a">
+                <div class="category-banner" style="background-image: url('category-gt3-alpha.png');">
+                    <div class="category-banner-content">
+                        <h3> GT3 Alpha</h3>
+                    </div>
+                </div>
+                <div class="team-leader">
+<div class="person-header-inline" style="background-image: url('car-chef-gt3-alpha.png');">
+<img class="person-photo-circle" src="chef-gt3-alpha.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">CHEF D'ÉQUIPE GT3 ALPHA</div>
+<h3 class="person-name">Anthony.M</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Azetek Invicta 27Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Simagic Gt Néo</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Rseat P1</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Azetek Invicta</span></div>
+</div>
+</div>
+</div>
+                <!-- 1. Thibault.C — S2 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3A-1.png');">
+<img class="person-photo-circle" src="pilot-GT3A-1.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Thibault.C</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R12</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">TrackRacer</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza CRP-2</span></div>
+</div>
+</div>
+</div>
+<!-- 2. Anthony.D — S2 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3A-2.png');">
+<img class="person-photo-circle" src="pilot-GT3A-2.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Anthony.D</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">McLaren GT3 V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Infinity S8</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL</span></div>
+</div>
+</div>
+</div>
+<!-- 3. Maxime — S2 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3A-3.png');">
+<img class="person-photo-circle" src="pilot-GT3A-3.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Maxime</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g2">G2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec DD Pro</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec Formula V2.5 X</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplit SR8</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Asete Forte</span></div>
+</div>
+</div>
+</div>
+            </div>
+            
+            <!-- Colonne GT3 Bravo -->
+            <div class="team-column team-gt3b">
+                <div class="category-banner" style="background-image: url('category-gt3-bravo.png');">
+                    <div class="category-banner-content">
+                        <h3> GT3 Bravo</h3>
+                    </div>
+                </div>
+                <div class="team-leader">
+<div class="person-header-inline" style="background-image: url('car-chef-gt3-bravo.png');">
+<img class="person-photo-circle" src="chef-gt3-bravo.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">CHEF D'ÉQUIPE GT3 BRAVO</div>
+<h3 class="person-name">Quentin.S</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g2">G2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Thrusmaster T300 Racing</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Ferrari F1 Wheel Add-On </span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Wheel Stand GT Prospan</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">T-LCM</span></div>
+</div>
+</div>
+</div>
+<!-- 1. Damien — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-1.png');">
+<img class="person-photo-circle" src="pilot-GT3B-1.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Damien</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simagic Evo Pro 18nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Simagic FxPro</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Gtr S8 FullForce</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Thrustmaster TCLM</span></div>
+</div>
+</div>
+</div>
+<!-- 2. Maceo.R — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-2.png');">
+<img class="person-photo-circle" src="pilot-GT3B-2.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Maceo.R</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R5</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite S3</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Sr8</span></div>
+</div>
+</div>
+</div>
+<!-- 3. Christophe.A — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
+<img class="person-photo-circle" src="pilot-GT3B-3.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Christophe.A</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g1">G1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R9</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Roue KS</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">PlaySeat Challenge</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza SRP</span></div>
+</div>
+</div>
+</div>
+<!-- 4. Romuald.D — B3 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
+<img class="person-photo-circle" src="pilot-GT3B-4.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Romuald.D</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g1">G1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R9</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Gs V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Alu sur-mesure</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">TLC-M</span></div>
+</div>
+</div>
+</div>
+            </div>
+            
+            <!-- Colonne LMP2/3 -->
+            <div class="team-column team-lmp">
+                <div class="category-banner" style="background-image: url('category-lmp.png');">
+                    <div class="category-banner-content">
+                        <h3> LMP2/3</h3>
+                    </div>
+                </div>
+                <div class="team-leader">
+<div class="person-header-inline" style="background-image: url('setup-guillaume.jpg');">
+<img class="person-photo-circle" src="chef-lmp.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">CHEF D'ÉQUIPE LMP2/3</div>
+<h3 class="person-name">Guillaume.w</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simagic Alpha 15Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Simagic FxPro</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Titane sur-mesure</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Heusinkveld Ultimate+</span></div>
+</div>
+</div>
+</div>
+<!-- 1. Florent.L — S2 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-LMP-4.png');">
+<img class="person-photo-circle" src="pilot-LMP-4.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Florent.L</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p2">P2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">GT DD PRO</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">ClubSport V2</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">SimXPro R80</span></div>
+</div>
+</div>
+</div>
+<!-- 2. Hugo.R — S1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('car-chef-hypercar.png');">
+<img class="person-photo-circle" src="chef-hypercar.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Hugo.R</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p2">P2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8 Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec McLaren GT3 V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Opltite S3</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL</span></div>
+</div>
+</div>
+</div>
+<!-- 3. Cyrille — B2 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-LMP-5.png');">
+<img class="person-photo-circle" src="pilot-LMP-5.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Cyrille</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b2">B2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s1">S1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec Csl DD 8Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Bmw GT2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Chassis Alu sur Mesure</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec Csl LoadCell</span></div>
+</div>
+</div>
+</div>
+            </div>
+            
+            <!-- Colonne Hypercars -->
+            <div class="team-column team-hyp">
+                <div class="category-banner" style="background-image: url('category-hypercar.png');">
+                    <div class="category-banner-content">
+                        <h3> Hypercars</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!-- Mobile Stack View -->
+        <div id="mobileTeamSection" class="mobile-team-section"></div>
+    </div>
+    
+    <div class="setup-modal" id="setupModal">
+        <div class="setup-modal-content">
+            <button class="setup-modal-close" onclick="closeSetupModal()">×</button>
+            <div id="setupCardContent"></div>
+        </div>
+    </div>
+    
+    <!-- Pilot Popup -->
+    <div class="pilot-popup-overlay" id="pilotPopupOverlay">
+        <div class="pilot-popup" id="pilotPopup">
+            <div class="pilot-popup-accent" id="pilotPopupAccent"></div>
+            <button class="pilot-popup-close" id="pilotPopupClose" onclick="closePilotPopup()">×</button>
+            <div id="pilotPopupInner"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Simtek Performance - Tous droits réservés</p>
+    </footer>
+    
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        let lastScrollForMenu = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (Math.abs(currentScroll - lastScrollForMenu) > 10 && mobileMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+            lastScrollForMenu = currentScroll;
+        });
+        
+        function openSetupModal(cardElement) {
+            const modal = document.getElementById('setupModal');
+            const content = document.getElementById('setupCardContent');
+            const cardClone = cardElement.cloneNode(true);
+            cardClone.style.cursor = 'default';
+
+            // Détecter la couleur de l'équipe parente
+            const teamColors = {
+                'team-gt3a': '#ff1a75',
+                'team-gt3b': '#00d4ff',
+                'team-lmp':  '#ffcc00',
+                'team-hyp':  '#00ff88',
+            };
+            let teamColor = null;
+            const parentCol = cardElement.closest('.team-column');
+            if (parentCol) {
+                for (const [cls, color] of Object.entries(teamColors)) {
+                    if (parentCol.classList.contains(cls)) { teamColor = color; break; }
+                }
+            }
+            if (teamColor) {
+                cardClone.style.borderColor = teamColor;
+                cardClone.style.setProperty('border-color', teamColor, 'important');
+                const photo = cardClone.querySelector('.person-photo-circle');
+                if (photo) photo.style.setProperty('border-color', teamColor, 'important');
+            }
+
+            // Extraire la photo du setup depuis le background-image
+            const headerEl = cardElement.querySelector('.person-header-inline');
+            const bgStyle = headerEl ? headerEl.style.backgroundImage : '';
+            const setupSrc = bgStyle ? bgStyle.replace(/url\(['"]?(.*?)['"]?\)/, '$1') : '';
+
+            content.innerHTML = '';
+            content.appendChild(cardClone);
+
+            // Ajouter la photo du setup si elle existe
+            if (setupSrc && setupSrc !== bgStyle) {
+                const photoContainer = document.createElement('div');
+                photoContainer.className = 'setup-photo-container';
+                photoContainer.innerHTML = `
+                    <div class="setup-photo-label">📸 Setup</div>
+                    <img src="${setupSrc}" alt="Setup" onerror="this.parentElement.style.display='none'">
+                `;
+                cardClone.appendChild(photoContainer);
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeSetupModal() {
+            const modal = document.getElementById('setupModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        document.getElementById('setupModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeSetupModal();
+            }
+        });
+        
+        document.querySelectorAll('.team-column .person-card, .team-column .team-leader').forEach(card => {
+            card.addEventListener('click', function() {
+                const badge = this.querySelector('.person-role-badge')?.textContent.trim() || '';
+                const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF');
+                if (isPilotOrChef) {
+                    const teamColors = {
+                        'team-gt3a': '#ff1a75',
+                        'team-gt3b': '#00d4ff',
+                        'team-lmp':  '#ffcc00',
+                        'team-hyp':  '#00ff88',
+                    };
+                    let teamColor = '#ff1a75';
+                    const parentCol = this.closest('.team-column');
+                    if (parentCol) {
+                        for (const [cls, color] of Object.entries(teamColors)) {
+                            if (parentCol.classList.contains(cls)) { teamColor = color; break; }
+                        }
+                    }
+                    openPilotPopup(this, teamColor);
+                } else {
+                    openSetupModal(this);
+                }
+            });
+        });
+
+        // ── Données pilotes & chefs d'équipe (à remplir quand ils transmettent leurs infos) ──
+        const pilotData = {
+            // Chefs d'équipe
+            'Anthony.M':    { birthday: '09/04/1993', simstart: '32 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Bmw E46' },
+            'Quentin.S':    { birthday: '26/10/2006', simstart: '17 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans', car: 'porsche 911' },
+            'Guillaume.w':  { birthday: '19/01/1988', simstart: '32', platform: 'Le Mans Ultimate', circuit: 'Spa Francorchamps', car: 'Ferrari 333SP' },
+            'Hugo.R':       { birthday: '28/07/2010', simstart: '13 ans', platform: 'Le Mans Ultimate', circuit: 'Spa Francorchamps', car: 'McLaren Senna' },
+            // Pilotes
+            'Thibault.C':   { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Damien':       { birthday: '24/08/1986', simstart: '25 ans', platform: 'Le Mans Utlimate', circuit: 'Portimao', car: 'Mercedes C63 S AMG' },
+            'Esteban.B':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Maceo.R':      { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Anthony.D':    { birthday: '03/12/1993', simstart: '30 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans Bugati', car: 'BMW M3 Compétition' },
+            'Paul.T':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Maxime':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Christophe.A': { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Mathieu.D':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
+            'Florent.L':    { birthday: '28/05/1993', simstart: '8 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans ', car: 'Aston Martin Vantage' },
+            'Cyrille':      { birthday: '27/03/1985', simstart: '39 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Nissan Skyline R34' },
+            'Jacy.L':       { birthday: '25/01/2004', simstart: '15 ans', platform: 'Le Mans Ultimate', circuit: 'Jeddah', car: 'McLaren P1' },
+            'Romuald.D':    { birthday: '18/10/1979', simstart: '44 ans', platform: 'Le Mans Ultimate', circuit: 'nurburgring nordschleife', car: 'Porsche GT3 RS 992.2' },
+
+        };
+
+        function val(v) {
+            const isEmpty = !v || v.trim() === 'À remplir' || v.trim() === '';
+            return `<span class="pilot-popup-row-value${isEmpty ? ' empty' : ''}">${isEmpty ? 'À remplir' : v}</span>`;
+        }
+
+        function openPilotPopup(card, teamColor) {
+            const name   = card.querySelector('.person-name')?.textContent.trim() || '';
+            const photo  = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
+            const badge  = card.querySelector('.person-role-badge')?.textContent.trim() || '';
+            const data   = pilotData[name] || {};
+
+            // Specs matériel
+            const specs = {};
+            card.querySelectorAll('.spec-item').forEach(item => {
+                const lbl = item.querySelector('.spec-label')?.textContent.trim();
+                const spv = item.querySelector('.spec-value')?.textContent.trim();
+                if (lbl) specs[lbl] = spv || '';
+            });
+
+            // Setup photo (background-image du header)
+            const headerEl = card.querySelector('.person-header-inline');
+            const bgStyle  = headerEl ? headerEl.style.backgroundImage : '';
+            const setupSrc = bgStyle ? bgStyle.replace(/url\(['"]?(.*?)['"]?\)/, '$1') : '';
+            const hasSetup = setupSrc && setupSrc !== bgStyle;
+
+            const color = teamColor || '#ff1a75';
+
+            document.getElementById('pilotPopupAccent').style.background = color;
+            document.getElementById('pilotPopup').style.borderColor = color + '55';
+
+            const licenseBadgesHTML = card.querySelector('.license-badges')?.outerHTML || '';
+
+            document.getElementById('pilotPopupInner').innerHTML = `
+                <div class="pilot-popup-header">
+                    <img src="${photo}" class="pilot-popup-photo" style="border-color:${color};box-shadow:0 0 14px ${color}55" onerror="this.style.display='none'">
+                    <div class="pilot-popup-header-text">
+                        <div class="pilot-popup-badge" style="color:${color};background:${color}22;border-color:${color}55">${badge}</div>
+                        <div class="pilot-popup-name">${name}</div>
+                        ${licenseBadgesHTML}
+                    </div>
+                </div>
+
+                <div class="pilot-popup-section-title" style="color:${color};border-color:${color}33">🏎️ Profil</div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🎂</span>
+                    <span class="pilot-popup-row-label">Anniversaire</span>
+                    ${val(data.birthday)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🕹️</span>
+                    <span class="pilot-popup-row-label">Début sim</span>
+                    ${val(data.simstart)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">💻</span>
+                    <span class="pilot-popup-row-label">Plateforme</span>
+                    ${val(data.platform)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">📍</span>
+                    <span class="pilot-popup-row-label">Circuit</span>
+                    ${val(data.circuit)}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🚗</span>
+                    <span class="pilot-popup-row-label">Voiture</span>
+                    ${val(data.car)}
+                </div>
+
+                <div class="pilot-popup-spacer"></div>
+                <div class="pilot-popup-section-title" style="color:${color};border-color:${color}33">🖥️ Setup</div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">⚙️</span>
+                    <span class="pilot-popup-row-label">Base</span>
+                    ${val(specs['Base'])}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🎮</span>
+                    <span class="pilot-popup-row-label">Volant</span>
+                    ${val(specs['Volant'])}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🦶</span>
+                    <span class="pilot-popup-row-label">Pédalier</span>
+                    ${val(specs['Pédalier'])}
+                </div>
+                <div class="pilot-popup-row">
+                    <span class="pilot-popup-row-icon">🪑</span>
+                    <span class="pilot-popup-row-label">Châssis</span>
+                    ${val(specs['Châssis'])}
+                </div>
+                <div class="pilot-popup-spacer"></div>
+            `;
+
+            const overlay = document.getElementById('pilotPopupOverlay');
+            overlay.classList.add('active');
+            document.getElementById('pilotPopup').scrollTop = 0;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePilotPopup() {
+            document.getElementById('pilotPopupOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer en cliquant sur l'overlay (hors popup)
+        document.getElementById('pilotPopupOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closePilotPopup();
+        });
+
+        // ── Mobile Stack View ──
+        function buildMobileView() {
+            const section = document.getElementById('mobileTeamSection');
+            if (!section) return;
+
+            const teams = [
+                { selector: '.team-gt3a', name: 'GT3 Alpha', color: '#ff1a75' },
+                { selector: '.team-gt3b', name: 'GT3 Bravo', color: '#00d4ff' },
+                { selector: '.team-lmp',  name: 'LMP2/3',    color: '#ffcc00' },
+                { selector: '.team-hyp',  name: 'Hypercars',  color: '#00ff88' },
+            ];
+
+            section.innerHTML = '';
+            const spacing = 68;
+
+            // Direction cards (Guillaume & Denis)
+            const directionCards = Array.from(document.querySelectorAll('.directors-grid .person-card'));
+            if (directionCards.length > 0) {
+                const dirWrapper = document.createElement('div');
+                dirWrapper.style.cssText = 'margin-bottom: 20px; display: flex; flex-direction: column; gap: 12px;';
+                directionCards.forEach(card => {
+                    const name  = card.querySelector('.person-name')?.textContent || '';
+                    const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
+                    const badge = card.querySelector('.person-role-badge')?.textContent || '';
+
+                    // Wrapper accordéon
+                    const accordionWrapper = document.createElement('div');
+                    accordionWrapper.style.cssText = 'border: 2px solid rgba(255,255,255,0.4); border-radius: 12px; overflow: hidden; background: rgba(10,14,39,0.92);';
+
+                    // Mini header cliquable
+                    const mini = document.createElement('div');
+                    mini.className = 'mobile-mini-card';
+                    mini.style.cssText = 'position:relative; top:auto; border:none; cursor:pointer; border-radius:0;';
+                    mini.innerHTML = `
+                        <img src="${photo}" class="mini-photo" style="border-color:rgba(255,255,255,0.6)">
+                        <div style="flex:1">
+                            <div class="mini-badge" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.5)">${badge}</div>
+                            <div class="mini-name" style="color:#ffffff">${name}</div>
+                        </div>
+                        <span class="dir-arrow" style="color:#fff;font-size:16px;margin-right:8px">▼</span>`;
+
+                    // Zone dépliable avec les specs
+                    const expandable = document.createElement('div');
+                    expandable.style.cssText = 'max-height: 0; overflow: hidden; transition: max-height 0.4s ease;';
+                    const specs = card.querySelector('.person-info-details');
+                    if (specs) {
+                        const specsClone = specs.cloneNode(true);
+                        specsClone.style.padding = '10px 15px';
+                        expandable.appendChild(specsClone);
+                    }
+
+                    let isOpen = false;
+                    mini.addEventListener('click', () => {
+                        isOpen = !isOpen;
+                        expandable.style.maxHeight = isOpen ? '300px' : '0';
+                        mini.querySelector('.dir-arrow').textContent = isOpen ? '▲' : '▼';
+                    });
+
+                    // Collapse au scroll
+                    window.addEventListener('scroll', () => {
+                        if (isOpen) {
+                            isOpen = false;
+                            expandable.style.maxHeight = '0';
+                            mini.querySelector('.dir-arrow').textContent = '▼';
+                        }
+                    }, { passive: true });
+
+                    accordionWrapper.appendChild(mini);
+                    accordionWrapper.appendChild(expandable);
+                    dirWrapper.appendChild(accordionWrapper);
+                });
+                section.appendChild(dirWrapper);
+            }
+
+            teams.forEach(team => {
+                const col = document.querySelector(team.selector);
+                if (!col) return;
+
+                const cards = Array.from(col.querySelectorAll('.team-leader, .person-card'));
+                const stackHeight = (cards.length - 1) * spacing + 70;
+
+                const folder = document.createElement('div');
+                folder.className = 'mobile-folder';
+                folder.style.borderColor = team.color;
+
+                const header = document.createElement('div');
+                header.className = 'mobile-folder-header';
+                header.style.color = team.color;
+                header.innerHTML = `<span>${team.name}</span><span class="mobile-folder-arrow">▼</span>`;
+
+                const stack = document.createElement('div');
+                stack.className = 'mobile-stack';
+                stack.style.height = stackHeight + 'px';
+
+                cards.forEach((card, i) => {
+                    const name  = card.querySelector('.person-name')?.textContent || '';
+                    const photo = card.querySelector('.person-photo-circle')?.getAttribute('src') || '';
+                    const badge = card.querySelector('.person-role-badge')?.textContent || '';
+                    const licenseBadgesEl = card.querySelector('.license-badges');
+                    const licenseBadgesHTML = licenseBadgesEl ? licenseBadgesEl.outerHTML : '';
+
+                    const mini = document.createElement('div');
+                    mini.className = 'mobile-mini-card';
+                    mini.style.borderColor = team.color + '55';
+                    mini.style.top = (i * spacing) + 'px';
+                    mini.style.zIndex = cards.length - i;
+                    mini.innerHTML = `
+                        <img src="${photo}" class="mini-photo" style="border-color:${team.color}88">
+                        <div style="flex:1;min-width:0;">
+                            <div class="mini-badge" style="background:${team.color}99;color:#fff">${badge}</div>
+                            <div style="display:flex;align-items:center;gap:6px;flex-wrap:nowrap;">
+                                <div class="mini-name" style="color:${team.color}cc;margin:0;">${name}</div>
+                                ${licenseBadgesHTML}
+                            </div>
+                        </div>`;
+
+                    mini.addEventListener('click', () => {
+                        const badge = card.querySelector('.person-role-badge')?.textContent.trim() || '';
+                        const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF');
+                        if (isPilotOrChef) {
+                            openPilotPopup(card, team.color);
+                        } else {
+                            openSetupModal(card);
+                        }
+                    });
+                    stack.appendChild(mini);
+                });
+
+                header.addEventListener('click', () => {
+                    const isOpen = stack.classList.toggle('open');
+                    header.querySelector('.mobile-folder-arrow').textContent = isOpen ? '▲' : '▼';
+                });
+
+                folder.appendChild(header);
+                folder.appendChild(stack);
+                section.appendChild(folder);
+            });
+        }
+
+        buildMobileView();
+    </script>
+</body>
+</html>
+
