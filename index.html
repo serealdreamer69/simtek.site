@@ -2371,15 +2371,27 @@
                      N'oublie pas de mettre à jour le TOTAL PTS !
                 ═══════════════════════════════════════════════════════ -->
 
-                <!-- ✏️ CHRISTOPHE AVIVAR — Monza:8 + Silver:8 + Imola:1 + bonus:1 = 18 -->
+                <!-- ═══════════════════════════════════════════════════════
+                     ✏️ COMMENT MODIFIER LES RÉSULTATS
+                     ───────────────────────────────────────────────────────
+                     Chaque ligne = 1 pilote. Structure :
+                       Total PTS | FL total | Monza | Silverstone | Imola | ...
+
+                     Les colonnes de course affichent la POSITION (1=1er, 2=2ème...)
+                     Pour un pilote absent → laisse le — tel quel
+                     Points par position : 1er=8 · 2e=7 · 3e=6 · 4e=5 · 5e=4 · 6e=3 · 7e=2 · 8e=1 · 9e+=0
+                     N'oublie pas de mettre à jour le TOTAL PTS !
+                ═══════════════════════════════════════════════════════ -->
+
+                <!-- ✏️ CHRISTOPHE AVIVAR — Monza:1 + Silver:1 + Imola:8 + bonus:1 = 18pts -->
                 <tr>
                     <td><span class="st-pos st-pos-1">1</span></td>
                     <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Christophe </td>
                     <td class="st-td-pts">18</td>              <!-- ✏️ TOTAL PTS  -->
                     <td class="st-td-fl st-sep-left">1</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left">8</td>  <!-- ✏️ Monza       -->
-                    <td class="st-td-race">8</td>              <!-- ✏️ Silverstone -->
-                    <td class="st-td-race">1</td>              <!-- ✏️ Imola       -->
+                    <td class="st-td-race st-sep-left">1</td>  <!-- ✏️ Monza       -->
+                    <td class="st-td-race">1</td>              <!-- ✏️ Silverstone -->
+                    <td class="st-td-race">8</td>              <!-- ✏️ Imola       -->
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Portimao -->
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Bahrain  -->
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Spa      -->
@@ -2387,77 +2399,13 @@
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Le Mans  -->
                 </tr>
 
-                <!-- ✏️ HUGO ROTA — Monza:7 + Silver:5 + Imola:5 = 17 -->
+                <!-- ✏️ HUGO ROTA — Monza:2 + Silver:4 + Imola:4 = 17pts -->
                 <tr>
                     <td><span class="st-pos st-pos-2">2</span></td>
                     <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Hugo </td>
                     <td class="st-td-pts">17</td>              <!-- ✏️ TOTAL PTS  -->
                     <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left">7</td>  <!-- ✏️ Monza       -->
-                    <td class="st-td-race">5</td>              <!-- ✏️ Silverstone -->
-                    <td class="st-td-race">5</td>              <!-- ✏️ Imola       -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                </tr>
-
-                <!-- ✏️ FLORENT — Monza:6 + Imola:8 = 14 | FL Imola -->
-                <tr>
-                    <td><span class="st-pos st-pos-3">3</span></td>
-                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Florent</td>
-                    <td class="st-td-pts">14</td>              <!-- ✏️ TOTAL PTS  -->
-                    <td class="st-td-fl st-sep-left">1</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left">6</td>  <!-- ✏️ Monza       -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Silverstone (absent) -->
-                    <td class="st-td-race">8</td>              <!-- ✏️ Imola       -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                </tr>
-
-                <!-- ✏️ MAXIME ROY — Silver:7 + Imola:6 + bonus:1 = 14 | FL Silverstone -->
-                <tr>
-                    <td><span class="st-pos st-pos-n">4</span></td>
-                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Maxime </td>
-                    <td class="st-td-pts">14</td>              <!-- ✏️ TOTAL PTS  -->
-                    <td class="st-td-fl st-sep-left">1</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
-                    <td class="st-td-race">7</td>              <!-- ✏️ Silverstone -->
-                    <td class="st-td-race">6</td>              <!-- ✏️ Imola       -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                </tr>
-
-                <!-- ✏️ GUILLAUME WAIT — Monza:5 + Silver:1 + Imola:3 = 9 -->
-                <tr>
-                    <td><span class="st-pos st-pos-n">5</span></td>
-                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Guillaume </td>
-                    <td class="st-td-pts">9</td>               <!-- ✏️ TOTAL PTS  -->
-                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left">5</td>  <!-- ✏️ Monza       -->
-                    <td class="st-td-race">1</td>              <!-- ✏️ Silverstone -->
-                    <td class="st-td-race">3</td>              <!-- ✏️ Imola       -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                </tr>
-
-                <!-- ✏️ MACEO ROYER — Silver:4 + Imola:4 = 8 -->
-                <tr>
-                    <td><span class="st-pos st-pos-n">6</span></td>
-                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Maceo </td>
-                    <td class="st-td-pts">8</td>               <!-- ✏️ TOTAL PTS  -->
-                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
+                    <td class="st-td-race st-sep-left">2</td>  <!-- ✏️ Monza       -->
                     <td class="st-td-race">4</td>              <!-- ✏️ Silverstone -->
                     <td class="st-td-race">4</td>              <!-- ✏️ Imola       -->
                     <td class="st-td-race"><span class="st-dash">—</span></td>
@@ -2467,61 +2415,77 @@
                     <td class="st-td-race"><span class="st-dash">—</span></td>
                 </tr>
 
-                <!-- ✏️ ANTHONY DELUCHEY — Imola:7 = 7 -->
+                <!-- ✏️ FLORENT — Monza:3 + Imola:1 = 14pts | FL Imola -->
+                <tr>
+                    <td><span class="st-pos st-pos-3">3</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Florent</td>
+                    <td class="st-td-pts">14</td>              <!-- ✏️ TOTAL PTS  -->
+                    <td class="st-td-fl st-sep-left">1</td>    <!-- ✏️ TOTAL FL   -->
+                    <td class="st-td-race st-sep-left">3</td>  <!-- ✏️ Monza       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Silverstone (absent) -->
+                    <td class="st-td-race">1</td>              <!-- ✏️ Imola       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ MAXIME ROY — Silver:2 + Imola:3 + bonus:1 = 14pts | FL Silverstone -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">4</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Maxime </td>
+                    <td class="st-td-pts">14</td>              <!-- ✏️ TOTAL PTS  -->
+                    <td class="st-td-fl st-sep-left">1</td>    <!-- ✏️ TOTAL FL   -->
+                    <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
+                    <td class="st-td-race">2</td>              <!-- ✏️ Silverstone -->
+                    <td class="st-td-race">3</td>              <!-- ✏️ Imola       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ GUILLAUME WAIT — Monza:4 + Silver:8 + Imola:6 = 9pts -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">5</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Guillaume </td>
+                    <td class="st-td-pts">9</td>               <!-- ✏️ TOTAL PTS  -->
+                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
+                    <td class="st-td-race st-sep-left">4</td>  <!-- ✏️ Monza       -->
+                    <td class="st-td-race">8</td>              <!-- ✏️ Silverstone -->
+                    <td class="st-td-race">6</td>              <!-- ✏️ Imola       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ MACEO ROYER — Silver:5 + Imola:5 = 8pts -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">6</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Maceo </td>
+                    <td class="st-td-pts">8</td>               <!-- ✏️ TOTAL PTS  -->
+                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
+                    <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
+                    <td class="st-td-race">5</td>              <!-- ✏️ Silverstone -->
+                    <td class="st-td-race">5</td>              <!-- ✏️ Imola       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ ANTHONY DELUCHEY — Imola:2 = 7pts -->
                 <tr>
                     <td><span class="st-pos st-pos-n">7</span></td>
                     <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Anthony Deluchey</td>
                     <td class="st-td-pts">7</td>               <!-- ✏️ TOTAL PTS  -->
                     <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
                     <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Silverstone (absent) -->
-                    <td class="st-td-race">7</td>              <!-- ✏️ Imola       -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                </tr>
-
-                <!-- ✏️ THIBAULT CHASSARD — Silver:6 = 6 -->
-                <tr>
-                    <td><span class="st-pos st-pos-n">8</span></td>
-                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Thibault </td>
-                    <td class="st-td-pts">6</td>               <!-- ✏️ TOTAL PTS  -->
-                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
-                    <td class="st-td-race">6</td>              <!-- ✏️ Silverstone -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Imola (absent) -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                </tr>
-
-                <!-- ✏️ ROMUALD DA-ROS — Monza:3 + Silver:3 = 6 -->
-                <tr>
-                    <td><span class="st-pos st-pos-n">9</span></td>
-                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Romuald </td>
-                    <td class="st-td-pts">6</td>               <!-- ✏️ TOTAL PTS  -->
-                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left">3</td>  <!-- ✏️ Monza       -->
-                    <td class="st-td-race">3</td>              <!-- ✏️ Silverstone -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Imola (hors points) -->
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                    <td class="st-td-race"><span class="st-dash">—</span></td>
-                </tr>
-
-                <!-- ✏️ DENIS LE BLAN — Monza:4 + Imola:2 = 6 -->
-                <tr>
-                    <td><span class="st-pos st-pos-n">10</span></td>
-                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Denis</td>
-                    <td class="st-td-pts">6</td>               <!-- ✏️ TOTAL PTS  -->
-                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left">4</td>  <!-- ✏️ Monza       -->
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Silverstone (absent) -->
                     <td class="st-td-race">2</td>              <!-- ✏️ Imola       -->
                     <td class="st-td-race"><span class="st-dash">—</span></td>
@@ -2531,13 +2495,61 @@
                     <td class="st-td-race"><span class="st-dash">—</span></td>
                 </tr>
 
-                <!-- ✏️ QUENTIN — Monza:2 = 2 -->
+                <!-- ✏️ THIBAULT CHASSARD — Silver:3 = 6pts -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">8</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Thibault </td>
+                    <td class="st-td-pts">6</td>               <!-- ✏️ TOTAL PTS  -->
+                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
+                    <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
+                    <td class="st-td-race">3</td>              <!-- ✏️ Silverstone -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Imola (absent) -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ ROMUALD DA-ROS — Monza:6 + Silver:6 = 6pts -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">9</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Romuald </td>
+                    <td class="st-td-pts">6</td>               <!-- ✏️ TOTAL PTS  -->
+                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
+                    <td class="st-td-race st-sep-left">6</td>  <!-- ✏️ Monza       -->
+                    <td class="st-td-race">6</td>              <!-- ✏️ Silverstone -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Imola (hors points) -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ DENIS LE BLAN — Monza:5 + Imola:7 = 6pts -->
+                <tr>
+                    <td><span class="st-pos st-pos-n">10</span></td>
+                    <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Denis</td>
+                    <td class="st-td-pts">6</td>               <!-- ✏️ TOTAL PTS  -->
+                    <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
+                    <td class="st-td-race st-sep-left">5</td>  <!-- ✏️ Monza       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Silverstone (absent) -->
+                    <td class="st-td-race">7</td>              <!-- ✏️ Imola       -->
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                    <td class="st-td-race"><span class="st-dash">—</span></td>
+                </tr>
+
+                <!-- ✏️ QUENTIN — Monza:7 = 2pts -->
                 <tr>
                     <td><span class="st-pos st-pos-n">11</span></td>
                     <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Quentin</td>
                     <td class="st-td-pts">2</td>               <!-- ✏️ TOTAL PTS  -->
                     <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
-                    <td class="st-td-race st-sep-left">2</td>  <!-- ✏️ Monza       -->
+                    <td class="st-td-race st-sep-left">7</td>  <!-- ✏️ Monza       -->
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Silverstone (absent) -->
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Imola (absent) -->
                     <td class="st-td-race"><span class="st-dash">—</span></td>
@@ -2547,14 +2559,14 @@
                     <td class="st-td-race"><span class="st-dash">—</span></td>
                 </tr>
 
-                <!-- ✏️ CYRIL CAZES — Silver:1 = 1 (correction anomalie) -->
+                <!-- ✏️ CYRIL CAZES — Silver:8 = 1pt -->
                 <tr>
                     <td><span class="st-pos st-pos-n">12</span></td>
                     <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Cyril </td>
                     <td class="st-td-pts">1</td>               <!-- ✏️ TOTAL PTS  -->
                     <td class="st-td-fl st-sep-left">0</td>    <!-- ✏️ TOTAL FL   -->
                     <td class="st-td-race st-sep-left"><span class="st-dash">—</span></td> <!-- ✏️ Monza (absent) -->
-                    <td class="st-td-race">1</td>              <!-- ✏️ Silverstone -->
+                    <td class="st-td-race">8</td>              <!-- ✏️ Silverstone -->
                     <td class="st-td-race"><span class="st-dash">—</span></td> <!-- ✏️ Imola (hors points) -->
                     <td class="st-td-race"><span class="st-dash">—</span></td>
                     <td class="st-td-race"><span class="st-dash">—</span></td>
@@ -2563,7 +2575,7 @@
                     <td class="st-td-race"><span class="st-dash">—</span></td>
                 </tr>
 
-                <!-- ✏️ ANTHONY MAYNARD — 0 pt (correction anomalie) -->
+                <!-- ✏️ ANTHONY MAYNARD — 0pt -->
                 <tr>
                     <td><span class="st-pos st-pos-n">13</span></td>
                     <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Anthony Maynard</td>
@@ -2579,7 +2591,7 @@
                     <td class="st-td-race"><span class="st-dash">—</span></td>
                 </tr>
 
-                <!-- ✏️ ENZO HERMELINE — Imola:0 = 0 -->
+                <!-- ✏️ ENZO HERMELINE — Imola:hors points = 0pt -->
                 <tr>
                     <td><span class="st-pos st-pos-n">14</span></td>
                     <td class="st-td-pilote"><span class="st-flag">🇫🇷</span>Enzo Hermeline</td>
