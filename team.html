@@ -1313,6 +1313,17 @@
             });
         });
 
+        // Gestionnaire de clic pour Hugo.S dans la directors-grid
+        document.querySelectorAll('.directors-grid .person-card').forEach(card => {
+            const badge = card.querySelector('.person-role-badge')?.textContent.trim() || '';
+            if (badge === 'INGÉNIEUR TECHNIQUE') {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function() {
+                    openPilotPopup(this, '#ffcc00');
+                });
+            }
+        });
+
         // ── Données pilotes & chefs d'équipe (à remplir quand ils transmettent leurs infos) ──
         const pilotData = {
             // Ingénieur Technique
