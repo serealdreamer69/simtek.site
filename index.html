@@ -2632,21 +2632,26 @@
     <p style="text-align:center; color:#b0b0d0; margin-bottom:40px; font-size:16px;">Suivez nos courses en direct sur Twitch</p>
 
     <div id="twitch-container" style="position:relative; max-width:960px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(255,26,117,0.2);">
-        <div id="twitch-embed" style="width:100%;"></div>
+        <!-- Placeholder offline -->
+        <div id="twitch-placeholder" style="width:100%; cursor:pointer;" onclick="hidePlaceholder()">
+            <img src="youtubeFRONT.png" alt="SimTek Live" style="width:100%; display:block; border-radius:15px;">
+        </div>
+        <!-- Player Twitch (caché par défaut) -->
+        <div id="twitch-embed" style="width:100%; display:none;"></div>
         <button id="fullscreen-btn" onclick="toggleTwitchFullscreen()" style="
             position:absolute; bottom:14px; right:14px;
             background:rgba(0,0,0,0.75); border:1px solid rgba(255,255,255,0.2);
             color:#fff; padding:8px 14px; border-radius:8px;
             cursor:pointer; font-size:13px; font-weight:600;
             z-index:10; transition:all 0.2s ease;
-            backdrop-filter:blur(4px);
+            backdrop-filter:blur(4px); display:none;
         ">⛶ Plein écran</button>
     </div>
 </section>
 
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script>
-    new Twitch.Embed("twitch-embed", {
+    var twitchEmbed = new Twitch.Embed("twitch-embed", {
         width: "100%",
         height: 500,
         channel: "simtekperformance",
@@ -2654,6 +2659,27 @@
         layout: "video",
         autoplay: false
     });
+
+    // Quand le stream démarre → cacher le placeholder, afficher le player
+    twitchEmbed.addEventListener(Twitch.Embed.VIDEO_PLAY, function() {
+        document.getElementById('twitch-placeholder').style.display = 'none';
+        document.getElementById('twitch-embed').style.display = 'block';
+        document.getElementById('fullscreen-btn').style.display = 'block';
+    });
+
+    // Quand le stream s'arrête → réafficher le placeholder
+    twitchEmbed.addEventListener(Twitch.Embed.OFFLINE, function() {
+        document.getElementById('twitch-embed').style.display = 'none';
+        document.getElementById('twitch-placeholder').style.display = 'block';
+        document.getElementById('fullscreen-btn').style.display = 'none';
+    });
+
+    // Clic sur le placeholder → afficher le player manuellement
+    function hidePlaceholder() {
+        document.getElementById('twitch-placeholder').style.display = 'none';
+        document.getElementById('twitch-embed').style.display = 'block';
+        document.getElementById('fullscreen-btn').style.display = 'block';
+    }
 
     function toggleTwitchFullscreen() {
         var el = document.getElementById('twitch-container');
