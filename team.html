@@ -979,7 +979,29 @@
 </div>
 </div>
 </div>
-<!-- 3. Christophe.A — S1 -->
+<!-- 3. Enzo — B3 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-4.png');">
+<img class="person-photo-circle" src="pilot-GT3B-4.png"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Enzo</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-b2">B2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">TGT2 Origine</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">TGT2 Origine</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Next Level Racing F-GT Lite</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Origine</span></div>
+</div>
+</div>
+</div>
+<!-- 4. Christophe.A — S1 -->
 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
 <img class="person-photo-circle" src="pilot-GT3B-3.png"/>
@@ -998,6 +1020,29 @@
 <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Roue KS</span></div>
 <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">PlaySeat Challenge</span></div>
 <div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza SRP</span></div>
+</div>
+</div>
+</div>
+
+<!-- Hugo.S — Ingénieur Technique -->
+<div class="person-card" style="border-color: #ffcc00;">
+<div class="person-header-inline" style="flex-direction: column; align-items: center; text-align: center; border-bottom: 2px solid #ffcc00; background-image: url('setup-hugo.png');">
+<img class="person-photo-circle" src="hugo-tech.png" style="border-color: #ffcc00;"/>
+<div class="person-header-info" style="text-align: center;">
+<div class="person-role-badge" style="background: rgba(255,204,0,0.15); color: #ffcc00; border: 1px solid rgba(255,204,0,0.4); -webkit-text-fill-color: #ffcc00;">INGÉNIEUR TECHNIQUE</div>
+<h3 class="person-name">Hugo.S</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p1">P1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">À remplir</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">À remplir</span></div>
 </div>
 </div>
 </div>
@@ -1249,7 +1294,7 @@
         document.querySelectorAll('.team-column .person-card, .team-column .team-leader').forEach(card => {
             card.addEventListener('click', function() {
                 const badge = this.querySelector('.person-role-badge')?.textContent.trim() || '';
-                const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF');
+                const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF') || badge === 'INGÉNIEUR TECHNIQUE';
                 if (isPilotOrChef) {
                     const teamColors = {
                         'team-gt3a': '#ff1a75',
@@ -1273,6 +1318,8 @@
 
         // ── Données pilotes & chefs d'équipe (à remplir quand ils transmettent leurs infos) ──
         const pilotData = {
+            // Ingénieur Technique
+            'Hugo.S':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir' },
             // Chefs d'équipe
             'Anthony.M':    { birthday: '09/04/1993', simstart: '32 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Bmw E46' },
             'Romuald.D':    { birthday: '18/10/1979', simstart: '44 ans', platform: 'Le Mans Ultimate', circuit: 'nurburgring nordschleife', car: 'Porsche GT3 RS 992.2' },
@@ -1292,7 +1339,7 @@
             'Florent.L':    { birthday: '28/05/1993', simstart: '8 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans ', car: 'Aston Martin Vantage' },
             'Cyrille':      { birthday: '27/03/1985', simstart: '39 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Nissan Skyline R34' },
             'Jacy.L':       { birthday: '25/01/2004', simstart: '15 ans', platform: 'Le Mans Ultimate', circuit: 'Jeddah', car: 'McLaren P1' },
-            'Romuald.D':    { birthday: '18/10/1979', simstart: '44 ans', platform: 'Le Mans Ultimate', circuit: 'nurburgring nordschleife', car: 'Porsche GT3 RS 992.2' },
+            'Enzo':         { birthday: '26/12/2003', simstart: '20 ans', platform: 'Le Mans Ultimate', circuit: 'nurburgring nordschleife', car: 'Porsche 992 GT3 RS' },
 
         };
 
@@ -1524,7 +1571,7 @@
 
                     mini.addEventListener('click', () => {
                         const badge = card.querySelector('.person-role-badge')?.textContent.trim() || '';
-                        const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF');
+                        const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF') || badge === 'INGÉNIEUR TECHNIQUE';
                         if (isPilotOrChef) {
                             openPilotPopup(card, team.color);
                         } else {
