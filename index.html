@@ -1633,6 +1633,10 @@
             .st-th-pilote { min-width: 160px; }
             .st-td-pilote { white-space: nowrap; }
         }
+        @media (max-width: 768px) {
+            #live { padding: 60px 20px !important; }
+            #live h2 { font-size: 32px !important; }
+        }
     </style>
 </head>
 <body>
@@ -2618,6 +2622,54 @@
 <!-- FIN SECTION SUPER TROFEO                      -->
 <!-- ============================================= -->
 
+<!-- SECTION LIVE TWITCH -->
+<section id="live" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 26, 117, 0.05) 100%);">
+    <h2 style="text-align:center; font-size:48px; margin-bottom:10px;">
+        🔴 Live <span style="background:linear-gradient(135deg,#ff1a75,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">SimTek</span>
+    </h2>
+    <p style="text-align:center; color:#b0b0d0; margin-bottom:40px; font-size:16px;">Suivez nos courses en direct sur Twitch</p>
+
+    <div id="twitch-container" style="position:relative; max-width:960px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(255,26,117,0.2);">
+        <div id="twitch-embed" style="width:100%;"></div>
+        <button id="fullscreen-btn" onclick="toggleTwitchFullscreen()" style="
+            position:absolute; bottom:14px; right:14px;
+            background:rgba(0,0,0,0.75); border:1px solid rgba(255,255,255,0.2);
+            color:#fff; padding:8px 14px; border-radius:8px;
+            cursor:pointer; font-size:13px; font-weight:600;
+            z-index:10; transition:all 0.2s ease;
+            backdrop-filter:blur(4px);
+        ">⛶ Plein écran</button>
+    </div>
+</section>
+
+<script src="https://embed.twitch.tv/embed/v1.js"></script>
+<script>
+    new Twitch.Embed("twitch-embed", {
+        width: "100%",
+        height: 500,
+        channel: "simtekperformance",
+        parent: ["simtekperformance.com", "www.simtekperformance.com"],
+        layout: "video",
+        autoplay: false
+    });
+
+    function toggleTwitchFullscreen() {
+        var el = document.getElementById('twitch-container');
+        if (!document.fullscreenElement) {
+            if (el.requestFullscreen) el.requestFullscreen();
+            else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+            else if (el.msRequestFullscreen) el.msRequestFullscreen();
+        } else {
+            if (document.exitFullscreen) document.exitFullscreen();
+            else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        }
+    }
+
+    document.addEventListener('fullscreenchange', function() {
+        var btn = document.getElementById('fullscreen-btn');
+        btn.textContent = document.fullscreenElement ? '✕ Quitter' : '⛶ Plein écran';
+    });
+</script>
 
     <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
         <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
