@@ -1531,7 +1531,8 @@
                 if (!col) return;
 
                 const cards = Array.from(col.querySelectorAll('.team-leader, .person-card'));
-                const stackHeight = (cards.length - 1) * spacing + 70;
+                const extraGap = 20;
+                const stackHeight = (cards.length - 1) * spacing + 70 + extraGap;
 
                 const folder = document.createElement('div');
                 folder.className = 'mobile-folder';
@@ -1556,7 +1557,7 @@
                     const mini = document.createElement('div');
                     mini.className = 'mobile-mini-card';
                     mini.style.borderColor = team.color + '55';
-                    mini.style.top = (i * spacing) + 'px';
+                    mini.style.top = (i * spacing + (i >= 1 ? extraGap : 0)) + 'px';
                     mini.style.zIndex = cards.length - i;
                     mini.innerHTML = `
                         <img src="${photo}" class="mini-photo" style="border-color:${team.color}88">
