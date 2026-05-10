@@ -807,27 +807,7 @@
 </div>
 </div>
 </div>
-            <div class="person-card" style="border-color: #ffffff; grid-column: 1 / -1; max-width: 400px; margin: 0 auto; width: 100%;">
-<div class="person-header-inline" style="border-bottom: 2px solid #ffffff; background-image: url('setup-hugo.png');">
-<img class="person-photo-circle" src="hugo-tech.png" style="border-color: #ffffff;"/>
-<div class="person-header-info">
-<div class="person-role-badge" style="background: rgba(255,255,255,0.15); color: #ffffff; border: 1px solid rgba(255,255,255,0.4); -webkit-text-fill-color: #ffffff;">INGÉNIEUR TECHNIQUE</div>
-<h3 class="person-name">Hugo.S</h3>
-<div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
-<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p1">P1</span></span>
-</div>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec Formula V2.5</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Wheel Stand GT Pro</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">CSL Pedals Load Cell</span></div>
-</div>
-</div>
-</div>
+
         </div>
         
         <!-- 4 colonnes : Catégorie → Chef → Pilotes -->
@@ -1002,7 +982,32 @@
 </div>
 </div>
 </div>
-<!-- 2. Christophe.A — S1 -->
+<!-- 2. Hugo.S — S1 / P1 — Pilote & Ingénieur Technique -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-hugo.png');">
+<img class="person-photo-circle" src="hugo-tech.png"/>
+<div class="person-header-info">
+<div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:4px;">
+  <div class="person-role-badge">PILOTE</div>
+  <div class="person-role-badge" style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.35); -webkit-text-fill-color: #ffffff;">INGÉNIEUR TECHNIQUE</div>
+</div>
+<h3 class="person-name">Hugo.S</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p1">P1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec Formula V2.5</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Wheel Stand GT Pro</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">CSL Pedals Load Cell</span></div>
+</div>
+</div>
+</div>
+<!-- 3. Christophe.A — S1 -->
 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-LMP-3.png');">
 <img class="person-photo-circle" src="pilot-GT3B-3.png"/>
@@ -1315,20 +1320,10 @@
             });
         });
 
-        // Gestionnaire de clic pour Hugo.S dans la directors-grid
-        document.querySelectorAll('.directors-grid .person-card').forEach(card => {
-            const badge = card.querySelector('.person-role-badge')?.textContent.trim() || '';
-            if (badge === 'INGÉNIEUR TECHNIQUE') {
-                card.style.cursor = 'pointer';
-                card.addEventListener('click', function() {
-                    openPilotPopup(this, '#ffffff');
-                });
-            }
-        });
 
         // ── Données pilotes & chefs d'équipe (à remplir quand ils transmettent leurs infos) ──
         const pilotData = {
-            // Ingénieur Technique
+            // Pilote GT3 Bravo & Ingénieur Technique
             'Hugo.S':       { birthday: '11/05/2006', simstart: '15 ans', platform: 'Le Mans Ultimate', circuit: 'nurburgring nordschleife', car: 'Lexus LFA' },
             // Chefs d'équipe
             'Anthony.M':    { birthday: '09/04/1993', simstart: '32 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Bmw E46' },
