@@ -1,0 +1,11 @@
+# robots.txt — SimTek Performance
+# https://www.simtekperformance.com
+
+User-agent: *
+Allow: /
+
+# Bloquer les fichiers inutiles pour le SEO
+Disallow: /google25ce60f7c0812ef8.html
+
+# Sitemap
+Sitemap: https://www.simtekperformance.com/sitemap.xml
