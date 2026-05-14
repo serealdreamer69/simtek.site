@@ -1450,7 +1450,19 @@
             color: white;
         }
 
-        .scroll-animate {
+        .intro-section {
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 280px;
+            contain: layout;
+        }
+        @media (max-width: 768px) {
+            .intro-section {
+                padding: 40px 20px;
+                min-height: 480px;
+            }
+        }
             opacity: 0;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -1846,7 +1858,7 @@
         </div>
     </section>
 
-    <section style="padding: 80px 60px; max-width: 1200px; margin: 0 auto; min-height: 280px; contain: layout;">
+    <section class="intro-section">
         <h2 style="font-size: 2.5rem; color: #ff1a75; margin-bottom: 30px; text-align: center;">L'Excellence du Simracing en France</h2>
         <div style="font-size: 1.1rem; line-height: 1.8; color: #d1d1e9;">
             <p style="margin-bottom: 20px;"><strong>SimTek Performance</strong> est une équipe simracing française dédiée à la compétition virtuelle de haut niveau. Spécialisés dans les courses d'endurance sur <strong>Le Mans Ultimate</strong>, nos pilotes participent aux championnats les plus prestigieux du simracing mondial.</p>
