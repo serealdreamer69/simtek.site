@@ -2776,72 +2776,20 @@
     </h2>
     <p style="text-align:center; color:#b0b0d0; margin-bottom:40px; font-size:16px;">Suivez nos courses en direct sur Twitch</p>
 
-    <div id="twitch-container" style="position:relative; max-width:960px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(255,26,117,0.2);">
-        <!-- Placeholder offline -->
-        <div id="twitch-placeholder" style="width:100%; cursor:pointer;" onclick="hidePlaceholder()">
-            <img src="placeholder-live.webp" alt="SimTek Live" style="width:100%; display:block; border-radius:15px; aspect-ratio:16/9;" width="960" height="540">
-        </div>
-        <!-- Player Twitch (caché par défaut) -->
-        <div id="twitch-embed" style="width:100%; display:none;"></div>
-        <button id="fullscreen-btn" aria-label="Plein écran" onclick="toggleTwitchFullscreen()" style="
-            position:absolute; bottom:14px; right:14px;
-            background:rgba(0,0,0,0.75); border:1px solid rgba(255,255,255,0.2);
-            color:#fff; padding:8px 14px; border-radius:8px;
-            cursor:pointer; font-size:13px; font-weight:600;
-            z-index:10; transition:all 0.2s ease;
-            backdrop-filter:blur(4px); display:none;
-        ">⛶ Plein écran</button>
+    <div style="position:relative; max-width:960px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(255,26,117,0.2);">
+        <a href="https://www.twitch.tv/simtekperformance" target="_blank" rel="noopener" aria-label="Regarder SimTek Performance en direct sur Twitch" style="display:block; position:relative;">
+            <img src="placeholder-live.webp" alt="SimTek Live — Regarder sur Twitch" style="width:100%; display:block; border-radius:15px; aspect-ratio:16/9;" width="960" height="540">
+            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); border-radius:15px; transition:background 0.3s ease;">
+                <div style="text-align:center;">
+                    <div style="width:80px; height:80px; background:#9147ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; box-shadow:0 0 30px rgba(145,71,255,0.6);">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="white"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+                    </div>
+                    <span style="color:white; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Regarder en direct</span>
+                </div>
+            </div>
+        </a>
     </div>
 </section>
-
-<script src="https://embed.twitch.tv/embed/v1.js" async onload="initTwitchEmbed()"></script>
-<script>
-    function hidePlaceholder() {
-        document.getElementById('twitch-placeholder').style.display = 'none';
-        document.getElementById('twitch-embed').style.display = 'block';
-        document.getElementById('fullscreen-btn').style.display = 'block';
-    }
-
-    function toggleTwitchFullscreen() {
-        var el = document.getElementById('twitch-container');
-        if (!document.fullscreenElement) {
-            if (el.requestFullscreen) el.requestFullscreen();
-            else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-            else if (el.msRequestFullscreen) el.msRequestFullscreen();
-        } else {
-            if (document.exitFullscreen) document.exitFullscreen();
-            else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
-        }
-    }
-
-    function initTwitchEmbed() {
-    var twitchEmbed = new Twitch.Embed("twitch-embed", {
-        width: "100%",
-        height: 500,
-        channel: "simtekperformance",
-        parent: ["simtekperformance.com", "www.simtekperformance.com"],
-        layout: "video",
-        autoplay: false
-    });
-
-    twitchEmbed.addEventListener(Twitch.Embed.VIDEO_PLAY, function() {
-        document.getElementById('twitch-placeholder').style.display = 'none';
-        document.getElementById('twitch-embed').style.display = 'block';
-        document.getElementById('fullscreen-btn').style.display = 'block';
-    });
-
-    twitchEmbed.addEventListener(Twitch.Embed.OFFLINE, function() {
-        document.getElementById('twitch-embed').style.display = 'none';
-        document.getElementById('twitch-placeholder').style.display = 'block';
-        document.getElementById('fullscreen-btn').style.display = 'none';
-    });
-
-    document.addEventListener('fullscreenchange', function() {
-        var btn = document.getElementById('fullscreen-btn');
-        btn.textContent = document.fullscreenElement ? '✕ Quitter' : '⛶ Plein écran';
-    });
-    } // fin initTwitchEmbed
-</script>
 
     <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
         <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
