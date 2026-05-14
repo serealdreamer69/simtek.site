@@ -436,6 +436,8 @@
             border-radius: 25px;
             box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 26, 117, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            aspect-ratio: 16/9;
+            contain: layout;
         }
 
         /* Cacher la vidéo sur mobile — fond dégradé du hero suffit */
@@ -1593,7 +1595,6 @@
             color: #ff1a75;
             font-weight: 700;
             min-width: 60px;
-            transition: color 0.3s ease;
         }
         .champ-week-row.week-active .champ-week-label {
             color: #00e676;
@@ -2776,7 +2777,7 @@
     <div id="twitch-container" style="position:relative; max-width:960px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(255,26,117,0.2);">
         <!-- Placeholder offline -->
         <div id="twitch-placeholder" style="width:100%; cursor:pointer;" onclick="hidePlaceholder()">
-            <img src="placeholder-live.webp" alt="SimTek Live" style="width:100%; display:block; border-radius:15px;" width="960" height="540">
+            <img src="placeholder-live.webp" alt="SimTek Live" style="width:100%; display:block; border-radius:15px; aspect-ratio:16/9;" width="960" height="540">
         </div>
         <!-- Player Twitch (caché par défaut) -->
         <div id="twitch-embed" style="width:100%; display:none;"></div>
