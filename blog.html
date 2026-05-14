@@ -112,8 +112,8 @@
         .article-excerpt { font-size: 14px; color: #b0b0d0; line-height: 1.7; padding: 0 28px 20px; flex: 1; }
         .article-toggle { margin: 0 28px 28px; background: transparent; border: 1px solid rgba(255,26,117,0.4); color: #ff1a75; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; align-self: flex-start; }
         .article-toggle:hover { background: rgba(255,26,117,0.1); }
-        .article-full { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
-        .article-full.open { max-height: 6000px; border-top: 1px solid rgba(255,26,117,0.15); }
+        .article-full { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .article-full.open { max-height: 800px; border-top: 1px solid rgba(255,26,117,0.15); }
         .article-full-inner { padding: 28px; font-size: 15px; color: #d1d1e9; line-height: 1.85; }
         .article-full-inner h3 { font-size: 17px; color: #ff1a75; margin: 22px 0 10px; }
         .article-full-inner h3:first-child { margin-top: 0; }
@@ -346,8 +346,12 @@
         function toggleArticle(id, btn) {
             const full = document.getElementById('full-' + id);
             const isOpen = full.classList.contains('open');
-            full.classList.toggle('open');
-            btn.textContent = isOpen ? "Lire l'article ▼" : "Réduire ▲";
+            document.querySelectorAll('.article-full').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('.article-toggle').forEach(b => b.textContent = "Lire l'article ▼");
+            if (!isOpen) {
+                full.classList.add('open');
+                btn.textContent = "Réduire ▲";
+            }
         }
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
