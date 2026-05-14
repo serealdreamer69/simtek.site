@@ -144,6 +144,17 @@
             .articles-section { padding: 30px 16px; }
             .articles-grid { grid-template-columns: 1fr; gap: 20px; }
         }
+    
+        .internal-links { padding: 50px 60px; max-width: 1200px; margin: 0 auto; }
+        .internal-links h2 { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 20px; text-align: center; }
+        .internal-links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .internal-link-card { background: linear-gradient(135deg, rgba(26,26,62,0.9), rgba(10,14,39,0.9)); border: 1px solid rgba(255,26,117,0.2); border-radius: 14px; padding: 20px; text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 14px; }
+        .internal-link-card:hover { border-color: rgba(255,26,117,0.5); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,26,117,0.15); }
+        .internal-link-card .ilc-icon { font-size: 24px; }
+        .internal-link-card .ilc-text strong { display: block; font-size: 14px; font-weight: 700; color: #ff1a75; margin-bottom: 3px; }
+        .internal-link-card .ilc-text span { font-size: 12px; color: #b0b0d0; }
+        @media (max-width: 768px) { .internal-links { padding: 30px 16px; } .internal-links-grid { grid-template-columns: 1fr 1fr; gap: 10px; } }
+
     </style>
 </head>
 <body>
@@ -303,6 +314,28 @@
         </div>
     </section>
 
+
+    <section class="internal-links">
+        <h2>Découvrir SimTek Performance</h2>
+        <div class="internal-links-grid">
+            <a href="rejoins-nous.html" class="internal-link-card">
+                <span class="ilc-icon">🏁</span>
+                <div class="ilc-text"><strong>Rejoindre l'équipe</strong><span>Recrutement ouvert</span></div>
+            </a>
+            <a href="team.html" class="internal-link-card">
+                <span class="ilc-icon">👥</span>
+                <div class="ilc-text"><strong>Notre équipe</strong><span>Pilotes & staff</span></div>
+            </a>
+            <a href="index.html#planning" class="internal-link-card">
+                <span class="ilc-icon">📅</span>
+                <div class="ilc-text"><strong>Planning courses</strong><span>Calendrier LMU</span></div>
+            </a>
+            <a href="our-setups.html" class="internal-link-card">
+                <span class="ilc-icon">🕹️</span>
+                <div class="ilc-text"><strong>Nos setups</strong><span>Cockpits de nos pilotes</span></div>
+            </a>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2026 Simtek Performance — Tous droits réservés</p>
         <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
