@@ -182,6 +182,19 @@
 
         .mobile-only { display: none; }
         .desktop-only { display: block; }
+
+        /* H1 visible uniquement pour les moteurs de recherche */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
         
         .join-button-mobile {
             display: none;
@@ -1699,8 +1712,9 @@
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="488video.webm" type="video/webm">
         </video>
+        <h1 class="sr-only">SimTek Performance — Équipe Simracing Française | Endurance Virtuelle sur Le Mans Ultimate &amp; iRacing</h1>
         <div class="hero-logo-container">
-            <img src="Logo_SIMTEK.png" alt="Simtek Performance Logo" class="hero-logo">
+            <img src="Logo_SIMTEK.png" alt="SimTek Performance — Équipe simracing française spécialisée en endurance virtuelle" class="hero-logo">
         </div>
         <p class="hero-subtitle">Team Esport dédiée à l'excellence du Simracing</p>
         <div class="hero-buttons">
