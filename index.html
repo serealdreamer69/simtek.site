@@ -642,11 +642,12 @@
         .planning-section.open .section-arrow { transform: rotate(180deg); }
 
         .planning-section .section-content {
-            display: none;
-            animation: tierFadeIn 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
         }
 
-        .planning-section.open .section-content { display: block; }
+        .planning-section.open .section-content { max-height: 3000px; }
         
         .section-icon {
             font-size: 28px;
@@ -704,9 +705,14 @@
             color: #b0b0d0;
         }
         
-        /* tier-races masqué partout : contenu affiché dans le popup */
+        /* tier-races : invisible visuellement mais lisible par Google et le popup JS */
         .tier-races {
-            display: none;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
         }
         
         .race-item {
@@ -1496,10 +1502,13 @@
             .tier-gold   .tier-arrow { color: #FFD700; }
             .tier-block.open .tier-arrow { transform: rotate(180deg); }
             .tier-races {
-                display: none;
-                animation: tierFadeIn 0.3s ease;
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap;
             }
-            .tier-block.open .tier-races { display: block; }
             @keyframes tierFadeIn {
                 from { opacity: 0; transform: translateY(-6px); }
                 to   { opacity: 1; transform: translateY(0); }
@@ -2759,8 +2768,9 @@
     </div>
 </section>
 
-<script src="https://embed.twitch.tv/embed/v1.js"></script>
+<script src="https://embed.twitch.tv/embed/v1.js" onload="initTwitchEmbed()"></script>
 <script>
+    function initTwitchEmbed() {
     var twitchEmbed = new Twitch.Embed("twitch-embed", {
         width: "100%",
         height: 500,
@@ -2807,6 +2817,7 @@
         var btn = document.getElementById('fullscreen-btn');
         btn.textContent = document.fullscreenElement ? '✕ Quitter' : '⛶ Plein écran';
     });
+    } // fin initTwitchEmbed
 </script>
 
     <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
