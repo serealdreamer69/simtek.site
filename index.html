@@ -29,10 +29,12 @@
     <meta name="theme-color" content="#ff1a75">
     
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <!-- Préchargement du logo hero (améliore LCP) -->
     <link rel="preload" href="Logo_SIMTEK.webp" as="image">
+    <!-- Préchargement fonts FA pour éviter layout shift -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     
     <script type="application/ld+json">
     {
@@ -444,9 +446,12 @@
 
         .hero-logo-container {
             margin-bottom: 40px;
-            animation: float 3s ease-in-out infinite;
             position: relative;
             z-index: 10;
+        }
+
+        body.loaded .hero-logo-container {
+            animation: float 3s ease-in-out infinite;
         }
 
         .hero-logo {
@@ -1844,7 +1849,7 @@
         </div>
     </section>
 
-    <section style="padding: 80px 60px; max-width: 1200px; margin: 0 auto;">
+    <section style="padding: 80px 60px; max-width: 1200px; margin: 0 auto; min-height: 280px;">
         <h2 style="font-size: 2.5rem; color: #ff1a75; margin-bottom: 30px; text-align: center;">L'Excellence du Simracing en France</h2>
         <div style="font-size: 1.1rem; line-height: 1.8; color: #d1d1e9;">
             <p style="margin-bottom: 20px;"><strong>SimTek Performance</strong> est une équipe simracing française dédiée à la compétition virtuelle de haut niveau. Spécialisés dans les courses d'endurance sur <strong>Le Mans Ultimate</strong>, nos pilotes participent aux championnats les plus prestigieux du simracing mondial.</p>
@@ -2880,6 +2885,10 @@
     </footer>
 
     <script>
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
