@@ -431,6 +431,27 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Image de remplacement sur mobile (vidéo cachée) */
+        .hero-video-mobile {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-video { display: none; }
+            .hero-video-mobile {
+                display: block;
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+                width: 95%; height: 60%;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 15px;
+                box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 20px rgba(255,26,117,0.2);
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+        }
+
         .hero-logo-container {
             margin-bottom: 40px;
             animation: float 3s ease-in-out infinite;
@@ -1822,6 +1843,7 @@
         <video class="hero-video" autoplay muted loop playsinline preload="none">
             <source src="488video.webm" type="video/webm">
         </video>
+        <img src="circuit1.webp" alt="SimTek Performance — Circuit de course Le Mans Ultimate" class="hero-video-mobile" width="1200" height="675" fetchpriority="high">
         <h1 class="sr-only">SimTek Performance — Équipe Simracing Française | Endurance Virtuelle sur Le Mans Ultimate &amp; iRacing</h1>
         <div class="hero-logo-container">
             <img src="Logo_SIMTEK.webp" alt="SimTek Performance — Équipe simracing française spécialisée en endurance virtuelle" class="hero-logo" width="600" height="200" fetchpriority="high">
