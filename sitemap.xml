@@ -41,6 +41,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Nos setups -->
+  <url>
+    <loc>https://www.simtekperformance.com/our-setups.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Devenir partenaire -->
   <url>
     <loc>https://www.simtekperformance.com/become-partner.html</loc>
