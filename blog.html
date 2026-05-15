@@ -107,11 +107,17 @@
         .tag-guide { background: rgba(0,212,255,0.12); color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
         .tag-analyse { background: rgba(255,215,0,0.12); color: #FFD700; border: 1px solid rgba(255,215,0,0.3); }
         .article-card h2 { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; }
-        .article-meta { display: flex; gap: 16px; font-size: 13px; color: #b0b0d0; margin-bottom: 16px; flex-wrap: wrap; }
+        .article-meta { display: flex; gap: 16px; font-size: 13px; color: #b0b0d0; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
         .article-meta i { color: #ff1a75; }
         .article-excerpt { font-size: 14px; color: #b0b0d0; line-height: 1.7; padding: 0 28px 20px; flex: 1; }
         .article-toggle { margin: 0 28px 28px; background: transparent; border: 1px solid rgba(255,26,117,0.4); color: #ff1a75; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; align-self: flex-start; }
         .article-toggle:hover { background: rgba(255,26,117,0.1); }
+        .like-btn { background: transparent; border: none; color: #a0a0c0; padding: 0; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.25s; margin-left: 4px; }
+        .like-btn:hover { color: #ff1a75; }
+        .like-btn.liked { color: #ff1a75; }
+        .like-btn .thumb { font-size: 14px; line-height: 1; transition: transform 0.2s; }
+        .like-btn.liked .thumb { transform: scale(1.25); }
+        .like-btn .like-count { font-weight: 700; min-width: 12px; }
         .article-full { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
         .article-full.open { max-height: 5000px; border-top: 1px solid rgba(255,26,117,0.15); }
         .article-full-inner { padding: 28px; font-size: 15px; color: #d1d1e9; line-height: 1.85; }
@@ -207,6 +213,34 @@
 
         <div class="articles-grid">
 
+            <!-- ARTICLE 0c — 6H Spa Top Split Florent/Christophe/Guillaume -->
+            <article class="article-card" id="article-spa-6h">
+                <div class="article-card-top">
+                    <span class="article-tag tag-resultat">🏆 Résultat de course</span>
+                    <h2>6 Heures de Spa : SimTek Performance accroche le Top 10 en Top Split avec un équipage de trois pilotes</h2>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar"></i> 18 mai 2026</span>
+                        <span><i class="fas fa-flag-checkered"></i> Le Mans Ultimate</span>
+                        <button class="like-btn" data-id="spa-6h" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
+                    </div>
+                </div>
+                <p class="article-excerpt">Engagés en BMW M4 GT3 sur les 6 Heures de Spa-Francorchamps en Top Split, Florent, Christophe et Guillaume partent depuis la P12 et livrent une course solide pour franchir la ligne en P8 au terme de six heures d'endurance intense.</p>
+                <button class="article-toggle" onclick="toggleArticle('spa-6h', this)">Lire l'article ▼</button>
+                <div class="article-full" id="full-spa-6h">
+                    <div class="article-full-inner">
+                        <h3>Un départ en soirée sur le légendaire circuit de Spa</h3>
+                        <p>C'est à <strong>17h00</strong> que Florent, Christophe et Guillaume prennent le départ des <strong>6 Heures de Spa-Francorchamps</strong> en Top Split sur Le Mans Ultimate. La piste ardennaise, exigeante et impitoyable, est l'une des plus sélectives du calendrier — un terrain de jeu parfait pour une course d'endurance.</p>
+                        <h3>P12 sur la grille, objectif remonter</h3>
+                        <p>Qualifiés en <strong>12ème position</strong>, les trois pilotes savent que la course sera longue et que les opportunités de progresser viendront avec le temps, les stratégies d'arrêts et la gestion des incidents. En Top Split, chaque décision compte.</p>
+                        <h3>Six heures de gestion et de régularité</h3>
+                        <p>Pendant six heures, l'équipage SimTek assure une course propre en <strong>BMW M4 GT3</strong> : relais bien gérés, arrêts au stand maîtrisés, zéro incident. La régularité et la communication entre les trois pilotes font la différence face à des adversaires qui, eux, n't évitent pas tous les pièges d'une course aussi longue.</p>
+                        <h3>P8 au drapeau à damier</h3>
+                        <p>Au bout des six heures, Florent, Christophe et Guillaume franchissent la ligne en <strong>huitième position</strong> — une belle remontée depuis la P12 qui récompense le sérieux et l'engagement de tout l'équipage. Un Top 10 en Top Split sur Spa, c'est un résultat dont on peut être fier.</p>
+                        <p>Tu veux faire partie de l'aventure ? <a href="rejoins-nous.html">Rejoins l'équipe SimTek Performance</a>.</p>
+                    </div>
+                </div>
+            </article>
+
             <!-- ARTICLE 0b — Le Mans Beginner Anthony.D victoire P1 -->
             <article class="article-card" id="article-lemans-anthonyd">
                 <div class="article-card-top">
@@ -215,6 +249,7 @@
                     <div class="article-meta">
                         <span><i class="fas fa-calendar"></i> 18 mai 2026</span>
                         <span><i class="fas fa-flag-checkered"></i> Le Mans Ultimate</span>
+                        <button class="like-btn" data-id="lemans-anthonyd" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
                 <p class="article-excerpt">Pénalisé par un track limit en qualification, Anthony.D s'élance depuis la 16ème place sur le Circuit de la Sarthe. Au terme d'une remontée impressionnante en BMW M4 GT3, il franchit la ligne en tête et s'offre la victoire pour la dernière manche du Championnat Beginner.</p>
@@ -224,7 +259,7 @@
                         <h3>Une qualification gâchée, mais pas la course</h3>
                         <p>La séance de qualifications d'Anthony.D tourne court : un <strong>track limit annule son meilleur chrono</strong> et l'expédie en 16ème position sur la grille de départ. Un coup dur sur un circuit aussi long et exigeant que Le Mans, où les dépassements sont loin d'être garantis. Mais Anthony.D en a décidé autrement.</p>
                         <h3>Une remontée de l'arrière impressionnante</h3>
-                        <p>Dès le premier tour, Anthony.D se montre agressif et précis. tour après tour, position après position, il grappille du terrain sur ses adversaires en <strong>BMW M4 GT3</strong>, profitant de chaque opportunité sans jamais prendre de risque inutile. Une remontée propre, méthodique et redoutable sur le légendaire Circuit de la Sarthe.</p>
+                        <p>Dès le premier tour, Anthony.D se montre agressif et précis. Course après course, position après position, il grappille du terrain sur ses adversaires en <strong>BMW M4 GT3</strong>, profitant de chaque opportunité sans jamais prendre de risque inutile. Une remontée propre, méthodique et redoutable sur le légendaire Circuit de la Sarthe.</p>
                         <h3>La victoire au bout de l'effort</h3>
                         <p>Au drapeau à damier, c'est Anthony.D qui franchit la ligne en <strong>première position</strong>. Parti 16ème, arrivé premier — le genre de performance qui marque les esprits et qui illustre parfaitement ce que SimTek Performance attend de ses pilotes : régularité, intelligence de course et jamais rien lâcher.</p>
                         <h3>Un titre de champion pour finir en beauté</h3>
@@ -242,6 +277,7 @@
                     <div class="article-meta">
                         <span><i class="fas fa-calendar"></i> 18 mai 2026</span>
                         <span><i class="fas fa-flag-checkered"></i> Le Mans Ultimate</span>
+                        <button class="like-btn" data-id="barcelone-maxime" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
                 <p class="article-excerpt">Engagé en solo en Split 1 sur le Circuit de Barcelone-Catalunya, Maxime décroche une belle troisième place au terme d'une course de 2 heures maîtrisée de bout en bout, avec Chris et Flo à l'ingénierie pour gérer la stratégie en direct.</p>
@@ -271,6 +307,7 @@
                     <div class="article-meta">
                         <span><i class="fas fa-calendar"></i> 12 mai 2026</span>
                         <span><i class="fas fa-flag-checkered"></i> Le Mans Ultimate</span>
+                        <button class="like-btn" data-id="paul-ricard" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
                 <p class="article-excerpt">Un week-end exceptionnel aux 4 Heures de Paul Ricard sur Le Mans Ultimate. 5 équipages en piste, une victoire en BMW M4 GT3, un P2 en LMP2 et des performances solides sur toute la ligne. Bravo à tous !</p>
@@ -313,6 +350,7 @@
                     <div class="article-meta">
                         <span><i class="fas fa-calendar"></i> 14 mai 2026</span>
                         <span><i class="fas fa-flag-checkered"></i> Le Mans Ultimate</span>
+                        <button class="like-btn" data-id="spa-2026" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
                 <p class="article-excerpt">Après le succès de Paul Ricard, SimTek Performance enchaîne avec les 6 Heures de Spa-Francorchamps sur Le Mans Ultimate — un événement Open Entry Team en Hypercar et LMGT3 les 15, 16 et 17 mai 2026.</p>
@@ -409,6 +447,31 @@
                 btn.textContent = "Réduire ▲";
             }
         }
+
+        // Gestion des likes
+        function initLikes() {
+            document.querySelectorAll('.like-btn').forEach(btn => {
+                const id = btn.dataset.id;
+                const base = parseInt(btn.dataset.base) || 0;
+                const liked = localStorage.getItem('simtek-like-' + id) === '1';
+                btn.querySelector('.like-count').textContent = base + (liked ? 1 : 0);
+                if (liked) btn.classList.add('liked');
+                btn.addEventListener('click', () => {
+                    const isLiked = btn.classList.contains('liked');
+                    const count = parseInt(btn.querySelector('.like-count').textContent);
+                    if (isLiked) {
+                        localStorage.removeItem('simtek-like-' + id);
+                        btn.querySelector('.like-count').textContent = count - 1;
+                        btn.classList.remove('liked');
+                    } else {
+                        localStorage.setItem('simtek-like-' + id, '1');
+                        btn.querySelector('.like-count').textContent = count + 1;
+                        btn.classList.add('liked');
+                    }
+                });
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initLikes);
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         hamburger.addEventListener('click', () => {
