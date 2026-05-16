@@ -142,6 +142,13 @@
         .article-excerpt { font-size: 14px; color: #b0b0d0; line-height: 1.7; padding: 0 28px 20px; min-height: 90px; }
         .article-toggle { margin: 0 28px 28px; background: transparent; border: 1px solid rgba(255,26,117,0.4); color: #ff1a75; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; align-self: flex-start; }
         .article-toggle:hover { background: rgba(255,26,117,0.1); }
+        .article-card-actions { display: flex; align-items: center; gap: 10px; margin: 0 28px 28px; flex-wrap: wrap; }
+        .share-btns { display: flex; gap: 8px; }
+        .share-btn { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #d0d0e8; font-size: 16px; cursor: pointer; transition: all 0.25s; text-decoration: none; }
+        .share-btn:hover { border-color: #ff1a75; color: #ff1a75; transform: translateY(-2px); background: rgba(255,26,117,0.1); }
+        .share-btn-copy.copied { border-color: #00ff88; color: #00ff88; }
+        .share-btns-inner { display: flex; gap: 8px; padding: 16px 28px 4px; flex-wrap: wrap; }
+        .share-btns-inner .share-btn { width: auto; border-radius: 50px; padding: 8px 14px; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .like-btn { background: transparent; border: none; color: #a0a0c0; padding: 0; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.25s; margin-left: 4px; }
         .like-btn:hover { color: #ff1a75; }
         .like-btn.liked { color: #ff1a75; }
@@ -648,6 +655,83 @@
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
+
+        // ── Boutons de partage ──────────────────────────────────────────
+        function initShareButtons() {
+            document.querySelectorAll('.article-card').forEach(card => {
+                const toggle = card.querySelector('.article-toggle');
+                const articleId = card.id.replace('article-', '');
+                const title = card.querySelector('h2').textContent.trim();
+                const url = 'https://www.simtekperformance.com/blog.html#' + card.id;
+                const encodedUrl = encodeURIComponent(url);
+                const encodedTitle = encodeURIComponent('🏁 ' + title + ' — SimTek Performance');
+
+                // Boutons compacts à côté du toggle (article fermé)
+                const actionsDiv = document.createElement('div');
+                actionsDiv.className = 'article-card-actions';
+                actionsDiv.innerHTML = `
+                    <div class="share-btns">
+                        <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank" title="Partager sur X"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.432-8.49L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" title="Partager sur Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a class="share-btn" href="https://wa.me/?text=${encodedTitle}%20${encodedUrl}" target="_blank" title="Partager sur WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <button class="share-btn" title="Copier le lien et ouvrir Discord" onclick="shareDiscord(this, '${url}')"><i class="fa-brands fa-discord"></i></button>
+                        <button class="share-btn share-btn-copy" title="Copier le lien" onclick="copyLink(this, '${url}')"><i class="fas fa-link"></i></button>
+                    </div>
+                `;
+                toggle.parentNode.insertBefore(actionsDiv, toggle);
+                actionsDiv.insertBefore(toggle, actionsDiv.firstChild);
+
+                // Boutons larges dans l'article ouvert (après le dernier <p>)
+                const fullInner = card.querySelector('.article-full-inner');
+                if (fullInner) {
+                    const shareInner = document.createElement('div');
+                    shareInner.className = 'share-btns-inner';
+                    shareInner.innerHTML = `
+                        <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.432-8.49L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X / Twitter</a>
+                        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                        <a class="share-btn" href="https://wa.me/?text=${encodedTitle}%20${encodedUrl}" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                        <button class="share-btn" onclick="shareDiscord(this, '${url}')"><i class="fa-brands fa-discord"></i> Discord</button>
+                        <button class="share-btn share-btn-copy" onclick="copyLink(this, '${url}')"><i class="fas fa-link"></i> Copier</button>
+                    `;
+                    fullInner.appendChild(shareInner);
+                }
+            });
+        }
+
+        function shareDiscord(btn, url) {
+            navigator.clipboard.writeText(url).then(() => {
+                const icon = btn.querySelector('i');
+                const label = btn.childNodes[btn.childNodes.length - 1];
+                if (icon) icon.className = 'fas fa-check';
+                if (label && label.nodeType === 3) label.textContent = ' Lien copié !';
+                btn.style.borderColor = '#5865F2';
+                btn.style.color = '#5865F2';
+                setTimeout(() => {
+                    window.open('https://discord.com/channels/@me', '_blank');
+                    if (icon) icon.className = 'fab fa-discord';
+                    if (label && label.nodeType === 3) label.textContent = ' Discord';
+                    btn.style.borderColor = '';
+                    btn.style.color = '';
+                }, 800);
+            });
+        }
+
+        function copyLink(btn, url) {
+            navigator.clipboard.writeText(url).then(() => {
+                btn.classList.add('copied');
+                const icon = btn.querySelector('i');
+                if (icon) icon.className = 'fas fa-check';
+                const label = btn.childNodes[btn.childNodes.length - 1];
+                if (label && label.nodeType === 3) label.textContent = ' Copié !';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    if (icon) icon.className = 'fas fa-link';
+                    if (label && label.nodeType === 3) label.textContent = ' Copier';
+                }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initShareButtons);
     </script>
 
     <!-- ═══════════════════════════════════════════════════════════════
