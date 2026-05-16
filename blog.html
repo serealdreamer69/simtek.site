@@ -615,13 +615,29 @@
 
     <script>
         function toggleArticle(id, btn) {
-            const full = document.getElementById('full-' + id);
+            const full  = document.getElementById('full-' + id);
+            const card  = btn.closest('.article-card');
+            const navH  = document.querySelector('nav').offsetHeight;
             const isOpen = full.classList.contains('open');
+
+            // Ferme tous les articles
             document.querySelectorAll('.article-full').forEach(el => el.classList.remove('open'));
             document.querySelectorAll('.article-toggle').forEach(b => b.textContent = "Lire l'article ▼");
+
             if (!isOpen) {
+                // Ouverture : ouvre et scrolle vers le haut de la card
                 full.classList.add('open');
                 btn.textContent = "Réduire ▲";
+                setTimeout(() => {
+                    const top = card.getBoundingClientRect().top + window.scrollY - navH - 12;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }, 50);
+            } else {
+                // Fermeture : attend la fin de l'animation puis scrolle vers le haut de la card
+                setTimeout(() => {
+                    const top = card.getBoundingClientRect().top + window.scrollY - navH - 12;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }, 420);
             }
         }
 
