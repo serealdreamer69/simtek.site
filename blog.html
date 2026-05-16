@@ -448,36 +448,102 @@
             }
         }
 
-        // Gestion des likes
-        function initLikes() {
-            document.querySelectorAll('.like-btn').forEach(btn => {
-                const id = btn.dataset.id;
-                const base = parseInt(btn.dataset.base) || 0;
-                const liked = localStorage.getItem('simtek-like-' + id) === '1';
-                btn.querySelector('.like-count').textContent = base + (liked ? 1 : 0);
-                if (liked) btn.classList.add('liked');
-                btn.addEventListener('click', () => {
-                    const isLiked = btn.classList.contains('liked');
-                    const count = parseInt(btn.querySelector('.like-count').textContent);
-                    if (isLiked) {
-                        localStorage.removeItem('simtek-like-' + id);
-                        btn.querySelector('.like-count').textContent = count - 1;
-                        btn.classList.remove('liked');
-                    } else {
-                        localStorage.setItem('simtek-like-' + id, '1');
-                        btn.querySelector('.like-count').textContent = count + 1;
-                        btn.classList.add('liked');
-                    }
-                });
-            });
-        }
-        document.addEventListener('DOMContentLoaded', initLikes);
+
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FIREBASE REALTIME DATABASE — Likes SimTek Blog
+         Remplace le système localStorage — compteur partagé temps réel
+         ═══════════════════════════════════════════════════════════════ -->
+    <script type="module">
+        import { initializeApp }
+            from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getDatabase, ref, get, set, onValue }
+            from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+        // ─── 🔧 REMPLACE PAR TON firebaseConfig (Console Firebase > Paramètres > Apps web) ───
+        const firebaseConfig = {
+            apiKey:            "COLLE_TON_API_KEY_ICI",
+            authDomain:        "simtek-blog.firebaseapp.com",
+            databaseURL:       "https://simtek-blog-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId:         "simtek-blog",
+            storageBucket:     "simtek-blog.appspot.com",
+            messagingSenderId: "COLLE_TON_SENDER_ID",
+            appId:             "COLLE_TON_APP_ID"
+        };
+        // ─────────────────────────────────────────────────────────────────────────────────────
+
+        const app = initializeApp(firebaseConfig);
+        const db  = getDatabase(app);
+
+        // localStorage : mémorise si CE visiteur a déjà liké (pour le toggle unlike)
+        const LS_KEY = "simtek_liked_articles";
+
+        function getLikedSet() {
+            try { return new Set(JSON.parse(localStorage.getItem(LS_KEY) || "[]")); }
+            catch { return new Set(); }
+        }
+
+        function saveLikedSet(set) {
+            localStorage.setItem(LS_KEY, JSON.stringify([...set]));
+        }
+
+        function initLikes() {
+            const likedSet = getLikedSet();
+
+            document.querySelectorAll(".like-btn").forEach(btn => {
+                const articleId = btn.dataset.id;
+                const baseCount = parseInt(btn.dataset.base, 10) || 0;
+                const countEl   = btn.querySelector(".like-count");
+                const dbRef     = ref(db, `likes/${articleId}`);
+
+                // Lecture temps réel : met à jour le compteur pour tous les visiteurs
+                onValue(dbRef, snapshot => {
+                    const stored = snapshot.val();
+                    countEl.textContent = (stored === null) ? baseCount : stored;
+                });
+
+                // État visuel initial si déjà liké par ce visiteur
+                if (likedSet.has(articleId)) {
+                    btn.classList.add("liked");
+                    btn.setAttribute("aria-pressed", "true");
+                }
+
+                // Clic : like / unlike
+                btn.addEventListener("click", async () => {
+                    const alreadyLiked = likedSet.has(articleId);
+                    const snapshot     = await get(dbRef);
+                    const currentVal   = snapshot.val() ?? baseCount;
+
+                    if (alreadyLiked) {
+                        await set(dbRef, Math.max(0, currentVal - 1));
+                        likedSet.delete(articleId);
+                        btn.classList.remove("liked");
+                        btn.setAttribute("aria-pressed", "false");
+                    } else {
+                        await set(dbRef, currentVal + 1);
+                        likedSet.add(articleId);
+                        btn.classList.add("liked");
+                        btn.setAttribute("aria-pressed", "true");
+                    }
+
+                    saveLikedSet(likedSet);
+                });
+            });
+        }
+
+        // Lance après chargement du DOM
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initLikes);
+        } else {
+            initLikes();
+        }
     </script>
 </body>
 </html>
