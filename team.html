@@ -322,9 +322,12 @@
         
         .teams-columns-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             align-items: start;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .team-column {
@@ -1226,14 +1229,7 @@
 </div>
 </div>
             </div>
-            <div class="team-column team-hyp">
-                <div class="category-banner" style="background-image: url('category-hypercar.webp');">
-                    <div class="category-banner-content">
-                        <h3> Hypercars</h3>
-                    </div>
-                </div>
 
-            </div>
         </div>
         
         <!-- Mobile Stack View -->
@@ -1548,7 +1544,6 @@
                 { selector: '.team-gt3a', name: 'GT3 Alpha', color: '#ff1a75' },
                 { selector: '.team-gt3b', name: 'GT3 Bravo', color: '#00d4ff' },
                 { selector: '.team-lmp',  name: 'LMP2/3',    color: '#ffcc00' },
-                { selector: '.team-hyp',  name: 'Hypercars',  color: '#00ff88' },
             ];
 
             section.innerHTML = '';
