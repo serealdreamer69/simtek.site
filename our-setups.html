@@ -1,1123 +1,785 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-CB6CLV56G3');
-      window.addEventListener('load', function() {
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CB6CLV56G3';
-        s.async = true;
-        document.head.appendChild(s);
-      });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez les setups complets des 16 pilotes de SimTek Performance. Configurations simracing professionnelles pour Le Mans Ultimate : bases Direct Drive, volants, pédaliers et PC gaming.">
-    <meta name="keywords" content="setup simracing, simrig, cockpit simracing, PC simracing, configuration simracing pro, Le Mans Ultimate, Simagic, Moza, Fanatec, matériel simracing france">
+    <meta name="description" content="Découvrez les setups complets des pilotes SimTek Performance : bases Direct Drive Simagic, Moza, Fanatec, PC gaming RTX 5090, 5080, 4070 Super. Configurations simracing professionnelles pour Le Mans Ultimate.">
+    <meta name="keywords" content="setup simracing, simrig direct drive, cockpit simracing, PC gaming simracing, Simagic Alpha, Moza R9, Fanatec DD Pro, RTX 5090, RTX 5080, simracing france, Le Mans Ultimate config">
     <meta name="author" content="Simtek Performance">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Nos Setups Simracing — SimTek Performance">
-    <meta property="og:description" content="Les configurations complètes des 16 pilotes SimTek Performance : bases DD, volants, pédaliers et PC gaming.">
+    <meta property="og:description" content="Les configurations complètes des pilotes SimTek Performance : bases DD, volants, pédaliers et PC gaming haut de gamme.">
     <meta property="og:image" content="https://www.simtekperformance.com/Logo_SIMTEK.png">
     <meta property="og:url" content="https://www.simtekperformance.com/our-setups.html">
     <link rel="canonical" href="https://www.simtekperformance.com/our-setups.html">
-    <title>Nos Setups Simracing — 16 Configurations | SimTek Performance</title>
+    <title>Nos Setups Simracing — Configs Pro | SimTek Performance France</title>
     <link rel="icon" type="image/png" href="Logo_SIMTEK.png">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <style>
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%); color: #ffffff; min-height: 100vh; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1a3e 100%);
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-                /* ── Navigation ── */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 26, 117, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo-img {
-            height: 80px;
-            width: auto;
-            object-fit: contain;
-        }
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+        /* ── Navigation ── */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(10, 14, 39, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 26, 117, 0.2); }
+        .logo { display: flex; align-items: center; justify-content: center; }
+        .logo-img { height: 80px; width: auto; object-fit: contain; }
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 500; text-transform: uppercase; transition: all 0.3s ease; position: relative; }
         .nav-links a:hover { color: #ff1a75; }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after { width: 100%; }
-        .cta-button {
-            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4);
-            text-decoration: none;
-            display: inline-block;
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6);
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            z-index: 1001;
-            background: none;
-            border: none;
-            padding: 0;
-        }
-        .hamburger span {
-            width: 30px;
-            height: 3px;
-            background: #ff1a75;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            display: block;
-        }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a.active { color: #ff1a75; }
+        .cta-button { background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-size: 14px; font-weight: 600; cursor: pointer; text-transform: uppercase; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 26, 117, 0.4); text-decoration: none; display: inline-block; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 26, 117, 0.6); }
+        .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; background: none; border: none; padding: 0; }
+        .hamburger span { width: 30px; height: 3px; background: #ff1a75; border-radius: 3px; transition: all 0.3s ease; display: block; }
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(9px, 9px); }
         .hamburger.active span:nth-child(2) { opacity: 0; }
         .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(9px, -9px); }
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(10, 14, 39, 0.98) 0%, rgba(26, 26, 62, 0.98) 100%);
-            backdrop-filter: blur(20px);
-            z-index: 999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(135deg, rgba(10,14,39,0.98) 0%, rgba(26,26,62,0.98) 100%); backdrop-filter: blur(20px); z-index: 999; opacity: 0; transition: opacity 0.3s ease; }
         .mobile-menu.active { display: flex; opacity: 1; }
-        .mobile-menu-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            gap: 40px;
-        }
-        .mobile-menu-links {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-        .mobile-menu-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        .mobile-menu-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
-            transition: width 0.3s ease;
-        }
-        .mobile-menu-links a:hover::after { width: 100%; }
-        .mobile-menu-links a:hover { color: #ff1a75; transform: scale(1.1); }
-        .mobile-cta {
-            background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%);
-            color: white;
-            border: none;
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-            box-shadow: 0 8px 25px rgba(255, 26, 117, 0.5);
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .mobile-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 26, 117, 0.7);
-        }
+        .mobile-menu-content { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; gap: 40px; }
+        .mobile-menu-links { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+        .mobile-menu-links a { color: #ffffff; text-decoration: none; font-size: 24px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; }
+        .mobile-menu-links a:hover { color: #ff1a75; }
+        .mobile-cta { background: linear-gradient(135deg, #ff1a75 0%, #ff5da8 100%); color: white; border: none; padding: 18px 50px; border-radius: 50px; font-size: 18px; font-weight: 700; cursor: pointer; text-transform: uppercase; box-shadow: 0 8px 25px rgba(255,26,117,0.5); text-decoration: none; display: inline-block; }
+
+        /* ── Hero ── */
+        .hero { text-align: center; padding: 100px 20px 60px; background: linear-gradient(135deg, rgba(255,26,117,0.1) 0%, rgba(0,212,255,0.1) 100%); }
+        .hero h1 { font-size: 64px; margin-bottom: 20px; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 18px; color: #b0b0d0; max-width: 700px; margin: 0 auto; }
+
+        /* ── Main container ── */
+        .setups-container { max-width: 1400px; margin: 0 auto; padding: 60px 20px 80px; }
+
+        /* ── Team section ── */
+        .team-section { margin-bottom: 70px; }
+        .team-banner { padding: 22px 30px; border-radius: 15px; margin-bottom: 28px; border: 2px solid; display: flex; align-items: center; gap: 16px; }
+        .team-banner-icon { font-size: 30px; }
+        .team-banner h2 { font-size: 24px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+        .team-banner-count { font-size: 12px; opacity: 0.55; margin-top: 2px; }
+
+        /* ── Cards grid ── */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 22px; }
+
+        /* ── Setup card ── */
+        .setup-card { background: rgba(26,26,62,0.6); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .setup-card:hover { transform: translateY(-5px); }
+
+        /* ── Card photo ── */
+        .card-photo-wrapper { width: 100%; height: 220px; position: relative; overflow: hidden; background: rgba(10,14,39,0.8); }
+        .card-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .card-photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+        .card-photo-placeholder img { height: 55px; opacity: 0.2; }
+        .card-photo-placeholder span { font-size: 11px; color: rgba(255,255,255,0.2); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* ── Card header ── */
+        .card-header { padding: 16px 18px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 12px; }
+        .card-badge { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+        .card-name { font-size: 20px; font-weight: 800; color: #ffffff; }
+
+        /* ── Specs ── */
+        .card-body { padding: 14px 18px 18px; display: flex; flex-direction: column; gap: 12px; }
+        .spec-section { background: rgba(10,14,39,0.4); border-radius: 10px; overflow: hidden; }
+        .spec-section-title { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 8px 14px 7px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .spec-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); gap: 10px; }
+        .spec-row:last-child { border-bottom: none; }
+        .spec-lbl { font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+        .spec-val { font-size: 12px; color: #ffffff; font-weight: 600; text-align: right; }
+        .spec-val.nc { color: rgba(255,255,255,0.2); font-style: italic; font-weight: 400; }
+
+        /* ── Internal links ── */
+        .internal-links { padding: 50px 60px; max-width: 1200px; margin: 0 auto; }
+        .internal-links h2 { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 20px; text-align: center; }
+        .internal-links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+        .internal-link-card { background: linear-gradient(135deg, rgba(26,26,62,0.9), rgba(10,14,39,0.9)); border: 1px solid rgba(255,26,117,0.2); border-radius: 14px; padding: 20px; text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 14px; }
+        .internal-link-card:hover { border-color: rgba(255,26,117,0.5); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,26,117,0.15); }
+        .internal-link-card .ilc-icon { font-size: 24px; }
+        .internal-link-card .ilc-text strong { display: block; font-size: 14px; font-weight: 700; color: #ff1a75; margin-bottom: 3px; }
+        .internal-link-card .ilc-text span { font-size: 12px; color: #b0b0d0; }
+
+        /* ── Footer ── */
+        footer { background: rgba(10,14,39,0.95); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,26,117,0.2); }
+        footer p { color: #b0b0d0; margin-bottom: 6px; }
+        .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 16px; flex-wrap: wrap; }
+        .social-links a { color: #b0b0d0; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .social-links a:hover { color: #ff1a75; }
+
+        /* ── Responsive ── */
         @media (max-width: 768px) {
             .hamburger { display: flex; }
             .nav-links, nav .cta-button { display: none; }
             nav { padding: 15px 20px; }
-        }
-
-        /* Hero Section */
-        .hero-setups {
-            padding: 120px 60px 80px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9) 0%, rgba(26, 26, 62, 0.9) 100%);
-        }
-
-        .hero-setups h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ff1a75 0%, #ff6b9d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-setups p {
-            font-size: 1.3rem;
-            color: #b8b8d4;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Introduction Section */
-        .intro-section {
-            padding: 60px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .intro-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-align: center;
-            color: #ff1a75;
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #d1d1e9;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        /* Setups Container */
-        .setups-container {
-            padding: 40px 60px 100px;
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .setups-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 50px;
-        }
-
-        .setup-card {
-            background: rgba(26, 26, 62, 0.6);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 26, 117, 0.2);
-        }
-
-        .setup-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 40px rgba(255, 26, 117, 0.4);
-            border-color: rgba(255, 26, 117, 0.6);
-        }
-
-        .setup-image-container {
-            width: 100%;
-            height: 500px;
-            background: rgba(10, 14, 39, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .setup-image-container img {
-            min-width: 100%;
-            min-height: 100%;
-            object-fit: cover;
-            object-position: center center;
-        }
-
-        .setup-image-placeholder {
-            color: #666;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .setup-content {
-            padding: 35px;
-        }
-
-        .setup-header {
-            margin-bottom: 25px;
-            border-bottom: 2px solid rgba(255, 26, 117, 0.3);
-            padding-bottom: 15px;
-        }
-
-        .setup-content h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #ff6b9d;
-        }
-
-        .setup-owner {
-            font-size: 1rem;
-            color: #b8b8d4;
-            font-style: italic;
-        }
-
-        .setup-sections {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .setup-section {
-            background: rgba(10, 14, 39, 0.4);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 3px solid #ff1a75;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            color: #ff6b9d;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title i {
-            font-size: 1.1rem;
-        }
-
-        .setup-specs {
-            list-style: none;
-        }
-
-        .setup-specs li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .setup-specs li:last-child {
-            border-bottom: none;
-        }
-
-        .spec-label {
-            color: #b8b8d4;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .spec-value {
-            color: #ffffff;
-            text-align: right;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(10, 14, 39, 0.95);
-            padding: 40px 60px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 26, 117, 0.2);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-text {
-            color: #b8b8d4;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #ffffff;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #ff1a75;
-            transform: translateY(-3px);
-        }
-
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .setups-grid {
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-setups {
-                padding: 80px 30px 60px;
-            }
-
-            .hero-setups h1 {
-                font-size: 2.5rem;
-            }
-
-            .intro-section,
-            .setups-container {
-                padding: 60px 30px;
-            }
-
-            .setups-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .setup-image-container {
-                height: 400px;
-            }
-        }
-    
-        /* Liens internes — section SEO */
-        .internal-links {
-            padding: 50px 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .internal-links h2 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .internal-links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-        .internal-link-card {
-            background: linear-gradient(135deg, rgba(26,26,62,0.9), rgba(10,14,39,0.9));
-            border: 1px solid rgba(255,26,117,0.2);
-            border-radius: 14px;
-            padding: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .internal-link-card:hover {
-            border-color: rgba(255,26,117,0.5);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,26,117,0.15);
-        }
-        .internal-link-card .ilc-icon { font-size: 24px; }
-        .internal-link-card .ilc-text strong {
-            display: block;
-            font-size: 14px;
-            font-weight: 700;
-            color: #ff1a75;
-            margin-bottom: 3px;
-        }
-        .internal-link-card .ilc-text span {
-            font-size: 12px;
-            color: #b0b0d0;
-        }
-        @media (max-width: 768px) {
+            .hero h1 { font-size: 40px; }
+            .hero { padding: 80px 20px 40px; }
+            .cards-grid { grid-template-columns: 1fr; }
             .internal-links { padding: 30px 16px; }
             .internal-links-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-        }
-
-    
-        /* À venir */
-        .coming-soon {
-            color: #666;
-            font-style: italic;
-            font-size: 14px;
-            padding: 8px 0;
-        }
-        .pc-coming h4 {
-            opacity: 0.5;
+            .team-banner { padding: 16px 20px; }
+            .team-banner h2 { font-size: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-        <nav>
-        <div class="logo">
-            <img src="Logo_SIMTEK.webp" alt="Simtek Performance Logo" class="logo-img" width="160" height="80">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="index.html#planning">Planning</a></li>
-            <li><a href="team.html">Notre Équipe</a></li>
-            <li><a href="blog.html">Actualités</a></li>
-            <li><a href="sponsors-details.html">Nos Sponsors</a></li>
-            <li><a href="our-setups.html" style="color:#ff1a75;font-weight:700;">Nos Setups</a></li>
-            <li><a href="become-partner.html">Devenir Partenaire</a></li>
-            <li><a href="rejoins-nous.html">Rejoins Nous</a></li>
-        </ul>
-        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Nous Contacter</a>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+<nav>
+    <div class="logo">
+        <img src="Logo_SIMTEK.webp" alt="Simtek Performance Logo" class="logo-img" width="160" height="80">
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#planning">Planning LMU</a></li>
+        <li><a href="team.html">Notre Équipe</a></li>
+        <li><a href="blog.html">Actualités</a></li>
+        <li><a href="our-setups.html" class="active">Nos Setups</a></li>
+        <li><a href="sponsors-details.html">Nos Sponsors</a></li>
+        <li><a href="become-partner.html">Devenir Partenaire</a></li>
+        <li><a href="pilot-recruitment.html">Rejoins Nous</a></li>
+    </ul>
+    <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Nous Contacter</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu de navigation">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-content">
-            <div class="mobile-menu-links">
-                <a href="index.html" class="mobile-link">Accueil</a>
-                <a href="index.html#planning" class="mobile-link">Planning</a>
-                <a href="team.html" class="mobile-link">Notre Équipe</a>
-                <a href="blog.html" class="mobile-link">Actualités</a>
-                <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
-                <a href="our-setups.html" class="mobile-link" style="color:#ff1a75;">Nos Setups</a>
-                <a href="rejoins-nous.html" class="mobile-link">Rejoins Nous</a>
-                <a href="become-partner.html" class="mobile-link">Devenir Partenaire</a>
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-link">Accueil</a>
+            <a href="index.html#planning" class="mobile-link">Planning LMU</a>
+            <a href="team.html" class="mobile-link">Notre Équipe</a>
+            <a href="blog.html" class="mobile-link">Actualités</a>
+            <a href="our-setups.html" class="mobile-link" style="color:#ff1a75;">Nos Setups</a>
+            <a href="sponsors-details.html" class="mobile-link">Nos Sponsors</a>
+            <a href="pilot-recruitment.html" class="mobile-link">Rejoins Nous</a>
+            <a href="become-partner.html" class="mobile-link">Devenir Partenaire</a>
+        </div>
+        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Nous Contacter</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>Nos Setups Simracing</h1>
+    <p>Les configurations complètes de nos pilotes — matériel simracing &amp; PC gaming</p>
+</section>
+
+<div class="setups-container">
+
+    <!-- ══ DIRECTION ══ -->
+    <div class="team-section">
+        <div class="team-banner" style="border-color:rgba(255,26,117,0.4);background:rgba(255,26,117,0.07);">
+            <span class="team-banner-icon">🏆</span>
+            <div>
+                <h2 style="color:#ff1a75;">Direction</h2>
+                <div class="team-banner-count">Propriétaire &amp; Team Principal</div>
             </div>
-            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Nous Contacter</a>
+        </div>
+        <div class="cards-grid">
+
+            <!-- Guillaume -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.25);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-guillaume.webp" alt="Setup simracing Guillaume — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                </div>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Propriétaire</span>
+                    <div class="card-name">Guillaume</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Simagic Alpha 15Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Simagic FxPro</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Titane sur-mesure</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Heusinkveld Ultimate+</span></div>
+                    </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Ryzen 7 5800X</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">Double RTX 4070 Super</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">Aorus X570 Elite WiFi</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Corsair RM1000</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">64Go Corsair Vengeance</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">3x 27" 2.5K 144Hz + 3x Asus 27" 4K</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Christophe.A -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.25);">
+                <div class="card-photo-wrapper">
+                    <div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                </div>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Team Principal</span>
+                    <div class="card-name">Christophe.A</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Moza R9</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Roue KS</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">PlaySeat Challenge</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Moza SRP</span></div>
+                    </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-setups">
-        <h1>🏎️ Nos Setups Simracing</h1>
-        <p>Découvrez les configurations complètes de notre équipe pour dominer sur Le Mans Ultimate, iRacing et Assetto Corsa Competizione</p>
-    </section>
-
-    <!-- Introduction -->
-    <section class="intro-section">
-        <h2>Le Matériel qui Fait la Différence</h2>
-        <p class="intro-text">
-            Chez SimTek Performance, nous croyons que l'excellence en simracing commence par un équipement de qualité. 
-            Nos pilotes utilisent des configurations optimisées pour offrir le meilleur compromis entre performance, immersion et précision.
-        </p>
-    </section>
-
-    <!-- Setups Grid -->
-    
-
-    <!-- Section Setups -->
-    <section class="setups-container">
-        <div class="intro-section">
-            <h2>Les configurations de nos 15 pilotes</h2>
+    <!-- ══ GT3 ALPHA ══ -->
+    <div class="team-section">
+        <div class="team-banner" style="border-color:rgba(255,26,117,0.5);background:rgba(255,26,117,0.08);">
+            <span class="team-banner-icon">🔴</span>
+            <div>
+                <h2 style="color:#ff1a75;">GT3 Alpha</h2>
+                <div class="team-banner-count">6 pilotes</div>
+            </div>
         </div>
-        <div class="setups-grid">
+        <div class="cards-grid">
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-guillaume">Setup Guillaume</h3>
-                    <p class="setup-owner">Configuration Équilibrée — Proto / GT</p>
+            <!-- Romuald.D -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.2);">
+                <div class="card-photo-wrapper">
+                    <div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-guillaume.jpg" alt="Setup simracing Guillaume — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Titane sur-mesure</li>
-                            <li><strong>Base :</strong> Simagic Alpha 15Nm</li>
-                            <li><strong>Volant :</strong> Simagic FxPro</li>
-                            <li><strong>Pédalier :</strong> Heusinkveld Ultimate+</li>
-                            <li><strong>Siège :</strong> Siège Racing Intégré</li>
-                            <li><strong>Écrans :</strong> Triple écrans 27" 2.5k 144Hz</li>
-                            <li><strong>Shifter :</strong> HomeMade</li>
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Chef d'équipe</span>
+                    <div class="card-name">Romuald.D</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Moza R9</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Moza GS V2</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Alu sur-mesure</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">TLC-M</span></div>
                     </div>
-                    <div class="setup-section">
-                        <h4>💻 Configuration PC</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Processeur :</strong> Ryzen 7 5800x3D</li>
-                            <li><strong>Carte Graphique :</strong> Double RTX 4070TS 24Go</li>
-                            <li><strong>RAM :</strong> 64GB DDR4 3600MHz</li>
-                            <li><strong>Stockage :</strong> Samsung 980Pro 2TB NVMe Gen4</li>
-                            <li><strong>Alimentation :</strong> Corsair RM1000 1000W Gold+</li>
-                        </ul>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-christophe-a">Setup Christophe.A</h3>
-                    <p class="setup-owner">Configuration Accessible — GT</p>
+            <!-- Thibault.C -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-GT3A-1.webp" alt="Setup simracing Thibault.C — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-christophe-a.jpg" alt="Setup simracing Christophe.A — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> PlaySeat Challenge</li>
-<li><strong>Base :</strong> Moza R9</li>
-<li><strong>Volant :</strong> Roue KS</li>
-<li><strong>Pédalier :</strong> Moza SRP</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote</span>
+                    <div class="card-name">Thibault.C</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Moza R12</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Moza KS</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">TrackRacer</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Moza CRP-2</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-romuald">Setup Romuald.D</h3>
-                    <p class="setup-owner">Configuration Équilibrée — GT</p>
+            <!-- Maxime -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-GT3A-3.webp" alt="Setup simracing Maxime — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-romuald.jpg" alt="Setup simracing Romuald.D — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Alu sur-mesure</li>
-<li><strong>Base :</strong> Moza R9</li>
-<li><strong>Volant :</strong> Moza Gs V2</li>
-<li><strong>Pédalier :</strong> TLC-M</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote</span>
+                    <div class="card-name">Maxime</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Fanatec DD Pro</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Fanatec Formula V2.5 X</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Oplite SR8</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Asetek Forte</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-thibault">Setup Thibault.C</h3>
-                    <p class="setup-owner">Configuration Équilibrée — GT</p>
+            <!-- Christophe.A pilote -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.2);">
+                <div class="card-photo-wrapper">
+                    <div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-thibault.jpg" alt="Setup simracing Thibault.C — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> TrackRacer</li>
-<li><strong>Base :</strong> Moza R12</li>
-<li><strong>Volant :</strong> Moza Ks</li>
-<li><strong>Pédalier :</strong> Moza CRP-2</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote</span>
+                    <div class="card-name">Christophe.A</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Moza R9</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Roue KS</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">PlaySeat Challenge</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Moza SRP</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-maxime">Setup Maxime</h3>
-                    <p class="setup-owner">Configuration Équilibrée — Proto / GT</p>
+            <!-- Clement -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-GT3B-clement.webp" alt="Setup simracing Clement — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-maxime.jpg" alt="Setup simracing Maxime — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Oplite SR8</li>
-<li><strong>Base :</strong> Fanatec DD Pro</li>
-<li><strong>Volant :</strong> Fanatec Formula V2.5 X</li>
-<li><strong>Pédalier :</strong> Asetek Forte</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote</span>
+                    <div class="card-name">Clement</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Simagic Alpha Ultimate</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Asetek Forte Formula Pro</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Profilé Alu</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Heusinkveld Sprint</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-clement">Setup Clement</h3>
-                    <p class="setup-owner">Configuration Haute Performance — Proto</p>
+            <!-- Hugo.R -->
+            <div class="setup-card" style="border-color:rgba(255,26,117,0.2);">
+                <div class="card-photo-wrapper">
+                    <div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-clement.jpg" alt="Setup simracing Clement — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Profilé Alu</li>
-<li><strong>Base :</strong> Simagic Alpha Ultimate</li>
-<li><strong>Volant :</strong> Asetek Forte Formula Pro</li>
-<li><strong>Pédalier :</strong> Heusinkveld Sprint</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote</span>
+                    <div class="card-name">Hugo.R</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Fanatec CSL DD 8Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Fanatec McLaren GT3 V2</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Oplite S3</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Fanatec CSL</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Ryzen 7 5800X</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">AMD Radeon RX 6800 16Go</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">MSI B450 Tomahawk</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Corsair RM850</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">32Go Corsair Vengeance</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">2x 24" 2.5K 120Hz</span></div>
+                    </div>
                 </div>
             </div>
+
         </div>
+    </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-hugo-r">Setup Hugo.R</h3>
-                    <p class="setup-owner">Configuration Simple mais Efficace</p>
-                </div>
-                <img src="setup-hugo-r.jpg" alt="Setup simracing Hugo.R — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Oplite S3</li>
-<li><strong>Base :</strong> Fanatec CSL DD 8Nm</li>
-<li><strong>Volant :</strong> Fanatec McLaren GT3 V2</li>
-<li><strong>Pédalier :</strong> Fanatec CSL</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> 2 écrans 27" 120Hz</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
-                    </div>
-                    
-        <div class="setup-section">
-            <h4>💻 Configuration PC</h4>
-            <ul class="setup-specs">
-                <li><strong>Processeur :</strong> AMD Ryzen 7 5800x</li>
-<li><strong>Carte Graphique :</strong> AMD RADEON RX6800 12GB</li>
-<li><strong>RAM :</strong> 32Go DDR4 3600MHz</li>
-<li><strong>Stockage :</strong> Crucial 2To NVMe Gen3</li>
-<li><strong>Alimentation :</strong> Corsair 850W 80+ Gold</li>
-
-            </ul>
-        </div>
-                </div>
+    <!-- ══ GT3 BRAVO ══ -->
+    <div class="team-section">
+        <div class="team-banner" style="border-color:rgba(0,212,255,0.5);background:rgba(0,212,255,0.07);">
+            <span class="team-banner-icon">🔵</span>
+            <div>
+                <h2 style="color:#00d4ff;">GT3 Bravo</h2>
+                <div class="team-banner-count">6 pilotes</div>
             </div>
         </div>
+        <div class="cards-grid">
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-hugo-s">Setup Hugo.S</h3>
-                    <p class="setup-owner">Configuration Simple mais Efficace</p>
+            <!-- Anthony.M -->
+            <div class="setup-card" style="border-color:rgba(0,212,255,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-anthony-m.webp" alt="Setup simracing Anthony.M — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-hugo-s.jpg" alt="Setup simracing Hugo.S — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Oplite Wheel Stand GT Pro</li>
-<li><strong>Base :</strong> Fanatec CSL DD 5Nm</li>
-<li><strong>Volant :</strong> Fanatec Formula V2.5</li>
-<li><strong>Pédalier :</strong> CSL Pedals Load Cell</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Chef d'équipe</span>
+                    <div class="card-name">Anthony.M</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Asetek Invicta 27Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Simagic GT Néo</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Rseat P1</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Asetek Invicta</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Intel 13900KF</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">RTX 5090</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">Asus ROG Maximus Z790 Hero</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">NZXT 1500W</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">62Go Corsair Platinium DDR5</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Sony Bravia XR 65" OLED</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-anthony-m">Setup Anthony.M</h3>
-                    <p class="setup-owner">Configuration Haute Performance — GT</p>
+            <!-- Anthony.D -->
+            <div class="setup-card" style="border-color:rgba(0,212,255,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-anthony-d.webp" alt="Setup simracing Anthony.D — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-anthony-m.jpg" alt="Setup simracing Anthony.M — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Rseat P1</li>
-<li><strong>Base :</strong> Asetek Invicta 27Nm</li>
-<li><strong>Volant :</strong> Simagic GT Néo</li>
-<li><strong>Pédalier :</strong> Asetek Invicta</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Pilote</span>
+                    <div class="card-name">Anthony.D</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Fanatec CSL DD 5Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">McLaren GT3 V2</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Oplite Infinity S8</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Fanatec CSL</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Intel Core i5 14600K</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">Nvidia RTX 5070 12Go</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">MAG A750GL 750W 80+ Gold</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">DDR5 32Go</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Kooruii 34"</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-anthony-d">Setup Anthony.D</h3>
-                    <p class="setup-owner">Configuration Compacte Performance</p>
+            <!-- Hugo.S -->
+            <div class="setup-card" style="border-color:rgba(0,212,255,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-hugo.webp" alt="Setup simracing Hugo.S — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-anthony-d.jpg" alt="Setup simracing Anthony.D — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> OPLITE GTR Infinity S8</li>
-<li><strong>Base :</strong> Fanatec CSL DD 5Nm</li>
-<li><strong>Volant :</strong> Fanatec McLaren GT3 V2</li>
-<li><strong>Pédalier :</strong> Fanatec CSL Pedals</li>
-<li><strong>Siège :</strong> Siège OPLITE</li>
-<li><strong>Écrans :</strong> Kooruii 34"</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Pilote / Ing. Technique</span>
+                    <div class="card-name">Hugo.S</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Fanatec CSL DD 5Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Fanatec Formula V2.5</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Oplite Wheel Stand GT Pro</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">CSL Pedals Load Cell</span></div>
                     </div>
-                    
-        <div class="setup-section">
-            <h4>💻 Configuration PC</h4>
-            <ul class="setup-specs">
-                <li><strong>Processeur :</strong> Intel Core i5 14600k</li>
-<li><strong>Carte Graphique :</strong> NVIDIA RTX 5070 12GB</li>
-<li><strong>RAM :</strong> DDR5 32GB 3600MHz</li>
-<li><strong>Stockage :</strong> Spatium M450 1To Gen4</li>
-<li><strong>Alimentation :</strong> MAG A750GL 750W Gold</li>
-
-            </ul>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Ryzen 7 5800X</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">Sapphire RX 6800 XT NITRO+</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">Gigabyte B550 Aorus Elite AX V2</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Cooler Master MWE 750W Bronze</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">32Go Corsair Dominator Platinum 3600MHz</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Acer</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-maceo">Setup Maceo.R</h3>
-                    <p class="setup-owner">Configuration Accessible — Proto / GT</p>
+            <!-- Maceo.R -->
+            <div class="setup-card" style="border-color:rgba(0,212,255,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-GT3B-2.webp" alt="Setup simracing Maceo.R — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-maceo.jpg" alt="Setup simracing Maceo.R — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Oplite S3</li>
-<li><strong>Base :</strong> Moza R5</li>
-<li><strong>Volant :</strong> Moza Ks</li>
-<li><strong>Pédalier :</strong> Sr8</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Pilote</span>
+                    <div class="card-name">Maceo.R</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Moza R5</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Moza KS</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Oplite S3</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">SR8</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">AMD Ryzen 5 7500F</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">AMD Radeon RX 9060 XT 8Go</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">MSI Pro B840M-B DDR5</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Xigmatek Thor T750 V2 80+ Bronze</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">16Go DDR5 Corsair</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Samsung Odyssey G5 34"</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-enzo">Setup Enzo</h3>
-                    <p class="setup-owner">Configuration Entry Level</p>
+            <!-- Enzo -->
+            <div class="setup-card" style="border-color:rgba(0,212,255,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-enzo.webp" alt="Setup simracing Enzo — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-enzo.jpg" alt="Setup simracing Enzo — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Next Level Racing F-GT Lite</li>
-<li><strong>Base :</strong> TGT2 Origine</li>
-<li><strong>Volant :</strong> TGT2 Origine</li>
-<li><strong>Pédalier :</strong> Origine</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Pilote</span>
+                    <div class="card-name">Enzo</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">TGT2 Origine</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">TGT2 Origine</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Next Level Racing F-GT Lite</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Origine</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">AMD 7800X3D</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">Nvidia RTX 5080</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">MSI B850 Gaming Plus</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Corsair RM1000e 80+ Gold</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">34Go Kingston Fury DDR5</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Samsung</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-cyrille">Setup Cyrille</h3>
-                    <p class="setup-owner">Configuration Équilibrée — GT</p>
+            <!-- Cyrille -->
+            <div class="setup-card" style="border-color:rgba(0,212,255,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-cyrille.webp" alt="Setup simracing Cyrille — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-cyrille.jpg" alt="Setup simracing Cyrille — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> Châssis Alu sur-mesure</li>
-<li><strong>Base :</strong> Fanatec CSL DD 8Nm</li>
-<li><strong>Volant :</strong> BMW GT2</li>
-<li><strong>Pédalier :</strong> Fanatec CSL LoadCell</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Pilote</span>
+                    <div class="card-name">Cyrille</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Fanatec CSL DD 8Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">BMW GT2</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Châssis Alu sur-mesure</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Fanatec CSL LoadCell</span></div>
                     </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#00d4ff;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">AMD Ryzen 7 770X</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">RX 7600 XFX 8Go</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">MSI B650 Gaming Plus WiFi</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Be Quiet 750W Gold</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">64Go Corsair DDR5 6000MHz CL30</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Samsung Odyssey G4 27"</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-florent">Setup Florent.L</h3>
-                    <p class="setup-owner">Configuration Équilibrée — GT</p>
-                </div>
-                <img src="setup-florent.jpg" alt="Setup simracing Florent.L — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> ClubSport V2</li>
-<li><strong>Base :</strong> Fanatec CSL DD 8Nm</li>
-<li><strong>Volant :</strong> GT DD PRO</li>
-<li><strong>Pédalier :</strong> SimXPro R80</li>
-<li><strong>Siège :</strong> —</li>
-<li><strong>Écrans :</strong> —</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
-                    </div>
-                    
-        <div class="setup-section pc-coming">
-            <h4>💻 Configuration PC</h4>
-            <p class="coming-soon">À venir</p>
         </div>
-                </div>
+    </div>
+
+    <!-- ══ LMP2/3 ══ -->
+    <div class="team-section">
+        <div class="team-banner" style="border-color:rgba(255,204,0,0.5);background:rgba(255,204,0,0.07);">
+            <span class="team-banner-icon">🟡</span>
+            <div>
+                <h2 style="color:#ffcc00;">LMP2 / LMP3</h2>
+                <div class="team-banner-count">3 pilotes</div>
             </div>
         </div>
+        <div class="cards-grid">
 
-        <div class="setup-card">
-            <div class="setup-content">
-                <div class="setup-header">
-                    <h3 id="setup-denis">Setup Denis</h3>
-                    <p class="setup-owner">Configuration VR Immersive — LMP2 Specialist</p>
+            <!-- Guillaume.w -->
+            <div class="setup-card" style="border-color:rgba(255,204,0,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-guillaume.webp" alt="Setup simracing Guillaume.w — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 </div>
-                <img src="setup-denis.jpg" alt="Setup simracing Denis — SimTek Performance" style="width:100%;border-radius:12px;margin:14px 0 0;display:block;object-fit:cover;max-height:220px;">
-                <div class="setup-sections">
-                    <div class="setup-section">
-                        <h4>🖥️ Simrig & Périphériques</h4>
-                        <ul class="setup-specs">
-                            <li><strong>Châssis :</strong> SimLab P1-X + Motion Platform</li>
-<li><strong>Base :</strong> Asetek Invicta 27Nm</li>
-<li><strong>Volant :</strong> —</li>
-<li><strong>Pédalier :</strong> Simtag Hydraulic Pro</li>
-<li><strong>Siège :</strong> Sparco Pro ADV QRT</li>
-<li><strong>Écrans :</strong> Meta Quest 3 512GB (VR)</li>
-<li><strong>Shifter :</strong> —</li>
-
-                        </ul>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,204,0,0.15);color:#ffcc00;border:1px solid rgba(255,204,0,0.35)">Chef d'équipe</span>
+                    <div class="card-name">Guillaume.w</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ffcc00;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Simagic Alpha 15Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Simagic FxPro</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Titane sur-mesure</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Heusinkveld Ultimate+</span></div>
                     </div>
-                    
-        <div class="setup-section">
-            <h4>💻 Configuration PC</h4>
-            <ul class="setup-specs">
-                <li><strong>Processeur :</strong> AMD Ryzen 9 7900X</li>
-<li><strong>Carte Graphique :</strong> NVIDIA RTX 4080 16GB</li>
-<li><strong>RAM :</strong> 32GB DDR5 6000MHz</li>
-<li><strong>Stockage :</strong> 2TB NVMe Gen4</li>
-<li><strong>Alimentation :</strong> Corsair 1000W 80+ Platinum</li>
-
-            </ul>
-        </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ffcc00;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Ryzen 7 5800X</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">Double RTX 4070 Super</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">Aorus X570 Elite WiFi</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Corsair RM1000</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">64Go Corsair Vengeance</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">3x 27" 2.5K 144Hz + 3x Asus 27" 4K</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <!-- Florent.L -->
+            <div class="setup-card" style="border-color:rgba(255,204,0,0.2);">
+                <div class="card-photo-wrapper">
+                    <img class="card-photo" src="setup-florent-l.webp" alt="Setup simracing Florent.L — SimTek Performance" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                    <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                </div>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,204,0,0.15);color:#ffcc00;border:1px solid rgba(255,204,0,0.35)">Pilote</span>
+                    <div class="card-name">Florent.L</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ffcc00;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Fanatec GT DD PRO 8Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Fanatec GT Sport</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">ClubSport V2</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">V3 ClubSport</span></div>
+                    </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ffcc00;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">AMD Ryzen 7 9800X3D</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">AMD Radeon RX 9070 XT</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">32Go</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Samsung G9x 3840x1080 144Hz</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Denis -->
+            <div class="setup-card" style="border-color:rgba(255,204,0,0.2);">
+                <div class="card-photo-wrapper">
+                    <div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                </div>
+                <div class="card-header">
+                    <span class="card-badge" style="background:rgba(255,204,0,0.15);color:#ffcc00;border:1px solid rgba(255,204,0,0.35)">Pilote</span>
+                    <div class="card-name">Denis</div>
+                </div>
+                <div class="card-body">
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ffcc00;">🎮 Sim Racing</div>
+                        <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Fanatec CSL DD 5Nm</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Fanatec McLaren GT3 V2</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Oplite GTR S8</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Fanatec V2.5</span></div>
+                    </div>
+                    <div class="spec-section">
+                        <div class="spec-section-title" style="color:#ffcc00;">🖥️ PC</div>
+                        <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                        <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    </div>
+                </div>
+            </div>
 
         </div>
-    </section>
+    </div>
 
-    <section class="internal-links">
-        
-        <h2>Découvrir SimTek Performance</h2>
-        <div class="internal-links-grid">
-            <a href="team.html" class="internal-link-card">
-                <span class="ilc-icon">👥</span>
-                <div class="ilc-text">
-                    <strong>Notre équipe</strong>
-                    <span>Pilotes & staff</span>
-                </div>
-            </a>
-            <a href="rejoins-nous.html" class="internal-link-card">
-                <span class="ilc-icon">🏁</span>
-                <div class="ilc-text">
-                    <strong>Rejoindre l'équipe</strong>
-                    <span>Recrutement ouvert</span>
-                </div>
-            </a>
-            <a href="blog.html" class="internal-link-card">
-                <span class="ilc-icon">📰</span>
-                <div class="ilc-text">
-                    <strong>Nos actualités</strong>
-                    <span>Résultats de courses</span>
-                </div>
-            </a>
-            <a href="index.html" class="internal-link-card">
-                <span class="ilc-icon">📅</span>
-                <div class="ilc-text">
-                    <strong>Planning</strong>
-                    <span>Calendrier des courses</span>
-                </div>
-            </a>
-        </div>
-    
-    </section>
+</div>
 
-    <footer>
-        <p>&copy; 2026 Simtek Performance - Tous droits réservés</p>
-        <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
-        <div class="social-links">
-            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank"><i class="fab fa-discord"></i> Discord</a>
-            <a href="https://www.twitch.tv/simtekperformance" target="_blank"><i class="fab fa-twitch"></i> Twitch</a>
-            <a href="https://www.instagram.com/simtek_performance" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        </div>
-    </footer>
+<!-- Internal links SEO -->
+<section class="internal-links">
+    <h2>Découvrir SimTek Performance</h2>
+    <div class="internal-links-grid">
+        <a href="team.html" class="internal-link-card">
+            <span class="ilc-icon">👥</span>
+            <div class="ilc-text"><strong>Notre Équipe</strong><span>Pilotes & staff</span></div>
+        </a>
+        <a href="blog.html" class="internal-link-card">
+            <span class="ilc-icon">📰</span>
+            <div class="ilc-text"><strong>Nos Actualités</strong><span>Résultats & analyses</span></div>
+        </a>
+        <a href="pilot-recruitment.html" class="internal-link-card">
+            <span class="ilc-icon">🏁</span>
+            <div class="ilc-text"><strong>Rejoindre l'équipe</strong><span>Recrutement ouvert</span></div>
+        </a>
+        <a href="sponsors-details.html" class="internal-link-card">
+            <span class="ilc-icon">🤝</span>
+            <div class="ilc-text"><strong>Nos Sponsors</strong><span>Partenaires SimTek</span></div>
+        </a>
+    </div>
+</section>
 
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
+<footer>
+    <p>&copy; 2026 Simtek Performance — Tous droits réservés</p>
+    <p>Excellence en SimRacing | Compétition Virtuelle de Haut Niveau</p>
+    <div class="social-links">
+        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank">Discord</a>
+        <a href="https://www.twitch.tv/simtekperformance" target="_blank">Twitch</a>
+        <a href="https://www.instagram.com/simtek_performance" target="_blank">Instagram</a>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
         });
-        document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>
