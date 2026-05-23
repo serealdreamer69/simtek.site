@@ -1085,6 +1085,28 @@
 </div>
 </div>
 </div>
+<!-- 5. Clement — S1 / P1 -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-clement.webp');">
+<img class="person-photo-circle" src="pilot-GT3B-clement.webp" width="200" height="200"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Clement</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p1">P1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simagic Alpha Ultimate</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Asetek Forte Formula Pro</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Profilé Alu</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Heusinkveld Sprint</span></div>
+</div>
+</div>
+</div>
 <!-- 6. Hugo.R — S1 / P2 -->
 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('car-chef-lmp.webp');">
@@ -1527,6 +1549,7 @@
             'Maceo.R':      { birthday: '14/06/2007', simstart: '2025', platform: 'Le Mans Ultimate', circuit: 'Kyalami', car: 'Lancia 037', cpu: 'AMD Ryzen 5 7500F', gpu: 'AMD Radeon RX 9060 XT 8Go', motherboard: 'MSI Pro B840M-B DDR5', psu: 'Xigmatek Thor T750 V2 80+ Bronze', ram: '16Go DDR5 Corsair', screen: 'Samsung Odyssey G5 34"', photos: [] },
             'Anthony.D':    { birthday: '03/12/1993', simstart: '30 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans Bugatti', car: 'BMW M3 Compétition', cpu: 'Intel Core i5 14600K', gpu: 'Nvidia RTX 5070 12Go', motherboard: 'À remplir', psu: 'MAG A750GL 750W 80+ Gold', ram: 'DDR5 32Go', screen: 'Kooruii 34"', photos: ['setup-anthony-d.webp'] },
             'Maxime':       { birthday: '30/12/1991', simstart: 'mi 2023', platform: 'Le Mans Ultimate', circuit: 'Magny-Cours', car: 'Mercedes C63 AMG', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir', photos: [] },
+            'Clement':      { birthday: '21/12/1988', simstart: '35 ans', platform: 'Le Mans Ultimate', circuit: 'La Sarthe', car: 'Porsche 922 Cup', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir', photos: [] },
             'Florent.L':    { birthday: '28/05/1993', simstart: '8 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans', car: 'Aston Martin Vantage', cpu: 'AMD Ryzen 7 9800X3D', gpu: 'AMD Radeon RX 9070 XT', motherboard: 'À remplir', psu: 'À remplir', ram: '32Go', screen: 'Samsung G9x 3840x1080 144Hz', photos: ['setup-florent-l.webp'] },
             'Cyrille':      { birthday: '27/03/1985', simstart: '39 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Nissan Skyline R34', cpu: 'AMD Ryzen 7 770X', gpu: 'RX 7600 XFX 8Go', motherboard: 'MSI B650 Gaming Plus WiFi', psu: 'Be Quiet 750W Gold', ram: '64Go Corsair DDR5 6000MHz CL30', screen: 'Samsung Odyssey G4 27"', photos: ['setup-cyrille.webp'] },
             'Enzo':         { birthday: '26/12/2003', simstart: '20 ans', platform: 'Le Mans Ultimate', circuit: 'Nürburgring Nordschleife', car: 'Porsche 992 GT3 RS', cpu: 'AMD 7800X3D', gpu: 'Nvidia RTX 5080', motherboard: 'MSI B850 Gaming Plus', psu: 'Corsair RM1000e 80+ Gold', ram: '34Go Kingston Fury DDR5', screen: 'Samsung', photos: ['setup-enzo.webp'] },
@@ -1611,9 +1634,7 @@
                 </div>
 
                 ${hasSetup ? `
-                <img src="${setupSrc}" class="pilot-popup-setup-photo" alt="Setup de ${name}"
-                    onclick="openLightbox(${JSON.stringify(data.photos && data.photos.length ? data.photos : [setupSrc])}, 0)"
-                    onerror="this.style.display='none'">
+                <img src="${setupSrc}" class="pilot-popup-setup-photo" id="lightboxTriggerImg" alt="Setup de ${name}" onerror="this.style.display='none'">
                 ` : ''}
 
                 <div class="pilot-popup-spacer"></div>
@@ -1678,6 +1699,13 @@
             overlay.classList.add('active');
             document.getElementById('pilotPopup').scrollTop = 0;
             document.body.style.overflow = 'hidden';
+
+            // Attache le clic lightbox sur la photo setup
+            const triggerImg = document.getElementById('lightboxTriggerImg');
+            if (triggerImg) {
+                const photos = (data.photos && data.photos.length) ? data.photos : (hasSetup ? [setupSrc] : []);
+                triggerImg.addEventListener('click', () => openLightbox(photos, 0));
+            }
         }
 
         function closePilotPopup() {
