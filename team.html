@@ -985,28 +985,6 @@
 </div>
 </div>
 </div>
-<!-- 5. Clement — S1 / P1 -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3B-clement.webp');">
-<img class="person-photo-circle" src="pilot-GT3B-clement.webp" width="200" height="200"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Clement</h3>
-<div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
-<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p1">P1</span></span>
-</div>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simagic Alpha Ultimate</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Asetek Forte Formula Pro</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Profilé Alu </span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Heusinkveld Sprint</span></div>
-</div>
-</div>
-</div>
 <!-- 6. Hugo.R — S1 / P2 -->
 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('car-chef-lmp.webp');">
@@ -1221,10 +1199,10 @@
 </div>
 <div class="person-info-details">
 <div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">GT DD PRO</span></div>
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec GT DD PRO 8Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec GT Sport</span></div>
 <div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">ClubSport V2</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">SimXPro R80</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">V3 ClubSport</span></div>
 </div>
 </div>
 </div>
@@ -1423,29 +1401,24 @@
         // ── Données pilotes & chefs d'équipe ──
         const pilotData = {
             // Direction
-            'Guillaume':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'Le Mans Ultimate', circuit: 'À remplir', car: 'À remplir', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'Triple 27"' },
+            'Guillaume':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'Le Mans Ultimate', circuit: 'À remplir', car: 'À remplir', cpu: 'Ryzen 7 5800X', gpu: 'Double RTX 4070 Super', motherboard: 'Aorus X570 Elite WiFi', psu: 'Corsair RM1000', ram: '64Go Corsair Vengeance', screen: '3x 27" 2.5K 144Hz + 3x Asus 27" 4K' },
             'Christophe.A': { birthday: '23/12/1991', simstart: '25 ans', platform: 'Le Mans Ultimate', circuit: 'Nordschleife', car: 'Ferrari F40', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
             // Chefs d'équipe
             'Romuald.D':    { birthday: '18/10/1979', simstart: '44 ans', platform: 'Le Mans Ultimate', circuit: 'Nürburgring Nordschleife', car: 'Porsche GT3 RS 992.2', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Anthony.M':    { birthday: '09/04/1993', simstart: '32 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'BMW E46', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Guillaume.w':  { birthday: '19/01/1988', simstart: '32 ans', platform: 'Le Mans Ultimate', circuit: 'Spa-Francorchamps', car: 'Ferrari 333SP', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
+            'Anthony.M':    { birthday: '09/04/1993', simstart: '32 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'BMW E46', cpu: 'Intel 13900KF', gpu: 'RTX 5090', motherboard: 'Asus ROG Maximus Z790 Hero', psu: 'NZXT 1500W', ram: '62Go Corsair Platinium DDR5', screen: 'Sony Bravia XR 65" OLED' },
+            'Guillaume.w':  { birthday: '19/01/1988', simstart: '32 ans', platform: 'Le Mans Ultimate', circuit: 'Spa-Francorchamps', car: 'Ferrari 333SP', cpu: 'Ryzen 7 5800X', gpu: 'Double RTX 4070 Super', motherboard: 'Aorus X570 Elite WiFi', psu: 'Corsair RM1000', ram: '64Go Corsair Vengeance', screen: '3x 27" 2.5K 144Hz + 3x Asus 27" 4K' },
             // Pilote GT3 Bravo & Ingénieur Technique
-            'Hugo.S':       { birthday: '11/05/2006', simstart: '15 ans', platform: 'Le Mans Ultimate', circuit: 'Nürburgring Nordschleife', car: 'Lexus LFA', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
+            'Hugo.S':       { birthday: '11/05/2006', simstart: '15 ans', platform: 'Le Mans Ultimate', circuit: 'Nürburgring Nordschleife', car: 'Lexus LFA', cpu: 'Ryzen 7 5800X', gpu: 'Sapphire RX 6800 XT NITRO+', motherboard: 'Gigabyte B550 Aorus Elite AX V2', psu: 'Cooler Master MWE 750W Bronze', ram: '32Go Corsair Dominator Platinum RGB 3600MHz', screen: 'Acer' },
             // Pilotes
-            'Hugo.R':       { birthday: '28/07/2010', simstart: '13 ans', platform: 'Le Mans Ultimate', circuit: 'Spa-Francorchamps', car: 'McLaren Senna', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
+            'Hugo.R':       { birthday: '28/07/2010', simstart: '13 ans', platform: 'Le Mans Ultimate', circuit: 'Spa-Francorchamps', car: 'McLaren Senna', cpu: 'Ryzen 7 5800X', gpu: 'AMD Radeon RX 6800 16Go', motherboard: 'MSI B450 Tomahawk', psu: 'Corsair RM850', ram: '32Go Corsair Vengeance', screen: '2x 24" 2.5K 120Hz' },
             'Thibault.C':   { birthday: '02/12/2000', simstart: '24 ans', platform: 'Le Mans Ultimate', circuit: 'La Sarthe', car: 'Ford Fiesta ST200', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
             'Denis':        { birthday: 'À remplir', simstart: 'À remplir', platform: 'Le Mans Ultimate', circuit: 'À remplir', car: 'À remplir', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Esteban.B':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Maceo.R':      { birthday: '14/06/2007', simstart: '2025', platform: 'Le Mans Ultimate', circuit: 'Kyalami', car: 'Lancia 037', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Anthony.D':    { birthday: '03/12/1993', simstart: '30 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans Bugatti', car: 'BMW M3 Compétition', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Paul.T':       { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
+            'Maceo.R':      { birthday: '14/06/2007', simstart: '2025', platform: 'Le Mans Ultimate', circuit: 'Kyalami', car: 'Lancia 037', cpu: 'AMD Ryzen 5 7500F', gpu: 'AMD Radeon RX 9060 XT 8Go', motherboard: 'MSI Pro B840M-B DDR5', psu: 'Xigmatek Thor T750 V2 80+ Bronze', ram: '16Go DDR5 Corsair', screen: 'Samsung Odyssey G5 34"' },
+            'Anthony.D':    { birthday: '03/12/1993', simstart: '30 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans Bugatti', car: 'BMW M3 Compétition', cpu: 'Intel Core i5 14600K', gpu: 'Nvidia RTX 5070 12Go', motherboard: 'À remplir', psu: 'MAG A750GL 750W 80+ Gold', ram: 'DDR5 32Go', screen: 'Kooruii 34"' },
             'Maxime':       { birthday: '30/12/1991', simstart: 'mi 2023', platform: 'Le Mans Ultimate', circuit: 'Magny-Cours', car: 'Mercedes C63 AMG', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Clement':      { birthday: '21/12/1988', simstart: '35 ans', platform: 'Le Mans Ultimate', circuit: 'La Sarthe', car: 'Porsche 922 Cup', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Mathieu.D':    { birthday: 'À remplir', simstart: 'À remplir', platform: 'À remplir', circuit: 'À remplir', car: 'À remplir', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Florent.L':    { birthday: '28/05/1993', simstart: '8 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans', car: 'Aston Martin Vantage', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Cyrille':      { birthday: '27/03/1985', simstart: '39 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Nissan Skyline R34', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Jacy.L':       { birthday: '25/01/2004', simstart: '15 ans', platform: 'Le Mans Ultimate', circuit: 'Jeddah', car: 'McLaren P1', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
-            'Enzo':         { birthday: '26/12/2003', simstart: '20 ans', platform: 'Le Mans Ultimate', circuit: 'Nürburgring Nordschleife', car: 'Porsche 992 GT3 RS', cpu: 'À remplir', gpu: 'À remplir', motherboard: 'À remplir', psu: 'À remplir', ram: 'À remplir', screen: 'À remplir' },
+            'Florent.L':    { birthday: '28/05/1993', simstart: '8 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans', car: 'Aston Martin Vantage', cpu: 'AMD Ryzen 7 9800X3D', gpu: 'AMD Radeon RX 9070 XT', motherboard: 'À remplir', psu: 'À remplir', ram: '32Go', screen: 'Samsung G9x 3840x1080 144Hz' },
+            'Cyrille':      { birthday: '27/03/1985', simstart: '39 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Nissan Skyline R34', cpu: 'AMD Ryzen 7 770X', gpu: 'RX 7600 XFX 8Go', motherboard: 'MSI B650 Gaming Plus WiFi', psu: 'Be Quiet 750W Gold', ram: '64Go Corsair DDR5 6000MHz CL30', screen: 'Samsung Odyssey G4 27"' },
+            'Enzo':         { birthday: '26/12/2003', simstart: '20 ans', platform: 'Le Mans Ultimate', circuit: 'Nürburgring Nordschleife', car: 'Porsche 992 GT3 RS', cpu: 'AMD 7800X3D', gpu: 'Nvidia RTX 5080', motherboard: 'MSI B850 Gaming Plus', psu: 'Corsair RM1000e 80+ Gold', ram: '34Go Kingston Fury DDR5', screen: 'Samsung' },
         };
 
         function val(v) {
