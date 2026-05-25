@@ -128,11 +128,9 @@
         .blog-hero p { font-size: 17px; color: #b0b0d0; }
         .articles-section { padding: 60px; max-width: 1300px; margin: 0 auto; }
         .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; align-items: start; }
-        .article-card { background: linear-gradient(135deg, rgba(26,26,62,0.9), rgba(10,14,39,0.9)); border: 1px solid rgba(255,26,117,0.2); border-radius: 20px; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; display: flex; flex-direction: column; align-self: start; }
+        .article-card { background: linear-gradient(135deg, rgba(26,26,62,0.9), rgba(10,14,39,0.9)); border: 1px solid rgba(255,26,117,0.2); border-radius: 20px; transition: all 0.3s; display: flex; flex-direction: column; align-self: start; }
         .article-card:hover { transform: translateY(-6px); border-color: rgba(255,26,117,0.5); box-shadow: 0 20px 40px rgba(255,26,117,0.2); }
         .article-card-top { padding: 28px 28px 0; }
-        .article-cover { width: 100%; height: 200px; object-fit: cover; display: block; }
-        .article-no-cover { width: 100%; height: 8px; display: block; background: linear-gradient(90deg, rgba(255,26,117,0.15), transparent); }
         .article-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 12px; border-radius: 50px; margin-bottom: 16px; }
         .tag-resultat { background: rgba(0,255,136,0.12); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
         .tag-event { background: rgba(255,26,117,0.12); color: #ff1a75; border: 1px solid rgba(255,26,117,0.3); }
@@ -141,8 +139,8 @@
         .article-card h2 { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; }
         .article-meta { display: flex; gap: 16px; font-size: 13px; color: #b0b0d0; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
         .article-meta i { color: #ff1a75; }
-        .article-excerpt { font-size: 14px; color: #b0b0d0; line-height: 1.7; padding: 16px 28px 20px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; flex-grow: 1; }
-        .article-toggle { margin: 0 28px 16px; background: transparent; border: 1px solid rgba(255,26,117,0.4); color: #ff1a75; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; align-self: flex-start; }
+        .article-excerpt { font-size: 14px; color: #b0b0d0; line-height: 1.7; padding: 0 28px 20px; min-height: 90px; }
+        .article-toggle { margin: 0 28px 28px; background: transparent; border: 1px solid rgba(255,26,117,0.4); color: #ff1a75; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; align-self: flex-start; }
         .article-toggle:hover { background: rgba(255,26,117,0.1); }
         .article-card-actions { display: flex; align-items: center; gap: 10px; margin: 0 28px 28px; flex-wrap: wrap; }
         .share-btns { display: flex; gap: 8px; }
@@ -251,7 +249,6 @@
         -->
 
         <div class="articles-grid">
-
             <!-- ARTICLE GP CANADA F1 2026 -->
             <article class="article-card" id="article-f1-gp-canada">
                 <div class="article-card-top">
@@ -269,15 +266,13 @@
                 <div class="article-full" id="full-f1-gp-canada">
                     <div class="article-full-inner">
                         <h3>Russell en tête, Norris surprise au départ</h3>
-                        <p>Parti en pole sous un ciel chargé sur une piste pas totalement sèche, <strong>George Russell</strong> devait faire face dès le départ à un coup de poker de <strong>Lando Norris</strong> (McLaren), qui chausse des intermédiaires alors que le reste du top 8 est en tendres — et s'empare de la tête ! S'ensuit un duel incandescent entre les deux Mercedes, Russell et son coéquipier <strong>Kimi Antonelli</strong> se battant roue contre roue, frôlant le contact à plusieurs reprises. Mais au <strong>30e tour sur 68</strong>, une <strong>panne moteur</strong> met un terme brutal à la course du Britannique alors qu'il se trouvait en tête. Norris, lui, abandonnera à son tour au <strong>tour 40</strong> sur problème mécanique — éliminant d'un coup les deux principaux rivaux d'Antonelli.</p>
+                        <p>Parti en pole sous un ciel chargé sur une piste pas totalement sèche, <strong>George Russell</strong> devait faire face dès le départ à un coup de poker de <strong>Lando Norris</strong> (McLaren), qui chausse des intermédiaires alors que le reste du top 8 est en tendres — et s'empare de la tête ! S'ensuit un duel incandescent entre les deux Mercedes, Russell et son coéquipier <strong>Kimi Antonelli</strong> se battant roue contre roue, frôlant le contact à plusieurs reprises. Mais au <strong>30e tour sur 68</strong>, une <strong>panne moteur</strong> met un terme brutal à la course du Britannique. Norris abandonnera à son tour au <strong>tour 40</strong> sur problème mécanique — éliminant d'un coup les deux principaux rivaux d'Antonelli.</p>
                         <h3>Antonelli s'envole — 4e victoire de suite</h3>
-                        <p>Une fois Russell hors course, Antonelli n'a laissé aucune chance au reste du peloton. L'Italien s'impose avec <strong>près de onze secondes d'avance</strong> sur Lewis Hamilton, signant sa <strong>quatrième victoire consécutive</strong> en autant de Grands Prix. Au championnat, il creuse désormais un écart de <strong>43 points sur Russell</strong>, qui repart de Montréal bredouille.</p>
+                        <p>L'Italien s'impose avec <strong>près de onze secondes d'avance</strong> sur Lewis Hamilton, signant sa <strong>quatrième victoire consécutive</strong>. Au championnat, il creuse désormais un écart de <strong>43 points sur Russell</strong>.</p>
                         <h3>Hamilton solide, Verstappen de retour sur le podium</h3>
-                        <p><strong>Lewis Hamilton</strong> signe le meilleur résultat de sa saison avec Ferrari en terminant 2e, après un duel tendu face à <strong>Max Verstappen</strong> dans les dix derniers tours. Le septuple champion résiste jusqu'au bout avant de voir le Britannique le passer à cinq tours de l'arrivée. Verstappen monte sur la 3e marche du podium — son <strong>premier podium de la saison</strong>. Derrière, <strong>Charles Leclerc</strong> termine 4e après avoir sauvé une belle frayeur à la dernière chicane, et <strong>Isack Hadjar</strong> arrache la 5e place malgré une pénalité pour infraction sous drapeau jaune.</p>
-                        <h3>Gasly meilleur Français, top 10 varié</h3>
-                        <p>Dans les points, <strong>Pierre Gasly</strong> signe la meilleure performance française de la journée en 8e position. Le top 10 est complété par Colapinto (6e), Lawson (7e), Sainz (9e) et Bearman (10e) — sept écuries différentes représentées, signe d'une course riche en rebondissements. Esteban Ocon n'a pu faire mieux que la 14e place.</p>
+                        <p><strong>Lewis Hamilton</strong> termine 2e — son meilleur résultat de la saison avec Ferrari. <strong>Max Verstappen</strong> signe son <strong>premier podium de la saison</strong> en 3e après un duel intense avec Hamilton dans les dix derniers tours. Leclerc 4e, Hadjar 5e malgré une pénalité, Colapinto 6e, Lawson 7e, <strong>Gasly</strong> meilleur Français en 8e, Sainz 9e, Bearman 10e.</p>
                         <h3>Cap sur Monaco</h3>
-                        <p>Le championnat reprend dans deux semaines avec le <strong>Grand Prix de Monaco</strong>, sixième manche du calendrier 2026. Antonelli arrive en position de force, Russell devra se ressaisir sur les rues de la Principauté pour ne pas voir l'écart devenir rédhibitoire.</p>
+                        <p>Le championnat reprend dans deux semaines avec le <strong>Grand Prix de Monaco</strong>. Antonelli arrive en position de force avec 43 points d'avance — Russell devra se ressaisir sur les rues de la Principauté.</p>
                     </div>
                 </div>
             </article>
@@ -299,13 +294,11 @@
                 <div class="article-full" id="full-f1-sprint-canada">
                     <div class="article-full-inner">
                         <h3>Russell intouchable, mais pas tranquille</h3>
-                        <p>Parti depuis la pole position, <strong>George Russell</strong> a dominé les 23 tours du Sprint du Grand Prix du Canada, signant son <strong>deuxième succès en sprint cette saison</strong> après la Chine. Une victoire acquise d'autorité, mais loin d'être une promenade : son coéquipier <strong>Kimi Antonelli</strong>, élancé depuis la 2e place, l'a harcelé en début de course et les deux Mercedes sont passées très près de l'accrochage à deux reprises dans les premiers virages.</p>
+                        <p>Parti depuis la pole position, <strong>George Russell</strong> domine les 23 tours du Sprint, signant son <strong>deuxième succès en sprint cette saison</strong> après la Chine. Son coéquipier <strong>Kimi Antonelli</strong>, élancé depuis la 2e place, le harcèle en début de course — deux Mercedes proches de l'accrochage à deux reprises.</p>
                         <h3>Norris en embuscade, Hamilton en difficulté</h3>
-                        <p>Après la bataille initiale entre coéquipiers, c'est <strong>Lando Norris</strong> (McLaren) qui a mis Russell sous pression dans la seconde moitié du sprint, profitant d'une incursion du Britannique dans l'herbe pour remonter en 2e position. Russell a néanmoins tenu bon jusqu'à l'arrivée, avec un peu plus d'une seconde d'avance sur Norris et moins de deux sur Antonelli. Derrière, <strong>Oscar Piastri</strong> termine 4e devant <strong>Charles Leclerc</strong>, tandis que <strong>Lewis Hamilton</strong> — en grande difficulté avec ses pneus dans les derniers tours — perd deux places pour finir 6e. <strong>Max Verstappen</strong> signe une course anonyme en 7e, et <strong>Arvid Lindblad</strong> (Racing Bulls) arrache le dernier point en 8e.</p>
+                        <p><strong>Lando Norris</strong> profite d'une incursion de Russell dans l'herbe pour remonter en 2e, avant de finir derrière le Britannique. <strong>Piastri</strong> 4e, <strong>Leclerc</strong> 5e, <strong>Hamilton</strong> 6e (en difficulté avec ses pneus), <strong>Verstappen</strong> 7e anonyme, <strong>Lindblad</strong> 8e dernier pointeur.</p>
                         <h3>La tension Antonelli — et l'intervention de Wolff</h3>
-                        <p>Le vrai feuilleton de ce Sprint se jouait sur les radios. Antonelli s'est plaint à plusieurs reprises de la défense jugée trop agressive de Russell, allant jusqu'à l'accuser de l'avoir sorti délibérément de la piste au premier virage. Une situation suffisamment tendue pour que <strong>Toto Wolff</strong> intervienne en personne au tour 7 : <em>«&nbsp;Concentre-toi sur le pilotage, arrête de râler à la radio.&nbsp;»</em> En concédant deux points au Championnat face à son coéquipier, l'Italien risque de ruminer cette journée — et l'équipe devra gérer cette tension avant les qualifications.</p>
-                        <h3>Aucun Français dans les points</h3>
-                        <p>À noter : aucun pilote français n'a marqué de points lors de ce Sprint de Montréal, une déception supplémentaire pour les supporters tricolores dans un Grand Prix historiquement populaire au Québec.</p>
+                        <p>Antonelli s'est plaint à plusieurs reprises de la défense jugée trop agressive de Russell. <strong>Toto Wolff</strong> intervient au tour 7 : <em>«&nbsp;Concentre-toi sur le pilotage, arrête de râler à la radio.&nbsp;»</em></p>
                     </div>
                 </div>
             </article>
@@ -327,18 +320,13 @@
                 <div class="article-full" id="full-dacia-logan">
                     <div class="article-full-inner">
                         <h3>Ollis Garage Racing : des passionnés contre le reste du monde</h3>
-                        <p>Depuis 2021, la Dacia Logan d'<strong>Ollis Garage Racing</strong> s'aligne sur la Nordschleife. La #<strong>300</strong> est devenue une icône populaire — en grande partie parce qu'elle ressemble à une voiture de courses de supermarché perdue au milieu des GT3 à 500 chevaux. Les pilotes de cette édition : <strong>Oliver Kriese</strong> (fondateur), <strong>Alexander Becker</strong>, <strong>Christian Geilfus</strong> et <strong>Robert Neumann</strong>.</p>
+                        <p>Depuis 2021, la #<strong>300</strong> d'<strong>Ollis Garage Racing</strong> s'aligne sur la Nordschleife. Pilotes : <strong>Oliver Kriese</strong>, <strong>Alexander Becker</strong>, <strong>Christian Geilfus</strong> et <strong>Robert Neumann</strong>.</p>
                         <h3>Une Logan qui cache bien son jeu</h3>
-                        <p>Reconstruite après son accident de 2023, la Logan embarque un <strong>moteur turbo 2.0L issu de la Mégane RS</strong>, couplé à des pièces de la Clio RS. Résultat : <strong>280 chevaux</strong> et une vitesse de pointe de 215 km/h. Loin des GT3, mais suffisant pour tenir la distance sur 24 heures.</p>
-                        <h3>Une course semée d'embûches</h3>
-                        <p><strong>5 places de pénalité</strong> sur la grille pour un demi-tour non autorisé. Puis un pilote contrôlé à <strong>104 km/h dans une zone Code 60</strong> : 74 secondes de stop-and-go et 2 points DMSB. Sans oublier des ratés moteur et plusieurs sorties de route.</p>
+                        <p>Reconstruite après 2023, elle embarque un <strong>moteur turbo 2.0L Mégane RS</strong> — <strong>280 chevaux</strong>, 215 km/h en pointe.</p>
                         <h3>Le crash, la dispute, et le miracle</h3>
-                        <p>À <strong>3 heures de l'arrivée</strong>, la Logan percute les barrières et perd sa <strong>roue avant gauche</strong>. L'équipe refuse que les commissaires remorquent la voiture, craignant d'endommager le châssis. Les mécaniciens reconstruisent la suspension à la main — et la Logan repart.</p>
+                        <p>À <strong>3h de l'arrivée</strong> : roue avant gauche arrachée. L'équipe refuse le remorquage, reconstruit la suspension à la main. La Logan repart.</p>
                         <h3>P107 sous les ovations</h3>
-                        <p>La #300 franchit la ligne sous les cris d'une foule en délire : <strong>107ème au général</strong>, même promue dans les résultats finaux après que 13 voitures ayant fait plus de tours n'ont pas terminé. Pendant ce temps, la Mercedes de Verstappen Racing rentrait au garage sur driveshaft cassé alors qu'elle menait.</p>
-                        <h3>La voiture du peuple qui a éclipsé le champion</h3>
-                        <p>Face aux Porsche, Mercedes et BMW à plus de 500 chevaux, la Dacia symbolisait <strong>"la voiture du peuple"</strong>. Sur les réseaux et dans le paddock, elle captivait autant que les favoris. Une bande de passionnés, une berline bricolée avec amour, et un finish arraché contre vents et marées — pendant que le quadruple champion rentrait au garage.</p>
-                        <p><em>Voilà pourquoi on aime le sport automobile.</em></p>
+                        <p><strong>107ème au général</strong>, promue après que 13 voitures ayant fait plus de tours n'ont pas terminé. La voiture du peuple, face aux Porsche et Mercedes à 500 chevaux — et elle a terminé là où Verstappen Racing ne l'a pas fait.</p>
                     </div>
                 </div>
             </article>
@@ -359,7 +347,6 @@
                 <button class="article-toggle" onclick="toggleArticle('24h-nurb-2026', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-24h-nurb-2026">
                     <div class="article-full-inner">
-
                         <h3>Classement final SP9 — Top 5</h3>
                         <ul>
                             <li><strong>1er — #80 Engel / Martin / Schiller / Stolz</strong> — Mercedes-AMG Team Winward Racing — Mercedes-AMG GT3 EVO</li>
@@ -399,12 +386,11 @@
                         <button class="like-btn" data-id="revosim-astonmartin" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <img src="revosim-astonmartin.webp" alt="REVOSIM x Aston Martin Aramco F1 Team — Partenariat simracing NACON" class="article-cover" onerror="this.style.display='none'">
+                <img src="revosim-astonmartin.webp" alt="REVOSIM x Aston Martin Aramco F1 Team" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">NACON vient d'annoncer un partenariat entre sa marque simracing REVOSIM et l'écurie Aston Martin Aramco Formula One Team. Au programme : un kit de personnalisation premium, un volant open wheel officiel aux couleurs du team F1, et trois nouveaux périphériques pour compléter l'écosystème RS Pure.</p>
                 <button class="article-toggle" onclick="toggleArticle('revosim-astonmartin', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-revosim-astonmartin">
                     <div class="article-full-inner">
-                        <img src="revosim-astonmartin.jpg" alt="REVOSIM x Aston Martin Aramco F1 Team — kit de personnalisation simracing" style="width:100%;border-radius:12px;margin-bottom:20px;display:block;">
                         <h3>REVOSIM, la marque simracing française de NACON</h3>
                         <p>Lancée en 2025 avec le bundle <strong>RS Pure</strong> — base Direct Drive, volant modulaire et pédalier load cell — REVOSIM est la marque simracing de NACON, groupe français basé à Lille. L'idée depuis le départ : construire un <strong>écosystème évolutif et accessible</strong>, où chaque composant s'ajoute à la base RS Pure. La stratégie commence à porter ses fruits avec cette annonce majeure.</p>
 
@@ -449,12 +435,11 @@
                         <button class="like-btn" data-id="zeus-simagic" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
+                <img src="simagic-zeus.jpg" alt="SIMAGIC Zeus Formula — volant simracing formula haut de gamme" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Le SIMAGIC Zeus sort le 22 mai. Chez SimTek Performance, on tourne au FX Pro depuis des mois en compétition sur Le Mans Ultimate. On compare les deux sur ce qui compte vraiment en endurance : ergonomie, commandes, endurance de session.</p>
                 <button class="article-toggle" onclick="toggleArticle('zeus-simagic', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-zeus-simagic">
                     <div class="article-full-inner">
-                        <img src="simagic-zeus.jpg" alt="SIMAGIC Zeus Formula — volant simracing formula haut de gamme" style="width:100%;border-radius:12px;margin-bottom:20px;display:block;">
                         <h3>Notre référence actuelle : le SIMAGIC FX Pro</h3>
                         <p>Chez SimTek Performance, le <strong>SIMAGIC FX Pro</strong> est le volant de référence de l'équipe en compétition sur Le Mans Ultimate. Format Formula de <strong>290 mm</strong>, châssis intégralement en fibre de carbone, écran LCD 4,3" central, 6 palettes magnétiques, 12 boutons RGB et 4 encodeurs rotatifs au niveau des pouces — c'est un volant taillé pour la monoplace et les prototypes.</p>
                         <p>En endurance virtuelle, le FX Pro a des arguments solides : les <strong>poignées en silicone anti-transpiration</strong> font une vraie différence, la disposition des commandes est intuitive une fois mémorisée, et l'écran central permet de monitorer carburant, températures et delta en direct sans quitter la route des yeux. Affiché à sa sortie autour de <strong>900 €</strong>, on le trouve aujourd'hui aux alentours de <strong>650 €</strong> — ce qui améliore encore son rapport qualité/prix.</p>
@@ -498,7 +483,6 @@
                         <button class="like-btn" data-id="spa-6h" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
                 <p class="article-excerpt">Engagés en BMW M4 GT3 sur les 6 Heures de Spa-Francorchamps en Top Split, Florent, Christophe et Guillaume partent depuis la P12 et livrent une course solide pour franchir la ligne en P8 au terme de six heures d'endurance intense.</p>
                 <button class="article-toggle" onclick="toggleArticle('spa-6h', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-spa-6h">
@@ -527,7 +511,6 @@
                         <button class="like-btn" data-id="lemans-anthonyd" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
                 <p class="article-excerpt">Pénalisé par un track limit en qualification, Anthony.D s'élance depuis la 16ème place sur le Circuit de la Sarthe. Au terme d'une remontée impressionnante en BMW M4 GT3, il franchit la ligne en tête et s'offre la victoire pour la dernière manche du Championnat Beginner.</p>
                 <button class="article-toggle" onclick="toggleArticle('lemans-anthonyd', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-lemans-anthonyd">
@@ -556,7 +539,6 @@
                         <button class="like-btn" data-id="barcelone-maxime" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
                 <p class="article-excerpt">Engagé en solo en Split 1 sur le Circuit de Barcelone-Catalunya, Maxime décroche une belle troisième place au terme d'une course de 2 heures maîtrisée de bout en bout, avec Chris et Flo à l'ingénierie pour gérer la stratégie en direct.</p>
                 <button class="article-toggle" onclick="toggleArticle('barcelone-maxime', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-barcelone-maxime">
@@ -587,7 +569,6 @@
                         <button class="like-btn" data-id="paul-ricard" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
                 <p class="article-excerpt">Un week-end exceptionnel aux 4 Heures de Paul Ricard sur Le Mans Ultimate. 5 équipages en piste, une victoire en BMW M4 GT3, un P2 en LMP2 et des performances solides sur toute la ligne. Bravo à tous !</p>
                 <button class="article-toggle" onclick="toggleArticle('paul-ricard', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-paul-ricard">
@@ -631,7 +612,6 @@
                         <button class="like-btn" data-id="spa-2026" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
                 <p class="article-excerpt">Après le succès de Paul Ricard, SimTek Performance enchaîne avec les 6 Heures de Spa-Francorchamps sur Le Mans Ultimate — un événement Open Entry Team en Hypercar et LMGT3 les 15, 16 et 17 mai 2026.</p>
                 <button class="article-toggle" onclick="toggleArticle('spa-2026', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-spa-2026">
@@ -662,7 +642,6 @@
                         <span><i class="fas fa-user"></i> SimTek Performance</span>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
                 <p class="article-excerpt">Tu veux intégrer une équipe simracing pro française mais tu ne sais pas par où commencer ? Niveau requis, matériel, championnats à pratiquer : on t'explique tout.</p>
                 <button class="article-toggle" onclick="toggleArticle('guide-recrutement', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-guide-recrutement">
