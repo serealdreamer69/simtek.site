@@ -281,69 +281,151 @@
                         <button class="like-btn" data-id="guide-debuter-lmu" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <img loading="lazy" height="450" width="800" src="le-mans-ultimate-cover.webp" alt="Guide débuter Le Mans Ultimate 2026 — SimTek Performance" class="article-cover" onerror="this.style.display='none'">
+                <img src="le-mans-ultimate-cover.webp" alt="Le Mans Ultimate — Guide débutant simracing 2026" class="article-cover" loading="lazy" width="800" height="450">
                 <p class="article-excerpt">Le Mans Ultimate est aujourd'hui la référence du simracing endurance. Basé sur le moteur rFactor 2, c'est un simulateur exigeant qui récompense les bons réglages autant que le talent de pilotage. Voici tout ce qu'il faut savoir pour bien démarrer — du PC minimum au premier tour en ligne.</p>
-                <button class="article-toggle" onclick="toggleArticle('guide-debuter-lmu', this)">Lire l'article ▼</button>
+                <div class="article-card-actions">
+                    <button class="article-toggle" onclick="toggleArticle(this, 'guide-debuter-lmu')">Lire l'article</button>
+                    <div class="share-btns">
+                        <a class="share-btn" href="https://twitter.com/intent/tweet?text=Comment+débuter+sur+Le+Mans+Ultimate+en+2026&url=https://www.simtekperformance.com/blog.html%23article-guide-debuter-lmu" target="_blank" title="Partager sur X"><i class="fab fa-x-twitter"></i></a>
+                        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://www.simtekperformance.com/blog.html%23article-guide-debuter-lmu" target="_blank" title="Partager sur Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <button class="share-btn share-btn-copy" onclick="copyLink(this, 'https://www.simtekperformance.com/blog.html#article-guide-debuter-lmu')" title="Copier le lien"><i class="fas fa-link"></i></button>
+                    </div>
+                </div>
                 <div class="article-full" id="full-guide-debuter-lmu">
                     <div class="article-full-inner">
+
                         <h3>Pourquoi choisir Le Mans Ultimate ?</h3>
-                        <p>Le Mans Ultimate (LMU) est le jeu officiel du Championnat du Monde d'Endurance FIA et des 24 Heures du Mans, développé par Studio 397. Basé sur le moteur rFactor 2 — l'un des plus précis du marché — c'est un <strong>simulateur pur</strong> qui modélise avec réalisme la physique des pneus, l'aérodynamique, la gestion thermique et la consommation de carburant. Contrairement à GT7 ou Forza qui restent des simcades accessibles, LMU s'adresse à ceux qui veulent vivre l'endurance virtuelle au plus près de la réalité.</p>
-                        <p>En 2026, LMU propose <strong>31 voitures en 5 catégories</strong> (Hypercar, LMP2, LMP3, LMGT3, GTE). La version 1.3 sortie en avril 2026 a apporté de nombreuses améliorations physiques et online.</p>
+                        <p>Le Mans Ultimate (LMU) est le jeu officiel du Championnat du Monde d'Endurance FIA et des 24 Heures du Mans, développé par Studio 397. Basé sur le moteur rFactor 2 — l'un des plus précis du marché — c'est un <strong>simulateur pur</strong> qui modélise avec réalisme la physique des pneus, l'aérodynamique, la gestion thermique et la consommation de carburant.</p>
+                        <p>Contrairement à GT7 ou Forza qui restent des simcades accessibles, LMU s'adresse à ceux qui veulent vivre l'endurance virtuelle au plus près de la réalité. Le retour de force y est particulièrement riche : on ressent le grip, la masse des bolides, la dégradation des gommes. <strong>En 2026, LMU propose 31 voitures en 5 catégories</strong> (Hypercar, LMP2, LMP3, LMGT3, GTE) et la version 1.3 sortie en avril 2026 a apporté de nombreuses améliorations physiques et online.</p>
+
                         <h3>Étape 1 — La configuration PC</h3>
-                        <p>LMU est disponible uniquement sur PC via Steam. Voici les specs officielles Studio 397 :</p>
+                        <p>LMU est disponible uniquement sur PC via Steam. C'est un simulateur gourmand, surtout en VR ou triple-écran. Voici les specs officielles Studio 397 :</p>
                         <ul>
                             <li><strong>Minimum :</strong> Intel Core i5-4460 / AMD FX-8120, 8 Go RAM, GTX 950 4 Go, Windows 10/11 64 bits, 45 Go disque</li>
-                            <li><strong>Recommandé :</strong> Intel Core i7 / AMD Ryzen 7, 16 Go RAM, GTX 1080+, SSD</li>
-                            <li><strong>Pour jouer confortablement :</strong> Ryzen 5/7 récent, 16-32 Go RAM, RTX 3060+, SSD NVMe</li>
+                            <li><strong>Recommandé :</strong> Intel Core i7 / AMD Ryzen 7, 16 Go RAM, GTX 1080 ou équivalent, SSD</li>
+                            <li><strong>Pour le simracing compétitif :</strong> Ryzen 5/7 récent, 32 Go RAM, RTX 3070 minimum, SSD NVMe</li>
                         </ul>
-                        <p>Visez <strong>60 FPS stables minimum</strong>. Si votre config est mid-range, réduisez en priorité la qualité des ombres (le réglage le plus gourmand), puis les reflets. Désactivez le motion blur et la profondeur de champ. Pour tester votre baseline, lancez une session au Circuit de la Sarthe ou à Spa — les circuits les plus exigeants du jeu.</p>
-                        <h3>Étape 2 — Le volant</h3>
-                        <p>LMU est techniquement jouable à la manette, mais pour ressentir vraiment la physique et progresser, <strong>un volant avec retour de force (FFB) est indispensable</strong>. Le FFB de LMU est particulièrement expressif — il transmet le grip, les pertes d'adhérence et les vibreurs avec une précision rare.</p>
+                        <p>En pratique, visez <strong>60 FPS stables minimum</strong>. Si votre config est mid-range, commencez par réduire la qualité des ombres (réglage le plus gourmand), la qualité des reflets, et désactivez le motion blur et la profondeur de champ. Pour tester votre baseline, lancez une session au Circuit de la Sarthe ou à Spa — ce sont les circuits les plus exigeants.</p>
+
+                        <h3>Étape 2 — Le volant : la pièce centrale</h3>
+                        <p>LMU est techniquement jouable à la manette, mais pour ressentir la physique du jeu et progresser sérieusement, <strong>un volant avec retour de force (FFB) est indispensable</strong>. Le FFB de LMU est particulièrement expressif — il transmet le grip, les pertes d'adhérence et les vibreurs avec une précision rare. Voici nos recommandations par budget :</p>
                         <ul>
-                            <li><strong>Entrée de gamme (150-300€) :</strong> Thrustmaster T300RS GT Edition — moteur brushless double courroie, pédalier 3 pédales inclus. La référence pour débuter sans se ruiner.</li>
-                            <li><strong>Milieu de gamme (300-600€) :</strong> Moza R5 ou Fanatec GT DD Lite — premier palier Direct Drive, FFB nettement plus précis.</li>
-                            <li><strong>Direct Drive pro (600€+) :</strong> Simagic Alpha, Moza R9, Fanatec DD Pro — le top pour ressentir chaque vibreur. Ce sont les bases utilisées par les pilotes SimTek Performance.</li>
+                            <li><strong>Entrée de gamme (150-300€) :</strong> <em>Thrustmaster T300RS GT Edition</em> — moteur brushless double courroie, pédalier 3 pédales inclus. La référence absolue pour débuter sans se ruiner. Évitez les Logitech G29/G923 qui utilisent des engrenages plastique moins précis.</li>
+                            <li><strong>Milieu de gamme (300-600€) :</strong> <em>Moza R5</em> ou <em>Fanatec GT DD Lite</em> — premier palier Direct Drive, FFB nettement plus précis et réaliste. Un vrai saut qualitatif.</li>
+                            <li><strong>Direct Drive pro (600€+) :</strong> <em>Simagic Alpha</em>, <em>Moza R9</em>, <em>Fanatec DD Pro</em> — le top pour ressentir chaque détail de la piste. Ce sont les bases utilisées par les pilotes SimTek Performance en compétition.</li>
                         </ul>
+                        <p><strong>Conseil SimTek :</strong> si votre budget est limité, investissez plutôt dans un bon volant que dans un cockpit. Un T300RS sur une simple table vous apportera bien plus qu'une base DD sur un cockpit bas de gamme.</p>
+
                         <h3>Étape 3 — Le pédalier</h3>
-                        <p>La différence entre un pédalier standard et un pédalier avec <strong>cellule de charge (load cell)</strong> sur la pédale de frein est immense : on freine à la force d'appui plutôt qu'à l'angle, bien plus proche de la réalité. C'est le upgrade qui améliore le plus la régularité.</p>
+                        <p>Le pédalier est souvent le parent pauvre du setup débutant, à tort. La différence entre un pédalier à potentiomètre (standard) et un <strong>pédalier à cellule de charge (load cell)</strong> sur la pédale de frein est immense en piste : on freine à la force d'appui plutôt qu'à l'angle, ce qui est beaucoup plus proche de la réalité et améliore drastiquement la régularité.</p>
                         <ul>
-                            <li><strong>Entrée de gamme :</strong> Fanatec CSL Pedals (100€)</li>
-                            <li><strong>Avec load cell :</strong> Fanatec CSL Pedals LC, Moza SR-P, Simagic P-Road (dès 200€)</li>
-                            <li><strong>Haut de gamme :</strong> Heusinkveld Sprint, Moza SR-P Pro</li>
+                            <li><strong>Entrée de gamme :</strong> Fanatec CSL Pedals (100€) — solide, compatible tous volants</li>
+                            <li><strong>Avec load cell :</strong> Fanatec CSL Pedals Load Cell Kit, Moza SR-P, Simagic P-Road — dès 200€</li>
+                            <li><strong>Haut de gamme :</strong> Heusinkveld Sprint, Moza SR-P Pro — pour les pilotes les plus exigeants</li>
                         </ul>
+
                         <h3>Étape 4 — Le cockpit</h3>
-                        <p>Un cockpit améliore l'immersion et la précision — avec un bureau, le volant bouge au freinage et la position change. Quelques options :</p>
+                        <p>Un cockpit n'est pas obligatoire pour débuter, mais il améliore significativement l'immersion et la précision. Avec un bureau ou une chaise à roulettes, le volant bouge au freinage et votre position change — ce qui nuit à la répétabilité des gestes.</p>
                         <ul>
-                            <li><strong>Support pliable (80-150€) :</strong> Playseat Challenge, Next Level Racing Wheel Stand — compact et rangeable</li>
-                            <li><strong>Cockpit fixe (200-500€) :</strong> GT Omega Apex, Next Level Racing GT Lite — plus stable</li>
-                            <li><strong>Profilé aluminium (500€+) :</strong> Sim-Lab GT1 Evo — rigidité maximale, idéal pour les bases DD puissantes</li>
+                            <li><strong>Support pliable (80-150€) :</strong> Playseat Challenge, Next Level Racing Wheel Stand — compact, rangeable, idéal pour commencer</li>
+                            <li><strong>Cockpit fixe (200-500€) :</strong> GT Omega Apex, Next Level Racing GT Lite — plus stable, supporte des bases puissantes</li>
+                            <li><strong>Profilé aluminium (500€+) :</strong> Sim-Lab GT1 Evo, 8020 custom — rigidité maximale, modulable, compatible DD haute puissance</li>
                         </ul>
+                        <p>Quelle que soit votre option, réglez votre position comme dans une vraie voiture : écran à hauteur des yeux, pédales accessibles sans tendre complètement les jambes, volant à la bonne distance. Une bonne position améliore le confort et la précision sur les longues sessions d'endurance.</p>
+
                         <h3>Étape 5 — L'écran</h3>
+                        <p>Trois options existent, par ordre de budget et d'immersion :</p>
                         <ul>
-                            <li><strong>Écran simple :</strong> suffisant pour débuter, placez-le à hauteur des yeux</li>
-                            <li><strong>Triple écran :</strong> vision périphérique réaliste, LMU gère très bien le triple natif</li>
-                            <li><strong>VR (Quest 3, Pimax) :</strong> immersion maximale, nécessite une config PC puissante. LMU est reconnu pour son excellent support VR</li>
+                            <li><strong>Écran simple (1080p/1440p) :</strong> suffisant pour débuter, orientez-le à hauteur des yeux</li>
+                            <li><strong>Triple écran :</strong> vision périphérique réaliste, idéal pour l'endurance. LMU gère très bien le triple écran natif.</li>
+                            <li><strong>VR (Quest 3, Pimax) :</strong> immersion maximale, mais exige une config PC puissante. LMU est reconnu pour son excellent support VR.</li>
                         </ul>
-                        <h3>Étape 6 — Installation et premiers pas</h3>
-                        <p>Une fois LMU installé via Steam, <strong>ne sautez pas l'étape de création de profil</strong> — le jeu doit construire votre profil en ligne avant d'accéder au multijoueur. Pour vos premières sessions, allez dans <em>Race Weekend → Event Settings → Practice privée</em> pour rouler seul et apprendre les circuits sans pression.</p>
+
+                        <h3>Étape 6 — Installation et premiers pas sur LMU</h3>
+                        <p>Une fois LMU installé via Steam, <strong>ne sautez pas l'étape de création de profil</strong> — le jeu doit construire votre profil en ligne avant d'accéder au multijoueur. Complétez les 3 étapes de configuration initiale, cela prend quelques minutes.</p>
+                        <p>Pour vos premières sessions : allez dans <em>Race Weekend → Event Settings → Practice privée</em>. Cela vous permet de rouler seul, sans la pression de l'IA ni du trafic, pour apprendre les circuits à votre rythme.</p>
+
                         <h3>Étape 7 — Par quelle catégorie commencer ?</h3>
-                        <p><strong>Ne commencez pas par les Hypercars</strong> (Ferrari 499P, Porsche 963, Toyota GR010) — elles sont parmi les plus délicates à maîtriser. L'ordre conseillé :</p>
+                        <p><strong>Ne commencez pas par les Hypercars</strong> (Ferrari 499P, Porsche 963, Toyota GR010) ! Elles produisent un énorme appui aérodynamique, utilisent des systèmes hybrides et sont parmi les voitures les plus délicates à maîtriser. L'ordre conseillé :</p>
                         <ul>
-                            <li><strong>LMGT3</strong> — voitures GT3 accessibles, parfait pour débuter</li>
-                            <li><strong>LMP3</strong> — plus technique, très formateur pour comprendre les downforce cars</li>
-                            <li><strong>LMP2</strong> — une fois les réflexes acquis</li>
-                            <li><strong>Hypercar</strong> — quand vous maîtrisez la gestion des pneus et la stratégie endurance</li>
+                            <li><strong>LMGT3</strong> — voitures GT3 accessibles, très bon équilibre performance/facilité de prise en main. Parfait pour débuter.</li>
+                            <li><strong>LMP3</strong> — prototype d'entrée de gamme, plus technique mais très formateur pour comprendre les downforce cars.</li>
+                            <li><strong>LMP2</strong> — une fois les réflexes acquis en LMGT3/LMP3.</li>
+                            <li><strong>Hypercar</strong> — quand vous êtes à l'aise avec la gestion des pneus et la stratégie endurance.</li>
                         </ul>
+
                         <h3>Étape 8 — Réglage du Force Feedback</h3>
-                        <p>Dans <em>Paramètres → Commandes → Volant et Pédalier → Retour de Force</em> :</p>
+                        <p>Le FFB de LMU peut être violent sur les chocs et vibreurs. Dans <em>Paramètres → Commandes → Volant et Pédalier → Retour de Force</em> :</p>
                         <ul>
-                            <li><strong>Capacité de couple :</strong> entrez le Nm de votre base (ex : 15 Nm pour un Fanatec DD+)</li>
+                            <li><strong>Capacité de couple :</strong> entrez le nombre de Nm de votre base (ex: 15 Nm pour un Fanatec DD+)</li>
                             <li><strong>Niveau FFB en jeu :</strong> démarrez à 50% et ajustez pour éviter le clipping</li>
-                            <li><strong>Bases Direct Drive :</strong> entre 30 et 60% selon la puissance — trop fort peut être dangereux</li>
+                            <li><strong>Bases Direct Drive :</strong> entre 30 et 60% selon la puissance — trop fort peut être dangereux sur les chocs violents</li>
                         </ul>
-                        <p>Faites un premier test en solo avec la puissance au minimum, puis montez progressivement jusqu'au bon équilibre entre ressenti et confort sur les longues sessions.</p>
+                        <p>Faites un premier test en solo avec la puissance au minimum, puis montez progressivement. Le bon réglage FFB, c'est celui qui vous donne de l'information sans fatiguer les bras sur une session de plusieurs heures.</p>
+
                         <h3>La prochaine étape : rejoindre une équipe</h3>
-                        <p>La meilleure façon de progresser rapidement, c'est de rejoindre une structure compétitive. SimTek Performance recrute régulièrement des pilotes motivés en LMGT3, LMP2, LMP3 et Hypercar sur LMU. Entraînements réguliers, coaching et vraie dynamique d'équipe. <a href="pilot-recruitment.html" style="color:#ff1a75;font-weight:600;">Postuler ici →</a></p>
+                        <p>La meilleure façon de progresser rapidement une fois les bases acquises, c'est de rejoindre une structure compétitive. SimTek Performance recrute régulièrement des pilotes motivés en LMGT3, LMP2, LMP3 et Hypercar sur Le Mans Ultimate. On vous accompagne avec des entraînements réguliers, du coaching et une vraie dynamique d'équipe. <a href="pilot-recruitment.html" style="color:#ff1a75;font-weight:600;">Postuler ici →</a></p>
+
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- ARTICLE LMU VS PMR 2026 -->
+            <article class="article-card" id="article-lmu-vs-pmr">
+                <div class="article-card-top">
+                    <span class="article-tag tag-analyse">📊 Analyse</span>
+                    <h2>Le Mans Ultimate vs Project Motor Racing — lequel choisir en 2026 ?</h2>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar"></i> 2 juin 2026</span>
+                        <span><i class="fas fa-flag-checkered"></i> Comparatif</span>
+                        <button class="like-btn" data-id="lmu-vs-pmr" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
+                    </div>
+                </div>
+                <img loading="lazy" height="450" width="800" src="lmu-vs-pmr.webp" alt="Le Mans Ultimate vs Project Motor Racing 2026 — comparatif simracing" class="article-cover" onerror="this.style.display='none'">
+                <p class="article-excerpt">Deux simulateurs, deux philosophies. Le Mans Ultimate mise sur la spécialisation endurance WEC, Project Motor Racing sur la variété à travers les époques. L'un est le jeu officiel de la FIA WEC, l'autre la résurrection de Project CARS. On compare tout : physique, contenu, online, prix — pour vous aider à choisir.</p>
+                <button class="article-toggle" onclick="toggleArticle('lmu-vs-pmr', this)">Lire l'article ▼</button>
+                <div class="article-full" id="full-lmu-vs-pmr">
+                    <div class="article-full-inner">
+
+                        <h3>Qui sont-ils ?</h3>
+                        <p><strong>Le Mans Ultimate (LMU)</strong> est le jeu officiel du Championnat du Monde d'Endurance FIA et des 24 Heures du Mans, développé par Studio 397 et Motorsport Games. Basé sur le moteur rFactor 2, il est disponible uniquement sur PC via Steam depuis fin 2023, avec une version 1.3 déployée en avril 2026.</p>
+                        <p><strong>Project Motor Racing (PMR)</strong> est développé par Straight4 Studios — une équipe fondée par Ian Bell, le créateur de la franchise Project CARS — et publié par GIANTS Software (les développeurs de Farming Simulator). Sorti le 25 novembre 2025 sur PC, PS5 et Xbox Series X|S, c'est le successeur spirituel de Project CARS 1 et 2.</p>
+
+                        <h3>Physique et retour de force</h3>
+                        <p>C'est le critère numéro un pour les simracers sérieux, et la différence est nette.</p>
+                        <p><strong>LMU</strong> s'appuie sur le moteur rFactor 2, une référence de précision physique. Le retour de force est riche et expressif : on ressent le grip, les pertes d'adhérence, la dégradation des pneus sur la durée et la masse des hypercars. La gestion des pneumatiques est particulièrement excellente — un pneu froid au départ se comporte vraiment différemment d'un pneu en température. C'est précis, parfois exigeant, toujours cohérent.</p>
+                        <p><strong>PMR</strong> utilise le moteur Hadron, développé en interne par Straight4. L'ambition était louable, mais les critiques et joueurs sont nombreux à pointer un comportement trop arcade-friendly : les récupérations de survirage arrivent trop vite, le freinage est trop prévisible, et le FFB manque de nuance comparé aux références du genre comme ACC ou LMU. Sur console à la manette, ça fonctionne. Sur un rig avec un volant Direct Drive, la comparaison est cruelle.</p>
+                        <p><strong>Avantage : LMU</strong> — sans discussion pour les simracers en rig.</p>
+
+                        <h3>Contenu : voitures et circuits</h3>
+                        <p><strong>LMU</strong> propose 31 voitures réparties en 5 catégories (Hypercar, LMP2, LMP3, LMGT3, GTE), toutes issues du WEC et de l'ELMS actuels. La licence officielle garantit les voitures et livrées officielles : Ferrari 499P, Porsche 963, Toyota GR010, BMW M4 LMGT3... Les circuits sont les vrais circuits WEC : Le Mans, Spa, Monza, Fuji, Portimão. Pas de variété, mais une cohérence absolue autour de l'endurance.</p>
+                        <p><strong>PMR</strong> mise sur la quantité et la variété : 70 voitures dans 13 catégories à travers les époques, des hypercars LMDh modernes jusqu'aux icônes historiques. 28 tracés mondiaux dont Daytona, le Nürburgring, Spa. Le système de mods via le hub GIANTS permet d'ajouter du contenu communautaire. Si vous rêvez de piloter une Lamborghini prototype hybride des années 90, c'est PMR qu'il faut choisir.</p>
+                        <p><strong>Avantage : PMR</strong> sur la quantité et la diversité historique. <strong>Avantage LMU</strong> sur la cohérence endurance et l'authenticité WEC.</p>
+
+                        <h3>Online et communauté</h3>
+                        <p><strong>LMU</strong> a clairement investi dans son écosystème online avec RaceControl, sa plateforme de championnats intégrée. Le pic de joueurs simultanés a atteint <strong>8 740 en janvier 2026</strong> — 4 fois plus qu'un an auparavant. Driver swaps en ligne, gestion d'équipe, livrées personnalisées, championnats organisés : l'expérience endurance en ligne est complète et en constante amélioration. SimGrid organise aussi des championnats LMU pour tous les niveaux.</p>
+                        <p><strong>PMR</strong> a connu un lancement difficile avec des avis Steam <strong>majoritairement négatifs (38% positifs sur 1001 avis)</strong>. L'IA en solo est particulièrement critiquée pour son agressivité aveugle. Le studio a réduit ses effectifs en décembre 2025, deux semaines après le lancement, tout en promettant de livrer les DLC du Season Pass Year 1. La communauté en ligne est peu fournie.</p>
+                        <p><strong>Avantage : LMU</strong> — la communauté online est sans comparaison.</p>
+
+                        <h3>Plateformes et prix</h3>
+                        <p><strong>LMU</strong> : PC uniquement via Steam. Prix de base autour de 30€, avec des Season Pass annuels pour les nouvelles saisons WEC.</p>
+                        <p><strong>PMR</strong> : PC, PS5 et Xbox Series X|S. Disponible sur console — c'est son avantage principal pour ceux qui n'ont pas de PC gaming. Prix de base autour de 40-45€, avec un Year 1 Bundle incluant les DLC à venir.</p>
+                        <p><strong>Avantage PMR</strong> sur les plateformes (console disponible). <strong>Avantage LMU</strong> sur le rapport qualité/prix.</p>
+
+                        <h3>Mode solo</h3>
+                        <p><strong>LMU</strong> a longtemps manqué de contenu solo, c'est son point faible historique. Un mode carrière était prévu pour début 2026. Les sessions en solo restent possibles en pratique privée mais l'expérience offline est limitée comparée à d'autres simulateurs.</p>
+                        <p><strong>PMR</strong> propose une carrière solo complète dès le lancement, avec des championnats et des événements solo. C'est un vrai avantage pour ceux qui préfèrent jouer seuls.</p>
+                        <p><strong>Avantage : PMR</strong> sur le contenu solo.</p>
+
+                        <h3>Le verdict SimTek Performance</h3>
+                        <p>Les deux jeux ne s'adressent pas au même public :</p>
+                        <ul>
+                            <li><strong>Choisissez LMU</strong> si vous avez un rig simracing, voulez la meilleure physique possible, aimez l'endurance WEC et cherchez une communauté online active. C'est notre simulateur principal chez SimTek Performance — et de loin le plus exigeant et satisfaisant pour le simracing compétitif.</li>
+                            <li><strong>Choisissez PMR</strong> si vous êtes sur console, aimez la variété des époques et des voitures historiques, et voulez un mode carrière solo complet. Attendez néanmoins que le studio publie des patches correctifs avant d'acheter.</li>
+                        </ul>
+                        <p>Pour ceux qui veulent progresser en endurance virtuelle et rejoindre une vraie équipe compétitive, il n'y a qu'une réponse : LMU. <a href="pilot-recruitment.html" style="color:#ff1a75;font-weight:600;">Rejoindre SimTek Performance →</a></p>
+
                     </div>
                 </div>
             </article>
