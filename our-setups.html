@@ -882,20 +882,11 @@
                     '</div>' +
                 '</div>';
 
-            // Photo de profil → lightbox (seulement si dans la liste)
-            if (inOrder) {
-                const profileBtn = item.querySelector('[data-profile-btn]');
-                profileBtn.addEventListener('click', e => {
-                    e.stopPropagation();
-                    openLightbox(profilePhotos, 0);
-                });
-            }
-
-            // Toggle accordion (clic sur header sauf photo cliquable)
+            // Photo de profil → toggle accordéon (comme le reste du header)
+            // Toggle accordion (tout le header, photo incluse)
             const header = item.querySelector('.acc-header');
             const body   = item.querySelector('.acc-body');
-            header.addEventListener('click', (e) => {
-                if (e.target.closest('[data-profile-btn]')) return;
+            header.addEventListener('click', () => {
                 const isOpen = item.classList.toggle('open');
                 body.style.maxHeight = isOpen ? body.scrollHeight + 'px' : '0';
             });
