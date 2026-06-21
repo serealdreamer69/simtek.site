@@ -116,6 +116,12 @@
         /* ── Mobile accordion ── */
         .mobile-accordion { display: none; padding: 16px; }
         .acc-item { background: rgba(10,10,10,0.6); border-radius: 14px; overflow: hidden; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.08); }
+        .acc-header-photo { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid; flex-shrink: 0; cursor: pointer; transition: opacity 0.2s; }
+        .acc-header-photo:hover { opacity: 0.8; }
+        .acc-coming-soon { display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.04); cursor: default; overflow: hidden; gap: 2px; }
+        .acc-coming-soon:hover { opacity: 1; }
+        .acc-coming-soon img { width: 28px; height: auto; object-fit: contain; opacity: 0.5; }
+        .acc-coming-soon span { font-size: 5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); white-space: nowrap; }
         .acc-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; cursor: pointer; gap: 12px; transition: background 0.2s; }
         .acc-header:active { background: rgba(255,255,255,0.04); }
         .acc-header-left { display: flex; flex-direction: column; gap: 3px; }
@@ -237,7 +243,7 @@
 <div class="setups-container">
     <div class="cards-grid" id="cardsGrid">
 
-        <div class="setup-card no-photo" data-name="Romuald.D" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card no-photo" data-name="Romuald.D" data-profile="chef-gt3-alpha.webp" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
             <div class="card-header">
                 <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Chef d'équipe GT3 Alpha</span>
@@ -263,7 +269,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Thibault.C" data-color="#ff1a75" data-photos='["setup-thibault-c.webp"]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card" data-name="Thibault.C" data-profile="pilot-GT3A-1.webp" data-color="#ff1a75" data-photos='["setup-thibault-c.webp"]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-thibault-c.webp" alt="Setup Thibault.C" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -293,7 +299,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Maxime" data-color="#ff1a75" data-photos='["setup-maxime.webp"]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card" data-name="Maxime" data-profile="pilot-GT3A-3.webp" data-color="#ff1a75" data-photos='["setup-maxime.webp"]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-maxime.webp" alt="Setup Maxime" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -323,7 +329,7 @@
             </div>
         </div>
 
-        <div class="setup-card no-photo" data-name="Christophe.A" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card no-photo" data-name="Christophe.A" data-profile="pilot-GT3B-3.webp" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
             <div class="card-header">
                 <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote GT3 Alpha</span>
@@ -349,7 +355,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Clement" data-color="#ff1a75" data-photos='["setup-clement.webp","setup-clement2.webp"]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card" data-name="Clement" data-profile="pilot-GT3B-clement.webp" data-color="#ff1a75" data-photos='["setup-clement.webp","setup-clement2.webp"]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-clement.webp" alt="Setup Clement" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -379,7 +385,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Hugo.R" data-color="#ff1a75" data-photos='["setup-hugo-r.webp"]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card" data-name="Hugo.R" data-profile="chef-lmp.webp" data-color="#ff1a75" data-photos='["setup-hugo-r.webp"]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-hugo-r.webp" alt="Setup Hugo.R" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -409,7 +415,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Anthony.M" data-color="#00d4ff" data-photos='["setup-anthony-m.webp"]' style="border-color:rgba(0,212,255,0.2)">
+        <div class="setup-card" data-name="Anthony.M" data-profile="Logo_SIMTEK.webp" data-color="#00d4ff" data-photos='["setup-anthony-m.webp"]' style="border-color:rgba(0,212,255,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-anthony-m.webp" alt="Setup Anthony.M" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -439,7 +445,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Anthony.D" data-color="#00d4ff" data-photos='["setup-anthony-d.webp"]' style="border-color:rgba(0,212,255,0.2)">
+        <div class="setup-card" data-name="Anthony.D" data-profile="pilot-GT3A-2.webp" data-color="#00d4ff" data-photos='["setup-anthony-d.webp"]' style="border-color:rgba(0,212,255,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-anthony-d.webp" alt="Setup Anthony.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -469,7 +475,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Hugo.S" data-color="#00d4ff" data-photos='["setup-hugo-s.webp"]' style="border-color:rgba(0,212,255,0.2)">
+        <div class="setup-card" data-name="Hugo.S" data-profile="hugo-tech.webp" data-color="#00d4ff" data-photos='["setup-hugo-s.webp"]' style="border-color:rgba(0,212,255,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-hugo-s.webp" alt="Setup Hugo.S" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -499,7 +505,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Maceo.R" data-color="#00d4ff" data-photos='["setup-GT3B-2.webp"]' style="border-color:rgba(0,212,255,0.2)">
+        <div class="setup-card" data-name="Maceo.R" data-profile="pilot-GT3B-2.webp" data-color="#00d4ff" data-photos='["setup-GT3B-2.webp"]' style="border-color:rgba(0,212,255,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-GT3B-2.webp" alt="Setup Maceo.R" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -529,7 +535,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Enzo" data-color="#00d4ff" data-photos='["setup-enzo.webp","setup-enzo2.webp"]' style="border-color:rgba(0,212,255,0.2)">
+        <div class="setup-card" data-name="Enzo" data-profile="pilot-GT3B-4.webp" data-color="#00d4ff" data-photos='["setup-enzo.webp","setup-enzo2.webp"]' style="border-color:rgba(0,212,255,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-enzo.webp" alt="Setup Enzo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -559,7 +565,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Cyrille" data-color="#00d4ff" data-photos='["setup-cyrille.webp"]' style="border-color:rgba(0,212,255,0.2)">
+        <div class="setup-card" data-name="Cyrille" data-profile="pilot-LMP-5.webp" data-color="#00d4ff" data-photos='["setup-cyrille.webp"]' style="border-color:rgba(0,212,255,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-cyrille.webp" alt="Setup Cyrille" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -589,7 +595,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Guillaume.w" data-color="#ffcc00" data-photos='["setup-guillaume.webp","setup-guillaume2.webp","setup-guillaume3.webp"]' style="border-color:rgba(255,204,0,0.2)">
+        <div class="setup-card" data-name="Guillaume.w" data-profile="pilot-LMP-7.webp" data-color="#ffcc00" data-photos='["setup-guillaume.webp","setup-guillaume2.webp","setup-guillaume3.webp"]' style="border-color:rgba(255,204,0,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-guillaume.webp" alt="Setup Guillaume.w" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -619,7 +625,7 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Florent.L" data-color="#ffcc00" data-photos='["setup-florent-l.webp","setup-florent-l2.webp"]' style="border-color:rgba(255,204,0,0.2)">
+        <div class="setup-card" data-name="Florent.L" data-profile="pilot-LMP-4.webp" data-color="#ffcc00" data-photos='["setup-florent-l.webp","setup-florent-l2.webp"]' style="border-color:rgba(255,204,0,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-florent-l.webp" alt="Setup Florent.L" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -649,7 +655,7 @@
             </div>
         </div>
 
-        <div class="setup-card no-photo" data-name="Denis" data-color="#ffcc00" data-photos='[]' style="border-color:rgba(255,204,0,0.2)">
+        <div class="setup-card no-photo" data-name="Denis" data-profile="pilot-LMP-6.webp" data-color="#ffcc00" data-photos='[]' style="border-color:rgba(255,204,0,0.2)">
             <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
             <div class="card-header">
                 <span class="card-badge" style="background:rgba(255,204,0,0.15);color:#ffcc00;border:1px solid rgba(255,204,0,0.35)">Pilote LMP2/3</span>
@@ -807,17 +813,22 @@
         const accordion = document.getElementById('mobileAccordion');
         const cards = Array.from(document.querySelectorAll('.setup-card'));
 
-        // Guillaume propriétaire (Guillaume.w) en premier
+        // Ordre défini
+        const order = ['Guillaume.w','Clement','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
         cards.sort((a, b) => {
-            if (a.dataset.name === 'Guillaume.w') return -1;
-            if (b.dataset.name === 'Guillaume.w') return 1;
-            return 0;
+            const ia = order.indexOf(a.dataset.name);
+            const ib = order.indexOf(b.dataset.name);
+            if (ia === -1 && ib === -1) return 0;
+            if (ia === -1) return 1;
+            if (ib === -1) return -1;
+            return ia - ib;
         });
 
         cards.forEach(card => {
             const color   = card.dataset.color || '#ff1a75';
             const photos  = JSON.parse(card.dataset.photos || '[]');
             const badge   = card.querySelector('.card-badge')?.textContent || '';
+            const inOrder = order.includes(card.dataset.name);
 
             const item = document.createElement('div');
             item.className = 'acc-item';
@@ -841,11 +852,23 @@
             // Photo
             const photoHTML = photos.length ? '<img class="acc-photo" src="' + photos[0] + '" alt="Setup ' + name + '" onerror="this.style.display=\'none\'">' : '';
 
+            const profileSrc = card.dataset.profile || 'Logo_SIMTEK.webp';
+            const profilePhotos = [profileSrc];
+
+            // Pilotes hors liste → logo + COMING SOON, pas cliquable
+            const profileHTML = inOrder
+                ? '<img class="acc-header-photo" src="' + profileSrc + '" alt="' + name + '" style="border-color:' + color + '" data-profile-btn="1">'
+                : '<div class="acc-header-photo acc-coming-soon" style="border-color:rgba(255,255,255,0.15)">' +
+                      '<img src="Logo_SIMTEK.webp" alt="SimTek">' +
+                      '<span>COMING SOON</span>' +
+                  '</div>';
+
             item.innerHTML =
                 '<div class="acc-header">' +
-                    '<div class="acc-header-left">' +
+                    profileHTML +
+                    '<div class="acc-header-left" style="flex:1">' +
                         '<span class="acc-badge" style="color:' + color + '">' + badge + '</span>' +
-                        '<span class="acc-name">Setup ' + name + '</span>' +
+                        '<span class="acc-name">' + name + '</span>' +
                     '</div>' +
                     '<span class="acc-arrow">▼</span>' +
                 '</div>' +
@@ -857,15 +880,25 @@
                     '</div>' +
                 '</div>';
 
-            // Toggle accordion
+            // Photo de profil → lightbox (seulement si dans la liste)
+            if (inOrder) {
+                const profileBtn = item.querySelector('[data-profile-btn]');
+                profileBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    openLightbox(profilePhotos, 0);
+                });
+            }
+
+            // Toggle accordion (clic sur header sauf photo cliquable)
             const header = item.querySelector('.acc-header');
             const body   = item.querySelector('.acc-body');
-            header.addEventListener('click', () => {
+            header.addEventListener('click', (e) => {
+                if (e.target.closest('[data-profile-btn]')) return;
                 const isOpen = item.classList.toggle('open');
                 body.style.maxHeight = isOpen ? body.scrollHeight + 'px' : '0';
             });
 
-            // Gallery button
+            // Gallery button + photo setup
             if (photos.length) {
                 const btn = item.querySelector('.acc-gallery-btn');
                 btn.addEventListener('click', e => { e.stopPropagation(); openLightbox(photos, 0); });
