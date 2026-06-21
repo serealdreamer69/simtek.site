@@ -1513,7 +1513,7 @@
             #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
             #super-trofeo.st-open .st-header::after { transform: translateY(-50%) rotate(180deg); }
             #super-trofeo .st-table-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-            #super-trofeo.st-open .st-table-wrap { max-height: 5000px; }
+            #super-trofeo.st-open .st-table-wrap { max-height: 5000px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             .event-main { flex-direction: column; align-items: center; text-align: center; }
             .schedule-days, .schedule-times { justify-content: center; }
             .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
