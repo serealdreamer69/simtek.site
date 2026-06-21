@@ -92,18 +92,21 @@
         /* ── Desktop cards ── */
         .setups-container { max-width: 1400px; margin: 0 auto; padding: 60px 20px 80px; }
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 22px; }
-        .setup-card { background: rgba(10,10,10,0.6); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
-        .setup-card.no-photo { cursor: default; }
-        .setup-card:not(.no-photo):hover { transform: translateY(-5px); }
+        .setup-card { background: rgba(10,10,10,0.6); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,26,117,0.2); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+        .setup-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(255,26,117,0.2); }
         .card-photo-wrapper { width: 100%; height: 220px; position: relative; overflow: hidden; background: rgba(0,0,0,0.8); }
         .card-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
         .card-photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
         .card-photo-placeholder img { height: 55px; opacity: 0.2; }
         .card-photo-placeholder span { font-size: 11px; color: rgba(255,255,255,0.2); text-transform: uppercase; letter-spacing: 1px; }
         .card-photo-hint { position: absolute; bottom: 8px; right: 10px; background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.7); font-size: 10px; padding: 3px 8px; border-radius: 10px; letter-spacing: 0.5px; backdrop-filter: blur(4px); }
-        .card-header { padding: 16px 18px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-        .card-badge { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+        .card-header { padding: 16px 18px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 14px; }
+        .card-badge { display: none; }
         .card-name { font-size: 20px; font-weight: 800; color: #fff; }
+        .card-profile-photo { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 2px solid #ff1a75; flex-shrink: 0; }
+        .card-coming-soon-circle { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.04); flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+        .card-coming-soon-circle img { width: 28px; height: auto; opacity: 0.4; }
+        .card-coming-soon-circle span { font-size: 5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); white-space: nowrap; }
         .card-body { padding: 14px 18px 18px; display: flex; flex-direction: column; gap: 12px; }
         .spec-section { background: rgba(0,0,0,0.4); border-radius: 10px; overflow: hidden; }
         .spec-section-title { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 8px 14px 7px; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -904,6 +907,63 @@
     }
 
     buildAccordion();
+
+    // ── Desktop grid builder ──
+    function buildDesktopGrid() {
+        const grid = document.getElementById('cardsGrid');
+        if (!grid) return;
+        const cards = Array.from(grid.querySelectorAll('.setup-card'));
+        const order = ['Guillaume.w','Clement','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+
+        // Trier
+        cards.sort((a, b) => {
+            const ia = order.indexOf(a.dataset.name);
+            const ib = order.indexOf(b.dataset.name);
+            if (ia === -1 && ib === -1) return 0;
+            if (ia === -1) return 1;
+            if (ib === -1) return -1;
+            return ia - ib;
+        });
+
+        // Reconstruire le grid dans le bon ordre + modifier chaque header
+        cards.forEach(card => {
+            const rawName = card.dataset.name || '';
+            const firstName = rawName.replace(/\.[A-Za-z]$/, '');
+            const inOrder = order.includes(rawName);
+            const profileSrc = card.dataset.profile || 'Logo_SIMTEK.webp';
+
+            // Forcer bordure rose
+            card.style.borderColor = 'rgba(255,26,117,0.2)';
+
+            // Modifier le card-header : ajouter photo ronde + prénom
+            const header = card.querySelector('.card-header');
+            if (header && !header.querySelector('.card-profile-photo, .card-coming-soon-circle')) {
+                const nameEl = header.querySelector('.card-name');
+                if (nameEl) nameEl.textContent = firstName;
+
+                const photoEl = inOrder
+                    ? Object.assign(document.createElement('img'), {
+                        className: 'card-profile-photo',
+                        src: profileSrc,
+                        alt: firstName
+                      })
+                    : (() => {
+                        const div = document.createElement('div');
+                        div.className = 'card-coming-soon-circle';
+                        div.innerHTML = '<img src="Logo_SIMTEK.webp" alt="SimTek"><span>COMING SOON</span>';
+                        return div;
+                      })();
+
+                header.insertBefore(photoEl, header.firstChild);
+            }
+
+            // Réappendre dans le bon ordre
+            grid.appendChild(card);
+        });
+    }
+
+    buildDesktopGrid();
+
 </script>
 </body>
 </html>
