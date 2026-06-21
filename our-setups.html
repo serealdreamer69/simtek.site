@@ -424,8 +424,12 @@
             </div>
         </div>
 
-        <div class="setup-card no-photo" data-name="Thomas" data-profile="Logo_SIMTEK.webp" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
-            <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
+        <div class="setup-card" data-name="Thomas" data-profile="pilot-GT3A-thomas.webp" data-color="#ff1a75" data-photos='["setup-thomas.webp","setup-thomas2.webp"]' style="border-color:rgba(255,26,117,0.2)">
+            <div class="card-photo-wrapper">
+                <img class="card-photo" src="setup-thomas.webp" alt="Setup Thomas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                <div class="card-photo-hint">📸 Voir en grand</div>
+            </div>
             <div class="card-header">
                 <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">PILOTE GT3 ALPHA</span>
                 <div class="card-name">Thomas</div>
