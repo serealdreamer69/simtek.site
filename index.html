@@ -169,7 +169,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #000000;
+            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
             color: #ffffff;
             line-height: 1.6;
         }
@@ -419,7 +419,7 @@
             min-height: 90vh;
             padding: 60px 40px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.45);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(10, 10, 10, 0.45) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -511,7 +511,7 @@
         }
 
         .card {
-            background: rgba(10, 10, 10, 0.9);
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
             border: 1px solid rgba(255, 26, 117, 0.2);
             border-radius: 20px;
             padding: 30px;
@@ -577,7 +577,7 @@
 
         /* PLANNING DES COURSES STYLES */
         #planning {
-            background: #000000;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
         }
         
         .planning-header {
@@ -622,7 +622,7 @@
         }
         
         .planning-section {
-            background: rgba(10, 10, 10, 0.9);
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
             border: 1px solid rgba(255, 26, 117, 0.2);
             border-radius: 20px;
             padding: 25px;
@@ -935,7 +935,7 @@
         }
 
         #join {
-            background: #000000;
+            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
         }
 
         .join-container {
@@ -1063,7 +1063,7 @@
         }
 
         .recruitment-form {
-            background: rgba(10, 10, 10, 0.9);
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
             border: 2px solid rgba(255, 26, 117, 0.3);
             border-radius: 20px;
             padding: 40px;
@@ -1499,7 +1499,7 @@
             #join .recruitment-form { display: none !important; }
             .join-button-mobile { display: block; }
             nav { padding: 15px 20px; }
-            .hero { padding: 40px 20px; min-height: 70vh; background: rgba(0, 0, 0, 0.45); }
+            .hero { padding: 40px 20px; min-height: 70vh; }
             .hero-video { width: 95%; height: 60%; }
             section { padding: 40px 20px; }
             h2 { font-size: 32px !important; }
@@ -1508,6 +1508,15 @@
             .radio-group { flex-direction: column; }
             .race-item { flex-wrap: wrap; }
             .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
+
+            /* ── Accordéon section mobile ── */
+            .mobile-section-toggle { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 14px 18px; background: rgba(255,26,117,0.08); border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; margin-bottom: 16px; user-select: none; }
+            .mobile-section-toggle h2 { margin: 0 !important; font-size: 22px !important; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+            .mobile-section-toggle-arrow { font-size: 16px; color: #ff1a75; transition: transform 0.3s; flex-shrink: 0; }
+            .mobile-section-body { overflow: hidden; max-height: 0; transition: max-height 0.4s ease; }
+            .mobile-section-body.open { max-height: 5000px; }
+            #championnats h2, #super-trofeo h2 { display: none; }
+        }
             .event-main { flex-direction: column; align-items: center; text-align: center; }
             .schedule-days, .schedule-times { justify-content: center; }
             .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
@@ -1671,7 +1680,7 @@
            SUPER TROFEO — CLASSEMENT PILOTES
            ═══════════════════════════════════════════════ */
         #super-trofeo {
-            background: #000000;
+            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(10,10,10,0.95) 100%);
         }
         .st-header {
             display: flex;
@@ -2835,7 +2844,7 @@
 <!-- ============================================= -->
 
 <!-- SECTION LIVE TWITCH -->
-<section id="live" style="padding: 80px 60px; background: #000000;">
+<section id="live" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 26, 117, 0.05) 100%);">
     <h2 style="text-align:center; font-size:48px; margin-bottom:10px;">
         🔴 Live <span style="background:linear-gradient(135deg,#ff1a75,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">SimTek</span>
     </h2>
@@ -2856,7 +2865,7 @@
     </div>
 </section>
 
-    <section id="gallery" style="padding: 80px 60px; background: #000000;">
+    <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
         <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
         <div class="gallery-grid">
             <div class="gallery-image-container scroll-animate scale-up delay-1" onclick="openLightbox(0)">
@@ -3076,6 +3085,38 @@
                 group.classList.toggle('open');
             });
         });
+
+        // ── Accordéon sections Championnats & Super-Trofeo sur mobile ──
+        (function() {
+            if (window.innerWidth > 768) return;
+            var sections = [
+                { id: 'championnats', label: 'Championnats — Saison 11' },
+                { id: 'super-trofeo',  label: 'Super-Troféo' }
+            ];
+            sections.forEach(function(s) {
+                var section = document.getElementById(s.id);
+                if (!section) return;
+
+                // Envelopper le contenu dans un body collapsible
+                var children = Array.from(section.children);
+                var body = document.createElement('div');
+                body.className = 'mobile-section-body';
+                children.forEach(function(child) { body.appendChild(child); });
+
+                // Créer le toggle header
+                var toggle = document.createElement('div');
+                toggle.className = 'mobile-section-toggle';
+                toggle.innerHTML = '<h2>' + s.label + '</h2><span class="mobile-section-toggle-arrow">▼</span>';
+
+                section.appendChild(toggle);
+                section.appendChild(body);
+
+                toggle.addEventListener('click', function() {
+                    var isOpen = body.classList.toggle('open');
+                    toggle.querySelector('.mobile-section-toggle-arrow').style.transform = isOpen ? 'rotate(180deg)' : '';
+                });
+            });
+        })();
 
 
 
