@@ -36,7 +36,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            background: #000000;
             color: #ffffff;
             min-height: 100vh;
         }
@@ -137,7 +137,7 @@
             top: 0; left: 0;
             width: 100%;
             height: 100vh;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.98) 100%);
+            background: #000000;
             backdrop-filter: blur(20px);
             z-index: 999;
             opacity: 0;
@@ -212,10 +212,11 @@
             margin: 40px auto;
             padding: 0 20px;
         }
+        .page-halo { position: fixed; top: 0; left: 0; right: 0; height: 50vh; background: radial-gradient(ellipse at 50% 0%, rgba(255,26,117,0.15) 0%, transparent 70%); pointer-events: none; z-index: -1; }
 
         h1 {
             text-align: center;
-            font-size: 48px;
+            font-size: clamp(36px,6vw,68px);
             margin-bottom: 20px;
             background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%);
             -webkit-background-clip: text;
@@ -458,7 +459,7 @@
 
         /* Discord Box */
         .discord-box-centered {
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
+            background: #000000;
             border: 2px solid rgba(255, 26, 117, 0.3);
             border-radius: 15px;
             padding: 30px 40px;
@@ -639,8 +640,10 @@
             <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="mobile-cta">Nous Contacter</a>
         </div>
     </div>
+    <div class="page-halo"></div>
     <div class="main-container">
         <h1 class="sr-only">Recrutement Pilote Simracing — Rejoins SimTek Performance, Team Esport LMU France</h1>
+        <div style="font-size:clamp(36px,6vw,68px);font-weight:900;line-height:1.08;letter-spacing:-1px;text-align:center;padding:60px 0 30px;"><span style="color:#ffffff;display:inline">REJOINS </span><span style="background:linear-gradient(135deg,#ff1a75 0%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block">SIMTEK</span></div>
         <p class="subtitle">Tu rêves de piloter au niveau professionnel dans Simtek Performance ?</p>
 
         <!-- Conditions -->

@@ -101,7 +101,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%); color: #fff; line-height: 1.6; min-height: 100vh; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000000; color: #fff; line-height: 1.6; min-height: 100vh; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,26,117,0.2); }
         .logo-img { height: 80px; width: auto; object-fit: contain; }
         .nav-links { display: flex; gap: 26px; list-style: none; }
@@ -120,7 +120,9 @@
         .mobile-menu.active { display: flex; }
         .mobile-menu a { color: #fff; text-decoration: none; font-size: 15px; font-weight: 600; text-transform: uppercase; }
         .mobile-menu a:hover { color: #ff1a75; }
-        .blog-hero { padding: 70px 60px 50px; text-align: center; border-bottom: 1px solid rgba(255,26,117,0.15); }
+        .blog-hero { padding: 70px 60px 50px; text-align: center; border-bottom: 1px solid rgba(255,26,117,0.15); position: relative; overflow: hidden; }
+        .blog-hero::before { content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%, rgba(255,26,117,0.15) 0%, transparent 70%);pointer-events:none;z-index:0 }
+        .blog-hero-title span { font-size: clamp(36px,6vw,68px) !important; }
         .blog-hero h1 { font-size: 52px; font-weight: 900; background: linear-gradient(135deg, #ff1a75, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
         .blog-hero p { font-size: 17px; color: #b0b0d0; }
         .blog-hero-title { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
@@ -242,10 +244,7 @@
 
     <div class="blog-hero">
         <h1 class="sr-only">Actualités SimTek Performance — Résultats de courses, guides simracing et analyses championnats LMU</h1>
-        <div class="blog-hero-title">
-            <span>LES ACTUS</span>
-            <img src="Logo_SIMTEK.webp" alt="SimTek Performance" class="blog-hero-logo">
-        </div>
+        <div class="blog-hero-title"><span style="color:#ffffff;display:inline">LES ACTUS </span><span style="background:linear-gradient(135deg,#ff1a75 0%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block">SIMTEK</span></div>
         <p>Résultats de courses, guides simracing et analyses championnats</p>
     </div>
 
