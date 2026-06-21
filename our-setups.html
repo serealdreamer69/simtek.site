@@ -94,7 +94,7 @@
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 22px; }
         .setup-card { background: rgba(10,10,10,0.6); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,26,117,0.2); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
         .setup-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(255,26,117,0.2); }
-        .card-photo-wrapper { width: 100%; height: 220px; position: relative; overflow: hidden; background: rgba(0,0,0,0.8); }
+        .card-photo-wrapper { width: 100%; height: 260px; position: relative; overflow: hidden; background: rgba(0,0,0,0.8); }
         .card-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
         .card-photo-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
         .card-photo-placeholder img { height: 55px; opacity: 0.2; }
@@ -262,12 +262,12 @@
                 </div>
                 <div class="spec-section">
                     <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
-                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Intel Core i7-13700K</span></div>
+                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">RTX 4070 Ti 12Go</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">MSI MAG Z790 TOMAHAWK</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Corsair RM850x Gold</span></div>
+                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">32Go DDR5 Corsair Vengeance</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">3x 27" 165Hz 1080p</span></div>
                 </div>
             </div>
         </div>
@@ -332,8 +332,12 @@
             </div>
         </div>
 
-        <div class="setup-card no-photo" data-name="Christophe.A" data-profile="pilot-GT3B-3.webp" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
-            <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
+        <div class="setup-card" data-name="Christophe.A" data-profile="pilot-GT3B-3.webp" data-color="#ff1a75" data-photos='["setup-christophe-a.webp"]' style="border-color:rgba(255,26,117,0.2)">
+            <div class="card-photo-wrapper">
+                <img class="card-photo" src="setup-christophe-a.webp" alt="Setup Christophe" style="object-fit:cover;object-position:center top;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                <div class="card-photo-hint">📸 Voir en grand</div>
+            </div>
             <div class="card-header">
                 <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote GT3 Alpha</span>
                 <div class="card-name">Christophe.A</div>
@@ -348,12 +352,12 @@
                 </div>
                 <div class="spec-section">
                     <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
-                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">AMD Ryzen 7 5800X3D</span></div>
+                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">RTX 3080 10Go</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">ASUS ROG STRIX B550-F</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Be Quiet! Straight Power 750W</span></div>
+                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">16Go DDR4 G.Skill Trident Z 3600</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">3x 32" 240Hz QHD Samsung</span></div>
                 </div>
             </div>
         </div>
@@ -674,12 +678,12 @@
                 </div>
                 <div class="spec-section">
                     <div class="spec-section-title" style="color:#ffcc00;">🖥️ PC</div>
-                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">AMD Ryzen 5 7600X</span></div>
+                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">RTX 4060 Ti 8Go</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">Gigabyte B650 AORUS ELITE</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Seasonic Focus GX 650W</span></div>
+                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">16Go DDR5 Kingston Fury Beast</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">2x 27" 144Hz 1080p</span></div>
                 </div>
             </div>
         </div>
