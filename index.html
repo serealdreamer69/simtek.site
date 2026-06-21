@@ -169,7 +169,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+            background: #000000;
             color: #ffffff;
             line-height: 1.6;
         }
@@ -511,7 +511,7 @@
         }
 
         .card {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+            background: rgba(10, 10, 10, 0.9);
             border: 1px solid rgba(255, 26, 117, 0.2);
             border-radius: 20px;
             padding: 30px;
@@ -577,7 +577,7 @@
 
         /* PLANNING DES COURSES STYLES */
         #planning {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+            background: #000000;
         }
         
         .planning-header {
@@ -622,7 +622,7 @@
         }
         
         .planning-section {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+            background: rgba(10, 10, 10, 0.9);
             border: 1px solid rgba(255, 26, 117, 0.2);
             border-radius: 20px;
             padding: 25px;
@@ -935,7 +935,7 @@
         }
 
         #join {
-            background: linear-gradient(135deg, rgba(255, 26, 117, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            background: #000000;
         }
 
         .join-container {
@@ -1063,7 +1063,7 @@
         }
 
         .recruitment-form {
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%);
+            background: rgba(10, 10, 10, 0.9);
             border: 2px solid rgba(255, 26, 117, 0.3);
             border-radius: 20px;
             padding: 40px;
@@ -1508,15 +1508,12 @@
             .radio-group { flex-direction: column; }
             .race-item { flex-wrap: wrap; }
             .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
-
-            /* ── Accordéon section mobile ── */
-            .mobile-section-toggle { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 14px 18px; background: rgba(255,26,117,0.08); border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; margin-bottom: 16px; user-select: none; }
-            .mobile-section-toggle h2 { margin: 0 !important; font-size: 22px !important; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-            .mobile-section-toggle-arrow { font-size: 16px; color: #ff1a75; transition: transform 0.3s; flex-shrink: 0; }
-            .mobile-section-body { overflow: hidden; max-height: 0; transition: max-height 0.4s ease; }
-            .mobile-section-body.open { max-height: 5000px; }
-            #championnats h2, #super-trofeo h2 { display: none; }
-        }
+            /* ── Super-Trofeo accordéon mobile ── */
+            #super-trofeo .st-header { cursor: pointer; position: relative; padding-right: 40px; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(255,26,117,0.06); }
+            #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
+            #super-trofeo.st-open .st-header::after { transform: translateY(-50%) rotate(180deg); }
+            #super-trofeo .st-table-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+            #super-trofeo.st-open .st-table-wrap { max-height: 5000px; }
             .event-main { flex-direction: column; align-items: center; text-align: center; }
             .schedule-days, .schedule-times { justify-content: center; }
             .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
@@ -1680,7 +1677,7 @@
            SUPER TROFEO — CLASSEMENT PILOTES
            ═══════════════════════════════════════════════ */
         #super-trofeo {
-            background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(10,10,10,0.95) 100%);
+            background: #000000;
         }
         .st-header {
             display: flex;
@@ -2844,7 +2841,7 @@
 <!-- ============================================= -->
 
 <!-- SECTION LIVE TWITCH -->
-<section id="live" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(255, 26, 117, 0.05) 100%);">
+<section id="live" style="padding: 80px 60px; background: #000000;">
     <h2 style="text-align:center; font-size:48px; margin-bottom:10px;">
         🔴 Live <span style="background:linear-gradient(135deg,#ff1a75,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">SimTek</span>
     </h2>
@@ -2865,7 +2862,7 @@
     </div>
 </section>
 
-    <section id="gallery" style="padding: 80px 60px; background: linear-gradient(135deg, rgba(255, 26, 117, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);">
+    <section id="gallery" style="padding: 80px 60px; background: #000000;">
         <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
         <div class="gallery-grid">
             <div class="gallery-image-container scroll-animate scale-up delay-1" onclick="openLightbox(0)">
@@ -3086,38 +3083,6 @@
             });
         });
 
-        // ── Accordéon sections Championnats & Super-Trofeo sur mobile ──
-        (function() {
-            if (window.innerWidth > 768) return;
-            var sections = [
-                { id: 'championnats', label: 'Championnats — Saison 11' },
-                { id: 'super-trofeo',  label: 'Super-Troféo' }
-            ];
-            sections.forEach(function(s) {
-                var section = document.getElementById(s.id);
-                if (!section) return;
-
-                // Envelopper le contenu dans un body collapsible
-                var children = Array.from(section.children);
-                var body = document.createElement('div');
-                body.className = 'mobile-section-body';
-                children.forEach(function(child) { body.appendChild(child); });
-
-                // Créer le toggle header
-                var toggle = document.createElement('div');
-                toggle.className = 'mobile-section-toggle';
-                toggle.innerHTML = '<h2>' + s.label + '</h2><span class="mobile-section-toggle-arrow">▼</span>';
-
-                section.appendChild(toggle);
-                section.appendChild(body);
-
-                toggle.addEventListener('click', function() {
-                    var isOpen = body.classList.toggle('open');
-                    toggle.querySelector('.mobile-section-toggle-arrow').style.transform = isOpen ? 'rotate(180deg)' : '';
-                });
-            });
-        })();
-
 
 
         // ── Championnats : surbrillance semaine en cours ──
@@ -3134,6 +3099,17 @@
 
             document.querySelectorAll('.champ-week-row[data-week="' + currentWeek + '"]').forEach(function(row) {
                 row.classList.add('week-active');
+            });
+        })();
+
+        // ── Super-Trofeo : accordéon mobile ──
+        (function() {
+            if (window.innerWidth > 768) return;
+            var section = document.getElementById('super-trofeo');
+            var header  = section && section.querySelector('.st-header');
+            if (!header) return;
+            header.addEventListener('click', function() {
+                section.classList.toggle('st-open');
             });
         })();
     </script>
