@@ -825,10 +825,13 @@
         });
 
         cards.forEach(card => {
-            const color   = card.dataset.color || '#ff1a75';
+            const color   = '#ff1a75'; // toujours rose équipe
             const photos  = JSON.parse(card.dataset.photos || '[]');
-            const badge   = card.querySelector('.card-badge')?.textContent || '';
             const inOrder = order.includes(card.dataset.name);
+
+            // Prénom uniquement (supprimer suffixe .X ou .w)
+            const rawName = card.dataset.name || '';
+            const firstName = rawName.replace(/\.[A-Za-z]$/, '');
 
             const item = document.createElement('div');
             item.className = 'acc-item';
@@ -850,14 +853,14 @@
             });
 
             // Photo
-            const photoHTML = photos.length ? '<img class="acc-photo" src="' + photos[0] + '" alt="Setup ' + name + '" onerror="this.style.display=\'none\'">' : '';
+            const photoHTML = photos.length ? '<img class="acc-photo" src="' + photos[0] + '" alt="Setup ' + firstName + '" onerror="this.style.display=\'none\'">' : '';
 
             const profileSrc = card.dataset.profile || 'Logo_SIMTEK.webp';
             const profilePhotos = [profileSrc];
 
             // Pilotes hors liste → logo + COMING SOON, pas cliquable
             const profileHTML = inOrder
-                ? '<img class="acc-header-photo" src="' + profileSrc + '" alt="' + name + '" style="border-color:' + color + '" data-profile-btn="1">'
+                ? '<img class="acc-header-photo" src="' + profileSrc + '" alt="' + firstName + '" style="border-color:' + color + '" data-profile-btn="1">'
                 : '<div class="acc-header-photo acc-coming-soon" style="border-color:rgba(255,255,255,0.15)">' +
                       '<img src="Logo_SIMTEK.webp" alt="SimTek">' +
                       '<span>COMING SOON</span>' +
@@ -867,8 +870,7 @@
                 '<div class="acc-header">' +
                     profileHTML +
                     '<div class="acc-header-left" style="flex:1">' +
-                        '<span class="acc-badge" style="color:' + color + '">' + badge + '</span>' +
-                        '<span class="acc-name">' + name + '</span>' +
+                        '<span class="acc-name">' + firstName + '</span>' +
                     '</div>' +
                     '<span class="acc-arrow">▼</span>' +
                 '</div>' +
