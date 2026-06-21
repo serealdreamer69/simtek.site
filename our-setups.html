@@ -821,7 +821,7 @@
         const cards = Array.from(document.querySelectorAll('.setup-card'));
 
         // Ordre défini
-        const order = ['Guillaume.w','Clement','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
         cards.sort((a, b) => {
             const ia = order.indexOf(a.dataset.name);
             const ib = order.indexOf(b.dataset.name);
@@ -917,7 +917,7 @@
         const grid = document.getElementById('cardsGrid');
         if (!grid) return;
         const cards = Array.from(grid.querySelectorAll('.setup-card'));
-        const order = ['Guillaume.w','Clement','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
 
         // Trier
         cards.sort((a, b) => {
