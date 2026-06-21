@@ -87,7 +87,7 @@
         /* ── Hero ── */
         .hero { text-align: center; padding: 100px 20px 60px; background: #000000; position: relative; overflow: hidden; }
         .hero::before { content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 0%, rgba(255,26,117,0.15) 0%, transparent 70%);pointer-events:none;z-index:0 }
-        .hero-title { font-size: clamp(36px,6vw,68px); font-weight: 900; line-height: 1.08; letter-spacing: -1px; color: #ffffff; margin-bottom: 0; position: relative; z-index: 1; }
+        .hero-title { font-size:clamp(36px,6vw,68px);font-weight:900;line-height:1.08;letter-spacing:-1px;color:#ffffff;position:relative;z-index:1;text-align:center;padding:20px 0 }
         .hero h1 { font-size: 64px; margin-bottom: 20px; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 18px; color: #b0b0d0; max-width: 700px; margin: 0 auto; }
 
@@ -241,17 +241,17 @@
 
 <section class="hero">
     <h1 class="sr-only">Nos Setups Simracing — Configurations Team Esport LMU | SimTek Performance</h1>
-    <div class="hero-title">Nos Setups</div>
+    <div class="hero-title"><span style="color:#ffffff;display:inline">NOS SETUPS CHEZ </span><span style="background:linear-gradient(135deg,#ff1a75 0%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block">SIMTEK</span></div>
 </section>
 
 <!-- ── Desktop Cards ── -->
 <div class="setups-container">
     <div class="cards-grid" id="cardsGrid">
 
-        <div class="setup-card no-photo" data-name="Romuald.D" data-profile="chef-gt3-alpha.webp" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card no-photo" data-name="Romuald.D" data-team="bravo" data-profile="chef-gt3-alpha.webp" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
             <div class="card-header">
-                <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Chef d'équipe GT3 Alpha</span>
+                <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Gentleman Driver</span>
                 <div class="card-name">Romuald.D</div>
             </div>
             <div class="card-body">
@@ -401,7 +401,7 @@
                 <div class="card-photo-hint">📸 Voir en grand</div>
             </div>
             <div class="card-header">
-                <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote GT3 Alpha</span>
+                <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote GT3 Elite</span>
                 <div class="card-name">Hugo.R</div>
             </div>
             <div class="card-body">
@@ -424,36 +424,31 @@
             </div>
         </div>
 
-        <div class="setup-card" data-name="Anthony.M" data-profile="Logo_SIMTEK.webp" data-color="#00d4ff" data-photos='["setup-anthony-m.webp"]' style="border-color:rgba(0,212,255,0.2)">
-            <div class="card-photo-wrapper">
-                <img class="card-photo" src="setup-anthony-m.webp" alt="Setup Anthony.M" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
-                <div class="card-photo-hint">📸 Voir en grand</div>
-            </div>
+        <div class="setup-card no-photo" data-name="Thomas" data-profile="Logo_SIMTEK.webp" data-color="#ff1a75" data-photos='[]' style="border-color:rgba(255,26,117,0.2)">
+            <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
             <div class="card-header">
-                <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Chef d'équipe GT3 Bravo</span>
-                <div class="card-name">Anthony.M</div>
+                <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">PILOTE GT3 ALPHA</span>
+                <div class="card-name">Thomas</div>
             </div>
             <div class="card-body">
                 <div class="spec-section">
-                    <div class="spec-section-title" style="color:#00d4ff;">🎮 Sim Racing</div>
-                    <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Asetek Invicta 27Nm</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Simagic GT Néo</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Rseat P1</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Asetek Invicta</span></div>
+                    <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                    <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val nc">—</span></div>
                 </div>
                 <div class="spec-section">
-                    <div class="spec-section-title" style="color:#00d4ff;">🖥️ PC</div>
-                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Intel 13900KF</span></div>
-                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">RTX 5090</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">Asus ROG Maximus Z790 Hero</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">NZXT 1500W</span></div>
-                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">62Go Corsair Platinium DDR5</span></div>
-                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Sony Bravia XR 65" OLED</span></div>
+                    <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val nc">—</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val nc">—</span></div>
                 </div>
             </div>
         </div>
-
         <div class="setup-card" data-name="Anthony.D" data-profile="pilot-GT3A-2.webp" data-color="#00d4ff" data-photos='["setup-anthony-d.webp"]' style="border-color:rgba(0,212,255,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-anthony-d.webp" alt="Setup Anthony.D" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -521,7 +516,7 @@
                 <div class="card-photo-hint">📸 Voir en grand</div>
             </div>
             <div class="card-header">
-                <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Pilote GT3 Bravo</span>
+                <span class="card-badge" style="background:rgba(0,212,255,0.15);color:#00d4ff;border:1px solid rgba(0,212,255,0.35)">Chef d'équipe GT3 Alpha</span>
                 <div class="card-name">Maceo.R</div>
             </div>
             <div class="card-body">
@@ -611,7 +606,7 @@
                 <div class="card-photo-hint">📸 3 photos</div>
             </div>
             <div class="card-header">
-                <span class="card-badge" style="background:rgba(255,204,0,0.15);color:#ffcc00;border:1px solid rgba(255,204,0,0.35)">Chef d'équipe LMP2/3</span>
+                <span class="card-badge" style="background:rgba(255,204,0,0.15);color:#ffcc00;border:1px solid rgba(255,204,0,0.35)">Chef d'équipe GT3 Bravo</span>
                 <div class="card-name">Guillaume.w</div>
             </div>
             <div class="card-body">
@@ -823,7 +818,7 @@
         const cards = Array.from(document.querySelectorAll('.setup-card'));
 
         // Ordre défini
-        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Florent.L','Hugo.S','Hugo.R','Cyrille'];
         cards.sort((a, b) => {
             const ia = order.indexOf(a.dataset.name);
             const ib = order.indexOf(b.dataset.name);
@@ -919,7 +914,7 @@
         const grid = document.getElementById('cardsGrid');
         if (!grid) return;
         const cards = Array.from(grid.querySelectorAll('.setup-card'));
-        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Florent.L','Hugo.S','Hugo.R','Cyrille'];
 
         // Trier
         cards.sort((a, b) => {
