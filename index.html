@@ -419,7 +419,7 @@
             min-height: 90vh;
             padding: 60px 40px;
             text-align: center;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(10, 10, 10, 0.45) 100%);
+            background: rgba(0, 0, 0, 0.45);
             position: relative;
             overflow: hidden;
         }
@@ -1499,7 +1499,7 @@
             #join .recruitment-form { display: none !important; }
             .join-button-mobile { display: block; }
             nav { padding: 15px 20px; }
-            .hero { padding: 40px 20px; min-height: 70vh; }
+            .hero { padding: 40px 20px; min-height: 70vh; background: rgba(0,0,0,0.45); }
             .hero-video { width: 95%; height: 60%; }
             section { padding: 40px 20px; }
             h2 { font-size: 32px !important; }
@@ -1508,6 +1508,12 @@
             .radio-group { flex-direction: column; }
             .race-item { flex-wrap: wrap; }
             .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
+            /* ── Super-Trofeo accordéon mobile ── */
+            #super-trofeo .st-header { cursor: pointer; position: relative; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(255,26,117,0.06); }
+            #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
+            #super-trofeo.st-open .st-header::after { transform: translateY(-50%) rotate(180deg); }
+            #super-trofeo .st-table-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+            #super-trofeo.st-open .st-table-wrap { max-height: 5000px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             /* ── Super-Trofeo accordéon mobile ── */
             #super-trofeo .st-header { cursor: pointer; position: relative; padding-right: 40px; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(255,26,117,0.06); }
             #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
@@ -1888,7 +1894,7 @@
         <h2>Planning des courses</h2>
         <div class="planning-update">
             <span class="pulse-dot"></span>
-            <span>Mis à jour : <strong id="update-date">Semaine du 16/06 - Season 11 Week 1</strong></span>
+            <span>Mis à jour : <strong id="update-date">Semaine du 23/06 - Season 11 Week 2</strong></span>
         </div>
     </div>
 
@@ -1912,36 +1918,34 @@
                     </div>
                     <div class="tier-races">
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
-                            <span>⏱ Toutes les 20min · 20min</span><span>👥 20 voitures / split</span>
+                            <span>⏱ Toutes les 15min · 20min</span><span>👥 20 voitures / split</span>
                             <span>🤝 Aides hautes autorisées</span><span>🔥 Chauffe-pneus : ON</span>
                             <span>🛞 Pneus : 8</span>
                         </div>
                         <div class="race-item">
-                            <span class="race-flag">🇯🇵</span>
+                            <span class="race-flag">🇧🇭</span>
                             <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="race-track">Fuji <span class="config">(Classic)</span> — LMGT3 Fixed</div>
+                                <div class="race-classes"><span class="class-badge lmgt3">LMGT3</span></div>
+                                <div class="race-track">Bahrain <span class="config">(Paddock)</span> — LMGT3 Fixed</div>
                             </div>
-                            <div class="race-meta">
-                                <span class="setup-badge fixed">Fixed</span>
-                                <span class="duration-badge">20 min</span>
-                            </div>
+                            <div class="race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div>
                         </div>
                         <div class="race-item">
-                            <span class="race-flag">🇺🇸</span>
+                            <span class="race-flag">🇫🇷</span>
                             <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="race-track">Sebring <span class="config">(WEC)</span> — <span style="color:#ffa500;font-weight:600;">Logitech McLaren G Challenge Q3</span></div>
+                                <div class="race-classes"><span class="class-badge lmgt3">LMGT3</span></div>
+                                <div class="race-track">Le Mans <span class="config">(WEC)</span> — <span style="color:#ffa500;font-weight:600;">Logitech McLaren G Challenge Q4</span></div>
                                 <div style="font-size:11px;color:#b0b0d0;margin-top:3px;">McLaren 720S LMGT3</div>
                             </div>
-                            <div class="race-meta">
-                                <span class="setup-badge fixed">Fixed</span>
-                                <span class="duration-badge">20 min</span>
+                            <div class="race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div>
+                        </div>
+                        <div class="race-item">
+                            <span class="race-flag">🇧🇪</span>
+                            <div class="race-details">
+                                <div class="race-classes"><span class="class-badge lmp3">LMP3</span></div>
+                                <div class="race-track">Spa-Francorchamps <span class="config">(WEC)</span> — LMP3 Fixed</div>
                             </div>
+                            <div class="race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div>
                         </div>
                     </div>
                 </div>
@@ -1959,46 +1963,30 @@
                             <span>🛞 Pneus : 8</span>
                         </div>
                         <div class="race-item">
+                            <span class="race-flag">🇮🇹</span>
+                            <div class="race-details">
+                                <div class="race-classes"><span class="class-badge lmgt3">LMGT3</span></div>
+                                <div class="race-track">Monza <span class="config">(Curva Grande)</span> — LMGT3 Sprint Cup</div>
+                            </div>
+                            <div class="race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">30 min</span></div>
+                        </div>
+                        <div class="race-item">
                             <span class="race-flag">🇧🇷</span>
                             <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="race-track">Interlagos <span class="config">(WEC)</span> — LMGT3 Sprint Cup</div>
+                                <div class="race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span></div>
+                                <div class="race-track">Interlagos <span class="config">(WEC)</span> — Prototype Fixed</div>
+                                <div style="font-size:11px;color:#b0b0d0;margin-top:3px;">LMP2 (ELMS) & LMP3</div>
                             </div>
-                            <div class="race-meta">
-                                <span class="setup-badge open">Open</span>
-                                <span class="duration-badge">30 min</span>
-                            </div>
+                            <div class="race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">30 min</span></div>
                         </div>
                         <div class="race-item">
-                            <span class="race-flag">🇺🇸</span>
+                            <span class="race-flag">🇶🇦</span>
                             <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge lmp2">LMP2</span>
-                                    <span class="class-badge lmp3">LMP3</span>
-                                </div>
-                                <div class="race-track">COTA <span class="config">(WEC)</span> — Prototype Fixed</div>
+                                <div class="race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span><span class="class-badge lmgt3">LMGT3</span></div>
+                                <div class="race-track">Qatar <span class="config">(WEC)</span> — ELMS Sprint Trophy</div>
+                                <div style="font-size:11px;color:#b0b0d0;margin-top:3px;">LMP2 (ELMS), LMP3 & LMGT3</div>
                             </div>
-                            <div class="race-meta">
-                                <span class="setup-badge fixed">Fixed</span>
-                                <span class="duration-badge">30 min</span>
-                            </div>
-                        </div>
-                        <div class="race-item">
-                            <span class="race-flag">🇯🇵</span>
-                            <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge lmp2">LMP2</span>
-                                    <span class="class-badge lmp3">LMP3</span>
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="race-track">Fuji <span class="config">(WEC)</span> — ELMS Sprint Trophy</div>
-                            </div>
-                            <div class="race-meta">
-                                <span class="setup-badge open">Open</span>
-                                <span class="duration-badge">30 min</span>
-                            </div>
+                            <div class="race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">30 min</span></div>
                         </div>
                     </div>
                 </div>
@@ -2011,54 +1999,35 @@
                     </div>
                     <div class="tier-races">
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
-                            <span>⏱ Toutes les 30min</span><span>👥 44 voitures / split</span>
+                            <span>⏱ Toutes les 30min</span><span>👥 38 voitures / split</span>
                             <span>🚫 Aides interdites</span><span>🔥 Chauffe-pneus : OFF</span>
                             <span>🛞 Pneus : 8</span>
                         </div>
                         <div class="race-item">
-                            <span class="race-flag">🇫🇷</span>
+                            <span class="race-flag">🇺🇸</span>
                             <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge hypercar">Hypercar</span>
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="race-track">Le Mans <span class="config">(WEC)</span> — One Stint Sprint</div>
+                                <div class="race-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmgt3">LMGT3</span></div>
+                                <div class="race-track">COTA <span class="config">(WEC)</span> — One Stint Sprint</div>
                             </div>
-                            <div class="race-meta">
-                                <span class="setup-badge open">Open</span>
-                                <span class="duration-badge">40 min</span>
-                            </div>
+                            <div class="race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">40 min</span></div>
                         </div>
                         <div class="race-item">
-                            <span class="race-flag">🇮🇹</span>
+                            <span class="race-flag">🇧🇭</span>
                             <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge lmp2">LMP2</span>
-                                    <span class="class-badge lmp3">LMP3</span>
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="race-track">Imola <span class="config">(ELMS)</span> — ELMS Super 60</div>
-                                <div style="font-size:11px;color:#b0b0d0;margin-top:3px;">LMP2 : full tank · LMP3 : 70L · LMGT3 : 75% VE</div>
+                                <div class="race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span><span class="class-badge lmgt3">LMGT3</span></div>
+                                <div class="race-track">Bahrain <span class="config">(WEC)</span> — ELMS Super 60</div>
+                                <div style="font-size:11px;color:#b0b0d0;margin-top:3px;">LMP2 (ELMS) full tank · LMP3 : 70L · LMGT3 : 75% VE</div>
                             </div>
-                            <div class="race-meta">
-                                <span class="setup-badge open">Open</span>
-                                <span class="duration-badge">60 min</span>
-                            </div>
+                            <div class="race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">60 min</span></div>
                         </div>
                         <div class="race-item">
-                            <span class="race-flag">🇵🇹</span>
+                            <span class="race-flag">🇺🇸</span>
                             <div class="race-details">
-                                <div class="race-classes">
-                                    <span class="class-badge hypercar">Hypercar</span>
-                                    <span class="class-badge lmgt3">LMGT3</span>
-                                </div>
-                                <div class="race-track">Portimao <span class="config">(ELMS)</span> — WEC-Xperience</div>
+                                <div class="race-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmgt3">LMGT3</span></div>
+                                <div class="race-track">Sebring <span class="config">(WEC)</span> — WEC-Xperience</div>
                                 <div style="font-size:11px;color:#b0b0d0;margin-top:3px;">⛽ 75% VE limit</div>
                             </div>
-                            <div class="race-meta">
-                                <span class="setup-badge open">Open</span>
-                                <span class="duration-badge">60 min</span>
-                            </div>
+                            <div class="race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">60 min</span></div>
                         </div>
                     </div>
                 </div>
@@ -2086,14 +2055,13 @@
                                 <span class="class-badge hypercar">Hypercar</span>
                                 <span class="class-badge lmgt3">LMGT3</span>
                             </div>
-                            <div class="event-track">Paul Ricard (ELMS) • <span class="setup-badge open">Open</span> • 44 cars</div>
+                            <div class="event-track">Fuji (WEC) • <span class="setup-badge open">Open</span> • 38 cars</div>
                             <div class="event-duration">100 min</div>
                             <div style="font-size:12px;color:#b0b0d0;margin-top:6px;">🔥 Chauffe-pneus : OFF &nbsp;·&nbsp; 🛞 Pneus : 10</div>
                         </div>
                     </div>
                     <div class="event-schedule">
                         <div class="schedule-days">
-                            <span class="day-badge">Mardi</span>
                             <span class="day-badge">Mercredi</span>
                             <span class="day-badge">Jeudi</span>
                             <span class="day-badge">Lundi</span>
@@ -2136,14 +2104,10 @@
                             <span class="day-badge">Dimanche</span>
                         </div>
                         <div class="schedule-times" style="margin-top: 8px;">
-                            <span class="time-badge">00:00</span>
-                            <span class="time-badge">03:00</span>
-                            <span class="time-badge">06:00</span>
-                            <span class="time-badge">09:00</span>
-                            <span class="time-badge">12:00</span>
-                            <span class="time-badge">15:00</span>
-                            <span class="time-badge">18:00</span>
-                            <span class="time-badge">21:00</span>
+                            <span class="time-badge">05:00</span>
+                            <span class="time-badge">11:00</span>
+                            <span class="time-badge">17:00</span>
+                            <span class="time-badge">22:00</span>
                         </div>
                     </div>
                 </div>
@@ -2161,8 +2125,34 @@
                 <span class="section-arrow">▼</span>
             </div>
             <div class="section-content">
-                <div class="event-card" style="text-align:center; color:#b0b0d0; font-size:14px; padding: 30px 20px;">
-                    Aucun événement spécial cette semaine.
+                <div class="event-card">
+                    <div class="event-main">
+                        <span class="event-flag">🇫🇷</span>
+                        <div class="event-info">
+                            <h4>6 Hours of Le Mans <span style="font-size:12px;color:#b0b0d0;font-weight:400;">[SR B2 — pas de badge Rookie ou Danger]</span></h4>
+                            <div class="event-classes">
+                                <span class="class-badge hypercar">Hypercar</span>
+                                <span class="class-badge lmp2">LMP2 (WEC)</span>
+                                <span class="class-badge lmgt3">LMGT3</span>
+                            </div>
+                            <div class="event-track">Le Mans (WEC) • <span class="setup-badge open">Open</span> • 44 cars</div>
+                            <div class="event-duration">360 min</div>
+                            <div style="font-size:12px;color:#b0b0d0;margin-top:6px;">🔥 Chauffe-pneus : OFF &nbsp;·&nbsp; 🛞 Pneus : 16</div>
+                        </div>
+                    </div>
+                    <div class="event-schedule">
+                        <div class="schedule-days">
+                            <span class="day-badge">Vendredi</span>
+                            <span class="day-badge">Samedi</span>
+                            <span class="day-badge">Dimanche</span>
+                        </div>
+                        <div class="schedule-times" style="margin-top: 8px;">
+                            <span class="time-badge">05:00</span>
+                            <span class="time-badge">11:00</span>
+                            <span class="time-badge">17:00</span>
+                            <span class="time-badge">22:00</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -3111,6 +3101,14 @@
             header.addEventListener('click', function() {
                 section.classList.toggle('st-open');
             });
+        })();
+
+        (function() {
+            if (window.innerWidth > 768) return;
+            var section = document.getElementById('super-trofeo');
+            var header = section && section.querySelector('.st-header');
+            if (!header) return;
+            header.addEventListener('click', function() { section.classList.toggle('st-open'); });
         })();
     </script>
 </body>
