@@ -1,24 +1,3 @@
 {
-  "redirects": [
-    {
-      "source": "/planning.html",
-      "destination": "/#planning",
-      "permanent": true
-    },
-    {
-      "source": "/planning",
-      "destination": "/#planning",
-      "permanent": true
-    },
-    {
-      "source": "/rejoins-nous.html",
-      "destination": "/pilot-recruitment.html",
-      "permanent": true
-    },
-    {
-      "source": "/rejoins-nous",
-      "destination": "/pilot-recruitment.html",
-      "permanent": true
-    }
-  ]
+  "cleanUrls": true
 }
