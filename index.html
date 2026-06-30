@@ -479,43 +479,6 @@
             font-size: 14px;
         }
 
-        /* PLANNING DES COURSES STYLES */
-        #planning {
-            background: #000000;
-        }
-        
-        .planning-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .planning-header h2 {
-            margin-bottom: 15px;
-        }
-        
-        .planning-update {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 26, 117, 0.1);
-            padding: 8px 20px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 26, 117, 0.3);
-        }
-        
-        .pulse-dot {
-            width: 10px;
-            height: 10px;
-            background: #00ff88;
-            border-radius: 50%;
-            animation: pulse-dot 2s infinite;
-        }
-        
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-        }
-        
         #join {
             background: #000000;
         }
@@ -1106,9 +1069,7 @@
         <ul class="nav-links">
             <li><a href="#live" style="color:#ff1a75; font-weight:700;">🔴 Live</a></li>
             <li><a href="#hero">Accueil</a></li>
-            <li><a href="#planning">Planning des courses</a></li>
-                            <li><a href="#championnats">Championnats</a></li>
-                            <li><a href="#super-trofeo">Super Trofeo</a></li>
+            <li><a href="/planning">Planning</a></li>
             <li><a href="team">Notre Équipe</a></li>
             <li><a href="our-setups">Nos Setups</a></li>
             <li><a href="blog">Actualités</a></li>
@@ -1129,8 +1090,7 @@
             <div class="mobile-menu-links">
                 <a href="#live" class="mobile-link" style="color:#ff1a75; font-weight:700;">🔴 Live</a>
                 <a href="#hero" class="mobile-link">Accueil</a>
-                <a href="#planning" class="mobile-link">Planning</a>
-                <a href="#super-trofeo" class="mobile-link">Super Trofeo</a>
+                <a href="/planning" class="mobile-link">Planning</a>
                 <a href="team" class="mobile-link">Notre Équipe</a>
                 <a href="our-setups" class="mobile-link">Nos Setups</a>
                 <a href="blog" class="mobile-link">Actualités</a>
@@ -1166,26 +1126,6 @@
         </div>
     </section>
 
-
-<!-- ============================================= -->
-<!-- TEASER PLANNING / CHAMPIONNATS / SUPER TROFEO -->
-<!-- (page dédiée : /planning)                     -->
-<!-- ============================================= -->
-<section id="planning-teaser" style="background:#000000;">
-    <div class="planning-header">
-        <h2>Planning des courses</h2>
-        <div class="planning-update">
-            <span class="pulse-dot"></span>
-            <span>Mis à jour : <strong>Semaine du 23/06 - Season 11 Week 2</strong></span>
-        </div>
-    </div>
-    <p style="text-align:center; color:#b0b0d0; max-width:680px; margin:0 auto 35px; font-size:15px;">
-        Retrouvez le planning complet des Daily &amp; Weekly Races, le calendrier des championnats Saison 11 et le classement Super Trofeo de l'équipe.
-    </p>
-    <div style="text-align:center;">
-        <a href="/planning" class="cta-button" style="display:inline-block;">Voir le planning complet</a>
-    </div>
-</section>
 
 <!-- SECTION LIVE TWITCH -->
 <section id="live" style="padding: 80px 60px; background: #000000;">
