@@ -453,7 +453,7 @@
                 </div>
             </div>
         </div>
-        <div class="setup-card" data-name="Nicolas" data-profile="pilot-GT3A-nicolas.webp" data-color="#ff1a75" data-photos='["setup-nicolas.webp","setup-nicolas2.webp"]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card" data-name="Nicolas" data-profile="pilot-GT3A-nicolas.webp" data-color="#ff1a75" data-photos='["setup-nicolas.webp","setup-nicolas2.webp","setup-nicolas3.webp","setup-nicolas4.webp"]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper">
                 <img class="card-photo" src="setup-nicolas.webp" alt="Setup Nicolas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
@@ -479,6 +479,37 @@
                     <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">850W</span></div>
                     <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">64Go DDR4</span></div>
                     <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Simulateur 34" 180Hz + Contrôle 19" 60Hz</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VINCENT.N — PILOTE GT3 ALPHA -->
+        <div class="setup-card" data-name="Vincent.N" data-profile="pilot-vincent-alpha.webp" data-color="#ff1a75" data-photos='["setup-vincent-alpha.webp"]' style="border-color:rgba(255,26,117,0.2)">
+            <div class="card-photo-wrapper">
+                <img class="card-photo" src="setup-vincent-alpha.webp" alt="Setup Vincent.N" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                <div class="card-photo-hint">📸 Voir en grand</div>
+            </div>
+            <div class="card-header">
+                <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote GT3 Alpha</span>
+                <div class="card-name">Vincent.N</div>
+            </div>
+            <div class="card-body">
+                <div class="spec-section">
+                    <div class="spec-section-title" style="color:#ff1a75;">🎮 Sim Racing</div>
+                    <div class="spec-row"><span class="spec-lbl">Base</span><span class="spec-val">Simagic Alpha Evo Pro (18 Nm)</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Volant</span><span class="spec-val">Simagic GT Neo</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Châssis</span><span class="spec-val">Oplite R8 Fury Black / Simlab triple screen</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Pédalier</span><span class="spec-val">Simnet SP Pro</span></div>
+                </div>
+                <div class="spec-section">
+                    <div class="spec-section-title" style="color:#ff1a75;">🖥️ PC</div>
+                    <div class="spec-row"><span class="spec-lbl">CPU</span><span class="spec-val">Ryzen 7 5800X</span></div>
+                    <div class="spec-row"><span class="spec-lbl">GPU</span><span class="spec-val">RTX 4070 Ti Super</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Carte mère</span><span class="spec-val">MSI B450 Tomahawk</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Alim</span><span class="spec-val">Corsair 1000W</span></div>
+                    <div class="spec-row"><span class="spec-lbl">RAM</span><span class="spec-val">Corsair Vengeance 2x16 Go (3600MHz)</span></div>
+                    <div class="spec-row"><span class="spec-lbl">Écran</span><span class="spec-val">Triple 27" 2560x1440 180Hz (7680x1440)</span></div>
                 </div>
             </div>
         </div>
@@ -851,7 +882,7 @@
         const cards = Array.from(document.querySelectorAll('.setup-card'));
 
         // Ordre défini
-        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Vincent.N','Florent.L','Hugo.S','Hugo.R','Cyrille'];
         cards.sort((a, b) => {
             const ia = order.indexOf(a.dataset.name);
             const ib = order.indexOf(b.dataset.name);
@@ -947,7 +978,7 @@
         const grid = document.getElementById('cardsGrid');
         if (!grid) return;
         const cards = Array.from(grid.querySelectorAll('.setup-card'));
-        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Vincent.N','Florent.L','Hugo.S','Hugo.R','Cyrille'];
 
         // Trier
         cards.sort((a, b) => {
