@@ -484,15 +484,15 @@
         </div>
 
         <!-- VINCENT.N — PILOTE GT3 ALPHA -->
-        <div class="setup-card" data-name="Vincent.N" data-profile="pilot-vincent-alpha.webp" data-color="#ff1a75" data-photos='["setup-vincent-alpha.webp"]' style="border-color:rgba(255,26,117,0.2)">
+        <div class="setup-card" data-name="Vincent.F" data-profile="pilot-vincent-alpha.webp" data-color="#ff1a75" data-photos='["setup-vincent-alpha.webp"]' style="border-color:rgba(255,26,117,0.2)">
             <div class="card-photo-wrapper">
-                <img class="card-photo" src="setup-vincent-alpha.webp" alt="Setup Vincent.N" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <img class="card-photo" src="setup-vincent-alpha.webp" alt="Setup Vincent.F" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                 <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
                 <div class="card-photo-hint">📸 Voir en grand</div>
             </div>
             <div class="card-header">
                 <span class="card-badge" style="background:rgba(255,26,117,0.15);color:#ff1a75;border:1px solid rgba(255,26,117,0.35)">Pilote GT3 Alpha</span>
-                <div class="card-name">Vincent.N</div>
+                <div class="card-name">Vincent.F</div>
             </div>
             <div class="card-body">
                 <div class="spec-section">
@@ -913,7 +913,7 @@
         const cards = Array.from(document.querySelectorAll('.setup-card'));
 
         // Ordre défini
-        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Vincent.N','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Vincent.F','Florent.L','Hugo.S','Hugo.R','Cyrille'];
         cards.sort((a, b) => {
             const ia = order.indexOf(a.dataset.name);
             const ib = order.indexOf(b.dataset.name);
@@ -1009,7 +1009,7 @@
         const grid = document.getElementById('cardsGrid');
         if (!grid) return;
         const cards = Array.from(grid.querySelectorAll('.setup-card'));
-        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Vincent.N','Florent.L','Hugo.S','Hugo.R','Cyrille'];
+        const order = ['Guillaume.w','Clement','Christophe.A','Maxime','Thibault.C','Enzo','Anthony.D','Thomas','Nicolas','Vincent.F','Florent.L','Hugo.S','Hugo.R','Cyrille'];
 
         // Trier
         cards.sort((a, b) => {
