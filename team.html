@@ -1598,7 +1598,7 @@
         document.querySelectorAll('.team-column .person-card, .team-column .team-leader').forEach(card => {
             card.addEventListener('click', function() {
                 const badge = this.querySelector('.person-role-badge')?.textContent.trim() || '';
-                const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF') || badge === 'INGÉNIEUR TECHNIQUE';
+                const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF') || badge === 'INGÉNIEUR TECHNIQUE' || badge === 'GENTLEMAN DRIVER';
                 if (isPilotOrChef) {
                     const teamColors = {
                         'team-gt3a': '#ff1a75',
@@ -1657,7 +1657,7 @@
 
         // ── Build card profile display (replaces hardware specs on cards) ──
         function buildCardProfiles() {
-            const PILOT_BADGES = ['PILOTE', 'CHEF', 'INGÉNIEUR TECHNIQUE', 'PROPRIÉTAIRE', 'TEAM PRINCIPAL'];
+            const PILOT_BADGES = ['PILOTE', 'CHEF', 'INGÉNIEUR TECHNIQUE', 'PROPRIÉTAIRE', 'TEAM PRINCIPAL', 'GENTLEMAN DRIVER'];
             document.querySelectorAll('.person-card, .team-leader').forEach(card => {
                 const badgeEl = card.querySelector('.person-role-badge');
                 const badge = badgeEl ? badgeEl.textContent.trim() : '';
@@ -1911,7 +1911,7 @@
 
                     mini.addEventListener('click', () => {
                         const badge = card.querySelector('.person-role-badge')?.textContent.trim() || '';
-                        const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF') || badge === 'INGÉNIEUR TECHNIQUE';
+                        const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF') || badge === 'INGÉNIEUR TECHNIQUE' || badge === 'GENTLEMAN DRIVER';
                         if (isPilotOrChef) {
                             openPilotPopup(card, team.color);
                         } else {
