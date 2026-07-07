@@ -347,33 +347,6 @@
         /* Vidéo affichée sur mobile — taille ajustée via media query */
         .hero-video-mobile { display: none; }
 
-        .hero-logo-container {
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 10;
-        }
-
-        body.loaded .hero-logo-container {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .hero-logo {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 20px 40px rgba(255, 26, 117, 0.3));
-            transition: transform 0.3s ease;
-        }
-
-        .hero-logo:hover {
-            transform: scale(1.05);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
         .hero-subtitle {
             font-size: 18px;
             color: #b0b0d0;
@@ -1108,9 +1081,6 @@
             <source src="488video.webm" type="video/webm">
         </video>
         <h1 class="sr-only">SimTek Performance — Team Esport Simracing Professionnelle | Le Mans Ultimate France</h1>
-        <div class="hero-logo-container">
-            <img src="Logo_SIMTEK.webp" alt="SimTek Performance — Équipe simracing française spécialisée en endurance virtuelle" class="hero-logo" width="600" height="200" fetchpriority="high">
-        </div>
         <p class="hero-subtitle">Team Esport dédiée à l'excellence du Simracing</p>
         <div class="hero-buttons">
             <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button">Rejoindre l'équipe</a>
