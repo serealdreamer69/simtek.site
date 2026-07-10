@@ -724,8 +724,12 @@
         </div>
 
         <!-- MORGAN — GENTLEMAN DRIVER GT3 BRAVO -->
-        <div class="setup-card no-photo" data-name="Morgan" data-profile="pilot-morgan.webp" data-color="#ffcc00" data-photos='["setup-morgan.webp"]' style="border-color:rgba(255,204,0,0.2)">
-            <div class="card-photo-wrapper"><div class="card-photo-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div></div>
+        <div class="setup-card" data-name="Morgan" data-profile="pilot-morgan.webp" data-color="#ffcc00" data-photos='["setup-morgan.webp","setup-morgan2.webp","setup-morgan3.webp"]' style="border-color:rgba(255,204,0,0.2)">
+            <div class="card-photo-wrapper">
+                <img class="card-photo" src="setup-morgan.webp" alt="Setup Morgan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="card-photo-placeholder" style="display:none"><img src="Logo_SIMTEK.webp" alt="SimTek"><span>Photo à venir</span></div>
+                <div class="card-photo-hint">📸 Voir en grand</div>
+            </div>
             <div class="card-header">
                 <span class="card-badge" style="background:rgba(255,204,0,0.15);color:#ffcc00;border:1px solid rgba(255,204,0,0.35)">Gentleman Driver GT3 Bravo</span>
                 <div class="card-name">Morgan</div>
