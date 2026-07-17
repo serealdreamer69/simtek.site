@@ -548,13 +548,13 @@
             .race-item { flex-wrap: wrap; }
             .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
             /* ── Super-Trofeo accordéon mobile ── */
-            #super-trofeo .st-header { cursor: pointer; position: relative; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(255,26,117,0.06); }
+            #super-trofeo .st-header { cursor: pointer; position: relative; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(0,0,0,0.35); }
             #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
             #super-trofeo.st-open .st-header::after { transform: translateY(-50%) rotate(180deg); }
             #super-trofeo .st-table-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
             #super-trofeo.st-open .st-table-wrap { max-height: 5000px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
             /* ── Super-Trofeo accordéon mobile ── */
-            #super-trofeo .st-header { cursor: pointer; position: relative; padding-right: 40px; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(255,26,117,0.06); }
+            #super-trofeo .st-header { cursor: pointer; position: relative; padding-right: 40px; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(0,0,0,0.35); }
             #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
             #super-trofeo.st-open .st-header::after { transform: translateY(-50%) rotate(180deg); }
             #super-trofeo .st-table-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
@@ -754,7 +754,7 @@
             min-width: 820px;
         }
         .st-table thead tr {
-            background: rgba(255,26,117,0.08);
+            background: rgba(0,0,0,0.4);
             border-bottom: 1px solid rgba(255,26,117,0.25);
         }
         .st-table th {
@@ -780,7 +780,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .st-table tr:last-child td { border-bottom: none; }
-        .st-table tr:hover td { background: rgba(255,26,117,0.04); }
+        .st-table tr:hover td { background: rgba(255,255,255,0.03); }
         .st-td-pilote { text-align: left !important; padding-left: 16px !important; font-weight: 600; font-size: 14px !important; }
         .st-td-pts { font-size: 16px !important; font-weight: 700 !important; color: #00d4ff !important; }
         .st-td-fl { color: #cc44ff !important; font-weight: 700 !important; }
@@ -806,8 +806,8 @@
             margin: 14px auto 0;
             font-size: 12px;
             color: #b0b0d0;
-            background: rgba(255,26,117,0.06);
-            border: 1px solid rgba(255,26,117,0.15);
+            background: rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.06);
             border-radius: 10px;
             padding: 10px 16px;
             line-height: 1.7;
@@ -1459,7 +1459,7 @@
 <!-- ============================================= -->
 
 <!-- TEASER NOUVEAU CHAMPIONNAT SEPTEMBRE -->
-<section style="padding:40px 60px;background:rgba(255,26,117,0.04);border-top:1px solid rgba(255,26,117,0.15);border-bottom:1px solid rgba(255,26,117,0.15);">
+<section style="padding:40px 60px;background:rgba(0,0,0,0);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);">
     <div style="max-width:800px;margin:0 auto;text-align:center;">
         <div style="font-size:13px;letter-spacing:3px;color:#ff1a75;font-weight:700;margin-bottom:12px;">PROCHAIN RENDEZ-VOUS</div>
         <h2 style="font-size:clamp(22px,4vw,34px);margin:0 0 16px;color:#ffffff;">🚀 Un nouveau championnat interne arrive en septembre</h2>
