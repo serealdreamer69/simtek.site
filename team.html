@@ -1920,8 +1920,13 @@
 
             const licenseBadgesHTML = card.querySelector('.license-badges')?.outerHTML || '';
 
+            // Photos dispo
+            const photos = (data.photos && data.photos.length) ? data.photos : (hasSetup ? [setupSrc] : []);
+            const hasPhotos = photos.length > 0;
+            const photoBtnHTML = hasPhotos ? `<div id="lightboxTriggerBtn" style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:600;padding:5px 11px;border-radius:20px;cursor:pointer;z-index:2;letter-spacing:.5px;">📸 ${photos.length} photo${photos.length>1?'s':''}</div>` : '';
+
             document.getElementById('pilotPopupInner').innerHTML = `
-                <div class="pilot-popup-hero" style="background-image:url('${hasSetup ? setupSrc : ''}')">
+                <div class="pilot-popup-hero" style="background-image:url('${hasSetup ? setupSrc : ''}');${hasPhotos?'cursor:pointer;':''}" id="popupHeroClickable">
                     <div class="pilot-popup-identity">
                         <img src="${photo}" class="pilot-popup-photo" style="border-color:${color};box-shadow:0 0 24px ${color}66" onerror="this.style.display='none'">
                         <div class="pilot-popup-header-text">
@@ -1956,17 +1961,21 @@
                 </div>
             `;
 
+            // Attache lightbox sur le hero et le bouton
+            if (hasPhotos) {
+                setTimeout(() => {
+                    const hero = document.getElementById('popupHeroClickable');
+                    const btn  = document.getElementById('lightboxTriggerBtn');
+                    const openLb = () => openLightbox(photos, 0);
+                    if (hero) hero.addEventListener('click', openLb);
+                    if (btn)  btn.addEventListener('click', e => { e.stopPropagation(); openLb(); });
+                }, 0);
+            }
+
             const overlay = document.getElementById('pilotPopupOverlay');
             overlay.classList.add('active');
             document.getElementById('pilotPopup').scrollTop = 0;
             document.body.style.overflow = 'hidden';
-
-            // Attache le clic lightbox sur la photo setup
-            const triggerImg = document.getElementById('lightboxTriggerImg');
-            if (triggerImg) {
-                const photos = (data.photos && data.photos.length) ? data.photos : (hasSetup ? [setupSrc] : []);
-                triggerImg.addEventListener('click', () => openLightbox(photos, 0));
-            }
         }
 
         function closePilotPopup() {
