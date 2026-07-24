@@ -2048,6 +2048,7 @@
                 const folder = document.createElement('div');
                 folder.className = 'mobile-folder';
                 folder.style.borderColor = team.color;
+                folder.dataset.mobileFilter = team.selector.replace('.team-','');
 
                 const header = document.createElement('div');
                 header.className = 'mobile-folder-header';
@@ -2215,6 +2216,14 @@
                 button.classList.toggle('active', isActive);
                 button.setAttribute('aria-selected', String(isActive));
             });
+
+            // Mobile : filtrer les folders
+            document.querySelectorAll('.mobile-folder[data-mobile-filter]').forEach(folder => {
+                folder.style.display = (filter === 'all' || folder.dataset.mobileFilter === filter) ? '' : 'none';
+            });
+            // Cartes direction (Guillaume, Christophe.A) : masquer si filtre actif
+            const dirWrapper = document.querySelector('#mobileTeamSection > div:first-child:not(.mobile-folder)');
+            if (dirWrapper) dirWrapper.style.display = (filter === 'all') ? '' : 'none';
         }
 
         teamFilterButtons.forEach(button => {
