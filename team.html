@@ -1078,10 +1078,11 @@
         .teams-columns-grid.is-filtering .team-column{width:100%}
 
         @media(max-width:768px){
-            .team-filters-wrap{width:calc(100% - 24px);margin-bottom:24px;overflow-x:auto;scrollbar-width:none}
+            .team-filters-wrap{width:calc(100% - 24px);margin-bottom:20px;overflow-x:visible;}
             .team-filters-wrap::-webkit-scrollbar{display:none}
-            .team-filters{display:flex;width:max-content;min-width:100%;border-radius:18px;padding:4px}
-            .team-filter{min-height:44px;padding:0 16px;white-space:nowrap;font-size:10px}
+            .team-filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:transparent;padding:0;border-radius:0;width:100%;}
+            .team-filter{min-height:44px;padding:0 12px;white-space:nowrap;font-size:11px;border-radius:10px;justify-content:center;}
+            .team-filter:not(:last-child)::after{display:none;}
             .team-filter:not(:last-child)::after{height:18px}
         }
 
