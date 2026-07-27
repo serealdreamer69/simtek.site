@@ -1887,6 +1887,8 @@
                 details.innerHTML = `<div class="person-specs">
                     <div class="pilot-card-quote">${getPilotQuote(name)}</div>
                     <div class="pilot-card-meta">
+                        <div class="pilot-card-meta-item"><span class="pilot-card-meta-label">Anniversaire</span><span class="pilot-card-meta-value">${isEmpty(data.birthday) ? 'À remplir' : data.birthday}</span></div>
+                        <div class="pilot-card-meta-item"><span class="pilot-card-meta-label">Début sim</span><span class="pilot-card-meta-value">${isEmpty(data.simstart) ? 'À remplir' : data.simstart}</span></div>
                         <div class="pilot-card-meta-item"><span class="pilot-card-meta-label">Circuit favori</span><span class="pilot-card-meta-value">${isEmpty(data.circuit) ? 'À remplir' : data.circuit}</span></div>
                         <div class="pilot-card-meta-item"><span class="pilot-card-meta-label">Voiture favorite</span><span class="pilot-card-meta-value">${isEmpty(data.car) ? 'À remplir' : data.car}</span></div>
                     </div>
