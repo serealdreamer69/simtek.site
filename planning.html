@@ -860,6 +860,292 @@
             .internal-links { padding: 30px 16px; }
             .internal-links-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
         }
+
+
+        /* ═══════════════════════════════════════════════════════════
+           PLANNING PC — VERSION PANORAMIQUE SANS ACCORDÉON NI POP-UP
+           Mobile/tablette conservés sous 1024 px.
+           ═══════════════════════════════════════════════════════════ */
+        @media (min-width: 1025px) {
+            #planning {
+                padding: 72px 46px 86px;
+                background:
+                    radial-gradient(circle at 9% 18%, rgba(255,26,117,.11), transparent 25%),
+                    radial-gradient(circle at 91% 26%, rgba(0,212,255,.08), transparent 25%),
+                    #000;
+            }
+
+            #planning .planning-header { margin-bottom: 34px; }
+            #planning .planning-header h2 {
+                margin-bottom: 18px;
+                font-size: 52px;
+                font-style: italic;
+                letter-spacing: -1.5px;
+                text-transform: uppercase;
+            }
+
+            #planning .planning-grid {
+                max-width: 1540px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 18px;
+                align-items: stretch;
+            }
+
+            #planning .planning-section {
+                position: relative;
+                overflow: hidden;
+                min-width: 0;
+                padding: 22px 24px;
+                border-radius: 18px;
+                background:
+                    linear-gradient(115deg, rgba(255,255,255,.035), transparent 48%),
+                    rgba(8,8,10,.94);
+                box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 18px 48px rgba(0,0,0,.38);
+            }
+
+            #planning .planning-section::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+                opacity: .22;
+                background: linear-gradient(120deg, transparent 55%, currentColor 170%);
+            }
+
+            #planning .daily-section {
+                grid-column: 1 / -1;
+                color: #ff1a75;
+                border-color: rgba(255,26,117,.72);
+                box-shadow: 0 0 0 1px rgba(255,26,117,.08), 0 18px 52px rgba(255,26,117,.12);
+            }
+            #planning .weekly-section { color:#00d4ff; border-color:rgba(0,212,255,.62); }
+            #planning .special-section { color:#a83cff; border-color:rgba(168,60,255,.62); }
+
+            #planning .section-header {
+                position: relative;
+                z-index: 1;
+                cursor: default;
+                margin-bottom: 16px;
+                padding-bottom: 15px;
+            }
+            #planning .section-arrow { display:none; }
+            #planning .section-title h3 {
+                font-size: 21px;
+                font-style: italic;
+                text-transform: uppercase;
+                letter-spacing: .3px;
+            }
+            #planning .weekly-section .section-title h3 { color:#00d4ff; }
+            #planning .special-section .section-title h3 { color:#b95cff; }
+
+            #planning .section-content {
+                position: relative;
+                z-index: 1;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+
+            /* Daily : les 3 niveaux et les 9 courses sont visibles simultanément */
+            #planning .daily-section .section-content {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 0;
+            }
+            #planning .daily-section .tier-block {
+                margin: 0;
+                padding: 0 18px;
+                border-radius: 0;
+                overflow: visible;
+                border-right: 1px solid rgba(255,255,255,.10);
+            }
+            #planning .daily-section .tier-block:first-child { padding-left: 0; }
+            #planning .daily-section .tier-block:last-child { padding-right: 0; border-right: 0; }
+
+            #planning .tier-header {
+                cursor: default;
+                padding: 3px 0 12px;
+                background: transparent !important;
+                border-radius: 0;
+            }
+            #planning .tier-header:hover { filter:none; }
+            #planning .tier-open-icon { display:none; }
+            #planning .tier-badge {
+                display:flex;
+                align-items:center;
+                gap:8px;
+                font-size: 14px;
+            }
+            #planning .tier-badge::before {
+                content:"";
+                width:12px;
+                height:12px;
+                border-radius:50%;
+                border:2px solid currentColor;
+                box-shadow:0 0 10px currentColor;
+            }
+
+            #planning .tier-races {
+                position: static;
+                width: auto;
+                height: auto;
+                overflow: visible;
+                clip: auto;
+                white-space: normal;
+            }
+
+            #planning .race-item {
+                min-height: 56px;
+                margin-bottom: 8px;
+                padding: 9px 11px;
+                gap: 10px;
+                border: 1px solid rgba(255,255,255,.07);
+                background: linear-gradient(90deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+                box-shadow: inset 0 1px 0 rgba(255,255,255,.025);
+            }
+            #planning .race-item:hover {
+                transform: translateX(3px);
+                border-color: rgba(255,26,117,.32);
+                background: rgba(255,26,117,.075);
+            }
+            #planning .race-flag { font-size:21px; }
+            #planning .race-track { font-size:13px; line-height:1.35; }
+            #planning .class-badge { font-size:9px; padding:2px 6px; }
+            #planning .setup-badge, #planning .duration-badge { padding:3px 7px; font-size:10px; }
+            #planning .race-meta { flex-wrap:nowrap; justify-content:flex-end; }
+
+            /* Les informations générales du niveau deviennent une ligne compacte */
+            #planning .tier-races > div[style*="display:grid"] {
+                display:flex !important;
+                flex-wrap:wrap;
+                gap:5px 12px !important;
+                min-height:38px;
+                margin-bottom:10px !important;
+                padding:8px 9px;
+                border-radius:8px;
+                background:rgba(255,255,255,.025);
+                font-size:10px !important;
+            }
+
+            /* Weekly et Special Event occupent chacun la moitié de la ligne */
+            #planning .weekly-section,
+            #planning .special-section { min-height: 286px; }
+            #planning .event-card { padding: 4px 0 0; background:transparent; }
+            #planning .event-main { margin-bottom:14px; }
+            #planning .event-info h4 { font-size:17px; }
+            #planning .event-settings { margin-bottom:10px; }
+            #planning .event-schedule { padding:12px; }
+            #planning .schedule-days, #planning .schedule-times { gap:6px; }
+            #planning .day-badge, #planning .time-badge { padding:5px 9px; font-size:11px; }
+
+            /* La classe full-width historique ne force plus une carte entière sur PC */
+            #planning .planning-section.full-width { grid-column:auto; }
+        }
+
+
+
+        /* ── Photos de fond PC (à alimenter avec tes vrais fichiers) ── */
+        /* Dépose les images ici sur ton site :
+           images/planning/daily-races-bg.webp
+           images/planning/weekly-races-bg.webp
+           images/planning/special-event-bg.webp
+           images/planning/champ-lmp3.webp
+           images/planning/champ-lmgt3.webp
+           images/planning/champ-elms-sprint.webp
+           images/planning/champ-wec-xperience.webp
+           images/planning/champ-24h-series.webp
+           images/planning/champ-elms-world-tour.webp
+        */
+        .daily-section,
+        .weekly-section,
+        .special-section,
+        .champ-card {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        .daily-section > *,
+        .weekly-section > *,
+        .special-section > *,
+        .champ-card > * {
+            position: relative;
+            z-index: 2;
+        }
+        .daily-section::before,
+        .weekly-section::before,
+        .special-section::before,
+        .champ-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.34;
+            transform: scale(1.02);
+            transition: transform .35s ease, opacity .35s ease;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .daily-section::after,
+        .weekly-section::after,
+        .special-section::after,
+        .champ-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .daily-section::before { background-image: url('images/planning/daily-races-bg.webp'); background-position: right center; }
+        .daily-section::after {
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.90) 34%, rgba(0,0,0,.70) 60%, rgba(0,0,0,.42) 100%),
+                radial-gradient(circle at 15% 15%, rgba(255,26,117,.10), transparent 38%);
+        }
+
+        .weekly-section::before { background-image: url('images/planning/weekly-races-bg.webp'); background-position: right center; }
+        .weekly-section::after {
+            background: linear-gradient(90deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.82) 48%, rgba(0,0,0,.48) 100%);
+        }
+
+        .special-section::before { background-image: url('images/planning/special-event-bg.webp'); background-position: right center; }
+        .special-section::after {
+            background: linear-gradient(90deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.84) 50%, rgba(0,0,0,.52) 100%);
+        }
+
+        .champ-card::before { opacity: 0.40; background-position: center right; }
+        .champ-card::after {
+            background: linear-gradient(90deg, rgba(0,0,0,.94) 0%, rgba(0,0,0,.80) 42%, rgba(0,0,0,.40) 100%);
+        }
+        .champ-lmp3::before { background-image: url('images/planning/champ-lmp3.webp'); }
+        .champ-lmgt3::before { background-image: url('images/planning/champ-lmgt3.webp'); }
+        .champ-elms-sprint::before { background-image: url('images/planning/champ-elms-sprint.webp'); }
+        .champ-wec::before { background-image: url('images/planning/champ-wec-xperience.webp'); }
+        .champ-24h::before { background-image: url('images/planning/champ-24h-series.webp'); }
+        .champ-elms-world::before { background-image: url('images/planning/champ-elms-world-tour.webp'); }
+
+        .daily-section:hover::before,
+        .weekly-section:hover::before,
+        .special-section:hover::before,
+        .champ-card:hover::before {
+            opacity: 0.46;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .daily-section::before,
+            .weekly-section::before,
+            .special-section::before,
+            .champ-card::before,
+            .daily-section::after,
+            .weekly-section::after,
+            .special-section::after,
+            .champ-card::after {
+                display: none;
+            }
+        }
+
     </style>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png">
@@ -940,7 +1226,7 @@
 
     <div class="planning-grid">
         <!-- DAILY RACES -->
-        <div class="planning-section">
+        <div class="planning-section daily-section">
             <div class="section-header">
                 <span class="section-icon">🏁</span>
                 <div class="section-title">
@@ -1074,7 +1360,7 @@
         </div>
 
         <!-- WEEKLY RACES -->
-        <div class="planning-section">
+        <div class="planning-section weekly-section">
             <div class="section-header">
                 <span class="section-icon">🏆</span>
                 <div class="section-title">
@@ -1126,7 +1412,7 @@
         </div>
 
         <!-- SPECIAL EVENT -->
-        <div class="planning-section special-event-section full-width">
+        <div class="planning-section special-event-section full-width special-section">
             <div class="section-header">
                 <span class="section-icon">⭐</span>
                 <div class="section-title">
@@ -1191,7 +1477,7 @@
     <div class="planning-grid champ-grid">
 
         <!-- LMP3 SPRINT TOUR -->
-        <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
+        <div class="planning-section champ-card champ-lmp3" style="border-color: rgba(205, 127, 50, 0.5);">
             <div class="section-header">
                 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
                 <div class="section-title"><h3>LMP3 Sprint Tour</h3><span>Bronze 2 SR · 45min · LMP3</span></div>
@@ -1218,7 +1504,7 @@
         </div>
 
         <!-- LMGT3 CHALLENGE -->
-        <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
+        <div class="planning-section champ-card champ-lmgt3" style="border-color: rgba(205, 127, 50, 0.5);">
             <div class="section-header">
                 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
                 <div class="section-title"><h3>LMGT3 Challenge</h3><span>Bronze 2 SR · 80min · LMGT3</span></div>
@@ -1245,7 +1531,7 @@
         </div>
 
         <!-- ELMS SPRINT TROPHY -->
-        <div class="planning-section" style="border-color: rgba(192, 192, 192, 0.5);">
+        <div class="planning-section champ-card champ-elms-sprint" style="border-color: rgba(192, 192, 192, 0.5);">
             <div class="section-header">
                 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#c0c0c0;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #c0c0c088;"></span>
                 <div class="section-title"><h3>ELMS Sprint Trophy</h3><span>Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3</span></div>
@@ -1272,7 +1558,7 @@
         </div>
 
         <!-- WEC-XPERIENCE -->
-        <div class="planning-section" style="border-color: rgba(255, 215, 0, 0.5);">
+        <div class="planning-section champ-card champ-wec" style="border-color: rgba(255, 215, 0, 0.5);">
             <div class="section-header">
                 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
                 <div class="section-title"><h3>WEC-Xperience</h3><span>Gold 1 SR · 90min · Hypercar &amp; LMGT3</span></div>
@@ -1299,7 +1585,7 @@
         </div>
 
         <!-- 2.4H SERIES -->
-        <div class="planning-section" style="border-color: rgba(255, 215, 0, 0.5);">
+        <div class="planning-section champ-card champ-24h" style="border-color: rgba(255, 215, 0, 0.5);">
             <div class="section-header">
                 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
                 <div class="section-title"><h3>2.4h Series</h3><span>Gold 1 SR · 144min · Hypercar &amp; LMGT3</span></div>
@@ -1326,7 +1612,7 @@
         </div>
 
         <!-- ELMS WORLD TOUR (TEAM) -->
-        <div class="planning-section" style="border-color: rgba(205, 127, 50, 0.5);">
+        <div class="planning-section champ-card champ-elms-world" style="border-color: rgba(205, 127, 50, 0.5);">
             <div class="section-header">
                 <span style="background:#ffffff;color:#00aadd;font-weight:900;font-size:11px;padding:3px 7px;border-radius:5px;flex-shrink:0;letter-spacing:1.5px;font-family:'Segoe UI',sans-serif;">ELMS</span>
                 <div class="section-title"><h3>ELMS World Tour</h3><span>TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3</span></div>
@@ -1553,25 +1839,26 @@
         });
         window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePlanningPopup(); });
 
-        // Clic sur section (Daily Races, Weekly...) → accordéon
-        document.querySelectorAll('.planning-section .section-header').forEach(function(header) {
-            header.addEventListener('click', function() {
-                var section = header.closest('.planning-section');
-                // Ferme les autres sections ouvertes
-                document.querySelectorAll('.planning-section.open').forEach(function(s) {
-                    if (s !== section) s.classList.remove('open');
+        // Sur mobile/tablette seulement : on conserve le comportement historique.
+        // Sur PC, toutes les informations sont visibles sans accordéon ni popup.
+        if (window.innerWidth <= 1024) {
+            document.querySelectorAll('#planning .planning-section .section-header').forEach(function(header) {
+                header.addEventListener('click', function() {
+                    var section = header.closest('.planning-section');
+                    document.querySelectorAll('#planning .planning-section.open').forEach(function(s) {
+                        if (s !== section) s.classList.remove('open');
+                    });
+                    section.classList.toggle('open');
                 });
-                section.classList.toggle('open');
             });
-        });
 
-        // Clic sur tier (Bronze/Silver/Gold) → popup
-        document.querySelectorAll('.planning-section .tier-header').forEach(function(header) {
-            header.addEventListener('click', function(e) {
-                e.stopPropagation(); // ne pas remonter au section-header
-                openTierPopup(header.closest('.tier-block'));
+            document.querySelectorAll('#planning .planning-section .tier-header').forEach(function(header) {
+                header.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openTierPopup(header.closest('.tier-block'));
+                });
             });
-        });
+        }
 
                 // ── Toggle groupes championnats mobile ──
         document.querySelectorAll('.champ-group-header').forEach(function(header) {
@@ -1622,7 +1909,5 @@
             header.addEventListener('click', function() { section.classList.toggle('st-open'); });
         })();
     </script>
-
-</script>
 </body>
 </html>
