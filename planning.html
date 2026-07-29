@@ -1310,11 +1310,37 @@
   .pc-champ-card { position:relative; min-height:128px; overflow:hidden; border-radius:10px; background:#060606; border:1px solid var(--accent); }
   .pc-champ-card::before { content:""; position:absolute; inset:0; background-image:var(--bg); background-size:cover; background-position:center right; opacity:.82; }
   .pc-champ-card::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.78) 46%,rgba(0,0,0,.15) 100%); }
-  .pc-champ-content { position:relative; z-index:2; padding:16px 16px; width:67%; }
+  .pc-champ-content { position:relative; z-index:2; padding:18px 16px; width:72%; display:flex; flex-direction:column; justify-content:flex-end; min-height:100%; }
   .pc-champ-name { font-size:18px; font-weight:900; text-transform:uppercase; }
-  .pc-champ-meta { font-size:11px; color:#eee; margin-top:4px; line-height:1.4; }
-  .pc-details { margin-top:16px; font-size:11px; font-weight:800; color:var(--accent); text-transform:uppercase; }
+  .pc-champ-meta { font-size:11px; color:#eee; margin-top:0; line-height:1.45; }
+  .pc-details { margin-top:14px; font-size:11px; font-weight:800; color:var(--accent); text-transform:uppercase; background:none; border:none; padding:0; cursor:pointer; text-align:left; }
 }
+
+
+
+/* === CORRECTION FINALE : images réelles + fenêtre de détails PC === */
+@media (min-width:1025px){
+  .pc-panel,.pc-champ-card{isolation:isolate;}
+  .pc-bg-img{position:absolute!important;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0!important;display:block!important;opacity:.78;pointer-events:none;}
+  .pc-daily .pc-bg-img{object-position:center 58%;opacity:.64;}
+  .pc-weekly .pc-bg-img,.pc-special .pc-bg-img{object-position:center 55%;opacity:.72;}
+  .pc-champ-card .pc-bg-img{opacity:.88;object-position:center;}
+  .pc-panel::before,.pc-champ-card::before{background-image:none!important;display:none!important;}
+  .pc-panel::after{background:linear-gradient(90deg,rgba(0,0,0,.91) 0%,rgba(0,0,0,.76) 54%,rgba(0,0,0,.22) 100%)!important;}
+  .pc-daily::after{background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.66) 58%,rgba(0,0,0,.25))!important;}
+  .pc-champ-card::after{background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.62) 48%,rgba(0,0,0,.10) 100%)!important;}
+  .pc-details,.pc-link{border:0;background:none;padding:0;font:inherit;cursor:pointer;text-decoration:none;}
+  .pc-details:hover,.pc-link:hover{filter:brightness(1.3);text-decoration:underline;}
+}
+.pc-detail-modal{display:none;position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px;}
+.pc-detail-modal.active{display:flex;}
+.pc-detail-box{width:min(900px,96vw);max-height:88vh;overflow:auto;background:#080808;border:1px solid rgba(255,26,117,.55);border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 35px rgba(255,26,117,.16);padding:28px;position:relative;}
+.pc-detail-close{position:absolute;right:18px;top:14px;border:0;background:transparent;color:#fff;font-size:28px;cursor:pointer;}
+.pc-detail-title{font-size:26px;color:#ff1a75;font-weight:900;margin:0 45px 20px 0;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.12);}
+.pc-detail-content{color:#fff;}
+.pc-detail-content .section-content{max-height:none!important;overflow:visible!important;}
+.pc-detail-content .champ-week-row{padding:5px 7px;border-radius:6px;}
+.pc-detail-content .champ-week-row:nth-child(odd){background:rgba(255,255,255,.035);}
 
 </style>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16.png">
@@ -1388,7 +1414,7 @@
       <div class="pc-pill maintenance">⚠ Maintenance RaceControl : à partir du 28 juillet 2026 à 09:00 UTC</div>
     </div>
 
-    <section class="pc-panel pc-daily">
+    <section class="pc-panel pc-daily"><img class="pc-bg-img" src="./images/planning/daily-races-bg.webp" alt="" aria-hidden="true">
       <div class="pc-section-head">
         <div class="pc-icon">🏁</div>
         <div><div class="pc-head-title">Daily Races</div><div class="pc-head-sub">Courses quotidiennes</div></div>
@@ -1416,15 +1442,15 @@
     </section>
 
     <div class="pc-lower">
-      <section class="pc-panel pc-bar pc-weekly">
+      <section class="pc-panel pc-bar pc-weekly"><img class="pc-bg-img" src="./images/planning/weekly-races-bg.webp" alt="" aria-hidden="true">
         <div class="pc-bar-left"><div class="pc-icon">🏆</div><div><div class="pc-bar-title">Weekly Races</div><div class="pc-bar-sub">Courses hebdomadaires Solo</div></div></div>
         <div class="pc-stats"><div class="pc-stat"><b>Résultat</b><span>Solo</span></div><div class="pc-stat"><b>Durée</b><span>Variable</span></div><div class="pc-stat"><b>Voitures</b><span>Sélection libre</span></div><div class="pc-stat"><b>Circuits</b><span>Sélection événement</span></div></div>
-        <div class="pc-link">Voir le calendrier →</div>
+        <button type="button" class="pc-link" data-planning-detail="Weekly Races">Voir le calendrier →</button>
       </section>
-      <section class="pc-panel pc-bar pc-special">
+      <section class="pc-panel pc-bar pc-special"><img class="pc-bg-img" src="./images/planning/special-event-bg.webp" alt="" aria-hidden="true">
         <div class="pc-bar-left"><div class="pc-icon">★</div><div><div class="pc-bar-title">Special Event</div><div class="pc-bar-sub">Événement spécial — Open Entry Team</div></div></div>
         <div class="pc-stats"><div class="pc-stat"><b>Format</b><span>Team</span></div><div class="pc-stat"><b>Durée</b><span>Longue distance</span></div><div class="pc-stat"><b>Accès</b><span>Ouvert à tous</span></div><div class="pc-stat"><b>Récompenses</b><span>Spéciales</span></div></div>
-        <div class="pc-link">Voir l’événement →</div>
+        <button type="button" class="pc-link" data-planning-detail="Special Event">Voir l’événement →</button>
       </section>
     </div>
 
@@ -1432,16 +1458,25 @@
       <div class="pc-champ-title"><span class="white">Championnats — </span><span class="pink">Saison 11</span></div>
       <div class="pc-date">📅 Du 16 juin 2026 au 11 août 2026 — 8 semaines</div>
       <div class="pc-champ-grid">
-        <article class="pc-champ-card" style="--accent:#e58a20;--bg:url('images/planning/champ-lmp3.webp')"><div class="pc-champ-content"><div class="pc-champ-name">LMP3 Sprint Tour</div><div class="pc-champ-meta">Bronze 2 SR · 45min<br>LMP3</div><div class="pc-details">Détails →</div></div></article>
-        <article class="pc-champ-card" style="--accent:#ff1a75;--bg:url('images/planning/champ-lmgt3.webp')"><div class="pc-champ-content"><div class="pc-champ-name">LMGT3 Challenge</div><div class="pc-champ-meta">Bronze 2 SR · 80min<br>LMGT3</div><div class="pc-details">Détails →</div></div></article>
-        <article class="pc-champ-card" style="--accent:#bfc3c7;--bg:url('images/planning/champ-elms-sprint.webp')"><div class="pc-champ-content"><div class="pc-champ-name">ELMS Sprint Trophy</div><div class="pc-champ-meta">Silver 1 SR · 90min<br>LMP2, LMP3 & LMGT3</div><div class="pc-details">Détails →</div></div></article>
-        <article class="pc-champ-card" style="--accent:#e5d900;--bg:url('images/planning/champ-wec-xperience.webp')"><div class="pc-champ-content"><div class="pc-champ-name">WEC-Xperience</div><div class="pc-champ-meta">Gold 1 SR · 90min<br>Hypercar & LMGT3</div><div class="pc-details">Détails →</div></div></article>
-        <article class="pc-champ-card" style="--accent:#e5d900;--bg:url('images/planning/champ-24h-series.webp')"><div class="pc-champ-content"><div class="pc-champ-name">2.4H Series</div><div class="pc-champ-meta">Gold 1 SR · 144min<br>Hypercar & LMGT3</div><div class="pc-details">Détails →</div></div></article>
-        <article class="pc-champ-card" style="--accent:#00cbe8;--bg:url('images/planning/champ-elms-world-tour.webp')"><div class="pc-champ-content"><div class="pc-champ-name">ELMS World Tour</div><div class="pc-champ-meta">TEAM · Bronze 2 SR · 4h & 6h<br>LMP2, LMP3 & LMGT3</div><div class="pc-details">Détails →</div></div></article>
+        <article class="pc-champ-card" style="--accent:#e58a20;--bg:url('images/planning/champ-lmp3.webp')"><img class="pc-bg-img" src="./images/planning/champ-lmp3.webp" alt="" aria-hidden="true"><div class="pc-champ-content"><div class="pc-champ-meta">Bronze 2 SR · 45min<br>LMP3</div><button type="button" class="pc-details" data-detail-title="LMP3 Sprint Tour">Détails →</button></div></article>
+        <article class="pc-champ-card" style="--accent:#ff1a75;--bg:url('images/planning/champ-lmgt3.webp')"><img class="pc-bg-img" src="./images/planning/champ-lmgt3.webp" alt="" aria-hidden="true"><div class="pc-champ-content"><div class="pc-champ-meta">Bronze 2 SR · 80min<br>LMGT3</div><button type="button" class="pc-details" data-detail-title="LMGT3 Challenge">Détails →</button></div></article>
+        <article class="pc-champ-card" style="--accent:#bfc3c7;--bg:url('images/planning/champ-elms-sprint.webp')"><img class="pc-bg-img" src="./images/planning/champ-elms-sprint.webp" alt="" aria-hidden="true"><div class="pc-champ-content"><div class="pc-champ-meta">Silver 1 SR · 90min<br>LMP2, LMP3 & LMGT3</div><button type="button" class="pc-details" data-detail-title="ELMS Sprint Trophy">Détails →</button></div></article>
+        <article class="pc-champ-card" style="--accent:#e5d900;--bg:url('images/planning/champ-wec-xperience.webp')"><img class="pc-bg-img" src="./images/planning/champ-wec-xperience.webp" alt="" aria-hidden="true"><div class="pc-champ-content"><div class="pc-champ-meta">Gold 1 SR · 90min<br>Hypercar & LMGT3</div><button type="button" class="pc-details" data-detail-title="WEC-Xperience">Détails →</button></div></article>
+        <article class="pc-champ-card" style="--accent:#e5d900;--bg:url('images/planning/champ-24h-series.webp')"><img class="pc-bg-img" src="./images/planning/champ-24h-series.webp" alt="" aria-hidden="true"><div class="pc-champ-content"><div class="pc-champ-meta">Gold 1 SR · 144min<br>Hypercar & LMGT3</div><button type="button" class="pc-details" data-detail-title="2.4h Series">Détails →</button></div></article>
+        <article class="pc-champ-card" style="--accent:#00cbe8;--bg:url('images/planning/champ-elms-world-tour.webp')"><img class="pc-bg-img" src="./images/planning/champ-elms-world-tour.webp" alt="" aria-hidden="true"><div class="pc-champ-content"><div class="pc-champ-meta">TEAM · Bronze 2 SR · 4h & 6h<br>LMP2, LMP3 & LMGT3</div><button type="button" class="pc-details" data-detail-title="ELMS World Tour">Détails →</button></div></article>
       </div>
     </section>
   </div>
 </main>
+
+
+<div class="pc-detail-modal" id="pcDetailModal" aria-hidden="true">
+  <div class="pc-detail-box" role="dialog" aria-modal="true" aria-labelledby="pcDetailTitle">
+    <button class="pc-detail-close" id="pcDetailClose" type="button" aria-label="Fermer">×</button>
+    <h3 class="pc-detail-title" id="pcDetailTitle"></h3>
+    <div class="pc-detail-content" id="pcDetailContent"></div>
+  </div>
+</div>
 
 <!-- ============================================= -->
 <!-- SECTION PLANNING LMU -->
@@ -2142,6 +2177,52 @@
             if (!header) return;
             header.addEventListener('click', function() { section.classList.toggle('st-open'); });
         })();
-    </script>
+    
+
+        // ── Fenêtre de détails de la nouvelle version PC ──
+        (function () {
+            var modal = document.getElementById('pcDetailModal');
+            var modalTitle = document.getElementById('pcDetailTitle');
+            var modalContent = document.getElementById('pcDetailContent');
+            var closeButton = document.getElementById('pcDetailClose');
+            if (!modal || !modalTitle || !modalContent || !closeButton) return;
+            function openModal(title, contentNode) {
+                modalTitle.textContent = title;
+                modalContent.innerHTML = contentNode ? contentNode.innerHTML : '<p>Détails indisponibles.</p>';
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeModal() {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+            document.querySelectorAll('[data-detail-title]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var wanted = button.getAttribute('data-detail-title');
+                    var match = Array.from(document.querySelectorAll('#championnats .champ-grid .planning-section')).find(function (card) {
+                        var h3 = card.querySelector('.section-title h3');
+                        return h3 && h3.textContent.trim().toLowerCase() === wanted.toLowerCase();
+                    });
+                    openModal(wanted, match && match.querySelector('.section-content'));
+                });
+            });
+            document.querySelectorAll('[data-planning-detail]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var wanted = button.getAttribute('data-planning-detail');
+                    var match = Array.from(document.querySelectorAll('#planning .planning-section')).find(function (card) {
+                        var h3 = card.querySelector('.section-title h3');
+                        return h3 && h3.textContent.trim().toLowerCase() === wanted.toLowerCase();
+                    });
+                    openModal(wanted, match && match.querySelector('.section-content'));
+                });
+            });
+            closeButton.addEventListener('click', closeModal);
+            modal.addEventListener('click', function (event) { if (event.target === modal) closeModal(); });
+            window.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+        })();
+
+</script>
 </body>
 </html>
