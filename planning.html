@@ -1235,7 +1235,88 @@
             }
         }
 
-    </style>
+    
+
+/* ═══════════════════════════════════════════════════
+   VERSION PC — MAQUETTE VISUELLE FIDÈLE
+   ═══════════════════════════════════════════════════ */
+.pc-showcase { display:none; }
+@media (min-width:1025px){
+  .hero, #planning, #championnats { display:none !important; }
+  .pc-showcase { display:block; padding:38px 42px 80px; background:#000; }
+  .pc-wrap { max-width:1500px; margin:0 auto; }
+  .pc-title { text-align:center; font-size:64px; line-height:1; font-weight:900; font-style:italic; letter-spacing:-1.5px; margin:6px 0 24px; }
+  .pc-title .pink { color:#ff1a75; }
+  .pc-title .white { color:#fff; }
+  .pc-status-row { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-bottom:22px; }
+  .pc-pill { display:inline-flex; align-items:center; gap:10px; min-height:38px; padding:0 18px; border-radius:999px; font-size:13px; font-weight:600; background:#090909; }
+  .pc-pill.update { border:1px solid #00d4ff; }
+  .pc-pill.maintenance { border:1px solid #d89600; color:#f3b21a; }
+  .pc-dot { width:10px; height:10px; border-radius:50%; background:#00e68a; box-shadow:0 0 12px #00e68a; }
+
+  .pc-panel { position:relative; overflow:hidden; border-radius:18px; background:#080808; }
+  .pc-panel::before { content:""; position:absolute; inset:0; background-size:cover; background-position:center right; opacity:.48; z-index:0; }
+  .pc-panel::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.97) 0%,rgba(0,0,0,.88) 55%,rgba(0,0,0,.48) 100%); z-index:1; }
+  .pc-panel > * { position:relative; z-index:2; }
+
+  .pc-daily { border:1px solid #ff1a75; box-shadow:0 0 28px rgba(255,26,117,.12); padding:20px 24px 24px; }
+  .pc-daily::before { background-image:url('images/planning/daily-races-bg.webp'); }
+  .pc-section-head { display:flex; align-items:center; gap:15px; padding-bottom:12px; border-bottom:1px solid rgba(255,255,255,.12); }
+  .pc-icon { width:48px; height:48px; border-radius:9px; display:grid; place-items:center; font-size:25px; background:linear-gradient(135deg,#ff1a75,#b90055); box-shadow:0 0 18px rgba(255,26,117,.45); }
+  .pc-head-title { font-size:23px; font-style:italic; font-weight:900; text-transform:uppercase; }
+  .pc-head-sub { color:#ff1a75; font-size:12px; margin-top:1px; }
+  .pc-level-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:12px; }
+  .pc-level { padding:0 18px; min-width:0; }
+  .pc-level + .pc-level { border-left:1px solid rgba(255,255,255,.12); }
+  .pc-level:first-child { padding-left:4px; }
+  .pc-level:last-child { padding-right:4px; }
+  .pc-level-title { display:flex; align-items:center; gap:9px; font-weight:800; font-size:14px; margin:0 0 10px; }
+  .pc-level-title::before { content:""; width:16px; height:16px; border-radius:50%; border:2px solid currentColor; box-shadow:0 0 10px currentColor; }
+  .rookie { color:#d87c1c; } .inter { color:#c7c7c7; } .advanced { color:#ffe000; }
+  .pc-race { display:grid; grid-template-columns:auto 1fr auto auto; align-items:center; gap:10px; min-height:48px; padding:8px 10px; margin-bottom:7px; border:1px solid rgba(255,255,255,.08); border-radius:7px; background:rgba(12,12,12,.88); }
+  .pc-race .flag { font-size:19px; }
+  .pc-race .track { font-size:13px; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pc-race .tag { font-size:10px; font-weight:800; padding:4px 7px; border-radius:4px; background:#292929; white-space:nowrap; }
+  .pc-race .time { font-size:11px; color:#cfcfe2; white-space:nowrap; }
+  .tag.orange{background:#6c3b00;color:#ffbd65}.tag.gray{background:#3d3d3d;color:#eee}.tag.yellow{background:#665d00;color:#fff35a}.tag.cyan{background:#006b7d;color:#7eeaff}
+
+  .pc-lower { display:grid; grid-template-columns:1fr; gap:12px; margin-top:12px; }
+  .pc-bar { min-height:78px; padding:14px 20px; display:grid; grid-template-columns:250px 1fr auto; align-items:center; border-radius:12px; }
+  .pc-weekly { border:1px solid #00d4ff; }
+  .pc-weekly::before { background-image:url('images/planning/weekly-races-bg.webp'); }
+  .pc-weekly::after { background:linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.84) 58%,rgba(0,0,0,.40) 100%); }
+  .pc-special { border:1px solid #8b2cff; }
+  .pc-special::before { background-image:url('images/planning/special-event-bg.webp'); }
+  .pc-special::after { background:linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.86) 58%,rgba(0,0,0,.42) 100%); }
+  .pc-bar-left { display:flex; align-items:center; gap:15px; }
+  .pc-bar .pc-icon { width:46px; height:46px; }
+  .pc-weekly .pc-icon { background:linear-gradient(135deg,#00d4ff,#007c96); }
+  .pc-special .pc-icon { background:linear-gradient(135deg,#8b2cff,#4f0b8c); }
+  .pc-bar-title { font-size:20px; font-style:italic; font-weight:900; text-transform:uppercase; }
+  .pc-bar-sub { font-size:12px; color:#c4c4d8; }
+  .pc-stats { display:flex; gap:36px; align-items:center; }
+  .pc-stat { min-width:105px; }
+  .pc-stat b { display:block; font-size:11px; letter-spacing:.5px; color:#00d4ff; text-transform:uppercase; }
+  .pc-special .pc-stat b { color:#b56aff; }
+  .pc-stat span { font-size:11px; color:#e7e7ef; }
+  .pc-link { font-size:12px; font-weight:800; text-transform:uppercase; color:#00d4ff; white-space:nowrap; }
+  .pc-special .pc-link { color:#b56aff; }
+
+  .pc-champ { margin-top:14px; padding:0 26px 18px; border-radius:16px; background:linear-gradient(180deg,rgba(18,18,20,.92),rgba(4,4,4,.98)); }
+  .pc-champ-title { text-align:center; font-size:28px; font-style:italic; font-weight:900; text-transform:uppercase; margin:0 0 8px; }
+  .pc-champ-title .pink{color:#ff1a75}.pc-champ-title .white{color:#fff}
+  .pc-date { width:max-content; margin:0 auto 10px; padding:5px 14px; border-radius:999px; border:1px solid rgba(255,26,117,.55); font-size:12px; }
+  .pc-champ-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .pc-champ-card { position:relative; min-height:128px; overflow:hidden; border-radius:10px; background:#060606; border:1px solid var(--accent); }
+  .pc-champ-card::before { content:""; position:absolute; inset:0; background-image:var(--bg); background-size:cover; background-position:center right; opacity:.82; }
+  .pc-champ-card::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.78) 46%,rgba(0,0,0,.15) 100%); }
+  .pc-champ-content { position:relative; z-index:2; padding:16px 16px; width:67%; }
+  .pc-champ-name { font-size:18px; font-weight:900; text-transform:uppercase; }
+  .pc-champ-meta { font-size:11px; color:#eee; margin-top:4px; line-height:1.4; }
+  .pc-details { margin-top:16px; font-size:11px; font-weight:800; color:var(--accent); text-transform:uppercase; }
+}
+
+</style>
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon_16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png">
     <link rel="apple-touch-icon" sizes="192x192" href="/favicon_192.png">
@@ -1297,6 +1378,70 @@
     <div class="hero-title"><span style="color:#ffffff;display:inline">PLANNING & </span><span style="background:linear-gradient(135deg,#ff1a75 0%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block">RÉSULTATS</span></div>
     <p>Courses quotidiennes, championnats Saison 11 et classement Super Trofeo de l'équipe SimTek Performance.</p>
 </section>
+
+
+<main class="pc-showcase">
+  <div class="pc-wrap">
+    <div class="pc-title"><span class="pink">PLANNING</span> <span class="white">DES COURSES</span></div>
+    <div class="pc-status-row">
+      <div class="pc-pill update"><span class="pc-dot"></span>Mis à jour : <strong>Semaine du 28/07 - Season 11 Week 7</strong></div>
+      <div class="pc-pill maintenance">⚠ Maintenance RaceControl : à partir du 28 juillet 2026 à 09:00 UTC</div>
+    </div>
+
+    <section class="pc-panel pc-daily">
+      <div class="pc-section-head">
+        <div class="pc-icon">🏁</div>
+        <div><div class="pc-head-title">Daily Races</div><div class="pc-head-sub">Courses quotidiennes</div></div>
+      </div>
+      <div class="pc-level-grid">
+        <div class="pc-level">
+          <div class="pc-level-title rookie">DÉBUTANT</div>
+          <div class="pc-race"><span class="flag">🇫🇷</span><span class="track">Le Mans</span><span class="tag orange">LMGT3</span><span class="time">20 min</span></div>
+          <div class="pc-race"><span class="flag">🇧🇪</span><span class="track">Spa-Francorchamps</span><span class="tag orange">LMGTE</span><span class="time">20 min</span></div>
+          <div class="pc-race"><span class="flag">🇮🇹</span><span class="track">Monza</span><span class="tag orange">LMP3</span><span class="time">20 min</span></div>
+        </div>
+        <div class="pc-level">
+          <div class="pc-level-title inter">INTERMÉDIAIRE</div>
+          <div class="pc-race"><span class="flag">🇺🇸</span><span class="track">Laguna Seca</span><span class="tag gray">LMGT3</span><span class="time">30 min</span></div>
+          <div class="pc-race"><span class="flag">🇺🇸</span><span class="track">Sebring</span><span class="tag gray">Prototype</span><span class="time">30 min</span></div>
+          <div class="pc-race"><span class="flag">🇺🇸</span><span class="track">COTA</span><span class="tag gray">ELMS</span><span class="time">30 min</span></div>
+        </div>
+        <div class="pc-level">
+          <div class="pc-level-title advanced">AVANCÉ</div>
+          <div class="pc-race"><span class="flag">🇺🇸</span><span class="track">Sebring</span><span class="tag yellow">Crew Series</span><span class="time">40 min</span></div>
+          <div class="pc-race"><span class="flag">🇺🇸</span><span class="track">Daytona</span><span class="tag yellow">ELMS</span><span class="time">60 min</span></div>
+          <div class="pc-race"><span class="flag">🇺🇸</span><span class="track">Laguna Seca</span><span class="tag yellow">WEC-X</span><span class="time">60 min</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="pc-lower">
+      <section class="pc-panel pc-bar pc-weekly">
+        <div class="pc-bar-left"><div class="pc-icon">🏆</div><div><div class="pc-bar-title">Weekly Races</div><div class="pc-bar-sub">Courses hebdomadaires Solo</div></div></div>
+        <div class="pc-stats"><div class="pc-stat"><b>Résultat</b><span>Solo</span></div><div class="pc-stat"><b>Durée</b><span>Variable</span></div><div class="pc-stat"><b>Voitures</b><span>Sélection libre</span></div><div class="pc-stat"><b>Circuits</b><span>Sélection événement</span></div></div>
+        <div class="pc-link">Voir le calendrier →</div>
+      </section>
+      <section class="pc-panel pc-bar pc-special">
+        <div class="pc-bar-left"><div class="pc-icon">★</div><div><div class="pc-bar-title">Special Event</div><div class="pc-bar-sub">Événement spécial — Open Entry Team</div></div></div>
+        <div class="pc-stats"><div class="pc-stat"><b>Format</b><span>Team</span></div><div class="pc-stat"><b>Durée</b><span>Longue distance</span></div><div class="pc-stat"><b>Accès</b><span>Ouvert à tous</span></div><div class="pc-stat"><b>Récompenses</b><span>Spéciales</span></div></div>
+        <div class="pc-link">Voir l’événement →</div>
+      </section>
+    </div>
+
+    <section class="pc-champ">
+      <div class="pc-champ-title"><span class="white">Championnats — </span><span class="pink">Saison 11</span></div>
+      <div class="pc-date">📅 Du 16 juin 2026 au 11 août 2026 — 8 semaines</div>
+      <div class="pc-champ-grid">
+        <article class="pc-champ-card" style="--accent:#e58a20;--bg:url('images/planning/champ-lmp3.webp')"><div class="pc-champ-content"><div class="pc-champ-name">LMP3 Sprint Tour</div><div class="pc-champ-meta">Bronze 2 SR · 45min<br>LMP3</div><div class="pc-details">Détails →</div></div></article>
+        <article class="pc-champ-card" style="--accent:#ff1a75;--bg:url('images/planning/champ-lmgt3.webp')"><div class="pc-champ-content"><div class="pc-champ-name">LMGT3 Challenge</div><div class="pc-champ-meta">Bronze 2 SR · 80min<br>LMGT3</div><div class="pc-details">Détails →</div></div></article>
+        <article class="pc-champ-card" style="--accent:#bfc3c7;--bg:url('images/planning/champ-elms-sprint.webp')"><div class="pc-champ-content"><div class="pc-champ-name">ELMS Sprint Trophy</div><div class="pc-champ-meta">Silver 1 SR · 90min<br>LMP2, LMP3 & LMGT3</div><div class="pc-details">Détails →</div></div></article>
+        <article class="pc-champ-card" style="--accent:#e5d900;--bg:url('images/planning/champ-wec-xperience.webp')"><div class="pc-champ-content"><div class="pc-champ-name">WEC-Xperience</div><div class="pc-champ-meta">Gold 1 SR · 90min<br>Hypercar & LMGT3</div><div class="pc-details">Détails →</div></div></article>
+        <article class="pc-champ-card" style="--accent:#e5d900;--bg:url('images/planning/champ-24h-series.webp')"><div class="pc-champ-content"><div class="pc-champ-name">2.4H Series</div><div class="pc-champ-meta">Gold 1 SR · 144min<br>Hypercar & LMGT3</div><div class="pc-details">Détails →</div></div></article>
+        <article class="pc-champ-card" style="--accent:#00cbe8;--bg:url('images/planning/champ-elms-world-tour.webp')"><div class="pc-champ-content"><div class="pc-champ-name">ELMS World Tour</div><div class="pc-champ-meta">TEAM · Bronze 2 SR · 4h & 6h<br>LMP2, LMP3 & LMGT3</div><div class="pc-details">Détails →</div></div></article>
+      </div>
+    </section>
+  </div>
+</main>
 
 <!-- ============================================= -->
 <!-- SECTION PLANNING LMU -->
