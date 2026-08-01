@@ -9,7 +9,7 @@
       gtag('config', 'G-CB6CLV56G3');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Actualités SimTek Performance : résultats de courses, guides simracing, analyses championnats Le Mans Ultimate. Toute l'actualité de l'équipe simracing française.">
     <meta name="keywords" content="actualités simracing, résultats simracing france, 4 heures Paul Ricard LMU, SimTek Performance résultats, guide simracing, Le Mans Ultimate actualité, championnats simracing 2026">
     <meta name="robots" content="index, follow">
@@ -242,12 +242,20 @@
             .nav-links, nav .cta-button { display: none; }
             .hamburger { display: flex; padding: 12px; margin: -12px; }
             .logo-img { height: 50px; }
-            .blog-hero { padding: 50px 20px 35px; }
-            .blog-hero h1 { font-size: 32px; }
-            .blog-hero-title span { font-size: 32px; }
+            .blog-hero { padding: 40px 20px 28px; }
+            .blog-hero h1 { font-size: 28px; }
+            .blog-hero-title span { font-size: 28px; }
             .blog-hero-logo { height: 200px; }
-            .articles-section { padding: 30px 16px; }
-            .articles-grid { grid-template-columns: 1fr; gap: 20px; }
+            .blog-hero p { font-size: 14px; }
+            .articles-section { padding: 24px 16px; }
+            .articles-grid { grid-template-columns: 1fr; gap: 18px; }
+            .article-card-top { padding: 20px 20px 0; }
+            .article-card h2 { font-size: 17px; line-height: 1.35; }
+            .article-tag { font-size: 10px; padding: 3px 10px; margin-bottom: 12px; }
+            .article-meta { font-size: 12px; gap: 12px; margin-bottom: 12px; }
+            .article-excerpt { font-size: 13.5px; padding: 0 20px 16px; min-height: 0; }
+            .article-toggle { margin: 0 20px 20px; padding: 9px 18px; font-size: 12px; }
+            .article-card-actions { margin: 0 20px 20px; }
 
             /* Popup de lecture d'article (mobile) */
             .article-modal-overlay {
@@ -296,14 +304,14 @@
             .article-modal-close:active { background: rgba(255,26,117,0.25); border-color: #ff1a75; }
             .article-modal-scroll {
                 overflow-y: auto;
-                padding: 28px 24px 32px;
+                padding: 22px 20px 26px;
                 -webkit-overflow-scrolling: touch;
             }
-            .article-modal-cover { width: 100%; height: 180px; object-fit: cover; border-radius: 14px; margin-bottom: 18px; display: block; }
-            .article-modal-title { font-size: 20px; font-weight: 700; color: #fff; margin: 4px 0 12px; line-height: 1.4; padding-right: 30px; }
-            .article-modal-meta { display: flex; gap: 14px; font-size: 13px; color: #b0b0d0; margin-bottom: 18px; flex-wrap: wrap; align-items: center; }
+            .article-modal-cover { width: 100%; height: 160px; object-fit: cover; border-radius: 14px; margin-bottom: 16px; display: block; }
+            .article-modal-title { font-size: 18px; font-weight: 700; color: #fff; margin: 4px 0 10px; line-height: 1.35; padding-right: 30px; }
+            .article-modal-meta { display: flex; gap: 12px; font-size: 12px; color: #b0b0d0; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
             .article-modal-meta i { color: #ff1a75; }
-            .article-modal-body { font-size: 15px; color: #d1d1e9; line-height: 1.85; }
+            .article-modal-body { font-size: 14px; color: #d1d1e9; line-height: 1.75; }
             .article-modal-body h3 { font-size: 17px; color: #ff1a75; margin: 22px 0 10px; }
             .article-modal-body h3:first-child { margin-top: 0; }
             .article-modal-body p { margin-bottom: 14px; }
@@ -331,7 +339,15 @@
         .internal-link-card .ilc-icon { font-size: 24px; }
         .internal-link-card .ilc-text strong { display: block; font-size: 14px; font-weight: 700; color: #ff1a75; margin-bottom: 3px; }
         .internal-link-card .ilc-text span { font-size: 12px; color: #b0b0d0; }
-        @media (max-width: 768px) { .internal-links { padding: 30px 16px; } .internal-links-grid { grid-template-columns: 1fr 1fr; gap: 10px; } }
+        @media (max-width: 768px) {
+            .internal-links { padding: 30px 16px; }
+            .internal-links h2 { font-size: 18px; margin-bottom: 16px; }
+            .internal-links-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            .internal-link-card { flex-direction: column; text-align: center; padding: 16px 10px; gap: 8px; }
+            .internal-link-card .ilc-icon { font-size: 20px; }
+            .internal-link-card .ilc-text strong { font-size: 12.5px; }
+            .internal-link-card .ilc-text span { font-size: 11px; }
+        }
 
             .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
         </style>
