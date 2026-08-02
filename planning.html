@@ -2950,45 +2950,76 @@ body.champ-modal-open{
 }
 </style>
 
+
+
 <style id="champ-current-week-style">
-.champ-week-row.current-week{
-  position:relative!important;
-  background:linear-gradient(90deg,rgba(0,190,110,.22),rgba(0,190,110,.08))!important;
-  border-radius:8px!important;
-  box-shadow:inset 3px 0 0 #00d37d!important;
+.champ-modal-body .champ-week-row.current-week,
+.champ-modal-body .champ-week-row[data-current-week="true"],
+.champ-modal-body .champ-week-row[data-week="7"]{
+  display:grid!important;
+  grid-template-columns:90px minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:10px!important;
+  margin:4px 0!important;
+  padding:11px 14px!important;
+  border:1px solid rgba(0,224,130,.55)!important;
+  border-left:5px solid #00e082!important;
+  border-radius:9px!important;
+  background:linear-gradient(90deg,rgba(0,224,130,.24),rgba(0,224,130,.07))!important;
+  box-shadow:0 0 18px rgba(0,224,130,.13),inset 0 0 16px rgba(0,224,130,.05)!important;
 }
 
-.champ-week-row.current-week::after{
-  content:"EN COURS";
-  margin-left:auto;
-  justify-self:end;
-  align-self:center;
-  padding:4px 8px;
-  border-radius:999px;
-  background:rgba(0,211,125,.18);
-  border:1px solid rgba(0,211,125,.45);
-  color:#6dffb7;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.08em;
+.champ-modal-body .champ-week-row.current-week::after,
+.champ-modal-body .champ-week-row[data-current-week="true"]::after,
+.champ-modal-body .champ-week-row[data-week="7"]::after{
+  content:"EN COURS"!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:72px!important;
+  padding:5px 9px!important;
+  border:1px solid rgba(0,224,130,.65)!important;
+  border-radius:999px!important;
+  background:#063d28!important;
+  color:#6dffba!important;
+  font-size:10px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  white-space:nowrap!important;
 }
 
-.champ-week-row.current-week .champ-week-label{
-  color:#6dffb7!important;
+.champ-modal-body .champ-week-row.current-week .champ-week-label,
+.champ-modal-body .champ-week-row[data-current-week="true"] .champ-week-label,
+.champ-modal-body .champ-week-row[data-week="7"] .champ-week-label{
+  color:#62ffb5!important;
+  font-weight:900!important;
 }
 
-.champ-week-row.current-week > *{
-  position:relative;
-  z-index:1;
+.champ-modal-body .champ-week-row.current-week > span:nth-child(2),
+.champ-modal-body .champ-week-row[data-current-week="true"] > span:nth-child(2),
+.champ-modal-body .champ-week-row[data-week="7"] > span:nth-child(2){
+  color:#ffffff!important;
+  font-weight:700!important;
 }
 
-@media (max-width:768px){
-  .champ-week-row.current-week::after{
-    font-size:9px;
-    padding:3px 7px;
+@media(max-width:768px){
+  .champ-modal-body .champ-week-row.current-week,
+  .champ-modal-body .champ-week-row[data-current-week="true"],
+  .champ-modal-body .champ-week-row[data-week="7"]{
+    grid-template-columns:72px minmax(0,1fr)!important;
+  }
+
+  .champ-modal-body .champ-week-row.current-week::after,
+  .champ-modal-body .champ-week-row[data-current-week="true"]::after,
+  .champ-modal-body .champ-week-row[data-week="7"]::after{
+    grid-column:1/-1!important;
+    justify-self:start!important;
+    margin-top:3px!important;
   }
 }
 </style>
+
 </head>
 <body>
 <!-- Popup planning sections -->
@@ -3390,7 +3421,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Portimao <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>COTA <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Sebring <span class="config">(WEC)</span></span></div>
-<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Interlagos <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps <span class="config">(Endurance)</span></span></div>
 </div>
 </template></div>
@@ -3414,7 +3445,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Bahrain <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Imola <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Barcelona <span class="config">(ELMS)</span></span></div>
-<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>COTA <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>COTA <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Portimao <span class="config">(ELMS)</span></span></div>
 </div>
 </template></div>
@@ -3438,7 +3469,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Qatar <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Paul Ricard <span class="config">(1a)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Bahrain <span class="config">(WEC)</span></span></div>
-<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans <span class="config">(WEC)</span></span></div>
 </div>
 </template></div>
@@ -3462,7 +3493,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Portimao <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Imola <span class="config">(ELMS)</span></span></div>
-<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza <span class="config">(Curva Grande)</span></span></div>
+<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza <span class="config">(Curva Grande)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Fuji <span class="config">(WEC)</span></span></div>
 </div>
 </template></div>
@@ -3486,7 +3517,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Barcelona <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Silverstone <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Le Mans <span class="config">(WEC)</span></span></div>
-<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Qatar <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Qatar <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 </div>
 </template></div>
@@ -3510,7 +3541,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span style="color:#666;">— Off —</span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>4 Hours of COTA <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span style="color:#666;">— Off —</span></div>
-<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>6 Hours of Fuji <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>6 Hours of Fuji <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span style="color:#666;">— Off —</span></div>
 </div>
 </template></div>
@@ -4027,6 +4058,12 @@ document.addEventListener('DOMContentLoaded', function () {
     modalSubtitle.textContent = card.dataset.champSubtitle || '';
     modalBody.innerHTML = '';
     modalBody.appendChild(template.content.cloneNode(true));
+
+    // Met en évidence la semaine actuelle après l'injection du template dans la popup.
+    modalBody.querySelectorAll('.champ-week-row[data-week="7"]').forEach(function (row) {
+      row.classList.add('current-week');
+      row.setAttribute('data-current-week', 'true');
+    });
 
     const bg = card.dataset.champBg || '';
     modalHero.style.backgroundImage = bg ? 'url("' + bg.replace(/"/g, '\"') + '")' : 'none';
