@@ -1251,6 +1251,16 @@
  body[data-mobile-view="events"] #championnats{display:none!important}body[data-mobile-view="events"] #planning .daily-section,body[data-mobile-view="events"] #planning .weekly-section{display:none!important}
  body[data-mobile-view="champ"] #planning{display:none!important}.mp-hidden{display:none!important}
  .mp-empty{display:none;margin:18px 0;padding:22px 16px;text-align:center;border:1px dashed #3a4049;border-radius:14px;color:#aeb3bc}.mp-empty.active{display:block}
+ /* Daily Races : tout est visible directement, sans accordéon. */
+ #planning .daily-section{overflow:visible!important}
+ #planning .daily-section .section-header{cursor:default!important;border-bottom:1px solid #242a31!important;margin-bottom:4px!important}
+ #planning .daily-section .section-arrow{display:none!important}
+ #planning .daily-section .section-content{display:block!important;max-height:none!important;overflow:visible!important;padding:0 12px 14px!important}
+ #planning .daily-section .tier-block{display:block!important;margin:14px 0 18px!important}
+ #planning .daily-section .tier-header{cursor:default!important;padding:4px 2px 9px!important;border:0!important;border-radius:0!important;background:transparent!important}
+ #planning .daily-section .tier-header::after{content:'';display:block;height:1px;margin-top:9px;background:linear-gradient(90deg,currentColor,transparent);opacity:.35}
+ #planning .daily-section .tier-open-icon{display:none!important}
+ #planning .daily-section .tier-races{display:block!important;position:static!important;width:auto!important;height:auto!important;max-height:none!important;overflow:visible!important;clip:auto!important;white-space:normal!important;padding:0!important}
  @keyframes mpReveal{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
 }
 </style>
@@ -1388,7 +1398,6 @@
 <span class="mp-summary-icon">▽</span><span class="mp-summary-label">Filtres actifs :</span><span class="mp-active-values" id="mpActiveValues">Cette semaine</span>
 <button class="mp-clear" id="mpClear" type="button">Effacer</button>
 </div>
-<div class="mp-result" id="mpResult" aria-live="polite"><span class="mp-result-icon">✓</span><span id="mpResultText">Toutes les courses affichées</span></div>
 <div class="mp-empty" id="mpEmpty">Aucune course ne correspond à ces filtres.</div>
 </section>
 <section id="planning">
@@ -1409,14 +1418,13 @@
 <h3>Daily Races</h3>
 <span>Courses quotidiennes</span>
 </div>
-<span class="section-arrow">▼</span>
 </div>
 <div class="section-content">
 <!-- Bronze / Débutant -->
 <div class="tier-block tier-bronze">
 <div class="tier-header">
 <span class="tier-badge">Débutant</span>
-<span class="tier-open-icon">▶</span>
+
 </div>
 <div class="tier-races">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
@@ -1454,7 +1462,7 @@
 <div class="tier-block tier-silver">
 <div class="tier-header">
 <span class="tier-badge">Intermédiaire</span>
-<span class="tier-open-icon">▶</span>
+
 </div>
 <div class="tier-races">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
@@ -1494,7 +1502,7 @@
 <div class="tier-block tier-gold">
 <div class="tier-header">
 <span class="tier-badge">Avancé</span>
-<span class="tier-open-icon">▶</span>
+
 </div>
 <div class="tier-races">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;">
@@ -1941,21 +1949,19 @@
         // Sur mobile/tablette seulement : on conserve le comportement historique.
         // Sur PC, toutes les informations sont visibles sans accordéon ni popup.
         if (window.innerWidth <= 1024) {
-            document.querySelectorAll('#planning .planning-section .section-header').forEach(function(header) {
+            document.querySelectorAll('#planning .planning-section:not(.daily-section) .section-header').forEach(function(header) {
                 header.addEventListener('click', function() {
                     var section = header.closest('.planning-section');
                     document.querySelectorAll('#planning .planning-section.open').forEach(function(s) {
-                        if (s !== section) s.classList.remove('open');
+                        if (s !== section && !s.classList.contains('daily-section')) s.classList.remove('open');
                     });
                     section.classList.toggle('open');
                 });
             });
 
-            document.querySelectorAll('#planning .planning-section .tier-header').forEach(function(header) {
-                header.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    openTierPopup(header.closest('.tier-block'));
-                });
+            // Daily Races : affichage direct, sans menu déroulant ni popup.
+            document.querySelectorAll('#planning .daily-section').forEach(function(section) {
+                section.classList.add('open');
             });
         }
 
@@ -2043,8 +2049,6 @@
   document.body.dataset.mobileView='week';
   var tabs=[].slice.call(document.querySelectorAll('.mp-tab'));
   var filters=[].slice.call(document.querySelectorAll('.mp-filter'));
-  var result=document.getElementById('mpResult');
-  var resultText=document.getElementById('mpResultText');
   var activeValues=document.getElementById('mpActiveValues');
   var clear=document.getElementById('mpClear');
   var empty=document.getElementById('mpEmpty');
@@ -2068,15 +2072,13 @@
    labels.push(currentViewLabel());
    activeValues.textContent=labels.join(' · ');
   }
-  function flash(){result.classList.remove('changed');void result.offsetWidth;result.classList.add('changed');setTimeout(function(){result.classList.remove('changed')},350)}
   function apply(){
    var list=candidates(),shown=0;
    var selected=[].slice.call(activeFilters);
    list.forEach(function(el){var ok=!selected.length||selected.some(function(f){return matches(el,f)});el.classList.toggle('mp-hidden',!ok);if(ok)shown++});
    document.querySelectorAll('#planning .tier-block').forEach(function(block){var visible=block.querySelector('.race-item:not(.mp-hidden),.event-card:not(.mp-hidden)');block.classList.toggle('mp-hidden',!visible)});
    document.querySelectorAll('#planning .planning-section').forEach(function(section){var visible=section.querySelector('.race-item:not(.mp-hidden),.event-card:not(.mp-hidden)');if(document.body.dataset.mobileView!=='champ')section.classList.toggle('mp-hidden',!visible)});
-   resultText.textContent=shown===0?'Aucun résultat':shown+' élément'+(shown>1?'s':'')+' trouvé'+(shown>1?'s':'');
-   empty.classList.toggle('active',shown===0);updateSummary();flash();
+   empty.classList.toggle('active',shown===0);updateSummary();
   }
   tabs.forEach(function(btn){btn.addEventListener('click',function(){tabs.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});btn.classList.add('active');btn.setAttribute('aria-selected','true');document.body.dataset.mobileView=btn.dataset.view;apply()})});
   filters.forEach(function(btn){
