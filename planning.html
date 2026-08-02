@@ -1226,18 +1226,32 @@
 <style>
 .mobile-planning-controls{display:none}
 @media(max-width:768px){
- body{overflow-x:hidden} .hero{display:none!important} nav{padding:12px 16px!important;min-height:64px}.logo-img{height:44px!important}.mobile-menu{height:100vh;height:100dvh}
- .mobile-planning-controls{display:block;padding:18px 16px 8px;background:#000;position:relative;z-index:4}
- .mp-tabs{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #272b31;border-radius:14px;overflow:hidden;background:#0b0d10}.mp-tab{min-height:48px;border:0;border-right:1px solid #272b31;background:transparent;color:#d9d9df;font-size:13px;font-weight:700}.mp-tab:last-child{border-right:0}.mp-tab.active{color:#fff;background:rgba(255,26,117,.16);box-shadow:inset 0 -2px #ff1a75}
- .mp-filter-row{display:flex;gap:8px;overflow-x:auto;padding:14px 1px 8px;scrollbar-width:none}.mp-filter-row::-webkit-scrollbar{display:none}.mp-filter{flex:0 0 auto;min-height:40px;padding:0 16px;border-radius:10px;border:1px solid #30343b;background:#0d1014;color:#d7d7dc;font-weight:700;font-size:12px}.mp-filter.active{border-color:#ff1a75;color:#fff;background:rgba(255,26,117,.12)}
- .mp-date{display:flex;align-items:center;gap:8px;margin-top:8px;padding:12px 14px;border-radius:12px;background:#0d1014;border:1px solid #242830;font-size:12px;color:#9fa5af}.mp-date strong{color:#fff;font-size:13px}.mp-date span:last-child{margin-left:auto;color:#ff5da8;font-weight:700}
- #planning,#championnats{padding:18px 16px 36px!important}.planning-header{margin-bottom:16px!important}.planning-header h2{font-size:25px!important;line-height:1.2;margin-bottom:8px!important}.planning-update{font-size:12px!important;padding:9px 11px!important;border-radius:10px!important}.planning-grid{display:block!important}
- .planning-section{margin-bottom:12px!important;border:1px solid #262a31!important;border-radius:14px!important;background:#0b0e12!important;box-shadow:none!important;overflow:hidden}.planning-section:hover{transform:none!important}.section-header{min-height:64px!important;padding:14px!important}.section-icon{font-size:20px!important}.section-title h3{font-size:17px!important}.section-title span{font-size:11px!important}.section-content{padding:0 12px 12px!important}.planning-section.open .section-content{max-height:8000px!important}
- .tier-block{margin:8px 0!important;border:0!important;background:transparent!important}.tier-header{padding:11px 12px!important;border:1px solid #292e36!important;border-radius:10px!important;background:#11151a!important}.tier-races{padding:8px 0 0!important}
- .race-item{display:grid!important;grid-template-columns:30px 1fr auto!important;gap:9px!important;align-items:center!important;margin:8px 0!important;padding:12px!important;border:1px solid #262b33!important;border-radius:12px!important;background:#11151a!important;box-shadow:none!important}.race-flag{font-size:20px!important}.race-track{font-size:13px!important;line-height:1.35!important}.race-meta{gap:5px!important;justify-content:flex-end!important}.class-badge,.setup-badge,.duration-badge{font-size:9px!important;padding:3px 6px!important}
- .event-card{padding:12px!important;border-radius:12px!important;background:#11151a!important}.event-main{align-items:flex-start!important}.event-flag{font-size:24px!important}.event-info h4{font-size:16px!important;line-height:1.3!important}.event-track,.event-duration{font-size:12px!important}.event-schedule{padding:10px!important;margin-top:10px!important}.schedule-days,.schedule-times{gap:5px!important}.day-badge,.time-badge{font-size:10px!important;padding:5px 7px!important}
- #championnats .champ-grid{display:block!important}#championnats .champ-card{display:block!important;margin-bottom:12px!important}.champ-mobile-groups{display:none!important}.internal-links{padding:32px 16px!important}.internal-links-grid{grid-template-columns:1fr 1fr!important;gap:10px!important}.internal-link-card{padding:14px!important}
- body[data-mobile-view="week"] #championnats{display:none!important}body[data-mobile-view="week"] #planning .special-section{display:none!important}body[data-mobile-view="events"] #championnats{display:none!important}body[data-mobile-view="events"] #planning .daily-section,body[data-mobile-view="events"] #planning .weekly-section{display:none!important}body[data-mobile-view="champ"] #planning{display:none!important}.mp-hidden{display:none!important}
+ body{overflow-x:hidden;background:#000}.hero{display:none!important}
+ nav{padding:12px 16px!important;min-height:64px}.logo-img{height:44px!important}.mobile-menu{height:100vh;height:100dvh}
+ .mobile-planning-controls{display:block;padding:16px 16px 10px;background:#000;position:relative;z-index:4}
+ .mp-tabs{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #343840;border-radius:15px;overflow:hidden;background:#0a0d10}
+ .mp-tab{min-height:58px;border:0;border-right:1px solid #2b2f36;background:transparent;color:#d7d9de;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:7px;transition:.2s ease}
+ .mp-tab:last-child{border-right:0}.mp-tab-icon{font-size:17px}.mp-tab.active{color:#fff;background:linear-gradient(135deg,#d91462,#ff3b83);box-shadow:0 6px 22px rgba(255,26,117,.22)}
+ .mp-filter-row{display:flex;gap:9px;overflow-x:auto;padding:16px 0 10px;scrollbar-width:none}.mp-filter-row::-webkit-scrollbar{display:none}
+ .mp-filter{position:relative;flex:0 0 auto;min-height:43px;padding:0 17px;border-radius:999px;border:1px solid #4a4f58;background:#07090c;color:#e2e4e8;font-weight:800;font-size:12px;transition:.18s ease}
+ .mp-filter.active{padding-right:40px;border-color:#ff347c;color:#fff;background:linear-gradient(135deg,#c81155,#f02a72);box-shadow:0 5px 16px rgba(255,26,117,.17)}
+ .mp-filter.active::after{content:'✓';position:absolute;right:10px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fff;color:#df1763;font-size:13px;font-weight:1000}
+ .mp-summary{display:flex;align-items:center;gap:10px;min-height:54px;padding:12px 14px;border:1px solid #2c3138;border-radius:13px;background:#0a0d10;color:#bdc1c8;font-size:12px;line-height:1.4}
+ .mp-summary-icon{color:#ff3b83;font-size:18px}.mp-summary-label{white-space:nowrap}.mp-active-values{color:#fff;font-weight:800;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mp-clear{margin-left:auto;border:0;background:none;color:#ff4b8b;font-weight:800;font-size:12px;padding:8px;cursor:pointer}
+ .mp-result{display:flex;align-items:center;gap:10px;margin-top:10px;min-height:48px;padding:11px 14px;border:1px solid #2c3138;border-radius:13px;background:#0a0d10;color:#fff;font-size:13px;font-weight:800;transition:.2s ease}
+ .mp-result-icon{display:grid;place-items:center;width:24px;height:24px;border:2px solid #ff3b83;border-radius:50%;color:#ff3b83;font-size:12px}.mp-result.changed{border-color:rgba(255,52,124,.7);background:rgba(255,26,117,.08);transform:scale(1.01)}
+ #planning,#championnats{padding:16px 16px 36px!important}.planning-header{display:none!important}.planning-grid{display:block!important}
+ .planning-section{margin-bottom:12px!important;border:1px solid #292e35!important;border-radius:15px!important;background:#0a0d10!important;box-shadow:none!important;overflow:hidden}.planning-section:hover{transform:none!important}
+ .section-header{min-height:66px!important;padding:14px 15px!important}.section-icon{font-size:20px!important}.section-title h3{font-size:17px!important}.section-title span{font-size:11px!important}.section-arrow{color:#ff3b83!important}.section-content{padding:0 12px 12px!important}.planning-section.open .section-content{max-height:10000px!important}
+ .tier-block{margin:8px 0!important;border:0!important;background:transparent!important}.tier-header{padding:12px!important;border:1px solid #2a3038!important;border-radius:11px!important;background:#101419!important}.tier-races{padding:8px 0 0!important}
+ .race-item{display:grid!important;grid-template-columns:28px minmax(0,1fr) auto!important;gap:10px!important;align-items:center!important;margin:8px 0!important;padding:13px!important;border:1px solid #2a3038!important;border-radius:12px!important;background:#101419!important;box-shadow:none!important;transition:.18s ease}.race-item:not(.mp-hidden){animation:mpReveal .18s ease}.race-flag{font-size:19px!important}.race-track{font-size:13px!important;line-height:1.35!important}.race-meta{gap:5px!important;justify-content:flex-end!important}.class-badge,.setup-badge,.duration-badge{font-size:9px!important;padding:3px 6px!important}
+ .event-card{padding:13px!important;border:1px solid #2a3038!important;border-radius:12px!important;background:#101419!important}.event-main{align-items:flex-start!important}.event-flag{font-size:23px!important}.event-info h4{font-size:16px!important;line-height:1.3!important}.event-track,.event-duration{font-size:12px!important}.event-schedule{padding:10px!important;margin-top:10px!important}.schedule-days,.schedule-times{gap:5px!important}.day-badge,.time-badge{font-size:10px!important;padding:5px 7px!important}
+ #championnats .champ-grid{display:block!important}#championnats .champ-card{display:block!important;margin-bottom:12px!important}.champ-mobile-groups{display:none!important}.internal-links{display:none!important}
+ body[data-mobile-view="week"] #championnats{display:none!important}body[data-mobile-view="week"] #planning .special-section{display:none!important}
+ body[data-mobile-view="events"] #championnats{display:none!important}body[data-mobile-view="events"] #planning .daily-section,body[data-mobile-view="events"] #planning .weekly-section{display:none!important}
+ body[data-mobile-view="champ"] #planning{display:none!important}.mp-hidden{display:none!important}
+ .mp-empty{display:none;margin:18px 0;padding:22px 16px;text-align:center;border:1px dashed #3a4049;border-radius:14px;color:#aeb3bc}.mp-empty.active{display:block}
+ @keyframes mpReveal{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
 }
 </style>
 </head>
@@ -1359,19 +1373,23 @@
 <!-- SECTION PLANNING LMU -->
 <!-- ============================================= -->
 <section aria-label="Navigation du planning" class="mobile-planning-controls">
-<div class="mp-tabs" role="tablist">
-<button class="mp-tab active" data-view="week" type="button">Semaine</button>
-<button class="mp-tab" data-view="champ" type="button">Championnats</button>
-<button class="mp-tab" data-view="events" type="button">Événements</button>
+<div class="mp-tabs" role="tablist" aria-label="Type de planning">
+<button aria-selected="true" class="mp-tab active" data-view="week" role="tab" type="button"><span class="mp-tab-icon">▣</span>Semaine</button>
+<button aria-selected="false" class="mp-tab" data-view="champ" role="tab" type="button"><span class="mp-tab-icon">♜</span>Championnats</button>
+<button aria-selected="false" class="mp-tab" data-view="events" role="tab" type="button"><span class="mp-tab-icon">⚑</span>Événements</button>
 </div>
 <div aria-label="Filtres par catégorie" class="mp-filter-row">
-<button class="mp-filter active" data-filter="all" type="button">Toutes</button>
-<button class="mp-filter" data-filter="lmgt3" type="button">LMGT3</button>
-<button class="mp-filter" data-filter="lmp2" type="button">LMP2</button>
-<button class="mp-filter" data-filter="lmp3" type="button">LMP3</button>
-<button class="mp-filter" data-filter="hypercar" type="button">Hypercar</button>
+<button aria-pressed="false" class="mp-filter" data-filter="lmgt3" type="button">GT3</button>
+<button aria-pressed="false" class="mp-filter" data-filter="lmp2" type="button">LMP2</button>
+<button aria-pressed="false" class="mp-filter" data-filter="lmp3" type="button">LMP3</button>
+<button aria-pressed="false" class="mp-filter" data-filter="hypercar" type="button">Hypercar</button>
 </div>
-<div class="mp-date"><span>📅</span><strong>Semaine du 28 juillet</strong><span>S11 · W7</span></div>
+<div class="mp-summary" aria-live="polite">
+<span class="mp-summary-icon">▽</span><span class="mp-summary-label">Filtres actifs :</span><span class="mp-active-values" id="mpActiveValues">Cette semaine</span>
+<button class="mp-clear" id="mpClear" type="button">Effacer</button>
+</div>
+<div class="mp-result" id="mpResult" aria-live="polite"><span class="mp-result-icon">✓</span><span id="mpResultText">Toutes les courses affichées</span></div>
+<div class="mp-empty" id="mpEmpty">Aucune course ne correspond à ces filtres.</div>
 </section>
 <section id="planning">
 <div class="planning-header">
@@ -2019,7 +2037,71 @@
 
 </script>
 <script>
-(function(){function norm(s){return(s||'').toLowerCase().replace(/\s+/g,' ')}document.addEventListener('DOMContentLoaded',function(){document.body.dataset.mobileView='week';var tabs=document.querySelectorAll('.mp-tab'),filters=document.querySelectorAll('.mp-filter');tabs.forEach(function(btn){btn.addEventListener('click',function(){tabs.forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.body.dataset.mobileView=btn.dataset.view})});function applyFilter(filter){document.querySelectorAll('#planning .race-item,#planning .event-card,#championnats .champ-card').forEach(function(el){el.classList.toggle('mp-hidden',!(filter==='all'||norm(el.textContent).indexOf(filter)>=0))})}filters.forEach(function(btn){btn.addEventListener('click',function(){filters.forEach(function(b){b.classList.remove('active')});btn.classList.add('active');applyFilter(btn.dataset.filter)})})})})();
+(function(){
+ function norm(s){return(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ')}
+ document.addEventListener('DOMContentLoaded',function(){
+  document.body.dataset.mobileView='week';
+  var tabs=[].slice.call(document.querySelectorAll('.mp-tab'));
+  var filters=[].slice.call(document.querySelectorAll('.mp-filter'));
+  var result=document.getElementById('mpResult');
+  var resultText=document.getElementById('mpResultText');
+  var activeValues=document.getElementById('mpActiveValues');
+  var clear=document.getElementById('mpClear');
+  var empty=document.getElementById('mpEmpty');
+  var activeFilters=new Set();
+
+  function currentViewLabel(){var a=document.querySelector('.mp-tab.active');return a?a.textContent.trim():'Semaine'}
+  function candidates(){
+   if(document.body.dataset.mobileView==='champ') return [].slice.call(document.querySelectorAll('#championnats .champ-card'));
+   if(document.body.dataset.mobileView==='events') return [].slice.call(document.querySelectorAll('#planning .special-section .event-card'));
+   return [].slice.call(document.querySelectorAll('#planning .daily-section .race-item,#planning .weekly-section .event-card'));
+  }
+  function matches(el,filter){
+   var t=norm(el.textContent);
+   if(filter==='lmgt3')return t.indexOf('lmgt3')>=0||t.indexOf('gt3')>=0;
+   if(filter==='hypercar')return t.indexOf('hypercar')>=0||t.indexOf('hypercars')>=0;
+   return t.indexOf(filter)>=0;
+  }
+  function updateSummary(){
+   var labels=[];
+   filters.forEach(function(b){if(b.classList.contains('active'))labels.push(b.textContent.trim())});
+   labels.push(currentViewLabel());
+   activeValues.textContent=labels.join(' · ');
+  }
+  function flash(){result.classList.remove('changed');void result.offsetWidth;result.classList.add('changed');setTimeout(function(){result.classList.remove('changed')},350)}
+  function apply(){
+   var list=candidates(),shown=0;
+   var selected=[].slice.call(activeFilters);
+   list.forEach(function(el){var ok=!selected.length||selected.some(function(f){return matches(el,f)});el.classList.toggle('mp-hidden',!ok);if(ok)shown++});
+   document.querySelectorAll('#planning .tier-block').forEach(function(block){var visible=block.querySelector('.race-item:not(.mp-hidden),.event-card:not(.mp-hidden)');block.classList.toggle('mp-hidden',!visible)});
+   document.querySelectorAll('#planning .planning-section').forEach(function(section){var visible=section.querySelector('.race-item:not(.mp-hidden),.event-card:not(.mp-hidden)');if(document.body.dataset.mobileView!=='champ')section.classList.toggle('mp-hidden',!visible)});
+   resultText.textContent=shown===0?'Aucun résultat':shown+' élément'+(shown>1?'s':'')+' trouvé'+(shown>1?'s':'');
+   empty.classList.toggle('active',shown===0);updateSummary();flash();
+  }
+  tabs.forEach(function(btn){btn.addEventListener('click',function(){tabs.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});btn.classList.add('active');btn.setAttribute('aria-selected','true');document.body.dataset.mobileView=btn.dataset.view;apply()})});
+  filters.forEach(function(btn){
+   btn.addEventListener('click',function(){
+    var f=btn.dataset.filter;
+    if(activeFilters.has(f)){
+     activeFilters.delete(f);
+     btn.classList.remove('active');
+     btn.setAttribute('aria-pressed','false');
+    }else{
+     activeFilters.add(f);
+     btn.classList.add('active');
+     btn.setAttribute('aria-pressed','true');
+    }
+    apply();
+   });
+  });
+  clear.addEventListener('click',function(){
+   activeFilters.clear();
+   filters.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-pressed','false')});
+   apply();
+  });
+  apply();
+ });
+})();
 </script>
 </body>
 </html>
