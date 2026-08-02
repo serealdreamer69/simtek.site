@@ -2795,7 +2795,6 @@ body.champ-modal-open{
   }
 }
 </style>
-
 <style id="planning-sections-uniform-fix">
 @media (min-width:769px){
   /* même espacement entre les 3 blocs */
@@ -2878,6 +2877,77 @@ body.champ-modal-open{
     font-size:12px!important;
     font-style:normal!important;
   }
+}
+</style>
+
+<style id="planning-layout-autocorrect-css">
+@media (min-width:1025px){
+  .pc-showcase{padding:38px 42px 80px!important}
+  .pc-wrap{
+    width:min(1500px,calc(100% - 64px))!important;
+    max-width:none!important;
+    margin:0 auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:16px!important;
+  }
+  .pc-wrap > .planning-unified-section,
+  .pc-wrap > #championnats{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+  }
+  .planning-unified-header{
+    display:flex!important;
+    align-items:center!important;
+    gap:14px!important;
+    margin:0 0 16px!important;
+    padding:0!important;
+  }
+  .planning-unified-header .planning-unified-icon,
+  .planning-unified-header .pc-icon{
+    width:46px!important;
+    height:46px!important;
+    flex:0 0 46px!important;
+    display:grid!important;
+    place-items:center!important;
+    border-radius:11px!important;
+    background:linear-gradient(135deg,#df165f,#ff3d8e)!important;
+    color:#fff!important;
+    box-shadow:0 10px 24px rgba(255,29,114,.22)!important;
+    font-size:20px!important;
+  }
+  body .planning-unified-header h2,
+  body .planning-unified-header .pc-head-title,
+  body #championnats > .planning-unified-header h2{
+    margin:0!important;
+    color:#fff!important;
+    background:none!important;
+    -webkit-text-fill-color:#fff!important;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif!important;
+    font-size:22px!important;
+    line-height:1.08!important;
+    font-weight:900!important;
+    font-style:normal!important;
+    letter-spacing:.015em!important;
+    text-transform:uppercase!important;
+    text-shadow:none!important;
+  }
+  body .planning-unified-header p,
+  body .planning-unified-header .pc-head-sub,
+  body #championnats > .planning-unified-header p{
+    margin:5px 0 0!important;
+    color:#9ca3ae!important;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif!important;
+    font-size:12px!important;
+    line-height:1.4!important;
+    font-weight:500!important;
+    font-style:normal!important;
+    letter-spacing:0!important;
+    text-transform:none!important;
+  }
+  #championnats.planning-unified-section{padding:18px!important}
 }
 </style>
 </head>
@@ -3253,7 +3323,7 @@ body.champ-modal-open{
 <!-- ============================================= -->
 <!-- SECTION CHAMPIONNATS LMU - SEASON 11 -->
 <!-- ============================================= -->
-<section class="planning-unified-section champ-unified-section" data-filter-kind="champ" id="championnats"><div class="planning-unified-header">
+<div id="champ-mobile-anchor"></div><section class="planning-unified-section champ-unified-section" data-filter-kind="champ" id="championnats"><div class="planning-unified-header">
 <div aria-hidden="true" class="planning-unified-icon">♜</div>
 <div>
 <h2>CHAMPIONNATS</h2>
@@ -4004,6 +4074,30 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   syncUnifiedSections();
+});
+</script>
+
+<script id="planning-layout-autocorrect-js">
+document.addEventListener('DOMContentLoaded', function () {
+  const champ = document.getElementById('championnats');
+  const anchor = document.getElementById('champ-mobile-anchor');
+  const wrap = document.querySelector('.pc-wrap');
+  const events = document.querySelector('.events-unified-section');
+  if (!champ || !anchor || !wrap) return;
+
+  function placeChampionships() {
+    if (window.matchMedia('(min-width: 1025px)').matches) {
+      if (champ.parentElement !== wrap) {
+        if (events && events.parentElement === wrap) events.insertAdjacentElement('afterend', champ);
+        else wrap.appendChild(champ);
+      }
+    } else if (champ.previousElementSibling !== anchor) {
+      anchor.insertAdjacentElement('afterend', champ);
+    }
+  }
+
+  placeChampionships();
+  window.addEventListener('resize', placeChampionships, { passive: true });
 });
 </script>
 </body>
