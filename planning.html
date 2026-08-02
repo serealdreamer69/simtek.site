@@ -2585,7 +2585,6 @@ body.champ-modal-open{
   }
 }
 </style>
-
 <style id="planning-filter-colors">
 @media (min-width:769px){
   .desktop-planning-controls .dp-filter,
@@ -2684,6 +2683,105 @@ body.champ-modal-open{
 
   .desktop-planning-controls .dp-tab:not(.active)::before{
     opacity:.82!important;
+  }
+}
+</style>
+
+<style id="planning-events-readable">
+@media (min-width:769px){
+  .events-unified-section{
+    grid-template-columns:460px minmax(0,1fr) minmax(0,1fr)!important;
+    gap:18px!important;
+    padding:22px!important;
+  }
+
+  .events-unified-section > .planning-unified-header{
+    align-self:start!important;
+    padding-top:8px!important;
+  }
+
+  .events-unified-section .planning-unified-header h2{
+    font-size:24px!important;
+    line-height:1.08!important;
+  }
+
+  .events-unified-section .planning-unified-header p{
+    font-size:14px!important;
+    line-height:1.45!important;
+    color:#a7adb8!important;
+  }
+
+  .pc-event-card{
+    padding:20px!important;
+    border-radius:14px!important;
+  }
+
+  .pc-event-eyebrow{
+    margin-bottom:10px!important;
+    font-size:12px!important;
+    letter-spacing:.10em!important;
+  }
+
+  .pc-event-top{
+    gap:16px!important;
+    align-items:flex-start!important;
+  }
+
+  .pc-event-flag{
+    font-size:34px!important;
+    line-height:1!important;
+  }
+
+  .pc-event-info h3{
+    font-size:20px!important;
+    line-height:1.15!important;
+    margin:0 0 8px!important;
+  }
+
+  .pc-event-classes{
+    gap:8px!important;
+    margin-top:8px!important;
+  }
+
+  .pc-event-classes .class-badge{
+    font-size:11px!important;
+    padding:6px 10px!important;
+    border-radius:7px!important;
+  }
+
+  .pc-event-meta{
+    margin-top:16px!important;
+    grid-template-columns:minmax(0,1fr) 170px!important;
+    gap:12px!important;
+  }
+
+  .pc-event-meta > div,
+  .pc-event-schedule{
+    padding:14px 16px!important;
+    border-radius:10px!important;
+    font-size:13px!important;
+    line-height:1.45!important;
+    color:#eef1f6!important;
+  }
+
+  .pc-event-schedule{
+    margin-top:12px!important;
+  }
+}
+
+@media (min-width:769px) and (max-width:1250px){
+  .events-unified-section{
+    grid-template-columns:1fr 1fr!important;
+  }
+
+  .events-unified-section > .planning-unified-header{
+    grid-column:1/-1!important;
+  }
+}
+
+@media (min-width:769px) and (max-width:980px){
+  .events-unified-section{
+    grid-template-columns:1fr!important;
   }
 }
 </style>
