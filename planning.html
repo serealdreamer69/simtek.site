@@ -1666,8 +1666,6 @@
     }
 }
 </style>
-
-
 <style id="planning-desktop-filters-v2">
 .desktop-planning-controls{display:none}
 
@@ -1784,6 +1782,11 @@
   .dp-empty.active{display:block!important}
 
   /* Une seule vue visible à la fois */
+
+  body[data-pc-view="all"] .pc-daily,
+  body[data-pc-view="all"] .pc-event-card,
+  body[data-pc-view="all"] #championnats{display:block!important}
+
   body[data-pc-view="daily"] .pc-daily{display:block!important}
   body[data-pc-view="daily"] .pc-event-card,
   body[data-pc-view="daily"] #championnats{display:none!important}
@@ -1953,7 +1956,7 @@
 </div>
 <section aria-label="Filtres du planning sur ordinateur" class="desktop-planning-controls">
 <div aria-label="Type de planning" class="dp-tabs" role="tablist">
-<button aria-selected="true" class="dp-tab active" data-pc-view="daily" type="button">DAILYRACE</button>
+<button aria-selected="false" class="dp-tab" data-pc-view="daily" type="button">DAILYRACE</button>
 <button aria-selected="false" class="dp-tab" data-pc-view="champ" type="button">CHAMPIONNATS</button>
 <button aria-selected="false" class="dp-tab" data-pc-view="events" type="button">ÉVÉNEMENTS</button>
 </div>
@@ -2771,8 +2774,6 @@ document.addEventListener('DOMContentLoaded', function () {
     syncMenuState();
 });
 </script>
-
-
 <script id="planning-desktop-filters-v2-js">
 document.addEventListener('DOMContentLoaded', function () {
   if (window.matchMedia('(max-width: 768px)').matches) return;
@@ -2785,7 +2786,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const activeCars = new Set();
   const activeLevels = new Set();
 
-  document.body.dataset.pcView = 'daily';
+  document.body.dataset.pcView = 'all';
 
   function setButton(button, active) {
     button.classList.toggle('active', active);
@@ -2801,7 +2802,15 @@ document.addEventListener('DOMContentLoaded', function () {
     if (view === 'champ') {
       return [...document.querySelectorAll('#championnats .champ-card')];
     }
-    return [...document.querySelectorAll('.pc-event-card')];
+    if (view === 'events') {
+      return [...document.querySelectorAll('.pc-event-card')];
+    }
+
+    return [
+      ...document.querySelectorAll('.pc-race-detailed'),
+      ...document.querySelectorAll('#championnats .champ-card'),
+      ...document.querySelectorAll('.pc-event-card')
+    ];
   }
 
   function cardMatches(card) {
@@ -2814,6 +2823,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const carMatch = !activeCars.size || cars.some(car => activeCars.has(car));
     const levelMatch =
       document.body.dataset.pcView === 'events' ||
+      card.classList.contains('pc-event-card') ||
       !activeLevels.size ||
       activeLevels.has(level);
 
@@ -2845,18 +2855,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   tabs.forEach(function (button) {
     button.addEventListener('click', function () {
+      const wasActive = button.classList.contains('active');
+
       tabs.forEach(function (tab) {
         tab.classList.remove('active');
         tab.setAttribute('aria-selected', 'false');
       });
 
-      button.classList.add('active');
-      button.setAttribute('aria-selected', 'true');
-      document.body.dataset.pcView = button.dataset.pcView;
+      if (wasActive) {
+        document.body.dataset.pcView = 'all';
+      } else {
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        document.body.dataset.pcView = button.dataset.pcView;
+      }
 
-      /* Les filtres restent mémorisés et s'appliquent à la nouvelle vue. */
+      /* Un second clic désactive l'onglet et réaffiche toutes les catégories. */
       applyFilters();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
