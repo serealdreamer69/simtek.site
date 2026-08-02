@@ -1263,6 +1263,176 @@
  #planning .daily-section .tier-races{display:block!important;position:static!important;width:auto!important;height:auto!important;max-height:none!important;overflow:visible!important;clip:auto!important;white-space:normal!important;padding:0!important}
  @keyframes mpReveal{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
 }
+
+
+/* ===== CORRECTIONS MOBILE PLANNING : affichage direct, sans accordéons ===== */
+@media (max-width: 1024px) {
+  /* Aucun menu déroulant dans les contenus de planning. */
+  #planning .section-header,
+  #championnats .section-header,
+  .champ-group-header { cursor: default !important; }
+  #planning .section-arrow,
+  #championnats .section-arrow,
+  .champ-group-arrow { display: none !important; }
+  #planning .section-content,
+  #championnats .section-content,
+  #planning .planning-section.open .section-content,
+  #championnats .planning-section.open .section-content {
+    display: block !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Les championnats utilisent directement les cartes complètes. */
+  #championnats .champ-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  #championnats .champ-mobile-groups { display: none !important; }
+
+  /* Navigation entre les trois vues : aucune carte-hamburger. */
+  body[data-mobile-view="week"] #planning .daily-section,
+  body[data-mobile-view="week"] #planning .weekly-section { display: block !important; }
+  body[data-mobile-view="week"] #planning .special-section,
+  body[data-mobile-view="week"] #championnats { display: none !important; }
+
+  body[data-mobile-view="events"] #planning .special-section { display: block !important; }
+  body[data-mobile-view="events"] #planning .daily-section,
+  body[data-mobile-view="events"] #planning .weekly-section,
+  body[data-mobile-view="events"] #championnats { display: none !important; }
+
+  body[data-mobile-view="champ"] #championnats { display: block !important; }
+  body[data-mobile-view="champ"] #planning { display: none !important; }
+
+  /* Suppression définitive du résumé de filtres et de l'ancien compteur. */
+  .mp-summary, .mp-result { display: none !important; }
+
+  /* Daily Races : cartes lisibles, non tronquées, informations sur plusieurs lignes. */
+  #planning .daily-section .tier-races {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+  #planning .daily-section .tier-block {
+    display: block !important;
+    padding: 12px 0 !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+  }
+  #planning .daily-section .tier-block:last-child { border-bottom: 0 !important; }
+  #planning .daily-section .tier-header { padding: 0 0 10px !important; pointer-events:none !important; }
+  #planning .daily-section .tier-arrow { display:none !important; }
+
+  #planning .race-item {
+    display: grid !important;
+    grid-template-columns: 28px minmax(0,1fr) !important;
+    gap: 8px 10px !important;
+    align-items: start !important;
+    padding: 13px !important;
+    overflow: visible !important;
+    min-width: 0 !important;
+  }
+  #planning .race-track {
+    min-width: 0 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere !important;
+    line-height: 1.4 !important;
+  }
+  #planning .race-meta {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    padding-left: 38px !important;
+    margin-top: 2px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    min-width: 0 !important;
+  }
+  #planning .class-badge,
+  #planning .setup-badge,
+  #planning .duration-badge,
+  #planning .day-badge,
+  #planning .time-badge {
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Weekly et événements : contenu complet visible et jamais coupé. */
+  #planning .weekly-section,
+  #planning .special-section,
+  #championnats .champ-card {
+    overflow: visible !important;
+  }
+  #planning .event-card {
+    display: block !important;
+    overflow: visible !important;
+    min-width: 0 !important;
+    padding: 14px !important;
+  }
+  #planning .event-main {
+    display: grid !important;
+    grid-template-columns: 34px minmax(0,1fr) !important;
+    gap: 10px !important;
+    align-items: start !important;
+    text-align: left !important;
+  }
+  #planning .event-info,
+  #planning .event-info h4,
+  #planning .event-track,
+  #planning .event-duration,
+  #planning .event-settings,
+  #planning .event-schedule {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere !important;
+  }
+  #planning .event-classes,
+  #planning .schedule-days,
+  #planning .schedule-times {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+  }
+
+  /* Titres WEEKLY / SPECIAL / CHAMPIONNATS non tronqués. */
+  #planning .section-title,
+  #planning .section-title h3,
+  #championnats .section-title,
+  #championnats .section-title h3 {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mp-tabs { grid-template-columns: repeat(3,minmax(0,1fr)) !important; }
+  .mp-tab { min-width:0 !important; padding:8px 5px !important; font-size:10px !important; gap:4px !important; }
+  .mp-tab-icon { font-size:14px !important; }
+  #planning .race-meta { padding-left:0 !important; }
+  #planning .event-main { grid-template-columns: 1fr !important; }
+  #planning .event-flag { display:none !important; }
+}
 </style>
 </head>
 <body>
@@ -1393,10 +1563,6 @@
 <button aria-pressed="false" class="mp-filter" data-filter="lmp2" type="button">LMP2</button>
 <button aria-pressed="false" class="mp-filter" data-filter="lmp3" type="button">LMP3</button>
 <button aria-pressed="false" class="mp-filter" data-filter="hypercar" type="button">Hypercar</button>
-</div>
-<div class="mp-summary" aria-live="polite">
-<span class="mp-summary-icon">▽</span><span class="mp-summary-label">Filtres actifs :</span><span class="mp-active-values" id="mpActiveValues">Cette semaine</span>
-<button class="mp-clear" id="mpClear" type="button">Effacer</button>
 </div>
 <div class="mp-empty" id="mpEmpty">Aucune course ne correspond à ces filtres.</div>
 </section>
@@ -1913,71 +2079,6 @@
         mobileMenu.classList.remove('active');
     }));
 
-        // ── Planning : accordéon section → popup tier ──
-        var planningOverlay = document.getElementById('planningPopupOverlay');
-
-        // Clic sur un tier (Bronze/Silver/Gold) → popup
-        function openTierPopup(tierBlock) {
-            var badge  = tierBlock.querySelector('.tier-badge') ? tierBlock.querySelector('.tier-badge').textContent.trim() : '';
-            var races  = tierBlock.querySelector('.tier-races');
-            if (!races) return;
-
-            var icon = '🏅';
-            if (tierBlock.classList.contains('tier-bronze')) icon = '🥉';
-            else if (tierBlock.classList.contains('tier-silver')) icon = '🥈';
-            else if (tierBlock.classList.contains('tier-gold'))   icon = '🥇';
-
-            document.getElementById('planningPopupIcon').textContent  = icon;
-            document.getElementById('planningPopupTitle').textContent = badge;
-            document.getElementById('planningPopupSub').textContent   = '';
-            document.getElementById('planningPopupContent').innerHTML = races.innerHTML;
-            planningOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePlanningPopup() {
-            planningOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('planningPopupClose').addEventListener('click', closePlanningPopup);
-        planningOverlay.addEventListener('click', function(e) {
-            if (e.target === planningOverlay) closePlanningPopup();
-        });
-        window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePlanningPopup(); });
-
-        // Sur mobile/tablette seulement : on conserve le comportement historique.
-        // Sur PC, toutes les informations sont visibles sans accordéon ni popup.
-        if (window.innerWidth <= 1024) {
-            document.querySelectorAll('#planning .planning-section:not(.daily-section) .section-header').forEach(function(header) {
-                header.addEventListener('click', function() {
-                    var section = header.closest('.planning-section');
-                    document.querySelectorAll('#planning .planning-section.open').forEach(function(s) {
-                        if (s !== section && !s.classList.contains('daily-section')) s.classList.remove('open');
-                    });
-                    section.classList.toggle('open');
-                });
-            });
-
-            // Daily Races : affichage direct, sans menu déroulant ni popup.
-            document.querySelectorAll('#planning .daily-section').forEach(function(section) {
-                section.classList.add('open');
-            });
-        }
-
-                // ── Toggle groupes championnats mobile ──
-        document.querySelectorAll('.champ-group-header').forEach(function(header) {
-            header.addEventListener('click', function() {
-                var group = header.closest('.champ-group');
-                document.querySelectorAll('.champ-group.open').forEach(function(g) {
-                    if (g !== group) g.classList.remove('open');
-                });
-                group.classList.toggle('open');
-            });
-        });
-
-
-
         // ── Championnats : surbrillance semaine en cours ──
         (function() {
             var seasonStart = new Date('2026-06-16T00:00:00');
@@ -2049,38 +2150,45 @@
   document.body.dataset.mobileView='week';
   var tabs=[].slice.call(document.querySelectorAll('.mp-tab'));
   var filters=[].slice.call(document.querySelectorAll('.mp-filter'));
-  var activeValues=document.getElementById('mpActiveValues');
-  var clear=document.getElementById('mpClear');
   var empty=document.getElementById('mpEmpty');
   var activeFilters=new Set();
 
-  function currentViewLabel(){var a=document.querySelector('.mp-tab.active');return a?a.textContent.trim():'Semaine'}
-  function candidates(){
-   if(document.body.dataset.mobileView==='champ') return [].slice.call(document.querySelectorAll('#championnats .champ-card'));
-   if(document.body.dataset.mobileView==='events') return [].slice.call(document.querySelectorAll('#planning .special-section .event-card'));
-   return [].slice.call(document.querySelectorAll('#planning .daily-section .race-item,#planning .weekly-section .event-card'));
-  }
   function matches(el,filter){
    var t=norm(el.textContent);
-   if(filter==='lmgt3')return t.indexOf('lmgt3')>=0||t.indexOf('gt3')>=0;
-   if(filter==='hypercar')return t.indexOf('hypercar')>=0||t.indexOf('hypercars')>=0;
+   if(filter==='lmgt3') return t.indexOf('lmgt3')>=0 || t.indexOf('gt3')>=0;
+   if(filter==='hypercar') return t.indexOf('hypercar')>=0 || t.indexOf('hypercars')>=0;
    return t.indexOf(filter)>=0;
   }
-  function updateSummary(){
-   var labels=[];
-   filters.forEach(function(b){if(b.classList.contains('active'))labels.push(b.textContent.trim())});
-   labels.push(currentViewLabel());
-   activeValues.textContent=labels.join(' · ');
+  function activeItems(){
+   var view=document.body.dataset.mobileView;
+   if(view==='champ') return [].slice.call(document.querySelectorAll('#championnats .champ-card'));
+   if(view==='events') return [].slice.call(document.querySelectorAll('#planning .special-section .event-card'));
+   return [].slice.call(document.querySelectorAll('#planning .daily-section .race-item, #planning .weekly-section .event-card'));
   }
   function apply(){
-   var list=candidates(),shown=0;
    var selected=[].slice.call(activeFilters);
-   list.forEach(function(el){var ok=!selected.length||selected.some(function(f){return matches(el,f)});el.classList.toggle('mp-hidden',!ok);if(ok)shown++});
-   document.querySelectorAll('#planning .tier-block').forEach(function(block){var visible=block.querySelector('.race-item:not(.mp-hidden),.event-card:not(.mp-hidden)');block.classList.toggle('mp-hidden',!visible)});
-   document.querySelectorAll('#planning .planning-section').forEach(function(section){var visible=section.querySelector('.race-item:not(.mp-hidden),.event-card:not(.mp-hidden)');if(document.body.dataset.mobileView!=='champ')section.classList.toggle('mp-hidden',!visible)});
-   empty.classList.toggle('active',shown===0);updateSummary();
+   var items=activeItems();
+   var shown=0;
+   items.forEach(function(el){
+    var ok=!selected.length || selected.some(function(f){return matches(el,f)});
+    el.classList.toggle('mp-hidden',!ok);
+    if(ok) shown++;
+   });
+   document.querySelectorAll('#planning .tier-block').forEach(function(block){
+    var visible=block.querySelector('.race-item:not(.mp-hidden)');
+    block.classList.toggle('mp-hidden',!visible);
+   });
+   if(empty) empty.classList.toggle('active',shown===0);
   }
-  tabs.forEach(function(btn){btn.addEventListener('click',function(){tabs.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});btn.classList.add('active');btn.setAttribute('aria-selected','true');document.body.dataset.mobileView=btn.dataset.view;apply()})});
+  tabs.forEach(function(btn){
+   btn.addEventListener('click',function(){
+    tabs.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected','true');
+    document.body.dataset.mobileView=btn.dataset.view;
+    apply();
+   });
+  });
   filters.forEach(function(btn){
    btn.addEventListener('click',function(){
     var f=btn.dataset.filter;
@@ -2095,11 +2203,6 @@
     }
     apply();
    });
-  });
-  clear.addEventListener('click',function(){
-   activeFilters.clear();
-   filters.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-pressed','false')});
-   apply();
   });
   apply();
  });
