@@ -1452,6 +1452,15 @@
 }
 </style>
 
+
+<style id="mp-three-filter-levels">
+@media (max-width:768px){
+  .mp-level-row{padding-top:14px;padding-bottom:6px;border-top:1px solid rgba(255,255,255,.07);}
+  .mp-car-row{padding-top:6px;}
+  .mp-level-filter{letter-spacing:.25px;}
+  body:not([data-mobile-view="week"]) .mp-level-row{display:none;}
+}
+</style>
 <style id="mp-filter-visibility-fix">
 /* Le masquage des filtres doit toujours gagner sur les règles d'affichage des cartes. */
 @media (max-width: 1024px) {
@@ -1587,11 +1596,16 @@
 <button aria-selected="false" class="mp-tab" data-view="champ" role="tab" type="button">CHAMPIONNATS</button>
 <button aria-selected="false" class="mp-tab" data-view="events" role="tab" type="button">ÉVÉNEMENTS</button>
 </div>
-<div aria-label="Filtres par catégorie" class="mp-filter-row">
-<button aria-pressed="false" class="mp-filter" data-filter="lmgt3" type="button">GT3</button>
-<button aria-pressed="false" class="mp-filter" data-filter="lmp2" type="button">LMP2</button>
-<button aria-pressed="false" class="mp-filter" data-filter="lmp3" type="button">LMP3</button>
-<button aria-pressed="false" class="mp-filter" data-filter="hypercar" type="button">Hypercar</button>
+<div aria-label="Filtres par niveau" class="mp-filter-row mp-level-row">
+<button aria-pressed="false" class="mp-filter mp-level-filter" data-level="beginner" type="button">DÉBUTANT</button>
+<button aria-pressed="false" class="mp-filter mp-level-filter" data-level="intermediate" type="button">INTERMÉDIAIRE</button>
+<button aria-pressed="false" class="mp-filter mp-level-filter" data-level="advanced" type="button">AVANCÉ</button>
+</div>
+<div aria-label="Filtres par catégorie de voiture" class="mp-filter-row mp-car-row">
+<button aria-pressed="false" class="mp-filter mp-car-filter" data-filter="lmgt3" type="button">GT3</button>
+<button aria-pressed="false" class="mp-filter mp-car-filter" data-filter="lmp2" type="button">LMP2</button>
+<button aria-pressed="false" class="mp-filter mp-car-filter" data-filter="lmp3" type="button">LMP3</button>
+<button aria-pressed="false" class="mp-filter mp-car-filter" data-filter="hypercar" type="button">HYPERCAR</button>
 </div>
 <div class="mp-empty" id="mpEmpty">Aucune course ne correspond à ces filtres.</div>
 </section>
@@ -2178,9 +2192,11 @@
     document.body.dataset.mobileView = 'week';
 
     var tabs = Array.from(document.querySelectorAll('.mp-tab'));
-    var filters = Array.from(document.querySelectorAll('.mp-filter'));
+    var carFilters = Array.from(document.querySelectorAll('.mp-car-filter'));
+    var levelFilters = Array.from(document.querySelectorAll('.mp-level-filter'));
     var empty = document.getElementById('mpEmpty');
-    var activeFilters = new Set();
+    var activeCarFilters = new Set();
+    var activeLevelFilters = new Set();
     var knownCategories = ['lmgt3', 'lmp2', 'lmp3', 'hypercar'];
 
     function itemCategories(el) {
@@ -2215,19 +2231,32 @@
       return Array.from(document.querySelectorAll('#planning .daily-section .race-item'));
     }
 
+    function itemLevel(el) {
+      var tier = el.closest('.tier-block');
+      if (!tier) return null;
+      if (tier.classList.contains('tier-bronze')) return 'beginner';
+      if (tier.classList.contains('tier-silver')) return 'intermediate';
+      if (tier.classList.contains('tier-gold')) return 'advanced';
+      return null;
+    }
+
     function matchesSelection(el) {
-      if (!activeFilters.size) return true;
+      var categoryMatch = true;
+      var levelMatch = true;
 
-      var categories = itemCategories(el);
-      if (!categories.size) return false;
+      if (activeCarFilters.size) {
+        var categories = itemCategories(el);
+        categoryMatch = categories.size && Array.from(categories).some(function(category){
+          return activeCarFilters.has(category);
+        });
+      }
 
-      // Une carte reste visible uniquement si elle possède au moins
-      // un badge correspondant exactement à un filtre sélectionné.
-      // Exemple : LMP2 affiche les cartes ayant un badge LMP2, même multiclasse,
-      // mais jamais une carte uniquement GTE, GT3, LMP3 ou Hypercar.
-      return Array.from(categories).some(function(category){
-        return activeFilters.has(category);
-      });
+      // Les niveaux concernent uniquement les Daily Races.
+      if (document.body.dataset.mobileView === 'week' && activeLevelFilters.size) {
+        levelMatch = activeLevelFilters.has(itemLevel(el));
+      }
+
+      return categoryMatch && levelMatch;
     }
 
     function applyFilters() {
@@ -2261,15 +2290,31 @@
       });
     });
 
-    filters.forEach(function(btn){
+    carFilters.forEach(function(btn){
       btn.addEventListener('click', function(){
         var category = btn.dataset.filter;
-        if (activeFilters.has(category)) {
-          activeFilters.delete(category);
+        if (activeCarFilters.has(category)) {
+          activeCarFilters.delete(category);
           btn.classList.remove('active');
           btn.setAttribute('aria-pressed', 'false');
         } else {
-          activeFilters.add(category);
+          activeCarFilters.add(category);
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+        }
+        applyFilters();
+      });
+    });
+
+    levelFilters.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var level = btn.dataset.level;
+        if (activeLevelFilters.has(level)) {
+          activeLevelFilters.delete(level);
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        } else {
+          activeLevelFilters.add(level);
           btn.classList.add('active');
           btn.setAttribute('aria-pressed', 'true');
         }
