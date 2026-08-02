@@ -1900,87 +1900,268 @@
 }
 </style>
 
-<style id="championnats-desktop-infos-fix">
-@media (min-width: 769px) {
-  #championnats .champ-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 16px !important;
+
+<style id="championnats-popup-ui">
+@media (min-width:769px){
+  #championnats .champ-grid{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:16px!important;
   }
 
-  #championnats .champ-card {
-    display: block !important;
-    min-height: 0 !important;
-    height: auto !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    border-radius: 16px !important;
-    background: rgba(8, 10, 14, .96) !important;
+  #championnats .champ-card{
+    position:relative!important;
+    min-height:260px!important;
+    height:260px!important;
+    overflow:hidden!important;
+    border-radius:16px!important;
+    cursor:pointer!important;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease!important;
   }
 
-  #championnats .champ-card .section-header {
-    min-height: 150px !important;
-    padding: 18px !important;
-    align-items: flex-end !important;
-    position: relative !important;
-    z-index: 2 !important;
+  #championnats .champ-card:hover,
+  #championnats .champ-card:focus-visible{
+    transform:translateY(-4px)!important;
+    box-shadow:0 16px 34px rgba(0,0,0,.38)!important;
+    outline:none!important;
   }
 
-  #championnats .champ-card .section-content,
-  #championnats .champ-card.open .section-content {
-    display: block !important;
-    max-height: none !important;
-    height: auto !important;
-    overflow: visible !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    padding: 16px !important;
-    border-top: 1px solid rgba(255,255,255,.08) !important;
-    background: rgba(5, 7, 10, .96) !important;
-    position: relative !important;
-    z-index: 3 !important;
+  #championnats .champ-card .section-header{
+    position:absolute!important;
+    inset:0!important;
+    min-height:100%!important;
+    padding:20px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-end!important;
+    align-items:flex-start!important;
+    gap:8px!important;
   }
 
-  #championnats .champ-card .section-arrow {
-    display: none !important;
+  #championnats .champ-card .section-header::after{
+    content:''!important;
+    position:absolute!important;
+    inset:0!important;
+    background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.22) 36%,rgba(0,0,0,.92) 100%)!important;
+    z-index:0!important;
   }
 
-  #championnats .champ-card .section-content > div:first-child {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 7px !important;
-    margin-bottom: 12px !important;
-    font-size: 11px !important;
-    line-height: 1.35 !important;
+  #championnats .champ-card .section-header>*{
+    position:relative!important;
+    z-index:1!important;
   }
 
-  #championnats .champ-card .champ-week-row {
-    display: grid !important;
-    grid-template-columns: 70px minmax(0,1fr) !important;
-    gap: 8px !important;
-    padding: 7px 0 !important;
-    border-bottom: 1px solid rgba(255,255,255,.06) !important;
-    font-size: 11px !important;
-    line-height: 1.3 !important;
+  #championnats .champ-card .section-title{
+    font-size:22px!important;
+    line-height:1.1!important;
+    margin:0!important;
   }
 
-  #championnats .champ-card .champ-week-row:last-child {
-    border-bottom: 0 !important;
+  #championnats .champ-card .section-subtitle{
+    font-size:12px!important;
+    line-height:1.35!important;
+    margin:0 0 8px!important;
+    color:#d7d9df!important;
   }
 
-  #championnats .champ-card .champ-week-label {
-    color: #ff3b83 !important;
-    font-weight: 800 !important;
+  .champ-details-button{
+    width:100%!important;
+    min-height:48px!important;
+    margin-top:8px!important;
+    padding:0 16px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    border:1px solid rgba(255,255,255,.18)!important;
+    border-radius:12px!important;
+    background:linear-gradient(135deg,#e81867 0%,#ff3f8d 100%)!important;
+    color:#fff!important;
+    box-shadow:0 10px 24px rgba(255,26,117,.22)!important;
+    font-size:12px!important;
+    font-weight:900!important;
+    letter-spacing:.06em!important;
+    cursor:pointer!important;
+    transition:transform .16s ease, box-shadow .16s ease, filter .16s ease!important;
+  }
+
+  .champ-details-button:hover{
+    transform:translateY(-1px)!important;
+    box-shadow:0 14px 30px rgba(255,26,117,.30)!important;
+    filter:brightness(1.05)!important;
+  }
+
+  .champ-details-button span{
+    font-size:20px!important;
+    line-height:1!important;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1100px) {
-  #championnats .champ-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+.champ-modal{
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  display:none;
+}
+
+.champ-modal.active{
+  display:block;
+}
+
+.champ-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+.champ-modal-dialog{
+  position:relative;
+  width:min(920px,calc(100% - 28px));
+  max-height:calc(100dvh - 40px);
+  margin:20px auto;
+  overflow:auto;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  background:#080a0e;
+  box-shadow:0 28px 80px rgba(0,0,0,.65);
+}
+
+.champ-modal-close{
+  position:sticky;
+  top:14px;
+  float:right;
+  margin:14px 14px -54px 0;
+  width:42px;
+  height:42px;
+  z-index:5;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:50%;
+  background:rgba(0,0,0,.68);
+  color:#fff;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.champ-modal-hero{
+  position:relative;
+  min-height:220px;
+  padding:28px;
+  display:flex;
+  align-items:flex-end;
+  background-size:cover;
+  background-position:center;
+}
+
+.champ-modal-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.9));
+}
+
+.champ-modal-heading{
+  position:relative;
+  z-index:1;
+}
+
+.champ-modal-kicker{
+  color:#ff3b83;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
+  margin-bottom:8px;
+}
+
+.champ-modal-heading h2{
+  margin:0;
+  font-size:clamp(28px,5vw,46px);
+  line-height:1.05;
+}
+
+.champ-modal-subtitle{
+  margin-top:10px;
+  color:#d5d8df;
+  font-size:14px;
+}
+
+.champ-modal-body{
+  padding:24px;
+}
+
+.champ-modal-body .champ-week-row{
+  display:grid;
+  grid-template-columns:90px minmax(0,1fr);
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.champ-modal-body .champ-week-label{
+  color:#ff3b83;
+  font-weight:900;
+}
+
+.champ-modal-body>div:first-child{
+  display:grid;
+  gap:8px;
+  margin-bottom:18px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  background:rgba(255,255,255,.03);
+}
+
+body.champ-modal-open{
+  overflow:hidden!important;
+}
+
+@media(max-width:768px){
+  .champ-details-button{
+    width:100%;
+    min-height:46px;
+    margin-top:12px;
+    padding:0 14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,#e81867,#ff3f8d);
+    color:#fff;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.05em;
+  }
+
+  .champ-modal-dialog{
+    width:calc(100% - 18px);
+    margin:9px auto;
+    max-height:calc(100dvh - 18px);
+    border-radius:18px;
+  }
+
+  .champ-modal-hero{
+    min-height:180px;
+    padding:20px;
+  }
+
+  .champ-modal-body{
+    padding:18px;
+  }
+
+  .champ-modal-body .champ-week-row{
+    grid-template-columns:74px minmax(0,1fr);
+    font-size:12px;
+  }
+}
+
+@media(min-width:769px) and (max-width:1100px){
+  #championnats .champ-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
   }
 }
 </style>
-
 </head>
 <body>
 <!-- Popup planning sections -->
@@ -2073,7 +2254,6 @@
 <article class="pc-panel pc-event-card pc-event-weekly" data-filter-cars="hypercar lmgt3 lmp2" data-filter-kind="events" data-filter-level=""><div class="pc-event-eyebrow">WEEKLY RACE</div><div class="pc-event-top"><span class="pc-event-flag">🇺🇸</span><div class="pc-event-info"><h3>WEEKLY RACE</h3><div class="pc-event-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmp2">LMP2 (WEC)</span><span class="class-badge lmgt3">LMGT3</span></div></div></div><div class="pc-event-meta"><div class="pc-event-track">Daytona Intl. Speedway (Road Course) • Open • 62 cars</div><div class="pc-event-duration">144 min — ⏱ 10x timescale</div></div><div class="pc-event-schedule">Mardi Mercredi Jeudi Lundi 02:00 06:00 09:00 12:00 15:00 18:00 20:00 23:00</div></article>
 <article class="pc-panel pc-event-card pc-event-special" data-filter-cars="hypercar lmgt3 lmp2" data-filter-kind="events" data-filter-level=""><div class="pc-event-eyebrow">SPECIAL EVENT</div><div class="pc-event-top"><span class="pc-event-flag">🇺🇸</span><div class="pc-event-info"><h3>SPECIAL EVENT</h3><div class="pc-event-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmp2">LMP2 (WEC)</span><span class="class-badge lmgt3">LMGT3</span></div></div></div><div class="pc-event-meta"><div class="pc-event-track">Laguna Seca (Road Course) • Open • 38 cars</div><div class="pc-event-duration">240 min (4h)</div></div><div class="pc-event-schedule">Vendredi Samedi Dimanche 03:00 08:00 13:00 18:00 23:00</div></article>
 </div>
-
 </div>
 </main>
 <div aria-hidden="true" class="pc-detail-modal" id="pcDetailModal">
@@ -2352,13 +2532,14 @@
 </div>
 <div class="planning-grid champ-grid">
 <!-- LMP3 SPRINT TOUR -->
-<div class="planning-section champ-card champ-lmp3" data-filter-cars="lmp3" data-filter-kind="champ" data-filter-level="beginner" style="border-color: rgba(205, 127, 50, 0.5);">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-lmp3" data-champ-bg="" data-champ-id="champ-1" data-champ-subtitle="" data-champ-title="LMP3 Sprint Tour Bronze 2 SR · 45min · LMP3" data-filter-cars="lmp3" data-filter-kind="champ" data-filter-level="beginner" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
 <div class="section-title"><h3>LMP3 Sprint Tour</h3><span>Bronze 2 SR · 45min · LMP3</span></div>
-<span class="section-arrow">▼</span>
-</div>
-<div class="section-content">
+
+<button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-1" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
+
+<template id="champ-1-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 3</span>
 <span>👥 Split : 38 / 44 / 62</span><span>🏁 Drop Rounds : 2</span>
@@ -2375,16 +2556,16 @@
 <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps <span class="config">(Endurance)</span></span></div>
 </div>
-</div>
-</div>
+</template></div>
 <!-- LMGT3 CHALLENGE -->
-<div class="planning-section champ-card champ-lmgt3" data-filter-cars="lmgt3" data-filter-kind="champ" data-filter-level="beginner" style="border-color: rgba(205, 127, 50, 0.5);">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-lmgt3" data-champ-bg="" data-champ-id="champ-2" data-champ-subtitle="" data-champ-title="LMGT3 Challenge Bronze 2 SR · 80min · LMGT3" data-filter-cars="lmgt3" data-filter-kind="champ" data-filter-level="beginner" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
 <div class="section-title"><h3>LMGT3 Challenge</h3><span>Bronze 2 SR · 80min · LMGT3</span></div>
-<span class="section-arrow">▼</span>
-</div>
-<div class="section-content">
+
+<button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-2" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
+
+<template id="champ-2-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 3</span>
 <span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 2</span>
@@ -2401,16 +2582,16 @@
 <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>COTA <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Portimao <span class="config">(ELMS)</span></span></div>
 </div>
-</div>
-</div>
+</template></div>
 <!-- ELMS SPRINT TROPHY -->
-<div class="planning-section champ-card champ-elms-sprint" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="intermediate" style="border-color: rgba(192, 192, 192, 0.5);">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-elms-sprint" data-champ-bg="" data-champ-id="champ-3" data-champ-subtitle="" data-champ-title="ELMS Sprint Trophy Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="intermediate" role="button" style="border-color: rgba(192, 192, 192, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#c0c0c0;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #c0c0c088;"></span>
 <div class="section-title"><h3>ELMS Sprint Trophy</h3><span>Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3</span></div>
-<span class="section-arrow">▼</span>
-</div>
-<div class="section-content">
+
+<button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-3" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
+
+<template id="champ-3-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span>
 <span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 1</span>
@@ -2427,16 +2608,16 @@
 <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans <span class="config">(WEC)</span></span></div>
 </div>
-</div>
-</div>
+</template></div>
 <!-- WEC-XPERIENCE -->
-<div class="planning-section champ-card champ-wec" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="advanced" style="border-color: rgba(255, 215, 0, 0.5);">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-wec" data-champ-bg="" data-champ-id="champ-4" data-champ-subtitle="" data-champ-title="WEC-Xperience Gold 1 SR · 90min · Hypercar &amp; LMGT3" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="advanced" role="button" style="border-color: rgba(255, 215, 0, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
 <div class="section-title"><h3>WEC-Xperience</h3><span>Gold 1 SR · 90min · Hypercar &amp; LMGT3</span></div>
-<span class="section-arrow">▼</span>
-</div>
-<div class="section-content">
+
+<button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-4" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
+
+<template id="champ-4-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span>
 <span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 1</span>
@@ -2453,16 +2634,16 @@
 <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza <span class="config">(Curva Grande)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Fuji <span class="config">(WEC)</span></span></div>
 </div>
-</div>
-</div>
+</template></div>
 <!-- 2.4H SERIES -->
-<div class="planning-section champ-card champ-24h" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="intermediate" style="border-color: rgba(255, 215, 0, 0.5);">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-24h" data-champ-bg="" data-champ-id="champ-5" data-champ-subtitle="" data-champ-title="2.4h Series Gold 1 SR · 144min · Hypercar &amp; LMGT3" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="intermediate" role="button" style="border-color: rgba(255, 215, 0, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
 <div class="section-title"><h3>2.4h Series</h3><span>Gold 1 SR · 144min · Hypercar &amp; LMGT3</span></div>
-<span class="section-arrow">▼</span>
-</div>
-<div class="section-content">
+
+<button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-5" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
+
+<template id="champ-5-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span>
 <span>👥 Split : 38 / 44 / 62</span><span>🏁 Drop Rounds : 2</span>
@@ -2479,16 +2660,16 @@
 <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Qatar <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 </div>
-</div>
-</div>
+</template></div>
 <!-- ELMS WORLD TOUR (TEAM) -->
-<div class="planning-section champ-card champ-elms-world" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="beginner" style="border-color: rgba(205, 127, 50, 0.5);">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-elms-world" data-champ-bg="" data-champ-id="champ-6" data-champ-subtitle="" data-champ-title="ELMS World Tour TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="beginner" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
 <div class="section-header">
 <span style="background:#ffffff;color:#00aadd;font-weight:900;font-size:11px;padding:3px 7px;border-radius:5px;flex-shrink:0;letter-spacing:1.5px;font-family:'Segoe UI',sans-serif;">ELMS</span>
 <div class="section-title"><h3>ELMS World Tour</h3><span>TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3</span></div>
-<span class="section-arrow">▼</span>
-</div>
-<div class="section-content">
+
+<button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-6" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
+
+<template id="champ-6-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 5min Practice + 15min Quali</span><span>🔁 Attempts : 2</span>
 <span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 0</span>
@@ -2505,8 +2686,7 @@
 <div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>6 Hours of Fuji <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span style="color:#666;">— Off —</span></div>
 </div>
-</div>
-</div>
+</template></div>
 </div><!-- fin champ-grid -->
 <!-- Groupes hamburger championnats (mobile uniquement) -->
 <div class="champ-mobile-groups" id="champMobileGroups">
@@ -2965,6 +3145,97 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   applyFilters();
+});
+</script>
+<div aria-hidden="true" class="champ-modal" id="champModal">
+<div class="champ-modal-backdrop" data-champ-close=""></div>
+<div aria-labelledby="champModalTitle" aria-modal="true" class="champ-modal-dialog" role="dialog">
+<button aria-label="Fermer la fenêtre" class="champ-modal-close" data-champ-close="" type="button">×</button>
+<div class="champ-modal-hero" id="champModalHero">
+<div class="champ-modal-overlay"></div>
+<div class="champ-modal-heading">
+<div class="champ-modal-kicker">CHAMPIONNAT</div>
+<h2 id="champModalTitle"></h2>
+<div class="champ-modal-subtitle" id="champModalSubtitle"></div>
+</div>
+</div>
+<div class="champ-modal-body" id="champModalBody"></div>
+</div>
+</div>
+<script id="championnats-popup-js">
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('champModal');
+  const modalHero = document.getElementById('champModalHero');
+  const modalTitle = document.getElementById('champModalTitle');
+  const modalSubtitle = document.getElementById('champModalSubtitle');
+  const modalBody = document.getElementById('champModalBody');
+  if (!modal || !modalHero || !modalTitle || !modalBody) return;
+
+  let lastTrigger = null;
+
+  function openChamp(card) {
+    const id = card.dataset.champId;
+    const template = document.getElementById(id + '-details');
+    if (!template) return;
+
+    lastTrigger = card;
+    modalTitle.textContent = card.dataset.champTitle || 'Championnat';
+    modalSubtitle.textContent = card.dataset.champSubtitle || '';
+    modalBody.innerHTML = '';
+    modalBody.appendChild(template.content.cloneNode(true));
+
+    const bg = card.dataset.champBg || '';
+    modalHero.style.backgroundImage = bg ? 'url("' + bg.replace(/"/g, '\"') + '")' : 'none';
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('champ-modal-open');
+
+    const closeBtn = modal.querySelector('.champ-modal-close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeChamp() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('champ-modal-open');
+    modalBody.innerHTML = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll('#championnats .champ-card').forEach(function (card) {
+    const btn = card.querySelector('.champ-details-button');
+
+    card.addEventListener('click', function (event) {
+      if (event.target.closest('.champ-details-button') || event.target === card || card.contains(event.target)) {
+        openChamp(card);
+      }
+    });
+
+    card.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openChamp(card);
+      }
+    });
+
+    if (btn) {
+      btn.addEventListener('click', function (event) {
+        event.stopPropagation();
+        openChamp(card);
+      });
+    }
+  });
+
+  modal.querySelectorAll('[data-champ-close]').forEach(function (el) {
+    el.addEventListener('click', closeChamp);
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && modal.classList.contains('active')) {
+      closeChamp();
+    }
+  });
 });
 </script>
 </body>
