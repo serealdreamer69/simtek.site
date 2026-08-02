@@ -1899,8 +1899,6 @@
   .pc-event-details{grid-column:auto}
 }
 </style>
-
-
 <style id="championnats-popup-ui">
 @media (min-width:769px){
   #championnats .champ-grid{
@@ -2159,6 +2157,18 @@ body.champ-modal-open{
 @media(min-width:769px) and (max-width:1100px){
   #championnats .champ-grid{
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+</style>
+
+<style id="championnats-sans-entete">
+@media (min-width:769px){
+  #championnats{
+    padding-top:0!important;
+    margin-top:0!important;
+  }
+  #championnats .champ-grid{
+    margin-top:0!important;
   }
 }
 </style>
@@ -2524,21 +2534,14 @@ body.champ-modal-open{
 <!-- SECTION CHAMPIONNATS LMU - SEASON 11 -->
 <!-- ============================================= -->
 <section data-filter-kind="champ" id="championnats" style="padding: 60px 60px 80px;">
-<div class="planning-header">
-<h2>Championnats — Saison 11</h2>
-<div class="planning-update">
-<span>📅 Du <strong>16 juin 2026</strong> au <strong>11 août 2026</strong> — 8 semaines</span>
-</div>
-</div>
+
 <div class="planning-grid champ-grid">
 <!-- LMP3 SPRINT TOUR -->
 <div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-lmp3" data-champ-bg="" data-champ-id="champ-1" data-champ-subtitle="" data-champ-title="LMP3 Sprint Tour Bronze 2 SR · 45min · LMP3" data-filter-cars="lmp3" data-filter-kind="champ" data-filter-level="beginner" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
 <div class="section-title"><h3>LMP3 Sprint Tour</h3><span>Bronze 2 SR · 45min · LMP3</span></div>
-
 <button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-1" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
-
 <template id="champ-1-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 3</span>
@@ -2562,9 +2565,7 @@ body.champ-modal-open{
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
 <div class="section-title"><h3>LMGT3 Challenge</h3><span>Bronze 2 SR · 80min · LMGT3</span></div>
-
 <button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-2" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
-
 <template id="champ-2-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 3</span>
@@ -2588,9 +2589,7 @@ body.champ-modal-open{
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#c0c0c0;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #c0c0c088;"></span>
 <div class="section-title"><h3>ELMS Sprint Trophy</h3><span>Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3</span></div>
-
 <button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-3" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
-
 <template id="champ-3-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span>
@@ -2614,9 +2613,7 @@ body.champ-modal-open{
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
 <div class="section-title"><h3>WEC-Xperience</h3><span>Gold 1 SR · 90min · Hypercar &amp; LMGT3</span></div>
-
 <button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-4" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
-
 <template id="champ-4-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span>
@@ -2640,9 +2637,7 @@ body.champ-modal-open{
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
 <div class="section-title"><h3>2.4h Series</h3><span>Gold 1 SR · 144min · Hypercar &amp; LMGT3</span></div>
-
 <button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-5" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
-
 <template id="champ-5-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span>
@@ -2666,9 +2661,7 @@ body.champ-modal-open{
 <div class="section-header">
 <span style="background:#ffffff;color:#00aadd;font-weight:900;font-size:11px;padding:3px 7px;border-radius:5px;flex-shrink:0;letter-spacing:1.5px;font-family:'Segoe UI',sans-serif;">ELMS</span>
 <div class="section-title"><h3>ELMS World Tour</h3><span>TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3</span></div>
-
 <button aria-controls="champModal" class="champ-details-button" data-champ-open="champ-6" type="button">VOIR LES DÉTAILS<span aria-hidden="true">→</span></button></div>
-
 <template id="champ-6-details">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;font-size:13px;color:#b0b0d0;">
 <span>⏱ 5min Practice + 15min Quali</span><span>🔁 Attempts : 2</span>
