@@ -2652,6 +2652,7 @@ body.champ-modal-open{
   .dp-car-filter[data-pc-car="lmp2"]{--filter-color:#8c63ff}
   .dp-car-filter[data-pc-car="lmp3"]{--filter-color:#ff9d00}
   .dp-car-filter[data-pc-car="hypercar"]{--filter-color:#ff2e8a}
+  .dp-car-filter[data-pc-car="lmgte"]{--filter-color:#8fd39a}
 
   /* Séries */
   .dp-series-filter[data-pc-series="wec"]{--filter-color:#ffd21a}
@@ -2949,9 +2950,6 @@ body.champ-modal-open{
   #championnats.planning-unified-section{padding:18px!important}
 }
 </style>
-
-
-
 <style id="champ-current-week-style">
 .champ-modal-body .champ-week-row.current-week,
 .champ-modal-body .champ-week-row[data-current-week="true"],
@@ -3019,7 +3017,6 @@ body.champ-modal-open{
   }
 }
 </style>
-
 </head>
 <body>
 <!-- Popup planning sections -->
@@ -3089,7 +3086,7 @@ body.champ-modal-open{
 <button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="lmp2" type="button">LMP2</button>
 <button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="lmp3" type="button">LMP3</button>
 <button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="hypercar" type="button">HYPERCAR</button>
-</div>
+<button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="lmgte" type="button">LMGTE</button></div>
 </div>
 <div class="dp-filter-group dp-series-group">
 <span class="dp-filter-label">SÉRIE</span>
@@ -3112,7 +3109,7 @@ body.champ-modal-open{
 <div class="pc-icon planning-unified-icon">🏁</div>
 <div><h2 class="pc-head-title">DAILYRACE</h2><p class="pc-head-sub">Courses quotidiennes · Plusieurs courses chaque jour</p></div>
 </div>
-<div class="pc-level-grid pc-level-grid-detailed"><div class="pc-level pc-level-detailed" data-pc-level-card="beginner"><div class="pc-level-title rookie">DÉBUTANT</div><div class="pc-level-info"><span>⏱ Toutes les 15min · 20min</span><span>👥 20 voitures / split</span><span>🤝 Aides hautes autorisées</span><span>🔥 Chauffe-pneus : ON</span><span>🛞 Pneus : 8</span></div><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="lmgt3" data-pc-level="beginner"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Le Mans (WEC) — LMGT3 Fixed</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="lmgt3" data-pc-level="beginner"><span class="flag">🇧🇪</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmgte">LMGTE Am</span></div><div class="pc-race-track">Spa-Francorchamps (WEC) — LMGTE Fixed</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="lmp3" data-pc-level="beginner"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp3">LMP3</span></div><div class="pc-race-track">Monza (WEC) — LMP3 Fixed</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div></article></div><div class="pc-level pc-level-detailed" data-pc-level-card="intermediate"><div class="pc-level-title inter">INTERMÉDIAIRE</div><div class="pc-level-info"><span>⏱ Toutes les 20min · 30min</span><span>👥 38 voitures / split</span><span>🤝 Aides faibles autorisées</span><span>🔥 Chauffe-pneus : OFF</span><span>🛞 Pneus : 8</span></div><article class="pc-race pc-race-detailed" data-filter-series="" data-pc-cars="lmgt3" data-pc-level="intermediate"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Laguna Seca (Road Course) — LMGT3 Sprint Cup</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">30 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="elms" data-pc-cars="lmp2 lmp3" data-pc-level="intermediate"><span class="flag">🇺🇸</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span></div><div class="pc-race-track">Sebring (WEC) — Prototype Fixed</div><div class="pc-race-extra">LMP2 (ELMS) &amp; LMP3</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">30 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="elms" data-pc-cars="lmgt3 lmp2 lmp3" data-pc-level="intermediate"><span class="flag">🇺🇸</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">COTA (WEC) — ELMS Sprint Trophy</div><div class="pc-race-extra">LMP2 (ELMS), LMP3 &amp; LMGT3</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">30 min</span></div></article></div><div class="pc-level pc-level-detailed" data-pc-level-card="advanced"><div class="pc-level-title advanced">AVANCÉ</div><div class="pc-level-info"><span>⏱ Toutes les 30min</span><span>👥 38 voitures / split</span><span>🚫 Aides interdites</span><span>🔥 Chauffe-pneus : OFF</span><span>🛞 Pneus : 8</span></div><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="hypercar lmgt3" data-pc-level="advanced"><span class="flag">🇶🇦</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Sebring (WEC) — One Stint Sprint</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">40 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="elms" data-pc-cars="lmgt3 lmp2 lmp3" data-pc-level="advanced"><span class="flag">🇺🇸</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Daytona Intl. Speedway (Road Course) — ELMS Super 60</div><div class="pc-race-extra">LMP2 (ELMS) full tank · LMP3 : 70L · LMGT3 : 70% VE</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">60 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="hypercar lmgt3" data-pc-level="advanced"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Laguna Seca (Road Course) — WEC-Xperience</div><div class="pc-race-extra">⛽ 70% VE limit</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">60 min</span></div></article></div></div>
+<div class="pc-level-grid pc-level-grid-detailed"><div class="pc-level pc-level-detailed" data-pc-level-card="beginner"><div class="pc-level-title rookie">DÉBUTANT</div><div class="pc-level-info"><span>⏱ Toutes les 15min · 20min</span><span>👥 20 voitures / split</span><span>🤝 Aides hautes autorisées</span><span>🔥 Chauffe-pneus : ON</span><span>🛞 Pneus : 8</span></div><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="lmgt3" data-pc-level="beginner"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Le Mans (WEC) — LMGT3 Fixed</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="lmgt3 lmgte" data-pc-level="beginner"><span class="flag">🇧🇪</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmgte">LMGTE Am</span></div><div class="pc-race-track">Spa-Francorchamps (WEC) — LMGTE Fixed</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="lmp3" data-pc-level="beginner"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp3">LMP3</span></div><div class="pc-race-track">Monza (WEC) — LMP3 Fixed</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">20 min</span></div></article></div><div class="pc-level pc-level-detailed" data-pc-level-card="intermediate"><div class="pc-level-title inter">INTERMÉDIAIRE</div><div class="pc-level-info"><span>⏱ Toutes les 20min · 30min</span><span>👥 38 voitures / split</span><span>🤝 Aides faibles autorisées</span><span>🔥 Chauffe-pneus : OFF</span><span>🛞 Pneus : 8</span></div><article class="pc-race pc-race-detailed" data-filter-series="" data-pc-cars="lmgt3" data-pc-level="intermediate"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Laguna Seca (Road Course) — LMGT3 Sprint Cup</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">30 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="elms" data-pc-cars="lmp2 lmp3" data-pc-level="intermediate"><span class="flag">🇺🇸</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span></div><div class="pc-race-track">Sebring (WEC) — Prototype Fixed</div><div class="pc-race-extra">LMP2 (ELMS) &amp; LMP3</div></div><div class="pc-race-meta"><span class="setup-badge fixed">Fixed</span><span class="duration-badge">30 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="elms" data-pc-cars="lmgt3 lmp2 lmp3" data-pc-level="intermediate"><span class="flag">🇺🇸</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">COTA (WEC) — ELMS Sprint Trophy</div><div class="pc-race-extra">LMP2 (ELMS), LMP3 &amp; LMGT3</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">30 min</span></div></article></div><div class="pc-level pc-level-detailed" data-pc-level-card="advanced"><div class="pc-level-title advanced">AVANCÉ</div><div class="pc-level-info"><span>⏱ Toutes les 30min</span><span>👥 38 voitures / split</span><span>🚫 Aides interdites</span><span>🔥 Chauffe-pneus : OFF</span><span>🛞 Pneus : 8</span></div><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="hypercar lmgt3" data-pc-level="advanced"><span class="flag">🇶🇦</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Sebring (WEC) — One Stint Sprint</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">40 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="elms" data-pc-cars="lmgt3 lmp2 lmp3" data-pc-level="advanced"><span class="flag">🇺🇸</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge lmp2">LMP2</span><span class="class-badge lmp3">LMP3</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Daytona Intl. Speedway (Road Course) — ELMS Super 60</div><div class="pc-race-extra">LMP2 (ELMS) full tank · LMP3 : 70L · LMGT3 : 70% VE</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">60 min</span></div></article><article class="pc-race pc-race-detailed" data-filter-series="wec" data-pc-cars="hypercar lmgt3" data-pc-level="advanced"><span class="flag">🇮🇹</span><div class="pc-race-content"><div class="pc-race-classes"><span class="class-badge hypercar">Hypercar</span><span class="class-badge lmgt3">LMGT3</span></div><div class="pc-race-track">Laguna Seca (Road Course) — WEC-Xperience</div><div class="pc-race-extra">⛽ 70% VE limit</div></div><div class="pc-race-meta"><span class="setup-badge open">Open</span><span class="duration-badge">60 min</span></div></article></div></div>
 </section>
 <div class="pc-lower planning-unified-section events-unified-section"><div class="planning-unified-header">
 <div aria-hidden="true" class="planning-unified-icon">▣</div>
@@ -3421,7 +3418,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Portimao <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>COTA <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Sebring <span class="config">(WEC)</span></span></div>
-<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Interlagos <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps <span class="config">(Endurance)</span></span></div>
 </div>
 </template></div>
@@ -3445,7 +3442,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Bahrain <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Imola <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Barcelona <span class="config">(ELMS)</span></span></div>
-<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>COTA <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>COTA <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Portimao <span class="config">(ELMS)</span></span></div>
 </div>
 </template></div>
@@ -3469,7 +3466,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Qatar <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Paul Ricard <span class="config">(1a)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Bahrain <span class="config">(WEC)</span></span></div>
-<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans <span class="config">(WEC)</span></span></div>
 </div>
 </template></div>
@@ -3493,7 +3490,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Portimao <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Imola <span class="config">(ELMS)</span></span></div>
-<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza <span class="config">(Curva Grande)</span></span></div>
+<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza <span class="config">(Curva Grande)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Fuji <span class="config">(WEC)</span></span></div>
 </div>
 </template></div>
@@ -3517,7 +3514,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Barcelona <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Silverstone <span class="config">(ELMS)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Le Mans <span class="config">(WEC)</span></span></div>
-<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>Qatar <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Qatar <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Interlagos <span class="config">(WEC)</span></span></div>
 </div>
 </template></div>
@@ -3541,7 +3538,7 @@ body.champ-modal-open{
 <div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span style="color:#666;">— Off —</span></div>
 <div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>4 Hours of COTA <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span style="color:#666;">— Off —</span></div>
-<div class="champ-week-row current-week" data-week="7"><span class="champ-week-label">Week 7</span><span>6 Hours of Fuji <span class="config">(WEC)</span></span></div>
+<div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>6 Hours of Fuji <span class="config">(WEC)</span></span></div>
 <div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span style="color:#666;">— Off —</span></div>
 </div>
 </template></div>
@@ -3559,13 +3556,13 @@ body.champ-modal-open{
 <div class="champ-sub-title" style="color:#cd7f32">LMP3 Sprint Tour <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Bronze 2 SR · 45min · LMP3</span></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 3</span><span>👥 Split : 38 / 44 / 62</span><span>🏁 Drop Rounds : 2</span><span>🛞 Pneus : 8</span><span>⚠️ Track Limits : 3pts</span></div>
 <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Mar &amp; Dim : 11h 14h 16h 18h 20h 23h UTC · Mer &amp; Lun : 02h 08h UTC</div>
-<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Paul Ricard (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Silverstone (ELMS)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Portimao (ELMS)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>COTA (WEC)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Sebring (WEC)</span></div><div class="champ-week-row current-week" data-current-week="true" data-week="7"><span class="champ-week-label">Week 7</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps (Endurance)</span></div></div>
+<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Paul Ricard (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Silverstone (ELMS)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Portimao (ELMS)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>COTA (WEC)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Spa-Francorchamps (Endurance)</span></div></div>
 </div>
 <div class="champ-sub-block">
 <div class="champ-sub-title" style="color:#cd7f32">LMGT3 Challenge <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Bronze 2 SR · 80min · LMGT3</span></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 3</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 2</span><span>🛞 Pneus : 8</span><span>⚠️ Track Limits : 4pts</span></div>
 <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Mar &amp; Ven : 11h 14h 16h 18h 20h 23h UTC · Mer &amp; Sam : 02h 08h UTC</div>
-<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Monza (WEC)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Spa-Francorchamps (ELMS)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Bahrain (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row current-week" data-current-week="true" data-week="7"><span class="champ-week-label">Week 7</span><span>COTA (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Portimao (ELMS)</span></div></div>
+<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Monza (WEC)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Spa-Francorchamps (ELMS)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Bahrain (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>COTA (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Portimao (ELMS)</span></div></div>
 </div>
 </div>
 </div>
@@ -3580,7 +3577,7 @@ body.champ-modal-open{
 <div class="champ-sub-title" style="color:#c0c0c0">ELMS Sprint Trophy <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3</span></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 1</span><span>🛞 Pneus : 10</span><span>⚠️ Track Limits : 5pts</span></div>
 <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Mer &amp; Lun : 11h 14h 16h 18h 20h 23h UTC · Jeu &amp; Mar : 02h 08h UTC</div>
-<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Fuji (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Qatar (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Paul Ricard (1a)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Bahrain (WEC)</span></div><div class="champ-week-row current-week" data-current-week="true" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans (WEC)</span></div></div>
+<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Fuji (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Qatar (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Paul Ricard (1a)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Bahrain (WEC)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Silverstone (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Le Mans (WEC)</span></div></div>
 </div>
 </div>
 </div>
@@ -3595,13 +3592,13 @@ body.champ-modal-open{
 <div class="champ-sub-title" style="color:#ffd700">WEC-Xperience <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Gold 1 SR · 90min · Hypercar &amp; LMGT3</span></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 1</span><span>🛞 Pneus : 10</span><span>⚠️ Track Limits : 5pts</span></div>
 <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Jeu &amp; Sam : 11h 14h 16h 18h 20h 23h UTC · Ven &amp; Dim : 02h 08h UTC</div>
-<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Bahrain (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Portimao (ELMS)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Imola (ELMS)</span></div><div class="champ-week-row current-week" data-current-week="true" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza (Curva Grande)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Fuji (WEC)</span></div></div>
+<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Bahrain (WEC)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Sebring (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Interlagos (WEC)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Portimao (ELMS)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Imola (ELMS)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Monza (Curva Grande)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Fuji (WEC)</span></div></div>
 </div>
 <div class="champ-sub-block">
 <div class="champ-sub-title" style="color:#ffd700">2.4h Series <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— Gold 1 SR · 144min · Hypercar &amp; LMGT3</span></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 3min Practice + 12min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44 / 62</span><span>🏁 Drop Rounds : 2</span><span>🛞 Pneus : 10</span><span>⚠️ Track Limits : 6pts</span></div>
 <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Ven &amp; Dim : 11h 14h 16h 18h 20h 23h UTC · Sam &amp; Lun : 02h 08h UTC</div>
-<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Spa-Francorchamps (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Fuji (Classic)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Monza (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Silverstone (ELMS)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Le Mans (WEC)</span></div><div class="champ-week-row current-week" data-current-week="true" data-week="7"><span class="champ-week-label">Week 7</span><span>Qatar (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Interlagos (WEC)</span></div></div>
+<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>Spa-Francorchamps (ELMS)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span>Fuji (Classic)</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>Monza (WEC)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span>Barcelona (ELMS)</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>Silverstone (ELMS)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span>Le Mans (WEC)</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>Qatar (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span>Interlagos (WEC)</span></div></div>
 </div>
 </div>
 </div>
@@ -3616,7 +3613,7 @@ body.champ-modal-open{
 <div class="champ-sub-title" style="color:#cd7f32">ELMS World Tour <span style="color:#b0b0d0;font-weight:400;font-size:11px;">— TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3</span></div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px;font-size:12px;color:#b0b0d0;"><span>⏱ 5min Practice + 15min Quali</span><span>🔁 Attempts : 2</span><span>👥 Split : 38 / 44</span><span>🏁 Drop Rounds : 0</span><span>🛞 Pneus : 14 (4h) / 22 (6h)</span><span>⚠️ Track Limits : 6pts</span></div>
 <div style="font-size:11px;color:#b0b0d0;margin-bottom:10px;">🕐 Sam : 03h 09h 15h 21h UTC</div>
-<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>4 Hours of Qatar (WEC)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>6 Hours of Portimao (ELMS)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>4 Hours of COTA (WEC)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row current-week" data-current-week="true" data-week="7"><span class="champ-week-label">Week 7</span><span>6 Hours of Fuji (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span style="color:#666;">— Off —</span></div></div>
+<div style="display:flex;flex-direction:column;gap:4px;"><div class="champ-week-row" data-week="1"><span class="champ-week-label">Week 1</span><span>4 Hours of Qatar (WEC)</span></div><div class="champ-week-row" data-week="2"><span class="champ-week-label">Week 2</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="3"><span class="champ-week-label">Week 3</span><span>6 Hours of Portimao (ELMS)</span></div><div class="champ-week-row" data-week="4"><span class="champ-week-label">Week 4</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="5"><span class="champ-week-label">Week 5</span><span>4 Hours of COTA (WEC)</span></div><div class="champ-week-row" data-week="6"><span class="champ-week-label">Week 6</span><span style="color:#666;">— Off —</span></div><div class="champ-week-row" data-week="7"><span class="champ-week-label">Week 7</span><span>6 Hours of Fuji (WEC)</span></div><div class="champ-week-row" data-week="8"><span class="champ-week-label">Week 8</span><span style="color:#666;">— Off —</span></div></div>
 </div>
 </div>
 </div>
@@ -4059,12 +4056,6 @@ document.addEventListener('DOMContentLoaded', function () {
     modalBody.innerHTML = '';
     modalBody.appendChild(template.content.cloneNode(true));
 
-    // Met en évidence la semaine actuelle après l'injection du template dans la popup.
-    modalBody.querySelectorAll('.champ-week-row[data-week="7"]').forEach(function (row) {
-      row.classList.add('current-week');
-      row.setAttribute('data-current-week', 'true');
-    });
-
     const bg = card.dataset.champBg || '';
     modalHero.style.backgroundImage = bg ? 'url("' + bg.replace(/"/g, '\"') + '")' : 'none';
 
@@ -4173,6 +4164,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
   placeChampionships();
   window.addEventListener('resize', placeChampionships, { passive: true });
+});
+</script>
+
+<script id="champ-current-week-auto">
+document.addEventListener('DOMContentLoaded', function () {
+  const seasonStart = new Date('2026-06-16T00:00:00');
+  const seasonEnd = new Date('2026-08-11T23:59:59');
+  const today = new Date();
+
+  function getCurrentWeek() {
+    if (today < seasonStart || today > seasonEnd) return null;
+
+    const msPerWeek = 7 * 24 * 60 * 60 * 1000;
+    const diff = today.getTime() - seasonStart.getTime();
+    return Math.min(8, Math.floor(diff / msPerWeek) + 1);
+  }
+
+  function applyCurrentWeek(root) {
+    if (!root) return;
+
+    root.querySelectorAll('.champ-week-row').forEach(function (row) {
+      row.classList.remove('current-week');
+      row.removeAttribute('data-current-week');
+    });
+
+    const currentWeek = getCurrentWeek();
+    if (!currentWeek) return;
+
+    root.querySelectorAll('.champ-week-row[data-week="' + currentWeek + '"]').forEach(function (row) {
+      row.classList.add('current-week');
+      row.setAttribute('data-current-week', 'true');
+    });
+  }
+
+  applyCurrentWeek(document);
+
+  const modalBody = document.getElementById('champModalBody');
+  if (modalBody) {
+    new MutationObserver(function () {
+      applyCurrentWeek(modalBody);
+    }).observe(modalBody, { childList: true, subtree: true });
+  }
+
+  window.applyCurrentChampWeek = applyCurrentWeek;
 });
 </script>
 </body>
