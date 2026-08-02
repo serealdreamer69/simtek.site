@@ -364,17 +364,224 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon_512.png">
     <link rel="apple-touch-icon" href="/favicon_512.png">
+
+<style id="simtek-mobile-menu-v2">
+@media (max-width: 768px) {
+    body.menu-open { overflow: hidden !important; }
+
+    nav {
+        min-height: 72px !important;
+        padding: 11px 18px !important;
+        background: rgba(0,0,0,.94) !important;
+        border-bottom: 1px solid rgba(255,26,117,.20) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+    }
+
+    .logo-img {
+        height: 48px !important;
+        max-width: 145px !important;
+        object-fit: contain !important;
+    }
+
+    .hamburger {
+        display: flex !important;
+        width: 46px !important;
+        height: 46px !important;
+        padding: 11px !important;
+        margin: 0 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+        border: 1px solid rgba(255,255,255,.10) !important;
+        border-radius: 14px !important;
+        background: rgba(255,255,255,.035) !important;
+        z-index: 1002 !important;
+    }
+
+    .hamburger span {
+        width: 24px !important;
+        height: 2px !important;
+        margin: 0 !important;
+        background: #ff2f83 !important;
+        border-radius: 10px !important;
+        transform-origin: center !important;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0 !important;
+        transform: scaleX(0) !important;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
+    }
+
+    .mobile-menu {
+        display: flex !important;
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100% !important;
+        min-height: 100dvh !important;
+        height: 100vh !important;
+        padding: 92px 18px max(24px, env(safe-area-inset-bottom)) !important;
+        background:
+            radial-gradient(circle at 50% 14%, rgba(255,26,117,.13), transparent 32%),
+            linear-gradient(180deg, #050506 0%, #000 100%) !important;
+        z-index: 999 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: translateY(-10px) !important;
+        transition: opacity .22s ease, transform .22s ease, visibility .22s ease !important;
+        overflow-y: auto !important;
+    }
+
+    .mobile-menu.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+    }
+
+    .mobile-menu-content {
+        width: min(100%, 520px) !important;
+        min-height: calc(100dvh - 116px) !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: stretch !important;
+        gap: 18px !important;
+    }
+
+    .mobile-menu-heading {
+        color: #777 !important;
+        font-size: 11px !important;
+        line-height: 1 !important;
+        font-weight: 700 !important;
+        letter-spacing: .20em !important;
+        text-transform: uppercase !important;
+        padding: 0 6px 2px !important;
+    }
+
+    .mobile-menu-links {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 9px !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+
+    .mobile-menu-links .mobile-link,
+    .mobile-menu .mobile-link {
+        min-height: 54px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 14px 16px !important;
+        border: 1px solid rgba(255,255,255,.085) !important;
+        border-radius: 15px !important;
+        background: rgba(255,255,255,.026) !important;
+        color: #f4f4f4 !important;
+        font-family: "Segoe UI", Arial, sans-serif !important;
+        font-size: 13px !important;
+        line-height: 1.2 !important;
+        font-weight: 650 !important;
+        letter-spacing: .035em !important;
+        text-align: left !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        transition: border-color .18s ease, background .18s ease, color .18s ease, transform .18s ease !important;
+    }
+
+    .mobile-menu-links .mobile-link::after {
+        display: none !important;
+    }
+
+    .mobile-menu-links .mobile-link.is-active {
+        color: #fff !important;
+        border-color: rgba(255,47,131,.74) !important;
+        background: linear-gradient(135deg, rgba(255,26,117,.24), rgba(255,26,117,.08)) !important;
+        box-shadow: inset 3px 0 0 #ff2f83 !important;
+    }
+
+    .mobile-menu-links .mobile-link:active {
+        transform: scale(.98) !important;
+    }
+
+    .mobile-cta,
+    .mobile-menu .cta-button {
+        width: 100% !important;
+        min-height: 56px !important;
+        margin: 2px 0 0 !important;
+        padding: 16px 22px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border: 0 !important;
+        border-radius: 16px !important;
+        background: linear-gradient(135deg, #ff176f 0%, #ff4d9f 100%) !important;
+        color: #fff !important;
+        box-shadow: 0 12px 30px rgba(255,26,117,.24) !important;
+        font-family: "Segoe UI", Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 800 !important;
+        letter-spacing: .06em !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+    }
+
+    .mobile-menu-signature {
+        margin-top: 4px !important;
+        color: rgba(255,255,255,.28) !important;
+        font-size: 9px !important;
+        font-weight: 700 !important;
+        letter-spacing: .28em !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .mobile-menu-links {
+        grid-template-columns: 1fr !important;
+    }
+    .mobile-menu-content {
+        justify-content: flex-start !important;
+        padding-top: 16px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobile-menu,
+    .hamburger span,
+    .mobile-menu-links .mobile-link {
+        transition: none !important;
+    }
+}
+</style>
+
 </head>
 <body>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="/">Accueil</a>
-        <a href="team">Notre Équipe</a>
-        <a href="our-setups">Nos Setups</a>
-        <a href="blog" style="color:#ff1a75;">Actualités</a>
-        <a href="pilot-recruitment">Rejoins Nous</a>
-        <a href="become-partner">Devenir Partenaire</a>
-        <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button" style="margin-top:10px;">Nous Contacter</a>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-heading">Navigation</div>
+            <div class="mobile-menu-links">
+                <a href="/" class="mobile-link">Accueil</a>
+                <a href="/planning" class="mobile-link">Planning</a>
+                <a href="/team" class="mobile-link">Notre équipe</a>
+                <a href="/blog" class="mobile-link is-active" aria-current="page">Actualités</a>
+                <a href="/our-setups" class="mobile-link">Nos setups</a>
+                <a href="/sponsors-details" class="mobile-link">Nos sponsors</a>
+                <a href="/pilot-recruitment" class="mobile-link">Rejoins-nous</a>
+                <a href="/become-partner" class="mobile-link">Devenir partenaire</a>
+            </div>
+            <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" rel="noopener" class="mobile-cta">Nous contacter</a>
+            <div class="mobile-menu-signature">SIMTEK PERFORMANCE</div>
+        </div>
     </div>
 
     <nav>
@@ -382,7 +589,6 @@
             <a href="/"><img src="Logo_SIMTEK.webp" alt="SimTek Performance — Équipe simracing française" class="logo-img" width="160" height="80"></a>
         </div>
         <ul class="nav-links">
-            <li><a href="/#live" style="color:#ff1a75;font-weight:700;">🔴 Live</a></li>
             <li><a href="/">Accueil</a></li>
             <li><a href="/planning">Planning</a></li>
             <li><a href="/planning#championnats">Championnats</a></li>
@@ -1373,7 +1579,7 @@
                             <li><strong>Créneaux :</strong> 15, 16 &amp; 17 mai — 02h, 08h, 12h, 15h, 18h, 23h UTC</li>
                         </ul>
                         <h3>Suivez-nous en direct</h3>
-                        <p>Retrouvez SimTek Performance en live sur <strong>Twitch</strong> pendant l'événement. Toutes les infos sur notre <a href="/#live">page Live</a>. Tu veux rejoindre l'équipe ? <a href="pilot-recruitment">Postule ici</a>.</p>
+                        <p>Retrouvez SimTek Performance en live sur <strong>Twitch</strong> pendant l'événement. Toutes les infos sur notre . Tu veux rejoindre l'équipe ? <a href="pilot-recruitment">Postule ici</a>.</p>
                     </div>
                 </div>
             </article>
@@ -1749,5 +1955,39 @@
             initLikes();
         }
     </script>
+
+<script id="simtek-mobile-menu-accessibility">
+document.addEventListener('DOMContentLoaded', function () {
+    const menu = document.getElementById('mobileMenu');
+    const button = document.getElementById('hamburger');
+    if (!menu || !button) return;
+
+    const syncMenuState = function () {
+        const open = menu.classList.contains('active');
+        menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.classList.toggle('menu-open', open);
+    };
+
+    button.addEventListener('click', function () {
+        requestAnimationFrame(syncMenuState);
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            menu.classList.remove('active');
+            button.classList.remove('active');
+            syncMenuState();
+        });
+    });
+
+    new MutationObserver(syncMenuState).observe(menu, {
+        attributes: true,
+        attributeFilter: ['class']
+    });
+    syncMenuState();
+});
+</script>
+
 </body>
 </html>
