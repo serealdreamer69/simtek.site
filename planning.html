@@ -1451,6 +1451,18 @@
   body[data-mobile-view="events"] #championnats { display: none !important; }
 }
 </style>
+
+<style id="mp-filter-visibility-fix">
+/* Le masquage des filtres doit toujours gagner sur les règles d'affichage des cartes. */
+@media (max-width: 1024px) {
+  body #planning .race-item.mp-hidden,
+  body #planning .event-card.mp-hidden,
+  body #championnats .champ-card.mp-hidden,
+  body #planning .tier-block.mp-hidden {
+    display: none !important;
+  }
+}
+</style>
 </head>
 <body>
 <!-- Popup planning sections -->
@@ -2209,9 +2221,11 @@
       var categories = itemCategories(el);
       if (!categories.size) return false;
 
-      // Filtre strict : une carte multiclasse n'apparaît que si toutes ses
-      // catégories sont cochées. Ainsi GT3 seul ne montre ni LMP ni Hypercar.
-      return Array.from(categories).every(function(category){
+      // Une carte reste visible uniquement si elle possède au moins
+      // un badge correspondant exactement à un filtre sélectionné.
+      // Exemple : LMP2 affiche les cartes ayant un badge LMP2, même multiclasse,
+      // mais jamais une carte uniquement GTE, GT3, LMP3 ou Hypercar.
+      return Array.from(categories).some(function(category){
         return activeFilters.has(category);
       });
     }
