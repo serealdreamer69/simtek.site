@@ -1231,7 +1231,7 @@
  .mobile-planning-controls{display:block;padding:16px 16px 10px;background:#000;position:relative;z-index:4}
  .mp-tabs{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #343840;border-radius:15px;overflow:hidden;background:#0a0d10}
  .mp-tab{min-height:58px;border:0;border-right:1px solid #2b2f36;background:transparent;color:#d7d9de;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:7px;transition:.2s ease}
- .mp-tab:last-child{border-right:0}.mp-tab-icon{font-size:17px}.mp-tab.active{color:#fff;background:linear-gradient(135deg,#d91462,#ff3b83);box-shadow:0 6px 22px rgba(255,26,117,.22)}
+ .mp-tab:last-child{border-right:0}.mp-tab-icon{display:none!important}.mp-tab.active{color:#fff;background:linear-gradient(135deg,#d91462,#ff3b83);box-shadow:0 6px 22px rgba(255,26,117,.22)}
  .mp-filter-row{display:flex;gap:9px;overflow-x:auto;padding:16px 0 10px;scrollbar-width:none}.mp-filter-row::-webkit-scrollbar{display:none}
  .mp-filter{position:relative;flex:0 0 auto;min-height:43px;padding:0 17px;border-radius:999px;border:1px solid #4a4f58;background:#07090c;color:#e2e4e8;font-weight:800;font-size:12px;transition:.18s ease}
  .mp-filter.active{padding-right:40px;border-color:#ff347c;color:#fff;background:linear-gradient(135deg,#c81155,#f02a72);box-shadow:0 5px 16px rgba(255,26,117,.17)}
@@ -1428,10 +1428,27 @@
 @media (max-width: 480px) {
   .mp-tabs { grid-template-columns: repeat(3,minmax(0,1fr)) !important; }
   .mp-tab { min-width:0 !important; padding:8px 5px !important; font-size:10px !important; gap:4px !important; }
-  .mp-tab-icon { font-size:14px !important; }
+  .mp-tab-icon { display:none!important; }
   #planning .race-meta { padding-left:0 !important; }
   #planning .event-main { grid-template-columns: 1fr !important; }
   #planning .event-flag { display:none !important; }
+}
+</style>
+
+<style>
+@media (max-width: 768px) {
+  /* DailyRace affiche uniquement les courses quotidiennes. */
+  body[data-mobile-view="week"] #planning .daily-section { display: block !important; }
+  body[data-mobile-view="week"] #planning .weekly-section,
+  body[data-mobile-view="week"] #planning .special-section,
+  body[data-mobile-view="week"] #championnats { display: none !important; }
+
+  /* Événements regroupe Weekly Races et événements spéciaux. */
+  body[data-mobile-view="events"] #planning { display: block !important; }
+  body[data-mobile-view="events"] #planning .weekly-section,
+  body[data-mobile-view="events"] #planning .special-section { display: block !important; }
+  body[data-mobile-view="events"] #planning .daily-section,
+  body[data-mobile-view="events"] #championnats { display: none !important; }
 }
 </style>
 </head>
@@ -1554,9 +1571,9 @@
 <!-- ============================================= -->
 <section aria-label="Navigation du planning" class="mobile-planning-controls">
 <div class="mp-tabs" role="tablist" aria-label="Type de planning">
-<button aria-selected="true" class="mp-tab active" data-view="week" role="tab" type="button"><span class="mp-tab-icon">▣</span>Semaine</button>
-<button aria-selected="false" class="mp-tab" data-view="champ" role="tab" type="button"><span class="mp-tab-icon">♜</span>Championnats</button>
-<button aria-selected="false" class="mp-tab" data-view="events" role="tab" type="button"><span class="mp-tab-icon">⚑</span>Événements</button>
+<button aria-selected="true" class="mp-tab active" data-view="week" role="tab" type="button">DAILYRACE</button>
+<button aria-selected="false" class="mp-tab" data-view="champ" role="tab" type="button">CHAMPIONNATS</button>
+<button aria-selected="false" class="mp-tab" data-view="events" role="tab" type="button">ÉVÉNEMENTS</button>
 </div>
 <div aria-label="Filtres par catégorie" class="mp-filter-row">
 <button aria-pressed="false" class="mp-filter" data-filter="lmgt3" type="button">GT3</button>
@@ -2145,67 +2162,109 @@
 </script>
 <script>
 (function(){
- function norm(s){return(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ')}
- document.addEventListener('DOMContentLoaded',function(){
-  document.body.dataset.mobileView='week';
-  var tabs=[].slice.call(document.querySelectorAll('.mp-tab'));
-  var filters=[].slice.call(document.querySelectorAll('.mp-filter'));
-  var empty=document.getElementById('mpEmpty');
-  var activeFilters=new Set();
+  document.addEventListener('DOMContentLoaded', function(){
+    document.body.dataset.mobileView = 'week';
 
-  function matches(el,filter){
-   var t=norm(el.textContent);
-   if(filter==='lmgt3') return t.indexOf('lmgt3')>=0 || t.indexOf('gt3')>=0;
-   if(filter==='hypercar') return t.indexOf('hypercar')>=0 || t.indexOf('hypercars')>=0;
-   return t.indexOf(filter)>=0;
-  }
-  function activeItems(){
-   var view=document.body.dataset.mobileView;
-   if(view==='champ') return [].slice.call(document.querySelectorAll('#championnats .champ-card'));
-   if(view==='events') return [].slice.call(document.querySelectorAll('#planning .special-section .event-card'));
-   return [].slice.call(document.querySelectorAll('#planning .daily-section .race-item, #planning .weekly-section .event-card'));
-  }
-  function apply(){
-   var selected=[].slice.call(activeFilters);
-   var items=activeItems();
-   var shown=0;
-   items.forEach(function(el){
-    var ok=!selected.length || selected.some(function(f){return matches(el,f)});
-    el.classList.toggle('mp-hidden',!ok);
-    if(ok) shown++;
-   });
-   document.querySelectorAll('#planning .tier-block').forEach(function(block){
-    var visible=block.querySelector('.race-item:not(.mp-hidden)');
-    block.classList.toggle('mp-hidden',!visible);
-   });
-   if(empty) empty.classList.toggle('active',shown===0);
-  }
-  tabs.forEach(function(btn){
-   btn.addEventListener('click',function(){
-    tabs.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
-    btn.classList.add('active');
-    btn.setAttribute('aria-selected','true');
-    document.body.dataset.mobileView=btn.dataset.view;
-    apply();
-   });
-  });
-  filters.forEach(function(btn){
-   btn.addEventListener('click',function(){
-    var f=btn.dataset.filter;
-    if(activeFilters.has(f)){
-     activeFilters.delete(f);
-     btn.classList.remove('active');
-     btn.setAttribute('aria-pressed','false');
-    }else{
-     activeFilters.add(f);
-     btn.classList.add('active');
-     btn.setAttribute('aria-pressed','true');
+    var tabs = Array.from(document.querySelectorAll('.mp-tab'));
+    var filters = Array.from(document.querySelectorAll('.mp-filter'));
+    var empty = document.getElementById('mpEmpty');
+    var activeFilters = new Set();
+    var knownCategories = ['lmgt3', 'lmp2', 'lmp3', 'hypercar'];
+
+    function itemCategories(el) {
+      var categories = new Set();
+
+      el.querySelectorAll('.class-badge').forEach(function(badge){
+        knownCategories.forEach(function(category){
+          if (badge.classList.contains(category)) categories.add(category);
+        });
+      });
+
+      // Secours pour les cartes qui n'utilisent pas les badges de classe.
+      if (!categories.size) {
+        var text = (el.textContent || '').toLowerCase();
+        if (/\blmgt3\b|\bgt3\b/.test(text)) categories.add('lmgt3');
+        if (/\blmp2\b/.test(text)) categories.add('lmp2');
+        if (/\blmp3\b/.test(text)) categories.add('lmp3');
+        if (/\bhypercar(?:s)?\b/.test(text)) categories.add('hypercar');
+      }
+
+      return categories;
     }
-    apply();
-   });
+
+    function activeItems() {
+      var view = document.body.dataset.mobileView;
+      if (view === 'champ') {
+        return Array.from(document.querySelectorAll('#championnats .champ-card'));
+      }
+      if (view === 'events') {
+        return Array.from(document.querySelectorAll('#planning .weekly-section .event-card, #planning .special-section .event-card'));
+      }
+      return Array.from(document.querySelectorAll('#planning .daily-section .race-item'));
+    }
+
+    function matchesSelection(el) {
+      if (!activeFilters.size) return true;
+
+      var categories = itemCategories(el);
+      if (!categories.size) return false;
+
+      // Filtre strict : une carte multiclasse n'apparaît que si toutes ses
+      // catégories sont cochées. Ainsi GT3 seul ne montre ni LMP ni Hypercar.
+      return Array.from(categories).every(function(category){
+        return activeFilters.has(category);
+      });
+    }
+
+    function applyFilters() {
+      var items = activeItems();
+      var shown = 0;
+
+      items.forEach(function(el){
+        var visible = matchesSelection(el);
+        el.classList.toggle('mp-hidden', !visible);
+        if (visible) shown++;
+      });
+
+      document.querySelectorAll('#planning .tier-block').forEach(function(block){
+        var visibleRace = block.querySelector('.race-item:not(.mp-hidden)');
+        block.classList.toggle('mp-hidden', !visibleRace);
+      });
+
+      if (empty) empty.classList.toggle('active', shown === 0);
+    }
+
+    tabs.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        tabs.forEach(function(tab){
+          tab.classList.remove('active');
+          tab.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.body.dataset.mobileView = btn.dataset.view;
+        applyFilters();
+      });
+    });
+
+    filters.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var category = btn.dataset.filter;
+        if (activeFilters.has(category)) {
+          activeFilters.delete(category);
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        } else {
+          activeFilters.add(category);
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+        }
+        applyFilters();
+      });
+    });
+
+    applyFilters();
   });
-  apply();
- });
 })();
 </script>
 </body>
