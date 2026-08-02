@@ -11,22 +11,22 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Planning hebdomadaire des courses LMU, calendrier des championnats Saison 11 et classement Super Trofeo de SimTek Performance, équipe esport simracing française sur Le Mans Ultimate.">
-    <meta name="keywords" content="planning LMU, calendrier Le Mans Ultimate, championnat LMU saison 11, super trofeo simracing, classement super trofeo, daily races LMU, weekly races LMU, simracing france">
+    <meta name="description" content="Planning hebdomadaire des courses Le Mans Ultimate et calendrier des championnats Saison 11 de SimTek Performance.">
+    <meta name="keywords" content="planning LMU, calendrier Le Mans Ultimate, championnat LMU saison 11, daily races LMU, weekly races LMU, événements LMU, simracing france">
     <meta name="author" content="Simtek Performance">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Planning LMU & Super Trofeo — SimTek Performance">
-    <meta property="og:description" content="Planning des courses, calendrier des championnats Saison 11 et classement Super Trofeo de l'équipe SimTek Performance.">
+    <meta property="og:title" content="Planning Le Mans Ultimate 2026 — Courses & Championnats | SimTek Performance">
+    <meta property="og:description" content="Planning des courses, championnats et événements Le Mans Ultimate de SimTek Performance.">
     <meta property="og:image" content="https://www.simtekperformance.com/Logo_SIMTEK.png">
     <meta property="og:url" content="https://www.simtekperformance.com/planning">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_FR">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Planning LMU & Super Trofeo — SimTek Performance">
-    <meta name="twitter:description" content="Planning des courses, calendrier des championnats Saison 11 et classement Super Trofeo de l'équipe SimTek Performance.">
+    <meta name="twitter:title" content="Planning Le Mans Ultimate 2026 — Courses & Championnats | SimTek Performance">
+    <meta name="twitter:description" content="Planning des courses, championnats et événements Le Mans Ultimate de SimTek Performance.">
     <meta name="twitter:image" content="https://www.simtekperformance.com/Logo_SIMTEK.png">
     <link rel="canonical" href="https://www.simtekperformance.com/planning">
-    <title>Planning LMU & Super Trofeo — SimTek Performance</title>
+    <title>Planning Le Mans Ultimate 2026 — Courses & Championnats | SimTek Performance</title>
 
     <script type="application/ld+json">
     {
@@ -549,19 +549,8 @@
             .radio-group { flex-direction: column; }
             .race-item { flex-wrap: wrap; }
             .race-meta { width: 100%; justify-content: flex-start; margin-top: 10px; padding-left: 32px; }
-            /* ── Super-Trofeo accordéon mobile ── */
-            #super-trofeo .st-header { cursor: pointer; position: relative; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(0,0,0,0.35); }
-            #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
-            #super-trofeo.st-open .st-header::after { transform: translateY(-50%) rotate(180deg); }
-            #super-trofeo .st-table-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-            #super-trofeo.st-open .st-table-wrap { max-height: 5000px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            /* ── Super-Trofeo accordéon mobile ── */
-            #super-trofeo .st-header { cursor: pointer; position: relative; padding-right: 40px; border: 1px solid rgba(255,26,117,0.25); border-radius: 12px; padding: 14px 18px; background: rgba(0,0,0,0.35); }
-            #super-trofeo .st-header::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: #ff1a75; font-size: 14px; transition: transform 0.3s; }
-            #super-trofeo.st-open .st-header::after { transform: translateY(-50%) rotate(180deg); }
-            #super-trofeo .st-table-wrap { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-            #super-trofeo.st-open .st-table-wrap { max-height: 5000px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-            .event-main { flex-direction: column; align-items: center; text-align: center; }
+
+.event-main { flex-direction: column; align-items: center; text-align: center; }
             .schedule-days, .schedule-times { justify-content: center; }
             .back-to-top { width: 50px; height: 50px; bottom: 20px; right: 20px; }
             .back-to-top i { font-size: 20px; }
@@ -717,119 +706,6 @@
             .planning-popup-overlay { padding: 15px; }
             .planning-popup { padding: 20px; max-height: 90vh; }
             .planning-popup-title { font-size: 18px; }
-        }
-        /* ═══════════════════════════════════════════════
-           SUPER TROFEO — CLASSEMENT PILOTES
-           ═══════════════════════════════════════════════ */
-        #super-trofeo {
-            background: #000000;
-        }
-        .st-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        .st-logo {
-            height: 80px;
-            width: auto;
-            object-fit: contain;
-        }
-        .st-logo-sep {
-            width: 1px;
-            height: 60px;
-            background: rgba(255,255,255,0.15);
-        }
-        .st-table-wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow-x: auto;
-            border-radius: 16px;
-            border: 1px solid rgba(255,26,117,0.25);
-            background: rgba(0,0,0,0.8);
-        }
-        .st-table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 820px;
-        }
-        .st-table thead tr {
-            background: rgba(0,0,0,0.4);
-            border-bottom: 1px solid rgba(255,26,117,0.25);
-        }
-        .st-table th {
-            padding: 12px 8px;
-            font-size: 11px;
-            font-weight: 700;
-            color: #b0b0d0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-            white-space: nowrap;
-        }
-        .st-th-pilote { text-align: left !important; padding-left: 16px !important; min-width: 170px; }
-        .st-th-pts { color: #00d4ff !important; min-width: 55px; }
-        .st-th-fl { color: #cc44ff !important; min-width: 45px; border-left: 1px solid rgba(255,255,255,0.07) !important; }
-        .st-th-race { min-width: 70px; font-size: 10px !important; }
-        .st-sep-left { border-left: 1px solid rgba(255,255,255,0.07) !important; }
-        .st-table td {
-            padding: 11px 8px;
-            text-align: center;
-            font-size: 13px;
-            color: #ffffff;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .st-table tr:last-child td { border-bottom: none; }
-        .st-table tr:hover td { background: rgba(255,255,255,0.03); }
-        .st-td-pilote { text-align: left !important; padding-left: 16px !important; font-weight: 600; font-size: 14px !important; }
-        .st-td-pts { font-size: 16px !important; font-weight: 700 !important; color: #00d4ff !important; }
-        .st-td-fl { color: #cc44ff !important; font-weight: 700 !important; }
-        .st-td-race { color: #b0b0d0; font-size: 13px; }
-        .st-pos {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            font-size: 13px;
-            font-weight: 700;
-        }
-        .st-pos-1 { background: #FFD700; color: #1a1100; }
-        .st-pos-2 { background: #C0C0C0; color: #111; }
-        .st-pos-3 { background: #CD7F32; color: #1a0800; }
-        .st-pos-n { background: rgba(255,255,255,0.08); color: #b0b0d0; }
-        .st-flag { font-size: 15px; margin-right: 7px; }
-        .st-dash { color: rgba(255,255,255,0.18); }
-        .st-note {
-            max-width: 1200px;
-            margin: 14px auto 0;
-            font-size: 12px;
-            color: #b0b0d0;
-            background: rgba(0,0,0,0.35);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 10px;
-            padding: 10px 16px;
-            line-height: 1.7;
-        }
-        .st-note code {
-            background: rgba(255,255,255,0.08);
-            border-radius: 4px;
-            padding: 1px 6px;
-            font-family: monospace;
-            color: #00d4ff;
-            font-size: 11px;
-        }
-        @media (max-width: 768px) {
-            .st-header { gap: 16px; }
-            .st-logo { height: 52px; }
-            .st-logo-sep { height: 40px; }
-            #super-trofeo { padding: 40px 12px 60px !important; }
-            .st-table { min-width: 700px; }
-            .st-th-pilote { min-width: 160px; }
-            .st-td-pilote { white-space: nowrap; }
         }
         /* ── Internal links ── */
         .internal-links { padding: 50px 60px; max-width: 1200px; margin: 0 auto; }
@@ -1348,6 +1224,24 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon_32.png">
     <link rel="apple-touch-icon" sizes="192x192" href="/favicon_192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon_512.png">
+
+<style>
+.mobile-planning-controls{display:none}
+@media(max-width:768px){
+ body{overflow-x:hidden} .hero{display:none!important} nav{padding:12px 16px!important;min-height:64px}.logo-img{height:44px!important}.mobile-menu{height:100vh;height:100dvh}
+ .mobile-planning-controls{display:block;padding:18px 16px 8px;background:#000;position:relative;z-index:4}
+ .mp-tabs{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #272b31;border-radius:14px;overflow:hidden;background:#0b0d10}.mp-tab{min-height:48px;border:0;border-right:1px solid #272b31;background:transparent;color:#d9d9df;font-size:13px;font-weight:700}.mp-tab:last-child{border-right:0}.mp-tab.active{color:#fff;background:rgba(255,26,117,.16);box-shadow:inset 0 -2px #ff1a75}
+ .mp-filter-row{display:flex;gap:8px;overflow-x:auto;padding:14px 1px 8px;scrollbar-width:none}.mp-filter-row::-webkit-scrollbar{display:none}.mp-filter{flex:0 0 auto;min-height:40px;padding:0 16px;border-radius:10px;border:1px solid #30343b;background:#0d1014;color:#d7d7dc;font-weight:700;font-size:12px}.mp-filter.active{border-color:#ff1a75;color:#fff;background:rgba(255,26,117,.12)}
+ .mp-date{display:flex;align-items:center;gap:8px;margin-top:8px;padding:12px 14px;border-radius:12px;background:#0d1014;border:1px solid #242830;font-size:12px;color:#9fa5af}.mp-date strong{color:#fff;font-size:13px}.mp-date span:last-child{margin-left:auto;color:#ff5da8;font-weight:700}
+ #planning,#championnats{padding:18px 16px 36px!important}.planning-header{margin-bottom:16px!important}.planning-header h2{font-size:25px!important;line-height:1.2;margin-bottom:8px!important}.planning-update{font-size:12px!important;padding:9px 11px!important;border-radius:10px!important}.planning-grid{display:block!important}
+ .planning-section{margin-bottom:12px!important;border:1px solid #262a31!important;border-radius:14px!important;background:#0b0e12!important;box-shadow:none!important;overflow:hidden}.planning-section:hover{transform:none!important}.section-header{min-height:64px!important;padding:14px!important}.section-icon{font-size:20px!important}.section-title h3{font-size:17px!important}.section-title span{font-size:11px!important}.section-content{padding:0 12px 12px!important}.planning-section.open .section-content{max-height:8000px!important}
+ .tier-block{margin:8px 0!important;border:0!important;background:transparent!important}.tier-header{padding:11px 12px!important;border:1px solid #292e36!important;border-radius:10px!important;background:#11151a!important}.tier-races{padding:8px 0 0!important}
+ .race-item{display:grid!important;grid-template-columns:30px 1fr auto!important;gap:9px!important;align-items:center!important;margin:8px 0!important;padding:12px!important;border:1px solid #262b33!important;border-radius:12px!important;background:#11151a!important;box-shadow:none!important}.race-flag{font-size:20px!important}.race-track{font-size:13px!important;line-height:1.35!important}.race-meta{gap:5px!important;justify-content:flex-end!important}.class-badge,.setup-badge,.duration-badge{font-size:9px!important;padding:3px 6px!important}
+ .event-card{padding:12px!important;border-radius:12px!important;background:#11151a!important}.event-main{align-items:flex-start!important}.event-flag{font-size:24px!important}.event-info h4{font-size:16px!important;line-height:1.3!important}.event-track,.event-duration{font-size:12px!important}.event-schedule{padding:10px!important;margin-top:10px!important}.schedule-days,.schedule-times{gap:5px!important}.day-badge,.time-badge{font-size:10px!important;padding:5px 7px!important}
+ #championnats .champ-grid{display:block!important}#championnats .champ-card{display:block!important;margin-bottom:12px!important}.champ-mobile-groups{display:none!important}.internal-links{padding:32px 16px!important}.internal-links-grid{grid-template-columns:1fr 1fr!important;gap:10px!important}.internal-link-card{padding:14px!important}
+ body[data-mobile-view="week"] #championnats{display:none!important}body[data-mobile-view="week"] #planning .special-section{display:none!important}body[data-mobile-view="events"] #championnats{display:none!important}body[data-mobile-view="events"] #planning .daily-section,body[data-mobile-view="events"] #planning .weekly-section{display:none!important}body[data-mobile-view="champ"] #planning{display:none!important}.mp-hidden{display:none!important}
+}
+</style>
 </head>
 <body>
 
@@ -1401,9 +1295,9 @@
 </div>
 
 <section class="hero">
-    <h1 class="sr-only">Planning des courses LMU, championnats Saison 11 et classement Super Trofeo — SimTek Performance</h1>
+    <h1 class="sr-only">Planning des courses LMU et championnats Saison 11 — SimTek Performance</h1>
     <div class="hero-title"><span style="color:#ffffff;display:inline">PLANNING & </span><span style="background:linear-gradient(135deg,#ff1a75 0%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:inline-block">RÉSULTATS</span></div>
-    <p>Courses quotidiennes, championnats Saison 11 et classement Super Trofeo de l'équipe SimTek Performance.</p>
+    <p>Courses quotidiennes, championnats Saison 11 et événements Le Mans Ultimate de SimTek Performance.</p>
 </section>
 
 
@@ -1482,6 +1376,22 @@
 <!-- ============================================= -->
 <!-- SECTION PLANNING LMU -->
 <!-- ============================================= -->
+
+<section class="mobile-planning-controls" aria-label="Navigation du planning">
+  <div class="mp-tabs" role="tablist">
+    <button class="mp-tab active" data-view="week" type="button">Semaine</button>
+    <button class="mp-tab" data-view="champ" type="button">Championnats</button>
+    <button class="mp-tab" data-view="events" type="button">Événements</button>
+  </div>
+  <div class="mp-filter-row" aria-label="Filtres par catégorie">
+    <button class="mp-filter active" data-filter="all" type="button">Toutes</button>
+    <button class="mp-filter" data-filter="lmgt3" type="button">LMGT3</button>
+    <button class="mp-filter" data-filter="lmp2" type="button">LMP2</button>
+    <button class="mp-filter" data-filter="lmp3" type="button">LMP3</button>
+    <button class="mp-filter" data-filter="hypercar" type="button">Hypercar</button>
+  </div>
+  <div class="mp-date"><span>📅</span><strong>Semaine du 28 juillet</strong><span>S11 · W7</span></div>
+</section>
 <section id="planning">
     <div class="planning-header">
         <h2>Planning des courses</h2>
@@ -1995,45 +1905,15 @@
 <!-- ============================================= -->
 
 
-<!-- ============================================= -->
-<!-- SECTION SUPER TROFEO — CLASSEMENT PILOTES     -->
-<!-- ============================================= -->
-<section id="super-trofeo" style="padding: 60px 60px 80px;">
 
-    <!-- En-tête avec logos -->
-    <div class="st-header">
-        <img src="supertrofeo.webp" alt="Super Trofeo Logo" class="st-logo" width="200" height="80">
-        <div class="st-logo-sep"></div>
-        <div>
-            <h2 style="margin:0; font-size:32px;">Super-Troféo</h2>
-            <div style="display:flex;align-items:center;gap:10px;margin-top:6px;flex-wrap:wrap;">
-                <span style="background:rgba(255,215,0,0.15);color:#FFD700;border:1px solid rgba(255,215,0,0.4);padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;letter-spacing:1px;">✅ CHAMPIONNAT TERMINÉ</span>
-                <span style="background:rgba(255,215,0,0.1);color:#FFD700;font-size:13px;padding:4px 12px;border-radius:20px;border:1px solid rgba(255,215,0,0.3);">🏆 Champion : <strong>Christophe Avivar</strong> — 37 pts</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Infographie classement final -->
-    <div style="margin:24px 0 0;display:flex;justify-content:center;">
-        <div style="width:100%;max-width:860px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,215,0,0.2);">
-            <img src="super-trofeo-classement-final.webp" alt="Classement final Super Trofeo SimTek Performance 2026" style="width:100%;height:auto;display:block;" width="1491" height="1055" loading="lazy">
-        </div>
-    </div>
-
-</section>
-<!-- ============================================= -->
-<!-- FIN SECTION SUPER TROFEO                      -->
-<!-- ============================================= -->
 
 <!-- TEASER NOUVEAU CHAMPIONNAT SEPTEMBRE -->
-<section style="padding:40px 60px;background:#000;">
+<section style="padding:40px 60px;background:rgba(0,0,0,0);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);">
     <div style="max-width:800px;margin:0 auto;text-align:center;">
         <div style="font-size:13px;letter-spacing:3px;color:#ff1a75;font-weight:700;margin-bottom:12px;">PROCHAIN RENDEZ-VOUS</div>
         <h2 style="font-size:clamp(22px,4vw,34px);margin:0 0 16px;color:#ffffff;">🚀 Un nouveau championnat interne arrive en septembre</h2>
         <p style="color:#b0b0d0;font-size:15px;line-height:1.8;margin:0 0 24px;">
-            Le Super Trofeo est terminé — bravo à tous les participants pour cette saison intense.<br>
-            SimTek Performance prépare un <strong style="color:#ffffff;">nouveau format de championnat interne</strong> pour la rentrée de septembre.
-            Format, règlement, calendrier : tout est en cours de définition.<br>Rejoins le Discord pour être le premier informé.
+            SimTek Performance prépare un <strong style="color:#ffffff;">nouveau format de championnat interne</strong> pour septembre. Format, règlement et calendrier seront annoncés prochainement sur Discord.
         </p>
         <a href="https://discord.gg/DKhEsaA4Z9" target="_blank" class="cta-button" style="font-size:14px;padding:12px 28px;">💬 Rejoindre le Discord</a>
     </div>
@@ -2160,24 +2040,6 @@
             });
         })();
 
-        // ── Super-Trofeo : accordéon mobile ──
-        (function() {
-            if (window.innerWidth > 768) return;
-            var section = document.getElementById('super-trofeo');
-            var header  = section && section.querySelector('.st-header');
-            if (!header) return;
-            header.addEventListener('click', function() {
-                section.classList.toggle('st-open');
-            });
-        })();
-
-        (function() {
-            if (window.innerWidth > 768) return;
-            var section = document.getElementById('super-trofeo');
-            var header = section && section.querySelector('.st-header');
-            if (!header) return;
-            header.addEventListener('click', function() { section.classList.toggle('st-open'); });
-        })();
     
 
         // ── Fenêtre de détails de la nouvelle version PC ──
@@ -2224,6 +2086,10 @@
             window.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
         })();
 
+</script>
+
+<script>
+(function(){function norm(s){return(s||'').toLowerCase().replace(/\s+/g,' ')}document.addEventListener('DOMContentLoaded',function(){document.body.dataset.mobileView='week';var tabs=document.querySelectorAll('.mp-tab'),filters=document.querySelectorAll('.mp-filter');tabs.forEach(function(btn){btn.addEventListener('click',function(){tabs.forEach(function(b){b.classList.remove('active')});btn.classList.add('active');document.body.dataset.mobileView=btn.dataset.view})});function applyFilter(filter){document.querySelectorAll('#planning .race-item,#planning .event-card,#championnats .champ-card').forEach(function(el){el.classList.toggle('mp-hidden',!(filter==='all'||norm(el.textContent).indexOf(filter)>=0))})}filters.forEach(function(btn){btn.addEventListener('click',function(){filters.forEach(function(b){b.classList.remove('active')});btn.classList.add('active');applyFilter(btn.dataset.filter)})})})})();
 </script>
 </body>
 </html>
