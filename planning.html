@@ -1899,6 +1899,88 @@
   .pc-event-details{grid-column:auto}
 }
 </style>
+
+<style id="championnats-desktop-infos-fix">
+@media (min-width: 769px) {
+  #championnats .champ-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  #championnats .champ-card {
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    border-radius: 16px !important;
+    background: rgba(8, 10, 14, .96) !important;
+  }
+
+  #championnats .champ-card .section-header {
+    min-height: 150px !important;
+    padding: 18px !important;
+    align-items: flex-end !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  #championnats .champ-card .section-content,
+  #championnats .champ-card.open .section-content {
+    display: block !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    padding: 16px !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
+    background: rgba(5, 7, 10, .96) !important;
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  #championnats .champ-card .section-arrow {
+    display: none !important;
+  }
+
+  #championnats .champ-card .section-content > div:first-child {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+    margin-bottom: 12px !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+  }
+
+  #championnats .champ-card .champ-week-row {
+    display: grid !important;
+    grid-template-columns: 70px minmax(0,1fr) !important;
+    gap: 8px !important;
+    padding: 7px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.06) !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+
+  #championnats .champ-card .champ-week-row:last-child {
+    border-bottom: 0 !important;
+  }
+
+  #championnats .champ-card .champ-week-label {
+    color: #ff3b83 !important;
+    font-weight: 800 !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  #championnats .champ-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <!-- Popup planning sections -->
