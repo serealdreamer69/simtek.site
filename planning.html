@@ -2160,7 +2160,6 @@ body.champ-modal-open{
   }
 }
 </style>
-
 <style id="championnats-sans-entete">
 @media (min-width:769px){
   #championnats{
@@ -2169,6 +2168,33 @@ body.champ-modal-open{
   }
   #championnats .champ-grid{
     margin-top:0!important;
+  }
+}
+</style>
+
+<style id="planning-series-filter-css">
+@media (min-width:769px){
+  .desktop-planning-controls .dp-filter-groups{
+    grid-template-columns:1.15fr .65fr 1fr!important;
+    align-items:start!important;
+  }
+
+  .dp-series-group{
+    display:none;
+  }
+
+  body[data-pc-view="champ"] .dp-series-group{
+    display:block!important;
+  }
+
+  body[data-pc-view="all"] .dp-series-group{
+    display:none!important;
+  }
+}
+
+@media (min-width:769px) and (max-width:1040px){
+  .desktop-planning-controls .dp-filter-groups{
+    grid-template-columns:1fr!important;
   }
 }
 </style>
@@ -2243,7 +2269,13 @@ body.champ-modal-open{
 <button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="hypercar" type="button">HYPERCAR</button>
 </div>
 </div>
-<div class="dp-filter-group dp-level-group">
+<div class="dp-filter-group dp-series-group">
+<span class="dp-filter-label">CHAMPIONNAT</span>
+<div class="dp-filter-row">
+<button aria-pressed="false" class="dp-filter dp-series-filter" data-pc-series="wec" type="button">WEC</button>
+<button aria-pressed="false" class="dp-filter dp-series-filter" data-pc-series="elms" type="button">ELMS</button>
+</div>
+</div><div class="dp-filter-group dp-level-group">
 <span class="dp-filter-label">NIVEAU</span>
 <div class="dp-filter-row">
 <button aria-pressed="false" class="dp-filter dp-level-filter" data-pc-level="beginner" type="button">DÉBUTANT</button>
@@ -2534,10 +2566,9 @@ body.champ-modal-open{
 <!-- SECTION CHAMPIONNATS LMU - SEASON 11 -->
 <!-- ============================================= -->
 <section data-filter-kind="champ" id="championnats" style="padding: 60px 60px 80px;">
-
 <div class="planning-grid champ-grid">
 <!-- LMP3 SPRINT TOUR -->
-<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-lmp3" data-champ-bg="" data-champ-id="champ-1" data-champ-subtitle="" data-champ-title="LMP3 Sprint Tour Bronze 2 SR · 45min · LMP3" data-filter-cars="lmp3" data-filter-kind="champ" data-filter-level="beginner" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-lmp3" data-champ-bg="" data-champ-id="champ-1" data-champ-subtitle="" data-champ-title="LMP3 Sprint Tour Bronze 2 SR · 45min · LMP3" data-filter-cars="lmp3" data-filter-kind="champ" data-filter-level="beginner" data-filter-series="elms" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
 <div class="section-title"><h3>LMP3 Sprint Tour</h3><span>Bronze 2 SR · 45min · LMP3</span></div>
@@ -2561,7 +2592,7 @@ body.champ-modal-open{
 </div>
 </template></div>
 <!-- LMGT3 CHALLENGE -->
-<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-lmgt3" data-champ-bg="" data-champ-id="champ-2" data-champ-subtitle="" data-champ-title="LMGT3 Challenge Bronze 2 SR · 80min · LMGT3" data-filter-cars="lmgt3" data-filter-kind="champ" data-filter-level="beginner" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-lmgt3" data-champ-bg="" data-champ-id="champ-2" data-champ-subtitle="" data-champ-title="LMGT3 Challenge Bronze 2 SR · 80min · LMGT3" data-filter-cars="lmgt3" data-filter-kind="champ" data-filter-level="beginner" data-filter-series="wec" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#cd7f32;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #cd7f3288;"></span>
 <div class="section-title"><h3>LMGT3 Challenge</h3><span>Bronze 2 SR · 80min · LMGT3</span></div>
@@ -2585,7 +2616,7 @@ body.champ-modal-open{
 </div>
 </template></div>
 <!-- ELMS SPRINT TROPHY -->
-<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-elms-sprint" data-champ-bg="" data-champ-id="champ-3" data-champ-subtitle="" data-champ-title="ELMS Sprint Trophy Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="intermediate" role="button" style="border-color: rgba(192, 192, 192, 0.5);" tabindex="0">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-elms-sprint" data-champ-bg="" data-champ-id="champ-3" data-champ-subtitle="" data-champ-title="ELMS Sprint Trophy Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="intermediate" data-filter-series="elms" role="button" style="border-color: rgba(192, 192, 192, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#c0c0c0;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #c0c0c088;"></span>
 <div class="section-title"><h3>ELMS Sprint Trophy</h3><span>Silver 1 SR · 90min · LMP2, LMP3 &amp; LMGT3</span></div>
@@ -2609,7 +2640,7 @@ body.champ-modal-open{
 </div>
 </template></div>
 <!-- WEC-XPERIENCE -->
-<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-wec" data-champ-bg="" data-champ-id="champ-4" data-champ-subtitle="" data-champ-title="WEC-Xperience Gold 1 SR · 90min · Hypercar &amp; LMGT3" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="advanced" role="button" style="border-color: rgba(255, 215, 0, 0.5);" tabindex="0">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-wec" data-champ-bg="" data-champ-id="champ-4" data-champ-subtitle="" data-champ-title="WEC-Xperience Gold 1 SR · 90min · Hypercar &amp; LMGT3" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="advanced" data-filter-series="wec" role="button" style="border-color: rgba(255, 215, 0, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
 <div class="section-title"><h3>WEC-Xperience</h3><span>Gold 1 SR · 90min · Hypercar &amp; LMGT3</span></div>
@@ -2633,7 +2664,7 @@ body.champ-modal-open{
 </div>
 </template></div>
 <!-- 2.4H SERIES -->
-<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-24h" data-champ-bg="" data-champ-id="champ-5" data-champ-subtitle="" data-champ-title="2.4h Series Gold 1 SR · 144min · Hypercar &amp; LMGT3" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="intermediate" role="button" style="border-color: rgba(255, 215, 0, 0.5);" tabindex="0">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-24h" data-champ-bg="" data-champ-id="champ-5" data-champ-subtitle="" data-champ-title="2.4h Series Gold 1 SR · 144min · Hypercar &amp; LMGT3" data-filter-cars="hypercar lmgt3" data-filter-kind="champ" data-filter-level="advanced" data-filter-series="wec" role="button" style="border-color: rgba(255, 215, 0, 0.5);" tabindex="0">
 <div class="section-header">
 <span class="section-icon" style="width:28px;height:28px;border-radius:50%;background:#ffd700;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #ffd70088;"></span>
 <div class="section-title"><h3>2.4h Series</h3><span>Gold 1 SR · 144min · Hypercar &amp; LMGT3</span></div>
@@ -2657,7 +2688,7 @@ body.champ-modal-open{
 </div>
 </template></div>
 <!-- ELMS WORLD TOUR (TEAM) -->
-<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-elms-world" data-champ-bg="" data-champ-id="champ-6" data-champ-subtitle="" data-champ-title="ELMS World Tour TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="beginner" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
+<div aria-label="Voir les détails du championnat" class="planning-section champ-card champ-elms-world" data-champ-bg="" data-champ-id="champ-6" data-champ-subtitle="" data-champ-title="ELMS World Tour TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3" data-filter-cars="lmgt3 lmp2 lmp3" data-filter-kind="champ" data-filter-level="beginner" data-filter-series="elms" role="button" style="border-color: rgba(205, 127, 50, 0.5);" tabindex="0">
 <div class="section-header">
 <span style="background:#ffffff;color:#00aadd;font-weight:900;font-size:11px;padding:3px 7px;border-radius:5px;flex-shrink:0;letter-spacing:1.5px;font-family:'Segoe UI',sans-serif;">ELMS</span>
 <div class="section-title"><h3>ELMS World Tour</h3><span>TEAM · Bronze 2 SR · 4h &amp; 6h · LMP2, LMP3 &amp; LMGT3</span></div>
@@ -3024,10 +3055,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const tabs = [...document.querySelectorAll('.dp-tab')];
   const carButtons = [...document.querySelectorAll('.dp-car-filter')];
+  const seriesButtons = [...document.querySelectorAll('.dp-series-filter')];
   const levelButtons = [...document.querySelectorAll('.dp-level-filter')];
   const empty = document.querySelector('.dp-empty');
 
   const activeCars = new Set();
+  const activeSeries = new Set();
   const activeLevels = new Set();
 
   document.body.dataset.pcView = 'all';
@@ -3063,15 +3096,23 @@ document.addEventListener('DOMContentLoaded', function () {
       .filter(Boolean);
 
     const level = card.dataset.filterLevel || card.dataset.pcLevel || '';
+    const series = card.dataset.filterSeries || '';
+    const view = document.body.dataset.pcView;
 
     const carMatch = !activeCars.size || cars.some(car => activeCars.has(car));
+
     const levelMatch =
-      document.body.dataset.pcView === 'events' ||
+      view === 'events' ||
       card.classList.contains('pc-event-card') ||
       !activeLevels.size ||
       activeLevels.has(level);
 
-    return carMatch && levelMatch;
+    const seriesMatch =
+      view !== 'champ' ||
+      !activeSeries.size ||
+      activeSeries.has(series);
+
+    return carMatch && levelMatch && seriesMatch;
   }
 
   function applyFilters() {
@@ -3114,7 +3155,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.dataset.pcView = button.dataset.pcView;
       }
 
-      /* Un second clic désactive l'onglet et réaffiche toutes les catégories. */
       applyFilters();
     });
   });
@@ -3124,6 +3164,15 @@ document.addEventListener('DOMContentLoaded', function () {
       const value = button.dataset.pcCar;
       activeCars.has(value) ? activeCars.delete(value) : activeCars.add(value);
       setButton(button, activeCars.has(value));
+      applyFilters();
+    });
+  });
+
+  seriesButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const value = button.dataset.pcSeries;
+      activeSeries.has(value) ? activeSeries.delete(value) : activeSeries.add(value);
+      setButton(button, activeSeries.has(value));
       applyFilters();
     });
   });
