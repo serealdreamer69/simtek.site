@@ -2784,7 +2784,6 @@ body.champ-modal-open{
   }
 }
 </style>
-
 <style id="planning-gap-fix">
 @media (min-width:769px){
   .events-unified-section{
@@ -2793,6 +2792,91 @@ body.champ-modal-open{
 
   .champ-unified-section{
     margin-top:8px!important;
+  }
+}
+</style>
+
+<style id="planning-sections-uniform-fix">
+@media (min-width:769px){
+  /* même espacement entre les 3 blocs */
+  .pc-wrap{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:16px!important;
+  }
+
+  .pc-wrap > .planning-unified-section,
+  .pc-wrap > #championnats.planning-unified-section,
+  .daily-unified-section,
+  .events-unified-section,
+  .champ-unified-section{
+    margin:0!important;
+  }
+
+  /* même style de titre sur les 3 blocs */
+  .planning-unified-header{
+    display:flex!important;
+    align-items:center!important;
+    gap:16px!important;
+    margin:0 0 16px!important;
+  }
+
+  .planning-unified-icon{
+    width:48px!important;
+    height:48px!important;
+    flex:0 0 48px!important;
+    border-radius:12px!important;
+    background:linear-gradient(135deg,#df165f,#ff3d8e)!important;
+    color:#fff!important;
+    box-shadow:0 10px 24px rgba(255,29,114,.22)!important;
+    font-size:20px!important;
+  }
+
+  .planning-unified-header h2,
+  .daily-unified-section .planning-unified-header h2,
+  .events-unified-section .planning-unified-header h2,
+  .champ-unified-section .planning-unified-header h2{
+    margin:0!important;
+    color:#ffffff!important;
+    font-size:22px!important;
+    line-height:1.08!important;
+    font-weight:950!important;
+    letter-spacing:.02em!important;
+    text-transform:uppercase!important;
+    font-style:normal!important;
+  }
+
+  .planning-unified-header p,
+  .daily-unified-section .planning-unified-header p,
+  .events-unified-section .planning-unified-header p,
+  .champ-unified-section .planning-unified-header p{
+    margin:5px 0 0!important;
+    color:#9ca3ae!important;
+    font-size:12px!important;
+    line-height:1.4!important;
+    font-weight:500!important;
+    text-transform:none!important;
+    font-style:normal!important;
+  }
+
+  /* supprime tout style particulier restant sur les titres */
+  .daily-unified-section .pc-head-title,
+  .champ-unified-section .pc-head-title,
+  .events-unified-section .pc-head-title{
+    color:#fff!important;
+    font-size:22px!important;
+    font-weight:950!important;
+    font-style:normal!important;
+    text-transform:uppercase!important;
+    letter-spacing:.02em!important;
+  }
+
+  .daily-unified-section .pc-head-sub,
+  .champ-unified-section .pc-head-sub,
+  .events-unified-section .pc-head-sub{
+    color:#9ca3ae!important;
+    font-size:12px!important;
+    font-style:normal!important;
   }
 }
 </style>
