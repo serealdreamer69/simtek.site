@@ -3017,6 +3017,75 @@ body.champ-modal-open{
   }
 }
 </style>
+<style id="planning-labels-removed-fix">
+@media (min-width:769px){
+  .desktop-planning-controls .dp-tabs{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+
+  .desktop-planning-controls .dp-filter-groups{
+    margin-top:14px!important;
+    padding-top:14px!important;
+  }
+
+  .desktop-planning-controls .dp-filter-group{
+    padding-top:0!important;
+  }
+}
+</style>
+
+<style id="planning-filters-alignment-fix">
+@media (min-width:769px){
+  /* élargit un peu la colonne catégorie pour garder LMGTE sur la même ligne */
+  .desktop-planning-controls .dp-filter-groups{
+    grid-template-columns:1.45fr .95fr 1fr!important;
+    gap:22px!important;
+    align-items:start!important;
+  }
+
+  .desktop-planning-controls .dp-filter-group{
+    min-width:0!important;
+  }
+
+  /* garde tous les boutons catégorie sur une seule ligne */
+  .desktop-planning-controls .dp-filter-group:first-child .dp-filter-row{
+    flex-wrap:nowrap!important;
+    justify-content:flex-start!important;
+  }
+
+  /* aligne WEC / ELMS sous CHAMPIONNATS */
+  .desktop-planning-controls .dp-series-group{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:flex-start!important;
+  }
+
+  .desktop-planning-controls .dp-series-group .dp-filter-row{
+    width:100%!important;
+    justify-content:center!important;
+    flex-wrap:nowrap!important;
+  }
+
+  /* groupe niveau propre à droite */
+  .desktop-planning-controls .dp-level-group .dp-filter-row{
+    justify-content:flex-start!important;
+    flex-wrap:nowrap!important;
+  }
+}
+
+@media (min-width:769px) and (max-width:1200px){
+  .desktop-planning-controls .dp-filter-groups{
+    grid-template-columns:1.25fr .85fr 1fr!important;
+    gap:16px!important;
+  }
+
+  .desktop-planning-controls .dp-filter{
+    padding-left:12px!important;
+    padding-right:12px!important;
+    font-size:10.5px!important;
+  }
+}
+</style>
 </head>
 <body>
 <!-- Popup planning sections -->
@@ -3073,14 +3142,13 @@ body.champ-modal-open{
 <div class="pc-pill update"><span class="pc-dot"></span>Mis à jour : <strong>Semaine du 28/07 - Season 11 Week 7</strong></div>
 </div>
 <section aria-label="Filtres du planning sur ordinateur" class="desktop-planning-controls">
-<div aria-label="Type de planning" class="dp-tabs" role="tablist"><span class="dp-tabs-label">VUE</span>
+<div aria-label="Type de planning" class="dp-tabs" role="tablist">
 <button aria-selected="false" class="dp-tab" data-pc-view="daily" type="button">DAILYRACE</button>
 <button aria-selected="false" class="dp-tab" data-pc-view="champ" type="button">CHAMPIONNATS</button>
 <button aria-selected="false" class="dp-tab" data-pc-view="events" type="button">ÉVÉNEMENTS</button>
 </div>
 <div class="dp-filter-groups">
 <div class="dp-filter-group">
-<span class="dp-filter-label">CATÉGORIE</span>
 <div class="dp-filter-row">
 <button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="lmgt3" type="button">GT3</button>
 <button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="lmp2" type="button">LMP2</button>
@@ -3089,13 +3157,11 @@ body.champ-modal-open{
 <button aria-pressed="false" class="dp-filter dp-car-filter" data-pc-car="lmgte" type="button">LMGTE</button></div>
 </div>
 <div class="dp-filter-group dp-series-group">
-<span class="dp-filter-label">SÉRIE</span>
 <div class="dp-filter-row">
 <button aria-pressed="false" class="dp-filter dp-series-filter" data-pc-series="wec" type="button">WEC</button>
 <button aria-pressed="false" class="dp-filter dp-series-filter" data-pc-series="elms" type="button">ELMS</button>
 </div>
 </div><div class="dp-filter-group dp-level-group">
-<span class="dp-filter-label">NIVEAU</span>
 <div class="dp-filter-row">
 <button aria-pressed="false" class="dp-filter dp-level-filter" data-pc-level="beginner" type="button">DÉBUTANT</button>
 <button aria-pressed="false" class="dp-filter dp-level-filter" data-pc-level="intermediate" type="button">INTERMÉDIAIRE</button>
@@ -4166,7 +4232,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', placeChampionships, { passive: true });
 });
 </script>
-
 <script id="champ-current-week-auto">
 document.addEventListener('DOMContentLoaded', function () {
   const seasonStart = new Date('2026-06-16T00:00:00');
