@@ -347,35 +347,42 @@
         /* Vidéo affichée sur mobile — taille ajustée via media query */
         .hero-video-mobile { display: none; }
 
-        .hero-photo {
+        .hero-photo-wrap {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
             height: 75%;
-            object-fit: cover;
             z-index: -1;
             border-radius: 25px;
             box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 26, 117, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
             aspect-ratio: 16/9;
             contain: layout;
+            overflow: hidden;
+        }
+
+        .hero-photo {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero-livery-badge {
             position: absolute;
-            top: 30px;
-            left: 40px;
+            top: 24px;
+            left: 28px;
             z-index: 2;
             color: #ffffff;
             font-family: Georgia, 'Times New Roman', serif;
             font-style: italic;
             font-weight: 700;
-            font-size: 34px;
+            font-size: 28px;
             line-height: 1.25;
             letter-spacing: 0.5px;
-            max-width: 75%;
+            max-width: 80%;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 26, 117, 0.35);
         }
 
@@ -1027,8 +1034,8 @@
             .join-button-mobile { display: block; }
             nav { padding: 15px 20px; }
             .hero { padding: 40px 20px; min-height: 70vh; background: rgba(0,0,0,0.45); }
-            .hero-video, .hero-photo { width: 95%; height: 60%; }
-            .hero-livery-badge { top: 15px; left: 20px; font-size: 17px; max-width: 85%; }
+            .hero-video, .hero-photo-wrap { width: 95%; height: 60%; }
+            .hero-livery-badge { top: 14px; left: 16px; font-size: 16px; max-width: 85%; }
             section { padding: 40px 20px; }
             h2 { font-size: 32px !important; }
             .form-row { grid-template-columns: 1fr; }
@@ -1386,7 +1393,7 @@
         let VIDEO = false;     // true = affiche la vidéo
         let PICTURE = true;  // true = affiche la photo
         const HERO_PHOTO = 'hero-photo.webp'; // nom du fichier image à afficher si PICTURE = true
-        const HERO_CAPTION = 'Livrée spéciale 24 Heures du Mans 2026'; // texte affiché au-dessus de la photo (modifiable librement)
+        const HERO_CAPTION = 'Livrée spéciale 24 Heures du Mans'; // texte affiché au-dessus de la photo (modifiable librement)
 
         (function initHeroMedia() {
             const heroSection = document.querySelector('.hero');
@@ -1401,18 +1408,23 @@
                     heroVideo.style.display = 'none';
                 }
 
+                const heroWrap = document.createElement('div');
+                heroWrap.className = 'hero-photo-wrap';
+
                 const heroImg = document.createElement('img');
                 heroImg.className = 'hero-photo';
                 heroImg.src = HERO_PHOTO;
                 heroImg.alt = 'SimTek Performance';
-                heroSection.insertBefore(heroImg, heroSection.firstChild);
+                heroWrap.appendChild(heroImg);
 
                 if (HERO_CAPTION) {
                     const heroBadge = document.createElement('div');
                     heroBadge.className = 'hero-livery-badge';
                     heroBadge.textContent = HERO_CAPTION;
-                    heroSection.appendChild(heroBadge);
+                    heroWrap.appendChild(heroBadge);
                 }
+
+                heroSection.insertBefore(heroWrap, heroSection.firstChild);
             }
         })();
 
