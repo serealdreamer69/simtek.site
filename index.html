@@ -347,6 +347,16 @@
         /* Vidéo affichée sur mobile — taille ajustée via media query */
         .hero-video-mobile { display: none; }
 
+        .hero-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
         section {
             padding: 80px 60px;
         }
@@ -1348,6 +1358,33 @@
     </footer>
 
     <script>
+        // ===== Contrôle de l'affichage du hero (vidéo ou photo) =====
+        // Mets l'un à true et l'autre à false selon ce que tu veux afficher.
+        let VIDEO = true;     // true = affiche la vidéo
+        let PICTURE = false;  // true = affiche la photo
+        const HERO_PHOTO = 'hero-photo.webp'; // nom du fichier image à afficher si PICTURE = true
+
+        (function initHeroMedia() {
+            const heroSection = document.querySelector('.hero');
+            if (!heroSection) return;
+
+            const showPhoto = (PICTURE === true) || (VIDEO === false);
+
+            if (showPhoto) {
+                const heroVideo = heroSection.querySelector('.hero-video');
+                if (heroVideo) {
+                    heroVideo.pause();
+                    heroVideo.style.display = 'none';
+                }
+
+                const heroImg = document.createElement('img');
+                heroImg.className = 'hero-photo';
+                heroImg.src = HERO_PHOTO;
+                heroImg.alt = 'SimTek Performance';
+                heroSection.insertBefore(heroImg, heroSection.firstChild);
+            }
+        })();
+
         window.addEventListener('load', function() {
             document.body.classList.add('loaded');
         });
