@@ -1422,6 +1422,24 @@
                     heroBadge.className = 'hero-livery-badge';
                     heroBadge.textContent = HERO_CAPTION;
                     heroWrap.appendChild(heroBadge);
+
+                    // Aligne le badge sous le lien "Actualités" du menu (desktop uniquement)
+                    function alignBadgeToNav() {
+                        const isMobile = window.innerWidth <= 768;
+                        if (isMobile) {
+                            heroBadge.style.left = '';
+                            return;
+                        }
+                        const navLink = document.querySelector('.nav-links a[href="blog"]');
+                        if (!navLink) return;
+                        const navRect = navLink.getBoundingClientRect();
+                        const wrapRect = heroWrap.getBoundingClientRect();
+                        const offset = navRect.left - wrapRect.left;
+                        heroBadge.style.left = Math.max(offset, 0) + 'px';
+                    }
+                    window.addEventListener('load', alignBadgeToNav);
+                    window.addEventListener('resize', alignBadgeToNav);
+                    alignBadgeToNav();
                 }
 
                 heroSection.insertBefore(heroWrap, heroSection.firstChild);
