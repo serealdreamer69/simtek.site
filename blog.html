@@ -342,7 +342,7 @@
 <!-- ================================================================ -->
 <!-- ARTICLE : LIVRÉE SPÉCIALE 24 HEURES DU MANS 2026                -->
 <!-- ================================================================ -->
-<article class="article-card" id="article-livree-24h-lemans-2026">
+<article class="article-card" id="article-livree-24h-lemans-2026" data-publish="false" style="display:none;">
     <div class="article-card-top">
         <span class="article-tag tag-event">⭐ Événement spécial</span>
         <h2>SimTek Performance dévoile sa livrée spéciale pour les 24 Heures du Mans 2026</h2>
@@ -1434,6 +1434,32 @@
             <a href="https://www.instagram.com/simtek_performance" target="_blank" aria-label="SimTek Performance sur Instagram"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </footer>
+
+    <script>
+        // ================================================================
+        // SYSTÈME DE "REVEAL" — publier un article plus tard sans perdre sa
+        // place de "dernier article" même si d'autres ont été publiés entre-temps.
+        //
+        // Sur un <article>, ajouter : data-publish="false" + style="display:none;"
+        // Pour publier l'article : passer data-publish à "true" et retirer (ou
+        // laisser, le script s'en charge) le style="display:none;".
+        // Le script le déplace alors automatiquement en première position de
+        // la grille, peu importe où il se trouve physiquement dans le HTML.
+        // ================================================================
+        (function () {
+            var grid = document.querySelector('.articles-grid');
+            if (!grid) return;
+            grid.querySelectorAll('article[data-publish]').forEach(function (article) {
+                var isPublished = article.getAttribute('data-publish') === 'true';
+                if (isPublished) {
+                    grid.prepend(article);
+                    article.style.display = '';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        })();
+    </script>
 
     <script>
         function toggleArticle(id, btn) {
