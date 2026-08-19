@@ -3375,6 +3375,22 @@ body.champ-modal-open{
 }
 </style>
 
+
+<style id="mobile-events-weekly-final-fix">
+@media (max-width:1024px){
+  /* Le bouton ÉVÉNEMENTS affiche toujours Weekly Races + Special Event. */
+  body[data-mobile-view="events"] #planning{display:block!important;}
+  body[data-mobile-view="events"] #planning .weekly-section,
+  body[data-mobile-view="events"] #planning .special-section{display:block!important;visibility:visible!important;opacity:1!important;}
+  body[data-mobile-view="events"] #planning .weekly-section .section-content,
+  body[data-mobile-view="events"] #planning .special-section .section-content{display:block!important;max-height:none!important;height:auto!important;overflow:visible!important;visibility:visible!important;opacity:1!important;}
+  body[data-mobile-view="events"] #planning .weekly-section .event-card{display:block!important;}
+
+  /* Sur mobile, pas de grand titre CHAMPIONNAT rose/bleu au-dessus des cartes. */
+  #championnats > .planning-unified-header.planning-title-box{display:none!important;}
+}
+</style>
+
 </head>
 <body>
 <!-- Popup planning sections -->
@@ -3985,6 +4001,22 @@ Pas d'événement spécial cette semaine.
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
         document.body.dataset.mobileView = btn.dataset.view;
+
+        // En vue ÉVÉNEMENTS, on repart toujours sans filtre afin que les Weekly Races
+        // soient visibles immédiatement, même si un filtre était actif sur Daily Race.
+        if (btn.dataset.view === 'events') {
+          activeCarFilters.clear();
+          activeLevelFilters.clear();
+          carFilters.forEach(function(filterBtn){
+            filterBtn.classList.remove('active');
+            filterBtn.setAttribute('aria-pressed', 'false');
+          });
+          levelFilters.forEach(function(filterBtn){
+            filterBtn.classList.remove('active');
+            filterBtn.setAttribute('aria-pressed', 'false');
+          });
+        }
+
         applyFilters();
       });
     });
