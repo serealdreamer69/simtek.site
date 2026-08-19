@@ -3384,10 +3384,20 @@ body.champ-modal-open{
   body[data-mobile-view="events"] #planning .special-section{display:block!important;visibility:visible!important;opacity:1!important;}
   body[data-mobile-view="events"] #planning .weekly-section .section-content,
   body[data-mobile-view="events"] #planning .special-section .section-content{display:block!important;max-height:none!important;height:auto!important;overflow:visible!important;visibility:visible!important;opacity:1!important;}
-  body[data-mobile-view="events"] #planning .weekly-section .event-card{display:block!important;}
+  body[data-mobile-view="events"] #planning .weekly-section .event-card:not(.mp-hidden){display:block!important;}
 
   /* Sur mobile, pas de grand titre CHAMPIONNAT rose/bleu au-dessus des cartes. */
   #championnats > .planning-unified-header.planning-title-box{display:none!important;}
+}
+</style>
+
+
+<style id="mobile-events-filter-final-fix">
+@media (max-width:1024px){
+  body[data-mobile-view="events"] #planning .weekly-section .event-card.mp-hidden,
+  body[data-mobile-view="events"] #planning .special-section .event-card.mp-hidden{
+    display:none!important;
+  }
 }
 </style>
 
