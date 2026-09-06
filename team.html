@@ -339,10 +339,10 @@
         
         .teams-columns-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             align-items: start;
-            max-width: 1200px;
+            max-width: 1500px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -443,7 +443,30 @@
         .team-hyp .person-photo-circle {
             border-color: #00ff88 !important;
         }
-        
+
+        /* Couleurs équipe : Gentleman Driver (orange) */
+        .team-gentleman .person-card,
+        .team-gentleman .category-banner {
+            border-color: #ff6a00 !important;
+        }
+        .team-gentleman .person-card:hover {
+            box-shadow: 0 15px 30px rgba(255, 106, 0, 0.4);
+        }
+        .team-gentleman .person-photo-circle {
+            border-color: #ff6a00 !important;
+        }
+        .team-gentleman .category-banner {
+            background: linear-gradient(135deg, rgba(255, 106, 0, 0.28) 0%, rgba(255, 150, 20, 0.16) 100%);
+        }
+        .team-gentleman .category-banner h3 {
+            color: #ff6a00;
+        }
+        /* Compense la margin-bottom:30px du .team-leader (absent en Gentleman Driver),
+           appliquée directement sur la 1ère carte pour ne pas ajouter un gap flex en plus */
+        .gentleman-leader-spacing {
+            margin-bottom: 30px;
+        }
+
         @media (max-width: 1400px) {
             .teams-columns-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -980,6 +1003,7 @@
         .pilot-card-quote::before,.pilot-card-quote::after{font-size:25px;font-style:normal;font-weight:900;line-height:1;opacity:.9}
         .pilot-card-quote::before{content:'“';margin-right:7px;align-self:flex-start}
         .pilot-card-quote::after{content:'”';margin-left:7px;align-self:flex-end}
+        .pilot-card-quote.is-empty::before,.pilot-card-quote.is-empty::after{content:none}
         .pilot-card-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding-top:8px}
         .pilot-card-meta-item{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:8px 9px;min-width:0}
         .pilot-card-meta-label{display:block;color:#737985;font-size:8px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px}
@@ -988,6 +1012,7 @@
         .team-gt3b .pilot-card-quote::before,.team-gt3b .pilot-card-quote::after{color:#00d4ff}
         .team-charly .pilot-card-quote::before,.team-charly .pilot-card-quote::after{color:#ffcc00}
         .team-hyp .pilot-card-quote::before,.team-hyp .pilot-card-quote::after,.directors-grid .pilot-card-quote::before,.directors-grid .pilot-card-quote::after{color:#e60026}
+        .team-gentleman .pilot-card-quote::before,.team-gentleman .pilot-card-quote::after{color:#ff6a00}
 
         /* Popup premium */
         .pilot-popup-overlay{background:rgba(0,0,0,.86);backdrop-filter:blur(14px)}
@@ -1025,7 +1050,7 @@
         }
         .team-filters{
             display:grid;
-            grid-template-columns:1.35fr repeat(3,1fr);
+            grid-template-columns:1.35fr repeat(4,1fr);
             align-items:stretch;
             padding:5px;
             border:1px solid rgba(255,255,255,.12);
@@ -1067,6 +1092,7 @@
         .team-filter[data-filter="gt3a"]{color:#ff3f86}
         .team-filter[data-filter="gt3b"]{color:#00d4ff}
         .team-filter[data-filter="charly"]{color:#ffd000}
+        .team-filter[data-filter="gentleman"]{color:#ff6a00}
         .team-filter:hover{background:rgba(255,255,255,.035);transform:translateY(-1px)}
         .team-filter.active{
             color:#fff;
@@ -1085,6 +1111,7 @@
             .team-filter{min-height:44px;padding:0 12px;white-space:nowrap;font-size:11px;border-radius:10px;justify-content:center;}
             .team-filter:not(:last-child)::after{display:none;}
             .team-filter:not(:last-child)::after{height:18px}
+            .team-filter:last-child{grid-column:1 / -1;}
         }
 
 </style>
@@ -1350,6 +1377,10 @@
             <button class="team-filter" type="button" role="tab" aria-selected="false" data-filter="charly">
                 <i class="fa-solid fa-trophy" aria-hidden="true"></i>
                 <span>GT3 Bravo</span>
+            </button>
+            <button class="team-filter" type="button" role="tab" aria-selected="false" data-filter="gentleman">
+                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                <span>Gentleman Driver</span>
             </button>
         </div>
     </div>
@@ -1675,19 +1706,132 @@
 
             </div>
             
-            <!-- Colonne GT3 Académie -->
+            <!-- Colonne GT3 Bravo -->
             <div class="team-column team-charly">
                 <div class="category-banner" style="background-image: url('category-lmp.webp');">
                     <div class="category-banner-content">
                         <h3> GT3 BRAVO</h3>
                     </div>
                 </div>
-                <!-- Espaceur invisible pour aligner les pilotes avec les autres colonnes -->
 <div class="team-leader">
+<div class="person-header-inline" style="background-image: url('setup-morgan.webp');">
+<img class="person-photo-circle" src="pilot-morgan.webp" width="2160" height="2880" onerror="this.src='Logo_SIMTEK.webp'"/>
+<div class="person-header-info">
+<div class="person-role-badge">CHEF D'ÉQUIPE GT3 BRAVO</div>
+<h3 class="person-name">Morgan</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g1">G1</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R9</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza KS</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite GTR S8</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza SR-P</span></div>
+</div>
+</div>
+</div>
+<!-- Mathis -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-mathis.webp');">
+<img class="person-photo-circle" src="pilot-mathis.webp" width="900" height="1600"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Mathis</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec ClubSport DD</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec WRC</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Trak Racer TR</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec ClubSport</span></div>
+</div>
+</div>
+</div>
+<!-- Lionel — infos à venir -->
+<div class="person-card">
+<div class="person-header-inline">
+<img class="person-photo-circle" src="Logo_SIMTEK.webp" width="200" height="200"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Lionel</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p2">P2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R12</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza KS</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Nitro Kart</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza CRP2 (haptique)</span></div>
+</div>
+</div>
+</div>
+<!-- Thibaut.D — PILOTE -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-thibaut-d.webp');">
+<img class="person-photo-circle" src="pilot-thibaut-d.webp" width="811" height="855" onerror="this.src='Logo_SIMTEK.webp'"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Thibaut.D</h3>
+<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span></div>
+</div>
+</div>
+<div class="person-info-details"><div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec GT3</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite GTR S3</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">ClubSport V3</span></div>
+</div></div>
+</div>
+<!-- Cyrille — PILOTE -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-cyrille.webp');">
+<img class="person-photo-circle" src="pilot-LMP-5.webp" width="200" height="200"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Cyrille</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b2">B2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">BMW GT2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Châssis Alu sur-mesure</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL LoadCell</span></div>
+</div>
+</div>
+</div>
+            </div>
+
+            <!-- Colonne GT3 Gentleman Driver (Guillaume, Romuald, Clement) -->
+            <div class="team-column team-gentleman">
+                <div class="category-banner">
+                    <div class="category-banner-content">
+                        <h3> GT3 Gentleman Driver</h3>
+                    </div>
+                </div>
+<!-- Guillaume.w — GENTLEMAN DRIVER -->
+<div class="person-card gentleman-leader-spacing">
 <div class="person-header-inline" style="background-image: url('setup-guillaume.webp');">
 <img class="person-photo-circle" src="pilot-LMP-7.webp" width="200" height="200"/>
 <div class="person-header-info">
-<div class="person-role-badge">CHEF D'ÉQUIPE GT3 BRAVO</div>
+<div class="person-role-badge">GENTLEMAN DRIVER</div>
 <h3 class="person-name">Guillaume.w</h3>
 <div class="license-badges">
 <span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
@@ -1704,7 +1848,7 @@
 </div>
 </div>
 </div>
-<!-- Romuald.D — GENTLEMAN DRIVER BRAVO -->
+<!-- Romuald.D — GENTLEMAN DRIVER -->
 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('car-chef-gt3-alpha.webp');">
 <img class="person-photo-circle" src="chef-gt3-alpha.webp" width="200" height="200"/>
@@ -1726,12 +1870,12 @@
 </div>
 </div>
 </div>
-<!-- 2. Clement — S1 -->
+<!-- Clement — GENTLEMAN DRIVER -->
 <div class="person-card">
 <div class="person-header-inline" style="background-image: url('setup-clement.webp');">
 <img class="person-photo-circle" src="pilot-GT3B-clement.webp" width="200" height="200"/>
 <div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
+<div class="person-role-badge">GENTLEMAN DRIVER</div>
 <h3 class="person-name">Clement</h3>
 <div class="license-badges">
 <span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
@@ -1748,69 +1892,6 @@
 </div>
 </div>
 </div>
-<!-- 3. Cyrille — B2 -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-cyrille.webp');">
-<img class="person-photo-circle" src="pilot-LMP-5.webp" width="200" height="200"/>
-<div class="person-header-info">
-<div class="person-role-badge">GENTLEMAN DRIVER</div>
-<h3 class="person-name">Cyrille</h3>
-<div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b2">B2</span></span>
-<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span>
-</div>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">BMW GT2</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Châssis Alu sur-mesure</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL LoadCell</span></div>
-</div>
-</div>
-</div>
-<!-- 4. Morgan — GENTLEMAN DRIVER BRAVO -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-morgan.webp');">
-<img class="person-photo-circle" src="pilot-morgan.webp" width="2160" height="2880" onerror="this.src='Logo_SIMTEK.webp'"/>
-<div class="person-header-info">
-<div class="person-role-badge">GENTLEMAN DRIVER</div>
-<h3 class="person-name">Morgan</h3>
-<div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span>
-<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g1">G1</span></span>
-</div>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R9</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza KS</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite GTR S8</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza SR-P</span></div>
-</div>
-</div>
-</div>
-
-<!-- 5. Thibaut.D — GENTLEMAN DRIVER BRAVO -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-thibaut-d.webp');">
-<img class="person-photo-circle" src="pilot-thibaut-d.webp" width="811" height="855" onerror="this.src='Logo_SIMTEK.webp'"/>
-<div class="person-header-info">
-<div class="person-role-badge">GENTLEMAN DRIVER</div>
-<h3 class="person-name">Thibaut.D</h3>
-<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span></div>
-</div>
-</div>
-<div class="person-info-details"><div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 8Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec GT3</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite GTR S3</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">ClubSport V3</span></div>
-</div></div>
-</div>
-
             </div>
 
         </div>
@@ -1917,6 +1998,7 @@
                 'team-gt3b': '#00d4ff',
                 'team-charly':  '#ffcc00',
                 'team-hyp':  '#00ff88',
+                'team-gentleman': '#ff6a00',
             };
             let teamColor = null;
             const parentCol = cardElement.closest('.team-column');
@@ -1977,6 +2059,7 @@
                         'team-gt3b': '#00d4ff',
                         'team-charly':  '#ffcc00',
                         'team-hyp':  '#00ff88',
+                        'team-gentleman': '#ff6a00',
                     };
                     let teamColor = '#ff1a75';
                     const parentCol = this.closest('.team-column');
@@ -2020,6 +2103,8 @@
             'Florent.L':    { birthday: '28/05/1993', simstart: '8 ans', platform: 'Le Mans Ultimate', circuit: 'Le Mans', car: 'Aston Martin Vantage', cpu: 'AMD Ryzen 7 9800X3D', gpu: 'AMD Radeon RX 9070 XT', motherboard: 'Asus ROG Crosshair X870E Hero', psu: 'Corsair RM850x 850W 80+ Gold', ram: '32Go', screen: 'Samsung G9x 3840x1080 144Hz', photos: ['setup-florent-l.webp', 'setup-florent-l2.webp'] },
             'Cyrille':      { birthday: '27/03/1985', simstart: '39 ans', platform: 'Le Mans Ultimate', circuit: 'Paul Ricard', car: 'Nissan Skyline R34', cpu: 'AMD Ryzen 7 7700X', gpu: 'RX 7600 XFX 8Go', motherboard: 'MSI B650 Gaming Plus WiFi', psu: 'Be Quiet 750W Gold', ram: '64Go Corsair DDR5 6000MHz CL30', screen: 'Samsung Odyssey G4 27"', photos: ['setup-cyrille.webp'] },
             'Enzo':         { birthday: '26/12/2003', simstart: '20 ans', platform: 'Le Mans Ultimate', circuit: 'Nürburgring Nordschleife', car: 'Porsche 992 GT3 RS', cpu: 'AMD 7800X3D', gpu: 'Nvidia RTX 5080', motherboard: 'MSI B850 Gaming Plus', psu: 'Corsair RM1000e 80+ Gold', ram: '34Go Kingston Fury DDR5', screen: 'Samsung', photos: ['setup-enzo.webp', 'setup-enzo2.webp'] },
+            'Lionel':       { birthday: '14/03/1996', simstart: '4 ans', platform: 'Le Mans Ultimate', circuit: 'Suzuka', car: 'BMW M4 GT3', cpu: 'Intel i5-14600KF (overclocké)', gpu: 'Asus ROG RTX 5080 (overclockée)', motherboard: 'MSI MPG Z790 Edge WiFi', psu: 'Corsair RM1000x 80+ Gold', ram: '32Go DDR5 6400MHz (overclockée)', screen: 'Meta Quest 3 (VR)', photos: [] },
+            'Mathis':       { birthday: '09/07/1998', simstart: '3 ans', platform: 'Le Mans Ultimate', circuit: 'Bathurst', car: 'Audi R8 LMS GT3', cpu: 'AMD Ryzen 7 7800X3D', gpu: 'Nvidia RTX 4070 Ti Super', motherboard: 'MSI MAG B650 Tomahawk WiFi', psu: 'Corsair RM850x 80+ Gold', ram: '32Go DDR5 6000MHz Corsair Vengeance', screen: '27" 1440p 165Hz', photos: ['setup-mathis.webp'] },
         };
 
 
@@ -2039,6 +2124,8 @@
             'Nicolas':      "La précision, c'est ma signature en piste.",
             'Vincent.F':    'Construire chaque session pour gagner la suivante.',
             'Enzo':         "La jeunesse n'est pas un frein, c'est un moteur.",
+            'Lionel':       "La VR, c'est sentir la piste avant même de la voir.",
+            'Mathis':       "Le détail fait la différence, du volant au chrono.",
             'Cyrille':      'En piste, chaque erreur est une leçon.',
             'Morgan':       'Apprendre vite, progresser toujours.',
             'Thibaut.D':    'La compétition révèle le meilleur en nous.',
@@ -2047,7 +2134,7 @@
             'David':        "La passion du simracing, c'est une discipline à part entière.",
         };
         function getPilotQuote(name) {
-            return pilotQuotes[name] || 'Passion, rigueur et esprit d’équipe.';
+            return pilotQuotes[name] || '';
         }
 
         function val(v) {
@@ -2087,7 +2174,7 @@
                     </div>`;
 
                 details.innerHTML = `<div class="person-specs">
-                    <div class="pilot-card-quote">${getPilotQuote(name)}</div>
+                    <div class="pilot-card-quote${getPilotQuote(name) ? '' : ' is-empty'}">${getPilotQuote(name)}</div>
                     <div class="pilot-card-meta">
                         <div class="pilot-card-meta-item"><span class="pilot-card-meta-label">Anniversaire</span><span class="pilot-card-meta-value">${isEmpty(data.birthday) ? 'À remplir' : data.birthday}</span></div>
                         <div class="pilot-card-meta-item"><span class="pilot-card-meta-label">Début sim</span><span class="pilot-card-meta-value">${isEmpty(data.simstart) ? 'À remplir' : data.simstart}</span></div>
@@ -2141,7 +2228,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pilot-popup-quote" style="border-left:3px solid ${color}">“ ${getPilotQuote(name)} ”</div>
+                <div class="pilot-popup-quote" style="border-left:3px solid ${color}${getPilotQuote(name) ? '' : ';display:none'}">“ ${getPilotQuote(name)} ”</div>
                 <div class="pilot-popup-content">
                     <div class="pilot-popup-section">
                         <div class="pilot-popup-section-title" style="color:${color};border-color:${color}33">🎮 Sim Racing</div>
@@ -2202,6 +2289,7 @@
                 { selector: '.team-gt3a',   name: 'GT3 Elite', color: '#ff1a75', dot: '🔴' },
                 { selector: '.team-gt3b',   name: 'GT3 Alpha', color: '#00d4ff', dot: '🔵' },
                 { selector: '.team-charly', name: 'GT3 Bravo', color: '#ffcc00', dot: '🟡' },
+                { selector: '.team-gentleman', name: 'Gentleman Driver', color: '#ff6a00', dot: '🟠' },
             ];
 
             section.innerHTML = '';
@@ -2405,7 +2493,8 @@
         const teamColumns = {
             gt3a: document.querySelector('.team-column.team-gt3a'),
             gt3b: document.querySelector('.team-column.team-gt3b'),
-            charly: document.querySelector('.team-column.team-charly')
+            charly: document.querySelector('.team-column.team-charly'),
+            gentleman: document.querySelector('.team-column.team-gentleman')
         };
 
         function applyTeamFilter(filter) {
