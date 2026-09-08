@@ -225,9 +225,10 @@
         .blog-hero-title span { font-size: 52px; font-weight: 900; background: linear-gradient(135deg, #ff1a75, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
         .blog-hero-logo { height: 400px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255,26,117,0.3)); }
         .articles-section { padding: 60px; max-width: 1300px; margin: 0 auto; }
-        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; align-items: start; }
-        .article-card { background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,0,0,0.9)); border: 1px solid rgba(255,26,117,0.2); border-radius: 20px; transition: all 0.3s; display: flex; flex-direction: column; align-self: start; }
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; }
+        .article-card { background: linear-gradient(135deg, rgba(10,10,10,0.9), rgba(0,0,0,0.9)); border: 1px solid rgba(255,26,117,0.2); border-radius: 20px; transition: all 0.3s; display: flex; flex-direction: column; }
         .article-card:hover { transform: translateY(-6px); border-color: rgba(255,26,117,0.5); box-shadow: 0 20px 40px rgba(255,26,117,0.2); }
+        body.modal-open .article-card { transform: none !important; transition: none !important; }
         .article-card-top { padding: 28px 28px 0; }
         .article-cover { width: 100%; height: 200px; min-height: 200px; max-height: 200px; object-fit: cover; object-position: center top; display: block; }
         .article-no-cover { width: 100%; height: 8px; display: block; background: linear-gradient(90deg, rgba(255,26,117,0.15), transparent); }
@@ -242,7 +243,7 @@
         .article-excerpt { font-size: 14px; color: #b0b0d0; line-height: 1.7; padding: 0 28px 20px; min-height: 90px; }
         .article-toggle { margin: 0 28px 28px; background: transparent; border: 1px solid rgba(255,26,117,0.4); color: #ff1a75; padding: 10px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; align-self: flex-start; }
         .article-toggle:hover { background: rgba(255,26,117,0.1); }
-        .article-card-actions { display: flex; align-items: center; gap: 10px; margin: 0 28px 28px; flex-wrap: wrap; }
+        .article-card-actions { display: flex; align-items: center; gap: 10px; margin: auto 28px 28px; flex-wrap: wrap; }
         .share-btns { display: flex; gap: 8px; }
         .share-btn { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #d0d0e8; font-size: 16px; cursor: pointer; transition: all 0.25s; text-decoration: none; }
         .share-btn:hover { border-color: #ff1a75; color: #ff1a75; transform: translateY(-2px); background: rgba(255,26,117,0.1); }
@@ -255,9 +256,52 @@
         .like-btn .thumb { font-size: 14px; line-height: 1; transition: transform 0.2s; }
         .like-btn.liked .thumb { transform: scale(1.25); }
         .like-btn .like-count { font-weight: 700; min-width: 12px; }
-        .article-full { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .article-full.open { max-height: 5000px; border-top: 1px solid rgba(255,26,117,0.15); }
-        .article-full-inner { padding: 28px; font-size: 15px; color: #d1d1e9; line-height: 1.85; }
+        .article-full { max-height: 0; overflow: hidden; }
+        .article-full.open {
+            position: fixed;
+            inset: 0;
+            max-height: none;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.85);
+            z-index: 3000;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 70px 20px;
+            border-top: none;
+        }
+        body.modal-open { overflow: hidden; }
+        .article-full-inner {
+            position: relative;
+            padding: 40px 32px;
+            font-size: 15px;
+            color: #d1d1e9;
+            line-height: 1.85;
+            max-width: 720px;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(18,18,24,0.98), rgba(6,6,10,0.98));
+            border: 1px solid rgba(255,26,117,0.3);
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+        }
+        .article-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .article-modal-close:hover { background: rgba(255,26,117,0.15); border-color: #ff1a75; color: #ff1a75; }
         .article-full-inner h3 { font-size: 17px; color: #ff1a75; margin: 22px 0 10px; }
         .article-full-inner h3:first-child { margin-top: 0; }
         .article-full-inner p { margin-bottom: 14px; }
@@ -288,6 +332,9 @@
             .blog-hero-logo { height: 200px; }
             .articles-section { padding: 30px 16px; }
             .articles-grid { grid-template-columns: 1fr; gap: 20px; }
+            .article-full.open { padding: 20px 10px; }
+            .article-full-inner { padding: 28px 20px; border-radius: 16px; }
+            .article-modal-close { top: 10px; right: 10px; }
         }
     
         .internal-links { padding: 50px 60px; max-width: 1200px; margin: 0 auto; }
@@ -376,7 +423,7 @@
     </div>
     <img src="simtek-chef-equipe-morgan-bravo.webp" alt="Morgan, nouveau chef d'équipe de La Bravo chez SimTek Performance" class="article-cover" width="2160" height="820" loading="lazy">
     <p class="article-excerpt">SimTek Performance annonce la nomination de <strong>Morgan</strong> au poste de <strong>chef d'équipe de La Bravo</strong>. Une nouvelle responsabilité qui vient renforcer l'organisation, la coordination et le suivi de l'équipe pour la suite de la saison.</p>
-    <button class="article-toggle" onclick="toggleArticle('morgan-chef-bravo-2026', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('morgan-chef-bravo-2026', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-morgan-chef-bravo-2026">
         <div class="article-full-inner">
 
@@ -410,7 +457,7 @@
     </div>
     <img src="simtek-nouveaux-pilotes-mathis-lionel.webp" alt="SimTek Performance annonce l'arrivée de ses nouveaux pilotes Mathis (Proto) et Lionel (GT3)" class="article-cover" width="1122" height="748" loading="lazy">
     <p class="article-excerpt">SimTek Performance renforce son effectif avec l'arrivée de deux nouveaux pilotes : <strong>Mathis</strong>, en catégorie prototype, et <strong>Lionel</strong>, en GT3. Deux recrues qui viennent consolider l'ambition de l'équipe pour la suite de la saison.</p>
-    <button class="article-toggle" onclick="toggleArticle('arrivee-mathis-lionet-2026', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('arrivee-mathis-lionet-2026', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-arrivee-mathis-lionet-2026">
         <div class="article-full-inner">
 
@@ -447,7 +494,7 @@
     </div>
     <img src="simtek-livree-24h-lemans-2026.webp" alt="Livrée spéciale SimTek Performance Porsche GT3 pour les 24 Heures du Mans 2026, finition champagne rosé et chrome" class="article-cover" width="1536" height="1024" loading="lazy">
     <p class="article-excerpt">À l'occasion des 24 Heures du Mans qui se dérouleront en octobre, SimTek Performance dévoile une livrée spécialement créée pour l'événement. Notre emblématique rose #FF347E laisse exceptionnellement place à une teinte champagne rosé, associée au chrome et au noir carbone.</p>
-    <button class="article-toggle" onclick="toggleArticle('livree-24h-lemans-2026', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('livree-24h-lemans-2026', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-livree-24h-lemans-2026">
         <div class="article-full-inner">
 
@@ -487,7 +534,7 @@
     </div>
     <img src="fuji-duel-dragone-pluie.webp" alt="SimTek Performance GT3 Elite devant Dragone Racing sous la pluie à Fuji Speedway, 6 Heures de Fuji ELMS World Tour 2026" class="article-cover" width="1672" height="941" loading="lazy">
     <p class="article-excerpt">Retour sur les 6 Heures de Fuji, qui ont vu SimTek Performance et Dragone Racing se livrer un duel intense sous la pluie pour le titre de la classe GT3. Une bataille propre et acharnée, saluée par les deux équipes.</p>
-    <button class="article-toggle" onclick="toggleArticle('fuji-duel-dragone-2026', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('fuji-duel-dragone-2026', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-fuji-duel-dragone-2026">
         <div class="article-full-inner">
 
@@ -527,7 +574,7 @@
     </div>
     <img src="elms-fuji-round4.webp" alt="SimTek Performance GT3 Elite — Victoire de classe GT3 à Fuji Speedway, Round 4 ELMS World Tour 2026" class="article-cover" width="1536" height="1024" loading="lazy">
     <p class="article-excerpt">Dernière manche de l'ELMS World Tour à <strong>Fuji Speedway</strong> : Christophe Avivar et Hugo Sweet décrochent la <strong>victoire en classe GT3</strong> au volant de la Porsche GT3 Elite, avec un tour d'avance sur toute la concurrence. SimTek Performance boucle la saison <strong>5e au classement mondial et 1re équipe française</strong>.</p>
-    <button class="article-toggle" onclick="toggleArticle('elms-fuji-r4-2026', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('elms-fuji-r4-2026', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-elms-fuji-r4-2026">
         <div class="article-full-inner">
 
@@ -586,7 +633,7 @@
     </div>
     <img src="midnight-club-annonce.webp" alt="SimTek Performance Midnight Club — Championnat Mercedes AMG GT3 nocturne 2026" class="article-cover" width="1672" height="941" loading="lazy">
     <p class="article-excerpt">SimTek Performance annonce le lancement du <strong>Midnight Club</strong>, un championnat interne inédit disputé exclusivement de nuit, au volant de la Mercedes-AMG GT3. Six manches, six circuits, des courses intenses jusqu'au dernier tour — le rendez-vous est fixé au 9 septembre à Bahrain.</p>
-    <button class="article-toggle" onclick="toggleArticle('midnight-club-annonce', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('midnight-club-annonce', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-midnight-club-annonce">
         <div class="article-full-inner">
 
@@ -665,7 +712,7 @@
     </div>
     <img src="lmu-us-track-pass.webp" alt="Le Mans Ultimate US Track Pass — Nouveaux circuits américains Daytona Laguna Seca" class="article-cover" width="1536" height="1024" loading="lazy">
     <p class="article-excerpt">Le 4 juillet 2026, Studio 397 et Motorsport Games ont officialisé l'US Track Pass pour Le Mans Ultimate : 6 circuits américains répartis en 3 packs, dont Daytona et Laguna Seca en premier. Une annonce majeure pour la communauté LMU — et un vrai changement de dimension pour le sim.</p>
-    <button class="article-toggle" onclick="toggleArticle('lmu-us-track-pass', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('lmu-us-track-pass', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-lmu-us-track-pass">
         <div class="article-full-inner">
 
@@ -712,7 +759,7 @@
     </div>
     <img src="elms-gt3-elite-classement-r1.webp" alt="Classement championnat ELMS GT3 Elite Manche 1 — SimTek Performance P2 mondiale" class="article-cover" width="1630" height="805" loading="lazy">
     <p class="article-excerpt">Première manche du championnat ELMS GT3 Elite, et SimTek Performance frappe fort : notre équipe Elite s'installe en P2 au classement mondial avec 217 points, à seulement 12 unités du leader. Notre équipe Bravo complète le tableau en P9. SimTek Performance occupe la P2 du classement équipes françaises.</p>
-    <button class="article-toggle" onclick="toggleArticle('elms-gt3-elite-r1-2026', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('elms-gt3-elite-r1-2026', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-elms-gt3-elite-r1-2026">
         <div class="article-full-inner">
 
@@ -801,7 +848,7 @@
     </div>
     <img src="guide-debutant-lmu-erreurs.webp" alt="Débuter en simracing endurance LMU — les 5 erreurs à éviter — SimTek Performance" class="article-cover" width="900" height="400" loading="lazy">
     <p class="article-excerpt">Le Mans Ultimate a la réputation d'être impitoyable avec les nouveaux venus. La physique est exigeante, le système en ligne est un monde à part, et certaines erreurs se paient cash. Chez SimTek Performance, on les a toutes faites. Voici ce qu'on aurait aimé savoir au départ.</p>
-    <button class="article-toggle" onclick="toggleArticle('erreurs-debutant-lmu', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('erreurs-debutant-lmu', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-erreurs-debutant-lmu">
         <div class="article-full-inner">
 
@@ -850,7 +897,7 @@
     </div>
     <img src="lmu-vs-iracing-vs-acc.webp" alt="LMU vs iRacing vs ACC — comparatif simulateur simracing 2026 — SimTek Performance" class="article-cover" width="900" height="400" loading="lazy">
     <p class="article-excerpt">LMU, iRacing, ACC — trois simulateurs, trois philosophies. Chez SimTek Performance, on pratique les trois. Voici notre analyse franche pour vous aider à choisir celui qui correspond à votre profil et à vos objectifs en 2026.</p>
-    <button class="article-toggle" onclick="toggleArticle('lmu-vs-iracing-vs-acc', this)">Lire l'article ▼</button>
+    <button class="article-toggle" onclick="openArticleModal('lmu-vs-iracing-vs-acc', this)">Lire l'article ▼</button>
     <div class="article-full" id="full-lmu-vs-iracing-vs-acc">
         <div class="article-full-inner">
 
@@ -920,7 +967,7 @@
                 </div>
                 <img src="enzo-h-lemans-p2.webp" alt="Enzo H. SimTek Performance — P2 qualification et course Circuit de la Sarthe" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Nouvelle recrue, déjà dans les temps forts. Enzo H. fait ses débuts sous les couleurs SimTek Performance sur le Circuit de la Sarthe et signe immédiatement un podium : P2 en qualification, P2 en course au volant de la Ford Mustang GT3. Le futur commence maintenant.</p>
-                <button class="article-toggle" onclick="toggleArticle('enzo-h-lemans', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('enzo-h-lemans', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-enzo-h-lemans">
                     <div class="article-full-inner">
                         <h3>Bienvenue dans l'équipe, Enzo !</h3>
@@ -949,7 +996,7 @@
                 </div>
                 <img src="lmu-v133-update.webp" alt="Le Mans Ultimate V1.3 Update — LMP3 en piste" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Studio 397 vient de déployer le patch V1.3.3 de Le Mans Ultimate avec la mise à jour complète de la saison 2026 du WEC, une LMP3 gratuite pour tous, et le calendrier des Special Events — dont les 24 Heures du Mans virtuelles en octobre.</p>
-                <button class="article-toggle" onclick="toggleArticle('lmu-v133', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('lmu-v133', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-lmu-v133">
                     <div class="article-full-inner">
                         <h3>Le patch V1.3.3 : la saison 2026 débarque dans LMU</h3>
@@ -987,7 +1034,7 @@
                 </div>
                 <img src="f1-quali-barcelone-2026.webp" alt="Top 3 qualifications GP Barcelone 2026 — Hamilton, Russell, Antonelli" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">George Russell signe la pole en 1:14.679 devant Lewis Hamilton, qui s'élancera pour la première fois de la saison en première ligne avec Ferrari. Mais cette séance restera surtout marquée par le violent crash de Charles Leclerc en Q1, qui a provoqué un drapeau rouge et anéanti ses espoirs de bien figurer.</p>
-                <button class="article-toggle" onclick="toggleArticle('f1-quali-barcelone', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('f1-quali-barcelone', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-f1-quali-barcelone">
                     <div class="article-full-inner">
                         <h3>Le crash de Leclerc qui a marqué la séance</h3>
@@ -1035,7 +1082,7 @@
                 </div>
                 <img src="nascar-cocacola600.webp" alt="Daniel Suárez vainqueur Coca-Cola 600 Charlotte 2026" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Cinq jours après la mort de Kyle Busch, le Coca-Cola 600 de Charlotte s'est couru sous le signe du deuil. Daniel Suárez, grâce à un pari stratégique sur deux pneus et une pluie providentielle, s'impose et dédie sa victoire à celui qui a changé sa carrière.</p>
-                <button class="article-toggle" onclick="toggleArticle('nascar-cocacola600', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('nascar-cocacola600', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-nascar-cocacola600">
                     <div class="article-full-inner">
                         <h3>Charlotte sous le poids du deuil</h3>
@@ -1063,7 +1110,7 @@
                 </div>
                 <img src="paul-ricard-lmp2.webp" alt="Florent Ernault — LMP2 SimTek Performance Championnat ELMS" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Au terme des 8 manches du Championnat ELMS sur Le Mans Ultimate, Florent Ernault termine 12ème au classement mondial en LMP2. Un résultat remarquable face à l'élite internationale du simracing, qui confirme le niveau de SimTek Performance sur la scène mondiale.</p>
-                <button class="article-toggle" onclick="toggleArticle('elms-florent', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('elms-florent', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-elms-florent">
                     <div class="article-full-inner">
                         <h3>Un championnat de haut vol</h3>
@@ -1092,7 +1139,7 @@
                 </div>
                 <img src="f1-gp-canada-podium.webp" alt="Podium GP Canada 2026 — Antonelli, Hamilton, Verstappen" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Quatrième victoire consécutive pour Kimi Antonelli au Canada, profitant de l'abandon sur panne moteur de George Russell. Hamilton signe son meilleur résultat Ferrari en 2e, Verstappen décroche son premier podium de la saison. Le championnat s'emballe.</p>
-                <button class="article-toggle" onclick="toggleArticle('f1-gp-canada', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('f1-gp-canada', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-f1-gp-canada">
                     <div class="article-full-inner">
                         <h3>Russell en tête, Norris surprise au départ</h3>
@@ -1120,7 +1167,7 @@
                 </div>
                 <img src="f1-sprint-canada.webp" alt="George Russell Mercedes devant Lando Norris McLaren — Sprint F1 Canada 2026" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">George Russell mène de bout en bout le Sprint de Montréal et s'impose devant Norris et Antonelli. Mais c'est la guerre des nerfs en interne chez Mercedes qui a retenu toutes les attentions — Toto Wolff obligé de recadrer son jeune pilote à la radio.</p>
-                <button class="article-toggle" onclick="toggleArticle('f1-sprint-canada', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('f1-sprint-canada', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-f1-sprint-canada">
                     <div class="article-full-inner">
                         <h3>Russell intouchable, mais pas tranquille</h3>
@@ -1146,7 +1193,7 @@
                 </div>
                 <img src="logan.webp" alt="Dacia Logan #300 Ollis Garage Racing — 24H Nürburgring 2026" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Pendant que Verstappen faisait la une, une berline roumaine de 280 chevaux bricolée avec amour volait la vedette. La Dacia Logan #300 d'Ollis Garage Racing : crash, suspension arrachée, dispute avec les commissaires… et arrivée sous les ovations.</p>
-                <button class="article-toggle" onclick="toggleArticle('dacia-logan', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('dacia-logan', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-dacia-logan">
                     <div class="article-full-inner">
                         <h3>Ollis Garage Racing : des passionnés contre le reste du monde</h3>
@@ -1174,7 +1221,7 @@
                 </div>
                 <img src="nurb26.webp" alt="Mercedes-AMG GT3 #80 Winward Racing — Vainqueur 24H Nürburgring 2026" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Mercedes remporte les 24H du Nürburgring 2026 pour la première fois depuis 2016, grâce à l'AMG #80 de Winward Racing. La voiture de Max Verstappen, qui menait la course depuis des heures, abandonne à 3h de l'arrivée sur une défaillance de l'arbre de transmission. Un drame pour Verstappen Racing, une victoire historique pour Mercedes.</p>
-                <button class="article-toggle" onclick="toggleArticle('24h-nurb-2026', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('24h-nurb-2026', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-24h-nurb-2026">
                     <div class="article-full-inner">
                         <h3>Classement final SP9 — Top 5</h3>
@@ -1218,7 +1265,7 @@
                 </div>
                 <img src="revosim-astonmartin.webp" alt="REVOSIM x Aston Martin Aramco F1 Team" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">NACON vient d'annoncer un partenariat entre sa marque simracing REVOSIM et l'écurie Aston Martin Aramco Formula One Team. Au programme : un kit de personnalisation premium, un volant open wheel officiel aux couleurs du team F1, et trois nouveaux périphériques pour compléter l'écosystème RS Pure.</p>
-                <button class="article-toggle" onclick="toggleArticle('revosim-astonmartin', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('revosim-astonmartin', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-revosim-astonmartin">
                     <div class="article-full-inner">
                         <h3>REVOSIM, la marque simracing française de NACON</h3>
@@ -1267,7 +1314,7 @@
                 </div>
                 <img src="simagic-zeus.webp" alt="SIMAGIC Zeus Formula — volant simracing formula haut de gamme" class="article-cover" onerror="this.style.display='none'">
                 <p class="article-excerpt">Le SIMAGIC Zeus sort le 22 mai. Chez SimTek Performance, on tourne au FX Pro depuis des mois en compétition sur Le Mans Ultimate. On compare les deux sur ce qui compte vraiment en endurance : ergonomie, commandes, endurance de session.</p>
-                <button class="article-toggle" onclick="toggleArticle('zeus-simagic', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('zeus-simagic', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-zeus-simagic">
                     <div class="article-full-inner">
                         <h3>Notre référence actuelle : le SIMAGIC FX Pro</h3>
@@ -1314,7 +1361,7 @@
                     </div>
                 </div>
                 <p class="article-excerpt">Engagés en BMW M4 GT3 sur les 6 Heures de Spa-Francorchamps en Top Split, Florent, Christophe et Guillaume partent depuis la P12 et livrent une course solide pour franchir la ligne en P8 au terme de six heures d'endurance intense.</p>
-                <button class="article-toggle" onclick="toggleArticle('spa-6h', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('spa-6h', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-spa-6h">
                     <div class="article-full-inner">
                         <h3>Un départ en soirée sur le légendaire circuit de Spa</h3>
@@ -1342,7 +1389,7 @@
                     </div>
                 </div>
                 <p class="article-excerpt">Pénalisé par un track limit en qualification, Anthony.D s'élance depuis la 16ème place sur le Circuit de la Sarthe. Au terme d'une remontée impressionnante en BMW M4 GT3, il franchit la ligne en tête et s'offre la victoire pour la dernière manche du Championnat Beginner.</p>
-                <button class="article-toggle" onclick="toggleArticle('lemans-anthonyd', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('lemans-anthonyd', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-lemans-anthonyd">
                     <div class="article-full-inner">
                         <h3>Une qualification gâchée, mais pas la course</h3>
@@ -1370,7 +1417,7 @@
                     </div>
                 </div>
                 <p class="article-excerpt">Engagé en solo en Split 1 sur le Circuit de Barcelone-Catalunya, Maxime décroche une belle troisième place au terme d'une course de 2 heures maîtrisée de bout en bout, avec Chris et Flo à l'ingénierie pour gérer la stratégie en direct.</p>
-                <button class="article-toggle" onclick="toggleArticle('barcelone-maxime', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('barcelone-maxime', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-barcelone-maxime">
                     <div class="article-full-inner">
                         <h3>Une qualification en feu : P2 avec un 1:41.8</h3>
@@ -1401,7 +1448,7 @@
                 </div>
                 <span class="article-no-cover"></span>
                 <p class="article-excerpt">Un week-end exceptionnel aux 4 Heures de Paul Ricard sur Le Mans Ultimate. 5 équipages en piste, une victoire en BMW M4 GT3, un P2 en LMP2 et des performances solides sur toute la ligne. Bravo à tous !</p>
-                <button class="article-toggle" onclick="toggleArticle('paul-ricard', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('paul-ricard', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-paul-ricard">
                     <div class="article-full-inner">
                         <h3>Un week-end de course historique pour SimTek Performance</h3>
@@ -1444,7 +1491,7 @@
                     </div>
                 </div>
                 <p class="article-excerpt">Après le succès de Paul Ricard, SimTek Performance enchaîne avec les 6 Heures de Spa-Francorchamps sur Le Mans Ultimate — un événement Open Entry Team en Hypercar et LMGT3 les 15, 16 et 17 mai 2026.</p>
-                <button class="article-toggle" onclick="toggleArticle('spa-2026', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('spa-2026', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-spa-2026">
                     <div class="article-full-inner">
                         <h3>Un événement spécial sur l'un des plus grands circuits du monde</h3>
@@ -1474,7 +1521,7 @@
                     </div>
                 </div>
                 <p class="article-excerpt">Tu veux intégrer une équipe simracing pro française mais tu ne sais pas par où commencer ? Niveau requis, matériel, championnats à pratiquer : on t'explique tout.</p>
-                <button class="article-toggle" onclick="toggleArticle('guide-recrutement', this)">Lire l'article ▼</button>
+                <button class="article-toggle" onclick="openArticleModal('guide-recrutement', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-guide-recrutement">
                     <div class="article-full-inner">
                         <h3>Quel niveau faut-il pour rejoindre une équipe simracing pro ?</h3>
@@ -1553,32 +1600,43 @@
     </script>
 
     <script>
-        function toggleArticle(id, btn) {
-            const full  = document.getElementById('full-' + id);
-            const card  = btn.closest('.article-card');
-            const navH  = document.querySelector('nav').offsetHeight;
-            const isOpen = full.classList.contains('open');
-
-            // Ferme tous les articles
-            document.querySelectorAll('.article-full').forEach(el => el.classList.remove('open'));
-            document.querySelectorAll('.article-toggle').forEach(b => b.textContent = "Lire l'article ▼");
-
-            if (!isOpen) {
-                // Ouverture : ouvre et scrolle vers le haut de la card
-                full.classList.add('open');
-                btn.textContent = "Réduire ▲";
-                setTimeout(() => {
-                    const top = card.getBoundingClientRect().top + window.scrollY - navH - 12;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                }, 50);
-            } else {
-                // Fermeture : attend la fin de l'animation puis scrolle vers le haut de la card
-                setTimeout(() => {
-                    const top = card.getBoundingClientRect().top + window.scrollY - navH - 12;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                }, 420);
-            }
+        function openArticleModal(id, btn) {
+            const full = document.getElementById('full-' + id);
+            if (!full) return;
+            // Ferme un éventuel autre popup déjà ouvert (sécurité)
+            document.querySelectorAll('.article-full.open').forEach(el => {
+                if (el !== full) el.classList.remove('open');
+            });
+            full.classList.add('open');
+            document.body.classList.add('modal-open');
+            full.scrollTop = 0;
+            const inner = full.querySelector('.article-full-inner');
+            if (inner) inner.scrollTop = 0;
         }
+
+        function closeArticleModal(id) {
+            const full = document.getElementById('full-' + id);
+            if (!full) return;
+            full.classList.remove('open');
+            document.body.classList.remove('modal-open');
+        }
+
+        function closeAllArticleModals() {
+            document.querySelectorAll('.article-full.open').forEach(el => el.classList.remove('open'));
+            document.body.classList.remove('modal-open');
+        }
+
+        // Ferme le popup si on clique sur le fond sombre (en dehors du panneau)
+        document.querySelectorAll('.article-full').forEach(full => {
+            full.addEventListener('click', (e) => {
+                if (e.target === full) closeAllArticleModals();
+            });
+        });
+
+        // Ferme le popup avec la touche Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAllArticleModals();
+        });
 
 
         const hamburger = document.getElementById('hamburger');
@@ -1597,6 +1655,18 @@
                 const url = 'https://www.simtekperformance.com/blog.html#' + card.id;
                 const encodedUrl = encodeURIComponent(url);
                 const encodedTitle = encodeURIComponent('🏁 ' + title + ' — SimTek Performance');
+
+                // Bouton de fermeture du popup article (en haut du panneau)
+                const fullInnerForClose = card.querySelector('.article-full-inner');
+                if (fullInnerForClose) {
+                    const closeBtn = document.createElement('button');
+                    closeBtn.className = 'article-modal-close';
+                    closeBtn.type = 'button';
+                    closeBtn.setAttribute('aria-label', "Fermer l'article");
+                    closeBtn.innerHTML = '<i class="fas fa-xmark"></i>';
+                    closeBtn.onclick = () => closeArticleModal(articleId);
+                    fullInnerForClose.insertBefore(closeBtn, fullInnerForClose.firstChild);
+                }
 
                 // Boutons compacts à côté du toggle (article fermé)
                 const actionsDiv = document.createElement('div');
