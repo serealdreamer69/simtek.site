@@ -231,7 +231,9 @@
         body.modal-open .article-card { transform: none !important; transition: none !important; }
         .article-card-top { padding: 28px 28px 0; }
         .article-cover { width: 100%; height: 200px; min-height: 200px; max-height: 200px; object-fit: cover; object-position: center top; display: block; }
-        .article-no-cover { width: 100%; height: 8px; display: block; background: linear-gradient(90deg, rgba(255,26,117,0.15), transparent); }
+        .article-cover-placeholder { width: 100%; height: 200px; min-height: 200px; max-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, rgba(255,26,117,0.07), rgba(0,0,0,0.5)); }
+        .article-cover-placeholder img { height: 36px; width: auto; opacity: 0.4; }
+        .article-cover-placeholder span { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #6a6a85; }
         .article-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 12px; border-radius: 50px; margin-bottom: 16px; }
         .tag-resultat { background: rgba(0,255,136,0.12); color: #00ff88; border: 1px solid rgba(0,255,136,0.3); }
         .tag-event { background: rgba(255,26,117,0.12); color: #ff1a75; border: 1px solid rgba(255,26,117,0.3); }
@@ -1360,6 +1362,7 @@
                         <button class="like-btn" data-id="spa-6h" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
+                <div class="article-cover-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek Performance"><span>Photo à venir</span></div>
                 <p class="article-excerpt">Engagés en BMW M4 GT3 sur les 6 Heures de Spa-Francorchamps en Top Split, Florent, Christophe et Guillaume partent depuis la P12 et livrent une course solide pour franchir la ligne en P8 au terme de six heures d'endurance intense.</p>
                 <button class="article-toggle" onclick="openArticleModal('spa-6h', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-spa-6h">
@@ -1388,6 +1391,7 @@
                         <button class="like-btn" data-id="lemans-anthonyd" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
+                <div class="article-cover-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek Performance"><span>Photo à venir</span></div>
                 <p class="article-excerpt">Pénalisé par un track limit en qualification, Anthony.D s'élance depuis la 16ème place sur le Circuit de la Sarthe. Au terme d'une remontée impressionnante en BMW M4 GT3, il franchit la ligne en tête et s'offre la victoire pour la dernière manche du Championnat Beginner.</p>
                 <button class="article-toggle" onclick="openArticleModal('lemans-anthonyd', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-lemans-anthonyd">
@@ -1416,6 +1420,7 @@
                         <button class="like-btn" data-id="barcelone-maxime" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
+                <div class="article-cover-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek Performance"><span>Photo à venir</span></div>
                 <p class="article-excerpt">Engagé en solo en Split 1 sur le Circuit de Barcelone-Catalunya, Maxime décroche une belle troisième place au terme d'une course de 2 heures maîtrisée de bout en bout, avec Chris et Flo à l'ingénierie pour gérer la stratégie en direct.</p>
                 <button class="article-toggle" onclick="openArticleModal('barcelone-maxime', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-barcelone-maxime">
@@ -1446,7 +1451,7 @@
                         <button class="like-btn" data-id="paul-ricard" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
-                <span class="article-no-cover"></span>
+                <div class="article-cover-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek Performance"><span>Photo à venir</span></div>
                 <p class="article-excerpt">Un week-end exceptionnel aux 4 Heures de Paul Ricard sur Le Mans Ultimate. 5 équipages en piste, une victoire en BMW M4 GT3, un P2 en LMP2 et des performances solides sur toute la ligne. Bravo à tous !</p>
                 <button class="article-toggle" onclick="openArticleModal('paul-ricard', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-paul-ricard">
@@ -1490,6 +1495,7 @@
                         <button class="like-btn" data-id="spa-2026" data-base="0"><span class="thumb">👍</span><span class="like-count">0</span></button>
                     </div>
                 </div>
+                <div class="article-cover-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek Performance"><span>Photo à venir</span></div>
                 <p class="article-excerpt">Après le succès de Paul Ricard, SimTek Performance enchaîne avec les 6 Heures de Spa-Francorchamps sur Le Mans Ultimate — un événement Open Entry Team en Hypercar et LMGT3 les 15, 16 et 17 mai 2026.</p>
                 <button class="article-toggle" onclick="openArticleModal('spa-2026', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-spa-2026">
@@ -1520,6 +1526,7 @@
                         <span><i class="fas fa-user"></i> SimTek Performance</span>
                     </div>
                 </div>
+                <div class="article-cover-placeholder"><img src="Logo_SIMTEK.webp" alt="SimTek Performance"><span>Photo à venir</span></div>
                 <p class="article-excerpt">Tu veux intégrer une équipe simracing pro française mais tu ne sais pas par où commencer ? Niveau requis, matériel, championnats à pratiquer : on t'explique tout.</p>
                 <button class="article-toggle" onclick="openArticleModal('guide-recrutement', this)">Lire l'article ▼</button>
                 <div class="article-full" id="full-guide-recrutement">
