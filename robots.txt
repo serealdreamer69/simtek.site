@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Pages utilitaires à ne pas indexer
-Disallow: /planning.html
-Disallow: /rejoins-nous.html
-
 Sitemap: https://www.simtekperformance.com/sitemap.xml
