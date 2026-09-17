@@ -259,6 +259,8 @@
         .share-btn:hover { border-color: #ff1a75; color: #ff1a75; transform: translateY(-2px); background: rgba(255,26,117,0.1); }
         .share-btn-copy.copied { border-color: #00ff88; color: #00ff88; }
         .share-btns-inner { display: flex; gap: 8px; padding: 16px 28px 4px; flex-wrap: wrap; }
+        .article-end { margin: 26px 28px 0; padding-top: 22px; border-top: 1px solid rgba(255,26,117,0.15); display: flex; justify-content: center; }
+        .article-toggle-bottom { margin: 0; }
         .share-btns-inner .share-btn { width: auto; border-radius: 50px; padding: 8px 14px; gap: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .like-btn { background: transparent; border: none; color: #a0a0c0; padding: 0; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.25s; margin-left: 4px; }
         .like-btn:hover { color: #ff1a75; }
@@ -1612,9 +1614,9 @@
             document.querySelectorAll('.article-toggle').forEach(b => b.textContent = "Lire l'article ▼");
 
             if (!isOpen) {
-                // Ouverture : ouvre et scrolle vers le haut de la card
+                // Ouverture : ouvre, met à jour tous les boutons de la card et scrolle vers le haut
                 full.classList.add('open');
-                btn.textContent = "Réduire ▲";
+                card.querySelectorAll('.article-toggle').forEach(b => b.textContent = "Réduire ▲");
                 setTimeout(() => {
                     const top = card.getBoundingClientRect().top + window.scrollY - navH - 12;
                     window.scrollTo({ top, behavior: 'smooth' });
@@ -1674,6 +1676,17 @@
                         <button class="share-btn share-btn-copy" onclick="copyLink(this, '${url}')"><i class="fas fa-link"></i> Copier</button>
                     `;
                     fullInner.appendChild(shareInner);
+
+                    // Bouton "Réduire" en bas de l'article, pour refermer sans remonter tout en haut
+                    const endRow = document.createElement('div');
+                    endRow.className = 'article-end';
+                    const bottomToggle = document.createElement('button');
+                    bottomToggle.type = 'button';
+                    bottomToggle.className = 'article-toggle article-toggle-bottom';
+                    bottomToggle.textContent = "Réduire ▲";
+                    bottomToggle.onclick = function () { toggleArticle(articleId, this); };
+                    endRow.appendChild(bottomToggle);
+                    fullInner.appendChild(endRow);
                 }
             });
         }
