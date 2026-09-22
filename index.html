@@ -34,8 +34,10 @@
     <link rel="apple-touch-icon" sizes="192x192" href="/favicon_192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon_512.png">
     
-    <link rel="preconnect" href="https://embed.twitch.tv">
-    <link rel="dns-prefetch" href="https://embed.twitch.tv">
+    <link rel="preconnect" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="preconnect" href="https://www.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.googleapis.com">
     <!-- Préchargement du logo hero (améliore LCP) -->
     <link rel="preload" href="Logo_SIMTEK.webp" as="image" fetchpriority="high">
     
@@ -1305,27 +1307,74 @@
     </section>
 
 
-<!-- SECTION LIVE TWITCH -->
+<!-- SECTION LIVE YOUTUBE -->
 <section id="live" style="padding: 80px 60px; background: #000000;">
     <h2 style="text-align:center; font-size:48px; margin-bottom:10px;">
         🔴 Live <span style="background:linear-gradient(135deg,#ff1a75,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">SimTek</span>
     </h2>
-    <p style="text-align:center; color:#b0b0d0; margin-bottom:40px; font-size:16px;">Suivez nos courses en direct sur Twitch</p>
+    <p id="live-status-text" style="text-align:center; color:#b0b0d0; margin-bottom:40px; font-size:16px;">Suivez nos courses en direct sur YouTube</p>
 
-    <div style="position:relative; max-width:960px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(255,26,117,0.2);">
-        <a href="https://www.twitch.tv/simtekperformance" target="_blank" rel="noopener" aria-label="Regarder SimTek Performance en direct sur Twitch" style="display:block; position:relative;">
-            <img src="placeholder-live.webp" alt="SimTek Live — Regarder sur Twitch" style="width:100%; display:block; border-radius:15px; aspect-ratio:16/9;" width="960" height="540">
-            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); border-radius:15px; transition:background 0.3s ease;">
+    <div id="youtube-live-wrapper" style="position:relative; max-width:960px; margin:0 auto; border-radius:15px; overflow:hidden; box-shadow:0 0 40px rgba(255,26,117,0.2); aspect-ratio:16/9; background:#111;">
+        <a id="youtube-live-fallback" href="https://www.youtube.com/channel/UCwIyQLGVWaCPNpYSGfx8KEg/live" target="_blank" rel="noopener" aria-label="Regarder SimTek Performance en direct sur YouTube" style="position:absolute; inset:0; display:block;">
+            <img src="youtubeFRONT.webp" alt="SimTek Live — Regarder sur YouTube" style="width:100%; height:100%; object-fit:cover; display:block;" width="960" height="540">
+            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.35); transition:background 0.3s ease;">
                 <div style="text-align:center;">
-                    <div style="width:80px; height:80px; background:#9147ff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; box-shadow:0 0 30px rgba(145,71,255,0.6);">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="white"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+                    <div style="width:80px; height:80px; background:#FF0000; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; box-shadow:0 0 30px rgba(255,0,0,0.6);">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a2.998 2.998 0 0 0-2.112-2.12C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.386.521A2.998 2.998 0 0 0 .502 6.186 31.36 31.36 0 0 0 0 12a31.36 31.36 0 0 0 .502 5.814 2.998 2.998 0 0 0 2.112 2.12c1.881.521 9.386.521 9.386.521s7.505 0 9.386-.521a2.998 2.998 0 0 0 2.112-2.12A31.36 31.36 0 0 0 24 12a31.36 31.36 0 0 0-.502-5.814zM9.75 15.568V8.432L15.818 12z"/></svg>
                     </div>
-                    <span style="color:white; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Regarder en direct</span>
+                    <span style="color:white; font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:2px;">Voir la chaîne YouTube</span>
                 </div>
             </div>
         </a>
     </div>
 </section>
+
+<script>
+(function() {
+    var CHANNEL_ID = "UCwIyQLGVWaCPNpYSGfx8KEg";
+    var API_KEY = "AIzaSyAyNRIf-W1zPwm2CRLtoQHwrag-qO4nvbI";
+    var CACHE_KEY = "simtek_yt_live_cache";
+    var CACHE_DURATION = 3 * 60 * 1000; // 3 minutes
+
+    function renderLive(videoId) {
+        var wrapper = document.getElementById("youtube-live-wrapper");
+        wrapper.innerHTML =
+            '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&mute=1" ' +
+            'title="SimTek Performance — Live" ' +
+            'style="position:absolute; inset:0; width:100%; height:100%; border:0;" ' +
+            'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+            'allowfullscreen></iframe>';
+        var statusText = document.getElementById("live-status-text");
+        if (statusText) statusText.textContent = "🔴 En direct maintenant sur YouTube !";
+    }
+
+    function checkLive() {
+        var cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+            try {
+                var data = JSON.parse(cached);
+                if (Date.now() - data.timestamp < CACHE_DURATION) {
+                    if (data.videoId) renderLive(data.videoId);
+                    return;
+                }
+            } catch (e) {}
+        }
+
+        fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" + CHANNEL_ID + "&eventType=live&type=video&key=" + API_KEY)
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                var videoId = (data.items && data.items.length > 0) ? data.items[0].id.videoId : null;
+                localStorage.setItem(CACHE_KEY, JSON.stringify({ videoId: videoId, timestamp: Date.now() }));
+                if (videoId) renderLive(videoId);
+            })
+            .catch(function(err) {
+                console.warn("Vérification du live YouTube impossible :", err);
+            });
+    }
+
+    checkLive();
+})();
+</script>
 
     <section id="gallery" style="padding: 80px 60px; background: #000000;">
         <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
