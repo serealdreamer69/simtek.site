@@ -1241,6 +1241,122 @@
 }
 </style>
 
+
+<style id="simtek-palmares">
+    #palmares {
+        padding: 80px 60px;
+        background: #000000;
+    }
+    #palmares .palmares-inner {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    #palmares h2 {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+    #palmares .palmares-intro {
+        text-align: center;
+        color: #b0b0d0;
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    #palmares .palmares-list {
+        list-style: none;
+        border-top: 1px solid rgba(255, 26, 117, 0.25);
+    }
+    #palmares .palmares-row {
+        border-bottom: 1px solid rgba(255, 26, 117, 0.25);
+    }
+    #palmares .palmares-link {
+        display: grid;
+        grid-template-columns: 96px 1fr auto;
+        align-items: center;
+        gap: 24px;
+        padding: 20px 12px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+    #palmares .palmares-link:hover .palmares-event,
+    #palmares .palmares-link:focus-visible .palmares-event {
+        color: #ff1a75;
+    }
+    #palmares .palmares-link:focus-visible {
+        outline: 2px solid #00d4ff;
+        outline-offset: 2px;
+    }
+    #palmares .palmares-pos {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1;
+        color: #ffffff;
+        font-variant-numeric: tabular-nums;
+    }
+    #palmares .palmares-pos small {
+        display: block;
+        margin-top: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #00d4ff;
+    }
+    #palmares .palmares-row.is-win .palmares-pos {
+        color: #ff1a75;
+    }
+    #palmares .palmares-event {
+        display: block;
+        font-size: 19px;
+        font-weight: 700;
+        transition: color 0.2s ease;
+    }
+    #palmares .palmares-detail {
+        display: block;
+        margin-top: 4px;
+        font-size: 15px;
+        color: #d1d1e9;
+    }
+    #palmares .palmares-date {
+        font-size: 14px;
+        color: #b0b0d0;
+        white-space: nowrap;
+    }
+    #palmares .palmares-team {
+        margin-top: 32px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #d1d1e9;
+    }
+    #palmares .palmares-team a {
+        color: #00d4ff;
+        font-weight: 600;
+    }
+    @media (max-width: 768px) {
+        #palmares {
+            padding: 40px 20px;
+        }
+        #palmares .palmares-link {
+            grid-template-columns: 64px 1fr;
+            gap: 16px;
+            padding: 18px 4px;
+        }
+        #palmares .palmares-pos {
+            font-size: 30px;
+        }
+        #palmares .palmares-date {
+            grid-column: 2;
+            margin-top: -8px;
+        }
+        #palmares .palmares-event {
+            font-size: 17px;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #palmares .palmares-event {
+            transition: none;
+        }
+    }
+</style>
 </head>
 <body>
 
@@ -1306,6 +1422,68 @@
         </div>
     </section>
 
+
+    <!-- SECTION PALMARÈS -->
+    <section id="palmares" aria-labelledby="palmares-titre">
+        <div class="palmares-inner">
+            <h2 id="palmares-titre">🏆 Palmarès 2026</h2>
+            <p class="palmares-intro">Nos résultats marquants de la saison. Chaque ligne renvoie au compte rendu complet.</p>
+            <ul class="palmares-list">
+                <li class="palmares-row">
+                    <a class="palmares-link" href="/blog#article-elms-fuji-r4-2026">
+                        <span class="palmares-pos">P5<small>mondial</small></span>
+                        <span>
+                            <span class="palmares-event">Classement final de l'ELMS World Tour 2026</span>
+                            <span class="palmares-detail">5e équipe mondiale et 1re équipe française avec l'équipage GT3 Elite.</span>
+                        </span>
+                        <span class="palmares-date">Août 2026</span>
+                    </a>
+                </li>
+                <li class="palmares-row is-win">
+                    <a class="palmares-link" href="/blog#article-fuji-duel-dragone-2026">
+                        <span class="palmares-pos">P1<small>classe GT3</small></span>
+                        <span>
+                            <span class="palmares-event">6 Heures de Fuji, manche 4 de l'ELMS World Tour</span>
+                            <span class="palmares-detail">Victoire avec un tour d'avance pour Christophe Avivar et Hugo Sweet, en Porsche.</span>
+                        </span>
+                        <span class="palmares-date">1er août 2026</span>
+                    </a>
+                </li>
+                <li class="palmares-row">
+                    <a class="palmares-link" href="/blog#article-enzo-h-lemans">
+                        <span class="palmares-pos">P2</span>
+                        <span>
+                            <span class="palmares-event">Circuit de la Sarthe, Le Mans</span>
+                            <span class="palmares-detail">Enzo H. deuxième en qualification puis en course dès ses débuts, en Ford Mustang GT3.</span>
+                        </span>
+                        <span class="palmares-date">Juin 2026</span>
+                    </a>
+                </li>
+                <li class="palmares-row">
+                    <a class="palmares-link" href="/blog#article-elms-florent">
+                        <span class="palmares-pos">P12<small>mondial</small></span>
+                        <span>
+                            <span class="palmares-event">Championnat ELMS, classe LMP2</span>
+                            <span class="palmares-detail">Florent Ernault 12e du classement mondial au terme des 8 manches.</span>
+                        </span>
+                        <span class="palmares-date">Mai 2026</span>
+                    </a>
+                </li>
+                <li class="palmares-row">
+                    <a class="palmares-link" href="/blog#article-spa-6h">
+                        <span class="palmares-pos">P8<small>Top Split</small></span>
+                        <span>
+                            <span class="palmares-event">6 Heures de Spa-Francorchamps</span>
+                            <span class="palmares-detail">Remontée de la 12e à la 8e place pour Florent, Christophe et Guillaume, en BMW M4 GT3.</span>
+                        </span>
+                        <span class="palmares-date">Mai 2026</span>
+                    </a>
+                </li>
+            </ul>
+            <p class="palmares-team">Plus de 20 pilotes répartis en trois équipages GT3 (Elite, Alpha et Bravo) et une équipe de gentleman drivers.<br>
+                <a href="/team">Découvrir l'équipe</a> ou <a href="/blog">voir toutes nos actualités</a>.</p>
+        </div>
+    </section>
 
 <!-- SECTION LIVE YOUTUBE -->
 <section id="live" style="padding: 80px 60px; background: #000000;">
