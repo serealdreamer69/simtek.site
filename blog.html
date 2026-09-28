@@ -95,7 +95,7 @@
         },
         {
           "@type": "BlogPosting",
-          "headline": "6 Heures de Fuji : le duel sous la pluie entre SimTek Performance et Dragone Racing qui a clôturé la saison",
+          "headline": "6 Heures de Fuji : duel sous la pluie entre SimTek Performance et Dragone Racing",
           "description": "Retour sur le duel GT3 des 6 Heures de Fuji entre SimTek Performance GT3 Elite et Dragone Racing : stratégie, pluie, et un final de saison disputé jusqu'au drapeau à damier.",
           "datePublished": "2026-08-02", "dateModified": "2026-08-02",
           "author": { "@type": "Organization", "name": "SimTek Performance" },
@@ -105,7 +105,7 @@
         },
         {
           "@type": "BlogPosting",
-          "headline": "ELMS World Tour — Round 4 à Fuji : SimTek Performance GT3 Elite 1re équipe française et 5e mondiale après sa victoire de classe",
+          "headline": "ELMS World Tour, Fuji : victoire GT3, SimTek 1re équipe française et 5e mondiale",
           "description": "Résultats Round 4 ELMS World Tour à Fuji Speedway — SimTek Performance GT3 Elite remporte la victoire de classe GT3 avec un tour d'avance, terminant la saison 5e mondial et 1re équipe française.",
           "datePublished": "2026-08-01", "dateModified": "2026-08-01",
           "author": { "@type": "Organization", "name": "SimTek Performance" },
@@ -331,7 +331,26 @@
         .internal-link-card .ilc-text span { font-size: 12px; color: #b0b0d0; }
         @media (max-width: 768px) { .internal-links { padding: 30px 16px; } .internal-links-grid { grid-template-columns: 1fr 1fr; gap: 10px; } }
 
-            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+            /* ── Cartes de même hauteur sur une même ligne (PC) ──
+           - cartes étirées à la hauteur de la ligne, titre = 3 lignes réservées (images alignées),
+           - l'extrait absorbe l'espace libre → bouton et partage toujours calés en bas.
+           Dès qu'un article est ouvert (.has-open), retour à l'alignement en haut pour ne pas étirer les voisines. */
+        @media (min-width: 769px) {
+            .articles-grid { align-items: stretch; }
+            .article-card { align-self: stretch; }
+            .article-card h2 { min-height: calc(3 * 1.4em); }
+            .article-excerpt { flex-grow: 1; }
+            .articles-grid.has-open { align-items: start; }
+            .articles-grid.has-open .article-card { align-self: start; }
+        }
+        /* ── Anti-débordement mobile : s'applique à TOUT contenu d'article futur ── */
+        .article-card, .article-card-top, .article-full, .article-full-inner { min-width: 0; max-width: 100%; }
+        .article-full-inner img, .article-full-inner video, .article-full-inner iframe, .article-full-inner svg { max-width: 100%; height: auto; }
+        .article-full-inner iframe { aspect-ratio: 16 / 9; width: 100%; }
+        .article-full-inner table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .article-full-inner pre, .article-full-inner code { max-width: 100%; overflow-x: auto; white-space: pre-wrap; }
+        .article-full-inner h3, .article-full-inner p, .article-full-inner li, .article-card h2, .article-excerpt { overflow-wrap: anywhere; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
         </style>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon_512.png">
@@ -385,6 +404,21 @@
         3. Change : id, tag, h2, dates, excerpt, contenu
         4. Ajoute un bloc BlogPosting dans le Schema.org
         5. Demande une indexation dans Google Search Console
+
+        RÈGLES À RESPECTER POUR CHAQUE ARTICLE :
+        • Titre (h2) : 80 caractères maximum (3 lignes max dans une carte sur PC).
+        • Extrait (.article-excerpt) : 200 à 350 caractères, pour que les cartes
+          d'une même ligne aient une hauteur homogène.
+        • Tableaux : toujours <table class="results-table"> (défilement mobile auto).
+        • Image de couverture : fichier .webp à la racine, bandeau affiché à 200px de
+          haut, recadré depuis le HAUT (object-position: center top) → viser un ratio
+          large (≈ 2,6:1 à 3:1) avec les visages/éléments clés dans la moitié haute.
+          width/height de la balise <img> = dimensions réelles du fichier.
+        • Sans image : <span class="article-no-cover"></span>.
+        • Article à révéler plus tard : data-publish="false" + style="display:none;"
+          sur <article>, puis data-publish="true" le jour J.
+        • Tag : tag-resultat / tag-event / tag-guide / tag-analyse.
+        • Vérifier sur mobile (320 à 414 px) : aucun défilement horizontal de la page.
         ════════════════════════════════════════════════
         -->
 
@@ -624,7 +658,7 @@
 <article class="article-card" id="article-fuji-duel-dragone-2026">
     <div class="article-card-top">
         <span class="article-tag tag-resultat">🏆 Résultat de course</span>
-        <h2>6 Heures de Fuji : le duel sous la pluie entre SimTek Performance et Dragone Racing qui a clôturé la saison</h2>
+        <h2>6 Heures de Fuji : duel sous la pluie entre SimTek Performance et Dragone Racing</h2>
         <div class="article-meta">
             <span><i class="fas fa-calendar"></i> 2 août 2026</span>
             <span><i class="fas fa-flag-checkered"></i> Le Mans Ultimate</span>
@@ -664,7 +698,7 @@
 <article class="article-card" id="article-elms-fuji-r4-2026">
     <div class="article-card-top">
         <span class="article-tag tag-resultat">🏆 Résultats</span>
-        <h2>ELMS World Tour — Round 4 à Fuji : SimTek Performance GT3 Elite 1re équipe française et 5e mondiale après sa victoire de classe</h2>
+        <h2>ELMS World Tour, Fuji : victoire GT3, SimTek 1re équipe française et 5e mondiale</h2>
         <div class="article-meta">
             <span><i class="fas fa-calendar"></i> 1 août 2026</span>
             <span><i class="fas fa-flag-checkered"></i> Le Mans Ultimate</span>
@@ -1711,8 +1745,10 @@
             document.querySelectorAll('.article-full').forEach(el => el.classList.remove('open'));
             document.querySelectorAll('.article-toggle').forEach(b => b.textContent = "Lire l'article ▼");
 
+            const grid = document.querySelector('.articles-grid');
             if (!isOpen) {
                 // Ouverture : ouvre et scrolle vers le haut de la card
+                grid.classList.add('has-open');
                 full.classList.add('open');
                 btn.textContent = "Réduire ▲";
                 setTimeout(() => {
@@ -1721,6 +1757,7 @@
                 }, 50);
             } else {
                 // Fermeture : attend la fin de l'animation puis scrolle vers le haut de la card
+                setTimeout(() => grid.classList.remove('has-open'), 420);
                 setTimeout(() => {
                     const top = card.getBoundingClientRect().top + window.scrollY - navH - 12;
                     window.scrollTo({ top, behavior: 'smooth' });
