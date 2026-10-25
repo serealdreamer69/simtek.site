@@ -1320,6 +1320,32 @@
         color: #b0b0d0;
         white-space: nowrap;
     }
+    #palmares .has-proof .palmares-link {
+        grid-template-columns: 96px 1fr 132px auto;
+    }
+    #palmares .palmares-thumb {
+        width: 132px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center 30%;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        transition: border-color 0.2s ease;
+    }
+    #palmares .palmares-link:hover .palmares-thumb,
+    #palmares .palmares-link:focus-visible .palmares-thumb {
+        border-color: #00d4ff;
+    }
+    #palmares .palmares-proof {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: #00d4ff;
+    }
     #palmares .palmares-team {
         margin-top: 32px;
         text-align: center;
@@ -1346,6 +1372,14 @@
         #palmares .palmares-date {
             grid-column: 2;
             margin-top: -8px;
+        }
+        #palmares .has-proof .palmares-link {
+            grid-template-columns: 64px 1fr;
+        }
+        #palmares .palmares-thumb {
+            grid-column: 2;
+            width: 100%;
+            max-width: 280px;
         }
         #palmares .palmares-event {
             font-size: 17px;
@@ -1429,6 +1463,30 @@
             <h2 id="palmares-titre">🏆 Palmarès 2026</h2>
             <p class="palmares-intro">Nos résultats marquants de la saison. Chaque ligne renvoie au compte rendu complet.</p>
             <ul class="palmares-list">
+                <li class="palmares-row is-win has-proof">
+                    <a class="palmares-link" href="/blog#article-24h-lemans-double-victoire-2026">
+                        <span class="palmares-pos">P1<small>Hypercar</small></span>
+                        <span>
+                            <span class="palmares-event">24 Heures du Mans</span>
+                            <span class="palmares-detail">Victoire en Hypercar pour Clément, Bryan et Hugo en Porsche 963 : 398 tours, meilleur tour en 3:27.117.</span>
+                            <span class="palmares-proof">✔ Capture du jeu à l'appui · lire l'article</span>
+                        </span>
+                        <img class="palmares-thumb" src="preuve-24h-lemans-hypercar-p1.webp" alt="Capture in-game Le Mans Ultimate : SimTek Performance Hypercar a terminé 1er aux 24 Heures du Mans" width="1325" height="715" loading="lazy">
+                        <span class="palmares-date">25 oct. 2026</span>
+                    </a>
+                </li>
+                <li class="palmares-row is-win has-proof">
+                    <a class="palmares-link" href="/blog#article-24h-lemans-double-victoire-2026">
+                        <span class="palmares-pos">P1<small>classe GT3</small></span>
+                        <span>
+                            <span class="palmares-event">24 Heures du Mans</span>
+                            <span class="palmares-detail">Victoire en GT3 pour Florent, Thibault C., Maxime et Christophe en Porsche GT3 : 353 tours, meilleur tour en 3:55.813.</span>
+                            <span class="palmares-proof">✔ Capture du jeu à l'appui · lire l'article</span>
+                        </span>
+                        <img class="palmares-thumb" src="preuve-24h-lemans-gt3-p1.webp" alt="Capture in-game Le Mans Ultimate : SimTek Performance Elite a terminé 1er en GT3 aux 24 Heures du Mans" width="1260" height="723" loading="lazy">
+                        <span class="palmares-date">25 oct. 2026</span>
+                    </a>
+                </li>
                 <li class="palmares-row">
                     <a class="palmares-link" href="/blog#article-elms-fuji-r4-2026">
                         <span class="palmares-pos">P5<small>mondial</small></span>
@@ -1558,10 +1616,10 @@
         <h2 style="text-align: center; font-size: 48px; margin-bottom: 40px;">📸 Galerie</h2>
         <div class="gallery-grid">
             <div class="gallery-image-container scroll-animate scale-up delay-1" onclick="openLightbox(0)">
-                <img src="circuit1.webp" loading="lazy" alt="SIMTEK Performance - Circuit 1" width="1200" height="675">
+                <img src="preuve-24h-lemans-hypercar-p1.webp" loading="lazy" alt="SimTek Performance Hypercar 1re aux 24 Heures du Mans sur Le Mans Ultimate, Porsche 963" width="1325" height="715">
             </div>
             <div class="gallery-image-container scroll-animate scale-up delay-2" onclick="openLightbox(1)">
-                <img src="circuit2.webp" loading="lazy" alt="SIMTEK Performance - Circuit 2" width="1200" height="675">
+                <img src="preuve-24h-lemans-gt3-p1.webp" loading="lazy" alt="SimTek Performance Elite 1re en GT3 aux 24 Heures du Mans sur Le Mans Ultimate, Porsche GT3" width="1260" height="723">
             </div>
             <div class="gallery-image-container scroll-animate scale-up delay-3" onclick="openLightbox(2)">
                 <img src="car-top.webp" loading="lazy" alt="SIMTEK Performance - Vue de dessus">
@@ -1714,8 +1772,8 @@
         // Toutes les autres sont accessibles via le lightbox (flèches).
         // Place les fichiers à la racine du site (même dossier que index.html)
         const galleryImages = [
-            'circuit1.webp',
-            'circuit2.webp',
+            'preuve-24h-lemans-hypercar-p1.webp',
+            'preuve-24h-lemans-gt3-p1.webp',
             'car-top.webp',
             'circuit3.webp',
             'circuit4.webp',

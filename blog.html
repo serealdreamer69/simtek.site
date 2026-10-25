@@ -515,6 +515,25 @@
             📊 353 tours bouclés<br>
             ⏱️ Meilleur tour : 3:55.813</p>
 
+            <div class="proof">
+                <div class="proof-label">✔ Preuve — récapitulatif de course in-game</div>
+                <div class="proof-grid">
+                    <figure class="proof-item">
+                        <a class="proof-thumb" href="preuve-24h-lemans-hypercar-p1.webp" data-caption="Capture in-game Le Mans Ultimate : récapitulatif de course de SimTek Performance Hypercar, « Vous avez terminé 1er ». Meilleur tour 3:27.117, 398 tours, devant Shogun Simsport Main et We Are Checking Endurance Plan A.">
+                            <img src="preuve-24h-lemans-hypercar-p1.webp" alt="Capture in-game Le Mans Ultimate : SimTek Performance Hypercar a terminé 1er aux 24 Heures du Mans, 398 tours, meilleur tour 3:27.117" width="1325" height="715" loading="lazy">
+                        </a>
+                        <figcaption><strong>Hypercar</strong> — Porsche 963, 1re sur 398 tours</figcaption>
+                    </figure>
+                    <figure class="proof-item">
+                        <a class="proof-thumb" href="preuve-24h-lemans-gt3-p1.webp" data-caption="Capture in-game Le Mans Ultimate : récapitulatif de course de SimTek Performance Elite, « Vous avez terminé 1er ». Meilleur tour 3:55.813, 353 tours, +5 positions, devant Singapore Divebombers SGRV et Baltic Racers Racing.">
+                            <img src="preuve-24h-lemans-gt3-p1.webp" alt="Capture in-game Le Mans Ultimate : SimTek Performance Elite a terminé 1er en GT3 aux 24 Heures du Mans, 353 tours, meilleur tour 3:55.813" width="1260" height="723" loading="lazy">
+                        </a>
+                        <figcaption><strong>GT3</strong> — Porsche GT3 Élite, 1re sur 353 tours</figcaption>
+                    </figure>
+                </div>
+                <p class="proof-note">Écrans « Votre récapitulatif de course » affichés par Le Mans Ultimate à l'arrivée. Cliquez sur une capture pour l'afficher en grand.</p>
+            </div>
+
             <p>24 heures de concentration, de stratégie et de relais au millimètre pour deux victoires bien méritées.</p>
 
             <p>🤝 <strong>Merci à nos partenaires qui ont rendu cette aventure possible :</strong></p>
@@ -2041,6 +2060,18 @@
                 }, 420);
             }
         }
+
+        // Ouvre automatiquement l'article ciblé par un lien (ex. depuis le palmarès : /blog#article-xxx)
+        function openArticleFromHash() {
+            const m = location.hash.match(/^#article-(.+)$/);
+            if (!m) return;
+            const card = document.getElementById('article-' + m[1]);
+            const full = document.getElementById('full-' + m[1]);
+            const btn = card && card.querySelector('.article-toggle');
+            if (btn && full && !full.classList.contains('open')) toggleArticle(m[1], btn);
+        }
+        window.addEventListener('load', openArticleFromHash);
+        window.addEventListener('hashchange', openArticleFromHash);
 
 
         const hamburger = document.getElementById('hamburger');
