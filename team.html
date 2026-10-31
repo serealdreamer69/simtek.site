@@ -175,7 +175,7 @@
         .hero h1 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
         h1 { font-size: 64px; margin-bottom: 20px; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-subtitle { font-size: 20px; color: #b0b0d0; }
-        .team-container { max-width: 1600px; margin: 0 auto; padding: 60px 20px; }
+        .team-container { max-width: 1840px; margin: 0 auto; padding: 60px 20px; }
         .section-title { font-size: 36px; text-align: center; margin-bottom: 40px; background: linear-gradient(135deg, #ff1a75 0%, #00d4ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .leadership-grid { display: grid; grid-template-columns: repeat(2, 400px); gap: 25px; margin-bottom: 80px; justify-content: center; }
         .person-card { background: rgba(10, 10, 10, 0.6); border: 2px solid rgba(255, 26, 117, 0.3); border-radius: 15px; overflow: hidden; transition: all 0.3s ease; max-width: 400px; }
@@ -231,14 +231,16 @@
         .team-leader .person-name { text-align: center; }
 
         /* Couleur du badge de rôle (PILOTE, GENTLEMAN DRIVER...) alignée sur la couleur de la colonne */
-        .team-gt3a .person-card .person-role-badge { background: linear-gradient(135deg, #ff1a75 0%, #ff5c9e 100%); }
+        .team-gt3a .person-card .person-role-badge { background: linear-gradient(135deg, #e60026 0%, #aa0000 100%); }
         .team-gt3b .person-card .person-role-badge { background: linear-gradient(135deg, #00d4ff 0%, #0088ff 100%); }
+        .team-gt3b2 .person-card .person-role-badge { background: linear-gradient(135deg, #00d4ff 0%, #0088ff 100%); }
         .team-charly .person-card .person-role-badge { background: linear-gradient(135deg, #ffcc00 0%, #ff9500 100%); }
         .team-hyp .person-card .person-role-badge { background: linear-gradient(135deg, #e60026 0%, #aa0000 100%); }
 
         /* Idem pour le badge "Chef d'équipe" (prioritaire sur le bleu par défaut du .team-leader) */
-        .team-gt3a .team-leader .person-role-badge { background: linear-gradient(135deg, #ff1a75 0%, #ff5c9e 100%); }
+        .team-gt3a .team-leader .person-role-badge { background: linear-gradient(135deg, #e60026 0%, #aa0000 100%); }
         .team-gt3b .team-leader .person-role-badge { background: linear-gradient(135deg, #00d4ff 0%, #0088ff 100%); }
+        .team-gt3b2 .team-leader .person-role-badge { background: linear-gradient(135deg, #00d4ff 0%, #0088ff 100%); }
         .team-charly .team-leader .person-role-badge { background: linear-gradient(135deg, #ffcc00 0%, #ff9500 100%); }
         .pilots-grid { display: grid; grid-template-columns: repeat(3, 400px); gap: 20px; margin-bottom: 20px; justify-content: center; }
         .category-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
@@ -350,10 +352,10 @@
         
         .teams-columns-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 20px;
             align-items: start;
-            max-width: 1500px;
+            max-width: 1800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -406,14 +408,14 @@
         .team-gt3a .person-card,
         .team-gt3a .team-leader,
         .team-gt3a .category-banner {
-            border-color: #ff1a75 !important;
+            border-color: #e60026 !important;
         }
         .team-gt3a .person-card:hover,
         .team-gt3a .team-leader:hover {
-            box-shadow: 0 15px 30px rgba(255, 26, 117, 0.4);
+            box-shadow: 0 15px 30px rgba(230, 0, 38, 0.4);
         }
         .team-gt3a .person-photo-circle {
-            border-color: #ff1a75 !important;
+            border-color: #e60026 !important;
         }
         
         .team-gt3b .person-card,
@@ -426,6 +428,19 @@
             box-shadow: 0 15px 30px rgba(0, 212, 255, 0.4);
         }
         .team-gt3b .person-photo-circle {
+            border-color: #00d4ff !important;
+        }
+
+        .team-gt3b2 .person-card,
+        .team-gt3b2 .team-leader,
+        .team-gt3b2 .category-banner {
+            border-color: #00d4ff !important;
+        }
+        .team-gt3b2 .person-card:hover,
+        .team-gt3b2 .team-leader:hover {
+            box-shadow: 0 15px 30px rgba(0, 212, 255, 0.4);
+        }
+        .team-gt3b2 .person-photo-circle {
             border-color: #00d4ff !important;
         }
         
@@ -456,8 +471,9 @@
         }
 
         /* Titres des bannières aux couleurs de chaque équipe */
-        .team-gt3a .category-banner h3 { color: #ff1a75; }   /* ELITE : rose */
-        .team-gt3b .category-banner h3 { color: #00d4ff; }   /* ALPHA : bleu */
+        .team-gt3a .category-banner h3 { color: #e60026; }   /* ELITE GT3 : rouge (comme Elite HyperCar) */
+        .team-gt3b .category-banner h3 { color: #00d4ff; }   /* ALPHA A : bleu clair */
+        .team-gt3b2 .category-banner h3 { color: #00d4ff; }  /* ALPHA B : bleu (comme Alpha A) */
         .team-charly .category-banner h3 { color: #ffcc00; } /* BRAVO : jaune */
         .team-hyp .category-banner h3 { color: #e60026; }    /* ELITE HYPERCAR : rouge */
         /* Compense la margin-bottom:30px du .team-leader (absent en Elite HyperCar),
@@ -466,9 +482,14 @@
             margin-bottom: 30px;
         }
 
-        @media (max-width: 1400px) {
+        @media (max-width: 1600px) {
             .teams-columns-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+        @media (max-width: 1100px) {
+            .teams-columns-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
         
@@ -1012,8 +1033,9 @@
         .pilot-card-meta-item{background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:8px 9px;min-width:0}
         .pilot-card-meta-label{display:block;color:#737985;font-size:8px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px}
         .pilot-card-meta-value{display:block;color:#f5f5f7;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-        .team-gt3a .pilot-card-quote::before,.team-gt3a .pilot-card-quote::after{color:#ff1a75}
+        .team-gt3a .pilot-card-quote::before,.team-gt3a .pilot-card-quote::after{color:#e60026}
         .team-gt3b .pilot-card-quote::before,.team-gt3b .pilot-card-quote::after{color:#00d4ff}
+        .team-gt3b2 .pilot-card-quote::before,.team-gt3b2 .pilot-card-quote::after{color:#00d4ff}
         .team-charly .pilot-card-quote::before,.team-charly .pilot-card-quote::after{color:#ffcc00}
         .team-hyp .pilot-card-quote::before,.team-hyp .pilot-card-quote::after{color:#e60026}
         .directors-grid .pilot-card-quote::before,.directors-grid .pilot-card-quote::after{color:#ffffff}
@@ -1049,12 +1071,12 @@
 
         /* ── Filtres équipes ── */
         .team-filters-wrap{
-            width:min(1120px,calc(100% - 40px));
+            width:min(1280px,calc(100% - 40px));
             margin:0 auto 38px;
         }
         .team-filters{
             display:grid;
-            grid-template-columns:1.35fr repeat(4,1fr);
+            grid-template-columns:1.35fr repeat(5,1fr);
             align-items:stretch;
             padding:5px;
             border:1px solid rgba(255,255,255,.12);
@@ -1093,8 +1115,9 @@
         }
         .team-filter i{font-size:13px}
         .team-filter[data-filter="all"]{color:#ff5f9b}
-        .team-filter[data-filter="gt3a"]{color:#ff3f86}
+        .team-filter[data-filter="gt3a"]{color:#ff2a3d}
         .team-filter[data-filter="gt3b"]{color:#00d4ff}
+        .team-filter[data-filter="gt3b2"]{color:#00d4ff}
         .team-filter[data-filter="charly"]{color:#ffd000}
         .team-filter[data-filter="hyp"]{color:#ff2a3d}
         .team-filter:hover{background:rgba(255,255,255,.035);transform:translateY(-1px)}
@@ -1115,7 +1138,7 @@
             .team-filter{min-height:44px;padding:0 12px;white-space:nowrap;font-size:11px;border-radius:10px;justify-content:center;}
             .team-filter:not(:last-child)::after{display:none;}
             .team-filter:not(:last-child)::after{height:18px}
-            .team-filter:last-child{grid-column:1 / -1;}
+            .team-filter:last-child:nth-child(odd){grid-column:1 / -1;}
         }
 
 </style>
@@ -1380,7 +1403,11 @@
             </button>
             <button class="team-filter" type="button" role="tab" aria-selected="false" data-filter="gt3b">
                 <i class="fa-solid fa-trophy" aria-hidden="true"></i>
-                <span>Alpha GT3</span>
+                <span>Alpha A GT3</span>
+            </button>
+            <button class="team-filter" type="button" role="tab" aria-selected="false" data-filter="gt3b2">
+                <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                <span>Alpha B GT3</span>
             </button>
             <button class="team-filter" type="button" role="tab" aria-selected="false" data-filter="charly">
                 <i class="fa-solid fa-trophy" aria-hidden="true"></i>
@@ -1512,62 +1539,6 @@
 </div>
 </div>
 </div>
-<!-- Nicolas.B — GT3 ELITE -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-nicolas.webp');">
-<img class="person-photo-circle" src="pilot-GT3A-nicolas.webp" width="200" height="200"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Nicolas.B</h3>
-<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span></div>
-</div>
-</div>
-<div class="person-info-details"><div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simucube SC2 PRO</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Ascher F64W V3</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Profilé Alu 160/40</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">SRP GT-R 2p V5</span></div>
-</div></div>
-</div>
-<!-- Anthony.D — GT3 ELITE -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-anthony-d.webp');">
-<img class="person-photo-circle" src="pilot-GT3A-2.webp" width="200" height="200"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Anthony.D</h3>
-<div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
-<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
-</div>
-</div>
-</div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">McLaren GT3 V2</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Infinity S8</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL</span></div>
-</div>
-</div>
-</div>
-<!-- Thomas.S — GT3 ELITE -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-thomas.webp');">
-<img class="person-photo-circle" src="pilot-GT3A-thomas.webp" width="200" height="200"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Thomas.S</h3>
-<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span></div>
-</div>
-</div>
-<div class="person-info-details"><div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Conspit Ares 12Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Conspit 290 GP</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">GT Omega</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec Clubsport V3</span></div>
-</div></div>
-</div>
             </div>
             
             <!-- Colonne Elite HyperCar -->
@@ -1667,100 +1638,75 @@
 </div>
             </div>
 
-            <!-- Colonne Alpha -->
+            <!-- Colonne Alpha A -->
             <div class="team-column team-gt3b">
                 <div class="category-banner" style="background-image: url('category-gt3-bravo.webp');">
                     <div class="category-banner-content">
-                        <h3> ALPHA GT3</h3>
+                        <h3> ALPHA A GT3</h3>
                     </div>
                 </div>
-<!-- Hugo.S — CHEF D'ÉQUIPE GT3 ALPHA -->
+<!-- Nicolas.B — CHEF D'ÉQUIPE GT3 ALPHA A -->
 <div class="team-leader">
-<div class="person-header-inline" style="background-image: url('setup-hugo-s.webp');">
-<img class="person-photo-circle" src="hugo-tech.webp" width="200" height="200"/>
+<div class="person-header-inline" style="background-image: url('setup-nicolas.webp');">
+<img class="person-photo-circle" src="pilot-GT3A-nicolas.webp" width="200" height="200"/>
 <div class="person-header-info">
-<div class="role-badges-multi" style="display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin-bottom:4px;">
-  <div class="person-role-badge">CHEF D'ÉQUIPE GT3 ALPHA</div>
-  <div class="person-role-badge">INGÉNIEUR TECHNIQUE</div>
-</div>
-<h3 class="person-name">Hugo.S</h3>
-<div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
-<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g3">G3</span></span>
+<div class="person-role-badge">CHEF D'ÉQUIPE GT3 ALPHA A</div>
+<h3 class="person-name">Nicolas.B</h3>
+<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span></div>
 </div>
 </div>
+<div class="person-info-details"><div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simucube SC2 PRO</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Ascher F64W V3</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Profilé Alu 160/40</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">SRP GT-R 2p V5</span></div>
+</div></div>
 </div>
-<div class="person-info-details">
-<div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec Formula V2.5</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Wheel Stand GT Pro</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">CSL Pedals Load Cell</span></div>
-</div>
-</div>
-</div>
-<!-- Maceo.R — GT3 ALPHA -->
+<!-- Thibault.C — GT3 ALPHA A -->
 <div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-GT3B-2.webp');">
-<img class="person-photo-circle" src="pilot-GT3B-2.webp" width="200" height="200"/>
+<div class="person-header-inline" style="background-image: url('setup-thibault-c.webp');">
+<img class="person-photo-circle" src="pilot-GT3A-1.webp" width="200" height="200"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Maceo.R</h3>
+<h3 class="person-name">Thibault.C</h3>
 <div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
 <span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
 </div>
 </div>
 </div>
 <div class="person-info-details">
 <div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R5</span></div>
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R12</span></div>
 <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite S3</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Sr8</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">TrackRacer</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza CRP-2</span></div>
 </div>
 </div>
 </div>
-<!-- Enzo.H — GT3 ALPHA -->
+<!-- Anthony.D — GT3 ALPHA A -->
 <div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-enzo.webp');">
-<img class="person-photo-circle" src="pilot-GT3B-4.webp" width="200" height="200"/>
+<div class="person-header-inline" style="background-image: url('setup-anthony-d.webp');">
+<img class="person-photo-circle" src="pilot-GT3A-2.webp" width="200" height="200"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Enzo.H</h3>
+<h3 class="person-name">Anthony.D</h3>
 <div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
-<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g2">G2</span></span>
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
 </div>
 </div>
 </div>
 <div class="person-info-details">
 <div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">TGT2 Origine</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">TGT2 Origine</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Next Level Racing F-GT Lite</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Origine</span></div>
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">McLaren GT3 V2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Infinity S8</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec CSL</span></div>
 </div>
 </div>
 </div>
-<!-- Vincent.F — GT3 ALPHA -->
-<div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-vincent-alpha.webp');">
-<img class="person-photo-circle" src="pilot-vincent-alpha.webp" width="421" height="699"/>
-<div class="person-header-info">
-<div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Vincent.F</h3>
-<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span></div>
-</div>
-</div>
-<div class="person-info-details"><div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simagic Alpha Evo Pro (18 Nm)</span></div>
-<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Simagic GT Neo</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite R8 Fury Black / Simlab triple screen</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Simnet SP Pro</span></div>
-</div></div>
-</div>
-<!-- Lionel.M — GT3 ALPHA -->
+<!-- Lionel.M — GT3 ALPHA A -->
 <div class="person-card">
 <div class="person-header-inline">
 <img class="person-photo-circle" src="pilot-lionel.webp" width="400" height="400"/>
@@ -1782,25 +1728,115 @@
 </div>
 </div>
 </div>
-<!-- Thibault.C — GT3 ALPHA -->
+<!-- Thomas.S — GT3 ALPHA A -->
 <div class="person-card">
-<div class="person-header-inline" style="background-image: url('setup-thibault-c.webp');">
-<img class="person-photo-circle" src="pilot-GT3A-1.webp" width="200" height="200"/>
+<div class="person-header-inline" style="background-image: url('setup-thomas.webp');">
+<img class="person-photo-circle" src="pilot-GT3A-thomas.webp" width="200" height="200"/>
 <div class="person-header-info">
 <div class="person-role-badge">PILOTE</div>
-<h3 class="person-name">Thibault.C</h3>
+<h3 class="person-name">Thomas.S</h3>
+<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-b3">B3</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-s2">S2</span></span></div>
+</div>
+</div>
+<div class="person-info-details"><div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Conspit Ares 12Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Conspit 290 GP</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">GT Omega</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Fanatec Clubsport V3</span></div>
+</div></div>
+</div>
+            </div>
+
+            <!-- Colonne Alpha B -->
+            <div class="team-column team-gt3b2">
+                <div class="category-banner" style="background-image: url('category-gt3-bravo.webp');">
+                    <div class="category-banner-content">
+                        <h3> ALPHA B GT3</h3>
+                    </div>
+                </div>
+<!-- Hugo.S — CHEF D'ÉQUIPE GT3 ALPHA B -->
+<div class="team-leader">
+<div class="person-header-inline" style="background-image: url('setup-hugo-s.webp');">
+<img class="person-photo-circle" src="hugo-tech.webp" width="200" height="200"/>
+<div class="person-header-info">
+<div class="role-badges-multi" style="display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin-bottom:4px;">
+  <div class="person-role-badge">CHEF D'ÉQUIPE GT3 ALPHA B</div>
+  <div class="person-role-badge">INGÉNIEUR TECHNIQUE</div>
+</div>
+<h3 class="person-name">Hugo.S</h3>
 <div class="license-badges">
-<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s2">S2</span></span>
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g3">G3</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Fanatec CSL DD 5Nm</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Fanatec Formula V2.5</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite Wheel Stand GT Pro</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">CSL Pedals Load Cell</span></div>
+</div>
+</div>
+</div>
+<!-- Maceo.R — GT3 ALPHA B -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-GT3B-2.webp');">
+<img class="person-photo-circle" src="pilot-GT3B-2.webp" width="200" height="200"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Maceo.R</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
 <span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span>
 </div>
 </div>
 </div>
 <div class="person-info-details">
 <div class="person-specs">
-<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R12</span></div>
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Moza R5</span></div>
 <div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Moza Ks</span></div>
-<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">TrackRacer</span></div>
-<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Moza CRP-2</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite S3</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Sr8</span></div>
+</div>
+</div>
+</div>
+<!-- Vincent.F — GT3 ALPHA B -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-vincent-alpha.webp');">
+<img class="person-photo-circle" src="pilot-vincent-alpha.webp" width="421" height="699"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Vincent.F</h3>
+<div class="license-badges"><span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span><span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-p3">P3</span></span></div>
+</div>
+</div>
+<div class="person-info-details"><div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">Simagic Alpha Evo Pro (18 Nm)</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">Simagic GT Neo</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Oplite R8 Fury Black / Simlab triple screen</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Simnet SP Pro</span></div>
+</div></div>
+</div>
+<!-- Enzo.H — GT3 ALPHA B -->
+<div class="person-card">
+<div class="person-header-inline" style="background-image: url('setup-enzo.webp');">
+<img class="person-photo-circle" src="pilot-GT3B-4.webp" width="200" height="200"/>
+<div class="person-header-info">
+<div class="person-role-badge">PILOTE</div>
+<h3 class="person-name">Enzo.H</h3>
+<div class="license-badges">
+<span class="license-badge"><span class="lb-type">DR</span><span class="lb-level lb-s1">S1</span></span>
+<span class="license-badge"><span class="lb-type">SR</span><span class="lb-level lb-g2">G2</span></span>
+</div>
+</div>
+</div>
+<div class="person-info-details">
+<div class="person-specs">
+<div class="spec-item"><span class="spec-label">Base</span><span class="spec-value">TGT2 Origine</span></div>
+<div class="spec-item"><span class="spec-label">Volant</span><span class="spec-value">TGT2 Origine</span></div>
+<div class="spec-item"><span class="spec-label">Châssis</span><span class="spec-value">Next Level Racing F-GT Lite</span></div>
+<div class="spec-item"><span class="spec-label">Pédalier</span><span class="spec-value">Origine</span></div>
 </div>
 </div>
 </div>
@@ -1995,8 +2031,9 @@
 
             // Détecter la couleur de l'équipe parente
             const teamColors = {
-                'team-gt3a': '#ff1a75',
+                'team-gt3a': '#e60026',
                 'team-gt3b': '#00d4ff',
+                'team-gt3b2': '#00d4ff',
                 'team-charly':  '#ffcc00',
                 'team-hyp':  '#e60026',
             };
@@ -2055,8 +2092,9 @@
                 const isPilotOrChef = badge === 'PILOTE' || badge.startsWith('CHEF') || badge === 'INGÉNIEUR TECHNIQUE' || badge === 'GENTLEMAN DRIVER';
                 if (isPilotOrChef) {
                     const teamColors = {
-                        'team-gt3a': '#ff1a75',
+                        'team-gt3a': '#e60026',
                         'team-gt3b': '#00d4ff',
+                'team-gt3b2': '#00d4ff',
                         'team-charly':  '#ffcc00',
                         'team-hyp':  '#e60026',
                     };
@@ -2286,9 +2324,10 @@
             if (!section) return;
 
             const teams = [
-                { selector: '.team-gt3a',   name: 'ELITE GT3', color: '#ff1a75', dot: '🩷' },
+                { selector: '.team-gt3a',   name: 'ELITE GT3', color: '#e60026', dot: '🔴' },
                 { selector: '.team-hyp',    name: 'ELITE HyperCar', color: '#e60026', dot: '🔴' },
-                { selector: '.team-gt3b',   name: 'ALPHA GT3', color: '#00d4ff', dot: '🔵' },
+                { selector: '.team-gt3b',   name: 'ALPHA A GT3', color: '#00d4ff', dot: '🔵' },
+                { selector: '.team-gt3b2',  name: 'ALPHA B GT3', color: '#00d4ff', dot: '🔵' },
                 { selector: '.team-charly', name: 'BRAVO GT3', color: '#ffcc00', dot: '🟡' },
             ];
 
@@ -2495,6 +2534,7 @@
             gt3a: document.querySelector('.team-column.team-gt3a'),
             hyp: document.querySelector('.team-column.team-hyp'),
             gt3b: document.querySelector('.team-column.team-gt3b'),
+            gt3b2: document.querySelector('.team-column.team-gt3b2'),
             charly: document.querySelector('.team-column.team-charly')
         };
 
